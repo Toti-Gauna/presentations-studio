@@ -154,6 +154,7 @@ function montar(s: Sesion) {
     try {
       const { url, expira } = await anf.codigoControl();
       qr.innerHTML = svg(url, { titulo: 'QR privado de control' });
+      qr.dataset['url'] = url; // solo en esta ventana privada; permite "Copiar enlace" si la cámara falla
       qr.append(h('p', { class: 'aviso' }, 'QR PRIVADO: no lo proyectes. Un solo uso, vence en 3 min.'));
       window.clearTimeout(vence);
       vence = window.setTimeout(() => (qr.innerHTML = '<p>Código vencido.</p>'), expira - Date.now());
@@ -176,6 +177,7 @@ function montar(s: Sesion) {
       }
     }, 'primario'),
     boton('Nuevo QR de emparejamiento', () => void mostrarCodigo(), 'secundario'),
+    boton('Copiar enlace de control', () => qr.dataset['url'] && void navigator.clipboard.writeText(qr.dataset['url']), 'secundario', 'Para abrirlo en el celular si la cámara no lee el QR (enviarlo por un canal privado)'),
     qr,
     h('h3', {}, 'Solicitudes'),
     solicitudes,

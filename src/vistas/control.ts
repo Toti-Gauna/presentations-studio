@@ -139,8 +139,16 @@ function controlar(srv: string, ses: string, token: string) {
     conexion.dataset['estado'] = e;
   });
 
+  let ultimoToque = 0;
   function enviar(comando: Comando) {
     if (!estado) return;
+    // Doble toque accidental: los comandos relativos dentro de 450 ms se ignoran aunque el primero ya esté confirmado.
+    const relativo = comando.tipo === 'siguiente' || comando.tipo === 'anterior' || comando.tipo === 'escenaSiguiente' || comando.tipo === 'escenaAnterior';
+    if (relativo && Date.now() - ultimoToque < 450) {
+      confirmacion.textContent = '· toque doble ignorado';
+      return;
+    }
+    if (relativo) ultimoToque = Date.now();
     if (pendiente && Date.now() - pendiente.desde < 1500) {
       confirmacion.textContent = '… esperando confirmación del toque anterior';
       return;
