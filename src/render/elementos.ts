@@ -14,9 +14,14 @@ export interface Contexto {
   recursos: ReadonlyMap<string, { archivo: string; tipo: string }>;
 }
 
+let traer: { por: string; desde: string } | null = null;
 const animable = (el: HTMLElement, paso: number, entrada: string) => {
   el.dataset['paso'] = String(paso);
   el.dataset['entrada'] = entrada;
+  if (entrada === 'traer' && traer) {
+    el.dataset['traidoPor'] = traer.por;
+    el.dataset['desde'] = traer.desde;
+  }
   return el;
 };
 
@@ -42,6 +47,7 @@ function rotulosDe(texto: string, ctx: Contexto): HTMLElement[] {
 const html = (texto: string, ctx: Contexto) => marcado(interpolar(texto, ctx.afirmaciones));
 
 export function construir(el: Elemento, ctx: Contexto): HTMLElement {
+  traer = el.entrada === 'traer' && el.traidoPor ? { por: el.traidoPor, desde: el.desde } : null;
   const raiz = h('div', { class: `el el-${el.tipo} area-${el.area}${el.enfasis ? ' enfasis' : ''}`, 'data-id': el.id });
   if (el.area === 'libre' && el.pos) {
     raiz.style.setProperty('--x', `${el.pos.x}%`);
@@ -88,9 +94,9 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       break;
     }
     case 'lista': {
-      const lista = h(el.estilo === 'numerada' ? 'ol' : 'ul', { class: `lista lista-${el.estilo}` });
-      for (const it of el.items) {
-        const li = h('li');
+      const lista = h(el.estilo === 'numerada' || el.estilo === 'escalera' ? 'ol' : 'ul', { class: `lista lista-${el.estilo}`, style: `--n:${el.items.length}` });
+      for (const [i, it] of el.items.entries()) {
+        const li = h('li', el.estilo === 'escalera' ? { style: `--h:${Math.round(((i + 1) / el.items.length) * 100)}%` } : {});
         li.innerHTML = html(it.texto, ctx);
         lista.append(animable(li, it.paso ?? el.paso, el.entrada === 'ninguna' ? 'ninguna' : 'subir'));
         const r = rotulosDe(it.texto, ctx);
@@ -182,6 +188,26 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       raiz.append(animable(img, el.paso, el.entrada));
       break;
     }
+    case 'telefono': {
+      const marco = h('div', { class: 'tel', style: `--alto:${el.alto}` }, h('div', { class: 'tel-isla' }));
+      const pantalla = h('div', { class: 'tel-pantalla' });
+      el.pantallas.forEach((p, i) => {
+        const r = ctx.recursos.get(p.recurso);
+        const src = r ? ctx.url(r.archivo) : '';
+        const img = src ? h('img', { src, alt: p.alt, decoding: 'async', draggable: 'false' }) : h('div', { class: 'faltante' }, `Falta captura: ${p.alt}`);
+        // La primera pantalla entra con el teléfono; las siguientes se deslizan encima en su paso.
+        pantalla.append(i === 0 ? img : animable(img, p.paso, 'deslizarPantalla'));
+      });
+      marco.append(pantalla);
+      const caja = h('figure', { class: 'tel-caja' }, marco);
+      if (el.leyenda) {
+        const c = h('figcaption', { class: 'tel-leyenda' });
+        c.innerHTML = html(el.leyenda, ctx);
+        caja.append(c);
+      }
+      raiz.append(animable(caja, el.paso, el.entrada));
+      break;
+    }
     case 'video': {
       const r = ctx.recursos.get(el.recurso);
       const p = ctx.recursos.get(el.poster);
@@ -190,6 +216,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       const v = h('video', { playsinline: '', preload: 'auto', poster: poster || undefined, 'aria-label': el.alt, 'data-medio': el.recurso });
       v.muted = !el.sonido;
       v.dataset['sonido'] = el.sonido ? 'si' : 'no';
+      if (el.auto) v.dataset['auto'] = 'si';
       if (src) v.src = src;
       raiz.append(animable(src ? v : h('div', { class: 'faltante' }, `Video pendiente: ${el.alt}`), el.paso, el.entrada));
       break;

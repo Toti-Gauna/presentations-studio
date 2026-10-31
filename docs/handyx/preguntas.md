@@ -1,4 +1,4 @@
-# Preguntas difíciles (lote 5.3) · 24 preguntas
+# Preguntas difíciles (lote 5.3) · 26 preguntas
 
 Formato: respuesta breve (para decir) · ampliada (si repreguntan) · respaldo · anexo. Si no hay evidencia:
 "todavía no lo medimos; el piloto lo prueba con…". Nada de seguridad fabricada.
@@ -29,3 +29,5 @@ Formato: respuesta breve (para decir) · ampliada (si repreguntan) · respaldo �
 | 22 | ¿Qué parte se automatiza? | Matching por rubro/zona, recordatorios y verificación documental asistida. | Verificación final, reclamos y soporte siguen humanos, con costo por trabajo modelado ($ 2.000). | modelo | — |
 | 23 | ¿Cuánto vale la empresa / qué porcentaje ofrecen? | No fijamos valuación ni porcentaje. | Instrumento y condiciones a conversar, idealmente después del piloto. | FUND-03 pendiente | — |
 | 24 | ¿Por qué 0 % el primer mes si necesitan ingresos? | Para medir uso real sin la fricción del precio y formar oferta. | Costo acotado y conocido; desde el 10/12 se mide disposición a pagar. | TARIFA-PILOTO | Tarifas |
+| 25 | ¿Qué diferencia hay entre marca, marketing y gamificación en su plan? | Marca: quiénes somos; marketing: cómo hacemos que prueben; gamificación: reglas en la app para que vuelvan. | Hoy invertimos en marketing local medible (la demanda es el límite); la marca ya está definida; la gamificación espera validar el mínimo, salvo la camada fundadora. | Contexto Handy §4, v2 | v2 `v2-diferencia` |
+| 26 | ¿Las capturas son de la app real? | Sí, del prototipo real, en modo de prueba con datos ficticios. | La app transaccional sale el 10/11; hoy no hay uso real ni backend conectado. Las publicidades son animaciones de esas pantallas. | capturas.json | v2 `v2-app-*` |

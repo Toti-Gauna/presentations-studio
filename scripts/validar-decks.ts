@@ -7,7 +7,8 @@ let fallas = 0;
 for (const id of readdirSync('decks')) {
   const deck = leer(`decks/${id}/deck.json`, null) as { tema?: string; versiones?: Array<{ id: string; escenas: string[]; duraciones?: Record<string, number> }>; escenas?: Array<{ id: string; duracion: number }> } | null;
   if (!deck) continue;
-  const r = validarPaquete({ deck, tema: leer(`brands/${deck.tema}/tema.json`, null), afirmaciones: leer(`decks/${id}/afirmaciones.json`), qrs: leer(`decks/${id}/qr.json`) });
+  const fuente = (deck as { datosDe?: string }).datosDe ?? id;
+  const r = validarPaquete({ deck, tema: leer(`brands/${deck.tema}/tema.json`, null), afirmaciones: leer(`decks/${fuente}/afirmaciones.json`), qrs: leer(`decks/${fuente}/qr.json`) });
   const durs = (deck.versiones ?? []).map((v) => `${v.id} ${v.escenas.reduce((t, e) => t + (v.duraciones?.[e] ?? deck.escenas?.find((x) => x.id === e)?.duracion ?? 0), 0)}s`).join(' · ');
   console.log(`${r.ok ? '✓' : '✗'} ${id} · ${durs}`);
   for (const e of r.errores) console.log(`   error: ${e}`);

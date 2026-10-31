@@ -137,3 +137,19 @@
 .t-s { font-size: 32px; }
 .el > .rotulo + .rotulo { margin-left: 12px; }
 .el-qr { justify-self: center; }
+
+/* Teléfono con capturas reales (proporción 9:19,5 como los celulares actuales) */
+.tel-caja { margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 16px; }
+.tel { position: relative; height: calc(var(--alto) * 10.8px); aspect-ratio: 9 / 19.5; border-radius: 56px; background: #0E1D36; padding: 14px; box-shadow: 0 30px 60px rgba(0,0,0,0.28), inset 0 0 0 3px #2a3a5c; }
+.tel-isla { position: absolute; top: 24px; left: 50%; width: 30%; height: 30px; transform: translateX(-50%); background: #000; border-radius: 20px; z-index: 2; }
+.tel-pantalla { position: relative; width: 100%; height: 100%; border-radius: 44px; overflow: hidden; background: #fff; }
+.el .tel-pantalla img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 0; max-height: none; }
+.tel-leyenda { font-size: 24px; font-weight: 700; color: var(--suave); text-align: center; max-width: 520px; }
+.el-telefono { justify-self: center; }
+
+/* Tarjeta destacada (énfasis) para textos que los personajes traen */
+.el.enfasis > p, .el.enfasis > h2, .el.enfasis > h3 { background: var(--superficie); color: var(--tinta); padding: 26px 34px; border-radius: var(--radio-grande); box-shadow: 0 10px 0 rgba(0,0,0,0.14); display: inline-block; }
+/* Escalera: peldaños que suben (validación del cliente) */
+.lista-escalera { grid-template-columns: repeat(var(--n, 7), 1fr); align-items: end; gap: 14px; height: 470px; font-size: 26px; counter-reset: n; }
+.lista-escalera li { padding: 20px 16px; background: var(--superficie); border-radius: var(--radio-medio) var(--radio-medio) 0 0; font-weight: 700; line-height: 1.15; height: var(--h); display: flex; flex-direction: column; gap: 8px; }
+.lista-escalera li::before { counter-increment: n; content: counter(n); position: static; font-family: var(--fuente-titulos); font-weight: 900; font-size: 40px; color: var(--acento); }

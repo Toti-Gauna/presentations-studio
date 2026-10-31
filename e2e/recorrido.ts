@@ -136,6 +136,20 @@ try {
   await off.waitForTimeout(1200);
   const fuentes = await off.evaluate(() => [...document.fonts].filter((f: FontFace) => f.status === 'loaded').map((f) => f.family));
   ok('funciona sin recursos externos (fuentes empaquetadas)', externos.length === 0 && fuentes.some((f: string) => f.includes('Archivo')), `externos=${externos.length} fuentes=${[...new Set(fuentes)].join(',')}`);
+  // 9 · Hub: elige entre presentaciones; la v2 comercial carga y recorre sin errores
+  const hub = await aislado.newPage();
+  hub.on('pageerror', (e: Error) => errores.push(`hub: ${e.message}`));
+  await hub.goto(`${base}/`);
+  await hub.waitForTimeout(1200);
+  const tarjetas = await hub.locator('.hub-tarjeta').count();
+  const conV2 = await hub.locator('a[href*="deck=handyx-v2"]').count();
+  ok('hub lista las presentaciones con miniatura', tarjetas >= 4 && conV2 > 0 && (await hub.locator('.hub-mini .escenario').count()) >= 4, `tarjetas=${tarjetas}`);
+  const v2 = await aislado.newPage();
+  v2.on('pageerror', (e: Error) => errores.push(`v2: ${e.message}`));
+  await v2.goto(`${base}/presentar/?deck=handyx-v2&version=comercial`);
+  for (let i = 0; i < 30; i++) { await v2.keyboard.press('ArrowRight'); await v2.waitForTimeout(60); }
+  await v2.waitForTimeout(800);
+  ok('v2 comercial recorre 30 pasos sin errores', (await v2.locator('section.escena').count()) >= 1);
   ok('sin errores de JavaScript', errores.length === 0, errores.join(' | '));
 } finally {
   await nav.close();

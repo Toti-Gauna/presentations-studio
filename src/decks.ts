@@ -29,7 +29,10 @@ export function cargar(id: string): Cargado {
   const deck = leer('deck.json', decks);
   if (!deck) return { ok: false, errores: [`no existe el deck "${id}"`], avisos: [], id, huella: '', publicada: null };
   const temaId = (deck as { tema?: string }).tema ?? '';
-  const entrada = { deck, tema: temas[`/brands/${temaId}/tema.json`], afirmaciones: leer('afirmaciones.json', afirmaciones) ?? [], qrs: leer('qr.json', qrs) ?? [] };
+  const datosDe = (deck as { datosDe?: string }).datosDe;
+  const datos = (nombre: string, fuente: Record<string, unknown>) =>
+    (congelada && publicadas[congelada + nombre]) ?? fuente[`/decks/${datosDe ?? id}/${nombre}`] ?? [];
+  const entrada = { deck, tema: temas[`/brands/${temaId}/tema.json`], afirmaciones: datos('afirmaciones.json', afirmaciones), qrs: datos('qr.json', qrs) };
   const r = validarPaquete(entrada);
   return { ...r, id, huella: huella(JSON.stringify(entrada)), publicada: congelada && publicadas[congelada + 'deck.json'] ? (PUBLICADA as string) : null };
 }

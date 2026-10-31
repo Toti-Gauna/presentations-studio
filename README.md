@@ -10,8 +10,9 @@ npm ci
 npm run dev                      # http://localhost:5173/ → lanzador (sin control remoto)
 npm run build && SERVIR_ESTATICOS=dist npm run servidor   # http://localhost:8787/ con control remoto (red local)
 ```
-Presentador: `/presentador/?deck=handyx&version=aticma` · Pantalla pública: `/presentar/?deck=handyx&version=aticma`.
-Versiones Handyx: `aticma` (180 s), `corta` (60 s), `angel` (≈ 6 min), `vc` (≈ 8 min).
+Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=handyx&version=aticma` · Pantalla pública: `/presentar/?deck=…`.
+- **Handyx v1 institucional** (`deck=handyx`): `aticma` (180 s), `corta` (60 s), `angel` (≈ 6 min), `vc` (≈ 9 min).
+- **Handyx v2 comercial** (`deck=handyx-v2`, mismas cifras): `comercial` (≈ 5 min), `marca-marketing` (2 min), `anuncios` (reel).
 
 ## Comandos
 | Comando | Qué hace |

@@ -51,3 +51,8 @@ El motor **no depende** de estas tomas: si no llegan, quedan las poses actuales.
 | T3 Festejo de cierre | `bombilla-c` + `llave-c` | "Ambos festejan con un salto corto, mismo diseño" | 2 s | fijo | reposo → festejo → reposo | ídem | poses festejo |
 
 Recorte: mismo script de chroma (o MP4 con fondo de la paleta + póster). Safari: siempre MP4 H.264 + póster; no depender de alfa en video.
+
+## Personajes que traen cosas (v2)
+`entrada: "traer"` + `traidoPor: <id del personaje>`: si el personaje entra en ese paso, camina con la pieza desde el costado
+(`desde: izq|der`) y la deja con un rebote; si ya estaba, la pieza sale de él y vuela a su lugar. Luego festeja y vuelve al
+reposo. Es reconstruible por paso (seek) y en movimiento reducido aparece sin desplazamiento.

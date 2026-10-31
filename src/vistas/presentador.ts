@@ -98,7 +98,14 @@ function montar(s: Sesion) {
     tiempos.replaceChildren(h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, '#'), h('th', {}, 'Escena'), h('th', {}, 'Prevista'), h('th', {}, 'Real'))), h('tbody', {}, ...filas)));
   }
 
+  let escenaAnterior = -1;
   function pintar(e: Estado) {
+    // Video con "auto": al entrar a la escena se ordena reproducir (pasa por el estado, así todas las pantallas quedan sincronizadas).
+    if (e.escena !== escenaAnterior) {
+      escenaAnterior = e.escena;
+      const auto = s.escenas[e.escena]?.elementos.find((x) => x.tipo === 'video' && x.auto && x.paso === 0) as { recurso: string } | undefined;
+      if (auto && e.reproduccion.medio !== auto.recurso) return queueMicrotask(() => ejecutar({ tipo: 'reproducir', medio: auto.recurso }));
+    }
     actual.mostrar(e);
     const sig = aplicar(e, { tipo: 'siguiente' }, s.forma, Date.now());
     siguiente.mostrar({ ...sig, negro: false });

@@ -1,8 +1,8 @@
 # Lote 0.1 · Auditoría (31/10/2026)
 
-Fuentes efectivamente leídas en esta sesión: los 8 repositorios de la sesión, el zip de láminas adjunto y Notion
-(Contexto Handy, TECH-37, Bloque 6, "Fase paralela · ATICMA 05/11", decisión CO-PITCH-20261031). **No** se adjuntaron
-los tres PDF de ATICMA (solo el zip de personajes). No se consultaron Roadmap ni Decisiones completos.
+Fuentes efectivamente leídas en esta sesión: los 8 repositorios de la sesión, el zip de láminas adjunto, Notion
+(Contexto Handy, TECH-37, Bloque 6, "Fase paralela · ATICMA 05/11", decisión CO-PITCH-20261031), **los tres PDF de ATICMA**
+(recibidos después; leídos completos, ver `docs/handyx/matriz-pdf.md`) y kinetic-studio (lectura). No se consultaron Roadmap ni Decisiones completos.
 
 ## Inventario
 
@@ -18,6 +18,8 @@ los tres PDF de ATICMA (solo el zip de personajes). No se consultaron Roadmap ni
 | Marca | Tokens, logo, Archivo 900 + DM Sans, copy aprobado (MKT-11): "Soluciones, no problemas", "¿Se rompió algo en casa?", "Tus herramientas. Tu precio." | landing `src/brand/tokens.ts`, `src/content/*.json` |
 | Video | Trailers de 70 s (usuario/especialista), H.264 con póster; mencionan "Primer mes sin tarifa" y 10 % + 10 %. | landing `assets/video` |
 | Comercial "Verano" | No encontrado en los repos. | — |
+| Publicidades kinetic-studio | `exports/handy-anuncio-16x9.mp4` y `handy-vertical-9x16.mp4` (30 s) **desactualizadas**: "Handy", "Llegamos el 28/10", tarifa cliente 5 %. Re-renderizadas con Handyx, 10/11, "Primer mes sin tarifa" y 10 % (patch en `docs/handyx/anuncios/`). | kinetic-studio `exports/` |
+| Capturas de las PWA | 20 capturas reales del prototipo en modo de prueba (banner visible, datos sintéticos). Las apps muestran "Comisión de Handy $ 0 (0 %)" durante la demo y todavía dicen "Handy" en algunos textos. | `brands/handyx/assets/capturas/` |
 | Infraestructura | Declarada por Ignacio: Hostinger, Render, VPS. Desde este contenedor `landing.handyc.com` y `api.handyc.com` no son alcanzables (el proxy de la sesión los bloquea): **no se pudo verificar** qué está publicado. | `curl` 403 del proxy |
 
 ## Contradicciones detectadas

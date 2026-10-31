@@ -105,6 +105,9 @@ function entrada(nodo: HTMLElement, tipo: string, tl: gsap.core.Timeline, en: st
       tl.fromTo(ps, { autoAlpha: 0, y: 42, rotation: 2 }, { autoAlpha: 1, y: 0, rotation: 0, duration: d, stagger: 0.09, ease: 'power3.out' }, en);
       break;
     }
+    case 'deslizarPantalla':
+      tl.fromTo(nodo, { autoAlpha: 1, xPercent: 100 }, { xPercent: 0, duration: d * 0.9, ease: 'power3.inOut' }, en);
+      break;
     case 'barra': {
       const cuerpo = nodo.querySelector('.barra-cuerpo');
       const i = Number(nodo.style.getPropertyValue('--i') || 0);
@@ -115,6 +118,43 @@ function entrada(nodo: HTMLElement, tipo: string, tl: gsap.core.Timeline, en: st
     default:
       tl.fromTo(nodo, { autoAlpha: 0 }, { autoAlpha: 1, duration: d, ease: 'power1.out' }, en);
   }
+}
+
+/** Escala del escenario (para pasar medidas de pantalla a coordenadas del escenario de 1920). */
+function escala(raiz: HTMLElement): number {
+  const esc = raiz.closest<HTMLElement>('.escenario');
+  return Number(esc?.style.getPropertyValue('--k') || 1) || 1;
+}
+
+/**
+ * Un personaje trae una pieza: si el personaje entra en este mismo paso, caminan juntos desde el costado;
+ * si ya estaba en escena, la pieza sale de él, vuela a su lugar y "cae" con un rebote. Determinista y reconstruible.
+ */
+function traerPieza(raiz: HTMLElement, nodo: HTMLElement, paso: number, tl: gsap.core.Timeline, en: string, d: number, modo: Modo) {
+  const el = raiz.querySelector<HTMLElement>(`.el[data-id="${nodo.dataset['traidoPor']}"]`);
+  const pj = el?.querySelector<HTMLElement>('.pj');
+  const mov = pj?.querySelector<HTMLElement>('.pj-mov');
+  if (!pj || !mov) return entrada(nodo, 'subir', tl, en, d, modo);
+  const lado = nodo.dataset['desde'] === 'der' ? 1 : -1;
+  const juntos = Number(pj.dataset['paso']) === paso;
+  const k = escala(raiz);
+  const a = pj.getBoundingClientRect();
+  const b = nodo.getBoundingClientRect();
+  const dur = d * (modo === 'ligero' ? 1 : 1.7);
+  if (juntos) {
+    const dx = lado * 1100;
+    pose(pj, 'accion', tl, en);
+    tl.fromTo(mov, { x: dx }, { x: 0, duration: dur, ease: 'power2.out' }, en);
+    tl.fromTo(nodo, { autoAlpha: 1, x: dx, y: -40, rotation: lado * -5 }, { x: 0, duration: dur, ease: 'power2.out' }, en);
+  } else {
+    const dx = (a.left + a.width / 2 - (b.left + b.width / 2)) / k;
+    const dy = (a.top + a.height * 0.35 - (b.top + b.height / 2)) / k;
+    pose(pj, 'saludo', tl, en);
+    tl.fromTo(nodo, { autoAlpha: 0, x: dx, y: dy, scale: 0.3, rotation: lado * -8 }, { autoAlpha: 1, x: 0, y: -40, scale: 1, duration: dur * 0.8, ease: 'power2.out' }, en);
+  }
+  tl.to(nodo, { y: 0, rotation: 0, duration: d * 0.6, ease: 'bounce.out' }, `${en}+=${juntos ? dur : dur * 0.8}`);
+  pose(pj, 'festejo', tl, `${en}+=${juntos ? dur : dur * 0.8}`);
+  pose(pj, 'reposo', tl, `${en}+=${(juntos ? dur : dur * 0.8) + d * 1.2}`);
 }
 
 /**
@@ -138,7 +178,11 @@ export class LineaEscena {
       const etiqueta = `p${k}`;
       this.tl.addLabel(etiqueta, cursor);
       for (const n of nodos) if (Number(n.dataset['paso']) === k && !n.classList.contains('pj')) {
-        entrada(n, n.dataset['entrada'] ?? 'fundido', this.tl, etiqueta, d, modo);
+        if (n.dataset['entrada'] === 'traer' && modo !== 'reducido') {
+          traerPieza(raiz, n, k, this.tl, etiqueta, d, modo);
+          continue;
+        }
+        entrada(n, n.dataset['entrada'] === 'traer' ? 'fundido' : (n.dataset['entrada'] ?? 'fundido'), this.tl, etiqueta, d, modo);
         const c = n.matches('[data-contar]') ? n : n.querySelector<HTMLElement>('[data-contar]');
         if (c && modo !== 'reducido') contar(c, this.tl, etiqueta, d);
       }

@@ -1,0 +1,1859 @@
+{
+ "versionEsquema": 1,
+ "id": "handyx-v2",
+ "titulo": "Handyx v2 · Pitch comercial con los Handys",
+ "idioma": "es-AR",
+ "tema": "handyx",
+ "datosDe": "handyx",
+ "hub": {
+  "grupo": "Handyx",
+  "descripcion": "Versión comercial: los Handys traen cada idea, app real (capturas del prototipo), marca vs. marketing vs. gamificación, proyecciones y publicidades. Mismas cifras que el pitch institucional.",
+  "orden": 20,
+  "estilo": "comercial"
+ },
+ "corte": "2026-10-31",
+ "estado": "borrador",
+ "versiones": [
+  {
+   "id": "comercial",
+   "titulo": "Comercial (≈ 5 min)",
+   "audiencia": "Comercios aliados, ángeles, público general",
+   "duracionObjetivo": 330,
+   "tolerancia": 30,
+   "escenas": [
+    "v2-portada",
+    "v2-problema",
+    "v2-propuesta",
+    "v2-app-usuario",
+    "v2-app-especialista",
+    "v2-marca",
+    "v2-marketing",
+    "v2-gamificacion",
+    "v2-diferencia",
+    "v2-escalera",
+    "v2-proyecciones",
+    "v2-anuncio",
+    "v2-pedido",
+    "v2-cierre"
+   ],
+   "duraciones": {
+    "v2-app-usuario": 25,
+    "v2-app-especialista": 25,
+    "v2-marca": 20,
+    "v2-marketing": 20,
+    "v2-gamificacion": 22,
+    "v2-diferencia": 20,
+    "v2-escalera": 20,
+    "v2-proyecciones": 25,
+    "v2-anuncio": 32
+   },
+   "anexos": [
+    "v2-trailer-usuario",
+    "v2-trailer-especialista",
+    "v2-anuncio-vertical"
+   ]
+  },
+  {
+   "id": "marca-marketing",
+   "titulo": "Marca, marketing y gamificación (≈ 2 min)",
+   "audiencia": "Charla de marketing",
+   "duracionObjetivo": 120,
+   "tolerancia": 10,
+   "escenas": [
+    "v2-portada",
+    "v2-marca",
+    "v2-marketing",
+    "v2-gamificacion",
+    "v2-diferencia"
+   ],
+   "duraciones": {
+    "v2-portada": 10,
+    "v2-marca": 25,
+    "v2-marketing": 25,
+    "v2-gamificacion": 30,
+    "v2-diferencia": 30
+   },
+   "anexos": []
+  },
+  {
+   "id": "anuncios",
+   "titulo": "Reel de publicidades",
+   "audiencia": "Mostrar piezas de campaña",
+   "duracionObjetivo": 220,
+   "tolerancia": 0,
+   "escenas": [
+    "v2-anuncio",
+    "v2-anuncio-vertical",
+    "v2-trailer-usuario",
+    "v2-trailer-especialista"
+   ],
+   "anexos": []
+  }
+ ],
+ "recursos": [
+  {
+   "id": "cap-usuario-inicio",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-inicio.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-pedido",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-pedido.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-propuestas",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-propuestas.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-chat",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-chat.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-pago",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-pago.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-inicio",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-disponibilidad.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-pedido",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-pedido-detalle.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-presupuesto",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-presupuesto.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-agenda",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-agenda.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-cobro",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-cobro.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "anuncio-16x9",
+   "tipo": "video",
+   "archivo": "video/anuncio-16x9.mp4",
+   "procedencia": "kinetic-studio (render con marca y datos vigentes)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "anuncio-16x9-poster",
+   "tipo": "imagen",
+   "archivo": "video/anuncio-16x9-poster.jpg",
+   "procedencia": "kinetic-studio (render con marca y datos vigentes)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "anuncio-9x16",
+   "tipo": "video",
+   "archivo": "video/anuncio-9x16.mp4",
+   "procedencia": "kinetic-studio (render con marca y datos vigentes)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "anuncio-9x16-poster",
+   "tipo": "imagen",
+   "archivo": "video/anuncio-9x16-poster.jpg",
+   "procedencia": "kinetic-studio (render con marca y datos vigentes)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "trailer-usuario",
+   "tipo": "video",
+   "archivo": "video/trailer-usuario.mp4",
+   "procedencia": "Handy-landing-page-fe/assets/video",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "trailer-usuario-poster",
+   "tipo": "imagen",
+   "archivo": "video/trailer-usuario-poster.jpg",
+   "procedencia": "Handy-landing-page-fe/assets/video",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "trailer-especialista",
+   "tipo": "video",
+   "archivo": "video/trailer-especialista.mp4",
+   "procedencia": "Handy-landing-page-fe/assets/video",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "trailer-especialista-poster",
+   "tipo": "imagen",
+   "archivo": "video/trailer-especialista-poster.jpg",
+   "procedencia": "Handy-landing-page-fe/assets/video",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  }
+ ],
+ "escenas": [
+  {
+   "id": "v2-portada",
+   "titulo": "Portada: los Handys traen la marca",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 14,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Abrir con energía de marca: el foco y la llave traen, cada uno, la mitad de la frase de Handyx.",
+   "guion": "Esto es Handyx. Soluciones… no problemas.",
+   "notas": "Dejar que los personajes terminen de dejar cada mitad antes de hablar.",
+   "lectura": "Handyx: soluciones, no problemas. Un marketplace de arreglos del hogar que empieza en Mar del Plata.",
+   "elementos": [
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 50
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna",
+     "continuidad": true
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 78,
+      "y": 52
+     },
+     "tamano": 30,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "a",
+     "tipo": "titulo",
+     "texto": "Soluciones,",
+     "area": "libre",
+     "pos": {
+      "x": 24,
+      "y": 14,
+      "w": 56
+     },
+     "paso": 0,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "izq",
+     "enfasis": true,
+     "nivel": 1
+    },
+    {
+     "id": "b",
+     "tipo": "titulo",
+     "texto": "==no problemas.==",
+     "area": "libre",
+     "pos": {
+      "x": 20,
+      "y": 46,
+      "w": 64
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "llave",
+     "desde": "der",
+     "enfasis": true,
+     "nivel": 1
+    }
+   ]
+  },
+  {
+   "id": "v2-problema",
+   "titulo": "Problema: ¿a quién llamo?",
+   "disposicion": "centro",
+   "paleta": "problema",
+   "duracion": 22,
+   "pasos": 4,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "El problema en boca del vecino, con las alternativas reales, incluida 'no hacer nada' (PDF B p.17).",
+   "guion": "Se rompe algo. ¿A quién llamás? Le preguntás a un conocido. Buscás en el grupo del barrio. O lo dejás para después… hasta que empeora.",
+   "notas": "PDF B pp.13–14 y 17: convivir con el problema también es una alternativa y tiene costo. No cuantificado: no inventar cifras. Las 70 charlas son exploratorias.",
+   "lectura": "Ante un arreglo, el vecino pregunta a conocidos, busca en grupos del barrio o lo posterga. Postergar también es una alternativa, con costo: el daño empeora.",
+   "referencias": [
+    "CHARLAS-CALLE",
+    "pdf:B-13",
+    "pdf:B-17"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "¿Se rompió algo ==en casa?==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 10,
+      "w": 60
+     },
+     "entrada": "palabras"
+    },
+    {
+     "id": "grifo",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "area": "libre",
+     "pos": {
+      "x": 70,
+      "y": 8
+     },
+     "tamano": 40,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 4,
+      "y": 60
+     },
+     "tamano": 28,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "entrar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c1",
+     "tipo": "texto",
+     "texto": "Le pregunto a un conocido",
+     "area": "libre",
+     "pos": {
+      "x": 24,
+      "y": 46,
+      "w": 40
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "izq",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c2",
+     "tipo": "texto",
+     "texto": "Busco en el grupo del barrio",
+     "area": "libre",
+     "pos": {
+      "x": 30,
+      "y": 60,
+      "w": 40
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "izq",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c3",
+     "tipo": "texto",
+     "texto": "Lo dejo para después… y empeora",
+     "area": "libre",
+     "pos": {
+      "x": 36,
+      "y": 74,
+      "w": 44
+     },
+     "paso": 3,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "izq",
+     "enfasis": true,
+     "tamano": "m"
+    }
+   ]
+  },
+  {
+   "id": "v2-propuesta",
+   "titulo": "Propuesta de valor por lado",
+   "disposicion": "dividido",
+   "paleta": "encuentro",
+   "duracion": 22,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "continuidad",
+   "objetivo": "Una propuesta para cada lado, escrita como resultado y no como producto (PDF B pp.15–16).",
+   "guion": "Para el vecino: conseguís a alguien de la zona y ves el precio antes de confirmar. Para el especialista: te llegan pedidos cerca, ponés tu precio y cobrás directo en tu cuenta.",
+   "notas": "Copy aprobado de la landing (MKT-11). Para quién / qué problema / qué resultado / por qué nosotros (B p.15).",
+   "lectura": "Para el vecino: conseguir a alguien de la zona y ver el precio antes de confirmar. Para el especialista: pedidos cerca, con su propio precio, y cobro directo en su cuenta.",
+   "referencias": [
+    "pdf:B-15",
+    "pdf:B-16"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Un resultado ==para cada lado==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 4,
+      "y": 58
+     },
+     "tamano": 28,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna",
+     "continuidad": true
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 78,
+      "y": 56
+     },
+     "tamano": 28,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "entrar",
+       "hacia": "izq"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "u",
+     "tipo": "texto",
+     "texto": "**Vecino:** conseguís a alguien de la zona y ves el precio ==antes de confirmar.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 26,
+      "w": 42
+     },
+     "paso": 0,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "izq",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "e",
+     "tipo": "texto",
+     "texto": "**Especialista:** te llegan pedidos cerca, ponés ==tu precio== y cobrás directo.",
+     "area": "libre",
+     "pos": {
+      "x": 52,
+      "y": 26,
+      "w": 42
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "llave",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "fundido",
+     "texto": "La plata va directo al especialista: Handyx retiene solo su tarifa."
+    }
+   ]
+  },
+  {
+   "id": "v2-app-usuario",
+   "titulo": "La app del ==vecino==",
+   "disposicion": "izquierda",
+   "paleta": "solucion",
+   "duracion": 30,
+   "pasos": 5,
+   "clasificacion": "demo",
+   "transicion": "deslizar",
+   "objetivo": "Mostrar la app real (prototipo con datos de prueba) paso a paso, con el personaje señalando cada momento.",
+   "guion": "Así lo vive el vecino: desde el inicio elige el rubro y cuenta qué pasó, compara las propuestas con su precio, habla con el especialista por el chat y paga directo, sin pasar por Handyx.",
+   "notas": "Son capturas reales del prototipo en modo de prueba (banner 'Datos de prueba'). No es uso real ni la app publicada.",
+   "lectura": "Recorrido del vecino en el prototipo de la app (datos de prueba): pedido, propuestas comparables, seguimiento y pago directo al especialista.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "La app del ==vecino==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "izquierda",
+     "items": [
+      {
+       "texto": "Ves tus pedidos y los seis rubros",
+       "paso": 0
+      },
+      {
+       "texto": "Elegís el rubro y contás qué pasó",
+       "paso": 1
+      },
+      {
+       "texto": "Comparás propuestas con su precio",
+       "paso": 2
+      },
+      {
+       "texto": "Hablás con el especialista por el chat",
+       "paso": 3
+      },
+      {
+       "texto": "Pagás directo, sin pasar por Handyx",
+       "paso": 4
+      }
+     ]
+    },
+    {
+     "id": "tel",
+     "tipo": "telefono",
+     "area": "derecha",
+     "alto": 64,
+     "entrada": "subir",
+     "pantallas": [
+      {
+       "recurso": "cap-usuario-inicio",
+       "paso": 0,
+       "alt": "Inicio de la app del vecino"
+      },
+      {
+       "recurso": "cap-usuario-pedido",
+       "paso": 1,
+       "alt": "Nuevo pedido"
+      },
+      {
+       "recurso": "cap-usuario-propuestas",
+       "paso": 2,
+       "alt": "Propuestas recibidas"
+      },
+      {
+       "recurso": "cap-usuario-chat",
+       "paso": 3,
+       "alt": "Chat con el especialista"
+      },
+      {
+       "recurso": "cap-usuario-pago",
+       "paso": 4,
+       "alt": "Pago al especialista"
+      }
+     ],
+     "leyenda": "Capturas del prototipo · datos de prueba · app prevista para el {{LANZAMIENTO}}"
+    },
+    {
+     "id": "pj",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 54,
+      "y": 64
+     },
+     "tamano": 17,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 1,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 2,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 3,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 4,
+       "accion": "festejar",
+       "hacia": "der"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "v2-app-especialista",
+   "titulo": "La app del ==especialista==",
+   "disposicion": "izquierda",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 5,
+   "clasificacion": "demo",
+   "transicion": "deslizar",
+   "objetivo": "Mostrar la app real (prototipo con datos de prueba) paso a paso, con el personaje señalando cada momento.",
+   "guion": "Y del otro lado: el especialista prende su disponibilidad, recibe un pedido cerca, pone su precio, lo agenda y cobra en su cuenta.",
+   "notas": "Capturas reales del prototipo en modo de prueba. El especialista no está obligado a aceptar ni recibe asignaciones.",
+   "lectura": "Recorrido del especialista en el prototipo (datos de prueba): disponibilidad, pedido, presupuesto con su precio, agenda y cobro.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "La app del ==especialista==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "izquierda",
+     "items": [
+      {
+       "texto": "Prendés tu disponibilidad",
+       "paso": 0
+      },
+      {
+       "texto": "Te llega un pedido cerca",
+       "paso": 1
+      },
+      {
+       "texto": "Ponés tu precio",
+       "paso": 2
+      },
+      {
+       "texto": "Lo agendás",
+       "paso": 3
+      },
+      {
+       "texto": "Cobrás en tu cuenta",
+       "paso": 4
+      }
+     ]
+    },
+    {
+     "id": "tel",
+     "tipo": "telefono",
+     "area": "derecha",
+     "alto": 64,
+     "entrada": "subir",
+     "pantallas": [
+      {
+       "recurso": "cap-especialista-inicio",
+       "paso": 0,
+       "alt": "Inicio del especialista con disponibilidad"
+      },
+      {
+       "recurso": "cap-especialista-pedido",
+       "paso": 1,
+       "alt": "Pedido disponible"
+      },
+      {
+       "recurso": "cap-especialista-presupuesto",
+       "paso": 2,
+       "alt": "Presupuesto con su precio"
+      },
+      {
+       "recurso": "cap-especialista-agenda",
+       "paso": 3,
+       "alt": "Agenda"
+      },
+      {
+       "recurso": "cap-especialista-cobro",
+       "paso": 4,
+       "alt": "Cobro y tarifa"
+      }
+     ],
+     "leyenda": "Capturas del prototipo · datos de prueba · app prevista para el {{LANZAMIENTO}}"
+    },
+    {
+     "id": "pj",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 54,
+      "y": 64
+     },
+     "tamano": 17,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 1,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 2,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 3,
+       "accion": "senalar",
+       "hacia": "der"
+      },
+      {
+       "paso": 4,
+       "accion": "festejar",
+       "hacia": "der"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "v2-marca",
+   "titulo": "Marca: quiénes somos",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 25,
+   "pasos": 5,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar qué es marca: quiénes somos con ejemplos de Handyx, traídos por un personaje.",
+   "guion": "Marca es quiénes somos y cómo nos reconocen: los Handys, un personaje por rubro; la frase 'Soluciones, no problemas'; y una forma de hablar: voseo, precios en pesos y ninguna promesa de inmediatez. No se compra con una campaña: se construye siendo consistentes.",
+   "notas": "Reglas de lenguaje de la landing (CLAUDE.md). La marca no se mide en ventas directas: se cuida con consistencia.",
+   "lectura": "Marca: identidad y promesa (los Handys, 'Soluciones, no problemas', tono rioplatense, sin promesas de inmediatez). Se construye con consistencia en todas las piezas.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "==Marca==: quiénes somos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 62
+     },
+     "entrada": "mascara"
+    },
+    {
+     "id": "q",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 25,
+      "w": 60
+     },
+     "texto": "La pregunta: **¿cómo nos reconocen y qué prometemos?**",
+     "entrada": "subir"
+    },
+    {
+     "id": "pj",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 74,
+      "y": 30
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar",
+       "hacia": "izq"
+      },
+      {
+       "paso": 1,
+       "accion": "saludar"
+      },
+      {
+       "paso": 2,
+       "accion": "saludar"
+      },
+      {
+       "paso": 3,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c0",
+     "tipo": "texto",
+     "texto": "Los Handys: un personaje por rubro",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 40,
+      "w": 62
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c1",
+     "tipo": "texto",
+     "texto": "«Soluciones, no problemas»",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 54,
+      "w": 62
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c2",
+     "tipo": "texto",
+     "texto": "Voseo, precios en pesos, nada de «al instante»",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 68,
+      "w": 62
+     },
+     "paso": 3,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "z",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 86,
+      "w": 70
+     },
+     "paso": 4,
+     "entrada": "fundido",
+     "texto": "Se construye con consistencia: cada pieza dice lo mismo."
+    }
+   ]
+  },
+  {
+   "id": "v2-marketing",
+   "titulo": "Marketing: cómo llegamos",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 25,
+   "pasos": 5,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar qué es marketing: cómo llegamos con ejemplos de Handyx, traídos por un personaje.",
+   "guion": "Marketing es cómo llegamos a la gente y la convencemos de probar: un volante por barrio con su propio QR, comercios del hogar que derivan pedidos, videos cortos y búsqueda local. Y se mide en pedidos y en costo por trabajo, no en me gusta.",
+   "notas": "Estrategia prevista (docs/handyx/growth.md). Ningún canal tiene resultados medidos al corte. Solo es 'aliado' un comercio que aceptó.",
+   "lectura": "Marketing: canales para que vecinos y especialistas de la misma zona prueben (volantes por barrio con QR propio, comercios, videos cortos, búsqueda local). Métrica: pedidos y costo por trabajo completado.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "==Marketing==: cómo llegamos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 62
+     },
+     "entrada": "mascara"
+    },
+    {
+     "id": "q",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 25,
+      "w": 60
+     },
+     "texto": "La pregunta: **¿cómo hacemos que la gente pruebe?**",
+     "entrada": "subir"
+    },
+    {
+     "id": "pj",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 74,
+      "y": 30
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar",
+       "hacia": "izq"
+      },
+      {
+       "paso": 1,
+       "accion": "saludar"
+      },
+      {
+       "paso": 2,
+       "accion": "saludar"
+      },
+      {
+       "paso": 3,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c0",
+     "tipo": "texto",
+     "texto": "Volante por barrio con su propio QR",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 40,
+      "w": 62
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c1",
+     "tipo": "texto",
+     "texto": "Comercios del hogar que derivan pedidos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 54,
+      "w": 62
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c2",
+     "tipo": "texto",
+     "texto": "Videos cortos y búsqueda local",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 68,
+      "w": 62
+     },
+     "paso": 3,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "z",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 86,
+      "w": 70
+     },
+     "paso": 4,
+     "entrada": "fundido",
+     "texto": "Se mide en pedidos y costo por trabajo, no en «me gusta»."
+    }
+   ]
+  },
+  {
+   "id": "v2-gamificacion",
+   "titulo": "Gamificación: reglas que premian",
+   "disposicion": "centro",
+   "paleta": "solucion",
+   "duracion": 25,
+   "pasos": 5,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Explicar qué es gamificación: reglas que premian con ejemplos de Handyx, traídos por un personaje.",
+   "guion": "Gamificación son reglas dentro del producto que premian lo que queremos que pase. Hoy hay una: la camada fundadora, cincuenta lugares al cinco por ciento. Las insignias y el beneficio por recomendar son propuestas, con costo y control de abuso. Y van después del mínimo: primero validamos que la gente pide y vuelve.",
+   "notas": "Contexto Handy §4: gamificación espera la validación del mínimo. Insignias y beneficio por recomendar = PROPUESTAS, no implementadas ni aprobadas.",
+   "lectura": "Gamificación: mecánicas dentro de la app que premian conductas (repetir, calificar, recomendar). Existente: camada fundadora (50 lugares al 5 %, duración pendiente). Propuestas sin implementar: insignias y beneficio por recomendar. Contexto Handy deja la gamificación para después de validar el mínimo.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "==Gamificación==: reglas que premian",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 62
+     },
+     "entrada": "mascara"
+    },
+    {
+     "id": "q",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 25,
+      "w": 60
+     },
+     "texto": "La pregunta: **¿qué hacemos para que vuelvan y recomienden?**",
+     "entrada": "subir"
+    },
+    {
+     "id": "pj",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "area": "libre",
+     "pos": {
+      "x": 74,
+      "y": 30
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar",
+       "hacia": "izq"
+      },
+      {
+       "paso": 1,
+       "accion": "saludar"
+      },
+      {
+       "paso": 2,
+       "accion": "saludar"
+      },
+      {
+       "paso": 3,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c0",
+     "tipo": "texto",
+     "texto": "Camada fundadora: {{FUNDADORES-CUPO}} lugares al {{TARIFA-FUNDADORES}}",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 38,
+      "w": 62
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c1",
+     "tipo": "texto",
+     "texto": "Insignias por trabajos bien calificados (propuesta)",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 54,
+      "w": 62
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "c2",
+     "tipo": "texto",
+     "texto": "Beneficio por recomendar, con control de abuso (propuesta)",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 70,
+      "w": 62
+     },
+     "paso": 3,
+     "entrada": "traer",
+     "traidoPor": "pj",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "z",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 86,
+      "w": 70
+     },
+     "paso": 4,
+     "entrada": "fundido",
+     "texto": "Va después del mínimo: primero validamos que la gente pide y vuelve."
+    }
+   ]
+  },
+  {
+   "id": "v2-diferencia",
+   "titulo": "Marca, marketing y gamificación: la diferencia",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 25,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Sintetizar las tres en una tabla: qué es, qué pregunta responde, dónde vive y cómo se mide.",
+   "guion": "En resumen: la marca es quiénes somos; el marketing es cómo llegamos; la gamificación es cómo hacemos que vuelvan. Las tres se miden distinto.",
+   "notas": "Si preguntan cuál va primero: marketing local medible (el cuello de botella es la demanda), marca siempre, gamificación después de validar.",
+   "lectura": "Marca: identidad y promesa; se cuida con consistencia. Marketing: canales para que la gente pruebe; se mide en pedidos y costo por trabajo. Gamificación: reglas dentro del producto para que vuelvan y recomienden; se mide en repetición y recomendaciones.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Tres cosas distintas",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "entrada": "subir",
+     "columnas": [
+      "",
+      "Marca",
+      "Marketing",
+      "Gamificación"
+     ],
+     "filas": [
+      [
+       "Qué es",
+       "Quiénes somos y cómo nos reconocen",
+       "Cómo llegamos y hacemos probar",
+       "Reglas en la app que premian conductas"
+      ],
+      [
+       "Pregunta",
+       "¿Nos recuerdan y nos creen?",
+       "¿Prueban?",
+       "¿Vuelven y recomiendan?"
+      ],
+      [
+       "Dónde vive",
+       "En todas las piezas",
+       "Fuera de la app: calle, redes, comercios",
+       "Dentro de la app"
+      ],
+      [
+       "Cómo se mide",
+       "Consistencia y reconocimiento",
+       "Pedidos y costo por trabajo",
+       "Repetición y recomendaciones"
+      ],
+      [
+       "Estado en Handyx",
+       "Definida (landing aprobada)",
+       "Prevista desde el {{LANZAMIENTO}}",
+       "Fundadores; resto después del mínimo"
+      ]
+     ]
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 70,
+      "y": 2
+     },
+     "tamano": 14,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 79,
+      "y": 2
+     },
+     "tamano": 14,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "g",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "area": "libre",
+     "pos": {
+      "x": 88,
+      "y": 3
+     },
+     "tamano": 13,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "v2-escalera",
+   "titulo": "Escalera de validación",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 25,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar con honestidad dónde está cada lado en la escalera de validación del cliente (PDF A p.16).",
+   "guion": "Una opinión positiva suma; una acción valida mucho más. Los especialistas ya dieron el tercer paso: se anotaron para probar. Lo que viene es que lo usen, paguen, se queden y lo recomienden. Del lado de los vecinos, todavía no tenemos el dato al corte.",
+   "notas": "PDF A p.15–16. 56 registrados = peldaño 3 (dispuestos a probar). Vecinos: sin corte de lista de espera → no afirmar peldaño.",
+   "lectura": "Escalera de validación (PDF A p.16): entender, importar, probar, usar, pagar, quedarse, recomendar. Los especialistas registrados están en el tercer peldaño; los siguientes se miden desde el lanzamiento.",
+   "referencias": [
+    "ESP-REGISTRADOS",
+    "pdf:A-15",
+    "pdf:A-16"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Una acción ==valida más== que una opinión",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "escalera",
+     "area": "centro",
+     "items": [
+      {
+       "texto": "Entiendo qué me resolvés"
+      },
+      {
+       "texto": "El problema me importa"
+      },
+      {
+       "texto": "Estoy dispuesto a probar"
+      },
+      {
+       "texto": "Lo uso y me genera valor",
+       "paso": 1
+      },
+      {
+       "texto": "Pago",
+       "paso": 1
+      },
+      {
+       "texto": "Me quedo",
+       "paso": 1
+      },
+      {
+       "texto": "Lo recomiendo",
+       "paso": 1
+      }
+     ]
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 33,
+      "y": 30
+     },
+     "tamano": 18,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "Especialistas: {{ESP-REGISTRADOS}} en el peldaño 3. Vecinos: sin dato al corte. Del 4 al 7 se mide desde el {{LANZAMIENTO}}."
+    }
+   ]
+  },
+  {
+   "id": "v2-proyecciones",
+   "titulo": "Proyecciones",
+   "disposicion": "dividido",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar escenarios y la cifra que ordena el plan (equilibrio), traídos por los personajes, siempre rotulados.",
+   "guion": "Proyectamos tres escenarios para el piloto y los doce meses siguientes. En todos, el límite es la demanda, no la oferta. Con costos fijos supuestos, cubrir la operación pide unos 49 trabajos por mes. Por eso el plan pone el marketing local primero.",
+   "notas": "Mismas cifras que el pitch institucional (misma base de afirmaciones). Todo proyección con supuestos (docs/handyx/escenarios.md). PDF C p.47: no basar unit economics en mejoras futuras sin datos.",
+   "lectura": "Escenarios conservador, base y expansión: entre ≈ 220 y ≈ 1.760 trabajos en 13 meses; el límite es la demanda. Equilibrio con costos fijos supuestos sin sueldos: ≈ 49 trabajos por mes.",
+   "referencias": [
+    "PROY-TRABAJOS-CONSERVADOR",
+    "PROY-TRABAJOS-BASE",
+    "PROY-TRABAJOS-EXPANSION",
+    "PROY-EQUILIBRIO",
+    "pdf:C-47"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Proyección: ==la demanda manda==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "g",
+     "tipo": "grafico",
+     "forma": "barras",
+     "area": "izquierda",
+     "titulo": "Trabajos en 13 meses",
+     "rotulo": "Escenarios ilustrativos",
+     "series": [
+      {
+       "etiqueta": "Conservador",
+       "afirmacion": "PROY-TRABAJOS-CONSERVADOR"
+      },
+      {
+       "etiqueta": "Base",
+       "afirmacion": "PROY-TRABAJOS-BASE"
+      },
+      {
+       "etiqueta": "Expansión",
+       "afirmacion": "PROY-TRABAJOS-EXPANSION"
+      }
+     ]
+    },
+    {
+     "id": "eng",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "area": "libre",
+     "pos": {
+      "x": 82,
+      "y": 56
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "entrar",
+       "hacia": "izq"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "PROY-EQUILIBRIO",
+     "leyenda": "trabajos por mes para cubrir costos fijos",
+     "detalle": "Costos fijos supuestos, sin sueldos.",
+     "area": "derecha",
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "eng",
+     "desde": "der"
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "En los tres escenarios el límite es la ==demanda==: el plan empieza por marketing local medible."
+    }
+   ]
+  },
+  {
+   "id": "v2-anuncio",
+   "titulo": "Publicidad 30 s",
+   "disposicion": "centro",
+   "paleta": "cierre",
+   "duracion": 34,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar una pieza de campaña real (animación con pantallas del prototipo), rotulada como publicidad prevista.",
+   "guion": "Así va a sonar Handyx en redes desde el lanzamiento.",
+   "notas": "Activar audio en ESTA computadora antes. Arranca solo al entrar. Pieza de kinetic-studio actualizada a Handyx (marca, 10/11, tarifa vigente). Es una publicidad, no evidencia de uso.",
+   "lectura": "Publicidad de 30 segundos para redes (16:9 y 9:16), animada con las pantallas del prototipo. Comunica el lanzamiento previsto; no es evidencia de uso.",
+   "elementos": [
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Publicidad · campaña prevista desde el {{LANZAMIENTO}}",
+     "area": "arriba"
+    },
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "anuncio-16x9",
+     "poster": "anuncio-16x9-poster",
+     "alt": "Publicidad de Handyx de 30 segundos",
+     "sonido": true,
+     "auto": true,
+     "area": "centro"
+    }
+   ]
+  },
+  {
+   "id": "v2-pedido",
+   "titulo": "Qué pedimos",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "Pedido concreto, traído por los personajes: contactos, mentoría y apoyo para el piloto.",
+   "guion": "¿Qué necesitamos? Contactos con comercios del hogar. Mentoría en operaciones y finanzas. Y apoyo para el piloto: entre 3 y 6 millones de pesos para sostener la operación, sin sueldos.",
+   "notas": "Monto e instrumento: decisión pendiente de Ignacio (FUND-03). Sin valuación ni equity.",
+   "lectura": "Pedimos contactos con comercios del hogar, mentoría en operaciones y finanzas, y apoyo para financiar el piloto (rango propuesto de $ 3 a 6 millones, sin sueldos).",
+   "referencias": [
+    "PEDIDO-RANGO"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Lo que ==necesitamos==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 70
+     },
+     "entrada": "mascara"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 80,
+      "y": 56
+     },
+     "tamano": 24,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar",
+       "hacia": "izq"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "p1",
+     "tipo": "texto",
+     "texto": "**Contactos** con comercios del hogar",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 28,
+      "w": 64
+     },
+     "paso": 0,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "p2",
+     "tipo": "texto",
+     "texto": "**Mentoría** en operaciones y finanzas",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 46,
+      "w": 64
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    },
+    {
+     "id": "p3",
+     "tipo": "texto",
+     "texto": "**Apoyo al piloto**: rango propuesto {{PEDIDO-RANGO}}, sin sueldos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 64,
+      "w": 64
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "foco",
+     "desde": "der",
+     "enfasis": true,
+     "tamano": "m"
+    }
+   ]
+  },
+  {
+   "id": "v2-cierre",
+   "titulo": "Cierre con QR",
+   "disposicion": "dividido",
+   "paleta": "cierre",
+   "duracion": 12,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "corte",
+   "objetivo": "Cerrar con la marca y dos QR públicos.",
+   "guion": "Handyx: soluciones, no problemas. Escaneá el que te toca. Gracias.",
+   "notas": "QR públicos (no el de control). Destinos provisorios hasta confirmar el formulario.",
+   "lectura": "Registro: landing.handyc.com/registro.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "Soluciones, ==no problemas.==",
+     "area": "arriba",
+     "entrada": "palabras"
+    },
+    {
+     "id": "qa",
+     "tipo": "qr",
+     "qr": "registro-usuarios",
+     "area": "izquierda",
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "qb",
+     "tipo": "qr",
+     "qr": "registro-especialistas",
+     "area": "derecha",
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 66,
+      "y": 3
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna",
+     "continuidad": true
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 80,
+      "y": 2
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "v2-trailer-usuario",
+   "titulo": "Anexo · Trailer vecino (70 s)",
+   "disposicion": "centro",
+   "paleta": "cierre",
+   "duracion": 75,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "objetivo": "Trailer del vecino con pantallas de la demo.",
+   "guion": "",
+   "notas": "Arranca solo. Animación de la demo, no uso real.",
+   "lectura": "Trailer de 70 s del recorrido del vecino.",
+   "elementos": [
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Trailer · animación de la demo",
+     "area": "arriba"
+    },
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "trailer-usuario",
+     "poster": "trailer-usuario-poster",
+     "alt": "Trailer de la app del vecino",
+     "sonido": true,
+     "auto": true,
+     "area": "centro"
+    }
+   ]
+  },
+  {
+   "id": "v2-trailer-especialista",
+   "titulo": "Anexo · Trailer especialista (70 s)",
+   "disposicion": "centro",
+   "paleta": "cierre",
+   "duracion": 75,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "objetivo": "Trailer del especialista con pantallas de la demo.",
+   "guion": "",
+   "notas": "Arranca solo. Animación de la demo, no uso real.",
+   "lectura": "Trailer de 70 s del recorrido del especialista.",
+   "elementos": [
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Trailer · animación de la demo",
+     "area": "arriba"
+    },
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "trailer-especialista",
+     "poster": "trailer-especialista-poster",
+     "alt": "Trailer de la app del especialista",
+     "sonido": true,
+     "auto": true,
+     "area": "centro"
+    }
+   ]
+  },
+  {
+   "id": "v2-anuncio-vertical",
+   "titulo": "Anexo · Publicidad vertical (9:16)",
+   "disposicion": "dividido",
+   "paleta": "cierre",
+   "duracion": 34,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "objetivo": "La misma pieza en formato vertical para Reels/TikTok.",
+   "guion": "",
+   "notas": "Arranca solo.",
+   "lectura": "Publicidad vertical de 30 s para historias y reels.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "La misma pieza, ==en vertical==",
+     "area": "izquierda"
+    },
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "anuncio-9x16",
+     "poster": "anuncio-9x16-poster",
+     "alt": "Publicidad vertical de Handyx",
+     "sonido": true,
+     "auto": true,
+     "area": "derecha"
+    }
+   ]
+  }
+ ]
+}

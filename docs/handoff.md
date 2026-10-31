@@ -50,3 +50,19 @@ Modelo recomendado: Sonnet 5.5 / Alto. Pase: "Retomá presentations-studio desde
 ## Pase a Notion (preparado, no publicado)
 TECH-37 sigue ⚪ Pendiente (no se cierra por esta sesión): motor implementado y probado en local, ensayo real pendiente.
 Registrar en Bloque 6: dirección "núcleo reutilizable" (CO-PITCH-20261031) aplicada; hallazgo MET-01 vs. mes sin tarifa para Metrics/Business.
+
+## Actualización 31/10 (tarde) · PDF, hub, v2 comercial, capturas y publicidades
+- **PDF de ATICMA** leídos completos; las páginas del prompt coinciden con los originales. Matriz reescrita con títulos y autores
+  reales. Cambios de contenido en el v1 (contenido, no estética): "o no hacer nada" (B p.17), propuesta como resultado (B p.16),
+  "¿lo usan, vuelven, pagan?" (A p.10), escenas nuevas **etapa** (A p.9, C pp.15–16) y **anexo escalera** (A p.16), notas con
+  señales rojas de unit economics (C p.47) y MRR no aplicable (C p.30).
+- **Hub** (`/`): elige presentación y versión con miniatura viva. Grupos Handyx, Eclipse y Pruebas del motor.
+- **Handyx v2 comercial** (`decks/handyx-v2`, `datosDe: handyx` → mismas cifras): los Handys traen cada idea (entrada `traer`),
+  app real en teléfono (elemento `telefono`), marca vs. marketing vs. gamificación + tabla, escalera de validación, proyecciones,
+  publicidad 30 s (arranca sola), pedido y QR. Versiones: comercial (≈ 5 min), marca-marketing (2 min), reel de anuncios.
+- **Publicidades** re-renderizadas: `brands/handyx/assets/video/anuncio-16x9.mp4` y `anuncio-9x16.mp4` (30 s, H.264+AAC).
+  No se escucharon con audio ni se probaron en Safari/teléfono.
+- **Capturas reales**: 20 en `brands/handyx/assets/capturas/` (`capturas.json`). Faltantes: desglose mano de obra/materiales
+  (la app no lo tiene), mapa en vivo (no existe).
+- Verificado: `npm run verify` (55 pruebas, 4 decks) y `npm run e2e` 19/19 (incluye hub y recorrido del v2).
+- Roadmap completo por lote: `docs/plan-fases.md` (34 lotes con entrada, entregables, dependencia, horas y salida).
