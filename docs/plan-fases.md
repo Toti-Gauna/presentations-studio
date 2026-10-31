@@ -28,6 +28,7 @@ Horas = tiempo humano estimado de Ignacio (revisión, decisiones, pruebas físic
 |  | 6.3 | Sonnet / Alto | 6.2 | Integración, duración, accesibilidad, performance | — | 6.2 | — | ATICMA 180 s exactos | ✅ |
 |  | 6.4 | Sonnet / Alto | 6.3, PDF | Pitch v2 comercial: personajes que traen cada idea, marca vs. marketing vs. gamificación, escalera de validación, proyecciones; hub de selección | decks/handyx-v2, hub (index) | 6.3 | 0,5 h | Misma base de datos que v1 (datosDe); validar en verde | ✅ |
 |  | 6.5 | Sonnet / Alto | 6.4 | Capturas reales del prototipo en teléfono; publicidades kinetic-studio re-renderizadas con Handyx/10-11/tarifa vigente | brands/handyx/assets/capturas, video/anuncio-*.mp4 | 6.4 | 0,5 h (mirar videos con audio) | Sin datos personales; sin 'Handy', '28/10' ni '5 %' al cliente | 🟡 ver handoff |
+|  | 6.6 | Opus / Extra alto | Devolución de Ignacio (31/10 noche) | Rehacer el pitch para vender: clips kinetic-studio con música, efectos sintetizados, golpes, confeti, beneficios de la landing, ejemplo $ 45.000 desarmado, datos de los PDF con fuente, ATICMA sin pedido | decks/handyx (h-*), clips/, src/render/sonido.ts | 6.5 | 1 h (escuchar y ensayar) | verify + e2e; revisión visual; escuchar en sala | 🟡 falta escuchar |
 | 7 · Respaldo y ensayo automatizado | 7.1 | Sonnet / Alto | 6.x | Paquete local, PDF diapositivas + PDF de lectura, MP4 | salida/ | 6.5 | — | Paquete extraído anda sin red | ✅ |
 |  | 7.2 | Sonnet / Alto | 7.1 | Ensayo E2E local: doble toque, corte, caída del servidor, sin recursos externos | e2e/recorrido.ts | 7.1 | — | npm run e2e en verde | ✅ |
 |  | 7.3 | Opus / Extra alto | 7.2 | Tres revisiones (creativa, negocio, escéptica), rúbrica interna, cinco correcciones | revision-excelencia.md | 7.2 | 1 h (persona ajena) | ≥ 90/100 sin fallas críticas (hoy 84) | 🟡 84/100 |
@@ -41,7 +42,7 @@ Horas = tiempo humano estimado de Ignacio (revisión, decisiones, pruebas físic
 |  | 9.3 | Sonnet / Medio | Corte CRM 04/11 | Corte de datos, publicar versión congelada, PDF/MP4 finales, guía de función, tag | decks/handyx/publicadas/… | 9.2 (o 7.x si no hay deploy) | 1 h | Huella publicada visible en el presentador | ⏳ |
 |  | 9.4 | Opus / Alto | 1–3 clientes | Pilotos Eclipse: horas, intervención, fallas, margen | registro de pilotos | 9.3 | según clientes | Decisión de siguiente alcance | ⏳ depende de terceros |
 
-Total: 10 fases, 34 lotes.
+Total: 10 fases, 35 lotes.
 
 **Atajo ATICMA:** si se quiere control por internet el 05/11, correr 9.1–9.2 antes de la Fase 8; nada más cambia.
 
