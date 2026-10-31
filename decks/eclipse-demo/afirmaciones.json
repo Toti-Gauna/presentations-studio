@@ -1,0 +1,4 @@
+[
+  { "id": "CAFES-SEMANA", "descripcion": "Cafés vendidos por semana (dato sintético)", "valor": 840, "unidad": "cafés", "periodo": "semana de prueba", "tipo": "observado", "fuente": "Dato sintético de prueba", "corte": "2026-10-31", "verificacion": "verificado", "uso": "publico", "formato": "entero" },
+  { "id": "META-CAFES", "descripcion": "Meta mensual (sintética)", "valor": 4000, "unidad": "cafés", "periodo": "mes", "tipo": "meta", "fuente": "Dato sintético de prueba", "corte": "2026-10-31", "verificacion": "pendiente", "uso": "publico", "formato": "entero" }
+]

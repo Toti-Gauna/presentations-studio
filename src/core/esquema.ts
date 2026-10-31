@@ -1,4 +1,4 @@
-// Esquema de contenidos del motor (versión 1). Núcleo sin marca: nada de Handyx acá.
+// Esquema de contenidos del motor (versión 1). Núcleo sin marca: nada de ninguna marca acá.
 // Todo deck, tema, QR y afirmación se valida con estos esquemas antes de mostrarse.
 import { z } from 'zod';
 

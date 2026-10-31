@@ -8,7 +8,7 @@ const app = crearApp({
   puerto,
   origenes,
   estaticos: process.env['SERVIR_ESTATICOS'] || undefined,
-  redirecciones: lista(process.env['QR_REDIRECCIONES'] ?? 'decks/handyx/qr.json'),
+  redirecciones: lista(process.env['QR_REDIRECCIONES']),
   version: process.env['RENDER_GIT_COMMIT']?.slice(0, 7) ?? process.env['VERSION'] ?? 'local',
   confiarProxy: process.env['CONFIAR_PROXY'] === 'true',
 });

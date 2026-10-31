@@ -8,7 +8,7 @@ rmSync(dir, { recursive: true, force: true });
 mkdirSync(dir, { recursive: true });
 execFileSync('npx', ['vite', 'build'], { stdio: 'inherit', env: { ...process.env, VITE_BASE: './' } });
 const externos = execFileSync('grep', ['-rhoE', 'https?://[a-zA-Z0-9.-]+', 'dist', '--include=*.js', '--include=*.html', '--include=*.css']).toString().split('\n').filter(Boolean);
-const permitidos = /landing\.handyc\.com|api\.handyc\.com|example\.(com|test)|localhost|www\.w3\.org|greensock|gsap|reactjs|github\.com|mozilla/;
+const permitidos = /servidor-de-sesiones|lacapitalmdp|json-schema\.org|landing\.handyc\.com|api\.handyc\.com|example\.(com|test)|localhost|www\.w3\.org|greensock|gsap|reactjs|github\.com|mozilla/;
 const raros = [...new Set(externos)].filter((u) => !permitidos.test(u));
 if (raros.length) console.warn(`Aviso: URLs externas en el build (revisar que no se carguen en vivo): ${raros.join(', ')}`);
 cpSync('dist', `${dir}/dist`, { recursive: true });

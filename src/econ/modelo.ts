@@ -1,6 +1,6 @@
 // Modelo económico de un marketplace de servicios (genérico: no conoce la marca).
 // Todas las cifras en ARS constantes de la fecha de precios del escenario: no se mezclan monedas.
-// Fórmulas numeradas como en docs/handyx/modelo-economico.md. Desconocido = null, nunca 0 inventado.
+// Fórmulas numeradas como en la documentación del modelo (docs/<deck>/modelo-economico.md). Desconocido = null, nunca 0 inventado.
 
 export interface Vigencia {
   /** Mes del horizonte (1 = primer mes del piloto) desde/hasta, inclusive. */
@@ -21,7 +21,7 @@ export interface Parametros {
   tasaVerificacion: number; // de registrados
   tasaDisponibilidad: number; // de verificados
   altasEspecialistasMes: number; // nuevos verificados+disponibles por mes desde el mes 2
-  trabajosSemanaPorEspecialista: number; // capacidad dedicada a Handyx
+  trabajosSemanaPorEspecialista: number; // capacidad dedicada a la plataforma
   capacidadSoporteMes: number; // trabajos que el equipo puede acompañar por mes
   crecimientoSoporteMes: number; // trabajos adicionales de capacidad por mes (automatización/contratación)
   // Demanda
@@ -54,7 +54,7 @@ export interface Mes {
   pedidos: number;
   demandaAtendible: number;
   trabajos: number; // completados y pagados por el usuario
-  trabajosConTarifa: number; // MET-01 histórico: Handy cobró tarifa > 0
+  trabajosConTarifa: number; // MET-01 histórico: la plataforma cobró tarifa > 0
   limitadoPor: 'demanda' | 'oferta' | 'soporte';
   gmv: number;
   ingresoTarifas: number;

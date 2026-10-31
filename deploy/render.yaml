@@ -1,0 +1,19 @@
+# Blueprint de Render para el servidor de sesiones (proceso persistente con WebSocket).
+# Revisar el plan contratado: un plan que duerme el proceso obliga a "despertarlo" (GET /salud) antes de la función.
+services:
+  - type: web
+    name: presentations-sesiones
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --omit=dev --ignore-scripts
+    startCommand: node server/main.ts
+    healthCheckPath: /salud
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: CONFIAR_PROXY
+        value: "true"
+      - key: QR_REDIRECCIONES
+        value: decks/handyx/qr.json

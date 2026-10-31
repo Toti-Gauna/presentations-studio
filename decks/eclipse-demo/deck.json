@@ -1,0 +1,17 @@
+{
+  "versionEsquema": 1,
+  "id": "eclipse-demo",
+  "titulo": "Café Demo · presentación de prueba de Eclipse",
+  "idioma": "es-AR",
+  "tema": "demo-cafe",
+  "corte": "2026-10-31",
+  "estado": "borrador",
+  "versiones": [ { "id": "corta", "titulo": "Presentación de 1 minuto", "audiencia": "Prueba de segunda marca", "duracionObjetivo": 60, "escenas": ["portada", "propuesta", "numeros", "cierre"] } ],
+  "recursos": [],
+  "escenas": [
+    { "id": "portada", "titulo": "Portada", "paleta": "oscuro", "duracion": 12, "pasos": 1, "clasificacion": "plan", "objetivo": "Probar otra tipografía y paleta sin tocar el núcleo.", "guion": "Café Demo: una marca ficticia.", "elementos": [ { "id": "t", "tipo": "titulo", "texto": "Café ==Demo==", "entrada": "palabras" } ] },
+    { "id": "propuesta", "titulo": "Propuesta", "duracion": 18, "pasos": 3, "clasificacion": "plan", "objetivo": "Lista por pasos.", "guion": "Tres razones.", "elementos": [ { "id": "t", "tipo": "titulo", "nivel": 2, "texto": "Por qué volver", "area": "arriba" }, { "id": "l", "tipo": "lista", "estilo": "mosaicos", "items": [ { "texto": "Tostado local" }, { "texto": "Abre temprano", "paso": 1 }, { "texto": "Mesa para trabajar", "paso": 2 } ] } ] },
+    { "id": "numeros", "titulo": "Números", "duracion": 18, "pasos": 2, "clasificacion": "mixto", "objetivo": "Rótulos automáticos.", "guion": "Un dato y una meta.", "disposicion": "dividido", "elementos": [ { "id": "a", "tipo": "cifra", "afirmacion": "CAFES-SEMANA", "leyenda": "cafés por semana", "area": "izquierda", "entrada": "contar" }, { "id": "b", "tipo": "cifra", "afirmacion": "META-CAFES", "leyenda": "meta mensual", "area": "derecha", "paso": 1, "entrada": "contar" } ] },
+    { "id": "cierre", "titulo": "Cierre", "paleta": "oscuro", "duracion": 12, "pasos": 1, "clasificacion": "plan", "objetivo": "QR propio.", "guion": "Gracias.", "disposicion": "dividido", "elementos": [ { "id": "t", "tipo": "titulo", "nivel": 2, "texto": "Visitanos", "area": "izquierda" }, { "id": "q", "tipo": "qr", "qr": "menu", "area": "derecha" } ] }
+  ]
+}
