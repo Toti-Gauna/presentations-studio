@@ -16,14 +16,17 @@
  "versiones": [
   {
    "id": "comercial",
-   "titulo": "Comercial (≈ 5 min)",
+   "titulo": "Comercial (≈ 6 min)",
    "audiencia": "Comercios aliados, ángeles, público general",
    "duracionObjetivo": 330,
    "tolerancia": 30,
    "escenas": [
+    "v2-espera",
     "v2-portada",
     "v2-problema",
     "v2-propuesta",
+    "v2-anim-vecino",
+    "v2-anim-especialista",
     "v2-app-usuario",
     "v2-app-especialista",
     "v2-marca",
@@ -37,13 +40,13 @@
     "v2-cierre"
    ],
    "duraciones": {
-    "v2-app-usuario": 25,
-    "v2-app-especialista": 25,
-    "v2-marca": 20,
-    "v2-marketing": 20,
-    "v2-gamificacion": 22,
-    "v2-diferencia": 20,
-    "v2-escalera": 20,
+    "v2-app-usuario": 18,
+    "v2-app-especialista": 18,
+    "v2-marca": 18,
+    "v2-marketing": 18,
+    "v2-gamificacion": 20,
+    "v2-diferencia": 18,
+    "v2-escalera": 18,
     "v2-proyecciones": 25,
     "v2-anuncio": 32
    },
@@ -80,8 +83,9 @@
    "titulo": "Reel de publicidades",
    "audiencia": "Mostrar piezas de campaña",
    "duracionObjetivo": 220,
-   "tolerancia": 0,
+   "tolerancia": 3,
    "escenas": [
+    "v2-espera",
     "v2-anuncio",
     "v2-anuncio-vertical",
     "v2-trailer-usuario",
@@ -234,9 +238,290 @@
    "procedencia": "Handy-landing-page-fe/assets/video",
    "licencia": "Propia (Handyx)",
    "estado": "final"
+  },
+  {
+   "id": "clip-a-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/a-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino",
+   "tipo": "video",
+   "archivo": "video/clips/a-vecino.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-vecino-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista",
+   "tipo": "video",
+   "archivo": "video/clips/a-especialista.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-especialista-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final",
+   "tipo": "video",
+   "archivo": "video/clips/a-final.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-final-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada",
+   "tipo": "video",
+   "archivo": "video/clips/u-entrada.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-entrada-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/u-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos",
+   "tipo": "video",
+   "archivo": "video/clips/u-presupuestos.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-presupuestos-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento",
+   "tipo": "video",
+   "archivo": "video/clips/u-seguimiento.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-seguimiento-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/u-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/e-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/e-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido",
+   "tipo": "video",
+   "archivo": "video/clips/e-elegido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-elegido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro",
+   "tipo": "video",
+   "archivo": "video/clips/e-cobro.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-cobro-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/e-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
   }
  ],
  "escenas": [
+  {
+   "id": "v2-espera",
+   "titulo": "Pantalla de espera",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 3,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "corte",
+   "objetivo": "Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido.",
+   "guion": "(En silencio. Avanzar cuando estés listo.)",
+   "notas": "Antes de empezar: un clic o una tecla en la pantalla pública para habilitar el sonido.",
+   "lectura": "Handyx · Mar del Plata.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "Handy==x==",
+     "area": "centro",
+     "entrada": "escala"
+    },
+    {
+     "id": "s",
+     "tipo": "texto",
+     "tamano": "l",
+     "texto": "Soluciones, no problemas · Mar del Plata",
+     "area": "abajo",
+     "entrada": "subir"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 14,
+      "y": 40
+     },
+     "tamano": 30,
+     "acciones": [],
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 70,
+      "y": 38
+     },
+     "tamano": 30,
+     "acciones": [],
+     "entrada": "ninguna"
+    }
+   ]
+  },
   {
    "id": "v2-portada",
    "titulo": "Portada: los Handys traen la marca",
@@ -568,7 +853,7 @@
    "pasos": 5,
    "clasificacion": "demo",
    "transicion": "deslizar",
-   "objetivo": "Mostrar la app real (prototipo con datos de prueba) paso a paso, con el personaje señalando cada momento.",
+   "objetivo": "Mostrar que la app ya existe: capturas reales del prototipo (datos de prueba).",
    "guion": "Así lo vive el vecino: desde el inicio elige el rubro y cuenta qué pasó, compara las propuestas con su precio, habla con el especialista por el chat y paga directo, sin pasar por Handyx.",
    "notas": "Son capturas reales del prototipo en modo de prueba (banner 'Datos de prueba'). No es uso real ni la app publicada.",
    "lectura": "Recorrido del vecino en el prototipo de la app (datos de prueba): pedido, propuestas comparables, seguimiento y pago directo al especialista.",
@@ -698,7 +983,7 @@
    "pasos": 5,
    "clasificacion": "demo",
    "transicion": "deslizar",
-   "objetivo": "Mostrar la app real (prototipo con datos de prueba) paso a paso, con el personaje señalando cada momento.",
+   "objetivo": "Mostrar que la app ya existe: capturas reales del prototipo (datos de prueba).",
    "guion": "Y del otro lado: el especialista prende su disponibilidad, recibe un pedido cerca, pone su precio, lo agenda y cobra en su cuenta.",
    "notas": "Capturas reales del prototipo en modo de prueba. El especialista no está obligado a aceptar ni recibe asignaciones.",
    "lectura": "Recorrido del especialista en el prototipo (datos de prueba): disponibilidad, pedido, presupuesto con su precio, agenda y cobro.",
@@ -1852,6 +2137,116 @@
      "sonido": true,
      "auto": true,
      "area": "derecha"
+    }
+   ]
+  },
+  {
+   "id": "v2-anim-vecino",
+   "titulo": "El vecino, en movimiento",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 36,
+   "pasos": 3,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar la app en movimiento (animación de kinetic-studio con las pantallas de la demo), con música.",
+   "guion": "Pedís lo que necesitás. Llegan los presupuestos, cada uno con su precio, y elegís el tuyo. Y seguís todo desde la app: cuándo sale, el chat, y al final, tu reseña.",
+   "notas": "Paso 1 pedido, paso 2 presupuestos y confirmación, paso 3 seguimiento y reseña. Animación de la demo, no uso real. Cada paso arranca un clip.",
+   "lectura": "Animación del recorrido del vecino: pedido, presupuestos comparables con precio final, seguimiento y reseña.",
+   "elementos": [
+    {
+     "id": "v0",
+     "tipo": "video",
+     "recurso": "clip-u-pedido",
+     "poster": "clip-u-pedido-poster",
+     "alt": "El vecino, en movimiento (1)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v1",
+     "tipo": "video",
+     "recurso": "clip-u-presupuestos",
+     "poster": "clip-u-presupuestos-poster",
+     "alt": "El vecino, en movimiento (2)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    },
+    {
+     "id": "v2",
+     "tipo": "video",
+     "recurso": "clip-u-seguimiento",
+     "poster": "clip-u-seguimiento-poster",
+     "alt": "El vecino, en movimiento (3)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 2,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "v2-anim-especialista",
+   "titulo": "El especialista, en movimiento",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 36,
+   "pasos": 3,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar la app en movimiento (animación de kinetic-studio con las pantallas de la demo), con música.",
+   "guion": "Del otro lado: el especialista trabaja cuando quiere, le llegan pedidos cerca y pone su precio. Lo eligen, habla con el cliente sin dar su número, hace el trabajo y cobra en su CBU o alias.",
+   "notas": "Paso 1 pedido y precio, paso 2 elegido y camino, paso 3 trabajo y cobro. Animación de la demo, no uso real. Cada paso arranca un clip.",
+   "lectura": "Animación del recorrido del especialista: pedidos cerca, su precio, elegido, chat sin compartir teléfono, trabajo y cobro.",
+   "elementos": [
+    {
+     "id": "v0",
+     "tipo": "video",
+     "recurso": "clip-e-pedido",
+     "poster": "clip-e-pedido-poster",
+     "alt": "El especialista, en movimiento (1)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v1",
+     "tipo": "video",
+     "recurso": "clip-e-elegido",
+     "poster": "clip-e-elegido-poster",
+     "alt": "El especialista, en movimiento (2)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    },
+    {
+     "id": "v2",
+     "tipo": "video",
+     "recurso": "clip-e-cobro",
+     "poster": "clip-e-cobro-poster",
+     "alt": "El especialista, en movimiento (3)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 2,
+     "entrada": "fundido"
     }
    ]
   }

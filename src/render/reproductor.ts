@@ -7,6 +7,7 @@ import { posicionMedio } from '../core/estado.ts';
 import { construir, type Contexto } from './elementos.ts';
 import { LineaEscena, type Modo } from './movimiento.ts';
 import { h } from './dom.ts';
+import { sonar } from './sonido.ts';
 
 export function variablesTema(tema: Tema): string {
   const v: string[] = [`--fuente-titulos:${tema.fuentes.titulos}`, `--fuente-texto:${tema.fuentes.texto}`];
@@ -133,6 +134,7 @@ export class Reproductor {
     };
     if (tipo === 'corte') return limpiar();
     const d = this.modo === 'ligero' ? 0.3 : 0.6;
+    if (adelante) sonar('whoosh');
     if (tipo === 'continuidad') this.continuidad(fuera, entra.nodo, d);
     const dx = tipo === 'deslizar' ? (adelante ? 1 : -1) * 120 : 0;
     gsap.fromTo(entra.nodo, { autoAlpha: 0, x: dx }, { autoAlpha: 1, x: 0, duration: d, ease: 'power2.out' });

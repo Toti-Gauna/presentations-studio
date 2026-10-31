@@ -4,6 +4,7 @@
 import { gsap } from 'gsap';
 import type { Accion } from '../core/esquema.ts';
 import { palabras } from './dom.ts';
+import { sonar, type Efecto } from './sonido.ts';
 
 export type Modo = 'completo' | 'ligero' | 'reducido';
 
@@ -13,6 +14,49 @@ interface AccionPaso {
   paso: number;
   accion: Accion;
   hacia?: 'izq' | 'der';
+  distancia?: number;
+}
+
+/** Programa un efecto en la línea de tiempo: suena solo al reproducir hacia adelante (los seek suprimen eventos). */
+function sfx(tl: gsap.core.Timeline, e: Efecto, en: number | string) {
+  tl.call(sonar, [e], en);
+}
+
+/** PRNG determinista (mulberry32) para que el confeti sea idéntico en cada pantalla y en cada repetición. */
+function azar(semilla: number) {
+  let a = semilla >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const COLORES_CONFETI = ['#F5F59A', '#2F6BFF', '#1F57A8', '#F6A623', '#FFFFFF', '#1E9E57'];
+function confeti(pj: HTMLElement, tl: gsap.core.Timeline, en: string, d: number) {
+  let capa = pj.querySelector<HTMLElement>('.confeti');
+  if (!capa) {
+    capa = document.createElement('div');
+    capa.className = 'confeti';
+    const r = azar([...(pj.dataset['personaje'] ?? 'x')].reduce((s, c) => s * 31 + c.charCodeAt(0), 7));
+    for (let i = 0; i < 26; i++) {
+      const p = document.createElement('i');
+      p.style.background = COLORES_CONFETI[i % COLORES_CONFETI.length] as string;
+      p.dataset['dx'] = String((r() - 0.5) * 520);
+      p.dataset['dy'] = String(-120 - r() * 260);
+      p.dataset['rot'] = String((r() - 0.5) * 720);
+      capa.append(p);
+    }
+    pj.append(capa);
+  }
+  const piezas = [...capa.children] as HTMLElement[];
+  piezas.forEach((p, i) => {
+    const dx = Number(p.dataset['dx']);
+    const dy = Number(p.dataset['dy']);
+    tl.fromTo(p, { x: 0, y: 0, rotation: 0, autoAlpha: 1, scale: 1 }, { keyframes: [{ x: dx * 0.6, y: dy, rotation: Number(p.dataset['rot']) / 2, duration: d * 0.7, ease: 'power2.out' }, { x: dx, y: dy + 360, rotation: Number(p.dataset['rot']), autoAlpha: 0, duration: d * 1.4, ease: 'power1.in' }] }, `${en}+=${(i % 5) * 0.02}`);
+  });
 }
 
 function pose(pj: HTMLElement, nombre: string, tl: gsap.core.Timeline, en: number | string) {
@@ -32,6 +76,7 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
       break;
     case 'entrar':
       pose(pj, 'accion', tl, en);
+      sfx(tl, 'whoosh', en);
       tl.fromTo(mov, { x: -520 * dir, opacity: 0 }, { x: 0, opacity: 1, duration: d * 1.6, ease: 'power2.out' }, en);
       if (!ligero) tl.fromTo(mov, { y: 0 }, { y: -14, duration: d * 0.2, yoyo: true, repeat: 7, ease: 'sine.inOut' }, en);
       pose(pj, 'reposo', tl, `${en}+=${d * 1.6}`);
@@ -42,11 +87,14 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
       break;
     case 'saludar':
       pose(pj, 'saludo', tl, en);
+      sfx(tl, 'pop', en);
       if (!ligero) tl.to(mov, { keyframes: [{ rotation: -5 }, { rotation: 5 }, { rotation: -3 }, { rotation: 0 }], duration: d * 1.4, ease: 'sine.inOut' }, en);
       break;
     case 'festejar':
     case 'satisfaccion':
       pose(pj, 'festejo', tl, en);
+      sfx(tl, 'festejo', en);
+      if (!ligero) confeti(pj, tl, en, d);
       if (!ligero) {
         tl.to(mov, { keyframes: [{ y: -46, scaleY: 1.04, duration: d * 0.45, ease: 'power2.out' }, { y: 0, scaleY: 0.96, duration: d * 0.35, ease: 'power2.in' }, { scaleY: 1, duration: d * 0.25 }] }, en);
         if (sombra) tl.to(sombra, { keyframes: [{ scaleX: 0.7, opacity: 0.25, duration: d * 0.45 }, { scaleX: 1, opacity: 0.45, duration: d * 0.35 }] }, en);
@@ -54,7 +102,8 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
       break;
     case 'caminar':
       pose(pj, 'accion', tl, en);
-      tl.to(mov, { x: `+=${140 * dir}`, duration: d * 1.4, ease: 'power1.inOut' }, en);
+      sfx(tl, 'whoosh', en);
+      tl.to(mov, { x: `+=${(a.distancia ?? 140) * dir}`, duration: d * (a.distancia ? 1.4 + a.distancia / 900 : 1.4), ease: 'power1.inOut' }, en);
       if (!ligero) tl.fromTo(mov, { y: 0 }, { y: -10, duration: d * 0.175, yoyo: true, repeat: 7, ease: 'sine.inOut' }, en);
       pose(pj, 'reposo', tl, `${en}+=${d * 1.4}`);
       break;
@@ -72,15 +121,21 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
   }
 }
 
+const contadores = new WeakMap<gsap.core.Timeline, Array<() => void>>();
 function contar(nodo: HTMLElement, tl: gsap.core.Timeline, en: string, d: number) {
   const fin = Number(nodo.dataset['contar']);
   const formato = nodo.dataset['formato'];
   const proxy = { v: 0 };
+  const decimales = Number.isInteger(fin) ? 0 : 1;
   const pintar = () => {
-    const n = Math.round(proxy.v).toLocaleString('es-AR').replace(/ /g, ' ');
-    nodo.textContent = formato === 'ars' ? `$ ${n}` : formato === 'porcentaje' ? `${n} %` : n;
+    const v = formato === 'millones' ? proxy.v / 1e6 : proxy.v;
+    const n = (Math.round(v * 10 ** decimales) / 10 ** decimales).toLocaleString('es-AR').replace(/\s/g, ' ');
+    nodo.textContent = formato === 'ars' ? `$ ${n}` : formato === 'millones' ? `$ ${n} M` : formato === 'porcentaje' ? `${n} %` : n;
   };
+  // Los saltos (seek) suprimen eventos: el número se repinta a mano después de cada seek.
+  contadores.set(tl, [...(contadores.get(tl) ?? []), pintar]);
   tl.fromTo(proxy, { v: 0 }, { v: fin, duration: d * 1.6, ease: 'power2.out', onUpdate: pintar, onComplete: pintar }, en);
+  sfx(tl, 'conteo', en);
 }
 
 function entrada(nodo: HTMLElement, tipo: string, tl: gsap.core.Timeline, en: string, d: number, modo: Modo) {
@@ -95,13 +150,21 @@ function entrada(nodo: HTMLElement, tipo: string, tl: gsap.core.Timeline, en: st
       break;
     case 'escala':
       tl.fromTo(nodo, { autoAlpha: 0, scale: 0.86 }, { autoAlpha: 1, scale: 1, duration: d, ease: 'back.out(1.6)' }, en);
+      sfx(tl, 'pop', en);
       break;
+    case 'golpe': {
+      // Tipografía que pega: entra grande y girada, se asienta con un rebote corto (como los golpes de kinetic-studio).
+      tl.fromTo(nodo, { autoAlpha: 0, scale: 2.6, rotation: -6 }, { autoAlpha: 1, scale: 1, rotation: 0, duration: d * 0.55, ease: 'back.out(2.2)' }, en);
+      sfx(tl, 'golpe', en);
+      break;
+    }
     case 'mascara':
       tl.fromTo(nodo, { autoAlpha: 1, clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: d * 1.2, ease: 'power3.inOut' }, en);
       break;
     case 'palabras': {
       const ps = palabras(nodo);
       tl.set(nodo, { autoAlpha: 1 }, en);
+      ps.forEach((_, i) => sfx(tl, 'tic', `${en}+=${i * 0.09}`));
       tl.fromTo(ps, { autoAlpha: 0, y: 42, rotation: 2 }, { autoAlpha: 1, y: 0, rotation: 0, duration: d, stagger: 0.09, ease: 'power3.out' }, en);
       break;
     }
@@ -146,6 +209,7 @@ function traerPieza(raiz: HTMLElement, nodo: HTMLElement, paso: number, tl: gsap
     pose(pj, 'accion', tl, en);
     tl.fromTo(mov, { x: dx }, { x: 0, duration: dur, ease: 'power2.out' }, en);
     tl.fromTo(nodo, { autoAlpha: 1, x: dx, y: -40, rotation: lado * -5 }, { x: 0, duration: dur, ease: 'power2.out' }, en);
+    sfx(tl, 'whoosh', en);
   } else {
     const dx = (a.left + a.width / 2 - (b.left + b.width / 2)) / k;
     const dy = (a.top + a.height * 0.35 - (b.top + b.height / 2)) / k;
@@ -153,6 +217,7 @@ function traerPieza(raiz: HTMLElement, nodo: HTMLElement, paso: number, tl: gsap
     tl.fromTo(nodo, { autoAlpha: 0, x: dx, y: dy, scale: 0.3, rotation: lado * -8 }, { autoAlpha: 1, x: 0, y: -40, scale: 1, duration: dur * 0.8, ease: 'power2.out' }, en);
   }
   tl.to(nodo, { y: 0, rotation: 0, duration: d * 0.6, ease: 'bounce.out' }, `${en}+=${juntos ? dur : dur * 0.8}`);
+  sfx(tl, 'caida', `${en}+=${juntos ? dur : dur * 0.8}`);
   pose(pj, 'festejo', tl, `${en}+=${juntos ? dur : dur * 0.8}`);
   pose(pj, 'reposo', tl, `${en}+=${(juntos ? dur : dur * 0.8) + d * 1.2}`);
 }
@@ -201,7 +266,7 @@ export class LineaEscena {
     }
     // Ocultar todo lo de pasos futuros en t=0 (inmediateRender de fromTo ya lo hace; esto cubre sets)
     for (const n of nodos) if (Number(n.dataset['paso']) > 0) gsap.set(n, { autoAlpha: 0 });
-    this.tl.seek(0, false);
+    this.tl.seek(0, true);
   }
 
   fin(paso: number): number {
@@ -214,12 +279,18 @@ export class LineaEscena {
     this.tramo = null;
     const destino = this.fin(paso);
     if (!animar) {
-      this.tl.seek(destino, false);
+      this.tl.seek(destino, true);
+      this.repintar();
       return;
     }
     const desde = paso === 0 ? 0 : this.fin(paso - 1);
-    this.tl.seek(desde, false);
+    this.tl.seek(desde, true);
+    this.repintar();
     this.tramo = this.tl.tweenFromTo(desde, destino, { ease: 'none' });
+  }
+
+  private repintar(): void {
+    for (const f of contadores.get(this.tl) ?? []) f();
   }
 
   matar(): void {

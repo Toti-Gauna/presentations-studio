@@ -1,0 +1,1 @@
+Íconos tomados de kinetic-studio/src/handy/icons.ts: casi todos de Lucide (ISC, https://lucide.dev); los marcados "propio" en ese archivo se dibujaron para Handy.

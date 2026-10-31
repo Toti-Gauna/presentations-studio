@@ -94,10 +94,15 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       break;
     }
     case 'lista': {
-      const lista = h(el.estilo === 'numerada' || el.estilo === 'escalera' ? 'ol' : 'ul', { class: `lista lista-${el.estilo}`, style: `--n:${el.items.length}` });
+      const columnas = el.estilo === 'mosaicos' ? `;grid-template-columns:repeat(${el.items.length <= 4 ? el.items.length : 3},minmax(0,1fr))` : '';
+      const lista = h(el.estilo === 'numerada' || el.estilo === 'escalera' ? 'ol' : 'ul', { class: `lista lista-${el.estilo}`, style: `--n:${el.items.length}${columnas}` });
       for (const [i, it] of el.items.entries()) {
         const li = h('li', el.estilo === 'escalera' ? { style: `--h:${Math.round(((i + 1) / el.items.length) * 100)}%` } : {});
-        li.innerHTML = html(it.texto, ctx);
+        const texto = h('span', { class: 'li-texto' });
+        texto.innerHTML = html(it.texto, ctx);
+        li.append(texto);
+        const icono = it.icono ? ctx.url(`iconos/${it.icono}.svg`) : '';
+        if (icono) li.prepend(h('img', { class: 'icono', src: icono, alt: '', 'aria-hidden': 'true' }));
         lista.append(animable(li, it.paso ?? el.paso, el.entrada === 'ninguna' ? 'ninguna' : 'subir'));
         const r = rotulosDe(it.texto, ctx);
         if (r.length) li.append(' ', ...r);
@@ -217,6 +222,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       v.muted = !el.sonido;
       v.dataset['sonido'] = el.sonido ? 'si' : 'no';
       if (el.auto) v.dataset['auto'] = 'si';
+      if (el.cubrir) raiz.classList.add('video-cubre');
       if (src) v.src = src;
       raiz.append(animable(src ? v : h('div', { class: 'faltante' }, `Video pendiente: ${el.alt}`), el.paso, el.entrada));
       break;

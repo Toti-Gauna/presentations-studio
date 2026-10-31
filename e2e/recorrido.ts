@@ -49,12 +49,12 @@ try {
   await presentador.keyboard.press('ArrowRight');
   await presentador.keyboard.press('ArrowRight');
   await publica.waitForTimeout(400);
-  ok('teclado del presentador mueve la pantalla pública', (await escenaPublica()) === 'alternativas', `${await escenaPublica()}`);
+  ok('teclado del presentador mueve la pantalla pública', (await escenaPublica()) === 'h-problema', `${await escenaPublica()}`);
   const htmlPublico = await publica.content();
-  ok('la pantalla pública no contiene notas privadas', !htmlPublico.includes('NUNCA decir') && !htmlPublico.includes('No dar cifras de mercado'));
+  ok('la pantalla pública no contiene notas privadas', !htmlPublico.includes('sin auditar contra el CRM') && !htmlPublico.includes('Activar el sonido en la pantalla pública'));
   await publica.keyboard.press('ArrowLeft');
   await presentador.waitForTimeout(400);
-  ok('teclado/clicker en la pantalla pública también controla', (await presentador.locator('.indice li.actual').textContent())?.includes('1.') ?? false);
+  ok('teclado/clicker en la pantalla pública también controla', (await presentador.locator('.indice li.actual').textContent())?.includes('2.') ?? false);
 
   // 2 · Conectar el control remoto y emparejar un celular (otro contexto = otro dispositivo)
   await presentador.getByRole('button', { name: 'Conectar control remoto' }).click();

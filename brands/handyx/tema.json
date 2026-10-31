@@ -75,6 +75,15 @@
       "superficie": "#1D2C4A",
       "marcador": "#F5F59A",
       "marcadorTinta": "#0E1D36"
+    },
+    "kinetic": {
+      "fondo": "#CFCFCF",
+      "tinta": "#0E1D36",
+      "acento": "#1F57A8",
+      "suave": "#3C4A66",
+      "superficie": "#FFFFFF",
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
     }
   },
   "radios": {

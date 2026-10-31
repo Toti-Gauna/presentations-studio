@@ -14,18 +14,24 @@
    "duracionObjetivo": 180,
    "tolerancia": 0,
    "escenas": [
-    "apertura",
-    "alternativas",
-    "handyx",
-    "recorrido",
-    "evidencia",
-    "piloto",
-    "captacion",
-    "modelo",
+    "h-espera",
+    "h-gancho",
+    "h-problema",
+    "h-marca",
+    "h-vecino",
+    "h-especialista",
+    "h-confianza",
+    "h-traccion",
+    "h-negocio",
+    "h-mercado",
+    "h-plan",
     "equipo",
-    "pedido-aticma",
+    "h-final",
     "cierre"
    ],
+   "duraciones": {
+    "equipo": 14
+   },
    "anexos": [
     "anexo-escalera",
     "anexo-estados",
@@ -44,21 +50,23 @@
    "duracionObjetivo": 60,
    "tolerancia": 0,
    "escenas": [
-    "apertura",
-    "handyx",
-    "evidencia",
-    "pedido-aticma",
+    "h-espera",
+    "h-gancho",
+    "h-marca",
+    "h-vecino",
+    "h-traccion",
+    "h-negocio",
     "cierre"
    ],
    "duraciones": {
-    "apertura": 12,
-    "handyx": 12,
-    "evidencia": 14,
-    "pedido-aticma": 14,
-    "cierre": 8
+    "h-gancho": 5,
+    "h-marca": 6,
+    "h-vecino": 9,
+    "h-traccion": 14,
+    "h-negocio": 13,
+    "cierre": 10
    },
    "anexos": [
-    "anexo-escalera",
     "anexo-estados",
     "anexo-tarifas"
    ]
@@ -70,36 +78,31 @@
    "duracionObjetivo": 360,
    "tolerancia": 30,
    "escenas": [
-    "apertura",
-    "alternativas",
-    "handyx",
-    "recorrido",
-    "evidencia",
+    "h-espera",
+    "h-gancho",
+    "h-problema",
+    "h-marca",
+    "h-vecino-largo",
+    "h-especialista-largo",
+    "h-confianza",
+    "h-traccion",
     "etapa",
     "piloto",
-    "captacion",
-    "growth",
-    "modelo",
+    "h-negocio",
     "escenarios",
+    "h-mercado",
+    "h-plan",
     "equipo",
     "pedido-angel",
+    "h-final",
     "cierre"
    ],
    "duraciones": {
-    "apertura": 20,
-    "alternativas": 25,
-    "handyx": 18,
-    "recorrido": 30,
-    "evidencia": 30,
-    "piloto": 30,
-    "captacion": 25,
-    "growth": 30,
-    "modelo": 35,
-    "escenarios": 25,
-    "equipo": 35,
-    "pedido-angel": 35,
-    "cierre": 15,
-    "etapa": 25
+    "etapa": 22,
+    "piloto": 24,
+    "escenarios": 22,
+    "equipo": 25,
+    "pedido-angel": 30
    },
    "anexos": [
     "anexo-escalera",
@@ -119,38 +122,36 @@
    "duracionObjetivo": 540,
    "tolerancia": 45,
    "escenas": [
-    "apertura",
-    "alternativas",
-    "handyx",
-    "recorrido",
-    "evidencia",
+    "h-espera",
+    "h-gancho",
+    "h-problema",
+    "h-marca",
+    "h-vecino-largo",
+    "h-especialista-largo",
+    "h-confianza",
+    "h-traccion",
     "etapa",
-    "mercado",
+    "h-contexto",
+    "h-mercado",
     "piloto",
-    "captacion",
-    "growth",
-    "modelo",
+    "h-negocio",
     "escenarios",
+    "growth",
+    "h-plan",
     "equipo",
     "pedido-vc",
+    "h-final",
     "cierre"
    ],
    "duraciones": {
-    "apertura": 20,
-    "alternativas": 30,
-    "handyx": 20,
-    "recorrido": 35,
-    "evidencia": 40,
-    "mercado": 45,
-    "piloto": 40,
-    "captacion": 30,
-    "growth": 40,
-    "modelo": 50,
-    "escenarios": 40,
-    "equipo": 45,
-    "pedido-vc": 45,
-    "cierre": 15,
-    "etapa": 30
+    "etapa": 30,
+    "h-mercado": 30,
+    "piloto": 35,
+    "h-negocio": 30,
+    "escenarios": 35,
+    "growth": 35,
+    "equipo": 35,
+    "pedido-vc": 40
    },
    "anexos": [
     "anexo-escalera",
@@ -190,9 +191,290 @@
    "licencia": "Propia (Handyx)",
    "estado": "temporal",
    "respaldo": "Poses estáticas; falta rig articulado (ver docs/handyx/biblia-visual.md)"
+  },
+  {
+   "id": "clip-a-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/a-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino",
+   "tipo": "video",
+   "archivo": "video/clips/a-vecino.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-vecino-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista",
+   "tipo": "video",
+   "archivo": "video/clips/a-especialista.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-especialista-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final",
+   "tipo": "video",
+   "archivo": "video/clips/a-final.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-final-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada",
+   "tipo": "video",
+   "archivo": "video/clips/u-entrada.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-entrada-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/u-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos",
+   "tipo": "video",
+   "archivo": "video/clips/u-presupuestos.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-presupuestos-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento",
+   "tipo": "video",
+   "archivo": "video/clips/u-seguimiento.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-seguimiento-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/u-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/e-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/e-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido",
+   "tipo": "video",
+   "archivo": "video/clips/e-elegido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-elegido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro",
+   "tipo": "video",
+   "archivo": "video/clips/e-cobro.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-cobro-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/e-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
   }
  ],
  "escenas": [
+  {
+   "id": "h-espera",
+   "titulo": "Pantalla de espera",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 3,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "corte",
+   "objetivo": "Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido.",
+   "guion": "(En silencio. Avanzar cuando estés listo.)",
+   "notas": "Antes de empezar: un clic o una tecla en la pantalla pública para habilitar el sonido.",
+   "lectura": "Handyx · Mar del Plata.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "Handy==x==",
+     "area": "centro",
+     "entrada": "escala"
+    },
+    {
+     "id": "s",
+     "tipo": "texto",
+     "tamano": "l",
+     "texto": "Soluciones, no problemas · Mar del Plata",
+     "area": "abajo",
+     "entrada": "subir"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 14,
+      "y": 40
+     },
+     "tamano": 30,
+     "acciones": [],
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 70,
+      "y": 38
+     },
+     "tamano": 30,
+     "acciones": [],
+     "entrada": "ninguna"
+    }
+   ]
+  },
   {
    "id": "apertura",
    "titulo": "Problema: se rompió algo en casa",
@@ -1917,6 +2199,796 @@
        "recomendaciones trazables"
       ]
      ]
+    }
+   ]
+  },
+  {
+   "id": "h-gancho",
+   "titulo": "Gancho: ¿Se rompió algo? ¿Sabés arreglarlo?",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 5,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos.",
+   "guion": "(Dejar correr el clip. Después:) Hay dos personas en esta historia.",
+   "notas": "Activar el sonido en la pantalla pública antes de empezar (un clic o una tecla en ESA ventana). Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Gancho de la campaña: «¿Se rompió algo? ¿Sabés arreglarlo?».",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-a-gancho",
+     "poster": "clip-a-gancho-poster",
+     "alt": "Gancho: ¿Se rompió algo? ¿Sabés arreglarlo?",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "h-problema",
+   "titulo": "Problema en golpes",
+   "disposicion": "centro",
+   "paleta": "problema",
+   "duracion": 18,
+   "pasos": 4,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "El problema de los dos lados, rápido y con ritmo (palabras que golpean).",
+   "guion": "El vecino pregunta en el grupo del barrio. Espera. Nadie confirma. Y del otro lado, un especialista que sabe hacer el trabajo, pero vive del boca en boca.",
+   "notas": "PDF B p.17: también compiten 'no hacer nada' y el grupo de WhatsApp. Problema basado en conversaciones exploratorias (no estadística).",
+   "lectura": "Hoy, conseguir a alguien para un arreglo depende de grupos y conocidos; el especialista, a su vez, depende del boca en boca.",
+   "referencias": [
+    "CHARLAS-CALLE",
+    "pdf:B-17"
+   ],
+   "elementos": [
+    {
+     "id": "grifo",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "area": "libre",
+     "pos": {
+      "x": 70,
+      "y": 10
+     },
+     "tamano": 40,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "g1",
+     "tipo": "titulo",
+     "texto": "Preguntás.",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 14,
+      "w": 60
+     },
+     "entrada": "golpe"
+    },
+    {
+     "id": "g2",
+     "tipo": "titulo",
+     "texto": "Esperás.",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 32,
+      "w": 60
+     },
+     "paso": 1,
+     "entrada": "golpe"
+    },
+    {
+     "id": "g3",
+     "tipo": "titulo",
+     "texto": "==Nadie confirma.==",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 50,
+      "w": 70
+     },
+     "paso": 2,
+     "entrada": "golpe"
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 56
+     },
+     "tamano": 26,
+     "acciones": [
+      {
+       "paso": 3,
+       "accion": "entrar",
+       "hacia": "izq"
+      }
+     ],
+     "paso": 3,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "e",
+     "tipo": "texto",
+     "tamano": "l",
+     "texto": "Y el especialista vive del **boca en boca**.",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 74,
+      "w": 62
+     },
+     "paso": 3,
+     "entrada": "traer",
+     "traidoPor": "llave",
+     "desde": "der",
+     "enfasis": true
+    }
+   ]
+  },
+  {
+   "id": "h-marca",
+   "titulo": "Entran los Handys: Handyx",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 6,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Presentar la marca con los personajes armando el logo (DROP).",
+   "guion": "Esto es Handyx.",
+   "notas": "Momento de energía: no hablar encima del drop. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Los Handys arman el logo de Handyx: Soluciones, no problemas.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-u-entrada",
+     "poster": "clip-u-entrada-poster",
+     "alt": "Entran los Handys: Handyx",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "h-vecino",
+   "titulo": "El vecino: pedí, compará, elegí",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 9,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar el producto del lado del vecino en movimiento.",
+   "guion": "Pedís lo que necesitás, te llegan presupuestos y elegís el tuyo, con el precio a la vista.",
+   "notas": "El especialista pone su precio; Handyx no lo impone. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Del lado del vecino: pide, recibe presupuestos y elige, con el precio final a la vista.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-a-vecino",
+     "poster": "clip-a-vecino-poster",
+     "alt": "El vecino: pedí, compará, elegí",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "h-especialista",
+   "titulo": "El especialista: pedidos cerca, su precio",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 9,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar el producto del lado del especialista en movimiento.",
+   "guion": "Del otro lado: te llegan pedidos cerca, vos ponés el precio, y te eligen.",
+   "notas": "Ejemplo: $ 45.000, tarifa 10 %, recibe $ 40.500 (desde el 10/12; el primer mes no hay tarifa). Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Del lado del especialista: recibe pedidos cerca, pone su precio y cobra directo.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-a-especialista",
+     "poster": "clip-a-especialista-poster",
+     "alt": "El especialista: pedidos cerca, su precio",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "h-vecino-largo",
+   "titulo": "La app del vecino, paso a paso",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 27,
+   "pasos": 2,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Recorrido del vecino con la app animada: pedido, presupuestos y precio final.",
+   "guion": "Pedís lo que necesitás: rubro, qué pasó y para cuándo. Llegan presupuestos de especialistas verificados, cada uno con su precio, y ves el precio final antes de confirmar.",
+   "notas": "Dos clips: paso 1 pedido, paso 2 presupuestos y confirmación. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Recorrido del vecino: pedido, presupuestos comparables y precio final antes de confirmar.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-u-pedido",
+     "poster": "clip-u-pedido-poster",
+     "alt": "La app del vecino, paso a paso",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v2",
+     "tipo": "video",
+     "recurso": "clip-u-presupuestos",
+     "poster": "clip-u-presupuestos-poster",
+     "alt": "La app del vecino, paso a paso (2)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "h-especialista-largo",
+   "titulo": "La app del especialista, paso a paso",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 24,
+   "pasos": 2,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Recorrido del especialista: disponibilidad, pedido, su precio, trabajo y cobro.",
+   "guion": "El especialista trabaja cuando quiere: le llegan pedidos cerca, pone su precio, hace el trabajo y cobra en su CBU o alias.",
+   "notas": "Paso 1 pedido y precio; paso 2 trabajo y cobro. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Recorrido del especialista: pedidos cerca, su precio, trabajo y cobro directo.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-e-pedido",
+     "poster": "clip-e-pedido-poster",
+     "alt": "La app del especialista, paso a paso",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v2",
+     "tipo": "video",
+     "recurso": "clip-e-cobro",
+     "poster": "clip-e-cobro-poster",
+     "alt": "La app del especialista, paso a paso (2)",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "h-confianza",
+   "titulo": "Por qué confiar",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 18,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Las reglas que hacen confiable a Handyx, en el idioma de la landing (lo que más vende).",
+   "guion": "Pensado para que estés tranquilo: especialistas verificados antes de recibir pedidos, el precio final antes de confirmar, tu teléfono no se comparte, la plata va directo al especialista, nada extra sin tu OK, y el precio lo pone quien hace el trabajo.",
+   "notas": "Son reglas del producto (prototipo y landing), no resultados medidos. 'Verificados' = proceso previsto de Operations; los 56 registrados todavía no están verificados.",
+   "lectura": "Reglas del producto: verificación antes de recibir pedidos, precio final visible antes de confirmar, teléfono que no se comparte, pago directo al especialista, nada extra sin aceptación y precio puesto por el especialista.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Pensado para que ==estés tranquilo==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "Especialistas **verificados** antes de recibir pedidos",
+       "icono": "verificado"
+      },
+      {
+       "texto": "Ves el **precio final** antes de confirmar",
+       "icono": "tilde-circulo"
+      },
+      {
+       "texto": "Tu **teléfono no se comparte**",
+       "icono": "telefono-oculto",
+       "paso": 1
+      },
+      {
+       "texto": "La plata va **directo al especialista**",
+       "icono": "escudo",
+       "paso": 1
+      },
+      {
+       "texto": "**Nada extra** sin tu OK",
+       "icono": "candado",
+       "paso": 2
+      },
+      {
+       "texto": "El precio lo pone **quien hace el trabajo**",
+       "icono": "herramienta",
+       "paso": 2
+      }
+     ],
+     "entrada": "escala"
+    },
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Así funciona la app · prevista para el {{LANZAMIENTO}}",
+     "area": "abajo",
+     "paso": 2
+    }
+   ]
+  },
+  {
+   "id": "h-traccion",
+   "titulo": "Tracción antes de lanzar",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 18,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento.",
+   "guion": "Todavía no lanzamos y ya se registraron 56 especialistas. La landing y el sistema para gestionarlos están construidos, y la app sale el 10 de noviembre. Desde ese día medimos lo que importa: que la usen, que vuelvan y que paguen.",
+   "notas": "Dato informado por Ignacio al 31/10, sin auditar contra el CRM (actualizar el 04/11). Son REGISTRADOS: no decir verificados ni activos. PDF A p.10: ¿lo usaron? ¿volvieron? ¿pagaron?",
+   "lectura": "56 especialistas registrados antes del lanzamiento (dato informado por el fundador al 31/10/2026). Landing y CRM construidos; la app se lanza el 10/11/2026. Desde entonces se mide uso, repetición y pago.",
+   "referencias": [
+    "ESP-REGISTRADOS",
+    "LANZAMIENTO",
+    "pdf:A-10"
+   ],
+   "elementos": [
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "ESP-REGISTRADOS",
+     "leyenda": "especialistas se registraron ==antes de lanzar==",
+     "area": "centro",
+     "entrada": "contar"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 52
+     },
+     "tamano": 30,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 50
+     },
+     "tamano": 30,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "b",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "arriba",
+     "paso": 1,
+     "entrada": "subir",
+     "texto": "Landing y CRM construidos · app lista para el **{{LANZAMIENTO}}**"
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "Desde el lanzamiento medimos lo que importa: que la **usen**, que **vuelvan** y que **paguen**."
+    }
+   ]
+  },
+  {
+   "id": "h-negocio",
+   "titulo": "Cómo gana Handyx (ejemplo de $ 45.000)",
+   "disposicion": "grilla",
+   "paleta": "solucion",
+   "duracion": 22,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "deslizar",
+   "objetivo": "Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx.",
+   "guion": "Un arreglo de 45 mil pesos: el vecino paga 49.500, el especialista recibe 40.500, y a Handyx le quedan 9 mil, antes de costos. El primer mes no cobramos nada, y los primeros 50 especialistas pagan 5 %. Con unos 49 trabajos por mes cubrimos los costos fijos.",
+   "notas": "Ejemplo ilustrativo con la tarifa estándar (desde el 10/12). Ingreso bruto ≠ margen: restar pasarela, soporte, impuestos. Equilibrio = proyección con fijos supuestos sin sueldos. PDF C p.44–45: ingreso neto = porción del GMV que es de Handyx.",
+   "lectura": "Ejemplo: un arreglo de $ 45.000. Con la tarifa estándar (10 % + 10 %), el vecino paga $ 49.500, el especialista recibe $ 40.500 y Handyx ingresa $ 9.000 brutos. El primer mes no hay tarifa y la camada fundadora (50 especialistas) paga 5 %. Proyección: con costos fijos supuestos, el equilibrio está cerca de 49 trabajos por mes.",
+   "referencias": [
+    "EJ-USUARIO-PAGA",
+    "EJ-ESPECIALISTA-RECIBE",
+    "EJ-HANDYX",
+    "TARIFA-PILOTO",
+    "TARIFA-FUNDADORES",
+    "PROY-EQUILIBRIO",
+    "pdf:C-45"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Un arreglo de {{TICKET-EJEMPLO}}",
+     "area": "arriba",
+     "entrada": "golpe"
+    },
+    {
+     "id": "a",
+     "tipo": "cifra",
+     "afirmacion": "EJ-USUARIO-PAGA",
+     "leyenda": "paga el vecino",
+     "entrada": "contar",
+     "paso": 1
+    },
+    {
+     "id": "b",
+     "tipo": "cifra",
+     "afirmacion": "EJ-ESPECIALISTA-RECIBE",
+     "leyenda": "recibe el especialista",
+     "entrada": "contar",
+     "paso": 1
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "EJ-HANDYX",
+     "leyenda": "queda para Handyx (10 % + 10 %)",
+     "entrada": "contar",
+     "paso": 2
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 3,
+     "entrada": "subir",
+     "texto": "**Primer mes sin tarifa** · camada fundadora: {{FUNDADORES-CUPO}} lugares al {{TARIFA-FUNDADORES}} · equilibrio ≈ {{PROY-EQUILIBRIO}} trabajos/mes"
+    }
+   ]
+  },
+  {
+   "id": "h-mercado",
+   "titulo": "Mercado y especialistas como micro-empresas",
+   "disposicion": "grilla",
+   "paleta": "evidencia",
+   "duracion": 20,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Dimensionar el mercado de abajo hacia arriba (PDF A p.11) y conectar con el dato regional de MiPyME (PDF C p.8).",
+   "guion": "El mercado de arreglos en el partido es de unos 17 mil millones de pesos por año. Plomería y electricidad, por app, son unos 3.500 millones. Y lo que podemos atender en el primer año, unos 30 millones. Del otro lado, en América Latina el 99,5 % de las empresas son MiPyME y dan el 60 % del empleo formal: un especialista es una micro-empresa que necesita canal.",
+   "notas": "PDF A p.11: no es poner el número más grande sino mostrar que entendemos el mercado (SOM por capacidad). Datos MiPyME: OCDE vía Forbes, citados en Masterclass p.8 (contexto regional, no de Handyx).",
+   "lectura": "TAM ≈ $ 17.500 M/año (viviendas × arreglos × precio base); SAM ≈ $ 3.500 M (plomería y electricidad, hogares que pedirían por app); SOM ≈ $ 30 M en 13 meses (escenario base, por capacidad). En América Latina el 99,5 % de las empresas son MiPyME y generan el 60 % del empleo formal (OCDE, citado en la Masterclass ATICMA).",
+   "referencias": [
+    "TAM-ARS",
+    "SAM-ARS",
+    "PROY-SOM-ARS",
+    "PDF-MIPYME",
+    "PDF-MIPYME-EMPLEO",
+    "pdf:A-11",
+    "pdf:C-8"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Mercado: ==de abajo hacia arriba==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "tam",
+     "tipo": "cifra",
+     "afirmacion": "TAM-ARS",
+     "leyenda": "arreglos por año en el partido",
+     "entrada": "subir"
+    },
+    {
+     "id": "sam",
+     "tipo": "cifra",
+     "afirmacion": "SAM-ARS",
+     "leyenda": "plomería y electricidad, por app",
+     "entrada": "subir",
+     "paso": 1
+    },
+    {
+     "id": "som",
+     "tipo": "cifra",
+     "afirmacion": "PROY-SOM-ARS",
+     "leyenda": "lo que podemos atender en 13 meses",
+     "entrada": "subir",
+     "paso": 2
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 3,
+     "entrada": "subir",
+     "texto": "En América Latina el {{PDF-MIPYME}} de las empresas son MiPyME y dan el {{PDF-MIPYME-EMPLEO}} del empleo formal: **cada especialista es una micro-empresa** que necesita canal. *(OCDE, citado en Masterclass ATICMA p. 8)*"
+    }
+   ]
+  },
+  {
+   "id": "h-contexto",
+   "titulo": "Contexto de inversión en Argentina",
+   "disposicion": "grilla",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Ubicar la conversación: la mayoría de las rondas en Argentina son pre-seed; validar antes de escalar (PDF C pp.8, 35).",
+   "guion": "En 2025 las startups argentinas levantaron 270 millones de dólares en 73 rondas, y más de la mitad fueron pre-seed. Es la etapa en la que estamos. Y como el 70 % de las startups no devuelve el capital, nuestra apuesta es validar en una ciudad antes de escalar.",
+   "notas": "Datos de terceros citados en la Masterclass (EY Argentina y ARCAP 2025; p.35). Son contexto, no comparables de Handyx. No trasladar valuaciones ni tickets.",
+   "lectura": "Argentina 2025: US$ 270 M levantados por startups en 73 rondas; 52 % pre-seed (EY Argentina y ARCAP, citado en la Masterclass ATICMA p.8). El 70 % de las startups no devuelve el capital (Masterclass p.35): por eso Handyx valida en Mar del Plata antes de escalar.",
+   "referencias": [
+    "PDF-AR-MONTO",
+    "PDF-AR-RONDAS",
+    "PDF-AR-PRESEED",
+    "PDF-FRACASO",
+    "pdf:C-8",
+    "pdf:C-35"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Argentina 2025: ==la etapa es pre-seed==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "a",
+     "tipo": "cifra",
+     "afirmacion": "PDF-AR-MONTO",
+     "leyenda": "levantaron las startups",
+     "entrada": "subir"
+    },
+    {
+     "id": "b",
+     "tipo": "cifra",
+     "afirmacion": "PDF-AR-RONDAS",
+     "leyenda": "rondas",
+     "entrada": "contar"
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "PDF-AR-PRESEED",
+     "leyenda": "fueron pre-seed",
+     "entrada": "contar",
+     "paso": 1
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "El {{PDF-FRACASO}} de las startups no devuelve el capital: por eso **validamos en una ciudad antes de escalar**. *Fuente: EY Argentina y ARCAP 2025 y Masterclass ATICMA (pp. 8 y 35).*"
+    }
+   ]
+  },
+  {
+   "id": "h-plan",
+   "titulo": "Lo que viene",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 4,
+   "clasificacion": "meta",
+   "transicion": "fundido",
+   "objetivo": "Hitos claros con el foco caminando por la línea de tiempo, y cómo vamos a conseguir pedidos.",
+   "guion": "El 10 de noviembre lanzamos. Un mes de piloto en Mar del Plata, sin tarifa. El 10 de diciembre arranca la tarifa. Y antes de fin de año, el objetivo: 50 trabajos cobrados y 5 vecinos que repiten. Los pedidos los conseguimos barrio por barrio: volantes con su propio QR, comercios del hogar y videos cortos.",
+   "notas": "Fechas previstas, no ejecutadas. MET-01: los trabajos del mes sin tarifa no cuentan como 'cobrados' con la definición vigente (pendiente con Metrics/Business).",
+   "lectura": "Hitos previstos: lanzamiento 10/11/2026, piloto sin tarifa en Mar del Plata, tarifa desde el 10/12/2026, objetivo de 50 trabajos cobrados y 5 usuarios que repiten al 31/12/2026. Captación prevista por barrio: volantes con QR propio, comercios del hogar y videos cortos.",
+   "referencias": [
+    "LANZAMIENTO",
+    "PILOTO-FIN",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Lo que ==viene==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 4,
+      "y": 24
+     },
+     "tamano": 18,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar"
+      },
+      {
+       "paso": 1,
+       "accion": "caminar",
+       "hacia": "der",
+       "distancia": 420
+      },
+      {
+       "paso": 2,
+       "accion": "caminar",
+       "hacia": "der",
+       "distancia": 420
+      },
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "f",
+     "tipo": "flujo",
+     "area": "centro",
+     "nodos": [
+      {
+       "texto": "{{LANZAMIENTO}}",
+       "detalle": "Sale la app"
+      },
+      {
+       "texto": "Piloto MDP",
+       "detalle": "Un mes sin tarifa",
+       "paso": 1
+      },
+      {
+       "texto": "{{PILOTO-FIN}}",
+       "detalle": "Arranca la tarifa",
+       "paso": 2
+      },
+      {
+       "texto": "31/12",
+       "detalle": "{{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} que repiten",
+       "paso": 3
+      }
+     ]
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 3,
+     "entrada": "subir",
+     "texto": "Pedidos **barrio por barrio**: volantes con QR propio · comercios del hogar · videos cortos"
+    }
+   ]
+  },
+  {
+   "id": "h-final",
+   "titulo": "Cierre de campaña",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 5,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Cerrar con la placa de la campaña: Handyx, Llegamos el 10/11, Primer mes sin tarifa.",
+   "guion": "Handyx. Llegamos el 10 de noviembre.",
+   "notas": "Pasar a los QR al terminar. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.",
+   "lectura": "Handyx · Soluciones, no problemas · Mar del Plata · Llegamos el 10/11 · Primer mes sin tarifa.",
+   "respaldo": "Póster del clip (último cuadro).",
+   "elementos": [
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "clip-a-final",
+     "poster": "clip-a-final-poster",
+     "alt": "Cierre de campaña",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "entrada": "ninguna"
     }
    ]
   }

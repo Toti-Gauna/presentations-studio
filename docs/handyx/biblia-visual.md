@@ -56,3 +56,12 @@ Recorte: mismo script de chroma (o MP4 con fondo de la paleta + póster). Safari
 `entrada: "traer"` + `traidoPor: <id del personaje>`: si el personaje entra en ese paso, camina con la pieza desde el costado
 (`desde: izq|der`) y la deja con un rebote; si ya estaba, la pieza sale de él y vuela a su lugar. Luego festeja y vuelve al
 reposo. Es reconstruible por paso (seek) y en movimiento reducido aparece sin desplazamiento.
+
+## Sonido y clips (revisión 31/10 noche)
+- **Efectos sintetizados** (`src/render/sonido.ts`, WebAudio, sin archivos): whoosh (transiciones y entradas), golpe (tipografía
+  que pega), pop/caída (piezas traídas), conteo (cifras), festejo (con confeti determinista), tic (palabras). Suenan solo en la
+  pantalla pública, solo al reproducir hacia adelante (los saltos los suprimen) y se apagan con `?sonido=no`.
+- **Clips de kinetic-studio** (`brands/handyx/assets/video/clips/`): cortes de la publicidad 16:9 y de los trailers del vecino y del
+  especialista ya actualizados (Handyx, 10 %, 10/11). Fondo #CFCFCF = paleta `kinetic`, así el clip se funde con el escenario.
+  Elemento `video` con `cubrir` + `auto`: arranca al llegar a su paso, sincronizado por estado en todas las pantallas.
+- Nuevas entradas: `golpe` (escala 2,6 → 1 con rebote) y confeti en `festejar`. El foco puede `caminar` una `distancia` (línea de tiempo de hitos).

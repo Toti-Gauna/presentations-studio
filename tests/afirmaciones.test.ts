@@ -24,6 +24,11 @@ describe('afirmaciones calculadas', () => {
     expect(num('TAM-ARS')).toBe(num('MDP-VIVIENDAS') * num('SUP-ARREGLOS-ANUALES') * num('TICKET-EJEMPLO'));
     expect(num('SAM-ARS')).toBeCloseTo(num('TAM-ARS') * num('SUP-SHARE-FOCO') * num('SUP-DIGITAL'), 0);
   });
+  it('el ejemplo de $ 45.000 cierra: paga 1,10 P, recibe 0,90 P, Handyx 0,20 P', () => {
+    expect(num('EJ-USUARIO-PAGA')).toBeCloseTo(num('TICKET-EJEMPLO') * (1 + num('TARIFA-USUARIO') / 100), 6);
+    expect(num('EJ-ESPECIALISTA-RECIBE')).toBeCloseTo(num('TICKET-EJEMPLO') * (1 - num('TARIFA-ESPECIALISTA') / 100), 6);
+    expect(num('EJ-HANDYX')).toBe(num('EJ-USUARIO-PAGA') - num('EJ-ESPECIALISTA-RECIBE'));
+  });
   it('las proyecciones del pitch coinciden con el modelo (redondeadas)', () => {
     for (const a of lista.filter((x) => x.formula?.startsWith('modelo:'))) {
       const v = evaluar(a.formula!.slice(7));

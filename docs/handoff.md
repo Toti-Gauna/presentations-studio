@@ -66,3 +66,18 @@ Registrar en Bloque 6: dirección "núcleo reutilizable" (CO-PITCH-20261031) apl
   (la app no lo tiene), mapa en vivo (no existe).
 - Verificado: `npm run verify` (55 pruebas, 4 decks) y `npm run e2e` 19/19 (incluye hub y recorrido del v2).
 - Roadmap completo por lote: `docs/plan-fases.md` (34 lotes con entrada, entregables, dependencia, horas y salida).
+
+## Revisión 31/10 (noche) · el pitch tiene que vender
+Pedido de Ignacio: "muy pobre, la landing vende más; a ATICMA no puedo pedirles nada; faltan datos de los PDF; más animaciones,
+sonidos y animaciones dentro de la app; reusar kinetic-studio". Cambios:
+- **ATICMA sin pedido.** Nuevo recorrido (177 s): espera de marca → gancho de la campaña (clip) → problema en golpes → los Handys
+  arman el logo (clip) → vecino y especialista en movimiento (clips) → "Pensado para que estés tranquilo" (6 reglas con íconos,
+  copy de la landing) → 56 registrados con conteo y confeti → un arreglo de $ 45.000 desarmado (paga $ 49.500 / recibe $ 40.500 /
+  Handyx $ 9.000) → mercado de abajo hacia arriba + MiPyME (PDF C p.8) → lo que viene (el foco camina por los hitos) → equipo →
+  placa de campaña (clip) → QR.
+- **Datos de los PDF en pantalla** con fuente: MiPyME 99,5 % / 60 % empleo (C p.8), Argentina 2025 US$ 270 M en 73 rondas, 52 %
+  pre-seed (C p.8), 70 % no devuelve el capital (C p.35) — escena `h-contexto` en la versión VC; escalera (A p.16), etapa (A p.9).
+- **Ángel y VC** usan los clips largos de la app (pedido, presupuestos, cobro) y conservan etapa, piloto, escenarios y pedido propio.
+- **v2 comercial**: suma "El vecino, en movimiento" y "El especialista, en movimiento" (3 clips cada uno) antes de las capturas reales.
+- **Sonido** sintetizado y **clips con música**; MP4 de respaldo ahora empalma los clips originales (con audio) y las escenas grabadas.
+- Verificado: verify (56 pruebas, 4 decks), e2e 19/19. **No verificado:** cómo suena (no se escuchó), clips en Safari/iPad, proyector.

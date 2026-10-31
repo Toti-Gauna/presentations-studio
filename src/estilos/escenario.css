@@ -153,3 +153,21 @@
 .lista-escalera { grid-template-columns: repeat(var(--n, 7), 1fr); align-items: end; gap: 14px; height: 470px; font-size: 26px; counter-reset: n; }
 .lista-escalera li { padding: 20px 16px; background: var(--superficie); border-radius: var(--radio-medio) var(--radio-medio) 0 0; font-weight: 700; line-height: 1.15; height: var(--h); display: flex; flex-direction: column; gap: 8px; }
 .lista-escalera li::before { counter-increment: n; content: counter(n); position: static; font-family: var(--fuente-titulos); font-weight: 900; font-size: 40px; color: var(--acento); }
+
+/* Video a pantalla completa (clips de kinetic-studio sobre el gris de la marca) */
+.escena > .el.video-cubre { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; }
+.escena > .el.video-cubre video { width: 100%; height: 100%; max-height: none; object-fit: contain; border-radius: 0; }
+/* Confeti determinista de los festejos */
+.confeti { position: absolute; left: 50%; top: 30%; width: 0; height: 0; pointer-events: none; z-index: 3; }
+.confeti i { position: absolute; width: 14px; height: 22px; border-radius: 3px; opacity: 0; }
+.modo-reducido .confeti { display: none; }
+.lista .icono { width: 64px; height: 64px; display: block; margin-bottom: 14px; }
+.lista-mosaicos li { display: flex; flex-direction: column; justify-content: flex-start; line-height: 1.2; box-shadow: 0 8px 0 rgba(0,0,0,0.10); }
+.lista-mosaicos li::before { display: none; }
+.lista-mosaicos li:has(.icono) { flex-direction: row; align-items: center; gap: 22px; font-size: 36px; }
+.lista-mosaicos li .icono { margin: 0; flex: none; }
+.disp-grilla .cifra-valor { font-size: 120px; }
+/* Cifras que se achican al ancho de su columna (container queries) */
+.disp-grilla .el-cifra, .disp-dividido .el-cifra, .disp-izquierda .el-cifra { container-type: inline-size; }
+.disp-grilla .cifra-valor { font-size: min(120px, 15cqi); font-stretch: 112%; }
+.disp-dividido .cifra-valor, .disp-izquierda .cifra-valor { font-size: min(190px, 21cqi); }

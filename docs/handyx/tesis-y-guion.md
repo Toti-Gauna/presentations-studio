@@ -27,79 +27,99 @@ Audiencia: Jurado ATICMA Emprende 2026 · duración oficial sin confirmar.
 
 | # | Escena | s | Clasificación | Objetivo |
 |---|---|---|---|---|
-| 1 | Problema: se rompió algo en casa | 16 | supuesto | Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí. |
-| 2 | Alternativas actuales y fricción | 16 | supuesto | Mostrar que hoy SÍ hay alternativas (no decimos 'no hay competencia') y que la fricción es de los dos lados. |
-| 3 | Handyx: el encuentro | 14 | plan | Presentar la solución en una frase y el resultado buscado; los personajes se encuentran (cambio de paleta = del problema al encuentro). |
-| 4 | Recorrido: del pedido al pago | 20 | demo | Explicar cómo funciona en cinco pasos, rotulando que es un prototipo con datos de prueba. |
-| 5 | Evidencia al corte | 20 | informado | Mostrar la evidencia real y acotada: 56 especialistas registrados, qué prueba y qué NO prueba todavía. |
-| 6 | Piloto en Mar del Plata | 20 | plan | Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar. |
-| 7 | Captación física y digital medible | 16 | plan | Mostrar un recorrido de captación medible (no una lista de canales) que junta pedidos y oferta en la misma zona. |
-| 8 | Modelo de ingresos y costo del período bonificado | 20 | mixto | Explicar cómo gana Handyx, cuánto cuesta el mes sin tarifa y qué volumen hace falta, con supuestos visibles. |
-| 9 | Equipo, ejecución e hitos | 14 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
-| 10 | Pedido a ATICMA | 14 | supuesto | Un pedido concreto y apropiado a la etapa: contactos, mentoría y apoyo para el piloto. |
-| 11 | Cierre y QR de registro | 10 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
+| 1 | Pantalla de espera | 3 | plan | Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido. |
+| 2 | Gancho: ¿Se rompió algo? ¿Sabés arreglarlo? | 5 | demo | Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos. |
+| 3 | Problema en golpes | 18 | supuesto | El problema de los dos lados, rápido y con ritmo (palabras que golpean). |
+| 4 | Entran los Handys: Handyx | 6 | demo | Presentar la marca con los personajes armando el logo (DROP). |
+| 5 | El vecino: pedí, compará, elegí | 9 | demo | Mostrar el producto del lado del vecino en movimiento. |
+| 6 | El especialista: pedidos cerca, su precio | 9 | demo | Mostrar el producto del lado del especialista en movimiento. |
+| 7 | Por qué confiar | 18 | plan | Las reglas que hacen confiable a Handyx, en el idioma de la landing (lo que más vende). |
+| 8 | Tracción antes de lanzar | 18 | informado | El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento. |
+| 9 | Cómo gana Handyx (ejemplo de $ 45.000) | 22 | mixto | Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx. |
+| 10 | Mercado y especialistas como micro-empresas | 20 | proyeccion | Dimensionar el mercado de abajo hacia arriba (PDF A p.11) y conectar con el dato regional de MiPyME (PDF C p.8). |
+| 11 | Lo que viene | 20 | meta | Hitos claros con el foco caminando por la línea de tiempo, y cómo vamos a conseguir pedidos. |
+| 12 | Equipo, ejecución e hitos | 14 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
+| 13 | Cierre de campaña | 5 | demo | Cerrar con la placa de la campaña: Handyx, Llegamos el 10/11, Primer mes sin tarifa. |
+| 14 | Cierre y QR de registro | 10 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
 
-Total: **180 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Mercado, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Demo en video.
+Total: **177 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Mercado, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Demo en video.
 
 ## Versión Versión de 60 segundos · objetivo 60 s
 Audiencia: Presentación relámpago.
 
 | # | Escena | s | Clasificación | Objetivo |
 |---|---|---|---|---|
-| 1 | Problema: se rompió algo en casa | 12 | supuesto | Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí. |
-| 2 | Handyx: el encuentro | 12 | plan | Presentar la solución en una frase y el resultado buscado; los personajes se encuentran (cambio de paleta = del problema al encuentro). |
-| 3 | Evidencia al corte | 14 | informado | Mostrar la evidencia real y acotada: 56 especialistas registrados, qué prueba y qué NO prueba todavía. |
-| 4 | Pedido a ATICMA | 14 | supuesto | Un pedido concreto y apropiado a la etapa: contactos, mentoría y apoyo para el piloto. |
-| 5 | Cierre y QR de registro | 8 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
+| 1 | Pantalla de espera | 3 | plan | Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido. |
+| 2 | Gancho: ¿Se rompió algo? ¿Sabés arreglarlo? | 5 | demo | Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos. |
+| 3 | Entran los Handys: Handyx | 6 | demo | Presentar la marca con los personajes armando el logo (DROP). |
+| 4 | El vecino: pedí, compará, elegí | 9 | demo | Mostrar el producto del lado del vecino en movimiento. |
+| 5 | Tracción antes de lanzar | 14 | informado | El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento. |
+| 6 | Cómo gana Handyx (ejemplo de $ 45.000) | 13 | mixto | Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx. |
+| 7 | Cierre y QR de registro | 10 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
 
-Total: **60 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte.
+Total: **60 s**. Anexos: Anexo · Estados de la oferta, Anexo · Tarifas por cohorte.
 
 ## Versión Inversor ángel (6 min) · objetivo 360 s
 Audiencia: Reunión con inversor ángel.
 
 | # | Escena | s | Clasificación | Objetivo |
 |---|---|---|---|---|
-| 1 | Problema: se rompió algo en casa | 20 | supuesto | Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí. |
-| 2 | Alternativas actuales y fricción | 25 | supuesto | Mostrar que hoy SÍ hay alternativas (no decimos 'no hay competencia') y que la fricción es de los dos lados. |
-| 3 | Handyx: el encuentro | 18 | plan | Presentar la solución en una frase y el resultado buscado; los personajes se encuentran (cambio de paleta = del problema al encuentro). |
-| 4 | Recorrido: del pedido al pago | 30 | demo | Explicar cómo funciona en cinco pasos, rotulando que es un prototipo con datos de prueba. |
-| 5 | Evidencia al corte | 30 | informado | Mostrar la evidencia real y acotada: 56 especialistas registrados, qué prueba y qué NO prueba todavía. |
-| 6 | Etapa: de inicio a validación | 25 | plan | Ubicar a Handyx en su etapa real y decir qué se evalúa ahí (PDF A p.9) y qué financiamiento corresponde (PDF C pp.15–16). |
-| 7 | Piloto en Mar del Plata | 30 | plan | Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar. |
-| 8 | Captación física y digital medible | 25 | plan | Mostrar un recorrido de captación medible (no una lista de canales) que junta pedidos y oferta en la misma zona. |
-| 9 | Growth: activación, repetición y recomendación | 30 | plan | Mostrar que el crecimiento se diseña como bucles medibles y experimentos con costo máximo y criterio de corte. |
-| 10 | Modelo de ingresos y costo del período bonificado | 35 | mixto | Explicar cómo gana Handyx, cuánto cuesta el mes sin tarifa y qué volumen hace falta, con supuestos visibles. |
-| 11 | Escenarios de capacidad | 25 | proyeccion | Mostrar escenarios conservador/base/expansión anclados a capacidad y captación, y cuál es el cuello de botella. |
-| 12 | Equipo, ejecución e hitos | 35 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
-| 13 | Pedido a un inversor ángel | 35 | supuesto | Abrir una conversación con un ángel: qué capital y qué ayuda, qué hitos compra y qué riesgo reduce. |
-| 14 | Cierre y QR de registro | 15 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
+| 1 | Pantalla de espera | 3 | plan | Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido. |
+| 2 | Gancho: ¿Se rompió algo? ¿Sabés arreglarlo? | 5 | demo | Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos. |
+| 3 | Problema en golpes | 18 | supuesto | El problema de los dos lados, rápido y con ritmo (palabras que golpean). |
+| 4 | Entran los Handys: Handyx | 6 | demo | Presentar la marca con los personajes armando el logo (DROP). |
+| 5 | La app del vecino, paso a paso | 27 | demo | Recorrido del vecino con la app animada: pedido, presupuestos y precio final. |
+| 6 | La app del especialista, paso a paso | 24 | demo | Recorrido del especialista: disponibilidad, pedido, su precio, trabajo y cobro. |
+| 7 | Por qué confiar | 18 | plan | Las reglas que hacen confiable a Handyx, en el idioma de la landing (lo que más vende). |
+| 8 | Tracción antes de lanzar | 18 | informado | El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento. |
+| 9 | Etapa: de inicio a validación | 22 | plan | Ubicar a Handyx en su etapa real y decir qué se evalúa ahí (PDF A p.9) y qué financiamiento corresponde (PDF C pp.15–16). |
+| 10 | Piloto en Mar del Plata | 24 | plan | Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar. |
+| 11 | Cómo gana Handyx (ejemplo de $ 45.000) | 22 | mixto | Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx. |
+| 12 | Escenarios de capacidad | 22 | proyeccion | Mostrar escenarios conservador/base/expansión anclados a capacidad y captación, y cuál es el cuello de botella. |
+| 13 | Mercado y especialistas como micro-empresas | 20 | proyeccion | Dimensionar el mercado de abajo hacia arriba (PDF A p.11) y conectar con el dato regional de MiPyME (PDF C p.8). |
+| 14 | Lo que viene | 20 | meta | Hitos claros con el foco caminando por la línea de tiempo, y cómo vamos a conseguir pedidos. |
+| 15 | Equipo, ejecución e hitos | 25 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
+| 16 | Pedido a un inversor ángel | 30 | supuesto | Abrir una conversación con un ángel: qué capital y qué ayuda, qué hitos compra y qué riesgo reduce. |
+| 17 | Cierre de campaña | 5 | demo | Cerrar con la placa de la campaña: Handyx, Llegamos el 10/11, Primer mes sin tarifa. |
+| 18 | Cierre y QR de registro | 10 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
 
-Total: **378 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Mercado, Anexo · Demo en video.
+Total: **319 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Mercado, Anexo · Demo en video.
 
 ## Versión Fondo de inversión (9 min) · objetivo 540 s
 Audiencia: Conversación inicial con un VC.
 
 | # | Escena | s | Clasificación | Objetivo |
 |---|---|---|---|---|
-| 1 | Problema: se rompió algo en casa | 20 | supuesto | Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí. |
-| 2 | Alternativas actuales y fricción | 30 | supuesto | Mostrar que hoy SÍ hay alternativas (no decimos 'no hay competencia') y que la fricción es de los dos lados. |
-| 3 | Handyx: el encuentro | 20 | plan | Presentar la solución en una frase y el resultado buscado; los personajes se encuentran (cambio de paleta = del problema al encuentro). |
-| 4 | Recorrido: del pedido al pago | 35 | demo | Explicar cómo funciona en cinco pasos, rotulando que es un prototipo con datos de prueba. |
-| 5 | Evidencia al corte | 40 | informado | Mostrar la evidencia real y acotada: 56 especialistas registrados, qué prueba y qué NO prueba todavía. |
-| 6 | Etapa: de inicio a validación | 30 | plan | Ubicar a Handyx en su etapa real y decir qué se evalúa ahí (PDF A p.9) y qué financiamiento corresponde (PDF C pp.15–16). |
-| 7 | Mercado abordable | 45 | proyeccion | Dimensionar el mercado desde viviendas × frecuencia × ticket, distinguiendo volumen de servicios de ingreso de Handyx. |
-| 8 | Piloto en Mar del Plata | 40 | plan | Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar. |
-| 9 | Captación física y digital medible | 30 | plan | Mostrar un recorrido de captación medible (no una lista de canales) que junta pedidos y oferta en la misma zona. |
-| 10 | Growth: activación, repetición y recomendación | 40 | plan | Mostrar que el crecimiento se diseña como bucles medibles y experimentos con costo máximo y criterio de corte. |
-| 11 | Modelo de ingresos y costo del período bonificado | 50 | mixto | Explicar cómo gana Handyx, cuánto cuesta el mes sin tarifa y qué volumen hace falta, con supuestos visibles. |
-| 12 | Escenarios de capacidad | 40 | proyeccion | Mostrar escenarios conservador/base/expansión anclados a capacidad y captación, y cuál es el cuello de botella. |
-| 13 | Equipo, ejecución e hitos | 45 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
-| 14 | Conversación con un fondo | 45 | plan | Conversación honesta de etapa temprana: no hay ronda abierta; qué evidencia cambiaría la decisión de invertir. |
-| 15 | Cierre y QR de registro | 15 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
+| 1 | Pantalla de espera | 3 | plan | Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido. |
+| 2 | Gancho: ¿Se rompió algo? ¿Sabés arreglarlo? | 5 | demo | Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos. |
+| 3 | Problema en golpes | 18 | supuesto | El problema de los dos lados, rápido y con ritmo (palabras que golpean). |
+| 4 | Entran los Handys: Handyx | 6 | demo | Presentar la marca con los personajes armando el logo (DROP). |
+| 5 | La app del vecino, paso a paso | 27 | demo | Recorrido del vecino con la app animada: pedido, presupuestos y precio final. |
+| 6 | La app del especialista, paso a paso | 24 | demo | Recorrido del especialista: disponibilidad, pedido, su precio, trabajo y cobro. |
+| 7 | Por qué confiar | 18 | plan | Las reglas que hacen confiable a Handyx, en el idioma de la landing (lo que más vende). |
+| 8 | Tracción antes de lanzar | 18 | informado | El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento. |
+| 9 | Etapa: de inicio a validación | 30 | plan | Ubicar a Handyx en su etapa real y decir qué se evalúa ahí (PDF A p.9) y qué financiamiento corresponde (PDF C pp.15–16). |
+| 10 | Contexto de inversión en Argentina | 20 | informado | Ubicar la conversación: la mayoría de las rondas en Argentina son pre-seed; validar antes de escalar (PDF C pp.8, 35). |
+| 11 | Mercado y especialistas como micro-empresas | 30 | proyeccion | Dimensionar el mercado de abajo hacia arriba (PDF A p.11) y conectar con el dato regional de MiPyME (PDF C p.8). |
+| 12 | Piloto en Mar del Plata | 35 | plan | Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar. |
+| 13 | Cómo gana Handyx (ejemplo de $ 45.000) | 30 | mixto | Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx. |
+| 14 | Escenarios de capacidad | 35 | proyeccion | Mostrar escenarios conservador/base/expansión anclados a capacidad y captación, y cuál es el cuello de botella. |
+| 15 | Growth: activación, repetición y recomendación | 35 | plan | Mostrar que el crecimiento se diseña como bucles medibles y experimentos con costo máximo y criterio de corte. |
+| 16 | Lo que viene | 20 | meta | Hitos claros con el foco caminando por la línea de tiempo, y cómo vamos a conseguir pedidos. |
+| 17 | Equipo, ejecución e hitos | 35 | mixto | Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores. |
+| 18 | Conversación con un fondo | 40 | plan | Conversación honesta de etapa temprana: no hay ronda abierta; qué evidencia cambiaría la decisión de invertir. |
+| 19 | Cierre de campaña | 5 | demo | Cerrar con la placa de la campaña: Handyx, Llegamos el 10/11, Primer mes sin tarifa. |
+| 20 | Cierre y QR de registro | 10 | plan | Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas). |
 
-Total: **525 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Mercado, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Demo en video.
+Total: **444 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de la oferta, Anexo · Tarifas por cohorte, Anexo · Mercado, Anexo · Escenarios y supuestos, Anexo · Experimentos del piloto, Anexo · Riesgos, Anexo · Demo en video.
 
 ## Ficha por escena
+
+### Pantalla de espera (`h-espera`) · 3 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Pantalla de marca mientras el jurado se acomoda; al avanzar arranca el gancho con sonido.
+- **Pantalla:** (p1) Handy==x== · (p1) Soluciones, no problemas · Mar del Plata · (p1) [foco: ] · (p1) [llave: ]
+- **Guion:** (En silencio. Avanzar cuando estés listo.)
+- **Notas privadas:** Antes de empezar: un clic o una tecla en la pantalla pública para habilitar el sonido.
 
 ### Problema: se rompió algo en casa (`apertura`) · 16 s · 2 pasos · paleta problema · transición fundido
 - **Objetivo:** Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí.
@@ -302,3 +322,100 @@ Total: **525 s**. Anexos: Anexo · Escalera de validación, Anexo · Estados de 
 - **Guion:** Una opinión positiva suma; una acción valida mucho más. Así está cada lado hoy.
 - **Notas privadas:** PDF A p.16 (7 peldaños) y p.15 (opinión vs. comportamiento). Registro de especialistas ≈ peldaño 3. Vecinos: sin dato de lista de espera al corte.
 - **Datos y fuentes:** ESP-REGISTRADOS, pdf:A-15, pdf:A-16
+
+### Gancho: ¿Se rompió algo? ¿Sabés arreglarlo? (`h-gancho`) · 5 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Abrir con el golpe de la campaña: le habla a los dos públicos en 4 segundos.
+- **Pantalla:** (p1) [video clip-a-gancho]
+- **Guion:** (Dejar correr el clip. Después:) Hay dos personas en esta historia.
+- **Notas privadas:** Activar el sonido en la pantalla pública antes de empezar (un clic o una tecla en ESA ventana). Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### Problema en golpes (`h-problema`) · 18 s · 4 pasos · paleta problema · transición fundido
+- **Objetivo:** El problema de los dos lados, rápido y con ritmo (palabras que golpean).
+- **Pantalla:** (p1) [grifo: paso 1 reaccionar] · (p1) Preguntás. · (p2) Esperás. · (p3) ==Nadie confirma.== · (p4) [llave: paso 4 entrar] · (p4) Y el especialista vive del **boca en boca**.
+- **Guion:** El vecino pregunta en el grupo del barrio. Espera. Nadie confirma. Y del otro lado, un especialista que sabe hacer el trabajo, pero vive del boca en boca.
+- **Notas privadas:** PDF B p.17: también compiten 'no hacer nada' y el grupo de WhatsApp. Problema basado en conversaciones exploratorias (no estadística).
+- **Datos y fuentes:** CHARLAS-CALLE, pdf:B-17
+
+### Entran los Handys: Handyx (`h-marca`) · 6 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Presentar la marca con los personajes armando el logo (DROP).
+- **Pantalla:** (p1) [video clip-u-entrada]
+- **Guion:** Esto es Handyx.
+- **Notas privadas:** Momento de energía: no hablar encima del drop. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### El vecino: pedí, compará, elegí (`h-vecino`) · 9 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Mostrar el producto del lado del vecino en movimiento.
+- **Pantalla:** (p1) [video clip-a-vecino]
+- **Guion:** Pedís lo que necesitás, te llegan presupuestos y elegís el tuyo, con el precio a la vista.
+- **Notas privadas:** El especialista pone su precio; Handyx no lo impone. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### El especialista: pedidos cerca, su precio (`h-especialista`) · 9 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Mostrar el producto del lado del especialista en movimiento.
+- **Pantalla:** (p1) [video clip-a-especialista]
+- **Guion:** Del otro lado: te llegan pedidos cerca, vos ponés el precio, y te eligen.
+- **Notas privadas:** Ejemplo: $ 45.000, tarifa 10 %, recibe $ 40.500 (desde el 10/12; el primer mes no hay tarifa). Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### La app del vecino, paso a paso (`h-vecino-largo`) · 27 s · 2 pasos · paleta kinetic · transición corte
+- **Objetivo:** Recorrido del vecino con la app animada: pedido, presupuestos y precio final.
+- **Pantalla:** (p1) [video clip-u-pedido] · (p2) [video clip-u-presupuestos]
+- **Guion:** Pedís lo que necesitás: rubro, qué pasó y para cuándo. Llegan presupuestos de especialistas verificados, cada uno con su precio, y ves el precio final antes de confirmar.
+- **Notas privadas:** Dos clips: paso 1 pedido, paso 2 presupuestos y confirmación. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### La app del especialista, paso a paso (`h-especialista-largo`) · 24 s · 2 pasos · paleta kinetic · transición corte
+- **Objetivo:** Recorrido del especialista: disponibilidad, pedido, su precio, trabajo y cobro.
+- **Pantalla:** (p1) [video clip-e-pedido] · (p2) [video clip-e-cobro]
+- **Guion:** El especialista trabaja cuando quiere: le llegan pedidos cerca, pone su precio, hace el trabajo y cobra en su CBU o alias.
+- **Notas privadas:** Paso 1 pedido y precio; paso 2 trabajo y cobro. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).
+
+### Por qué confiar (`h-confianza`) · 18 s · 3 pasos · paleta neutro · transición fundido
+- **Objetivo:** Las reglas que hacen confiable a Handyx, en el idioma de la landing (lo que más vende).
+- **Pantalla:** (p1) Pensado para que ==estés tranquilo== · (p1) Especialistas **verificados** antes de recibir pedidos / Ves el **precio final** antes de confirmar / Tu **teléfono no se comparte** / La plata va **directo al especialista** / **Nada extra** sin tu OK / El precio lo pone **quien hace el trabajo** · (p3) Así funciona la app · prevista para el {{LANZAMIENTO}}
+- **Guion:** Pensado para que estés tranquilo: especialistas verificados antes de recibir pedidos, el precio final antes de confirmar, tu teléfono no se comparte, la plata va directo al especialista, nada extra sin tu OK, y el precio lo pone quien hace el trabajo.
+- **Notas privadas:** Son reglas del producto (prototipo y landing), no resultados medidos. 'Verificados' = proceso previsto de Operations; los 56 registrados todavía no están verificados.
+
+### Tracción antes de lanzar (`h-traccion`) · 18 s · 3 pasos · paleta encuentro · transición fundido
+- **Objetivo:** El dato más fuerte, con energía: 56 especialistas registrados antes del lanzamiento.
+- **Pantalla:** (p1) [cifra {{ESP-REGISTRADOS}}] especialistas se registraron ==antes de lanzar== · (p1) [foco: paso 2 festejar] · (p1) [llave: paso 2 festejar] · (p2) Landing y CRM construidos · app lista para el **{{LANZAMIENTO}}** · (p3) Desde el lanzamiento medimos lo que importa: que la **usen**, que **vuelvan** y que **paguen**.
+- **Guion:** Todavía no lanzamos y ya se registraron 56 especialistas. La landing y el sistema para gestionarlos están construidos, y la app sale el 10 de noviembre. Desde ese día medimos lo que importa: que la usen, que vuelvan y que paguen.
+- **Notas privadas:** Dato informado por Ignacio al 31/10, sin auditar contra el CRM (actualizar el 04/11). Son REGISTRADOS: no decir verificados ni activos. PDF A p.10: ¿lo usaron? ¿volvieron? ¿pagaron?
+- **Datos y fuentes:** ESP-REGISTRADOS, LANZAMIENTO, pdf:A-10
+
+### Cómo gana Handyx (ejemplo de $ 45.000) (`h-negocio`) · 22 s · 4 pasos · paleta solucion · transición deslizar
+- **Objetivo:** Desarmar un trabajo real de ejemplo: quién paga, quién recibe y qué queda para Handyx.
+- **Pantalla:** (p1) Un arreglo de {{TICKET-EJEMPLO}} · (p2) [cifra {{EJ-USUARIO-PAGA}}] paga el vecino · (p2) [cifra {{EJ-ESPECIALISTA-RECIBE}}] recibe el especialista · (p3) [cifra {{EJ-HANDYX}}] queda para Handyx (10 % + 10 %) · (p4) **Primer mes sin tarifa** · camada fundadora: {{FUNDADORES-CUPO}} lugares al {{TARIFA-FUNDADORES}} · equilibrio ≈ {{PROY-EQUILIBRIO}} trabajos/mes
+- **Guion:** Un arreglo de 45 mil pesos: el vecino paga 49.500, el especialista recibe 40.500, y a Handyx le quedan 9 mil, antes de costos. El primer mes no cobramos nada, y los primeros 50 especialistas pagan 5 %. Con unos 49 trabajos por mes cubrimos los costos fijos.
+- **Notas privadas:** Ejemplo ilustrativo con la tarifa estándar (desde el 10/12). Ingreso bruto ≠ margen: restar pasarela, soporte, impuestos. Equilibrio = proyección con fijos supuestos sin sueldos. PDF C p.44–45: ingreso neto = porción del GMV que es de Handyx.
+- **Datos y fuentes:** EJ-USUARIO-PAGA, EJ-ESPECIALISTA-RECIBE, EJ-HANDYX, TARIFA-PILOTO, TARIFA-FUNDADORES, PROY-EQUILIBRIO, pdf:C-45
+
+### Mercado y especialistas como micro-empresas (`h-mercado`) · 20 s · 4 pasos · paleta evidencia · transición fundido
+- **Objetivo:** Dimensionar el mercado de abajo hacia arriba (PDF A p.11) y conectar con el dato regional de MiPyME (PDF C p.8).
+- **Pantalla:** (p1) Mercado: ==de abajo hacia arriba== · (p1) [cifra {{TAM-ARS}}] arreglos por año en el partido · (p2) [cifra {{SAM-ARS}}] plomería y electricidad, por app · (p3) [cifra {{PROY-SOM-ARS}}] lo que podemos atender en 13 meses · (p4) En América Latina el {{PDF-MIPYME}} de las empresas son MiPyME y dan el {{PDF-MIPYME-EMPLEO}} del empleo formal: **cada especialista es una micro-empresa** que necesita canal. *(OCDE, citado en Masterclass ATICMA p. 8)*
+- **Guion:** El mercado de arreglos en el partido es de unos 17 mil millones de pesos por año. Plomería y electricidad, por app, son unos 3.500 millones. Y lo que podemos atender en el primer año, unos 30 millones. Del otro lado, en América Latina el 99,5 % de las empresas son MiPyME y dan el 60 % del empleo formal: un especialista es una micro-empresa que necesita canal.
+- **Notas privadas:** PDF A p.11: no es poner el número más grande sino mostrar que entendemos el mercado (SOM por capacidad). Datos MiPyME: OCDE vía Forbes, citados en Masterclass p.8 (contexto regional, no de Handyx).
+- **Datos y fuentes:** TAM-ARS, SAM-ARS, PROY-SOM-ARS, PDF-MIPYME, PDF-MIPYME-EMPLEO, pdf:A-11, pdf:C-8
+
+### Contexto de inversión en Argentina (`h-contexto`) · 20 s · 3 pasos · paleta neutro · transición fundido
+- **Objetivo:** Ubicar la conversación: la mayoría de las rondas en Argentina son pre-seed; validar antes de escalar (PDF C pp.8, 35).
+- **Pantalla:** (p1) Argentina 2025: ==la etapa es pre-seed== · (p1) [cifra {{PDF-AR-MONTO}}] levantaron las startups · (p1) [cifra {{PDF-AR-RONDAS}}] rondas · (p2) [cifra {{PDF-AR-PRESEED}}] fueron pre-seed · (p3) El {{PDF-FRACASO}} de las startups no devuelve el capital: por eso **validamos en una ciudad antes de escalar**. *Fuente: EY Argentina y ARCAP 2025 y Masterclass ATICMA (pp. 8 y 35).*
+- **Guion:** En 2025 las startups argentinas levantaron 270 millones de dólares en 73 rondas, y más de la mitad fueron pre-seed. Es la etapa en la que estamos. Y como el 70 % de las startups no devuelve el capital, nuestra apuesta es validar en una ciudad antes de escalar.
+- **Notas privadas:** Datos de terceros citados en la Masterclass (EY Argentina y ARCAP 2025; p.35). Son contexto, no comparables de Handyx. No trasladar valuaciones ni tickets.
+- **Datos y fuentes:** PDF-AR-MONTO, PDF-AR-RONDAS, PDF-AR-PRESEED, PDF-FRACASO, pdf:C-8, pdf:C-35
+
+### Lo que viene (`h-plan`) · 20 s · 4 pasos · paleta neutro · transición fundido
+- **Objetivo:** Hitos claros con el foco caminando por la línea de tiempo, y cómo vamos a conseguir pedidos.
+- **Pantalla:** (p1) Lo que ==viene== · (p1) [foco: paso 1 entrar, paso 2 caminar, paso 3 caminar, paso 4 festejar] · (p1) {{LANZAMIENTO}} → Piloto MDP → {{PILOTO-FIN}} → 31/12 · (p4) Pedidos **barrio por barrio**: volantes con QR propio · comercios del hogar · videos cortos
+- **Guion:** El 10 de noviembre lanzamos. Un mes de piloto en Mar del Plata, sin tarifa. El 10 de diciembre arranca la tarifa. Y antes de fin de año, el objetivo: 50 trabajos cobrados y 5 vecinos que repiten. Los pedidos los conseguimos barrio por barrio: volantes con su propio QR, comercios del hogar y videos cortos.
+- **Notas privadas:** Fechas previstas, no ejecutadas. MET-01: los trabajos del mes sin tarifa no cuentan como 'cobrados' con la definición vigente (pendiente con Metrics/Business).
+- **Datos y fuentes:** LANZAMIENTO, PILOTO-FIN, META-TRABAJOS, META-REPETIDORES
+
+### Cierre de campaña (`h-final`) · 5 s · 1 pasos · paleta kinetic · transición corte
+- **Objetivo:** Cerrar con la placa de la campaña: Handyx, Llegamos el 10/11, Primer mes sin tarifa.
+- **Pantalla:** (p1) [video clip-a-final]
+- **Guion:** Handyx. Llegamos el 10 de noviembre.
+- **Notas privadas:** Pasar a los QR al terminar. Clip de kinetic-studio (animación con las pantallas de la demo, no uso real). Arranca solo; sonido si se activó en la pantalla pública.
+- **Respaldo:** Póster del clip (último cuadro).

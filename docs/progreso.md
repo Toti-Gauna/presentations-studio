@@ -13,3 +13,4 @@
 | 31/10 | 8.1–8.5 | Segunda marca, flujo y prompts Claude, roadmap y oferta (borradores) | `validar` eclipse-demo | pilotos (9.4) |
 | 31/10 | 9.1 | Configuración Render/VPS/Hostinger | — (no ejecutado) | accesos |
 | 31/10 | 5.1, 6.4, 6.5 | PDF integrados (matriz verificada, 2 escenas nuevas), hub, deck v2 comercial, 20 capturas reales, 2 publicidades re-renderizadas | verify 55 pruebas; e2e 19/19; PDF v2 | escuchar audio de anuncios; Safari |
+| 31/10 noche | 6.6 (nuevo) | Pitch rehecho para vender: clips kinetic-studio, sonido sintetizado, golpes, confeti, beneficios, ejemplo $ 45.000, datos PDF, ATICMA sin pedido; exportador MP4 con clips | verify 56; e2e 19/19 | escuchar en sala; Safari |

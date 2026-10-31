@@ -101,14 +101,20 @@ function montar(s: Sesion) {
   let escenaAnterior = -1;
   function pintar(e: Estado) {
     // Video con "auto": al entrar a la escena se ordena reproducir (pasa por el estado, así todas las pantallas quedan sincronizadas).
-    if (e.escena !== escenaAnterior) {
-      escenaAnterior = e.escena;
-      const auto = s.escenas[e.escena]?.elementos.find((x) => x.tipo === 'video' && x.auto && x.paso === 0) as { recurso: string } | undefined;
-      if (auto && e.reproduccion.medio !== auto.recurso) return queueMicrotask(() => ejecutar({ tipo: 'reproducir', medio: auto.recurso }));
+    const clave = e.escena * 1000 + e.paso;
+    if (clave !== escenaAnterior) {
+      const primera = escenaAnterior === -1;
+      escenaAnterior = clave;
+      if (primera) return actual.mostrar(e), void pintarResto(e);
+      const auto = s.escenas[e.escena]?.elementos.find((x) => x.tipo === 'video' && x.auto && x.paso === e.paso) as { recurso: string } | undefined;
+      if (auto && e.reproduccion.medio !== auto.recurso) queueMicrotask(() => ejecutar({ tipo: 'reproducir', medio: auto.recurso }));
     }
     actual.mostrar(e);
+    pintarResto(e);
+  }
+  function pintarResto(e: Estado) {
     const sig = aplicar(e, { tipo: 'siguiente' }, s.forma, Date.now());
-    siguiente.mostrar({ ...sig, negro: false });
+    siguiente.mostrar({ ...sig, negro: false, reproduccion: { medio: null, reproduciendo: false, posicion: 0, desde: null } });
     etiquetaSiguiente.textContent = sig === e ? 'Fin del recorrido' : sig.escena === e.escena ? `Siguiente: paso ${sig.paso + 1}/${s.forma.pasos[e.escena]}` : `Siguiente: ${s.escenas[sig.escena]?.titulo}`;
     const esc = s.escenas[e.escena];
     if (esc) {

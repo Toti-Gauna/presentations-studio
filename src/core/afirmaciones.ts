@@ -17,6 +17,8 @@ export function formatear(a: Afirmacion): string {
   switch (a.formato) {
     case 'ars':
       return `$ ${miles(a.valor)}`;
+    case 'millones':
+      return `$ ${miles(a.valor / 1e6)} M`;
     case 'porcentaje':
       return `${a.valor.toLocaleString('es-AR')} %`;
     case 'entero':
@@ -32,6 +34,7 @@ export const ROTULOS: Record<Afirmacion['tipo'], string> = {
   supuesto: 'Supuesto',
   proyeccion: 'Proyección',
   meta: 'Objetivo',
+  ejemplo: 'Ejemplo ilustrativo',
 };
 
 /** Rótulo visible obligatorio: los datos observados no lo necesitan; el resto sí. */

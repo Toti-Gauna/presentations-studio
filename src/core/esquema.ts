@@ -18,7 +18,7 @@ export const urlPublica = z
   }, 'URL pública: solo https (o http://localhost en ensayo), sin credenciales');
 
 // ── Afirmaciones (claims) ────────────────────────────────────────────────────
-export const TipoAfirmacion = z.enum(['observado', 'informado', 'supuesto', 'proyeccion', 'meta']);
+export const TipoAfirmacion = z.enum(['observado', 'informado', 'supuesto', 'proyeccion', 'meta', 'ejemplo']);
 export const Afirmacion = z
   .object({
     id: z.string().regex(/^[A-Z][A-Z0-9-]{1,40}$/, 'id de afirmación: MAYÚSCULAS-Y-GUIONES'),
@@ -35,7 +35,7 @@ export const Afirmacion = z
     formula: z.string().optional(),
     dependencias: z.array(z.string()).default([]),
     uso: z.enum(['publico', 'anexo', 'notas']),
-    formato: z.enum(['entero', 'ars', 'porcentaje', 'texto', 'fecha']).default('texto'),
+    formato: z.enum(['entero', 'ars', 'millones', 'porcentaje', 'texto', 'fecha']).default('texto'),
   })
   .strict();
 export type Afirmacion = z.infer<typeof Afirmacion>;
@@ -75,7 +75,7 @@ const base = {
   area: z.enum(['centro', 'arriba', 'abajo', 'izquierda', 'derecha', 'fondo', 'libre']).default('centro'),
   /** Posición libre en % del escenario (solo con area=libre). */
   pos: z.object({ x: z.number(), y: z.number(), w: z.number().optional() }).strict().optional(),
-  entrada: z.enum(['ninguna', 'fundido', 'subir', 'escala', 'mascara', 'palabras', 'contar', 'traer']).default('fundido'),
+  entrada: z.enum(['ninguna', 'fundido', 'subir', 'escala', 'mascara', 'palabras', 'contar', 'traer', 'golpe']).default('fundido'),
   /** Con entrada "traer": id del elemento personaje que trae esta pieza a escena. */
   traidoPor: id.optional(),
   /** Lado desde el que llega lo traído (si el personaje entra en el mismo paso). */
@@ -133,7 +133,7 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('personaje'),
       personaje: z.string(),
       tamano: z.number().min(5).max(80).default(28),
-      acciones: z.array(z.object({ paso: z.number().int().min(0), accion: Accion, hacia: z.enum(['izq', 'der']).optional() }).strict()).default([]),
+      acciones: z.array(z.object({ paso: z.number().int().min(0), accion: Accion, hacia: z.enum(['izq', 'der']).optional(), distancia: z.number().min(0).max(1900).optional() }).strict()).default([]),
       continuidad: z.boolean().default(false),
     })
     .strict(),
@@ -149,7 +149,7 @@ export const Elemento = z.discriminatedUnion('tipo', [
     })
     .strict(),
   z
-    .object({ ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false) })
+    .object({ ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false), cubrir: z.boolean().default(false) })
     .strict(),
 ]);
 export type Elemento = z.infer<typeof Elemento>;

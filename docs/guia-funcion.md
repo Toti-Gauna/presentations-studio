@@ -9,7 +9,8 @@
 1. Computadora con cargador, adaptador HDMI/USB-C, clicker. Modo avión **no**: Wi-Fi del evento o hotspot.
 2. Abrir el presentador (`/presentador/?deck=handyx&version=aticma`) y **Abrir pantalla pública**; arrastrarla al proyector y apretar **F**.
    Si el navegador bloquea la ventana: usar el enlace manual que aparece debajo.
-3. **Activar audio** con un clic en la computadora (y uno en la pantalla pública). El celular no habilita audio en la computadora.
+3. **Sonido:** un clic o una tecla en la **pantalla pública** (esa ventana) habilita los efectos y la música de los clips; en el presentador, **Activar audio**. El celular no habilita audio en la computadora. Sin sonido: `?sonido=no`.
+   La presentación arranca en una **pantalla de espera** (marca): al avanzar empieza el gancho con música.
 4. Ver "Recursos listos N/N" y la huella de versión en la barra.
 5. Control remoto: **Conectar control remoto** → escanear el QR privado con el celular → **Aprobar**. Verificar avance y "✓ Confirmado".
    Probar con el celular en datos móviles (red distinta). Nunca proyectar la ventana del presentador.
