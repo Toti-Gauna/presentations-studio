@@ -1,0 +1,13 @@
+{
+  "id": "neutro",
+  "nombre": "Tema técnico neutro",
+  "fuentes": { "titulos": "system-ui, sans-serif", "texto": "system-ui, sans-serif" },
+  "colores": { "tinta": "#111111" },
+  "paletas": {
+    "neutro": { "fondo": "#FFFFFF", "tinta": "#111111", "acento": "#0B57D0", "suave": "#555555", "superficie": "#F1F3F4" },
+    "oscuro": { "fondo": "#111111", "tinta": "#FFFFFF", "acento": "#8AB4F8", "suave": "#BBBBBB", "superficie": "#222222" }
+  },
+  "radios": { "chico": "4px", "medio": "8px", "grande": "12px" },
+  "personajes": {},
+  "pie": "Deck técnico de prueba"
+}

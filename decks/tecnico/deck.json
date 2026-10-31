@@ -1,0 +1,44 @@
+{
+  "versionEsquema": 1,
+  "id": "tecnico",
+  "titulo": "Deck técnico neutro (prueba del motor)",
+  "idioma": "es-AR",
+  "tema": "neutro",
+  "corte": "2026-10-31",
+  "estado": "borrador",
+  "versiones": [
+    { "id": "completa", "titulo": "Recorrido completo", "audiencia": "QA del motor", "duracionObjetivo": 120, "tolerancia": 10, "escenas": ["apertura", "pasos", "flujo", "cifras", "grafico", "qr", "cierre"], "anexos": ["tabla"] },
+    { "id": "corta", "titulo": "Recorrido corto", "audiencia": "QA del motor", "duracionObjetivo": 40, "escenas": ["apertura", "flujo", "cierre"] }
+  ],
+  "recursos": [],
+  "escenas": [
+    { "id": "apertura", "titulo": "Apertura", "paleta": "oscuro", "duracion": 10, "pasos": 2, "clasificacion": "plan", "objetivo": "Probar tipografía cinética y cambio de paleta.", "guion": "Esta es una escena de prueba.", "notas": "Nota privada de prueba: no debe verse en la pantalla pública.",
+      "elementos": [
+        { "id": "t", "tipo": "titulo", "texto": "Motor de presentaciones", "entrada": "palabras" },
+        { "id": "s", "tipo": "texto", "texto": "Escena 1 · paso 2 aparece con el segundo avance", "paso": 1, "area": "abajo", "entrada": "subir" }
+      ] },
+    { "id": "pasos", "titulo": "Pasos internos", "duracion": 20, "pasos": 4, "clasificacion": "plan", "objetivo": "Probar revelado por pasos.", "guion": "Cada punto aparece en su paso.", "disposicion": "izquierda",
+      "elementos": [
+        { "id": "t", "tipo": "titulo", "texto": "Tres pasos", "area": "arriba" },
+        { "id": "l", "tipo": "lista", "estilo": "numerada", "items": [ { "texto": "Primero", "paso": 1 }, { "texto": "Segundo", "paso": 2 }, { "texto": "Tercero", "paso": 3 } ] }
+      ] },
+    { "id": "flujo", "titulo": "Flujo", "duracion": 15, "pasos": 4, "clasificacion": "demo", "objetivo": "Probar diagrama de flujo.", "guion": "Un flujo de cuatro nodos.",
+      "elementos": [
+        { "id": "e", "tipo": "etiqueta", "texto": "Diagrama de prueba", "tono": "demo", "area": "arriba" },
+        { "id": "f", "tipo": "flujo", "nodos": [ { "texto": "A" }, { "texto": "B", "paso": 1 }, { "texto": "C", "paso": 2 }, { "texto": "D", "paso": 3 } ] }
+      ] },
+    { "id": "cifras", "titulo": "Cifras rotuladas", "duracion": 15, "pasos": 2, "clasificacion": "mixto", "objetivo": "Probar rótulos automáticos por tipo de dato.", "guion": "Un dato observado y una proyección.", "disposicion": "dividido",
+      "elementos": [
+        { "id": "a", "tipo": "cifra", "afirmacion": "PRUEBA-OBSERVADO", "leyenda": "unidades observadas", "area": "izquierda", "entrada": "contar" },
+        { "id": "b", "tipo": "cifra", "afirmacion": "PRUEBA-PROYECCION", "leyenda": "unidades proyectadas", "area": "derecha", "paso": 1, "entrada": "contar" }
+      ] },
+    { "id": "grafico", "titulo": "Gráfico", "duracion": 15, "pasos": 1, "clasificacion": "proyeccion", "objetivo": "Probar barras rotuladas.", "guion": "Barras de prueba.",
+      "elementos": [ { "id": "g", "tipo": "grafico", "forma": "barras", "titulo": "Serie de prueba", "rotulo": "Escenario ilustrativo", "series": [ { "etiqueta": "Uno", "valor": 3 }, { "etiqueta": "Dos", "valor": 7 }, { "etiqueta": "Tres", "afirmacion": "PRUEBA-PROYECCION" } ] } ] },
+    { "id": "qr", "titulo": "QR A/B", "duracion": 15, "pasos": 1, "clasificacion": "plan", "objetivo": "Probar dos QR públicos simultáneos.", "guion": "Dos destinos.", "disposicion": "dividido",
+      "elementos": [ { "id": "q1", "tipo": "qr", "qr": "prueba-a", "area": "izquierda" }, { "id": "q2", "tipo": "qr", "qr": "prueba-b", "area": "derecha" } ] },
+    { "id": "cierre", "titulo": "Cierre", "paleta": "oscuro", "duracion": 10, "pasos": 1, "clasificacion": "plan", "objetivo": "Cerrar.", "guion": "Fin.", "transicion": "corte",
+      "elementos": [ { "id": "t", "tipo": "titulo", "texto": "Fin de la prueba", "entrada": "escala" } ] },
+    { "id": "tabla", "titulo": "Anexo: tabla", "duracion": 20, "pasos": 1, "clasificacion": "plan", "objetivo": "Probar tabla en anexo.", "guion": "",
+      "elementos": [ { "id": "t", "tipo": "tabla", "columnas": ["Columna", "Valor"], "filas": [["Uno", "1"], ["Dos", "2"]] } ] }
+  ]
+}

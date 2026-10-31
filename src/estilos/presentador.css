@@ -1,0 +1,43 @@
+.vista-presentador { background: #0b1222; color: #e8ecf5; }
+.vista-presentador #app { min-height: 100vh; display: flex; flex-direction: column; }
+.barra { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; padding: 10px 16px; background: #121b30; border-bottom: 1px solid #263252; }
+.barra-titulo { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.huella { font: 12px ui-monospace, monospace; color: #8d9ab8; }
+.barra-tiempo { font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 800; }
+.restante { font-size: 16px; font-weight: 600; color: #b9c3da; }
+.restante.alerta { color: #F6A623; }
+.barra-acciones { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.conexion, .recursos { font-size: 13px; padding: 6px 10px; border-radius: 999px; background: #1d2742; }
+.conexion[data-estado='conectado'] { background: #134d33; }
+.conexion[data-estado='reconectando'], .conexion[data-estado='sin-confirmar'], .conexion[data-estado='cerrado'] { background: #5c3a06; }
+.tablero { flex: 1; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(260px, 0.7fr); gap: 16px; padding: 16px; }
+.tablero h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d9ab8; margin: 14px 0 6px; }
+.tablero h3 { font-size: 14px; margin: 12px 0 4px; }
+.monitor { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; }
+.monitor-siguiente { width: 60%; opacity: 0.9; }
+.etiqueta-monitor { font-size: 13px; color: #8d9ab8; margin: 8px 0 4px; }
+.controles, .medios { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.btn.grande { font-size: 20px; padding: 14px 22px; }
+.notas { font-size: 22px; line-height: 1.4; background: #121b30; padding: 14px; border-radius: 8px; white-space: normal; }
+.guion { font-size: 17px; line-height: 1.5; color: #c9d1e4; }
+.guion .preguntas { color: #F5F59A; }
+.indice { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; max-height: 42vh; overflow: auto; }
+.indice li { display: flex; align-items: center; gap: 6px; }
+.indice .item { flex: 1; text-align: left; background: #18223b; box-shadow: none; min-height: 36px; padding: 6px 10px; font-weight: 500; }
+.indice li.actual .item { background: #1F57A8; }
+.indice li.anexo .item { font-style: italic; color: #b9c3da; }
+.indice .dur { font-size: 12px; color: #8d9ab8; }
+.tiempos table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tiempos td, .tiempos th { padding: 3px 6px; border-bottom: 1px solid #263252; text-align: left; }
+.tiempos tr.excedido td { color: #F6A623; }
+.remoto input { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #263252; background: #0b1222; color: #fff; margin: 6px 0; }
+.remoto .btn { margin: 4px 4px 0 0; }
+.qr-privado { max-width: 220px; background: #fff; border-radius: 8px; margin-top: 8px; }
+.qr-privado svg { display: block; width: 100%; }
+.qr-privado .aviso { color: #8a1c13; font-size: 12px; font-weight: 700; margin: 0; padding: 6px; }
+.solicitudes, .dispositivos { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 14px; }
+.manual { font-size: 13px; color: #8d9ab8; }
+.manual.resaltar { color: #F5F59A; font-size: 16px; }
+.manual a { color: #9cc0ff; }
+.ayuda { font-size: 13px; color: #8d9ab8; }
+@media (max-width: 1100px) { .tablero { grid-template-columns: 1fr; } }

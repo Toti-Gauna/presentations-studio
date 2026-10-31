@@ -1,0 +1,22 @@
+.vista-control { background: #0E1D36; color: #fff; }
+.vista-control #app { padding: 16px max(16px, env(safe-area-inset-left)) 32px; max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; min-height: 100dvh; }
+.vista-control h1 { font-size: 22px; margin: 4px 0; }
+.cabecera { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 15px; }
+.posicion { font-weight: 700; }
+.conexion { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #5c3a06; }
+.conexion[data-estado='conectado'] { background: #134d33; }
+.confirmacion { min-height: 24px; font-size: 15px; }
+.confirmacion[data-resultado='obsoleto'], .confirmacion[data-resultado='invalido'] { color: #F6A623; }
+.botonera { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+.botonera .btn { min-height: 34vh; font-size: 30px; border-radius: 22px; }
+.btn.adelante { background: #1F57A8; box-shadow: 0 8px 0 #0f3368; }
+.btn.atras { background: #2a3550; box-shadow: 0 8px 0 #11182a; }
+.secundarios { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.btn.chico { min-height: 56px; font-size: 15px; padding: 6px; }
+details { background: #16264a; border-radius: 12px; padding: 10px 14px; }
+summary { font-weight: 700; cursor: pointer; min-height: 32px; }
+.notas { font-size: 18px; line-height: 1.45; }
+.lista-escenas { list-style: none; padding: 0; display: grid; gap: 6px; }
+.lista-escenas .btn { width: 100%; text-align: left; box-shadow: none; }
+.lista-escenas li.actual .btn { background: #1F57A8; }
+.aviso { font-size: 17px; line-height: 1.4; }

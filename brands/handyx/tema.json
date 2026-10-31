@@ -1,0 +1,171 @@
+{
+  "id": "handyx",
+  "nombre": "Handyx",
+  "logo": "logo-handyx.webp",
+  "fuentes": {
+    "titulos": "'Archivo Variable', 'Archivo', 'Arial Black', system-ui, sans-serif",
+    "texto": "'DM Sans Variable', 'DM Sans', system-ui, sans-serif"
+  },
+  "colores": {
+    "azul": "#1F57A8",
+    "azulUi": "#4A72B0",
+    "azulPersonajes": "#2F6BFF",
+    "gris": "#CFCFCF",
+    "amarillo": "#F5F59A",
+    "noche": "#1D2C4A",
+    "mosaico": "#ECECEC",
+    "hueso": "#F7F6F1",
+    "tinta": "#0E1D36",
+    "texto": "#26324A",
+    "textoSuave": "#5F6B84",
+    "naranja": "#F6A623",
+    "exito": "#1E9E57",
+    "error": "#D93025"
+  },
+  "paletas": {
+    "neutro": {
+      "fondo": "#F7F6F1",
+      "tinta": "#0E1D36",
+      "acento": "#1F57A8",
+      "suave": "#5F6B84",
+      "superficie": "#FFFFFF",
+      "marcador": "#F5F59A"
+    },
+    "problema": {
+      "fondo": "#1D2C4A",
+      "tinta": "#F7F6F1",
+      "acento": "#F6A623",
+      "suave": "#A9B4CB",
+      "superficie": "#26385C",
+      "marcador": "#F6A623"
+    },
+    "encuentro": {
+      "fondo": "#1F57A8",
+      "tinta": "#FFFFFF",
+      "acento": "#F5F59A",
+      "suave": "#CFDCF2",
+      "superficie": "#2A63B8",
+      "marcador": "#F5F59A"
+    },
+    "solucion": {
+      "fondo": "#F5F59A",
+      "tinta": "#0E1D36",
+      "acento": "#1F57A8",
+      "suave": "#3C4A66",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFFFFF"
+    },
+    "evidencia": {
+      "fondo": "#FFFFFF",
+      "tinta": "#0E1D36",
+      "acento": "#1F57A8",
+      "suave": "#5F6B84",
+      "superficie": "#ECECEC",
+      "marcador": "#F5F59A"
+    },
+    "cierre": {
+      "fondo": "#0E1D36",
+      "tinta": "#FFFFFF",
+      "acento": "#F5F59A",
+      "suave": "#A9B4CB",
+      "superficie": "#1D2C4A",
+      "marcador": "#F5F59A"
+    }
+  },
+  "radios": {
+    "chico": "10px",
+    "medio": "16px",
+    "grande": "28px"
+  },
+  "personajes": {
+    "foco": {
+      "nombre": "Foco",
+      "rol": "Usuario (vecino que necesita un arreglo)",
+      "origen": "04_bombilla.png",
+      "poses": {
+        "reposo": "personajes/bombilla-a.webp",
+        "saludo": "personajes/bombilla-b.webp",
+        "festejo": "personajes/bombilla-c.webp",
+        "accion": "personajes/bombilla-d.webp"
+      }
+    },
+    "llave": {
+      "nombre": "Llave",
+      "rol": "Especialista",
+      "origen": "05_llave.png",
+      "poses": {
+        "reposo": "personajes/llave-a.webp",
+        "saludo": "personajes/llave-b.webp",
+        "festejo": "personajes/llave-c.webp",
+        "accion": "personajes/llave-d.webp"
+      }
+    },
+    "gota": {
+      "nombre": "Gota",
+      "rol": "Plomería",
+      "origen": "02_gota.png",
+      "poses": {
+        "reposo": "personajes/gota-a.webp",
+        "saludo": "personajes/gota-b.webp",
+        "festejo": "personajes/gota-c.webp",
+        "accion": "personajes/gota-d.webp"
+      }
+    },
+    "grifo": {
+      "nombre": "Grifo",
+      "rol": "Plomería (problema: pérdida)",
+      "origen": "01_grifo.png",
+      "poses": {
+        "reposo": "personajes/grifo-a.webp",
+        "saludo": "personajes/grifo-b.webp",
+        "festejo": "personajes/grifo-c.webp",
+        "accion": "personajes/grifo-d.webp"
+      }
+    },
+    "engranaje": {
+      "nombre": "Engranaje",
+      "rol": "Plataforma / coordinación",
+      "origen": "03_engranaje.png",
+      "poses": {
+        "reposo": "personajes/engranaje-a.webp",
+        "saludo": "personajes/engranaje-b.webp",
+        "festejo": "personajes/engranaje-c.webp",
+        "accion": "personajes/engranaje-d.webp"
+      }
+    },
+    "aire": {
+      "nombre": "Aire",
+      "rol": "Aire acondicionado",
+      "origen": "06_aire.png",
+      "poses": {
+        "reposo": "personajes/aire-a.webp",
+        "saludo": "personajes/aire-b.webp",
+        "festejo": "personajes/aire-c.webp",
+        "accion": "personajes/aire-d.webp"
+      }
+    },
+    "medidor": {
+      "nombre": "Medidor",
+      "rol": "Gas",
+      "origen": "07_medidor_gas.png",
+      "poses": {
+        "reposo": "personajes/medidor_gas-a.webp",
+        "saludo": "personajes/medidor_gas-b.webp",
+        "festejo": "personajes/medidor_gas-c.webp",
+        "accion": "personajes/medidor_gas-d.webp"
+      }
+    },
+    "brocha": {
+      "nombre": "Brocha",
+      "rol": "Albañilería / terminaciones",
+      "origen": "08_brocha.png",
+      "poses": {
+        "reposo": "personajes/brocha-a.webp",
+        "saludo": "personajes/brocha-b.webp",
+        "festejo": "personajes/brocha-c.webp",
+        "accion": "personajes/brocha-d.webp"
+      }
+    }
+  },
+  "pie": "Handyx · Mar del Plata"
+}

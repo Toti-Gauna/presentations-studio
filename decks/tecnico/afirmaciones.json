@@ -1,0 +1,5 @@
+[
+  { "id": "PRUEBA-OBSERVADO", "descripcion": "Dato sintético de prueba", "valor": 12, "unidad": "unidades", "periodo": "prueba", "tipo": "observado", "fuente": "fixture técnico", "corte": "2026-10-31", "verificacion": "verificado", "uso": "publico", "formato": "entero" },
+  { "id": "PRUEBA-PROYECCION", "descripcion": "Proyección sintética de prueba", "valor": 40, "unidad": "unidades", "periodo": "prueba", "tipo": "proyeccion", "fuente": "fixture técnico", "corte": "2026-10-31", "verificacion": "sin-verificar", "uso": "publico", "formato": "entero", "formula": "PRUEBA-OBSERVADO × 3,3", "dependencias": ["PRUEBA-OBSERVADO"] },
+  { "id": "PRUEBA-PRIVADA", "descripcion": "Solo para notas", "valor": 1, "unidad": "", "periodo": "", "tipo": "supuesto", "fuente": "fixture técnico", "corte": "2026-10-31", "verificacion": "pendiente", "uso": "notas" }
+]

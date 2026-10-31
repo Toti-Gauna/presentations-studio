@@ -1,0 +1,16 @@
+.vista-imprimir { background: #555; }
+.modo-diapositivas .hoja { width: 1920px; height: 1080px; position: relative; overflow: hidden; break-after: page; margin: 0 auto 20px; }
+.modo-diapositivas .marco { position: absolute; inset: 0; }
+.modo-diapositivas .escenario { transform: none; left: 0; top: 0; }
+.modo-lectura { background: #fff; }
+.modo-lectura .hoja { width: 210mm; min-height: 297mm; padding: 14mm 16mm; margin: 0 auto; break-after: page; font-family: 'DM Sans Variable', system-ui, sans-serif; color: #0E1D36; }
+.modo-lectura .marco { width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; border-radius: 6px; }
+.modo-lectura .lectura h2 { font-family: 'Archivo Variable', sans-serif; font-weight: 900; font-stretch: 112%; font-size: 20pt; margin: 8mm 0 3mm; }
+.modo-lectura .lectura p { font-size: 11pt; line-height: 1.5; margin: 0 0 3mm; }
+.modo-lectura .refs { font-size: 9pt !important; color: #5F6B84; }
+.portada-lectura h1 { font-family: 'Archivo Variable', sans-serif; font-weight: 900; font-stretch: 125%; font-size: 34pt; margin-top: 60mm; }
+.portada-lectura .nota { margin-top: 20mm; font-size: 10pt; color: #5F6B84; }
+.fuentes table { border-collapse: collapse; font-size: 8.5pt; width: 100%; }
+.fuentes td, .fuentes th { border-bottom: 1px solid #DADFE8; padding: 4px; text-align: left; vertical-align: top; }
+@page { margin: 0; }
+@media print { .vista-imprimir { background: none; } .modo-diapositivas .hoja { margin: 0; } }

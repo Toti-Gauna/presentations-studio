@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { font-family: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+button { font: inherit; }
+.btn { cursor: pointer; border: 0; border-radius: 12px; padding: 10px 16px; background: #2a3550; color: #fff; font-weight: 600; min-height: 44px; box-shadow: 0 4px 0 #11182a; transition: transform 0.06s, box-shadow 0.06s; }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #11182a; }
+.btn:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #F5F59A; outline-offset: 2px; }
+.btn.primario { background: #1F57A8; box-shadow: 0 4px 0 #0f3368; }
+.btn.secundario { background: #3a4561; }
+.btn.peligro { background: transparent; color: #ffb4ab; box-shadow: inset 0 0 0 2px #ffb4ab; }
+.btn.activo { background: #F5F59A; color: #0E1D36; }
+.error-carga { font-family: system-ui, sans-serif; padding: 40px; color: #0E1D36; background: #fff; }
+.error-carga li { font-family: ui-monospace, monospace; font-size: 14px; margin: 4px 0; }
+.sin-cursor, .sin-cursor * { cursor: none !important; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }

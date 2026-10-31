@@ -1,0 +1,4 @@
+[
+  { "id": "prueba-a", "etiqueta": "Destino A", "modo": "directo", "destinos": { "A": "https://example.com/a" }, "textoCorto": "example.com/a", "definitivo": false },
+  { "id": "prueba-b", "etiqueta": "Destino B (ruta estable)", "modo": "estable", "urlEstable": "http://localhost:8787/r/prueba-b", "destinos": { "A": "https://example.com/a", "B": "https://example.com/b" }, "activo": "B", "textoCorto": "localhost:8787/r/prueba-b", "definitivo": false }
+]
