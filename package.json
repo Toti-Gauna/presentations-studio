@@ -21,7 +21,8 @@
     "paquete:local": "node scripts/paquete-local.ts",
     "local": "node scripts/servir-local.ts",
     "e2e": "node e2e/recorrido.ts",
-    "verify": "npm run typecheck && npm test && npm run validar && vite build"
+    "verify": "npm run typecheck && npm test && npm run validar && vite build",
+    "escenarios": "node scripts/escenarios.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "5.3.0",

@@ -1,0 +1,1746 @@
+{
+ "versionEsquema": 1,
+ "id": "handyx",
+ "titulo": "Handyx · Arreglos del hogar en Mar del Plata",
+ "idioma": "es-AR",
+ "tema": "handyx",
+ "corte": "2026-10-31",
+ "estado": "borrador",
+ "versiones": [
+  {
+   "id": "aticma",
+   "titulo": "Semifinal ATICMA (3 min)",
+   "audiencia": "Jurado ATICMA Emprende 2026 · duración oficial sin confirmar",
+   "duracionObjetivo": 180,
+   "tolerancia": 0,
+   "escenas": [
+    "apertura",
+    "alternativas",
+    "handyx",
+    "recorrido",
+    "evidencia",
+    "piloto",
+    "captacion",
+    "modelo",
+    "equipo",
+    "pedido-aticma",
+    "cierre"
+   ],
+   "anexos": [
+    "anexo-estados",
+    "anexo-tarifas",
+    "anexo-mercado",
+    "anexo-escenarios",
+    "anexo-experimentos",
+    "anexo-riesgos",
+    "anexo-demo"
+   ]
+  },
+  {
+   "id": "corta",
+   "titulo": "Versión de 60 segundos",
+   "audiencia": "Presentación relámpago",
+   "duracionObjetivo": 60,
+   "tolerancia": 0,
+   "escenas": [
+    "apertura",
+    "handyx",
+    "evidencia",
+    "pedido-aticma",
+    "cierre"
+   ],
+   "duraciones": {
+    "apertura": 12,
+    "handyx": 12,
+    "evidencia": 14,
+    "pedido-aticma": 14,
+    "cierre": 8
+   },
+   "anexos": [
+    "anexo-estados",
+    "anexo-tarifas"
+   ]
+  },
+  {
+   "id": "angel",
+   "titulo": "Inversor ángel (6 min)",
+   "audiencia": "Reunión con inversor ángel",
+   "duracionObjetivo": 360,
+   "tolerancia": 30,
+   "escenas": [
+    "apertura",
+    "alternativas",
+    "handyx",
+    "recorrido",
+    "evidencia",
+    "piloto",
+    "captacion",
+    "growth",
+    "modelo",
+    "escenarios",
+    "equipo",
+    "pedido-angel",
+    "cierre"
+   ],
+   "duraciones": {
+    "apertura": 20,
+    "alternativas": 25,
+    "handyx": 18,
+    "recorrido": 30,
+    "evidencia": 30,
+    "piloto": 30,
+    "captacion": 25,
+    "growth": 30,
+    "modelo": 35,
+    "escenarios": 25,
+    "equipo": 35,
+    "pedido-angel": 35,
+    "cierre": 15
+   },
+   "anexos": [
+    "anexo-estados",
+    "anexo-tarifas",
+    "anexo-escenarios",
+    "anexo-experimentos",
+    "anexo-riesgos",
+    "anexo-mercado",
+    "anexo-demo"
+   ]
+  },
+  {
+   "id": "vc",
+   "titulo": "Fondo de inversión (9 min)",
+   "audiencia": "Conversación inicial con un VC",
+   "duracionObjetivo": 540,
+   "tolerancia": 45,
+   "escenas": [
+    "apertura",
+    "alternativas",
+    "handyx",
+    "recorrido",
+    "evidencia",
+    "mercado",
+    "piloto",
+    "captacion",
+    "growth",
+    "modelo",
+    "escenarios",
+    "equipo",
+    "pedido-vc",
+    "cierre"
+   ],
+   "duraciones": {
+    "apertura": 20,
+    "alternativas": 30,
+    "handyx": 20,
+    "recorrido": 35,
+    "evidencia": 40,
+    "mercado": 45,
+    "piloto": 40,
+    "captacion": 30,
+    "growth": 40,
+    "modelo": 50,
+    "escenarios": 40,
+    "equipo": 45,
+    "pedido-vc": 45,
+    "cierre": 15
+   },
+   "anexos": [
+    "anexo-estados",
+    "anexo-tarifas",
+    "anexo-mercado",
+    "anexo-escenarios",
+    "anexo-experimentos",
+    "anexo-riesgos",
+    "anexo-demo"
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "id": "trailer-usuario",
+   "tipo": "video",
+   "archivo": "video/trailer-usuario.mp4",
+   "procedencia": "Handy-landing-page-fe/assets/video (render de kinetic-studio, música sintetizada)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final",
+   "respaldo": "póster + guion"
+  },
+  {
+   "id": "trailer-usuario-poster",
+   "tipo": "imagen",
+   "archivo": "video/trailer-usuario-poster.jpg",
+   "procedencia": "Handy-landing-page-fe/assets/video",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "personajes",
+   "tipo": "imagen",
+   "archivo": "personajes/recortes.json",
+   "procedencia": "handyx_laminas_individuales_HD.zip (8 láminas 2×2 sobre verde, 29/10/2026), recortadas con scripts/recortar_personajes.py",
+   "licencia": "Propia (Handyx)",
+   "estado": "temporal",
+   "respaldo": "Poses estáticas; falta rig articulado (ver docs/handyx/biblia-visual.md)"
+  }
+ ],
+ "escenas": [
+  {
+   "id": "apertura",
+   "titulo": "Problema: se rompió algo en casa",
+   "disposicion": "centro",
+   "paleta": "problema",
+   "duracion": 16,
+   "pasos": 2,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "Instalar una situación humana concreta en 15 segundos: el problema es encontrar a alguien confiable, no el arreglo en sí.",
+   "guion": "Se rompe algo en casa. Una pérdida, un enchufe que chispea. ¿Qué hacés? Pedís un número en el grupo del barrio, esperás que conteste… y no sabés si viene ni cuánto te va a cobrar.",
+   "notas": "Pausa de 1 s después de la pregunta. No dar cifras de mercado acá. El problema se apoya en 70 charlas EXPLORATORIAS: si preguntan, no es estudio estadístico.",
+   "lectura": "Cuando algo se rompe en una casa de Mar del Plata, la solución habitual es pedir un contacto a conocidos o en grupos del barrio. El vecino no sabe si la persona es confiable, si va a venir ni cuánto va a cobrar. Esta descripción del problema surge de conversaciones exploratorias y de la experiencia del equipo; todavía no es una medición.",
+   "referencias": [
+    "CHARLAS-CALLE"
+   ],
+   "preguntas": "¿Cómo saben que es un problema? → 70 charlas exploratorias (no estadísticas) y la experiencia propia; el piloto mide si la gente efectivamente pide.",
+   "respaldo": "Versión estática: título + texto sin animación; el grifo en pose fija.",
+   "elementos": [
+    {
+     "id": "grifo",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "area": "libre",
+     "pos": {
+      "x": 64,
+      "y": 18
+     },
+     "tamano": 52,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "¿Se rompió algo ==en casa?==",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 24,
+      "w": 58
+     },
+     "entrada": "palabras"
+    },
+    {
+     "id": "p",
+     "tipo": "texto",
+     "texto": "Pedís un número en el grupo del barrio, esperás que conteste y no sabés si viene ni cuánto te va a cobrar.",
+     "tamano": "l",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 58,
+      "w": 44
+     },
+     "paso": 1,
+     "entrada": "subir"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 51,
+      "y": 60
+     },
+     "tamano": 26,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "entrar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna",
+     "continuidad": true
+    }
+   ]
+  },
+  {
+   "id": "alternativas",
+   "titulo": "Alternativas actuales y fricción",
+   "disposicion": "centro",
+   "paleta": "problema",
+   "duracion": 16,
+   "pasos": 2,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar que hoy SÍ hay alternativas (no decimos 'no hay competencia') y que la fricción es de los dos lados.",
+   "guion": "Hoy se resuelve con la recomendación de un conocido, grupos de WhatsApp y Facebook o el contacto de la ferretería. Funciona… cuando funciona. Y del otro lado hay un especialista con trabajo irregular, que depende del boca en boca y pierde horas en presupuestos que no se concretan.",
+   "notas": "No afirmar que no hay competencia. Competidores digitales nacionales: mencionarlos solo si preguntan y sin datos no verificados.",
+   "lectura": "Las alternativas actuales son la recomendación personal, los grupos de mensajería y redes, y los contactos que circulan en comercios del barrio. Para el vecino, la fricción es la confianza, el precio incierto y la espera. Para el especialista, el trabajo irregular y el tiempo perdido coordinando presupuestos. Ninguna de estas fricciones está cuantificada todavía.",
+   "preguntas": "¿Y la competencia? → Existen alternativas informales y plataformas; nuestra hipótesis es la coordinación local con oferta verificada en una sola ciudad. No es una barrera probada.",
+   "respaldo": "Tabla estática.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Hoy depende de ==a quién conocés==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "alt",
+     "tipo": "texto",
+     "texto": "Un conocido · grupos de WhatsApp y Facebook · el contacto de la ferretería",
+     "tamano": "m",
+     "area": "centro",
+     "entrada": "subir"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "paso": 1,
+     "area": "abajo",
+     "entrada": "subir",
+     "columnas": [
+      "El vecino",
+      "El especialista"
+     ],
+     "filas": [
+      [
+       "No sabe si es confiable",
+       "Trabajo irregular, de boca en boca"
+      ],
+      [
+       "No sabe cuánto le van a cobrar",
+       "Presupuestos que no se concretan"
+      ],
+      [
+       "Espera que le contesten",
+       "Coordina todo por WhatsApp, a cualquier hora"
+      ]
+     ]
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 24
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "escala"
+    }
+   ]
+  },
+  {
+   "id": "handyx",
+   "titulo": "Handyx: el encuentro",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 14,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "continuidad",
+   "objetivo": "Presentar la solución en una frase y el resultado buscado; los personajes se encuentran (cambio de paleta = del problema al encuentro).",
+   "guion": "Handyx junta las dos puntas: pedís, el especialista pone su precio, y vos elegís. Empezamos en Mar del Plata, con seis rubros y foco en plomería y electricidad.",
+   "notas": "Dejar que los personajes se saluden (1,5 s) antes de hablar del alcance. 'Verificados' solo como proceso previsto, no como estado de los 56.",
+   "lectura": "Handyx es un marketplace local de arreglos del hogar: el vecino describe lo que necesita, especialistas de la zona envían una propuesta con su precio y el vecino elige. Arranca en Mar del Plata con seis rubros (electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado) y foco inicial en plomería y electricidad.",
+   "referencias": [
+    "RUBROS"
+   ],
+   "preguntas": "¿Por qué Mar del Plata? → Es donde está el equipo y donde se puede formar oferta verificada cara a cara; la densidad local es la hipótesis a probar antes de pensar en otra ciudad.",
+   "respaldo": "Logo y frase sin personajes.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "Pedís. El especialista propone. ==Vos elegís.==",
+     "area": "centro",
+     "entrada": "palabras"
+    },
+    {
+     "id": "s",
+     "tipo": "texto",
+     "texto": "Mar del Plata · {{RUBROS}} rubros · arrancamos por plomería y electricidad",
+     "tamano": "m",
+     "area": "arriba",
+     "paso": 1,
+     "entrada": "subir"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 7,
+      "y": 63
+     },
+     "tamano": 27,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna",
+     "continuidad": true
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 80,
+      "y": 64
+     },
+     "tamano": 27,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar",
+       "hacia": "izq"
+      },
+      {
+       "paso": 1,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "recorrido",
+   "titulo": "Recorrido: del pedido al pago",
+   "disposicion": "centro",
+   "paleta": "solucion",
+   "duracion": 20,
+   "pasos": 5,
+   "clasificacion": "demo",
+   "transicion": "deslizar",
+   "objetivo": "Explicar cómo funciona en cinco pasos, rotulando que es un prototipo con datos de prueba.",
+   "guion": "Contás qué pasó. Los especialistas te mandan su propuesta, con su precio y su horario. Elegís: nada es turno hasta que los dos aceptan. Se hace el trabajo. Y pagás directo al especialista; Handy retiene solo su tarifa.",
+   "notas": "Un nodo por frase. Decir 'prototipo' en voz alta. La plata NO pasa por Handy (pago directo, MP o efectivo; reportado ≠ verificado).",
+   "lectura": "El recorrido previsto tiene cinco pasos: pedido (rubro, descripción y fotos), propuestas de especialistas con precio y horario, aceptación de ambas partes, trabajo y pago. El pago va directo al especialista (Mercado Pago o efectivo) y Handyx cobra solo su tarifa. Lo que se ve hoy es un prototipo navegable con datos de prueba; la PWA está prevista para el 10/11/2026.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "preguntas": "¿Y si se arreglan por fuera (desintermediación)? → Riesgo real. Mitigación prevista: valor dentro de la app (historial, propuestas comparables, chat sin compartir teléfono, reseñas) y tarifa baja; se mide en el piloto como repetición dentro de Handyx.",
+   "respaldo": "Diagrama estático con los 5 pasos.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Del pedido al pago, ==en un lugar==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "f",
+     "tipo": "flujo",
+     "area": "centro",
+     "nodos": [
+      {
+       "texto": "Pedido",
+       "detalle": "Contás qué pasó, con fotos"
+      },
+      {
+       "texto": "Propuesta",
+       "detalle": "El especialista pone su precio y horario",
+       "paso": 1
+      },
+      {
+       "texto": "Aceptación",
+       "detalle": "Nada es turno hasta que los dos aceptan",
+       "paso": 2
+      },
+      {
+       "texto": "Trabajo",
+       "detalle": "Seguís el avance por el chat",
+       "paso": 3
+      },
+      {
+       "texto": "Pago",
+       "detalle": "Directo al especialista; Handyx cobra su tarifa",
+       "paso": 4
+      }
+     ]
+    },
+    {
+     "id": "demo",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Prototipo navegable con datos de prueba · PWA prevista para el {{LANZAMIENTO}}",
+     "area": "abajo"
+    }
+   ]
+  },
+  {
+   "id": "evidencia",
+   "titulo": "Evidencia al corte",
+   "disposicion": "dividido",
+   "paleta": "evidencia",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la evidencia real y acotada: 56 especialistas registrados, qué prueba y qué NO prueba todavía.",
+   "guion": "¿Qué sabemos hoy? Antes de lanzar, 56 especialistas se registraron. Es interés real del lado de la oferta. Todavía no sabemos cuántos van a estar verificados y disponibles, y trabajos por Handyx hay cero, porque la app sale el 10 de noviembre. Eso es lo que mide el piloto.",
+   "notas": "Dato informado por Ignacio al 31/10, sin auditar contra el CRM: actualizar con el corte del 04/11. NUNCA decir 'verificados' ni 'activos'. Si hay corte de usuarios en lista de espera, agregarlo como dato con fecha (hoy no hay).",
+   "lectura": "Al 31/10/2026 hay 56 especialistas registrados (dato informado por el fundador, pendiente de contrastar con un corte agregado del CRM). Registrado no equivale a contactado, verificado, disponible ni activo: esos estados todavía no están medidos. No hubo trabajos a través de Handyx porque la aplicación transaccional se lanza el 10/11/2026.",
+   "referencias": [
+    "ESP-REGISTRADOS",
+    "TRABAJOS-HANDYX",
+    "ESP-VERIFICADOS"
+   ],
+   "preguntas": "¿Cuántos de los 56 están verificados? → Todavía no lo medimos: el corte del 04/11 dirá cuántos fueron contactados; la verificación la hace Operations durante el piloto.",
+   "respaldo": "Cifra y tabla estáticas.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Qué sabemos ==hoy==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "ESP-REGISTRADOS",
+     "leyenda": "especialistas registrados antes del lanzamiento",
+     "detalle": "Registrados: todavía no verificados ni activos.",
+     "area": "izquierda",
+     "entrada": "contar"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "derecha",
+     "paso": 1,
+     "entrada": "subir",
+     "columnas": [
+      "Estado",
+      "Al 31/10"
+     ],
+     "filas": [
+      [
+       "Registrados",
+       "{{ESP-REGISTRADOS}}"
+      ],
+      [
+       "Contactados · verificados · disponibles",
+       "sin medir todavía"
+      ],
+      [
+       "Trabajos por Handyx",
+       "{{TRABAJOS-HANDYX}} (la app sale el {{LANZAMIENTO}})"
+      ]
+     ]
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "Prueba interés de la oferta. ==No prueba== todavía disponibilidad, calidad ni demanda."
+    }
+   ]
+  },
+  {
+   "id": "piloto",
+   "titulo": "Piloto en Mar del Plata",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Convertir las incertidumbres en tres preguntas medibles con umbrales fijados antes de empezar.",
+   "guion": "Entre el 10 de noviembre y el 10 de diciembre hacemos un piloto en Mar del Plata, sin tarifa. Tres preguntas: ¿los vecinos piden? ¿los especialistas responden con una propuesta? ¿el trabajo se completa y la gente vuelve? Los umbrales los fijamos antes de empezar, para no acomodarlos después.",
+   "notas": "Umbrales propuestos (anexo experimentos): ≥ 10 pedidos reales por semana desde la semana 2; ≥ 60 % de pedidos con propuesta en 24 h; ≥ 50 % de aceptados terminados. Son PROPUESTOS, no validados.",
+   "lectura": "El piloto (10/11–10/12/2026, sin tarifa para ninguna de las partes) responde tres preguntas: si los vecinos piden arreglos reales, si los especialistas responden con propuestas y si los trabajos se completan y se repiten. Cada pregunta tiene una métrica, una ventana y un umbral propuesto antes de empezar, y una decisión prevista si no se alcanza (cambiar canal, zona o rubro, no el criterio).",
+   "referencias": [
+    "LANZAMIENTO",
+    "PILOTO-FIN",
+    "TARIFA-PILOTO"
+   ],
+   "preguntas": "¿Qué pasa si no se cumplen los umbrales? → Cambiamos canal de captación, zona o rubro antes de gastar en escala; el criterio no se mueve.",
+   "respaldo": "Lista estática.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Piloto: {{LANZAMIENTO}} → {{PILOTO-FIN}}",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "centro",
+     "items": [
+      {
+       "texto": "¿Los vecinos piden? → **pedidos reales por semana**",
+       "paso": 1
+      },
+      {
+       "texto": "¿Los especialistas responden? → **% de pedidos con propuesta en 24 h**",
+       "paso": 2
+      },
+      {
+       "texto": "¿Se completa y se vuelve? → **trabajos terminados y pagados, y quién repite**",
+       "paso": 3
+      }
+     ]
+    },
+    {
+     "id": "u",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 3,
+     "entrada": "fundido",
+     "texto": "Umbrales fijados antes de empezar (ver anexo). Si no se cumplen, cambiamos canal, zona o rubro, no el criterio."
+    }
+   ]
+  },
+  {
+   "id": "captacion",
+   "titulo": "Captación física y digital medible",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 16,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar un recorrido de captación medible (no una lista de canales) que junta pedidos y oferta en la misma zona.",
+   "guion": "¿Cómo conseguimos pedidos y especialistas en la misma zona? Volantes y comercios del barrio —ferreterías, pinturerías, casas de electricidad— con un QR por lugar; una landing por público; y antes de prometer un turno, confirmamos que haya cobertura.",
+   "notas": "Decir 'previsto'. Solo llamar aliado a un comercio que aceptó (hoy: ninguno confirmado en las fuentes). Medimos escaneos por pieza y lugar, sin suponer que cada escaneo es una persona.",
+   "lectura": "La captación prevista combina piezas físicas (volante A5 doble faz, piezas en comercios que acepten colaborar, A4 con dos QR donde esté permitido) y digitales (landing diferenciada por público, contenido corto con los personajes, búsqueda local). Cada pieza usa un QR o ruta propia por audiencia, lugar y versión para medir visitas, registros y primeros trabajos atribuibles. Es estrategia prevista, no resultado.",
+   "preguntas": "¿Cuánto cuesta captar un usuario? → Todavía no lo medimos; calculamos CAC sobre usuarios con primer trabajo completado (no sobre registros) y lo separamos del costo por registro.",
+   "respaldo": "Diagrama estático.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Pedidos y especialistas ==en la misma zona==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "f",
+     "tipo": "flujo",
+     "area": "centro",
+     "nodos": [
+      {
+       "texto": "Volante y comercio",
+       "detalle": "QR propio por lugar y por público"
+      },
+      {
+       "texto": "Landing por público",
+       "detalle": "Vecinos y especialistas por separado",
+       "paso": 1
+      },
+      {
+       "texto": "Primer pedido",
+       "detalle": "Cobertura confirmada antes de prometer",
+       "paso": 2
+      },
+      {
+       "texto": "Trabajo y recomendación",
+       "detalle": "El vecino trae al siguiente",
+       "paso": 3
+      }
+     ]
+    },
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "aviso",
+     "texto": "Estrategia prevista · se mide desde el {{LANZAMIENTO}}",
+     "area": "abajo"
+    }
+   ]
+  },
+  {
+   "id": "growth",
+   "titulo": "Growth: activación, repetición y recomendación",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar que el crecimiento se diseña como bucles medibles y experimentos con costo máximo y criterio de corte.",
+   "guion": "El crecimiento que buscamos es que un trabajo bien hecho traiga el siguiente: reseña o recomendación, nuevo pedido en la misma zona, más valor para los especialistas. Lo probamos con seis experimentos: dos físicos, dos digitales, uno de activación y uno de recomendación. Cada uno tiene hipótesis, costo máximo y criterio para cortarlo.",
+   "notas": "Con muestras chicas no declaramos ganadores estadísticos. Incentivos = propuestas con costo y control de abuso, no promesas.",
+   "lectura": "El bucle principal es: trabajo satisfactorio → reseña o recomendación → nuevo pedido en la zona → más valor para los especialistas. El segundo: comercio colaborador → pedido trazable → resolución → nuevas recomendaciones. Seis experimentos iniciales (dos físicos, dos digitales, uno de activación y uno de recomendación) tienen hipótesis, métrica principal, costo máximo, duración, mínimo de observación y criterio para seguir o cortar.",
+   "preguntas": "¿Cómo saben si un experimento funcionó con pocos datos? → Mínimo de observación y criterio previos; con muestras chicas reportamos aprendizajes, no ganadores estadísticos.",
+   "respaldo": "Diagrama estático.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Que un trabajo bien hecho ==traiga el siguiente==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "f",
+     "tipo": "flujo",
+     "area": "centro",
+     "nodos": [
+      {
+       "texto": "Trabajo bien hecho"
+      },
+      {
+       "texto": "Reseña o recomendación",
+       "paso": 1
+      },
+      {
+       "texto": "Nuevo pedido en la zona",
+       "paso": 1
+      },
+      {
+       "texto": "Más valor para especialistas",
+       "paso": 1
+      }
+     ]
+    },
+    {
+     "id": "x",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "**6 experimentos** con hipótesis, costo máximo y criterio de corte: 2 físicos · 2 digitales · activación · recomendación"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 8
+     },
+     "tamano": 18,
+     "acciones": [
+      {
+       "paso": 2,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "modelo",
+   "titulo": "Modelo de ingresos y costo del período bonificado",
+   "disposicion": "dividido",
+   "paleta": "evidencia",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Explicar cómo gana Handyx, cuánto cuesta el mes sin tarifa y qué volumen hace falta, con supuestos visibles.",
+   "guion": "¿Cómo gana Handyx? El primer mes, nada: es el piloto. Después, 10 % al usuario y 10 % al especialista; la camada fundadora paga 5 %. Con un arreglo de ejemplo de 45 mil pesos, cada trabajo deja unos 6 mil de contribución. El mes sin tarifa cuesta alrededor de medio millón, y con nuestros costos fijos supuestos el equilibrio está en unos 49 trabajos por mes.",
+   "notas": "Todo es proyección con supuestos (ticket de la landing, pasarela 6 %, soporte $ 2.000/trabajo, fijos $ 300.000/mes SIN sueldos). Duración del 5 % fundador: pendiente (BUS-22/LEG-41). No llamar MRR/ARR. Ingreso de Handyx ≠ volumen de servicios ≠ caja.",
+   "lectura": "Durante el piloto (10/11–10/12/2026) no hay tarifa para ninguna de las partes, por lo que el ingreso por tarifas es cero mientras siguen los costos. Después, la tarifa informada es 10 % al usuario y 10 % al especialista, con 5 % para la camada fundadora de 50 especialistas (duración pendiente de definir). Con un precio base de ejemplo de $ 45.000, la contribución estimada por trabajo de un usuario recurrente es de unos $ 6.200, después de pasarela, devoluciones y soporte. Con costos fijos supuestos de $ 300.000 por mes (sin sueldos), el equilibrio estaría cerca de 49 trabajos mensuales. Todas estas cifras son proyecciones con supuestos explícitos en el anexo.",
+   "referencias": [
+    "TARIFA-PILOTO",
+    "TARIFA-USUARIO",
+    "TARIFA-ESPECIALISTA",
+    "TARIFA-FUNDADORES",
+    "TICKET-EJEMPLO",
+    "PROY-CONTRIB-TRABAJO",
+    "PROY-COSTO-PILOTO",
+    "PROY-EQUILIBRIO"
+   ],
+   "preguntas": "¿Quién financia el 0 %? → El equipo (bootstrap), sin caja comprometida informada; por eso pedimos apoyo. El costo estimado del mes es ≈ $ 536.000 en el escenario base.",
+   "respaldo": "Tabla y cifra estáticas.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Cómo gana ==Handyx==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "izquierda",
+     "entrada": "subir",
+     "columnas": [
+      "Tarifa de Handyx",
+      "Usuario",
+      "Especialista"
+     ],
+     "filas": [
+      [
+       "Primer mes (piloto)",
+       "{{TARIFA-PILOTO}}",
+       "{{TARIFA-PILOTO}}"
+      ],
+      [
+       "Después",
+       "{{TARIFA-USUARIO}}",
+       "{{TARIFA-ESPECIALISTA}}"
+      ],
+      [
+       "Camada fundadora ({{FUNDADORES-CUPO}})",
+       "{{TARIFA-USUARIO}}",
+       "{{TARIFA-FUNDADORES}}"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "PROY-CONTRIB-TRABAJO",
+     "leyenda": "de contribución por trabajo de {{TICKET-EJEMPLO}}",
+     "detalle": "Después de pasarela, devoluciones y soporte; usuario recurrente.",
+     "area": "derecha",
+     "paso": 1,
+     "entrada": "contar"
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "El mes sin tarifa cuesta ≈ {{PROY-COSTO-PILOTO}}. Equilibrio ≈ {{PROY-EQUILIBRIO}} trabajos por mes."
+    }
+   ]
+  },
+  {
+   "id": "mercado",
+   "titulo": "Mercado abordable",
+   "disposicion": "grilla",
+   "paleta": "evidencia",
+   "duracion": 35,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Dimensionar el mercado desde viviendas × frecuencia × ticket, distinguiendo volumen de servicios de ingreso de Handyx.",
+   "guion": "El mercado lo calculamos de abajo hacia arriba: unas 260 mil viviendas ocupadas en General Pueyrredon, uno o dos arreglos por año, a un precio de ejemplo de 45 mil pesos. Son unos 17 mil millones de pesos al año en arreglos. Si nos quedamos con plomería y electricidad, y con los hogares que pedirían por una app, son unos 3.500 millones. Lo que nos importa hoy es la tercera cifra: lo que podemos atender con la oferta y la captación que tenemos.",
+   "notas": "Volumen de servicios, NO ingreso de Handyx (el ingreso es ~15–20 % de eso como máximo). Viviendas: Censo 2022 vía La Capital, pendiente cuadro oficial INDEC. Frecuencia, foco y % digital = supuestos.",
+   "lectura": "El mercado se estimó de abajo hacia arriba: viviendas ocupadas del partido de General Pueyrredon según el Censo 2022 (259.623, dato citado por prensa local, pendiente de contrastar con INDEC) × 1,5 arreglos por año (supuesto, rango 1–2) × $ 45.000 de precio base de ejemplo. Resultado: ≈ $ 17.500 millones anuales en volumen de servicios. Acotado a plomería y electricidad (50 %, supuesto) y a hogares dispuestos a pedir por una app (40 %, supuesto): ≈ $ 3.500 millones. El escenario base del piloto y los 12 meses siguientes proyecta ≈ $ 30 millones de volumen atendido, limitado por capacidad y captación. Son volúmenes de servicios, no ingresos de Handyx.",
+   "referencias": [
+    "MDP-VIVIENDAS",
+    "SUP-ARREGLOS-ANUALES",
+    "SUP-SHARE-FOCO",
+    "SUP-DIGITAL",
+    "TAM-ARS",
+    "SAM-ARS",
+    "PROY-SOM-ARS"
+   ],
+   "preguntas": "¿Por qué el SOM es tan chico frente al TAM? → Porque lo calculamos por capacidad real de oferta y captación, no como porcentaje del mercado.",
+   "respaldo": "Tres cifras estáticas.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Mercado: volumen de servicios, ==no ingreso==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "tam",
+     "tipo": "cifra",
+     "afirmacion": "TAM-ARS",
+     "leyenda": "arreglos por año en el partido (6 rubros)",
+     "entrada": "subir"
+    },
+    {
+     "id": "sam",
+     "tipo": "cifra",
+     "afirmacion": "SAM-ARS",
+     "leyenda": "plomería y electricidad, hogares que pedirían por app",
+     "paso": 1,
+     "entrada": "subir"
+    },
+    {
+     "id": "som",
+     "tipo": "cifra",
+     "afirmacion": "PROY-SOM-ARS",
+     "leyenda": "lo que podemos atender en 13 meses (base)",
+     "paso": 2,
+     "entrada": "subir"
+    },
+    {
+     "id": "f",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 3,
+     "entrada": "fundido",
+     "texto": "{{MDP-VIVIENDAS}} viviendas ocupadas (Censo 2022) × 1–2 arreglos/año × {{TICKET-EJEMPLO}}. Supuestos a medir en el piloto."
+    }
+   ]
+  },
+  {
+   "id": "escenarios",
+   "titulo": "Escenarios de capacidad",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 2,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar escenarios conservador/base/expansión anclados a capacidad y captación, y cuál es el cuello de botella.",
+   "guion": "Proyectamos tres escenarios para el piloto y los 12 meses siguientes, anclados a capacidad y captación, no a multiplicar registros. En los tres el límite es la demanda, no la oferta. Por eso el piloto pone el esfuerzo en conseguir pedidos en la misma zona.",
+   "notas": "No es una curva histórica. Sensibilidad: ticket, cobertura, captación de usuarios y repetición son los que más mueven el resultado (docs/handyx/escenarios.md).",
+   "lectura": "Los escenarios conservador, base y expansión proyectan entre ≈ 220 y ≈ 1.760 trabajos completados en 13 meses. En los tres, la restricción es la demanda: hay más capacidad de oferta que pedidos atendibles. El parámetro que más cambia el resultado es la captación de usuarios y su repetición, seguido del precio base y la cobertura.",
+   "referencias": [
+    "PROY-TRABAJOS-CONSERVADOR",
+    "PROY-TRABAJOS-BASE",
+    "PROY-TRABAJOS-EXPANSION"
+   ],
+   "preguntas": "¿Qué cinco datos cambian más el modelo? → Captación de usuarios, repetición, ticket, cobertura por rubro/zona y aceptación de propuestas.",
+   "respaldo": "Gráfico estático.",
+   "elementos": [
+    {
+     "id": "g",
+     "tipo": "grafico",
+     "forma": "barras",
+     "area": "centro",
+     "titulo": "Trabajos completados en 13 meses",
+     "rotulo": "Escenarios ilustrativos · supuestos en anexo",
+     "series": [
+      {
+       "etiqueta": "Conservador",
+       "afirmacion": "PROY-TRABAJOS-CONSERVADOR"
+      },
+      {
+       "etiqueta": "Base",
+       "afirmacion": "PROY-TRABAJOS-BASE"
+      },
+      {
+       "etiqueta": "Expansión",
+       "afirmacion": "PROY-TRABAJOS-EXPANSION"
+      }
+     ]
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 1,
+     "entrada": "subir",
+     "texto": "En los tres, el límite es la ==demanda==, no la oferta."
+    }
+   ]
+  },
+  {
+   "id": "equipo",
+   "titulo": "Equipo, ejecución e hitos",
+   "disposicion": "dividido",
+   "paleta": "neutro",
+   "duracion": 14,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar capacidad de ejecución con lo ya construido (con su estado real) y los hitos hacia 50 trabajos y 5 repetidores.",
+   "guion": "Somos un equipo chico: yo llevo dirección, producto y desarrollo, con diseño a tiempo parcial. Ya construimos la landing con su backend de captación, el CRM interno y los prototipos de las dos apps. Los hitos: lanzamiento el 10/11, piloto hasta el 10/12, y antes de fin de año 50 trabajos cobrados y 5 usuarios que repitan.",
+   "notas": "Estado real: landing/BE/CRM implementados y probados en local; publicación en curso. PWA: prototipos navegables con datos de prueba, backends transaccionales sin empezar al 31/10. MET-01: un trabajo del mes sin tarifa NO cuenta como 'cobrado' → con la definición actual la meta de 50 queda muy exigida (modelo base ≈ 15 con tarifa al 31/12). Pedido a Metrics/Business: separar 'trabajo pagado' de 'trabajo con tarifa cobrada'.",
+   "lectura": "El equipo es Ignacio Gauna (dirección, producto y desarrollo) y una diseñadora a tiempo parcial, con desarrollo asistido por IA. Están construidos y probados en entorno local la landing con su backend de captación (datos personales cifrados), el CRM interno y prototipos navegables de las aplicaciones de usuario y de especialista; la publicación está en curso. Hitos: lanzamiento previsto el 10/11/2026, piloto hasta el 10/12/2026 y objetivo de 50 trabajos cobrados y 5 usuarios que repitan antes del 31/12/2026.",
+   "referencias": [
+    "LANZAMIENTO",
+    "PILOTO-FIN",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "preguntas": "¿No depende todo de vos? → Sí, es un riesgo: lo mitigamos con desarrollo asistido, documentación por módulo y procesos manuales validados; el apoyo pedido incluye sumar operación.",
+   "respaldo": "Listas estáticas.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Quién lo ejecuta ==y qué sigue==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "eq",
+     "tipo": "lista",
+     "area": "izquierda",
+     "estilo": "vinetas",
+     "items": [
+      {
+       "texto": "**Ignacio Gauna** · dirección, producto y desarrollo"
+      },
+      {
+       "texto": "**Diseño** a tiempo parcial"
+      },
+      {
+       "texto": "Desarrollo asistido con IA"
+      }
+     ]
+    },
+    {
+     "id": "hecho",
+     "tipo": "lista",
+     "area": "derecha",
+     "estilo": "contraste",
+     "paso": 1,
+     "items": [
+      {
+       "texto": "Landing y captación con datos cifrados"
+      },
+      {
+       "texto": "CRM interno de registros"
+      },
+      {
+       "texto": "Prototipos de las dos apps"
+      }
+     ]
+    },
+    {
+     "id": "h",
+     "tipo": "texto",
+     "tamano": "m",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "subir",
+     "texto": "{{LANZAMIENTO}} lanzamiento · {{PILOTO-FIN}} fin del piloto · 31/12: **{{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} usuarios que repiten**"
+    }
+   ]
+  },
+  {
+   "id": "pedido-aticma",
+   "titulo": "Pedido a ATICMA",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 14,
+   "pasos": 3,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "Un pedido concreto y apropiado a la etapa: contactos, mentoría y apoyo para el piloto.",
+   "guion": "¿Qué le pedimos a ATICMA? Contactos con comercios del hogar para el piloto. Mentoría en operaciones y finanzas. Y apoyo para financiar el piloto: estimamos entre 3 y 6 millones de pesos para sostener entre 6 y 13 meses de operación, sin sueldos.",
+   "notas": "Monto, instrumento y condiciones: DECISIÓN PENDIENTE de Ignacio (FUND-03). No prometer que ATICMA entrega efectivo; no hablar de equity ni valuación.",
+   "lectura": "Pedimos a ATICMA contactos con comercios relacionados con el hogar para el piloto, mentoría en operaciones de marketplace y finanzas, y apoyo para financiar el piloto. El rango propuesto (≈ $ 3 a 6 millones, para 6 a 13 meses de operación sin sueldos) surge del consumo de caja del escenario base; el monto y el instrumento están pendientes de decisión.",
+   "referencias": [
+    "PEDIDO-RANGO",
+    "PROY-CONSUMO-13M"
+   ],
+   "preguntas": "¿En qué se usa la plata? → Captación física y digital (≈ 40 %), costos fijos de operación e infraestructura (≈ 60 %) según el escenario base; sin sueldos.",
+   "respaldo": "Lista estática.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Qué le pedimos ==a ATICMA==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "centro",
+     "items": [
+      {
+       "texto": "**Contactos** con comercios del hogar para el piloto"
+      },
+      {
+       "texto": "**Mentoría** en operaciones de marketplace y finanzas",
+       "paso": 1
+      },
+      {
+       "texto": "**Apoyo para el piloto**: rango propuesto {{PEDIDO-RANGO}} (6–13 meses, sin sueldos)",
+       "paso": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pedido-angel",
+   "titulo": "Pedido a un inversor ángel",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 35,
+   "pasos": 3,
+   "clasificacion": "supuesto",
+   "transicion": "fundido",
+   "objetivo": "Abrir una conversación con un ángel: qué capital y qué ayuda, qué hitos compra y qué riesgo reduce.",
+   "guion": "Buscamos un primer socio para el piloto. Necesitamos entre 3 y 6 millones de pesos para sostener la operación entre 6 y 13 meses, y alguien que sume conocimiento de operación local. Eso compra tres hitos: lanzamiento el 10/11, un piloto medido con umbrales previos, y los primeros trabajos cobrados y usuarios que repiten. Instrumento y condiciones, a conversar.",
+   "notas": "Sin valuación, dilución ni compromisos inventados. Si piden instrumento: 'lo definimos con vos; no tenemos términos cerrados'.",
+   "lectura": "Buscamos un primer inversor que acompañe el piloto con capital (rango propuesto de $ 3 a 6 millones para 6 a 13 meses de operación, sin sueldos) y con conocimiento operativo. El capital financia captación y operación hasta tres hitos: lanzamiento, piloto medido con umbrales fijados antes de empezar, y primeros trabajos cobrados y usuarios que repiten. Instrumento y condiciones están abiertos.",
+   "referencias": [
+    "PEDIDO-RANGO",
+    "PROY-CONSUMO-13M"
+   ],
+   "preguntas": "¿Qué valuación? → No fijamos valuación ni instrumento; preferimos acordarlos después del piloto o con un instrumento convertible, a definir.",
+   "respaldo": "Lista estática.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Buscamos un ==primer socio==",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "centro",
+     "items": [
+      {
+       "texto": "**Capital para el piloto**: rango propuesto {{PEDIDO-RANGO}} (6–13 meses, sin sueldos)"
+      },
+      {
+       "texto": "**Experiencia** en operación de servicios locales",
+       "paso": 1
+      },
+      {
+       "texto": "**Hitos que compra**: lanzamiento · piloto medido · primeros trabajos cobrados y repetición",
+       "paso": 2
+      }
+     ]
+    },
+    {
+     "id": "c",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "fundido",
+     "texto": "Instrumento y condiciones: a conversar. Sin valuación ni términos definidos."
+    }
+   ]
+  },
+  {
+   "id": "pedido-vc",
+   "titulo": "Conversación con un fondo",
+   "disposicion": "centro",
+   "paleta": "encuentro",
+   "duracion": 40,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Conversación honesta de etapa temprana: no hay ronda abierta; qué evidencia cambiaría la decisión de invertir.",
+   "guion": "No venimos a levantar una ronda: venimos a abrir la conversación. Para que Handyx sea invertible tiene que demostrar tres cosas en una ciudad: densidad —pedidos y especialistas en la misma zona—, repetición dentro de la plataforma y contribución positiva por trabajo. El piloto mide las tres. Con eso, volvemos con datos.",
+   "notas": "No inventar otra ciudad operativa, ronda abierta ni términos. Defensibilidad = hipótesis (densidad local + historial + verificación), no barrera probada.",
+   "lectura": "Handyx no tiene una ronda abierta. Para evaluar la invertibilidad hacen falta tres evidencias en Mar del Plata: densidad (pedidos y especialistas en la misma zona con cobertura medida), repetición dentro de la plataforma y contribución positiva por trabajo con tarifa estándar. El piloto y los meses siguientes las miden; la propuesta es volver a conversar con esos datos.",
+   "referencias": [
+    "PROY-CONTRIB-TRABAJO"
+   ],
+   "preguntas": "¿Qué parte se automatiza para escalar? → Verificación documental asistida, matching por rubro/zona y recordatorios; la verificación final y el soporte de reclamos siguen siendo humanos, con costo por trabajo modelado.",
+   "respaldo": "Lista estática.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Qué tiene que ==demostrar== Handyx",
+     "area": "arriba",
+     "entrada": "mascara"
+    },
+    {
+     "id": "l",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "area": "centro",
+     "items": [
+      {
+       "texto": "**Densidad**: pedidos y especialistas en la misma zona"
+      },
+      {
+       "texto": "**Repetición** dentro de la plataforma",
+       "paso": 1
+      },
+      {
+       "texto": "**Contribución positiva** por trabajo con tarifa estándar",
+       "paso": 2
+      }
+     ]
+    },
+    {
+     "id": "c",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "paso": 2,
+     "entrada": "fundido",
+     "texto": "Hoy no hay ronda abierta: volvemos con los datos del piloto."
+    }
+   ]
+  },
+  {
+   "id": "cierre",
+   "titulo": "Cierre y QR de registro",
+   "disposicion": "dividido",
+   "paleta": "cierre",
+   "duracion": 10,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "corte",
+   "objetivo": "Cerrar con la identidad vigente y un siguiente paso concreto para la audiencia: dos QR públicos (usuarios / especialistas).",
+   "guion": "Handyx: soluciones, no problemas. Si querés usarlo o sos especialista, escaneá el código que te corresponde. Gracias.",
+   "notas": "Dejar los QR en pantalla durante las preguntas (pantalla negra solo si lo piden). Los QR son PÚBLICOS; el QR de control nunca se proyecta. Destinos provisionales hasta confirmar que el formulario de la landing está abierto.",
+   "lectura": "Para sumarse: usuarios en landing.handyc.com/registro/?tipo=usuario y especialistas en landing.handyc.com/registro/?tipo=especialista.",
+   "preguntas": "",
+   "respaldo": "QR impresos en A4 como contingencia.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "texto": "Soluciones, ==no problemas.==",
+     "area": "arriba",
+     "entrada": "palabras"
+    },
+    {
+     "id": "qa",
+     "tipo": "qr",
+     "qr": "registro-usuarios",
+     "area": "izquierda",
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "qb",
+     "tipo": "qr",
+     "qr": "registro-especialistas",
+     "area": "derecha",
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "foco",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 66,
+      "y": 3
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna",
+     "continuidad": true
+    },
+    {
+     "id": "llave",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 80,
+      "y": 2
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "anexo-estados",
+   "titulo": "Anexo · Estados de la oferta",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "informado",
+   "objetivo": "Definir qué significa cada estado y qué está medido.",
+   "guion": "Registrado no es activo: así definimos cada estado y qué está medido al corte.",
+   "notas": "OPS-01 y MET-01 definen los estados. Actualizar con el corte del 04/11.",
+   "lectura": "Definiciones: registrado (dejó sus datos), contactado (Operations habló con la persona), verificado (identidad y habilitación revisadas por Operations), disponible (declaró disponibilidad), activo (al menos un trabajo cobrado en 30 días, MET-01).",
+   "referencias": [
+    "ESP-REGISTRADOS",
+    "TRABAJOS-HANDYX"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "Estados de la oferta (OPS-01 / MET-01)",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Estado",
+      "Definición",
+      "Al 31/10"
+     ],
+     "filas": [
+      [
+       "Registrado",
+       "Dejó sus datos",
+       "{{ESP-REGISTRADOS}}"
+      ],
+      [
+       "Contactado",
+       "Operations habló con la persona",
+       "sin medir"
+      ],
+      [
+       "Verificado",
+       "Identidad y habilitación revisadas",
+       "sin medir"
+      ],
+      [
+       "Disponible",
+       "Declaró disponibilidad para el piloto",
+       "sin medir"
+      ],
+      [
+       "Activo",
+       "≥ 1 trabajo cobrado en 30 días (MET-01)",
+       "{{TRABAJOS-HANDYX}} (sin app todavía)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anexo-tarifas",
+   "titulo": "Anexo · Tarifas por cohorte",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "informado",
+   "objetivo": "Mostrar quién paga qué con base P, y qué está pendiente.",
+   "guion": "Con un precio base P, así se reparte cada trabajo según la cohorte.",
+   "notas": "Fuente: página ATICMA en Notion (modelo comercial) + Contexto Handy §7. Pendiente: duración del 5 %, criterio de cupo, base de cálculo (BUS-17/18/22, LEG-41). 5 % NO es margen.",
+   "lectura": "Con un precio base P acordado entre usuario y especialista: estándar recurrente, el usuario paga 1,10 P, el especialista recibe 0,90 P y Handyx ingresa 0,20 P bruto. Fundador con usuario recurrente: 1,10 P / 0,95 P / 0,15 P. Primer trabajo del usuario (tarifa del usuario bonificada): estándar P / 0,90 P / 0,10 P; fundador P / 0,95 P / 0,05 P. Durante el primer mes desde el 10/11 no hay tarifa para nadie. El ingreso bruto no es margen: se restan pasarela, impuestos, soporte, devoluciones y adquisición.",
+   "referencias": [
+    "TARIFA-USUARIO",
+    "TARIFA-ESPECIALISTA",
+    "TARIFA-FUNDADORES",
+    "FUNDADORES-CUPO"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "Tarifas por cohorte (base P)",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Cohorte",
+      "Paga el usuario",
+      "Recibe el especialista",
+      "Ingreso bruto Handyx"
+     ],
+     "filas": [
+      [
+       "Primer mes (piloto)",
+       "P",
+       "P",
+       "0"
+      ],
+      [
+       "Estándar, usuario recurrente",
+       "1,10 P",
+       "0,90 P",
+       "0,20 P"
+      ],
+      [
+       "Fundador, usuario recurrente",
+       "1,10 P",
+       "0,95 P",
+       "0,15 P"
+      ],
+      [
+       "Estándar, primer trabajo del usuario",
+       "P",
+       "0,90 P",
+       "0,10 P"
+      ],
+      [
+       "Fundador, primer trabajo del usuario",
+       "P",
+       "0,95 P",
+       "0,05 P"
+      ]
+     ]
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "texto": "Pendiente: duración del 5 % fundador, criterio del cupo y base de cálculo. Ingreso bruto ≠ margen."
+    }
+   ]
+  },
+  {
+   "id": "anexo-mercado",
+   "titulo": "Anexo · Mercado",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "proyeccion",
+   "objetivo": "Cálculo del mercado con fuentes y supuestos.",
+   "guion": "Así calculamos el mercado, con cada supuesto a la vista.",
+   "notas": "Contrastar viviendas con el cuadro oficial de INDEC antes del 04/11.",
+   "lectura": "TAM = viviendas ocupadas × arreglos por año × precio base. SAM = TAM × proporción de plomería y electricidad × proporción de hogares dispuestos a pedir por app. SOM = volumen atendido en el escenario base, limitado por capacidad y captación.",
+   "referencias": [
+    "MDP-VIVIENDAS",
+    "TAM-ARS",
+    "SAM-ARS",
+    "PROY-SOM-ARS"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "Mercado: cálculo y supuestos",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Concepto",
+      "Cálculo",
+      "Valor"
+     ],
+     "filas": [
+      [
+       "Viviendas ocupadas (Censo 2022)",
+       "dato (prensa local, pendiente INDEC)",
+       "{{MDP-VIVIENDAS}}"
+      ],
+      [
+       "Arreglos por vivienda y año",
+       "supuesto (rango 1–2)",
+       "{{SUP-ARREGLOS-ANUALES}}"
+      ],
+      [
+       "Precio base de ejemplo",
+       "landing",
+       "{{TICKET-EJEMPLO}}"
+      ],
+      [
+       "TAM (6 rubros)",
+       "viviendas × arreglos × precio",
+       "{{TAM-ARS}}"
+      ],
+      [
+       "SAM",
+       "TAM × {{SUP-SHARE-FOCO}} (plomería+electricidad) × {{SUP-DIGITAL}} (pedirían por app)",
+       "{{SAM-ARS}}"
+      ],
+      [
+       "SOM (13 meses, base)",
+       "modelo de capacidad y captación",
+       "{{PROY-SOM-ARS}}"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anexo-escenarios",
+   "titulo": "Anexo · Escenarios y supuestos",
+   "disposicion": "centro",
+   "paleta": "evidencia",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "proyeccion",
+   "objetivo": "Supuestos principales de los escenarios.",
+   "guion": "Estos son los supuestos que más mueven los escenarios.",
+   "notas": "Detalle mes a mes y sensibilidad en docs/handyx/escenarios.md (generado por npm run escenarios).",
+   "lectura": "Supuestos del escenario base: 40 % de los registrados verificados y 60 % de ellos disponibles; 3 altas por mes; 1,5 trabajos por semana por especialista; 40 usuarios nuevos el primer mes y +10 por mes; cobertura 70 %, aceptación 75 %, finalización 85 %; repetición 8 % mensual; precio base $ 45.000; pasarela 6 % sobre la tarifa; soporte $ 2.000 por trabajo; costos fijos $ 300.000 por mes sin sueldos; captación $ 200.000 por mes.",
+   "referencias": [
+    "PROY-TRABAJOS-BASE",
+    "PROY-EQUILIBRIO",
+    "PROY-CONSUMO-13M"
+   ],
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "Supuestos de los escenarios",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Supuesto",
+      "Conservador",
+      "Base",
+      "Expansión"
+     ],
+     "filas": [
+      [
+       "Registrados verificados × disponibles",
+       "30 % × 50 %",
+       "40 % × 60 %",
+       "50 % × 70 %"
+      ],
+      [
+       "Usuarios nuevos (mes 1 → mes 13)",
+       "25 → 85",
+       "40 → 160",
+       "60 → 300"
+      ],
+      [
+       "Cobertura · aceptación · finalización",
+       "55 · 65 · 80 %",
+       "70 · 75 · 85 %",
+       "80 · 80 · 90 %"
+      ],
+      [
+       "Repetición mensual",
+       "5 %",
+       "8 %",
+       "12 %"
+      ],
+      [
+       "Precio base",
+       "$ 35.000",
+       "$ 45.000",
+       "$ 55.000"
+      ],
+      [
+       "Trabajos en 13 meses",
+       "{{PROY-TRABAJOS-CONSERVADOR}}",
+       "{{PROY-TRABAJOS-BASE}}",
+       "{{PROY-TRABAJOS-EXPANSION}}"
+      ]
+     ]
+    },
+    {
+     "id": "n",
+     "tipo": "texto",
+     "tamano": "s",
+     "area": "abajo",
+     "texto": "Consumo de caja base en 13 meses ≈ {{PROY-CONSUMO-13M}} (sin sueldos). Runway: no calculable sin caja informada."
+    }
+   ]
+  },
+  {
+   "id": "anexo-experimentos",
+   "titulo": "Anexo · Experimentos del piloto",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 40,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "objetivo": "Backlog de 6 experimentos con umbral propuesto y decisión si falla.",
+   "guion": "Estos son los seis experimentos, con su umbral y qué hacemos si fallan.",
+   "notas": "Umbrales PROPUESTOS antes de ver resultados. Detalle completo en docs/handyx/growth.md.",
+   "lectura": "Seis experimentos iniciales: volante A5 por barrio, comercios colaboradores, contenido corto con personajes, búsqueda local, activación del primer pedido y recomendación después del trabajo. Cada uno con hipótesis, métrica, costo máximo, duración, mínimo de observación y criterio para seguir o cortar (ver documento de growth).",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "6 experimentos (umbrales propuestos)",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Experimento",
+      "Métrica principal",
+      "Umbral propuesto",
+      "Si falla"
+     ],
+     "filas": [
+      [
+       "F1 · Volante A5 por barrio",
+       "registros por 100 volantes",
+       "≥ 1 en 2 semanas",
+       "cambiar barrio o mensaje"
+      ],
+      [
+       "F2 · Comercios colaboradores",
+       "pedidos trazables por comercio",
+       "≥ 2 en 3 semanas",
+       "dejar el canal"
+      ],
+      [
+       "D1 · Videos cortos con personajes",
+       "registros por $ 10.000",
+       "≥ 3",
+       "cortar pauta"
+      ],
+      [
+       "D2 · Búsqueda local",
+       "pedidos por semana",
+       "≥ 2 desde semana 3",
+       "revisar palabras/zona"
+      ],
+      [
+       "A1 · Activación del primer pedido",
+       "% registrados que piden en 14 días",
+       "≥ 20 %",
+       "cambiar onboarding"
+      ],
+      [
+       "R1 · Recomendación tras el trabajo",
+       "% trabajos con reseña o recomendación",
+       "≥ 30 %",
+       "cambiar momento del pedido"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anexo-riesgos",
+   "titulo": "Anexo · Riesgos",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "objetivo": "Riesgos principales y mitigación.",
+   "guion": "Los riesgos que más nos preocupan y qué hacemos con cada uno.",
+   "lectura": "Riesgos principales: demanda insuficiente en la misma zona, desintermediación, dependencia del fundador, encuadre legal del cobro (pendiente con contador y proveedores), calidad y responsabilidad ante reclamos, y financiamiento del período bonificado.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 3,
+     "texto": "Riesgos y mitigación",
+     "area": "arriba"
+    },
+    {
+     "id": "tabla",
+     "tipo": "tabla",
+     "area": "centro",
+     "columnas": [
+      "Riesgo",
+      "Mitigación prevista"
+     ],
+     "filas": [
+      [
+       "Poca demanda en la misma zona",
+       "Captación por barrio con QR medible; foco en 2 rubros"
+      ],
+      [
+       "Desintermediación",
+       "Valor dentro de la app: historial, propuestas comparables, chat sin compartir teléfono, reseñas"
+      ],
+      [
+       "Dependencia del fundador",
+       "Procesos documentados, desarrollo asistido, sumar operación con el apoyo"
+      ],
+      [
+       "Encuadre legal del cobro",
+       "LEG-47/48/49 con contador y proveedor antes del primer cobro"
+      ],
+      [
+       "Calidad y reclamos",
+       "Verificación por Operations, reclamos con seguimiento, reseñas"
+      ],
+      [
+       "Financiar el mes sin tarifa",
+       "Costo estimado y acotado; pedido de apoyo por hitos"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anexo-demo",
+   "titulo": "Anexo · Demo en video",
+   "disposicion": "centro",
+   "paleta": "cierre",
+   "duracion": 75,
+   "pasos": 1,
+   "clasificacion": "demo",
+   "objetivo": "Mostrar el recorrido del usuario con las pantallas del prototipo, rotulado como demo.",
+   "guion": "Este es el recorrido del usuario con las pantallas del prototipo. Es una animación de la demo, no uso real.",
+   "notas": "70 s con música: activar audio en ESTA computadora antes de subir. Reproducir con el botón del presentador o desde el celular.",
+   "lectura": "Video de 70 segundos con las pantallas del prototipo de la app de usuario (animación de la demo, no uso real).",
+   "elementos": [
+    {
+     "id": "e",
+     "tipo": "etiqueta",
+     "tono": "demo",
+     "texto": "Animación de la demo · no es uso real",
+     "area": "arriba"
+    },
+    {
+     "id": "v",
+     "tipo": "video",
+     "recurso": "trailer-usuario",
+     "poster": "trailer-usuario-poster",
+     "alt": "Trailer de la app de usuario de Handyx",
+     "sonido": true,
+     "area": "centro"
+    }
+   ]
+  }
+ ]
+}

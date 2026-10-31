@@ -73,6 +73,13 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
     if (escenas.has(e.id)) errores.push(`escena repetida: ${e.id}`);
     escenas.set(e.id, e);
     if (!(e.paleta in tema.paletas)) errores.push(`escena ${e.id}: paleta "${e.paleta}" no existe en el tema`);
+    const areas = new Map<string, string>();
+    for (const el of e.elementos) {
+      if (el.area === 'libre' || el.area === 'fondo' || e.disposicion === 'grilla' && !['arriba', 'abajo'].includes(el.area)) continue;
+      const otro = areas.get(el.area);
+      if (otro) errores.push(`escena ${e.id}: ${el.id} y ${otro} ocupan la misma área "${el.area}" (se superponen)`);
+      areas.set(el.area, el.id);
+    }
     for (const el of e.elementos) {
       for (const t of textos(el)) {
         for (const ref of referencias(t)) {
@@ -110,7 +117,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
   for (const v of deck.versiones) {
     let total = 0;
     for (const id of [...v.escenas, ...v.anexos]) if (!escenas.has(id)) errores.push(`versión ${v.id}: escena inexistente ${id}`);
-    for (const id of v.escenas) total += escenas.get(id)?.duracion ?? 0;
+    for (const id of v.escenas) total += v.duraciones[id] ?? escenas.get(id)?.duracion ?? 0;
+    for (const id of Object.keys(v.duraciones)) if (![...v.escenas, ...v.anexos].includes(id)) errores.push(`versión ${v.id}: duración para escena ajena ${id}`);
     if (total > v.duracionObjetivo + v.tolerancia) errores.push(`versión ${v.id}: dura ${total}s y el objetivo es ${v.duracionObjetivo}s (+${v.tolerancia}s)`);
     if (new Set(v.escenas).size !== v.escenas.length) errores.push(`versión ${v.id}: escena repetida en el recorrido`);
   }
@@ -125,5 +133,8 @@ export function escenasDeVersion(deck: Deck, versionId: string, conAnexos = true
   const v = deck.versiones.find((x) => x.id === versionId) ?? deck.versiones[0];
   if (!v) return [];
   const ids = conAnexos ? [...v.escenas, ...v.anexos] : v.escenas;
-  return ids.map((id) => deck.escenas.find((e) => e.id === id)).filter((e): e is Escena => Boolean(e));
+  return ids
+    .map((id) => deck.escenas.find((e) => e.id === id))
+    .filter((e): e is Escena => Boolean(e))
+    .map((e) => (v.duraciones[e.id] ? { ...e, duracion: v.duraciones[e.id] as number } : e));
 }

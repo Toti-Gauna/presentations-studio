@@ -93,6 +93,8 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         const li = h('li');
         li.innerHTML = html(it.texto, ctx);
         lista.append(animable(li, it.paso ?? el.paso, el.entrada === 'ninguna' ? 'ninguna' : 'subir'));
+        const r = rotulosDe(it.texto, ctx);
+        if (r.length) li.append(' ', ...r);
       }
       raiz.append(lista);
       break;
@@ -103,7 +105,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         const nodo = h('li', { class: 'flujo-nodo' }, h('span', { class: 'flujo-num' }, String(i + 1)));
         const t = h('strong');
         t.innerHTML = html(n.texto, ctx);
-        nodo.append(t);
+        nodo.append(t, ...rotulosDe(n.texto, ctx));
         if (n.detalle) {
           const d = h('small');
           d.innerHTML = html(n.detalle, ctx);
@@ -153,7 +155,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         cuerpo.append(tr);
       }
       t.append(cuerpo);
-      raiz.append(animable(t, el.paso, el.entrada));
+      raiz.append(animable(t, el.paso, el.entrada), ...rotulosDe([...el.columnas, ...el.filas.flat()].join(' '), ctx).map((r) => animable(r, el.paso, 'fundido')));
       break;
     }
     case 'qr': {

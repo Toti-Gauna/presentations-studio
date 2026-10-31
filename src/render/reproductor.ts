@@ -18,7 +18,7 @@ export function variablesTema(tema: Tema): string {
 export function paleta(tema: Tema, nombre: string): string {
   const p = tema.paletas[nombre] ?? tema.paletas['neutro'];
   if (!p) return '';
-  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento}`;
+  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento};--marcador-tinta:${p.marcadorTinta ?? 'inherit'}`;
 }
 
 export function modoMovimiento(): Modo {

@@ -20,7 +20,7 @@
 }
 .disp-dividido, .disp-izquierda { grid-template-areas: 'arriba arriba' 'izquierda derecha' 'centro centro' 'abajo abajo'; }
 .disp-izquierda { grid-template-columns: 1.3fr 1fr; }
-.disp-grilla { grid-template-columns: repeat(3, 1fr); grid-template-areas: 'arriba arriba arriba'; grid-auto-rows: auto; align-content: center; }
+.disp-grilla { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr auto; grid-template-areas: 'arriba arriba arriba' '. . .' 'abajo abajo abajo'; }
 .disp-grilla .el:not(.area-arriba):not(.area-abajo):not(.area-fondo):not(.area-libre) { grid-area: auto; }
 .disp-cierre { text-align: center; justify-items: center; }
 .area-arriba { grid-area: arriba; } .area-centro { grid-area: centro; } .area-abajo { grid-area: abajo; }
@@ -39,7 +39,7 @@
 .t-l { font-size: 50px; line-height: 1.15; font-weight: 600; }
 .t-m { font-size: 38px; line-height: 1.25; }
 .t-s { font-size: 28px; line-height: 1.3; color: var(--suave); }
-.escenario mark { background: var(--marcador); color: inherit; padding: 0 0.14em; border-radius: 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.escenario mark { background: var(--marcador); color: var(--marcador-tinta, inherit); padding: 0 0.14em; border-radius: 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .escenario strong { font-weight: 800; }
 .palabra { display: inline-block; }
 
@@ -114,3 +114,26 @@
 .disp-centro .el-flujo, .disp-cierre .el-flujo { text-align: left; }
 .cifra .rotulo, .el > .rotulo { align-self: flex-start; justify-self: start; }
 .disp-centro .cifra .rotulo, .disp-cierre .cifra .rotulo { align-self: center; }
+.lista li .rotulo { margin: 0 0 0 10px; font-size: 20px; vertical-align: middle; }
+.flujo-nodo .rotulo { margin: 0; font-size: 18px; align-self: flex-start; }
+
+/* ── Ajustes de legibilidad y posición (revisión visual 31/10) ── */
+.escena > .el.area-libre { position: absolute; left: var(--x); top: var(--y); width: var(--w, auto); z-index: 2; }
+.escena > .el.area-libre.el-personaje { width: auto; z-index: 1; }
+.escena .el-lista, .escena .el-tabla, .escena .el-flujo { text-align: left; }
+.lista { font-size: 46px; gap: 26px; }
+.lista li { padding-left: 64px; }
+.lista-contraste li { font-size: 38px; }
+.tabla { font-size: 36px; }
+.tabla th { font-size: 26px; }
+.tabla td { padding: 16px 20px; }
+.flujo-nodo strong { font-size: 46px; }
+.flujo-nodo small { font-size: 29px; }
+.flujo-nodo { padding: 36px 30px 40px; min-height: 300px; }
+.cifra-valor { white-space: nowrap; font-size: 190px; }
+.disp-grilla .cifra-valor { font-size: 104px; }
+.disp-grilla .cifra-leyenda { font-size: 34px; }
+.t-m { font-size: 42px; }
+.t-s { font-size: 32px; }
+.el > .rotulo + .rotulo { margin-left: 12px; }
+.el-qr { justify-self: center; }

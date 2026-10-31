@@ -185,6 +185,8 @@ export const VersionDeck = z
     tolerancia: z.number().int().min(0).default(0),
     escenas: z.array(id).min(1),
     anexos: z.array(id).default([]),
+    /** Duración de escena propia de esta versión (segundos); si falta, se usa la de la escena. */
+    duraciones: z.record(z.string(), z.number().int().min(3).max(900)).default({}),
   })
   .strict();
 
@@ -220,7 +222,7 @@ export type Deck = z.infer<typeof Deck>;
 export type VersionDeck = z.infer<typeof VersionDeck>;
 
 // ── Tema de marca ────────────────────────────────────────────────────────────
-const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional() }).strict();
+const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional(), marcadorTinta: z.string().optional() }).strict();
 export const Personaje = z
   .object({
     nombre: z.string(),
