@@ -3,7 +3,7 @@
 # Plan "starter" (no duerme). En "free" el proceso duerme: abrir /salud 2–3 min antes de presentar.
 services:
   - type: web
-    name: handyx-pitch
+    name: handyx-pitch-todo-en-uno
     runtime: node
     plan: starter
     region: oregon

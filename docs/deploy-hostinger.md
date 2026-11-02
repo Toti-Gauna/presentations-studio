@@ -7,10 +7,11 @@
   la computadora no pueden hablarse directo por internet; necesitan un punto de encuentro. Con Docker ese servidor va
   **en el mismo contenedor** que la presentación: un solo servicio, un solo dominio.
 
-| Hosting de Hostinger | Qué se publica | Celular |
+| Opción del configurador | Qué se publica | Celular |
 |---|---|---|
-| **VPS** (Docker) | contenedor = presentación + control, detrás de Caddy (HTTPS automático) | ✅ desde cualquier red |
-| **Compartido** | solo el sitio estático (rsync por SSH, puerto 65002) | ❌ salvo que apunte a un servidor aparte (VPS o Render) |
+| **1 · Hostinger + Render** (elegida) | sitio estático en Hostinger; servidor de control en Render | ✅ desde cualquier red |
+| 2 · VPS con Docker | contenedor = presentación + control, detrás de Caddy (HTTPS automático) | ✅ desde cualquier red |
+| 3 · Solo Hostinger compartido | solo el sitio estático | ❌ (teclado/clicker sí) |
 
 ## Paso a paso (sin Codespaces lento: todo por consola)
 ```sh

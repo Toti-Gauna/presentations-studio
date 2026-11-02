@@ -52,6 +52,11 @@ jobs:
           npx vite build
           cp deploy/hostinger.htaccess dist/.htaccess
           rsync -az --delete -e "ssh -i $HOME/.ssh/deploy -p $PUERTO" dist/ "$USUARIO@$HOST:$CARPETA/"
+      - name: Servidor de control (Render) responde
+        if: env.MODO == 'compartido' && env.VITE_SERVIDOR != ''
+        run: |
+          for i in $(seq 1 12); do curl -fsS -H "Origin: https://$DOMINIO" "$VITE_SERVIDOR/salud" && exit 0; sleep 10; done
+          echo "::warning::El servidor de control $VITE_SERVIDOR no respondió: el celular no va a poder conectarse."
       - name: Prueba pública
         run: |
           if [ "$MODO" = "vps" ]; then URL="https://$DOMINIO/salud"; else URL="https://$DOMINIO/"; fi

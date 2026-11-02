@@ -1,29 +1,27 @@
-# Deploy en Render (un solo servicio) — listo para crear
+# Deploy · arquitectura elegida (02/11): Hostinger + Render
 
-Un único **Web Service** de Render sirve todo en el mismo dominio HTTPS: la presentación (build estático), el control
-remoto (WebSocket seguro, WSS) y las redirecciones de QR. El celular controla la computadora **desde cualquier red**
-(datos móviles o Wi-Fi del evento). Configuración: `render.yaml` en la raíz (copia en `deploy/render.yaml`).
+| Pieza | Dónde | Qué hace |
+|---|---|---|
+| Presentación (sitio estático) | **Hostinger**, hosting compartido (`pitch.handyc.com`) | Hub, pantalla pública, presentador, control del celular (páginas) |
+| Servidor de control | **Render** (`handyx-control`, plan pago: no se duerme) | `/ws` (WebSocket), `/api/sesiones`, `/salud`, `/r/<id>` de los QR |
 
-## Crear el servicio (lo hace Ignacio en Render; Claude no tiene acceso a la cuenta)
-1. Render → **New → Blueprint** → elegir el repo `Toti-Gauna/presentations-studio`, rama `claude/modest-gauss-jin0gy`
-   (o `main` cuando se mergee; cambiar `branch` en `render.yaml`). Render lee `render.yaml` y crea `handyx-pitch`.
-   - Alternativa manual: **New → Web Service** · Runtime Node · Build `npm ci --include=dev && npx vite build` ·
-     Start `node server/main.ts` · Health check `/salud` · variables: `NODE_VERSION=22.18.0`, `SERVIR_ESTATICOS=dist`,
-     `MISMO_ORIGEN=true`, `CONFIAR_PROXY=true`, `QR_REDIRECCIONES=decks/handyx/qr.json`.
-2. Plan: **Starter** (no se duerme). En **Free** el proceso se duerme: abrir `/salud` 2–3 minutos antes de presentar.
-3. Cuando termine: abrir `https://<servicio>.onrender.com/salud` → `{"ok":true,…}`.
+El celular abre la página del control desde Hostinger y se conecta por WSS al servidor de Render. El servidor solo acepta
+el origen exacto de la presentación (`ALLOWED_ORIGINS`). Sin base de datos.
 
-## Usarlo el día del evento
-1. En la computadora: `https://<servicio>.onrender.com/` → hub → **Handyx · Pitch premium** → **Presentar**.
-2. **Abrir pantalla pública** → arrastrarla al proyector → **F** (pantalla completa) → un clic en esa ventana (sonido).
-3. **Conectar control remoto** (el servidor ya viene completado: es el mismo dominio) → escanear el **QR privado** con el
-   celular → **Aprobar**. Desde el celular: deslizar ← → o botones; **☰ Diapositivas** para elegir cualquier lámina.
-4. Si se cae internet: el teclado o el clicker siguen funcionando en la computadora.
+## Pasos
+1. `./configurar.sh` → opción **1** (Hostinger + Render). Genera `salida/deploy/` con variables y secretos de GitHub,
+   `render-control.md` y los pasos (ver `docs/deploy-hostinger.md`).
+2. **Render:** New → Blueprint con este repo (lee `render.yaml`) o un Web Service a mano con los valores de `render-control.md`.
+   `ALLOWED_ORIGINS = https://pitch.handyc.com`. Probar `https://<servicio>.onrender.com/salud`.
+3. **GitHub:** cargar variables y secretos (`bash salida/deploy/cargar-en-github.sh`) → Actions → **Deploy Hostinger** → Run.
+   El workflow compila la presentación apuntando a Render (`SERVIDOR_CONTROL`), la sube a Hostinger y verifica las dos puntas.
+4. Día del evento: hub → **Presentar** → **Conectar control remoto** (ya viene completado con Render) → QR privado → Aprobar.
 
-## Dominio propio (opcional)
-Render → Settings → Custom Domain (`pitch.handyc.com`) + CNAME en el DNS de handyc.com. Con `MISMO_ORIGEN=true` no hay que tocar nada más.
+## Otras opciones (quedan listas)
+- **Todo en un VPS con Docker:** opción 2 del configurador (`Dockerfile`, Caddy con HTTPS).
+- **Todo en un servicio de Render:** `deploy/render-todo-en-uno.yaml` (web + control en el mismo dominio).
 
-## Verificado y no verificado
-- Verificado en esta sesión: el modo un solo servicio (prueba automática de mismo origen), build y servidor sirviendo `dist/`
-  con control remoto en `localhost` (E2E 21/21).
-- **No verificado:** el despliegue real en Render (requiere la cuenta de Ignacio) y la prueba entre redes con teléfonos reales.
+## Verificado / no verificado
+- Verificado en local: presentación estática en un origen + servidor de control en otro (como Hostinger + Render):
+  conexión automática, emparejamiento, comando confirmado, origen ajeno rechazado (403).
+- No verificado: Render y Hostinger reales (cuentas de Ignacio), DNS, teléfonos en redes distintas.

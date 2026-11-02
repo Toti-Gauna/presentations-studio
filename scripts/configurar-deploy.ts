@@ -64,9 +64,11 @@ function clavesSsh(dir: string): { privada: string; publica: string } {
 }
 
 console.log('\nConfigurador de deploy · Presentations Studio → Hostinger\n');
-console.log('1) VPS de Hostinger con Docker  → presentación + control desde el celular (recomendado)');
-console.log('2) Hosting compartido de Hostinger → solo la presentación (teclado/clicker; el celular necesita un servidor aparte)\n');
-const modo = (await preguntar('¿Dónde publicás? (1 o 2)', '1', (v) => (['1', '2'].includes(v) ? null : 'Elegí 1 o 2.'))) === '1' ? 'vps' : 'compartido';
+console.log('1) Hostinger (presentación, hosting compartido) + Render (control del celular)   ← recomendado');
+console.log('2) VPS de Hostinger con Docker (todo junto en un contenedor)');
+console.log('3) Solo Hostinger compartido (teclado/clicker, sin celular)\n');
+const eleccion = await preguntar('¿Cómo publicás? (1, 2 o 3)', '1', (v) => (['1', '2', '3'].includes(v) ? null : 'Elegí 1, 2 o 3.'));
+const modo = eleccion === '2' ? 'vps' : 'compartido';
 const dominio = (await preguntar('Dominio de la presentación', 'pitch.handyc.com', dominioValido)).toLowerCase();
 const repo = await preguntar('Repositorio de GitHub (dueño/nombre)', 'Toti-Gauna/presentations-studio', (v) => (/^[\w.-]+\/[\w.-]+$/.test(v) ? null : 'Formato dueño/nombre.'));
 const rama = await preguntar('Rama que publica al hacer push', 'main', (v) => (/^[\w./-]+$/.test(v) ? null : 'Rama inválida.'));
@@ -86,9 +88,11 @@ if (modo === 'vps') {
   usuario = await preguntar('Usuario SSH (ej. u123456789)', '', (v) => (/^[\w-]+$/.test(v) ? null : 'Usuario inválido.'));
   puerto = await preguntar('Puerto SSH', '65002', puertoValido);
   carpeta = await preguntar('Carpeta del sitio', `domains/${dominio}/public_html`, rutaValida);
-  servidorControl = await preguntar('URL del servidor de control para el celular (vacío = sin control remoto)', '-', (v) =>
-    v === '-' || /^https:\/\/[\w.-]+(:\d+)?$/.test(v) ? null : 'Usá https://dominio (sin barra final) o "-".');
-  if (servidorControl === '-') servidorControl = '';
+  if (eleccion === '1') {
+    console.log('\nServidor de control en Render (el servicio que crea render.yaml; si ya existe, copiá su URL de Render):');
+    servidorControl = await preguntar('URL del servicio de Render', 'https://handyx-control.onrender.com', (v) =>
+      /^https:\/\/[\w.-]+(:\d+)?$/.test(v) ? null : 'Usá https://dominio, sin barra ni ruta al final.');
+  }
 }
 const generar = (await preguntar('¿Genero una clave SSH nueva solo para el deploy? (s/n)', 's', (v) => (/^[sn]$/i.test(v) ? null : 's o n'))).toLowerCase() === 's';
 rl.close();
@@ -187,11 +191,38 @@ echo "VPS listo. Ahora: GitHub → Actions → 'Deploy Hostinger' → Run workfl
     `1. **SSH:** hPanel → Avanzado → Acceso SSH → activalo${claves ? ' y en "Claves SSH" pegá esta clave pública:\n\n   \`' + claves.publica + '\`' : ''}.`,
     `2. **GitHub:** \`bash ${dir}/cargar-en-github.sh\` o a mano con \`github-variables.txt\` y \`github-secretos.txt\`.`,
     `3. **Publicar:** GitHub → Actions → **Deploy Hostinger** → Run workflow. Sube el sitio estático a \`${carpeta}\`.`,
-    servidorControl ? `4. El control del celular usa ${servidorControl} (tiene que permitir el origen https://${dominio}).` : '4. Sin servidor de control: la presentación anda con teclado/clicker; el celular no.',
+    servidorControl ? `4. El control del celular usa ${servidorControl}: el workflow compila la presentación apuntando ahí.` : '4. Sin servidor de control: la presentación anda con teclado/clicker; el celular no.',
   );
+}
+if (servidorControl) {
+  writeFileSync(
+    `${dir}/render-control.md`,
+    `# Render · servidor de control (${servidorControl})
+
+**Opción A · Blueprint:** Render → New → Blueprint → repo ${repo} (rama ${rama}): lee \`render.yaml\` y crea \`handyx-control\`.
+Cuando pida el valor de \`ALLOWED_ORIGINS\`, pegá:
+
+    https://${dominio}
+
+**Opción B · a mano (o en un servicio que ya tengas):** New → Web Service → repo ${repo}, rama ${rama}
+- Runtime: Node · Build: \`npm ci --omit=dev --ignore-scripts\` · Start: \`node server/main.ts\` · Health check: \`/salud\`
+- Environment:
+
+| Clave | Valor |
+|---|---|
+| NODE_VERSION | 22.18.0 |
+| CONFIAR_PROXY | true |
+| QR_REDIRECCIONES | decks/handyx/qr.json |
+| ALLOWED_ORIGINS | https://${dominio} |
+
+Probar: ${servidorControl}/salud → \`{"ok":true,…}\`. Si la URL que te da Render es otra, volvé a correr el configurador con esa URL
+(la presentación la necesita al compilarse: variable \`SERVIDOR_CONTROL\` de GitHub).
+`,
+  );
+  pasos.push(`5. **Render (control del celular):** seguí \`render-control.md\` (ALLOWED_ORIGINS = https://${dominio}). El plan pago no se duerme.`);
 }
 pasos.push('', '**Seguridad:** `github-secretos.txt` y `clave-deploy` son privados: no los subas a ningún lado; borralos cuando termines.');
 writeFileSync(`${dir}/LEEME.md`, pasos.join('\n') + '\n');
 console.log(`\n✓ Listo. Archivos en ${dir}/ — empezá por ${dir}/LEEME.md\n`);
-for (const f of ['LEEME.md', 'github-variables.txt', 'github-secretos.txt', 'cargar-en-github.sh', ...(modo === 'vps' ? ['preparar-vps.sh', 'docker-compose.yml', 'Caddyfile', '.env'] : ['.htaccess']), ...(claves ? ['clave-deploy', 'clave-deploy.pub'] : [])])
+for (const f of ['LEEME.md', 'github-variables.txt', 'github-secretos.txt', 'cargar-en-github.sh', ...(modo === 'vps' ? ['preparar-vps.sh', 'docker-compose.yml', 'Caddyfile', '.env'] : ['.htaccess', 'render-control.md']), ...(claves ? ['clave-deploy', 'clave-deploy.pub'] : [])])
   if (existsSync(`${dir}/${f}`)) console.log(`   · ${dir}/${f}`);

@@ -109,3 +109,9 @@ Decisiones aprobadas por Ignacio: nombre **Handyx**; **ATICMA sin pedido** (inve
 - Respuesta a "¿hace falta backend?": no para teclado/clicker; sí un servidor chico para el celular, que va en el mismo contenedor.
 - Verificado: build y contenedor, control del celular contra el contenedor, configurador en los dos modos, clave SSH con OpenSSH,
   compose y Caddyfile validados. No verificado: Actions con secretos reales, VPS, DNS, certificado.
+
+## 02/11 · Arquitectura final: Hostinger (estático) + Render (control)
+Pedido de Ignacio: usar su Render pago como servidor aparte. `render.yaml` ahora crea solo `handyx-control` (sin web,
+`ALLOWED_ORIGINS` = dominio de la presentación). Configurador: opción 1 = Hostinger + Render (genera `render-control.md`);
+el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-en-uno en Render quedó en
+`deploy/render-todo-en-uno.yaml`; VPS con Docker sigue como opción 2. Probado en local con dos orígenes (403 a orígenes ajenos).
