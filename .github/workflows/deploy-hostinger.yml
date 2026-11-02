@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:
-      name: hostinger-pitch
+      name: hostinger-presentaciones
       url: https://${{ vars.DOMINIO }}
     env:
       HOSTINGER_HOST: ${{ vars.HOSTINGER_HOST }}
@@ -82,10 +82,10 @@ jobs:
           stage="${HOSTINGER_PATH%%/public_html*}/.handyx-deploy/staging/$RELEASE"
           tar -cf "$RUNNER_TEMP/hostinger.tar" -C site .
           ssh "${ssh_args[@]}" "$destination" "umask 077; mkdir -p '$stage' && tar -xf - -C '$stage'" < "$RUNNER_TEMP/hostinger.tar"
-          ssh "${ssh_args[@]}" "$destination" "bash -s -- publish '$HOSTINGER_PATH' '$RELEASE' pitch" < scripts/hostinger-publish.sh
+          ssh "${ssh_args[@]}" "$destination" "bash -s -- publish '$HOSTINGER_PATH' '$RELEASE' presentaciones" < scripts/hostinger-publish.sh
           if ! bash scripts/hostinger-smoke.sh "https://$DOMINIO" "$SERVIDOR_CONTROL"; then
             echo 'Falló la prueba pública: se restauran los archivos anteriores.' >&2
-            ssh "${ssh_args[@]}" "$destination" "bash -s -- rollback '$HOSTINGER_PATH' '$RELEASE' pitch" < scripts/hostinger-publish.sh
+            ssh "${ssh_args[@]}" "$destination" "bash -s -- rollback '$HOSTINGER_PATH' '$RELEASE' presentaciones" < scripts/hostinger-publish.sh
             exit 1
           fi
       - name: Borrar los archivos SSH del runner

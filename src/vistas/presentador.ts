@@ -204,19 +204,38 @@ function montar(s: Sesion) {
     boton('Terminar sesión remota', () => void anf.terminar(), 'secundario'),
   );
   // ¿Hay servidor de control? En una publicación solo estática (hosting compartido) no: se avisa y el teclado sigue.
+  // En el plan gratis de Render el servidor duerme tras 15 min sin tráfico y tarda ~1 min en despertar: se espera hasta
+  // 90 s avisando, y mientras esta pestaña esté abierta se lo consulta cada 4 min para que no se duerma en medio del pitch.
   if (servidorDefecto) {
-    const ctl = new AbortController();
-    const corte = window.setTimeout(() => ctl.abort(), 2500);
-    fetch(`${servidorDefecto}/salud`, { signal: ctl.signal, credentials: 'omit' })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j: { ok?: boolean }) => {
-        if (!j.ok) throw new Error('salud');
-      })
-      .catch(() => {
-        panelRemoto.querySelector('.ayuda')!.textContent = 'Esta publicación no tiene servidor de control: el celular no está disponible. El teclado y el clicker funcionan igual.';
-        panelRemoto.classList.add('sin-servidor');
-      })
-      .finally(() => window.clearTimeout(corte));
+    const ayuda = panelRemoto.querySelector('.ayuda')!;
+    const textoAyuda = ayuda.textContent;
+    const salud = async (espera: number): Promise<boolean> => {
+      const ctl = new AbortController();
+      const corte = window.setTimeout(() => ctl.abort(), espera);
+      try {
+        const r = await fetch(`${servidorDefecto}/salud`, { signal: ctl.signal, credentials: 'omit', cache: 'no-store' });
+        return r.ok && ((await r.json()) as { ok?: boolean }).ok === true;
+      } catch {
+        return false;
+      } finally {
+        window.clearTimeout(corte);
+      }
+    };
+    void (async () => {
+      if (!(await salud(2500))) {
+        ayuda.textContent = 'Despertando el servidor de control (puede tardar hasta un minuto)… El teclado y el clicker ya funcionan.';
+        const hasta = Date.now() + 90_000;
+        let listo = false;
+        while (!listo && Date.now() < hasta) listo = await salud(Math.max(1000, Math.min(30_000, hasta - Date.now())));
+        if (!listo) {
+          ayuda.textContent = 'No hay servidor de control: el celular no está disponible. El teclado y el clicker funcionan igual.';
+          panelRemoto.classList.add('sin-servidor');
+          return;
+        }
+        ayuda.textContent = textoAyuda;
+      }
+      window.setInterval(() => void salud(30_000), 4 * 60_000);
+    })();
   }
   anf.on('solicitud', (sol) => {
     const li = h('li', {}, h('span', {}, `${sol.dispositivo} quiere controlar`));

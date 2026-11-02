@@ -16,3 +16,4 @@
 | 31/10 noche | 6.6 (nuevo) | Pitch rehecho para vender: clips kinetic-studio, sonido sintetizado, golpes, confeti, beneficios, ejemplo $ 45.000, datos PDF, ATICMA sin pedido; exportador MP4 con clips | verify 56; e2e 19/19 | escuchar en sala; Safari |
 | 02/11 | A–E (cierre) | Pitch premium según láminas, océano rojo→azul, modelo de negocio, control móvil con menú y deslizar, hub agrupado, Render un servicio | verify 57; e2e 21/21 | crear servicio en Render; ensayo con teléfonos |
 | 02/11 noche | 9.1 | Deploy Hostinger con el método de la landing (publish/smoke/rollback, mismos nombres), Render aparte, configurador | publish/guard/rollback y smoke en local; verify | cuentas reales de Ignacio |
+| 02/11 noche | 9.1 | Render plan gratis con despertar y latido desde el presentador; dominio presentaciones.handyc.com | guard/publicación en local; prueba de navegador del despertar; verify; e2e | cuentas reales |

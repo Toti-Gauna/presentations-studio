@@ -20,7 +20,8 @@ if [[ "$base" == https://* ]]; then
   [[ "$destino" == https://* ]] || falla 'http no redirige a https'
 fi
 if [[ -n "$control" ]]; then
-  salud=$(pedir -H "Origin: $base" "$control/salud") || falla "el servidor de control $control no responde"
+  # Plan gratis de Render: si estaba dormido tarda ~1 min en despertar.
+  salud=$(curl --fail --silent --show-error --retry 3 --retry-delay 10 --connect-timeout 30 --max-time 120 -H "Origin: $base" "$control/salud") || falla "el servidor de control $control no responde"
   [[ "$salud" == *'"ok":true'* ]] || falla 'el servidor de control no está sano'
   permitido=$(curl --silent --output /dev/null --dump-header - -H "Origin: $base" -X OPTIONS "$control/api/sesiones" | tr -d '\r' | awk 'tolower($1)=="access-control-allow-origin:" {print $2}')
   [[ "$permitido" == "$base" ]] || falla "el servidor de control no acepta el origen $base (revisá ALLOWED_ORIGINS en Render)"

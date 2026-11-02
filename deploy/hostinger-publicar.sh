@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Publica el build estático en Hostinger por SSH/rsync en una carpeta propia (nunca en la raíz de otro sitio).
-# Uso: HOSTINGER_SSH=usuario@host -p PUERTO  DESTINO=domains/pitch.handyc.com/public_html  deploy/hostinger-publicar.sh
+# Uso: HOSTINGER_SSH=usuario@host -p PUERTO  DESTINO=domains/presentaciones.handyc.com/public_html  deploy/hostinger-publicar.sh
 set -euo pipefail
 : "${HOSTINGER_SSH:?falta HOSTINGER_SSH}"; : "${DESTINO:?falta DESTINO}"
 case "$DESTINO" in *pitch*|*presentaciones*) ;; *) echo "DESTINO no parece la carpeta del pitch: $DESTINO" >&2; exit 1;; esac

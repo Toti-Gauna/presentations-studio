@@ -117,11 +117,17 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 `deploy/render-todo-en-uno.yaml`; VPS con Docker sigue como opción 2. Probado en local con dos orígenes (403 a orígenes ajenos).
 
 ## 02/11 (noche) · Deploy con el mismo método que la landing
-- `scripts/hostinger-publish.sh` y `scripts/hostinger-smoke.sh` copiados de la landing (perfil `pitch`, solo
-  `pitch.handyc.com` o `handyc.com/pitch`); smoke también prueba Render (`/salud` y CORS del origen).
+- `scripts/hostinger-publish.sh` y `scripts/hostinger-smoke.sh` copiados de la landing (perfil `presentaciones`, solo
+  `presentaciones.handyc.com` o `handyc.com/presentaciones`); smoke también prueba Render (`/salud` y CORS del origen).
 - `.github/workflows/deploy-hostinger.yml` con los nombres de la landing (`HOSTINGER_DEPLOY_ENABLED`, `HOSTINGER_HOST/PORT/USER/PATH`,
-  `HOSTINGER_SSH_KEY`, `HOSTINGER_KNOWN_HOSTS`) + `DOMINIO`, `VITE_DECK`, `SERVIDOR_CONTROL`; entorno `hostinger-pitch`.
+  `HOSTINGER_SSH_KEY`, `HOSTINGER_KNOWN_HOSTS`) + `DOMINIO`, `VITE_DECK`, `SERVIDOR_CONTROL`; entorno `hostinger-presentaciones`.
   VPS pasó a `.github/workflows/deploy-vps.yml`.
 - Configurador (opción 1/3): pide los datos de la landing, permite reusar su clave y arma `known_hosts` con `ssh-keyscan`.
 - Sin BE ni repo nuevo: el control es `server/` de este repo, servicio aparte en la misma cuenta de Render.
 - Pendiente de Ignacio: subdominio `pitch`, servicio en Render, variables/secretos, merge a `main`.
+
+## 02/11 (noche) · Render gratis + dominio presentaciones.handyc.com
+- `render.yaml`: plan **free**. El presentador despierta el servidor (espera hasta 90 s con aviso) y lo consulta cada 4 min
+  mientras está abierto; smoke con tiempos para arranque en frío. Abrir el presentador 5 min antes del pitch.
+- Dominio: `presentaciones.handyc.com` (perfil `presentaciones` en `hostinger-publish.sh`, solo esa carpeta o `handyc.com/presentaciones`).
+- Verificado en local: guard (carpeta ajena → salida 2), publicación del perfil, despertar del servidor en el navegador.

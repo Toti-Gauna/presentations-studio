@@ -7,20 +7,20 @@
 #   rollback <carpeta> <release> [perfil]   restaura el respaldo de esa release
 #
 # Perfil (solo puede publicar en su carpeta; nunca en la landing ni en las apps):
-#   pitch            pitch.handyc.com (o handyc.com/pitch)
+#   presentaciones   presentaciones.handyc.com (o handyc.com/presentaciones)
 set -Eeuo pipefail
 
 action=${1:?Falta la acción: publish o rollback}
 target=${2:?Falta la carpeta de publicación}
 release=${3:?Falta el identificador de release}
-profile=${4:-pitch}
+profile=${4:-presentaciones}
 [[ "$action" == publish || "$action" == rollback ]] || exit 2
 [[ "$release" =~ ^[0-9]+-[0-9]+-[a-f0-9]{40}$ ]] || { echo "Identificador de release inválido." >&2; exit 2; }
 # Cada perfil publica solo en su carpeta: la landing nunca pisa la raíz de handyc.com (ahí va la app del usuario) y las
 # apps nunca pisan la landing ni se pisan entre sí.
 case "$profile:$target" in
-  pitch:/*/domains/pitch.handyc.com/public_html | pitch:/*/domains/handyc.com/public_html/pitch) ;;
-  pitch:*) echo "Carpeta de publicación inesperada para el perfil $profile." >&2; exit 2 ;;
+  presentaciones:/*/domains/presentaciones.handyc.com/public_html | presentaciones:/*/domains/handyc.com/public_html/presentaciones) ;;
+  presentaciones:*) echo "Carpeta de publicación inesperada para el perfil $profile." >&2; exit 2 ;;
   *) echo "Perfil desconocido: $profile." >&2; exit 2 ;;
 esac
 [[ -d "$target" && ! -L "$target" ]] || { echo 'La carpeta de publicación no existe o es un enlace.' >&2; exit 2; }

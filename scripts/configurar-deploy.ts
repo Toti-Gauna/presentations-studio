@@ -34,7 +34,7 @@ async function preguntar(texto: string, porDefecto = '', validar?: (v: string) =
     console.log(`  ✗ ${error}`);
   }
 }
-const dominioValido = (v: string) => (/^(?!-)[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(v) ? null : 'Escribí solo el dominio, sin https:// (ej. pitch.handyc.com).');
+const dominioValido = (v: string) => (/^(?!-)[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(v) ? null : 'Escribí solo el dominio, sin https:// (ej. presentaciones.handyc.com).');
 const puertoValido = (v: string) => (/^\d{1,5}$/.test(v) && Number(v) > 0 && Number(v) < 65536 ? null : 'Puerto inválido.');
 const rutaValida = (v: string) => (/^[\w./~-]+$/.test(v) && !v.includes('..') ? null : 'Ruta inválida (sin espacios ni "..").');
 const emailValido = (v: string) => (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? null : 'Email inválido.');
@@ -69,7 +69,7 @@ console.log('2) VPS de Hostinger con Docker (todo junto en un contenedor)');
 console.log('3) Solo Hostinger compartido (teclado/clicker, sin celular)\n');
 const eleccion = await preguntar('¿Cómo publicás? (1, 2 o 3)', '1', (v) => (['1', '2', '3'].includes(v) ? null : 'Elegí 1, 2 o 3.'));
 const modo = eleccion === '2' ? 'vps' : 'compartido';
-const dominio = (await preguntar('Dominio de la presentación', 'pitch.handyc.com', dominioValido)).toLowerCase();
+const dominio = (await preguntar('Dominio de la presentación', 'presentaciones.handyc.com', dominioValido)).toLowerCase();
 const repo = await preguntar('Repositorio de GitHub (dueño/nombre)', 'Toti-Gauna/presentations-studio', (v) => (/^[\w.-]+\/[\w.-]+$/.test(v) ? null : 'Formato dueño/nombre.'));
 const rama = await preguntar('Rama que publica al hacer push', 'main', (v) => (/^[\w./-]+$/.test(v) ? null : 'Rama inválida.'));
 const deck = await preguntar('Presentación por defecto', 'handyx-pitch', (v) => (/^[a-z0-9-]+$/.test(v) ? null : 'Usá el id del deck (minúsculas y guiones).'));
@@ -90,8 +90,8 @@ if (modo === 'vps') {
   usuario = await preguntar('HOSTINGER_USER (ej. u123456789)', '', (v) => (/^[\w-]+$/.test(v) ? null : 'Usuario inválido.'));
   carpeta = await preguntar('Carpeta absoluta del subdominio (HOSTINGER_PATH)', `/home/${usuario}/domains/${dominio}/public_html`, (v) =>
     /^\/[\w./-]+\/domains\/[\w.-]+\/public_html(\/[\w-]+)?$/.test(v) ? null : 'Tiene que ser absoluta y terminar en /domains/<dominio>/public_html.');
-  if (!/\/domains\/pitch\.handyc\.com\/public_html$|\/domains\/handyc\.com\/public_html\/pitch$/.test(carpeta))
-    console.log('  ⚠ scripts/hostinger-publish.sh solo permite publicar en pitch.handyc.com (o handyc.com/pitch): si usás otra carpeta, hay que agregarla ahí.');
+  if (!/\/domains\/presentaciones\.handyc\.com\/public_html$|\/domains\/handyc\.com\/public_html\/presentaciones$/.test(carpeta))
+    console.log('  ⚠ scripts/hostinger-publish.sh solo permite publicar en presentaciones.handyc.com (o handyc.com/presentaciones): si usás otra carpeta, hay que agregarla ahí.');
   if (eleccion === '1') {
     console.log('\nServidor de control en Render (el servicio que crea render.yaml; si ya existe, copiá su URL de Render):');
     servidorControl = await preguntar('URL del servicio de Render', 'https://handyx-control.onrender.com', (v) =>
@@ -245,7 +245,7 @@ Cuando pida el valor de \`ALLOWED_ORIGINS\`, pegá:
     https://${dominio}
 
 **Opción B · a mano (o en un servicio que ya tengas):** New → Web Service → repo ${repo}, rama ${rama}
-- Runtime: Node · Build: \`npm ci --omit=dev --ignore-scripts\` · Start: \`node server/main.ts\` · Health check: \`/salud\`
+- Plan: **Free** (USD 0) · Runtime: Node · Build: \`npm ci --omit=dev --ignore-scripts\` · Start: \`node server/main.ts\` · Health check: \`/salud\`
 - Environment:
 
 | Clave | Valor |
@@ -257,9 +257,12 @@ Cuando pida el valor de \`ALLOWED_ORIGINS\`, pegá:
 
 Probar: ${servidorControl}/salud → \`{"ok":true,…}\`. Si la URL que te da Render es otra, volvé a correr el configurador con esa URL
 (la presentación la necesita al compilarse: variable \`SERVIDOR_CONTROL\` de GitHub).
+
+**Plan gratis:** el servicio duerme tras 15 min sin uso. El día del pitch abrí el presentador unos minutos antes (lo despierta
+y lo mantiene despierto). Si querés que nunca duerma: Render → Settings → Instance Type → Starter (pago), sin tocar código.
 `,
   );
-  pasos.push(`6. **Render (control del celular), antes del paso 4:** seguí \`render-control.md\` (ALLOWED_ORIGINS = https://${dominio}). El plan pago no se duerme.`);
+  pasos.push(`6. **Render (control del celular), antes del paso 4:** seguí \`render-control.md\` (ALLOWED_ORIGINS = https://${dominio}). Plan gratis: duerme sin uso; el presentador lo despierta (~1 min) y lo mantiene despierto mientras está abierto.`);
 }
 pasos.push('', '**Seguridad:** `github-secretos.txt` y `clave-deploy` son privados: no los subas a ningún lado; borralos cuando termines.');
 writeFileSync(`${dir}/LEEME.md`, pasos.join('\n') + '\n');
