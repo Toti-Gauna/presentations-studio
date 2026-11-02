@@ -5,6 +5,7 @@ import { formatear, interpolar, rotulo } from '../core/afirmaciones.ts';
 import { svg, urlCodificada } from '../core/qr.ts';
 import { h, marcado } from './dom.ts';
 import { construirPersonaje } from './personajes.ts';
+import { circulos, oceano, reparto } from './motores.ts';
 
 export interface Contexto {
   tema: Tema;
@@ -48,7 +49,8 @@ const html = (texto: string, ctx: Contexto) => marcado(interpolar(texto, ctx.afi
 
 export function construir(el: Elemento, ctx: Contexto): HTMLElement {
   traer = el.entrada === 'traer' && el.traidoPor ? { por: el.traidoPor, desde: el.desde } : null;
-  const raiz = h('div', { class: `el el-${el.tipo} area-${el.area}${el.enfasis ? ' enfasis' : ''}`, 'data-id': el.id });
+  const raiz = h('div', { class: `el el-${el.tipo} area-${el.area}${el.enfasis ? ' enfasis' : ''}${el.caja ? ` caja caja-${el.caja}` : ''}`, 'data-id': el.id });
+  if (el.sale !== undefined) raiz.dataset['sale'] = String(el.sale);
   if (el.area === 'libre' && el.pos) {
     raiz.style.setProperty('--x', `${el.pos.x}%`);
     raiz.style.setProperty('--y', `${el.pos.y}%`);
@@ -56,6 +58,11 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
   }
   switch (el.tipo) {
     case 'titulo': {
+      if (el.kicker) {
+        const k = h('div', { class: 'kicker' });
+        k.innerHTML = html(el.kicker, ctx);
+        raiz.append(animable(k, el.paso, 'fundido'));
+      }
       const t = h(`h${el.nivel}` as 'h1');
       t.innerHTML = html(el.texto, ctx);
       raiz.append(animable(t, el.paso, el.entrada), ...rotulosDe(el.texto, ctx).map((r) => animable(r, el.paso, 'fundido')));
@@ -107,6 +114,11 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         const r = rotulosDe(it.texto, ctx);
         if (r.length) li.append(' ', ...r);
       }
+      if (el.encabezado) {
+        const k = h('div', { class: 'kicker lista-enc' });
+        k.innerHTML = html(el.encabezado, ctx);
+        raiz.append(animable(k, el.paso, 'fundido'));
+      }
       raiz.append(lista);
       break;
     }
@@ -156,8 +168,9 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       }
       t.append(h('thead', {}, cab));
       const cuerpo = h('tbody');
-      for (const f of el.filas) {
-        const tr = h('tr');
+      for (const [fi, f] of el.filas.entries()) {
+        const tr = h('tr', fi === el.destacar ? { class: 'destacada' } : {});
+        if (fi === el.destacar && el.pasoDestacada !== undefined) animable(tr, el.pasoDestacada, 'fundido');
         for (const c of f) {
           const td = h('td');
           td.innerHTML = html(c, ctx);
@@ -186,10 +199,29 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       raiz.append(p);
       break;
     }
+    case 'oceano': {
+      const o = oceano(el, ctx);
+      o.dataset['paso'] = String(el.paso);
+      o.dataset['entrada'] = 'ninguna';
+      o.dataset['motor'] = '1';
+      raiz.append(o);
+      break;
+    }
+    case 'reparto': {
+      const r = reparto(el, ctx);
+      r.dataset['paso'] = String(el.paso);
+      r.dataset['entrada'] = el.entrada;
+      r.dataset['motor'] = '1';
+      raiz.append(r);
+      break;
+    }
+    case 'circulos':
+      raiz.append(circulos(el, ctx));
+      break;
     case 'imagen': {
       const r = ctx.recursos.get(el.recurso);
       const src = r ? ctx.url(r.archivo) : '';
-      const img = src ? h('img', { src, alt: el.alt, decoding: 'async' }) : h('div', { class: 'faltante' }, `Falta: ${el.alt}`);
+      const img = src ? h('img', { src, alt: el.alt, decoding: 'async', class: el.forma === 'circulo' ? 'img-circulo' : undefined }) : h('div', { class: 'faltante' }, `Falta: ${el.alt}`);
       raiz.append(animable(img, el.paso, el.entrada));
       break;
     }
@@ -226,6 +258,19 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       if (src) v.src = src;
       raiz.append(animable(src ? v : h('div', { class: 'faltante' }, `Video pendiente: ${el.alt}`), el.paso, el.entrada));
       break;
+    }
+  }
+  if (el.caja && el.tipo !== 'personaje') {
+    for (const n of raiz.querySelectorAll<HTMLElement>('[data-paso]')) {
+      if (Number(n.dataset['paso']) === el.paso) {
+        n.dataset['entrada'] = 'ninguna';
+        delete n.dataset['traidoPor'];
+      }
+    }
+    animable(raiz, el.paso, el.entrada);
+    if (el.entrada === 'traer' && el.traidoPor) {
+      raiz.dataset['traidoPor'] = el.traidoPor;
+      raiz.dataset['desde'] = el.desde;
     }
   }
   return raiz;

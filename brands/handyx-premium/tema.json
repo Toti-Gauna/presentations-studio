@@ -1,0 +1,223 @@
+{
+  "id": "handyx-premium",
+  "nombre": "Handyx premium (estilo de las láminas del 02/11)",
+  "logo": "logo-handyx.webp",
+  "fuentes": {
+    "titulos": "'Archivo Variable', 'Archivo', 'Arial Black', system-ui, sans-serif",
+    "texto": "'DM Sans Variable', 'DM Sans', system-ui, sans-serif"
+  },
+  "colores": {
+    "azul": "#1F57A8",
+    "azulUi": "#4A72B0",
+    "azulPersonajes": "#2F6BFF",
+    "gris": "#CFCFCF",
+    "amarillo": "#F5F59A",
+    "noche": "#1D2C4A",
+    "mosaico": "#ECECEC",
+    "hueso": "#F7F6F1",
+    "tinta": "#0E1D36",
+    "texto": "#26324A",
+    "textoSuave": "#5F6B84",
+    "naranja": "#F6A623",
+    "exito": "#1E9E57",
+    "error": "#D93025",
+    "navy": "#13305E",
+    "hueso2": "#FBFAF6",
+    "grisAzul": "#EEF0F6",
+    "amarilloIntenso": "#FFC93C"
+  },
+  "paletas": {
+    "neutro": {
+      "fondo": "#FBFAF6",
+      "tinta": "#13305E",
+      "acento": "#1F57A8",
+      "suave": "#4A5873",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFC93C",
+      "marcadorTinta": "#13305E"
+    },
+    "gris": {
+      "fondo": "#EEF0F6",
+      "tinta": "#13305E",
+      "acento": "#1F57A8",
+      "suave": "#4A5873",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFC93C",
+      "marcadorTinta": "#13305E"
+    },
+    "azul": {
+      "fondo": "#1F57A8",
+      "tinta": "#FFFFFF",
+      "acento": "#FFC93C",
+      "suave": "#DCE6F6",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFC93C",
+      "marcadorTinta": "#13305E",
+      "tintaSuperficie": "#13305E"
+    },
+    "oceano": {
+      "fondo": "#0B1F3F",
+      "tinta": "#FFFFFF",
+      "acento": "#FFC93C",
+      "suave": "#C9D6EE",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFC93C",
+      "marcadorTinta": "#13305E",
+      "tintaSuperficie": "#13305E"
+    },
+    "kinetic": {
+      "fondo": "#CFCFCF",
+      "tinta": "#13305E",
+      "acento": "#1F57A8",
+      "suave": "#3C4A66",
+      "superficie": "#FFFFFF",
+      "marcador": "#FFC93C",
+      "marcadorTinta": "#13305E"
+    }
+  },
+  "radios": {
+    "chico": "10px",
+    "medio": "16px",
+    "grande": "28px"
+  },
+  "personajes": {
+    "foco": {
+      "nombre": "Foco",
+      "rol": "Usuario (vecino que necesita un arreglo)",
+      "origen": "04_bombilla.png",
+      "poses": {
+        "reposo": "personajes/bombilla-a.webp",
+        "saludo": "personajes/bombilla-b.webp",
+        "festejo": "personajes/bombilla-c.webp",
+        "accion": "personajes/bombilla-d.webp"
+      }
+    },
+    "llave": {
+      "nombre": "Llave",
+      "rol": "Especialista",
+      "origen": "05_llave.png",
+      "poses": {
+        "reposo": "personajes/llave-a.webp",
+        "saludo": "personajes/llave-b.webp",
+        "festejo": "personajes/llave-c.webp",
+        "accion": "personajes/llave-d.webp"
+      }
+    },
+    "gota": {
+      "nombre": "Gota",
+      "rol": "Plomería",
+      "origen": "02_gota.png",
+      "poses": {
+        "reposo": "personajes/gota-a.webp",
+        "saludo": "personajes/gota-b.webp",
+        "festejo": "personajes/gota-c.webp",
+        "accion": "personajes/gota-d.webp"
+      }
+    },
+    "grifo": {
+      "nombre": "Grifo",
+      "rol": "Plomería (problema: pérdida)",
+      "origen": "01_grifo.png",
+      "poses": {
+        "reposo": "personajes/grifo-a.webp",
+        "saludo": "personajes/grifo-b.webp",
+        "festejo": "personajes/grifo-c.webp",
+        "accion": "personajes/grifo-d.webp"
+      }
+    },
+    "engranaje": {
+      "nombre": "Engranaje",
+      "rol": "Plataforma / coordinación",
+      "origen": "03_engranaje.png",
+      "poses": {
+        "reposo": "personajes/engranaje-a.webp",
+        "saludo": "personajes/engranaje-b.webp",
+        "festejo": "personajes/engranaje-c.webp",
+        "accion": "personajes/engranaje-d.webp"
+      }
+    },
+    "aire": {
+      "nombre": "Aire",
+      "rol": "Aire acondicionado",
+      "origen": "06_aire.png",
+      "poses": {
+        "reposo": "personajes/aire-a.webp",
+        "saludo": "personajes/aire-b.webp",
+        "festejo": "personajes/aire-c.webp",
+        "accion": "personajes/aire-d.webp"
+      }
+    },
+    "medidor": {
+      "nombre": "Medidor",
+      "rol": "Gas",
+      "origen": "07_medidor_gas.png",
+      "poses": {
+        "reposo": "personajes/medidor_gas-a.webp",
+        "saludo": "personajes/medidor_gas-b.webp",
+        "festejo": "personajes/medidor_gas-c.webp",
+        "accion": "personajes/medidor_gas-d.webp"
+      }
+    },
+    "brocha": {
+      "nombre": "Brocha",
+      "rol": "Albañilería / terminaciones",
+      "origen": "08_brocha.png",
+      "poses": {
+        "reposo": "personajes/brocha-a.webp",
+        "saludo": "personajes/brocha-b.webp",
+        "festejo": "personajes/brocha-c.webp",
+        "accion": "personajes/brocha-d.webp"
+      }
+    },
+    "grifo-roto": {
+      "nombre": "grifo-roto",
+      "rol": "Handy roto (problema)",
+      "origen": "Handy-landing-page-fe/src/img",
+      "poses": {
+        "reposo": "rotos/cano.webp",
+        "saludo": "rotos/cano.webp",
+        "festejo": "rotos/cano.webp",
+        "accion": "rotos/cano.webp"
+      }
+    },
+    "engranaje-roto": {
+      "nombre": "engranaje-roto",
+      "rol": "Handy roto (problema)",
+      "origen": "Handy-landing-page-fe/src/img",
+      "poses": {
+        "reposo": "rotos/engranaje.webp",
+        "saludo": "rotos/engranaje.webp",
+        "festejo": "rotos/engranaje.webp",
+        "accion": "rotos/engranaje.webp"
+      }
+    },
+    "foco-roto": {
+      "nombre": "foco-roto",
+      "rol": "Handy roto (problema)",
+      "origen": "Handy-landing-page-fe/src/img",
+      "poses": {
+        "reposo": "rotos/lamparita.webp",
+        "saludo": "rotos/lamparita.webp",
+        "festejo": "rotos/lamparita.webp",
+        "accion": "rotos/lamparita.webp"
+      }
+    },
+    "llave-roto": {
+      "nombre": "llave-roto",
+      "rol": "Handy roto (problema)",
+      "origen": "Handy-landing-page-fe/src/img",
+      "poses": {
+        "reposo": "rotos/llave.webp",
+        "saludo": "rotos/llave.webp",
+        "festejo": "rotos/llave.webp",
+        "accion": "rotos/llave.webp"
+      }
+    }
+  },
+  "pie": "",
+  "assetsDe": "handyx",
+  "titulos": {
+    "peso": 800,
+    "ancho": "100%"
+  }
+}

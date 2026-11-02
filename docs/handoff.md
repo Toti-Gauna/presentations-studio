@@ -81,3 +81,21 @@ sonidos y animaciones dentro de la app; reusar kinetic-studio". Cambios:
 - **v2 comercial**: suma "El vecino, en movimiento" y "El especialista, en movimiento" (3 clips cada uno) antes de las capturas reales.
 - **Sonido** sintetizado y **clips con música**; MP4 de respaldo ahora empalma los clips originales (con audio) y las escenas grabadas.
 - Verificado: verify (56 pruebas, 4 decks), e2e 19/19. **No verificado:** cómo suena (no se escuchó), clips en Safari/iPad, proyector.
+
+## 02/11 · Pitch premium (estilo de las láminas de Ignacio) — cierre del motor
+Decisiones aprobadas por Ignacio: nombre **Handyx**; **ATICMA sin pedido** (inversores: USD 30.000 + mentor); modelo con
+**$ 80.000 → $ 16.000** rotulado "estimación a validar"; "pagás al terminar" sin "con tarjeta"; entrevistas 100/150 y
+**43 de 100** como "interés medido". Deploy: **un servicio web en Render** (`render.yaml`).
+- Nuevo deck `decks/handyx-pitch` (tema `handyx-premium`, comparte cifras con `handyx`): portada con Handys rotos, marca,
+  259.623 hogares + 3 preguntas + 43/100, une a los dos (+ verificación), tres pantallas reales, la app en movimiento (clips),
+  **modelo de negocio** (reparto $ 88.000 → $ 72.000 / $ 16.000 + tabla vs. Clickie), **mar rojo → Handyx toma lo mejor de cada
+  uno → océano azul** (beneficios para vecino y especialista), por qué Handyx y no otro, TAM/SAM/SOM en círculos (+ proyección
+  prudente por capacidad), **ya lo hicimos sin app** (5 trabajos el 30/10, 2 pidieron más, 56 preregistrados) + equipo, hitos,
+  qué logramos / USD 30.000 y un mentor, QR. Versiones: ATICMA ≈ 4 min, ATICMA corta 3 min, Inversores ≈ 6 min.
+- Motor: control móvil con **vista actual, deslizar ← → y menú ☰ Diapositivas con miniaturas**; hub agrupado; elementos
+  `oceano`, `reparto`, `circulos`; cajas estilo lámina, etiqueta superior, tabla con fila destacada, elementos que salen,
+  tema con títulos sin ensanchar; modo **mismo origen** para Render.
+- Verificado: verify (57 pruebas, 5 decks) · E2E 21/21 (incluye menú del celular y deslizar) · revisión visual de todas las escenas.
+- **No verificado:** deploy real en Render (cuenta de Ignacio), teléfonos reales entre redes, sonido en sala, Safari.
+- Conflictos de datos registrados: 100/150 entrevistas reemplazan a "70 charlas"; ticket $ 80.000 (pitch) vs $ 45.000
+  (landing/app); "SOM" de la lámina = mercado local total, acompañado de la proyección por capacidad ($ 30 M en 13 meses).

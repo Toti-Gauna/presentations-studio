@@ -2994,9 +2994,9 @@
   }
  ],
  "hub": {
-  "grupo": "Handyx",
+  "grupo": "Versiones anteriores",
   "descripcion": "Pitch institucional, sobrio y basado en evidencia: semifinal ATICMA, inversor ángel y fondo. Cifras rotuladas, demo identificada, anexos para preguntas.",
-  "orden": 10,
+  "orden": 60,
   "estilo": "institucional"
  }
 }

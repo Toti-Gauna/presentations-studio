@@ -1,27 +1,29 @@
-# Deploy (Fase 9 · al final) — preparado, NO ejecutado
+# Deploy en Render (un solo servicio) — listo para crear
 
-Estado al 31/10: configuración lista; **no se desplegó nada**. Desde la sesión de trabajo no hay acceso a Hostinger, Render, VPS
-ni DNS (y el proxy bloquea `*.handyc.com`), así que nada de esto está verificado contra la infraestructura real.
+Un único **Web Service** de Render sirve todo en el mismo dominio HTTPS: la presentación (build estático), el control
+remoto (WebSocket seguro, WSS) y las redirecciones de QR. El celular controla la computadora **desde cualquier red**
+(datos móviles o Wi-Fi del evento). Configuración: `render.yaml` en la raíz (copia en `deploy/render.yaml`).
 
-## Distribución propuesta (a confirmar con los accesos)
-| Componente | Dónde | Por qué |
-|---|---|---|
-| Build estático (`dist/`) | Hostinger, subdominio propio (p. ej. `pitch.handyc.com`) | Estático, ya contratado |
-| Servidor de sesiones (WSS) | Render (web service) **o** VPS con Caddy | Necesita proceso persistente y WebSocket; Hostinger compartido no sirve |
-| Redirecciones QR estables `/r/<id>` | Mismo servidor de sesiones (`sesiones.handyc.com/r/...`) o `api.handyc.com` si se integra | Destino controlado por el autor |
+## Crear el servicio (lo hace Ignacio en Render; Claude no tiene acceso a la cuenta)
+1. Render → **New → Blueprint** → elegir el repo `Toti-Gauna/presentations-studio`, rama `claude/modest-gauss-jin0gy`
+   (o `main` cuando se mergee; cambiar `branch` en `render.yaml`). Render lee `render.yaml` y crea `handyx-pitch`.
+   - Alternativa manual: **New → Web Service** · Runtime Node · Build `npm ci --include=dev && npx vite build` ·
+     Start `node server/main.ts` · Health check `/salud` · variables: `NODE_VERSION=22.18.0`, `SERVIR_ESTATICOS=dist`,
+     `MISMO_ORIGEN=true`, `CONFIAR_PROXY=true`, `QR_REDIRECCIONES=decks/handyx/qr.json`.
+2. Plan: **Starter** (no se duerme). En **Free** el proceso se duerme: abrir `/salud` 2–3 minutos antes de presentar.
+3. Cuando termine: abrir `https://<servicio>.onrender.com/salud` → `{"ok":true,…}`.
 
-Neon: no hace falta (no hay datos persistentes que lo justifiquen). Ningún servicio nuevo pago.
+## Usarlo el día del evento
+1. En la computadora: `https://<servicio>.onrender.com/` → hub → **Handyx · Pitch premium** → **Presentar**.
+2. **Abrir pantalla pública** → arrastrarla al proyector → **F** (pantalla completa) → un clic en esa ventana (sonido).
+3. **Conectar control remoto** (el servidor ya viene completado: es el mismo dominio) → escanear el **QR privado** con el
+   celular → **Aprobar**. Desde el celular: deslizar ← → o botones; **☰ Diapositivas** para elegir cualquier lámina.
+4. Si se cae internet: el teclado o el clicker siguen funcionando en la computadora.
 
-## Pasos
-1. DNS: `pitch` → Hostinger; `sesiones` → Render (CNAME) o VPS (A).
-2. Servidor: Render con `deploy/render.yaml` **o** VPS con `deploy/presentations-sesiones.service` + `deploy/Caddyfile`.
-   Variables: `ALLOWED_ORIGINS=https://pitch.handyc.com`, `CONFIAR_PROXY=true`. Verificar `GET https://sesiones.handyc.com/salud`.
-3. Build: `VITE_SERVIDOR=https://sesiones.handyc.com VITE_PUBLICADA=<etiqueta> npm run build` → `deploy/hostinger-publicar.sh`.
-4. Si se usa la ruta estable: cambiar `urlEstable` en `qr.json` al dominio real, `definitivo: true`, regenerar QR (`npm run qr`).
+## Dominio propio (opcional)
+Render → Settings → Custom Domain (`pitch.handyc.com`) + CNAME en el DNS de handyc.com. Con `MISMO_ORIGEN=true` no hay que tocar nada más.
 
-## Verificación (checklist humano)
-- [ ] `/salud` responde por HTTPS; WSS conecta desde `pitch.handyc.com` y se rechaza desde otro origen.
-- [ ] Celular en **datos móviles** controla la computadora en **Wi-Fi del evento** (redes distintas).
-- [ ] Reinicio del servidor durante un ensayo: la computadora sigue local; se vuelve a emparejar.
-- [ ] Render: medir si el proceso duerme; si duerme, abrir `/salud` 10 min antes.
-- [ ] QR públicos A y B leídos desde la última fila con iOS y Android; redirección `/r/<id>` al destino activo.
+## Verificado y no verificado
+- Verificado en esta sesión: el modo un solo servicio (prueba automática de mismo origen), build y servidor sirviendo `dist/`
+  con control remoto en `localhost` (E2E 21/21).
+- **No verificado:** el despliegue real en Render (requiere la cuenta de Ignacio) y la prueba entre redes con teléfonos reales.

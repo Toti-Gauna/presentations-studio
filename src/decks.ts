@@ -42,6 +42,11 @@ export function urlRecurso(tema: string, archivo: string): string {
   return recursos[`/brands/${tema}/assets/${archivo}`] ?? '';
 }
 
+/** Carpeta de archivos de un tema (puede compartir la de otra marca con assetsDe). */
+export function carpetaDe(tema: { id: string; assetsDe?: string | undefined }): string {
+  return tema.assetsDe ?? tema.id;
+}
+
 export function parametros(): { deck: string; version: string | null } {
   const p = new URLSearchParams(location.search);
   const porDefecto = (import.meta.env['VITE_DECK'] as string | undefined) ?? 'handyx';

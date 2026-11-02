@@ -11,6 +11,7 @@ const app = crearApp({
   redirecciones: lista(process.env['QR_REDIRECCIONES']),
   version: process.env['RENDER_GIT_COMMIT']?.slice(0, 7) ?? process.env['VERSION'] ?? 'local',
   confiarProxy: process.env['CONFIAR_PROXY'] === 'true',
+  mismoOrigen: process.env['MISMO_ORIGEN'] === 'true',
 });
 app.servidor.listen(puerto, process.env['HOST'] ?? '0.0.0.0', () => {
   console.log(JSON.stringify({ evento: 'escuchando', puerto, origenes: origenes.length }));

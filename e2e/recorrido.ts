@@ -79,6 +79,41 @@ try {
   ok('celular aprobado y conectado', true);
   ok('el celular ve notas privadas', (await tel.locator('.notas').textContent())?.length !== 0);
 
+  // 2b · Menú de diapositivas en el celular: abrir, elegir la escena 4 y volver
+  await tel.getByRole('button', { name: '☰ Diapositivas' }).tap();
+  await tel.waitForTimeout(600);
+  const capturas = process.env['CAPTURAS'];
+  if (capturas) await tel.screenshot({ path: `${capturas}/celular-menu.png` });
+  const minis = await tel.locator('.menu-diapos .mini .escenario').count();
+  await tel.locator('.menu-diapos li').nth(4).locator('button').tap();
+  await tel.waitForSelector('.confirmacion[data-resultado="aplicado"]');
+  await publica.waitForTimeout(400);
+  ok('menú del celular con miniaturas salta a la diapositiva elegida', minis > 5 && (await posPublica())?.startsWith('5 /') === true, `miniaturas=${minis} pública=${await posPublica()}`);
+  // 2c · Deslizar en el celular: izquierda avanza, derecha retrocede
+  const zona = tel.locator('.zona-gesto');
+  const caja = await zona.boundingBox();
+  const deslizar = async (dx: number) => {
+    if (!caja) return;
+    await tel.mouse.move(caja.x + caja.width / 2, caja.y + caja.height / 2);
+    await tel.mouse.down();
+    await tel.mouse.move(caja.x + caja.width / 2 + dx, caja.y + caja.height / 2, { steps: 5 });
+    await tel.mouse.up();
+  };
+  await tel.waitForTimeout(600);
+  const g0 = await tel.locator('.posicion').textContent();
+  await deslizar(-140);
+  await tel.waitForTimeout(700);
+  const g1 = await tel.locator('.posicion').textContent();
+  await deslizar(140);
+  await tel.waitForTimeout(700);
+  const g2 = await tel.locator('.posicion').textContent();
+  if (capturas) await tel.screenshot({ path: `${capturas}/celular-control.png` });
+  ok('deslizar avanza y retrocede', g1 !== g0 && g2 === g0, `${g0} → ${g1} → ${g2}`);
+  await presentador.keyboard.press('Home');
+  await tel.waitForTimeout(500);
+  await presentador.keyboard.press('ArrowRight');
+  await tel.waitForTimeout(500);
+
   // 3 · Comando confirmado
   const antes = await posPublica();
   await tel.getByRole('button', { name: 'Siguiente ▶' }).tap();

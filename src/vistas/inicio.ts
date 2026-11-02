@@ -5,7 +5,7 @@ import '@fontsource-variable/dm-sans/wght.css';
 import '../estilos/base.css';
 import '../estilos/escenario.css';
 import '../estilos/hub.css';
-import { cargar, idsDeDecks, urlRecurso, type Cargado } from '../decks.ts';
+import { cargar, carpetaDe, idsDeDecks, urlRecurso, type Cargado } from '../decks.ts';
 import { estadoInicial } from '../core/estado.ts';
 import { escenasDeVersion } from '../core/validar.ts';
 import { Reproductor } from '../render/reproductor.ts';
@@ -77,7 +77,7 @@ function tarjeta(c: Cargado): HTMLElement {
       tema: p.tema,
       afirmaciones: new Map(p.afirmaciones.map((a) => [a.id, a])),
       qrs: new Map(p.qrs.map((q) => [q.id, q])),
-      url: (archivo) => urlRecurso(p.tema.id, archivo),
+      url: (archivo) => urlRecurso(carpetaDe(p.tema), archivo),
       recursos: new Map(p.deck.recursos.map((r) => [r.id, r])),
     };
     requestAnimationFrame(() => {

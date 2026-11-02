@@ -3,7 +3,7 @@ import '@fontsource-variable/archivo/wdth.css';
 import '@fontsource-variable/dm-sans/wght.css';
 import '../estilos/base.css';
 import '../estilos/escenario.css';
-import { cargar, parametros, urlRecurso, type Cargado } from '../decks.ts';
+import { cargar, carpetaDe, parametros, urlRecurso, type Cargado } from '../decks.ts';
 import type { Escena, VersionDeck } from '../core/esquema.ts';
 import { escenasDeVersion } from '../core/validar.ts';
 import type { Forma } from '../core/estado.ts';
@@ -36,7 +36,7 @@ export function iniciar(): Sesion | { error: string[] } {
     tema,
     afirmaciones: new Map(paquete.afirmaciones.map((a) => [a.id, a])),
     qrs: new Map(paquete.qrs.map((q) => [q.id, q])),
-    url: (archivo) => urlRecurso(tema.id, archivo),
+    url: (archivo) => urlRecurso(carpetaDe(tema), archivo),
     recursos: new Map(paquete.deck.recursos.map((r) => [r.id, r])),
   };
   return {

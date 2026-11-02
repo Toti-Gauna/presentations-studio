@@ -48,3 +48,14 @@ Total: 10 fases, 35 lotes.
 
 ## Checklist humano (no bloquea código)
 1. Corte agregado del CRM al 04/11. 2. Bases y duración oficial ATICMA. 3. Destinos QR definitivos. 4. Monto/instrumento del pedido; alcance del 5 %; definición MET-01. 5. Accesos de deploy y DNS. 6. Ensayo con proyector, dos teléfonos en redes distintas y una persona ajena. 7. Escuchar las publicidades con audio y verlas en iPhone/Android (Safari).
+
+## Cierre 02/11 (Opus / Medio, de corrido)
+| Lote | Trabajo | Estado |
+|---|---|---|
+| A1–A2 | Datos de las láminas como afirmaciones rotuladas; tema premium (hueso, azul, amarillo intenso, azul marino) y Handys rotos | ✅ |
+| B1 | Control móvil: vista actual, deslizar, menú de diapositivas con miniaturas | ✅ (E2E) |
+| B2 | Hub agrupado (pitch premium arriba, versiones anteriores, Eclipse, pruebas) | ✅ |
+| B3 | Motion: océano rojo → azul, reparto de la plata, círculos TAM/SAM/SOM, cajas, salidas | ✅ |
+| C1–C3 | Deck `handyx-pitch`: ATICMA ≈ 4 min, ATICMA 3 min, Inversores ≈ 6 min | ✅ |
+| D1–D2 | Pruebas (57 + E2E 21/21), PDF/MP4 del pitch premium, guía | ✅ |
+| E1 | Render: un servicio (web + WSS) con `render.yaml` | 🟡 listo para crear (cuenta de Ignacio) |

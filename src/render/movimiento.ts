@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import type { Accion } from '../core/esquema.ts';
 import { palabras } from './dom.ts';
 import { sonar, type Efecto } from './sonido.ts';
+import { MOTORES } from './motores.ts';
 
 export type Modo = 'completo' | 'ligero' | 'reducido';
 
@@ -78,6 +79,7 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
       pose(pj, 'accion', tl, en);
       sfx(tl, 'whoosh', en);
       tl.fromTo(mov, { x: -520 * dir, opacity: 0 }, { x: 0, opacity: 1, duration: d * 1.6, ease: 'power2.out' }, en);
+      if (sombra) tl.fromTo(sombra, { x: -520 * dir }, { x: 0, duration: d * 1.6, ease: 'power2.out' }, en);
       if (!ligero) tl.fromTo(mov, { y: 0 }, { y: -14, duration: d * 0.2, yoyo: true, repeat: 7, ease: 'sine.inOut' }, en);
       pose(pj, 'reposo', tl, `${en}+=${d * 1.6}`);
       break;
@@ -104,6 +106,7 @@ function actuar(pj: HTMLElement, a: AccionPaso, tl: gsap.core.Timeline, en: stri
       pose(pj, 'accion', tl, en);
       sfx(tl, 'whoosh', en);
       tl.to(mov, { x: `+=${(a.distancia ?? 140) * dir}`, duration: d * (a.distancia ? 1.4 + a.distancia / 900 : 1.4), ease: 'power1.inOut' }, en);
+      if (sombra) tl.to(sombra, { x: `+=${(a.distancia ?? 140) * dir}`, duration: d * (a.distancia ? 1.4 + a.distancia / 900 : 1.4), ease: 'power1.inOut' }, en);
       if (!ligero) tl.fromTo(mov, { y: 0 }, { y: -10, duration: d * 0.175, yoyo: true, repeat: 7, ease: 'sine.inOut' }, en);
       pose(pj, 'reposo', tl, `${en}+=${d * 1.4}`);
       break;
@@ -238,11 +241,13 @@ export class LineaEscena {
     this.tl = gsap.timeline({ paused: true });
     const nodos = [...raiz.querySelectorAll<HTMLElement>('[data-paso]')];
     const pjs = [...raiz.querySelectorAll<HTMLElement>('.pj')];
+    const motores = [...raiz.querySelectorAll<HTMLElement>('[data-motor]')].map((m) => MOTORES.get(m)).filter((m): m is NonNullable<typeof m> => Boolean(m));
+    const salientes = [...raiz.querySelectorAll<HTMLElement>('[data-sale]')];
     let cursor = 0;
     for (let k = 0; k < pasos; k++) {
       const etiqueta = `p${k}`;
       this.tl.addLabel(etiqueta, cursor);
-      for (const n of nodos) if (Number(n.dataset['paso']) === k && !n.classList.contains('pj')) {
+      for (const n of nodos) if (Number(n.dataset['paso']) === k && !n.classList.contains('pj') && !n.dataset['motor']) {
         if (n.dataset['entrada'] === 'traer' && modo !== 'reducido') {
           traerPieza(raiz, n, k, this.tl, etiqueta, d, modo);
           continue;
@@ -251,6 +256,9 @@ export class LineaEscena {
         const c = n.matches('[data-contar]') ? n : n.querySelector<HTMLElement>('[data-contar]');
         if (c && modo !== 'reducido') contar(c, this.tl, etiqueta, d);
       }
+      for (const m of motores) m.alPaso(k, this.tl, etiqueta, d, modo === 'reducido');
+      for (const s of salientes)
+        if (Number(s.dataset['sale']) === k) this.tl.to(s, { autoAlpha: 0, y: modo === 'reducido' ? 0 : -24, duration: modo === 'reducido' ? 0.001 : d * 0.5, ease: 'power2.in' }, etiqueta);
       for (const pj of pjs) {
         if (Number(pj.dataset['paso']) === k) {
           pose(pj, 'reposo', this.tl, etiqueta);

@@ -81,14 +81,18 @@ const base = {
   /** Lado desde el que llega lo traído (si el personaje entra en el mismo paso). */
   desde: z.enum(['izq', 'der']).default('izq'),
   enfasis: z.boolean().default(false),
+  /** Caja estilo lámina alrededor del elemento. */
+  caja: z.enum(['blanca', 'azul', 'amarilla', 'gris', 'navy']).optional(),
+  /** Paso en el que el elemento sale de escena (opcional). */
+  sale: z.number().int().min(1).optional(),
 };
 const Accion = z.enum(['reposo', 'entrar', 'salir', 'saludar', 'festejar', 'caminar', 'mirar', 'senalar', 'reaccionar', 'satisfaccion']);
 export type Accion = z.infer<typeof Accion>;
 
 export const Elemento = z.discriminatedUnion('tipo', [
-  z.object({ ...base, tipo: z.literal('titulo'), texto: z.string(), nivel: z.number().int().min(1).max(3).default(1) }).strict(),
-  z.object({ ...base, tipo: z.literal('texto'), texto: z.string(), tamano: z.enum(['s', 'm', 'l']).default('m') }).strict(),
-  z.object({ ...base, tipo: z.literal('etiqueta'), texto: z.string(), tono: z.enum(['neutro', 'aviso', 'demo', 'proyeccion', 'meta']).default('neutro') }).strict(),
+  z.object({ ...base, tipo: z.literal('titulo'), texto: z.string(), nivel: z.number().int().min(1).max(3).default(1), kicker: z.string().optional() }).strict(),
+  z.object({ ...base, tipo: z.literal('texto'), texto: z.string(), tamano: z.enum(['xs', 's', 'm', 'l']).default('m') }).strict(),
+  z.object({ ...base, tipo: z.literal('etiqueta'), texto: z.string(), tono: z.enum(['neutro', 'aviso', 'demo', 'proyeccion', 'meta', 'kicker']).default('neutro') }).strict(),
   z
     .object({ ...base, tipo: z.literal('cifra'), afirmacion: z.string(), leyenda: z.string(), detalle: z.string().optional() })
     .strict(),
@@ -98,6 +102,7 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('lista'),
       items: z.array(z.object({ texto: z.string(), paso: z.number().int().min(0).optional(), icono: z.string().optional() }).strict()).min(1),
       estilo: z.enum(['vinetas', 'numerada', 'mosaicos', 'contraste', 'escalera']).default('vinetas'),
+      encabezado: z.string().optional(),
     })
     .strict(),
   z
@@ -124,6 +129,10 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('tabla'),
       columnas: z.array(z.string()).min(2),
       filas: z.array(z.array(z.string())).min(1),
+      /** Índice (desde 0) de la fila destacada, ej. la propia marca en una comparación. */
+      destacar: z.number().int().min(0).optional(),
+      /** Paso en que se revela la fila destacada (si difiere del elemento). */
+      pasoDestacada: z.number().int().min(0).optional(),
     })
     .strict(),
   z.object({ ...base, tipo: z.literal('qr'), qr: id }).strict(),
@@ -137,7 +146,35 @@ export const Elemento = z.discriminatedUnion('tipo', [
       continuidad: z.boolean().default(false),
     })
     .strict(),
-  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string() }).strict(),
+  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string(), forma: z.enum(['normal', 'circulo']).default('normal') }).strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('oceano'),
+      /** Pasos relativos: 0 mar rojo con competidores · 1 la marca toma lo mejor de cada uno · 2 océano azul. */
+      competidores: z.array(z.object({ nombre: z.string(), nota: z.string(), mejor: z.string() }).strict()).min(2).max(8),
+      marca: z.string(),
+      pasoToma: z.number().int().min(0),
+      pasoAzul: z.number().int().min(0),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('reparto'),
+      total: z.string(),
+      leyendaTotal: z.string(),
+      partes: z.array(z.object({ afirmacion: z.string(), etiqueta: z.string(), tono: z.enum(['azul', 'amarilla', 'gris']) }).strict()).min(2).max(4),
+      pasoPartes: z.number().int().min(0),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('circulos'),
+      capas: z.array(z.object({ etiqueta: z.string(), paso: z.number().int().min(0).default(0) }).strict()).min(2).max(4),
+    })
+    .strict(),
   z
     .object({
       ...base,
@@ -182,7 +219,7 @@ export const Escena = z
     for (const el of e.elementos) {
       if (ids.has(el.id)) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: elemento repetido ${el.id}` });
       ids.add(el.id);
-      const pasos = [el.paso, ...('items' in el ? el.items.map((i) => i.paso ?? 0) : []), ...('nodos' in el ? el.nodos.map((n) => n.paso ?? 0) : []), ...('acciones' in el ? el.acciones.map((a) => a.paso) : []), ...('pantallas' in el ? el.pantallas.map((p) => p.paso) : [])];
+      const pasos = [el.paso, ...('items' in el ? el.items.map((i) => i.paso ?? 0) : []), ...('nodos' in el ? el.nodos.map((n) => n.paso ?? 0) : []), ...('acciones' in el ? el.acciones.map((a) => a.paso) : []), ...('pantallas' in el ? el.pantallas.map((p) => p.paso) : []), ...('capas' in el ? el.capas.map((c) => c.paso) : []), ...(el.tipo === 'oceano' ? [el.pasoToma, el.pasoAzul] : []), ...(el.tipo === 'reparto' ? [el.pasoPartes] : []), ...(el.sale !== undefined ? [el.sale] : [])];
       for (const p of pasos) if (p >= e.pasos) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} usa paso ${p} pero la escena tiene ${e.pasos}` });
       if (el.area === 'libre' && !el.pos) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} area libre sin pos` });
       if (el.entrada === 'traer') {
@@ -248,7 +285,7 @@ export type Deck = z.infer<typeof Deck>;
 export type VersionDeck = z.infer<typeof VersionDeck>;
 
 // ── Tema de marca ────────────────────────────────────────────────────────────
-const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional(), marcadorTinta: z.string().optional() }).strict();
+const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional(), marcadorTinta: z.string().optional(), tintaSuperficie: z.string().optional() }).strict();
 export const Personaje = z
   .object({
     nombre: z.string(),
@@ -269,6 +306,9 @@ export const Tema = z
     radios: z.object({ chico: z.string(), medio: z.string(), grande: z.string() }).strict(),
     personajes: z.record(z.string(), Personaje).default({}),
     pie: z.string().default(''),
+    /** Tema que comparte los archivos de otra marca (personajes, video, capturas). */
+    assetsDe: id.optional(),
+    titulos: z.object({ peso: z.number().int().min(400).max(900), ancho: z.string() }).strict().optional(),
   })
   .strict()
   .refine((t) => 'neutro' in t.paletas, 'el tema necesita una paleta "neutro"');

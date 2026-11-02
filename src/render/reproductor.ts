@@ -11,6 +11,7 @@ import { sonar } from './sonido.ts';
 
 export function variablesTema(tema: Tema): string {
   const v: string[] = [`--fuente-titulos:${tema.fuentes.titulos}`, `--fuente-texto:${tema.fuentes.texto}`];
+  if (tema.titulos) v.push(`--titulo-peso:${tema.titulos.peso}`, `--titulo-ancho:${tema.titulos.ancho}`);
   for (const [k, c] of Object.entries(tema.colores)) v.push(`--c-${k}:${c}`);
   for (const [k, r] of Object.entries(tema.radios)) v.push(`--radio-${k}:${r}`);
   return v.join(';');
@@ -19,7 +20,7 @@ export function variablesTema(tema: Tema): string {
 export function paleta(tema: Tema, nombre: string): string {
   const p = tema.paletas[nombre] ?? tema.paletas['neutro'];
   if (!p) return '';
-  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento};--marcador-tinta:${p.marcadorTinta ?? 'inherit'}`;
+  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento};--marcador-tinta:${p.marcadorTinta ?? 'inherit'};--tinta-superficie:${p.tintaSuperficie ?? p.tinta}`;
 }
 
 export function modoMovimiento(): Modo {
@@ -67,7 +68,7 @@ export class Reproductor {
     this.lienzo = h('div', { class: 'lienzo' });
     this.negro = h('div', { class: 'negro', 'aria-hidden': 'true' });
     this.escenario = h('div', { class: `escenario modo-${this.modo}`, style: variablesTema(tema), role: 'region', 'aria-roledescription': 'presentación', 'aria-live': 'polite' }, this.lienzo, this.negro);
-    if (opciones.pie !== false) this.escenario.append(h('div', { class: 'pie' }, h('span', { class: 'pie-marca' }, tema.pie), h('span', { class: 'pie-num' })));
+    if (opciones.pie !== false && tema.pie !== '') this.escenario.append(h('div', { class: 'pie' }, h('span', { class: 'pie-marca' }, tema.pie), h('span', { class: 'pie-num' })));
     contenedor.append(this.escenario);
     if (opciones.escalar !== false) {
       this.observador = new ResizeObserver(() => this.escalar());

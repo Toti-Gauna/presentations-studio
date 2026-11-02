@@ -1,0 +1,26 @@
+# Render · UN solo servicio web: sirve la presentación (build estático) y el control remoto (WebSocket) en el mismo
+# dominio HTTPS/WSS. Así el celular controla desde cualquier red (datos móviles o Wi-Fi del evento).
+# Plan "starter" (no duerme). En "free" el proceso duerme: abrir /salud 2–3 min antes de presentar.
+services:
+  - type: web
+    name: handyx-pitch
+    runtime: node
+    plan: starter
+    region: oregon
+    branch: claude/modest-gauss-jin0gy
+    buildCommand: npm ci --include=dev && npx vite build
+    startCommand: node server/main.ts
+    healthCheckPath: /salud
+    envVars:
+      - key: NODE_VERSION
+        value: "22.18.0"
+      - key: SERVIR_ESTATICOS
+        value: dist
+      - key: MISMO_ORIGEN
+        value: "true"
+      - key: CONFIAR_PROXY
+        value: "true"
+      - key: QR_REDIRECCIONES
+        value: decks/handyx/qr.json
+      - key: ALLOWED_ORIGINS
+        value: ""

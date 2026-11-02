@@ -21,19 +21,26 @@ export interface Resultado {
 function textos(el: Elemento): string[] {
   switch (el.tipo) {
     case 'titulo':
+      return [el.texto, el.kicker ?? ''];
     case 'texto':
     case 'etiqueta':
       return [el.texto];
     case 'cifra':
       return [el.leyenda, el.detalle ?? '', `{{${el.afirmacion}}}`];
     case 'lista':
-      return el.items.map((i) => i.texto);
+      return [el.encabezado ?? '', ...el.items.map((i) => i.texto)];
     case 'flujo':
       return el.nodos.flatMap((n) => [n.texto, n.detalle ?? '']);
     case 'grafico':
       return [el.titulo, el.rotulo, ...el.series.flatMap((s) => [s.etiqueta, s.afirmacion ? `{{${s.afirmacion}}}` : ''])];
     case 'tabla':
       return [...el.columnas, ...el.filas.flat()];
+    case 'reparto':
+      return [`{{${el.total}}}`, el.leyendaTotal, ...el.partes.flatMap((p) => [`{{${p.afirmacion}}}`, p.etiqueta])];
+    case 'circulos':
+      return el.capas.map((c) => c.etiqueta);
+    case 'oceano':
+      return [el.marca, ...el.competidores.flatMap((c) => [c.nombre, c.nota, c.mejor])];
     default:
       return [];
   }
@@ -75,7 +82,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
     if (!(e.paleta in tema.paletas)) errores.push(`escena ${e.id}: paleta "${e.paleta}" no existe en el tema`);
     const areas = new Map<string, string>();
     for (const el of e.elementos) {
-      if (el.area === 'libre' || el.area === 'fondo' || e.disposicion === 'grilla' && !['arriba', 'abajo'].includes(el.area)) continue;
+      if (el.area === 'libre' || el.area === 'fondo' || (e.disposicion === 'grilla' && !['arriba', 'abajo'].includes(el.area))) continue;
+      if (el.sale !== undefined) continue; // comparte área con lo que entra cuando sale
       const otro = areas.get(el.area);
       if (otro) errores.push(`escena ${e.id}: ${el.id} y ${otro} ocupan la misma área "${el.area}" (se superponen)`);
       areas.set(el.area, el.id);

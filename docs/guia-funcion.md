@@ -5,6 +5,10 @@
 2. `npm run exportar:pdf -- --version=aticma`, `npm run exportar:video -- --version=aticma`, `npm run paquete:local`. Copiar `salida/paquete-local.zip` a un pendrive.
 3. Imprimir los QR públicos (`salida/qr/handyx/*.png`) en A4 como contingencia.
 
+## Atajo (pitch premium, Render)
+Hub → **Handyx · Pitch premium** → versión (**ATICMA ≈ 4 min**, **ATICMA corta 3 min** o **Inversores ≈ 6 min**) → **Presentar**.
+Celular: QR privado → aprobar → deslizar ← → o **☰ Diapositivas** para saltar a cualquier lámina. Ver `docs/deploy.md`.
+
 ## En el lugar (30 min antes)
 1. Computadora con cargador, adaptador HDMI/USB-C, clicker. Modo avión **no**: Wi-Fi del evento o hotspot.
 2. Abrir el presentador (`/presentador/?deck=handyx&version=aticma`) y **Abrir pantalla pública**; arrastrarla al proyector y apretar **F**.

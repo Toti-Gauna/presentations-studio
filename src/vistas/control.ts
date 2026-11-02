@@ -2,8 +2,16 @@
 // presentador y después manda comandos con id único y revisión base. Muestra si cada toque
 // quedó confirmado. Reintenta con el MISMO id tras una reconexión (el servidor deduplica).
 import '@fontsource-variable/dm-sans/wght.css';
+import '@fontsource-variable/archivo/wdth.css';
 import '../estilos/base.css';
+import '../estilos/escenario.css';
 import '../estilos/control.css';
+import { cargar, carpetaDe, urlRecurso } from '../decks.ts';
+import { escenasDeVersion } from '../core/validar.ts';
+import { estadoInicial } from '../core/estado.ts';
+import { Reproductor } from '../render/reproductor.ts';
+import type { Contexto } from '../render/elementos.ts';
+import type { Escena, Tema } from '../core/esquema.ts';
 import type { Comando, Estado, Forma } from '../core/estado.ts';
 import type { MensajeServidor, NotaEscena } from '../core/protocolo.ts';
 import { h, marcado } from '../render/dom.ts';
@@ -70,14 +78,61 @@ function controlar(srv: string, ses: string, token: string) {
     return b;
   };
   const btnNegro = boton('Negro', () => ({ tipo: 'negro', valor: !(estado?.negro ?? false) }), 'chico');
+  const vista = h('div', { class: 'vista-actual', 'aria-hidden': 'true' });
+  const zona = h('div', { class: 'zona-gesto' }, vista, h('p', { class: 'pista' }, 'Deslizá ← → o usá los botones'));
+  const menu = h('div', { class: 'menu-diapos', hidden: '' }, h('div', { class: 'menu-cab' }, h('strong', {}, 'Diapositivas'), (() => { const b = h('button', { type: 'button', class: 'btn chico' }, 'Cerrar'); b.addEventListener('click', () => (menu.hidden = true)); return b; })()), lista);
+  const abrirMenu = h('button', { type: 'button', class: 'btn menu-btn' }, '☰ Diapositivas');
+  abrirMenu.addEventListener('click', () => {
+    menu.hidden = false;
+    pintarMiniaturas();
+    lista.querySelector('li.actual')?.scrollIntoView({ block: 'center' });
+  });
   raiz.replaceChildren(
     h('header', { class: 'cabecera' }, pos, conexion),
+    zona,
     confirmacion,
     h('div', { class: 'botonera' }, boton('◀', () => ({ tipo: 'anterior' }), 'atras'), boton('Siguiente ▶', () => ({ tipo: 'siguiente' }), 'adelante')),
+    abrirMenu,
     h('div', { class: 'secundarios' }, boton('⏮ Escena', () => ({ tipo: 'escenaAnterior' }), 'chico'), boton('Escena ⏭', () => ({ tipo: 'escenaSiguiente' }), 'chico'), btnNegro, boton('⏯ Medio', () => (estado?.reproduccion.reproduciendo || !medioDeEscena() ? { tipo: 'pausar' } : { tipo: 'reproducir', medio: medioDeEscena() as string }), 'chico')),
     h('details', { open: '' }, h('summary', {}, 'Notas privadas'), notasEl),
-    h('details', {}, h('summary', {}, 'Saltar a escena'), lista),
+    menu,
   );
+  // Gesto: deslizar a la izquierda avanza, a la derecha retrocede.
+  let x0: number | null = null;
+  zona.addEventListener('pointerdown', (e) => (x0 = e.clientX));
+  zona.addEventListener('pointerup', (e) => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 50) enviar(dx < 0 ? { tipo: 'siguiente' } : { tipo: 'anterior' });
+  });
+
+  // Miniaturas: el celular dibuja las mismas escenas que el proyector (mismo build), sin movimiento.
+  let escenas: Escena[] = [];
+  let tema: Tema | null = null;
+  let ctxRender: Contexto | null = null;
+  let actual: Reproductor | null = null;
+  function prepararRender(deck: string, version: string) {
+    const c = cargar(deck);
+    if (!c.paquete) return;
+    const p = c.paquete;
+    escenas = escenasDeVersion(p.deck, version, true);
+    tema = p.tema;
+    ctxRender = { tema: p.tema, afirmaciones: new Map(p.afirmaciones.map((a) => [a.id, a])), qrs: new Map(p.qrs.map((q) => [q.id, q])), url: (archivo) => urlRecurso(carpetaDe(p.tema), archivo), recursos: new Map(p.deck.recursos.map((r) => [r.id, r])) };
+    actual = new Reproductor(vista, escenas, p.tema, ctxRender, { modo: 'reducido', pie: false });
+  }
+  const dibujadas = new Set<number>();
+  function pintarMiniaturas() {
+    if (!tema || !ctxRender) return;
+    lista.querySelectorAll<HTMLElement>('li').forEach((li, i) => {
+      if (dibujadas.has(i)) return;
+      const mini = li.querySelector<HTMLElement>('.mini');
+      if (!mini) return;
+      dibujadas.add(i);
+      const r = new Reproductor(mini, escenas, tema as Tema, ctxRender as Contexto, { modo: 'reducido', pie: false });
+      r.mostrar({ ...estadoInicial(), escena: i, paso: (escenas[i]?.pasos ?? 1) - 1 });
+    });
+  }
 
   function medioDeEscena(): string | null {
     return estado ? (notas[estado.escena]?.medios[0] ?? null) : null;
@@ -89,6 +144,7 @@ function controlar(srv: string, ses: string, token: string) {
     pos.textContent = `Escena ${estado.escena + 1}/${forma.pasos.length} · paso ${estado.paso + 1}/${forma.pasos[estado.escena] ?? 1}${estado.negro ? ' · NEGRO' : ''}`;
     notasEl.innerHTML = n ? `<strong>${marcado(n.titulo)}</strong><p>${marcado(n.notas || '—').replace(/\n/g, '<br>')}</p>` : '';
     btnNegro.classList.toggle('activo', estado.negro);
+    actual?.mostrar({ ...estado, reproduccion: { medio: null, reproduciendo: false, posicion: 0, desde: null } });
     lista.querySelectorAll('li').forEach((li, i) => li.classList.toggle('actual', i === estado?.escena));
     if (navigator.vibrate) navigator.vibrate(15);
   }
@@ -99,10 +155,14 @@ function controlar(srv: string, ses: string, token: string) {
         estado = m.estado;
         forma = m.forma;
         notas = m.notas ?? [];
+        if (!actual) prepararRender(m.deck, m.version);
         lista.replaceChildren(...notas.map((x, i) => {
           const li = h('li');
-          const b = h('button', { type: 'button', class: 'btn item' }, `${i + 1}. ${x.titulo}`);
-          b.addEventListener('click', () => enviar({ tipo: 'ir', escena: i }));
+          const b = h('button', { type: 'button', class: 'btn item' }, h('div', { class: 'mini' }), h('span', {}, `${i + 1}. ${x.titulo}`));
+          b.addEventListener('click', () => {
+            enviar({ tipo: 'ir', escena: i });
+            menu.hidden = true;
+          });
           li.append(b);
           return li;
         }));
