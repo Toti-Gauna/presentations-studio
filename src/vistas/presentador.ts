@@ -203,6 +203,21 @@ function montar(s: Sesion) {
     }, 'secundario', 'Para proyectar desde OTRA computadora (solo lectura, sin notas)'),
     boton('Terminar sesión remota', () => void anf.terminar(), 'secundario'),
   );
+  // ¿Hay servidor de control? En una publicación solo estática (hosting compartido) no: se avisa y el teclado sigue.
+  if (servidorDefecto) {
+    const ctl = new AbortController();
+    const corte = window.setTimeout(() => ctl.abort(), 2500);
+    fetch(`${servidorDefecto}/salud`, { signal: ctl.signal, credentials: 'omit' })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((j: { ok?: boolean }) => {
+        if (!j.ok) throw new Error('salud');
+      })
+      .catch(() => {
+        panelRemoto.querySelector('.ayuda')!.textContent = 'Esta publicación no tiene servidor de control: el celular no está disponible. El teclado y el clicker funcionan igual.';
+        panelRemoto.classList.add('sin-servidor');
+      })
+      .finally(() => window.clearTimeout(corte));
+  }
   anf.on('solicitud', (sol) => {
     const li = h('li', {}, h('span', {}, `${sol.dispositivo} quiere controlar`));
     li.append(

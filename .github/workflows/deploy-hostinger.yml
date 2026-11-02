@@ -1,0 +1,59 @@
+# Publica en Hostinger. Solo corre si la variable del repo DEPLOY_HOSTINGER es "true" (la genera `npm run configurar`).
+#  · DEPLOY_MODO=vps        → construye la imagen Docker, la carga en el VPS por SSH y hace `docker compose up -d`.
+#  · DEPLOY_MODO=compartido → compila el sitio estático y lo sube por rsync/SSH a la carpeta del dominio.
+name: Deploy Hostinger
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  deploy:
+    if: vars.DEPLOY_HOSTINGER == 'true' && (github.event_name == 'workflow_dispatch' || github.ref_name == vars.DEPLOY_RAMA)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      HOST: ${{ secrets.DEPLOY_HOST }}
+      USUARIO: ${{ secrets.DEPLOY_USUARIO }}
+      CLAVE: ${{ secrets.DEPLOY_SSH_KEY }}
+      PUERTO: ${{ vars.DEPLOY_PUERTO }}
+      CARPETA: ${{ vars.DEPLOY_CARPETA }}
+      DOMINIO: ${{ vars.DOMINIO }}
+      MODO: ${{ vars.DEPLOY_MODO }}
+      VITE_DECK: ${{ vars.VITE_DECK }}
+      VITE_SERVIDOR: ${{ vars.SERVIDOR_CONTROL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Pruebas y validación de presentaciones
+        run: npm ci && npm test && node scripts/validar-decks.ts
+      - name: Clave SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$CLAVE" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          ssh-keyscan -p "$PUERTO" "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+      - name: VPS · imagen Docker
+        if: env.MODO == 'vps'
+        run: |
+          docker build --build-arg VITE_DECK="$VITE_DECK" -t presentaciones:actual .
+          docker save presentaciones:actual | gzip | ssh -i ~/.ssh/deploy -p "$PUERTO" "$USUARIO@$HOST" 'gunzip | docker load'
+          ssh -i ~/.ssh/deploy -p "$PUERTO" "$USUARIO@$HOST" "cd '$CARPETA' && docker compose up -d --remove-orphans && docker image prune -f"
+      - name: Compartido · sitio estático
+        if: env.MODO == 'compartido'
+        run: |
+          npx vite build
+          cp deploy/hostinger.htaccess dist/.htaccess
+          rsync -az --delete -e "ssh -i $HOME/.ssh/deploy -p $PUERTO" dist/ "$USUARIO@$HOST:$CARPETA/"
+      - name: Prueba pública
+        run: |
+          if [ "$MODO" = "vps" ]; then URL="https://$DOMINIO/salud"; else URL="https://$DOMINIO/"; fi
+          for i in $(seq 1 18); do curl -fsS -o /dev/null "$URL" && echo "OK $URL" && exit 0; sleep 10; done
+          echo "No respondió $URL (¿DNS o certificado todavía propagando?)"; exit 1

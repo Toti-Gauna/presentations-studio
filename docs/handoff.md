@@ -99,3 +99,13 @@ Decisiones aprobadas por Ignacio: nombre **Handyx**; **ATICMA sin pedido** (inve
 - **No verificado:** deploy real en Render (cuenta de Ignacio), teléfonos reales entre redes, sonido en sala, Safari.
 - Conflictos de datos registrados: 100/150 entrevistas reemplazan a "70 charlas"; ticket $ 80.000 (pitch) vs $ 45.000
   (landing/app); "SOM" de la lámina = mercado local total, acompañado de la proyección por capacidad ($ 30 M en 13 meses).
+
+## 02/11 (tarde) · Docker + configurador para Hostinger
+- `Dockerfile` (un contenedor: presentación + control del celular, usuario `node`, healthcheck), `.dockerignore`.
+- `./configurar.sh` / `npm run configurar`: pregunta los datos y genera en `salida/deploy/` variables y secretos para GitHub,
+  `cargar-en-github.sh` (gh), y para VPS `preparar-vps.sh` + `docker-compose.yml` + `Caddyfile` + `.env` (o `.htaccess` en compartido).
+- `.github/workflows/deploy-hostinger.yml`: solo corre con `DEPLOY_HOSTINGER=true`; VPS por `docker save | ssh docker load`, compartido por rsync.
+- El presentador detecta si no hay servidor de control (publicación estática) y lo avisa.
+- Respuesta a "¿hace falta backend?": no para teclado/clicker; sí un servidor chico para el celular, que va en el mismo contenedor.
+- Verificado: build y contenedor, control del celular contra el contenedor, configurador en los dos modos, clave SSH con OpenSSH,
+  compose y Caddyfile validados. No verificado: Actions con secretos reales, VPS, DNS, certificado.

@@ -23,7 +23,9 @@
     "e2e": "node e2e/recorrido.ts",
     "verify": "npm run typecheck && npm test && npm run validar && vite build",
     "escenarios": "node scripts/escenarios.ts",
-    "publicar": "node scripts/publicar.ts"
+    "publicar": "node scripts/publicar.ts",
+    "configurar": "node scripts/configurar-deploy.ts",
+    "docker:build": "docker build -t presentaciones:actual ."
   },
   "dependencies": {
     "@fontsource-variable/archivo": "5.3.0",

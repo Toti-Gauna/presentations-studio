@@ -14,6 +14,9 @@ Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=han
 - **Handyx v1 institucional** (`deck=handyx`): `aticma` (180 s), `corta` (60 s), `angel` (≈ 6 min), `vc` (≈ 9 min).
 - **Handyx v2 comercial** (`deck=handyx-v2`, mismas cifras): `comercial` (≈ 5 min), `marca-marketing` (2 min), `anuncios` (reel).
 
+## Deploy en Hostinger (Docker)
+`./configurar.sh` te pide los datos por consola y genera todo lo que hay que pegar en Hostinger y en GitHub. Ver [`docs/deploy-hostinger.md`](docs/deploy-hostinger.md). Render: [`docs/deploy.md`](docs/deploy.md).
+
 ## Comandos
 | Comando | Qué hace |
 |---|---|
