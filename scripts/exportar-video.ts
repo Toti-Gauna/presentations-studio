@@ -14,12 +14,12 @@ const deckId = a['deck'] ?? 'handyx';
 const version = a['version'] ?? 'aticma';
 const acelerar = Number(a['acelerar'] ?? 1);
 const deck = Deck.parse(JSON.parse(readFileSync(`decks/${deckId}/deck.json`, 'utf8')));
-const tema = JSON.parse(readFileSync(`brands/${deck.tema}/tema.json`, 'utf8')) as { paletas: Record<string, { fondo: string }> };
+const tema = JSON.parse(readFileSync(`brands/${deck.tema}/tema.json`, 'utf8')) as { paletas: Record<string, { fondo: string }>; assetsDe?: string };
 const escenas = escenasDeVersion(deck, version, false);
 const ff = (...x: string[]) => execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...x]);
 const clipsDe = (e: Escena) => e.elementos.filter((x) => x.tipo === 'video' && x.cubrir && x.auto).map((x) => (x as { recurso: string }).recurso);
 const esClip = (e: Escena) => clipsDe(e).length > 0 && clipsDe(e).length === e.pasos && e.elementos.every((x) => x.tipo === 'video');
-const archivoDe = (id: string) => `brands/${deck.tema}/assets/${deck.recursos.find((r) => r.id === id)?.archivo}`;
+const archivoDe = (id: string) => `brands/${tema.assetsDe ?? deck.tema}/assets/${deck.recursos.find((r) => r.id === id)?.archivo}`;
 
 const tmp = 'salida/video/tmp';
 rmSync(tmp, { recursive: true, force: true });
