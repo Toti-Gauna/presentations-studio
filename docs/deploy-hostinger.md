@@ -28,13 +28,15 @@ HTTPS y si genera una clave SSH nueva. Genera en `salida/deploy/` (no se version
 | `preparar-vps.sh` | pegar **una vez** en la terminal del VPS: instala Docker si falta, autoriza la clave, crea la carpeta con `docker-compose.yml`, `Caddyfile` y `.env` |
 | `docker-compose.yml`, `Caddyfile`, `.env` | los mismos archivos por separado |
 | `.htaccess` (compartido) | caché y cabeceras; el workflow ya lo sube |
-| `clave-deploy` / `.pub` | clave SSH solo para el deploy (la privada va como secreto `DEPLOY_SSH_KEY`) |
+| `clave-deploy` / `.pub` | si pediste clave nueva (en compartido la privada va como `HOSTINGER_SSH_KEY`; en VPS como `DEPLOY_SSH_KEY`) |
+| `render-control.md` | opción 1: valores del servicio de Render |
 
-Después: **GitHub → Actions → Deploy Hostinger → Run workflow** (o push a la rama elegida). El workflow
-(`.github/workflows/deploy-hostinger.yml`) corre las pruebas, y según el modo:
-- **VPS:** construye la imagen, la manda por SSH (`docker save | docker load`, sin registro ni tokens extra) y hace `docker compose up -d`.
-- **Compartido:** compila y sube `dist/` con rsync.
-Termina probando `https://<dominio>/salud` (VPS) o la portada (compartido).
+Después: **GitHub → Actions → Deploy Hostinger → Run workflow** (o push a `main`).
+- **Compartido (opciones 1 y 3):** `.github/workflows/deploy-hostinger.yml`, mismo método y nombres que la landing
+  (`HOSTINGER_*`): compila, sube por SSH a staging, `scripts/hostinger-publish.sh` hace respaldo y publica,
+  `scripts/hostinger-smoke.sh` prueba la portada y Render; si falla, restaura. Ver `docs/deploy.md`.
+- **VPS (opción 2):** `.github/workflows/deploy-vps.yml` construye la imagen, la manda por SSH (`docker save | docker load`)
+  y hace `docker compose up -d`; prueba `https://<dominio>/salud`.
 
 ## Probar la imagen en tu máquina
 ```sh

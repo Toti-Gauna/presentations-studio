@@ -1,3 +1,4 @@
+# Handyx Hostinger managed static export
 Options -Indexes
 AddType application/manifest+json .webmanifest
 <IfModule mod_headers.c>

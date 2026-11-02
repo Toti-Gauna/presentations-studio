@@ -15,3 +15,4 @@
 | 31/10 | 5.1, 6.4, 6.5 | PDF integrados (matriz verificada, 2 escenas nuevas), hub, deck v2 comercial, 20 capturas reales, 2 publicidades re-renderizadas | verify 55 pruebas; e2e 19/19; PDF v2 | escuchar audio de anuncios; Safari |
 | 31/10 noche | 6.6 (nuevo) | Pitch rehecho para vender: clips kinetic-studio, sonido sintetizado, golpes, confeti, beneficios, ejemplo $ 45.000, datos PDF, ATICMA sin pedido; exportador MP4 con clips | verify 56; e2e 19/19 | escuchar en sala; Safari |
 | 02/11 | A–E (cierre) | Pitch premium según láminas, océano rojo→azul, modelo de negocio, control móvil con menú y deslizar, hub agrupado, Render un servicio | verify 57; e2e 21/21 | crear servicio en Render; ensayo con teléfonos |
+| 02/11 noche | 9.1 | Deploy Hostinger con el método de la landing (publish/smoke/rollback, mismos nombres), Render aparte, configurador | publish/guard/rollback y smoke en local; verify | cuentas reales de Ignacio |

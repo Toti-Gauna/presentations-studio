@@ -1,0 +1,52 @@
+# Opción alternativa: todo en un VPS con Docker. Solo corre si DEPLOY_HOSTINGER es "true" y DEPLOY_MODO es "vps"
+# (lo genera `./configurar.sh`, opción 2). La opción elegida (Hostinger compartido + Render) usa deploy-hostinger.yml.
+name: Deploy VPS (Docker)
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  deploy:
+    if: vars.DEPLOY_HOSTINGER == 'true' && vars.DEPLOY_MODO == 'vps' && (github.event_name == 'workflow_dispatch' || github.ref_name == vars.DEPLOY_RAMA)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      HOST: ${{ secrets.DEPLOY_HOST }}
+      USUARIO: ${{ secrets.DEPLOY_USUARIO }}
+      CLAVE: ${{ secrets.DEPLOY_SSH_KEY }}
+      PUERTO: ${{ vars.DEPLOY_PUERTO }}
+      CARPETA: ${{ vars.DEPLOY_CARPETA }}
+      DOMINIO: ${{ vars.DOMINIO }}
+      MODO: ${{ vars.DEPLOY_MODO }}
+      VITE_DECK: ${{ vars.VITE_DECK }}
+      VITE_SERVIDOR: ${{ vars.SERVIDOR_CONTROL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Pruebas y validación de presentaciones
+        run: npm ci && npm test && node scripts/validar-decks.ts
+      - name: Clave SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$CLAVE" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          ssh-keyscan -p "$PUERTO" "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+      - name: VPS · imagen Docker
+        if: env.MODO == 'vps'
+        run: |
+          docker build --build-arg VITE_DECK="$VITE_DECK" -t presentaciones:actual .
+          docker save presentaciones:actual | gzip | ssh -i ~/.ssh/deploy -p "$PUERTO" "$USUARIO@$HOST" 'gunzip | docker load'
+          ssh -i ~/.ssh/deploy -p "$PUERTO" "$USUARIO@$HOST" "cd '$CARPETA' && docker compose up -d --remove-orphans && docker image prune -f"
+      - name: Prueba pública
+        run: |
+          URL="https://$DOMINIO/salud"
+          for i in $(seq 1 18); do curl -fsS -o /dev/null "$URL" && echo "OK $URL" && exit 0; sleep 10; done
+          echo "No respondió $URL (¿DNS o certificado todavía propagando?)"; exit 1
