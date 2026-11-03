@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ErrorSesion, MAX_INTENTOS_EMPAREJAR, Sesiones, TTL_CODIGO_MS } from '../server/sesiones.ts';
+import { ErrorSesion, MAX_INTENTOS_EMPAREJAR, Sesiones, TTL_CODIGO_MS, validarNuevaSesion } from '../server/sesiones.ts';
 
 const datos = { deck: 'demo', version: 'corta', huella: 'a'.repeat(16), forma: { pasos: [2, 1, 1] }, notas: [1, 2, 3].map((n) => ({ titulo: `E${n}`, notas: 'privada', guion: '', duracion: 10, medios: [] })) };
 
@@ -114,5 +114,13 @@ describe('comandos sin doble avance', () => {
     expect(s.sincronizar(ses, { ...ses.estado, escena: 2, paso: 0, revision: 0 })).toBe(true);
     expect(ses.estado).toMatchObject({ escena: 2, paso: 0, revision: 2 });
     expect(s.sincronizar(ses, { ...ses.estado, escena: 1, paso: 5 })).toBe(false);
+  });
+});
+
+describe('anexos en sesiones remotas', () => {
+  it('conserva la cantidad de escenas principales y descarta valores inválidos', () => {
+    expect(validarNuevaSesion({ ...datos, forma: { pasos: [2, 1, 1], principales: 2 } })?.forma.principales).toBe(2);
+    expect(validarNuevaSesion({ ...datos, forma: { pasos: [2, 1, 1], principales: 9 } })?.forma.principales).toBeUndefined();
+    expect(validarNuevaSesion({ ...datos, forma: { pasos: [2, 1, 1], principales: 'x' } })?.forma.principales).toBeUndefined();
   });
 });

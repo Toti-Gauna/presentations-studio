@@ -2,7 +2,7 @@
 // Modos: seguidor del presentador (misma computadora), autónoma con teclado, o remota (otra
 // computadora, por servidor con token público de solo lectura).
 import { aplicar, estadoInicial, type Comando, type Estado } from '../core/estado.ts';
-import { Reproductor } from '../render/reproductor.ts';
+import { Reproductor, modoMovimiento } from '../render/reproductor.ts';
 import { CanalLocal } from '../transporte/local.ts';
 import { ConexionRemota, servidorPermitido, wsDesde } from '../transporte/remoto.ts';
 import { iniciar, pantallaError, precargar, teclas } from './comun.ts';
@@ -13,7 +13,7 @@ const s = iniciar();
 if ('error' in s) pantallaError(raiz, s.error, true);
 else {
   document.title = s.paquete.deck.titulo;
-  const rep = new Reproductor(raiz, s.escenas, s.paquete.tema, s.ctx);
+  const rep = new Reproductor(raiz, s.escenas, s.paquete.tema, s.ctx, { modo: modoMovimiento(s.version.movimiento) });
   // Solo la pantalla pública suena. El navegador exige un gesto en ESTA ventana: el primer clic o tecla lo habilita.
   const sinSonido = new URLSearchParams(location.search).get('sonido') === 'no';
   habilitarSonido(!sinSonido);

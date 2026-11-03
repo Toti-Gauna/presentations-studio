@@ -131,3 +131,19 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   mientras está abierto; smoke con tiempos para arranque en frío. Abrir el presentador 5 min antes del pitch.
 - Dominio: `presentaciones.handyc.com` (perfil `presentaciones` en `hostinger-publish.sh`, solo esa carpeta o `handyc.com/presentaciones`).
 - Verificado en local: guard (carpeta ajena → salida 2), publicación del perfil, despertar del servidor en el navegador.
+
+## 03/11 · Pitch ATICMA de tres minutos (versión abreviada del 03/11)
+- Deck nuevo `decks/handyx-aticma` (versión `evento`, 180 s, `movimiento: reducido`): 4 pantallas principales + 6 anexos (A Evidencia,
+  B Modelo y cobros, C Mercado y alternativas, D Producto y visión, E Crecimiento y metas, F Inversión). Afirmaciones propias con corte 03/11
+  (modelo 0 % / 15 %, metas USD 100.000 y 72 como objetivos, USD 300.000 buscados, puente económico como proyección).
+- Guion literal de 326 palabras en el campo `guion` de cada escena → `docs/handyx/aticma-3min-guion.md` (generado; verify lo comprueba).
+  Fuentes, límites y pendientes: `docs/handyx/aticma-3min-fuentes-y-pendientes.md`; alternativas: `docs/handyx/aticma-3min-alternativas.md`.
+- Motor: `forma.principales` (avanzar no entra a anexos; el servidor lo conserva), `movimiento` por versión, atajos Mayús + A…F y 0 en el
+  presentador, posición recordada al refrescar el presentador, cifras largas que se achican a su columna, rótulos legibles en paletas oscuras,
+  títulos de las miniaturas del presentador a tamaño real (la regla `.tablero h2` los achicaba).
+- Ilustración `brands/handyx/assets/conceptos/circuito-conceptual.svg` (símbolos genéricos, rotulada "Ejemplo conceptual · visión").
+- Capturas del prototipo fuera de la pantalla 2: muestran "comisión $ 0" del mes de lanzamiento y datos sintéticos ("12 trabajos realizados").
+- Verificado: verify, e2e 27/27 (incluye 6 comprobaciones del deck nuevo), capturas 1920×1080 y 1366×768 de las 10 escenas, PDF (10 páginas)
+  y lectura. Control remoto y reconexión: probados por el e2e con el deck `handyx` (mismo motor), no con un celular real.
+- Pendiente: ensayo cronometrado, alinear el 0 % / 15 % con apps y landing, fuentes bloqueadas en esta red (Clickie, Muovi, Taskrabbit,
+  censo municipal), conciliación de los cinco cobros, fechas del trimestre comercial.

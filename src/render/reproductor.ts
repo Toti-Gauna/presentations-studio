@@ -23,9 +23,10 @@ export function paleta(tema: Tema, nombre: string): string {
   return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento};--marcador-tinta:${p.marcadorTinta ?? 'inherit'};--tinta-superficie:${p.tintaSuperficie ?? p.tinta}`;
 }
 
-export function modoMovimiento(): Modo {
+export function modoMovimiento(defecto?: Modo): Modo {
   const q = new URLSearchParams(location.search).get('movimiento');
   if (q === 'reducido' || q === 'ligero' || q === 'completo') return q;
+  if (defecto) return defecto;
   return matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reducido' : 'completo';
 }
 

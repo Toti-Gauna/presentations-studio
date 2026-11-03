@@ -102,7 +102,7 @@ export function validarNuevaSesion(x: unknown): DatosNuevaSesion | null {
     if (!Array.isArray(medios) || medios.length > 6 || !medios.every((m) => typeof m === 'string' && ID.test(m))) return null;
     limpia.push({ titulo: o['titulo'], notas: o['notas'], guion: o['guion'], duracion: o['duracion'], medios: medios as string[] });
   }
-  return { deck: d['deck'], version: d['version'], huella: d['huella'], forma: { pasos: [...forma.pasos] }, notas: limpia };
+  return { deck: d['deck'], version: d['version'], huella: d['huella'], forma: { pasos: [...forma.pasos], ...(Number.isInteger(forma.principales) && (forma.principales as number) >= 1 && (forma.principales as number) <= forma.pasos.length ? { principales: forma.principales } : {}) }, notas: limpia };
 }
 
 export class Sesiones {

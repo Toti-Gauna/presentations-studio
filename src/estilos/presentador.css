@@ -11,8 +11,8 @@
 .conexion[data-estado='conectado'] { background: #134d33; }
 .conexion[data-estado='reconectando'], .conexion[data-estado='sin-confirmar'], .conexion[data-estado='cerrado'] { background: #5c3a06; }
 .tablero { flex: 1; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(260px, 0.7fr); gap: 16px; padding: 16px; }
-.tablero h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d9ab8; margin: 14px 0 6px; }
-.tablero h3 { font-size: 14px; margin: 12px 0 4px; }
+.tablero section > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d9ab8; margin: 14px 0 6px; }
+.tablero .remoto h3 { font-size: 14px; margin: 12px 0 4px; }
 .monitor { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; }
 .monitor-siguiente { width: 60%; opacity: 0.9; }
 .etiqueta-monitor { font-size: 13px; color: #8d9ab8; margin: 8px 0 4px; }
@@ -42,3 +42,4 @@
 .ayuda { font-size: 13px; color: #8d9ab8; }
 @media (max-width: 1100px) { .tablero { grid-template-columns: 1fr; } }
 .remoto.sin-servidor .ayuda { color: #F6A623; font-weight: 700; }
+.indice li.separador-anexos { list-style: none; margin: 14px 0 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #8fa0c4; }

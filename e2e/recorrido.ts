@@ -185,6 +185,28 @@ try {
   for (let i = 0; i < 30; i++) { await v2.keyboard.press('ArrowRight'); await v2.waitForTimeout(60); }
   await v2.waitForTimeout(800);
   ok('v2 comercial recorre 30 pasos sin errores', (await v2.locator('section.escena').count()) >= 1);
+  // Pitch ATICMA de 3 minutos: modo evento estático, anexos solo por acción explícita, refresco sin volver al inicio.
+  const evento = await nav.newContext({ viewport: { width: 1440, height: 900 } });
+  const presA = await evento.newPage();
+  const pubA = await evento.newPage();
+  for (const [n, pg] of [['aticma-presentador', presA], ['aticma-publica', pubA]] as const) pg.on('pageerror', (e: Error) => errores.push(`${n}: ${e.message}`));
+  const qa = 'deck=handyx-aticma&version=evento';
+  await presA.goto(`${base}/presentador/?${qa}`);
+  await pubA.goto(`${base}/presentar/?${qa}`);
+  await presA.waitForTimeout(1200);
+  const actualA = async () => ((await presA.locator('.indice li.actual .item').textContent()) ?? '').trim();
+  for (let i = 0; i < 7; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(500); }
+  ok('ATICMA: avanzar se detiene en la 4.ª pantalla (no entra a anexos)', (await actualA()).startsWith('4.'), await actualA());
+  ok('ATICMA: la pantalla pública arranca en modo estático', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-reducido'));
+  await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
+  ok('ATICMA: Mayús + F abre el anexo F', (await actualA()).includes('Anexo F'), await actualA());
+  await presA.keyboard.press('0'); await presA.waitForTimeout(500);
+  ok('ATICMA: 0 vuelve a la última pantalla principal', (await actualA()).startsWith('4.'), await actualA());
+  await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);
+  await presA.reload(); await presA.waitForTimeout(1500);
+  ok('ATICMA: un refresco del presentador no vuelve a la primera pantalla', (await actualA()).startsWith('3.'), await actualA());
+  ok('ATICMA: la pantalla pública no muestra notas ni guion', !/Si preguntan|Notas privadas|Fuentes: archivo editorial/.test(await pubA.locator('body').innerText()));
+  await evento.close();
   ok('sin errores de JavaScript', errores.length === 0, errores.join(' | '));
 } finally {
   await nav.close();

@@ -45,7 +45,7 @@ export function iniciar(): Sesion | { error: string[] } {
     version,
     escenas,
     principales: version.escenas.length,
-    forma: { pasos: escenas.map((e) => e.pasos) },
+    forma: { pasos: escenas.map((e) => e.pasos), principales: version.escenas.length },
     notas: escenas.map((e) => ({ titulo: e.titulo, notas: e.notas, guion: e.guion, duracion: e.duracion, medios: e.elementos.flatMap((x) => (x.tipo === 'video' ? [x.recurso] : [])) })),
     ctx,
   };

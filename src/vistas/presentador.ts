@@ -2,7 +2,7 @@
 // pantalla negra, audio, recuperación, ensayo y emparejamiento del celular por QR privado.
 import { aplicar, tiempoReloj, type Comando, type Estado } from '../core/estado.ts';
 import { svg } from '../core/qr.ts';
-import { Reproductor } from '../render/reproductor.ts';
+import { modoMovimiento, Reproductor } from '../render/reproductor.ts';
 import { h, marcado } from '../render/dom.ts';
 import { Anfitrion, type EstadoRemoto } from '../transporte/anfitrion.ts';
 import { servidorPermitido } from '../transporte/remoto.ts';
@@ -10,6 +10,8 @@ import { iniciar, mmss, pantallaError, precargar, teclas, type Sesion } from './
 import '../estilos/presentador.css';
 
 const raiz = document.getElementById('app') as HTMLElement;
+/** Atajos de anexos: Mayús + letra (e.key llega en mayúscula; la b minúscula sigue siendo pantalla negra). */
+const LETRAS = 'ABCDEFGHIJ';
 const s = iniciar();
 if ('error' in s) pantallaError(raiz, s.error, false);
 else montar(s);
@@ -70,12 +72,13 @@ function montar(s: Sesion) {
     $('section', 'col-indice', h('h2', {}, 'Escenas'), indice, panelRemoto),
   ));
 
-  const actual = new Reproductor(vistaActual, s.escenas, s.paquete.tema, s.ctx, { pie: true });
+  const actual = new Reproductor(vistaActual, s.escenas, s.paquete.tema, s.ctx, { pie: true, modo: modoMovimiento(s.version.movimiento) });
   const siguiente = new Reproductor(vistaSiguiente, s.escenas, s.paquete.tema, s.ctx, { modo: 'reducido', pie: false });
   void precargar(actual.escenario, (a, b) => (recursos.textContent = a >= b ? `Recursos listos ${a}/${b}` : `Precargando ${a}/${b}`));
 
   s.escenas.forEach((e, i) => {
     const li = h('li', { class: i >= s.principales ? 'anexo' : '' });
+    if (i === s.principales) indice.append(h('li', { class: 'separador-anexos' }, `Anexos (fuera del recorrido) · Mayús + ${LETRAS.slice(0, s.escenas.length - s.principales).split('').join('/')} · volver: 0`));
     const b = boton(`${i + 1}. ${e.titulo}`, () => ejecutar({ tipo: 'ir', escena: i }), 'item');
     li.append(b, h('span', { class: 'dur' }, `${e.duracion}s`));
     indice.append(li);
@@ -122,12 +125,34 @@ function montar(s: Sesion) {
       guion.innerHTML = `<p class="objetivo"><strong>Objetivo:</strong> ${marcado(esc.objetivo)}</p><p>${marcado(esc.guion).replace(/\n/g, '<br>')}</p>${esc.preguntas ? `<p class="preguntas"><strong>Si preguntan:</strong> ${marcado(esc.preguntas)}</p>` : ''}`;
       medios.replaceChildren(...esc.elementos.filter((x) => x.tipo === 'video').map((v) => boton(e.reproduccion.medio === (v as { recurso: string }).recurso && e.reproduccion.reproduciendo ? `⏸ Pausar ${v.id}` : `▶ Reproducir ${v.id}`, () => ejecutar(e.reproduccion.reproduciendo && e.reproduccion.medio === (v as { recurso: string }).recurso ? { tipo: 'pausar' } : { tipo: 'reproducir', medio: (v as { recurso: string }).recurso }))));
     }
-    indice.querySelectorAll('li').forEach((li, i) => li.classList.toggle('actual', i === e.escena));
+    indice.querySelectorAll('li:not(.separador-anexos)').forEach((li, i) => li.classList.toggle('actual', i === e.escena));
     btnNegro.classList.toggle('activo', e.negro);
     registrarEscena(e);
   }
   anf.on('estado', pintar);
   pintar(anf.estado);
+
+  // Un refresco accidental no vuelve a la primera pantalla: la posición se recuerda en esta pestaña.
+  const claveRecuerdo = `presentador:${s.paquete.deck.id}:${s.version.id}`;
+  let ultimaPrincipal = 0;
+  // Anfitrion admite un solo oyente por evento: se reemplaza por uno que pinta y además recuerda.
+  anf.on('estado', (e) => {
+    pintar(e);
+    if (e.escena < s.principales) ultimaPrincipal = e.escena;
+    try {
+      sessionStorage.setItem(claveRecuerdo, JSON.stringify({ escena: e.escena, paso: e.paso }));
+    } catch {
+      /* sin almacenamiento: no se recuerda */
+    }
+  });
+  try {
+    const previo = JSON.parse(sessionStorage.getItem(claveRecuerdo) ?? 'null') as { escena?: number; paso?: number } | null;
+    if (previo && Number.isInteger(previo.escena) && (previo.escena ?? 0) > 0) ejecutar({ tipo: 'ir', escena: previo.escena as number, paso: previo.paso ?? 0 });
+  } catch {
+    /* arranca en la primera */
+  }
+  const anexos: Record<string, () => void> = { '0': () => ejecutar({ tipo: 'ir', escena: ultimaPrincipal, paso: (s.forma.pasos[ultimaPrincipal] ?? 1) - 1 }) };
+  for (let k = 0; k < s.escenas.length - s.principales && k < LETRAS.length; k++) anexos[LETRAS[k] as string] = () => ejecutar({ tipo: 'ir', escena: s.principales + k });
 
   window.setInterval(() => {
     const t = tiempoReloj(anf.estado.reloj, Date.now());
@@ -144,6 +169,7 @@ function montar(s: Sesion) {
     b: () => ejecutar({ tipo: 'negro', valor: !anf.estado.negro }),
     '.': () => ejecutar({ tipo: 'negro', valor: !anf.estado.negro }),
     r: () => ejecutar({ tipo: 'reloj', accion: anf.estado.reloj.corriendo ? 'pausar' : 'iniciar' }),
+    ...anexos,
   });
 
   function abrirPublica() {

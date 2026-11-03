@@ -38,6 +38,26 @@ describe('navegación', () => {
   });
 });
 
+describe('anexos solo por acción explícita', () => {
+  const forma: Forma = { pasos: [1, 2, 1, 1], principales: 2 };
+  const t = 0;
+  it('avanzar se detiene en la última principal', () => {
+    let e = estadoInicial();
+    for (let i = 0; i < 6; i++) e = aplicar(e, { tipo: 'siguiente' }, forma, t);
+    expect([e.escena, e.paso]).toEqual([1, 1]);
+    expect(aplicar(e, { tipo: 'escenaSiguiente' }, forma, t)).toBe(e);
+  });
+  it('"ir" abre un anexo y adentro se avanza entre anexos', () => {
+    let e = aplicar(estadoInicial(), { tipo: 'ir', escena: 2 }, forma, t);
+    e = aplicar(e, { tipo: 'siguiente' }, forma, t);
+    expect(e.escena).toBe(3);
+  });
+  it('retroceder desde el primer anexo vuelve a la última principal', () => {
+    const e = aplicar(aplicar(estadoInicial(), { tipo: 'ir', escena: 2 }, forma, t), { tipo: 'anterior' }, forma, t);
+    expect([e.escena, e.paso]).toEqual([1, 1]);
+  });
+});
+
 describe('medios y reloj se reconstruyen desde el estado', () => {
   it('pausar acumula la posición sin depender de eventos', () => {
     let e = aplicar(estadoInicial(), { tipo: 'reproducir', medio: 'clip' }, forma, 0);

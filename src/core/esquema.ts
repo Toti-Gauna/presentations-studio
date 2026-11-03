@@ -243,6 +243,8 @@ export const VersionDeck = z
     anexos: z.array(id).default([]),
     /** Duración de escena propia de esta versión (segundos); si falta, se usa la de la escena. */
     duraciones: z.record(z.string(), z.number().int().min(3).max(900)).default({}),
+    /** Movimiento por defecto de esta versión (p. ej. "reducido" = modo evento estático). `?movimiento=` lo reemplaza. */
+    movimiento: z.enum(['completo', 'ligero', 'reducido']).optional(),
   })
   .strict();
 

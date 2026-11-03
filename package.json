@@ -21,7 +21,7 @@
     "paquete:local": "node scripts/paquete-local.ts",
     "local": "node scripts/servir-local.ts",
     "e2e": "node e2e/recorrido.ts",
-    "verify": "npm run typecheck && npm test && npm run validar && vite build",
+    "verify": "npm run typecheck && npm test && npm run validar && python3 -I scripts/generar-guion-aticma.py --comprobar && vite build",
     "escenarios": "node scripts/escenarios.ts",
     "publicar": "node scripts/publicar.ts",
     "configurar": "node scripts/configurar-deploy.ts",

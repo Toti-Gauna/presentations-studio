@@ -15,4 +15,4 @@ Retomar siempre desde `docs/handoff.md`. Plan: `docs/plan-fases.md` (10 fases, d
 
 ## Antes de cerrar un lote
 `npm run verify` y `npm run e2e` en verde; anotar en `docs/progreso.md`; actualizar `docs/handoff.md`.
-Si cambia el deck Handyx: `python3 -I scripts/generar-guion.py` y `npm run escenarios`.
+Si cambia el deck Handyx: `python3 -I scripts/generar-guion.py` y `npm run escenarios`. Si cambia `decks/handyx-aticma`: `python3 -I scripts/generar-guion-aticma.py` (verify lo comprueba).

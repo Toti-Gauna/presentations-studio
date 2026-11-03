@@ -17,3 +17,4 @@
 | 02/11 | A–E (cierre) | Pitch premium según láminas, océano rojo→azul, modelo de negocio, control móvil con menú y deslizar, hub agrupado, Render un servicio | verify 57; e2e 21/21 | crear servicio en Render; ensayo con teléfonos |
 | 02/11 noche | 9.1 | Deploy Hostinger con el método de la landing (publish/smoke/rollback, mismos nombres), Render aparte, configurador | publish/guard/rollback y smoke en local; verify | cuentas reales de Ignacio |
 | 02/11 noche | 9.1 | Render plan gratis con despertar y latido desde el presentador; dominio presentaciones.handyc.com | guard/publicación en local; prueba de navegador del despertar; verify; e2e | cuentas reales |
+| 03/11 | 6.7 (nuevo) | Pitch ATICMA 3 min: 4 pantallas estáticas + 6 anexos, guion literal 326 palabras, anexos solo por acción explícita, refresco sin volver al inicio | verify; e2e 27/27; capturas 1920 y 1366; PDF | ensayo cronometrado; alinear tarifas con apps |

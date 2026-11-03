@@ -83,6 +83,8 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
     case 'cifra': {
       const a = ctx.afirmaciones.get(el.afirmacion);
       const valor = h('div', { class: 'cifra-valor' }, a ? formatear(a) : 's/d');
+      // Largo del valor: las cifras largas ("USD 300.000") se achican para entrar en su columna.
+      valor.style.setProperty('--n', String(Math.max(1, (a ? formatear(a) : 's/d').length)));
       if (a && typeof a.valor === 'number' && el.entrada === 'contar') {
         valor.dataset['contar'] = String(a.valor);
         valor.dataset['formato'] = a.formato;

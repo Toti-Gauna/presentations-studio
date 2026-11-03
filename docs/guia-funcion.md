@@ -22,6 +22,8 @@ Celular: QR privado → aprobar → deslizar ← → o **☰ Diapositivas** para
 
 ## Durante
 → / Espacio / PageDown avanza · ← retrocede · ↓ ↑ saltan escena · **B** pantalla negra · **Inicio** reinicia · **R** reloj.
+Avanzar nunca entra a los anexos: **Mayús + A…F** abre el anexo (o el índice / el menú ☰ del celular) y **0** vuelve a la última principal.
+Pitch ATICMA de 3 minutos (`deck=handyx-aticma&version=evento`): estático por defecto; abrir el presentador 5 min antes (despierta Render).
 
 ## Si algo falla
 | Falla | Acción |
