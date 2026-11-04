@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1688" role="img" aria-labelledby="t d">
+  <title id="t">HandIA · concepto en desarrollo</title>
+  <desc id="d">Propuesta visual: el usuario manda una foto y una descripción; HandIA sugiere el oficio y una referencia orientativa de costo, sin cifras. No es una captura del producto.</desc>
+  <style>
+    .f { font-family: 'DM Sans Variable','DM Sans',Arial,sans-serif; }
+    .t { font-family: 'Archivo Variable','Archivo','Arial Black',Arial,sans-serif; font-weight: 900; }
+  </style>
+  <rect width="780" height="1688" fill="#FFFFFF"/>
+  <!-- franja de concepto -->
+  <rect width="780" height="96" fill="#FFC93C"/>
+  <text x="390" y="60" text-anchor="middle" class="f" font-size="30" font-weight="800" fill="#13305E">Concepto · HandIA en desarrollo</text>
+  <!-- encabezado -->
+  <text x="40" y="190" class="t" font-size="54" fill="#1F57A8">HandIA</text>
+  <text x="40" y="240" class="f" font-size="28" fill="#5F6B84">Contanos qué pasó y te orientamos</text>
+  <!-- foto del usuario -->
+  <rect x="40" y="290" width="700" height="430" rx="34" fill="#EEF0F6"/>
+  <g stroke="#13305E" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 640H630"/>
+    <path d="M200 640V560H580V640"/>
+    <path d="M300 560V430q0-60 60-60h70q60 0 60 60v30"/>
+    <path d="M470 460h60"/>
+  </g>
+  <path d="M500 500q-22 34 0 52q22-18 0-52z" fill="#4A9BEF"/>
+  <path d="M500 575q-14 22 0 34q14-12 0-34z" fill="#4A9BEF"/>
+  <rect x="64" y="314" width="150" height="48" rx="24" fill="#13305E"/>
+  <text x="139" y="347" text-anchor="middle" class="f" font-size="24" font-weight="700" fill="#FFFFFF">Tu foto</text>
+  <!-- descripción del usuario -->
+  <rect x="150" y="760" width="590" height="150" rx="30" fill="#1F57A8"/>
+  <text x="182" y="822" class="f" font-size="30" fill="#FFFFFF">Pierde la canilla de la cocina</text>
+  <text x="182" y="868" class="f" font-size="30" fill="#FFFFFF">y gotea sobre la mesada.</text>
+  <!-- respuesta de HandIA -->
+  <rect x="40" y="950" width="700" height="470" rx="34" fill="#FFFFFF" stroke="#D6DCE8" stroke-width="4"/>
+  <text x="76" y="1012" class="f" font-size="26" font-weight="700" fill="#5F6B84">HandIA sugiere</text>
+  <text x="76" y="1076" class="f" font-size="34" fill="#13305E">Parece un trabajo de</text>
+  <text x="76" y="1136" class="t" font-size="52" fill="#13305E">Plomería</text>
+  <text x="76" y="1210" class="f" font-size="26" font-weight="700" fill="#5F6B84">Referencia aproximada de costo</text>
+  <rect x="76" y="1236" width="628" height="26" rx="13" fill="#EEF0F6"/>
+  <rect x="236" y="1236" width="300" height="26" rx="13" fill="#FFC93C"/>
+  <text x="76" y="1310" class="f" font-size="25" fill="#5F6B84">Orientativa: no es un presupuesto.</text>
+  <text x="76" y="1350" class="f" font-size="25" fill="#5F6B84">El precio final lo fija el profesional.</text>
+  <!-- acción -->
+  <rect x="40" y="1470" width="700" height="110" rx="28" fill="#1F57A8"/>
+  <rect x="40" y="1572" width="700" height="12" rx="6" fill="#13305E" opacity=".35"/>
+  <text x="390" y="1538" text-anchor="middle" class="f" font-size="34" font-weight="800" fill="#FFFFFF">Pedir presupuestos de Plomería</text>
+  <text x="390" y="1650" text-anchor="middle" class="f" font-size="22" fill="#5F6B84">Propuesta visual · no es una captura del producto</text>
+</svg>

@@ -234,6 +234,7 @@
 .circ-0 { width: 640px; height: 640px; margin-left: -320px; background: #EEF0F6; color: #13305E; box-shadow: inset 0 0 0 2px #DADFE8; }
 .circ-1 { width: 420px; height: 420px; margin-left: -210px; background: #1F57A8; color: #FFFFFF; }
 .circ-2 { width: 220px; height: 220px; margin-left: -110px; background: #FFC93C; color: #13305E; padding-top: 0; align-items: center; }
+.circulos .circ:last-child { padding: 0 24px; align-items: center; text-align: center; line-height: 1.1; }
 .kicker { font-size: 26px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--acento); margin-bottom: 18px; }
 .lista-enc { margin-bottom: 26px; }
 .escenario h1 { font-size: 104px; }

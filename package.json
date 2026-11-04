@@ -18,6 +18,7 @@
     "qr": "node scripts/generar-qr.ts",
     "exportar:pdf": "node scripts/exportar-pdf.ts",
     "exportar:video": "node scripts/exportar-video.ts",
+    "exportar:pptx": "node scripts/exportar-pptx.ts",
     "paquete:local": "node scripts/paquete-local.ts",
     "local": "node scripts/servir-local.ts",
     "e2e": "node e2e/recorrido.ts",

@@ -18,3 +18,4 @@
 | 02/11 noche | 9.1 | Deploy Hostinger con el método de la landing (publish/smoke/rollback, mismos nombres), Render aparte, configurador | publish/guard/rollback y smoke en local; verify | cuentas reales de Ignacio |
 | 02/11 noche | 9.1 | Render plan gratis con despertar y latido desde el presentador; dominio presentaciones.handyc.com | guard/publicación en local; prueba de navegador del despertar; verify; e2e | cuentas reales |
 | 03/11 | 6.7 (nuevo) | Pitch ATICMA 3 min: 4 pantallas estáticas + 6 anexos, guion literal 326 palabras, anexos solo por acción explícita, refresco sin volver al inicio | verify; e2e 27/27; capturas 1920 y 1366; PDF | ensayo cronometrado; alinear tarifas con apps |
+| 04/11 | 6.8 (nuevo) | Pitch ATICMA 2026: 7 diapositivas + 7 de respaldo, guion oficial, modo de ensayo, PPTX | verify; e2e 32/32; capturas 1920/1366; PDF y PPTX | ensayo cronometrado; conciliar cifras; revalidar competidores |

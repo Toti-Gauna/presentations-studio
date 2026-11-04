@@ -35,12 +35,15 @@ function montar(s: Sesion) {
   const restante = $('span', 'restante', '');
   const huella = $('span', 'huella', `v ${s.cargado.publicada ?? 'trabajo'} · ${s.cargado.huella.slice(0, 8)} · corte ${s.paquete.deck.corte.split('-').reverse().join('/')}`);
   const recursos = $('span', 'recursos', 'Precargando…');
+  const progresoBarra = $('span', 'progreso-barra');
+  const progreso = h('div', { class: 'progreso', role: 'progressbar', 'aria-label': 'Tiempo usado del objetivo', 'aria-valuemin': '0', 'aria-valuemax': String(s.version.duracionObjetivo) }, progresoBarra);
+  const btnNotas = boton('Ocultar notas (N)', () => alternarNotas(), 'secundario', 'Ensayar sin ayuda: oculta notas y guion');
   const btnNegro = boton('Pantalla negra (B)', () => ejecutar({ tipo: 'negro', valor: !anf.estado.negro }), 'secundario');
   const barra = $(
     'header',
     'barra',
     $('div', 'barra-titulo', h('strong', {}, s.paquete.deck.titulo), h('span', {}, ` · ${s.version.titulo}`), huella),
-    $('div', 'barra-tiempo', reloj, restante),
+    $('div', 'barra-tiempo', reloj, restante, progreso),
     $('div', 'barra-acciones',
       boton('Abrir pantalla pública', abrirPublica, 'primario'),
       boton('Activar audio', () => (actual.desbloquearAudio(), alert('Audio habilitado en esta computadora. La pantalla pública también necesita un clic propio si está en otra ventana.')), 'secundario'),
@@ -48,6 +51,9 @@ function montar(s: Sesion) {
       boton('Recuperar', () => anf.recuperar(), 'secundario', 'Reenvía el estado de esta computadora a todas las pantallas'),
       boton('▶ Reloj', () => ejecutar({ tipo: 'reloj', accion: anf.estado.reloj.corriendo ? 'pausar' : 'iniciar' }), 'secundario'),
       boton('⟲', () => ejecutar({ tipo: 'reloj', accion: 'reiniciar' }), 'secundario', 'Reiniciar reloj'),
+      boton('■ Finalizar', () => finalizarEnsayo(), 'secundario', 'Detiene el reloj y registra el tiempo del ensayo'),
+      boton('Nuevo ensayo', () => nuevoEnsayo(), 'secundario', 'Vuelve a la primera diapositiva y pone el reloj y los tiempos en cero (sin recargar)'),
+      btnNotas,
       indicador, recursos),
   );
   const vistaActual = $('div', 'monitor monitor-actual');
@@ -84,22 +90,64 @@ function montar(s: Sesion) {
     indice.append(li);
   });
 
-  // ── Ensayo: tiempo real por escena vs. previsto ──
+  // ── Ensayo: tiempo por escena medido con el reloj (si el reloj está en pausa, no suma) ──
+  const objetivoMs = s.version.duracionObjetivo * 1000;
   const enEscena = new Map<number, number>();
-  let entrada = { escena: 0, t: Date.now() };
-  function registrarEscena(e: Estado) {
-    if (e.escena === entrada.escena) return;
-    enEscena.set(entrada.escena, (enEscena.get(entrada.escena) ?? 0) + (Date.now() - entrada.t));
-    entrada = { escena: e.escena, t: Date.now() };
+  const ahoraReloj = () => tiempoReloj(anf.estado.reloj, Date.now());
+  let entrada = { escena: anf.estado.escena, t: ahoraReloj() };
+  const intentos: Array<{ total: number; porEscena: number[] }> = [];
+  const claveIntentos = `ensayos:${s.paquete.deck.id}:${s.version.id}`;
+  try {
+    intentos.push(...(JSON.parse(sessionStorage.getItem(claveIntentos) ?? '[]') as typeof intentos));
+  } catch {
+    /* sin registro previo */
   }
+  const inicioDe = (i: number) => s.escenas.slice(0, i).reduce((a, e) => a + e.duracion, 0);
+  function registrarEscena(e: Estado) {
+    const t = ahoraReloj();
+    if (t < entrada.t) entrada = { escena: entrada.escena, t }; // reloj reiniciado
+    if (e.escena === entrada.escena) return;
+    enEscena.set(entrada.escena, (enEscena.get(entrada.escena) ?? 0) + (t - entrada.t));
+    entrada = { escena: e.escena, t };
+  }
+  const realDe = (i: number) => (enEscena.get(i) ?? 0) + (i === entrada.escena ? Math.max(0, ahoraReloj() - entrada.t) : 0);
   function pintarTiempos() {
     const filas = s.escenas.slice(0, s.principales).map((e, i) => {
-      const real = (enEscena.get(i) ?? 0) + (i === entrada.escena ? Date.now() - entrada.t : 0);
+      const real = realDe(i);
       const pasado = real > e.duracion * 1000 * 1.15;
-      return h('tr', { class: pasado ? 'excedido' : '' }, h('td', {}, `${i + 1}`), h('td', {}, e.titulo), h('td', {}, `${e.duracion}s`), h('td', {}, real ? `${Math.round(real / 1000)}s${pasado ? ' · excedida' : ''}` : '—'));
+      return h('tr', { class: `${pasado ? 'excedido' : ''} ${i === anf.estado.escena ? 'actual' : ''}` }, h('td', {}, `${i + 1}`), h('td', {}, e.titulo), h('td', {}, `${mmss(inicioDe(i) * 1000)}–${mmss(inicioDe(i + 1) * 1000)}`), h('td', {}, `${e.duracion}s`), h('td', {}, real >= 500 ? `${Math.round(real / 1000)}s${pasado ? ' · excedida' : ''}` : '—'));
     });
-    tiempos.replaceChildren(h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, '#'), h('th', {}, 'Escena'), h('th', {}, 'Prevista'), h('th', {}, 'Real'))), h('tbody', {}, ...filas)));
+    const lista = intentos.map((x, k) => h('li', { class: x.total <= objetivoMs ? 'dentro' : 'fuera' }, `Ensayo ${k + 1}: ${mmss(x.total)} · ${x.total <= objetivoMs ? `dentro de ${mmss(objetivoMs)} ✓` : `excedido por ${mmss(x.total - objetivoMs)}`}`));
+    tiempos.replaceChildren(
+      h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, '#'), h('th', {}, 'Diapositiva'), h('th', {}, 'Tramo'), h('th', {}, 'Objetivo'), h('th', {}, 'Real'))), h('tbody', {}, ...filas)),
+      ...(intentos.length ? [h('ol', { class: 'intentos' }, ...lista)] : [h('p', { class: 'ayuda-ensayo' }, '▶ Reloj (R) para empezar · ■ Finalizar registra el tiempo · Nuevo ensayo vuelve a cero sin recargar.')]),
+    );
   }
+  function finalizarEnsayo() {
+    if (anf.estado.reloj.corriendo) ejecutar({ tipo: 'reloj', accion: 'pausar' });
+    registrarEscena({ ...anf.estado, escena: -1 });
+    const total = ahoraReloj();
+    if (total < 1000) return;
+    intentos.push({ total, porEscena: s.escenas.slice(0, s.principales).map((_, i) => enEscena.get(i) ?? 0) });
+    try {
+      sessionStorage.setItem(claveIntentos, JSON.stringify(intentos.slice(-20)));
+    } catch {
+      /* el registro queda en esta pestaña */
+    }
+    pintarTiempos();
+  }
+  function nuevoEnsayo() {
+    ejecutar({ tipo: 'reloj', accion: 'reiniciar' });
+    ejecutar({ tipo: 'reiniciar' });
+    enEscena.clear();
+    entrada = { escena: 0, t: 0 };
+    pintarTiempos();
+  }
+  function alternarNotas() {
+    const oculto = document.body.classList.toggle('sin-notas');
+    btnNotas.textContent = oculto ? 'Mostrar notas (N)' : 'Ocultar notas (N)';
+  }
+  const primeraOracion = (t: string) => (t.split(/(?<=[.!?…»])\s+/)[0] ?? '').trim();
 
   let escenaAnterior = -1;
   function pintar(e: Estado) {
@@ -122,7 +170,10 @@ function montar(s: Sesion) {
     const esc = s.escenas[e.escena];
     if (esc) {
       notas.innerHTML = marcado(esc.notas || '—').replace(/\n/g, '<br>');
-      guion.innerHTML = `<p class="objetivo"><strong>Objetivo:</strong> ${marcado(esc.objetivo)}</p><p>${marcado(esc.guion).replace(/\n/g, '<br>')}</p>${esc.preguntas ? `<p class="preguntas"><strong>Si preguntan:</strong> ${marcado(esc.preguntas)}</p>` : ''}`;
+      const prox = e.escena + 1 < s.principales ? s.escenas[e.escena + 1] : undefined;
+      const tramo = e.escena < s.principales ? `<p class="tramo"><strong>Diapositiva ${e.escena + 1} de ${s.principales}</strong> · tramo ${mmss(inicioDe(e.escena) * 1000)}–${mmss(inicioDe(e.escena + 1) * 1000)} (${esc.duracion} s)</p>` : '<p class="tramo"><strong>Anexo</strong> · fuera del cronómetro</p>';
+      const transicion = prox ? `<p class="transicion"><strong>Próxima transición:</strong> «${marcado(primeraOracion(prox.guion))}»</p>` : '';
+      guion.innerHTML = `${tramo}<p class="objetivo"><strong>Objetivo:</strong> ${marcado(esc.objetivo)}</p><p class="texto-guion">${marcado(esc.guion).replace(/\n/g, '<br>')}</p>${transicion}${esc.preguntas ? `<p class="preguntas"><strong>Si preguntan:</strong> ${marcado(esc.preguntas)}</p>` : ''}`;
       medios.replaceChildren(...esc.elementos.filter((x) => x.tipo === 'video').map((v) => boton(e.reproduccion.medio === (v as { recurso: string }).recurso && e.reproduccion.reproduciendo ? `⏸ Pausar ${v.id}` : `▶ Reproducir ${v.id}`, () => ejecutar(e.reproduccion.reproduciendo && e.reproduccion.medio === (v as { recurso: string }).recurso ? { tipo: 'pausar' } : { tipo: 'reproducir', medio: (v as { recurso: string }).recurso }))));
     }
     indice.querySelectorAll('li:not(.separador-anexos)').forEach((li, i) => li.classList.toggle('actual', i === e.escena));
@@ -160,6 +211,9 @@ function montar(s: Sesion) {
     const queda = s.version.duracionObjetivo * 1000 - t;
     restante.textContent = ` / ${mmss(s.version.duracionObjetivo * 1000)} · quedan ${mmss(queda)}`;
     restante.classList.toggle('alerta', queda < 30_000);
+    progresoBarra.style.width = `${Math.min(100, (t / objetivoMs) * 100)}%`;
+    progreso.classList.toggle('excedido', t > objetivoMs);
+    progreso.setAttribute('aria-valuenow', String(Math.round(t / 1000)));
     const lat = anf.latencia();
     if (anf.remotoEstado === 'conectado' && lat !== null) indicador.textContent = `Remoto conectado · ${lat} ms`;
     pintarTiempos();
@@ -169,6 +223,8 @@ function montar(s: Sesion) {
     b: () => ejecutar({ tipo: 'negro', valor: !anf.estado.negro }),
     '.': () => ejecutar({ tipo: 'negro', valor: !anf.estado.negro }),
     r: () => ejecutar({ tipo: 'reloj', accion: anf.estado.reloj.corriendo ? 'pausar' : 'iniciar' }),
+    n: () => alternarNotas(),
+    f: () => void (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()),
     ...anexos,
   });
 

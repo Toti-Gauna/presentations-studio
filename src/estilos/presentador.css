@@ -43,3 +43,16 @@
 @media (max-width: 1100px) { .tablero { grid-template-columns: 1fr; } }
 .remoto.sin-servidor .ayuda { color: #F6A623; font-weight: 700; }
 .indice li.separador-anexos { list-style: none; margin: 14px 0 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #8fa0c4; }
+/* Ensayo */
+.progreso { width: 220px; height: 8px; border-radius: 999px; background: #263252; overflow: hidden; margin-top: 6px; }
+.progreso-barra { display: block; height: 100%; width: 0; background: #4A9E6B; transition: width .4s linear; }
+.progreso.excedido .progreso-barra { background: #F6A623; }
+.tiempos tr.actual td { color: #fff; font-weight: 700; }
+.tiempos .intentos { margin: 10px 0 0; padding-left: 20px; font-size: 14px; }
+.tiempos .intentos .dentro { color: #8fd6a8; }
+.tiempos .intentos .fuera { color: #F6A623; }
+.ayuda-ensayo { font-size: 13px; color: #8d9ab8; }
+.guion .tramo { color: #FFC93C; }
+.guion .transicion { color: #9fc0ff; border-left: 3px solid #4A72B0; padding-left: 10px; }
+body.sin-notas .col-notas .notas, body.sin-notas .col-notas .guion { display: none; }
+body.sin-notas .col-notas > h2:nth-of-type(1), body.sin-notas .col-notas > h2:nth-of-type(2) { display: none; }

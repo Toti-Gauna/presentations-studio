@@ -185,7 +185,7 @@ try {
   for (let i = 0; i < 30; i++) { await v2.keyboard.press('ArrowRight'); await v2.waitForTimeout(60); }
   await v2.waitForTimeout(800);
   ok('v2 comercial recorre 30 pasos sin errores', (await v2.locator('section.escena').count()) >= 1);
-  // Pitch ATICMA de 3 minutos: modo evento estático, anexos solo por acción explícita, refresco sin volver al inicio.
+  // Pitch ATICMA: anexos solo por acción explícita, refresco sin volver al inicio y modo de ensayo.
   const evento = await nav.newContext({ viewport: { width: 1440, height: 900 } });
   const presA = await evento.newPage();
   const pubA = await evento.newPage();
@@ -195,17 +195,30 @@ try {
   await pubA.goto(`${base}/presentar/?${qa}`);
   await presA.waitForTimeout(1200);
   const actualA = async () => ((await presA.locator('.indice li.actual .item').textContent()) ?? '').trim();
-  for (let i = 0; i < 7; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(500); }
-  ok('ATICMA: avanzar se detiene en la 4.ª pantalla (no entra a anexos)', (await actualA()).startsWith('4.'), await actualA());
-  ok('ATICMA: la pantalla pública arranca en modo estático', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-reducido'));
+  await presA.keyboard.press('r');
+  for (let i = 0; i < 10; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(500); }
+  ok('ATICMA: avanzar se detiene en la 7.ª diapositiva (no entra a anexos)', (await actualA()).startsWith('7.'), await actualA());
+  ok('ATICMA: la pantalla pública usa transiciones suaves (modo ligero)', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-ligero'));
+  await presA.getByRole('button', { name: '■ Finalizar' }).click(); await presA.waitForTimeout(400);
+  const intento = (await presA.locator('.intentos li').first().textContent()) ?? '';
+  ok('ATICMA: Finalizar registra el tiempo del ensayo', /^Ensayo 1: \d+:\d\d · dentro de 3:00/.test(intento), intento);
+  const porDiapo = await presA.locator('.tiempos tbody tr td:last-child').allTextContents();
+  ok('ATICMA: tiempo real por diapositiva', porDiapo.filter((t: string) => /\d+s/.test(t)).length >= 5, porDiapo.join(','));
+  await presA.keyboard.press('n'); await presA.waitForTimeout(200);
+  ok('ATICMA: N oculta notas y guion para ensayar sin ayuda', !(await presA.locator('.col-notas .guion').isVisible()));
+  await presA.keyboard.press('n');
   await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
   ok('ATICMA: Mayús + F abre el anexo F', (await actualA()).includes('Anexo F'), await actualA());
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
-  ok('ATICMA: 0 vuelve a la última pantalla principal', (await actualA()).startsWith('4.'), await actualA());
+  ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
+  await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);
   await presA.reload(); await presA.waitForTimeout(1500);
-  ok('ATICMA: un refresco del presentador no vuelve a la primera pantalla', (await actualA()).startsWith('3.'), await actualA());
-  ok('ATICMA: la pantalla pública no muestra notas ni guion', !/Si preguntan|Notas privadas|Fuentes: archivo editorial/.test(await pubA.locator('body').innerText()));
+  ok('ATICMA: un refresco del presentador no vuelve a la primera diapositiva', (await actualA()).startsWith('6.'), await actualA());
+  ok('ATICMA: el registro de ensayos sobrevive al refresco', (await presA.locator('.intentos li').count()) === 1);
+  await presA.getByRole('button', { name: 'Nuevo ensayo' }).click(); await presA.waitForTimeout(600);
+  ok('ATICMA: Nuevo ensayo vuelve a la primera y pone el reloj en cero sin recargar', (await actualA()).startsWith('1.') && ((await presA.locator('.reloj').textContent()) ?? '') === '0:00', `${await actualA()} · ${await presA.locator('.reloj').textContent()}`);
+  ok('ATICMA: la pantalla pública no muestra notas ni guion', !/Si preguntan|Fuente del guion|Próxima transición/.test(await pubA.locator('body').innerText()));
   await evento.close();
   ok('sin errores de JavaScript', errores.length === 0, errores.join(' | '));
 } finally {

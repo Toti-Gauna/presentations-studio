@@ -147,3 +147,14 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   y lectura. Control remoto y reconexión: probados por el e2e con el deck `handyx` (mismo motor), no con un celular real.
 - Pendiente: ensayo cronometrado, alinear el 0 % / 15 % con apps y landing, fuentes bloqueadas en esta red (Clickie, Muovi, Taskrabbit,
   censo municipal), conciliación de los cinco cobros, fechas del trimestre comercial.
+
+## 04/11 · Pitch ATICMA 2026 de siete diapositivas (prompt maestro del 04/11; reemplaza el corte de 4 pantallas)
+- `decks/handyx-aticma`: 7 diapositivas (25/30/22/21/26/26/30 s) + 7 láminas de respaldo (A unit economics, B validación, C roadmap,
+  D competidores, E inversión, F preguntas 1/2 y 2/2). Versiones `evento` (ligero) y `estatica` (reducido). Guion oficial literal (400 palabras).
+- Afirmaciones al 04/11: 0 % / 15 %, metas 20 % / USD 100.000 / 72 / 40 % como objetivos, inversión USD 100.000 (≠ ingresos), hogares
+  259.623 (unidad a confirmar). Trabajos y registrados informados quedan solo en notas hasta conciliar.
+- Nuevo: concepto `brands/handyx/assets/conceptos/handia-concepto.svg` (rotulado), modo de ensayo en el presentador (Finalizar, registro de
+  intentos en la pestaña, barra de progreso, tiempo por diapositiva medido con el reloj, Nuevo ensayo, N oculta notas, próxima transición,
+  tramo), F en el presentador, PDF con una página por paso cuando algo sale de escena, `npm run exportar:pptx`.
+- Docs: `docs/handyx/aticma-{guion,validacion,preguntas,ajustes-sugeridos}.md`, capturas en `docs/handyx/capturas-aticma/`.
+- Verificado: verify, e2e 32/32, capturas 1920 y 1366, PDF 15 p., lectura 17 p., PPTX 15. Pendientes en `aticma-validacion.md`.
