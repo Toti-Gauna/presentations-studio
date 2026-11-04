@@ -1,1 +1,2 @@
 Íconos tomados de kinetic-studio/src/handy/icons.ts: casi todos de Lucide (ISC, https://lucide.dev); los marcados "propio" en ese archivo se dibujaron para Handy.
+Íconos agregados el 04/11/2026 para el pitch ATICMA: lucide-static 0.460.0 (ISC, https://lucide.dev), trazo #1F57A8.

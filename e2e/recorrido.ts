@@ -208,7 +208,7 @@ try {
   ok('ATICMA: N oculta notas y guion para ensayar sin ayuda', !(await presA.locator('.col-notas .guion').isVisible()));
   await presA.keyboard.press('n');
   await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
-  ok('ATICMA: Mayús + F abre el anexo F', (await actualA()).includes('Anexo F'), await actualA());
+  ok('ATICMA: Mayús + F abre el respaldo F (competidores en Argentina)', (await actualA()).includes('Competidores en Argentina'), await actualA());
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
   ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);

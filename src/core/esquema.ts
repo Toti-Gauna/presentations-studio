@@ -35,7 +35,7 @@ export const Afirmacion = z
     formula: z.string().optional(),
     dependencias: z.array(z.string()).default([]),
     uso: z.enum(['publico', 'anexo', 'notas']),
-    formato: z.enum(['entero', 'ars', 'millones', 'porcentaje', 'texto', 'fecha']).default('texto'),
+    formato: z.enum(['entero', 'ars', 'usd', 'millones', 'porcentaje', 'texto', 'fecha']).default('texto'),
   })
   .strict();
 export type Afirmacion = z.infer<typeof Afirmacion>;
@@ -102,6 +102,8 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('lista'),
       items: z.array(z.object({ texto: z.string(), paso: z.number().int().min(0).optional(), icono: z.string().optional() }).strict()).min(1),
       estilo: z.enum(['vinetas', 'numerada', 'mosaicos', 'contraste', 'escalera']).default('vinetas'),
+      /** Columnas de los mosaicos (si falta: hasta 4 en una fila, si no 3). */
+      columnas: z.number().int().min(1).max(6).optional(),
       encabezado: z.string().optional(),
     })
     .strict(),

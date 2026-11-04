@@ -103,7 +103,10 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
       break;
     }
     case 'lista': {
-      const columnas = el.estilo === 'mosaicos' ? `;grid-template-columns:repeat(${el.items.length <= 4 ? el.items.length : 3},minmax(0,1fr))` : '';
+      const columnas = el.estilo === 'mosaicos' ? `;grid-template-columns:repeat(${el.columnas ?? (el.items.length <= 4 ? el.items.length : 3)},minmax(0,1fr))` : '';
+      // En mosaicos los rótulos de las cifras van una sola vez debajo de la grilla (no dentro de cada tarjeta).
+      const rotulosGrilla: HTMLElement[] = [];
+      const tiposVistos = new Set<string>();
       const lista = h(el.estilo === 'numerada' || el.estilo === 'escalera' ? 'ol' : 'ul', { class: `lista lista-${el.estilo}`, style: `--n:${el.items.length}${columnas}` });
       for (const [i, it] of el.items.entries()) {
         const li = h('li', el.estilo === 'escalera' ? { style: `--h:${Math.round(((i + 1) / el.items.length) * 100)}%` } : {});
@@ -114,7 +117,9 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         if (icono) li.prepend(h('img', { class: 'icono', src: icono, alt: '', 'aria-hidden': 'true' }));
         lista.append(animable(li, it.paso ?? el.paso, el.entrada === 'ninguna' ? 'ninguna' : 'subir'));
         const r = rotulosDe(it.texto, ctx);
-        if (r.length) li.append(' ', ...r);
+        if (el.estilo === 'mosaicos') {
+          for (const x of r) if (!tiposVistos.has(x.className)) (tiposVistos.add(x.className), rotulosGrilla.push(x));
+        } else if (r.length) li.append(' ', ...r);
       }
       if (el.encabezado) {
         const k = h('div', { class: 'kicker lista-enc' });
@@ -122,6 +127,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
         raiz.append(animable(k, el.paso, 'fundido'));
       }
       raiz.append(lista);
+      if (rotulosGrilla.length) raiz.append(animable(h('div', { class: 'rotulos-grilla' }, ...rotulosGrilla), el.paso, 'fundido'));
       break;
     }
     case 'flujo': {

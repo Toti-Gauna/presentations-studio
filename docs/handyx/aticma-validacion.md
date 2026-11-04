@@ -14,12 +14,12 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 3. **Presentación:** **Abrir pantalla pública** → arrastrar al proyector → **F** (pantalla completa). En la notebook queda el presentador.
    Solo presentación (sin presentador): `/presentar/?deck=handyx-aticma&version=evento`.
 4. Diapositiva 7 tiene dos pasos: → al decir «Hoy empezamos en Mar del Plata». Avanzar nunca entra a los anexos.
-5. **Anexos para el jurado:** Mayús + A (proyección), B (unit economics), C (validación), D (roadmap), E (competidores en Argentina),
-   F (región y mundo), G (inversión), H e I (preguntas 1/2 y 2/2);
+5. **Respaldo para el jurado:** Mayús + A (proyección), B (costos y equilibrio), C (CAC y LTV), D (validación), E (roadmap), F (competidores
+   en Argentina), G (región y mundo), H (uso de la inversión) e I…Q (preguntas del jurado 1 a 10, una por diapositiva; sin N ni R);
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (17 páginas: 7 diapositivas, el paso 2 de la 7 y 9 anexos), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (26 páginas: 7 diapositivas, el paso 2 de la 7, 8 de respaldo y 10 de preguntas), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
@@ -35,8 +35,12 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 | Ticket USD 40, 1 arreglo por año, 5 % en 2 años; mecánica 50.000 autos × 3 × USD 200 | Afirmaciones tipo **supuesto** con fuente «Luigi, 04/11»; mecánica como escenario fuera de los 6 rubros |
 | Ejemplo «20 % ~ 500 USD por usuario por mes, 80.000 usuarios, 40.000 USD por mes» | No se usa: mezcla unidades (500 × 80.000 no da 40.000) |
 
-⚠ **Coherencia:** con los supuestos del mentor, el 20 % del primer trimestre da ≈ USD 78.000 de tarifas, no USD 100.000 (hace falta un
-ticket de ≈ USD 51 o más participación). La pantalla lo muestra así; el guion sigue diciendo «cien mil dólares» (ver ajustes sugeridos).
+**Ajuste del 04/11 (Ignacio):** la aspiración pasó de 20 % a **25 %** de los trabajos del trimestre (guion actualizado). Con los supuestos
+del mentor son ≈ 16.200 trabajos y ≈ USD 97.000 de tarifas con ticket de USD 40; USD 100.000 con ticket de ≈ USD 41.
+
+**Costos e inversión (04/11, Ignacio):** servidores USD 100, desarrollo USD 200 y marketing USD 100 por mes (≈ USD 400; se tomaron en
+dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 50 clientes nuevos por mes; LTV ≈ USD 18 con 3 años de permanencia
+(supuesto). Inversión: propuesta 40 % tecnología, 35 % marketing, 25 % operaciones, a aprobar.
 
 ## Control de calidad
 

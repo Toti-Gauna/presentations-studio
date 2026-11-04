@@ -29,7 +29,7 @@ se prefiere el reparto proporcional, se cambia en `versiones[].duraciones` de `d
 | «Algunas plataformas cobran comisión al profesional» | igual | Es exacto y no generaliza (Muovi anuncia comisión cero temporal). |
 | «Desarrollé agentes de inteligencia artificial que superviso» | igual | Ya deja claro que hay supervisión humana. |
 
-## 4. Coherencia del objetivo de USD 100.000 (después del pedido del mentor)
+## 4. Coherencia del objetivo de USD 100.000 (después del pedido del mentor) · **resuelto: opción C (25 %), elegida por Ignacio el 04/11**
 
 Con los supuestos de Luigi (1 arreglo por hogar por año, ticket de USD 40), el 20 % de los trabajos de un trimestre son ≈ 13.000 y dejan
 ≈ USD 78.000 de tarifas. La diapositiva 5 lo muestra y aclara que USD 100.000 pide un ticket de ≈ USD 51. Opciones para la voz:

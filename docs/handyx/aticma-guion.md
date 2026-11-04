@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 9 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 18 láminas de respaldo.
 
 ## Ritmo
 
@@ -51,7 +51,7 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 
 ### Diapositiva 5 · Mercado y visión
 
-> Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 20% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.
+> Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.
 >
 > Para fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.
 
@@ -79,14 +79,23 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 
 | Atajo | Anexo | Para qué |
 |---|---|---|
-| Mayús + A | Anexo A · Proyección | Mostrar la cuenta que justifica los números y sus supuestos, como pidió el mentor. |
-| Mayús + B | Anexo B · Unit economics | Separar valor del trabajo, tarifa, facturación bruta, CAC, LTV, costos y resultado; sin inventar lo que no se midió. |
-| Mayús + C | Anexo C · Validación | Mostrar qué evidencia hay, qué falta documentar y cuál es la próxima prueba. |
-| Mayús + D | Anexo D · Roadmap | Separar lo que existe, lo próximo comprometido y la visión, sin fechas inventadas. |
-| Mayús + E | Anexo E · Competidores en Argentina | Matriz honesta de los competidores directos, con fuente y estado de verificación. |
-| Mayús + F | Anexo F · Competidores en la región y el mundo | Mostrar que el modelo existe afuera y en qué se diferencia Handyx. |
-| Mayús + G | Anexo G · Inversión | Mostrar el pedido y lo que falta aprobar, sin porcentajes inventados. |
-| Mayús + H | Anexo H · Preguntas difíciles | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
-| Mayús + I | Anexo I · Preguntas difíciles | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
+| Mayús + A | Proyección: de dónde sale el número | Mostrar la cuenta que justifica los números, con supuestos rotulados. |
+| Mayús + B | Costos y punto de equilibrio | Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren. |
+| Mayús + C | CAC y LTV | Responder cuánto cuesta conseguir un cliente y cuánto deja. |
+| Mayús + D | Validación | Mostrar la evidencia y la próxima prueba. |
+| Mayús + E | Roadmap | Separar lo que existe, lo próximo y la visión, sin fechas inventadas. |
+| Mayús + F | Competidores en Argentina | Mostrar a los competidores directos con datos y el diferencial. |
+| Mayús + G | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
+| Mayús + H | Uso de la inversión | Mostrar cómo se usarían los USD 100.000 y qué hitos financian. |
+| Mayús + I | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + J | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + K | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + L | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + M | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + O | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + P | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Q | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + S | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + T | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.

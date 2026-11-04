@@ -17,6 +17,8 @@ export function formatear(a: Afirmacion): string {
   switch (a.formato) {
     case 'ars':
       return `$ ${miles(a.valor)}`;
+    case 'usd':
+      return `USD ${miles(a.valor)}`;
     case 'millones':
       return `$ ${miles(a.valor / 1e6)} M`;
     case 'porcentaje':

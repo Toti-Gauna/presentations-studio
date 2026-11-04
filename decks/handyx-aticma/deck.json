@@ -31,14 +31,23 @@
    ],
    "anexos": [
     "x-proyeccion",
-    "x-economia",
+    "x-costos",
+    "x-cac",
     "x-validacion",
     "x-roadmap",
     "x-competidores",
     "x-competidores-mundo",
     "x-inversion",
-    "x-preguntas-1",
-    "x-preguntas-2"
+    "q-01",
+    "q-02",
+    "q-03",
+    "q-04",
+    "q-05",
+    "q-06",
+    "q-07",
+    "q-08",
+    "q-09",
+    "q-10"
    ]
   },
   {
@@ -59,14 +68,23 @@
    ],
    "anexos": [
     "x-proyeccion",
-    "x-economia",
+    "x-costos",
+    "x-cac",
     "x-validacion",
     "x-roadmap",
     "x-competidores",
     "x-competidores-mundo",
     "x-inversion",
-    "x-preguntas-1",
-    "x-preguntas-2"
+    "q-01",
+    "q-02",
+    "q-03",
+    "q-04",
+    "q-05",
+    "q-06",
+    "q-07",
+    "q-08",
+    "q-09",
+    "q-10"
    ]
   }
  ],
@@ -608,7 +626,7 @@
    "transicion": "fundido",
    "objetivo": "Distinguir lo hecho (apps desarrolladas, pruebas, primeros trabajos y comisiones) de lo que viene.",
    "guion": "Ya contamos con ambas aplicaciones desarrolladas y las estamos probando. Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos y cobramos nuestras primeras comisiones. Ahora queremos llevar esa experiencia más allá de los edificios.",
-   "notas": "1:17–1:38. Todo lo de esta lámina es informado por Ignacio. Cantidades (trabajos, comisiones, registrados) NO se muestran: están en conciliación con los registros; ver anexo B.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "1:17–1:38. Cifras informadas por Ignacio y mostradas a su pedido (04/11): 5 trabajos con comisión cobrada (prueba con porteros, conciliación de comprobantes pendiente) y 56 especialistas registrados en el preregistro (no son activos ni verificados). «2 apps» = las dos aplicaciones desarrolladas.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Ya empezamos: la aplicación de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios se concretaron los primeros trabajos y se cobraron las primeras comisiones (cantidades en conciliación). Próximo paso: llevar esa experiencia más allá de los edificios.",
    "referencias": [],
    "preguntas": "¿Cuántos trabajos cobraron? → Los primeros, con ayuda de porteros; estamos conciliando cantidades y comprobantes y los mostramos cuando estén conciliados.",
@@ -641,62 +659,73 @@
      "nivel": 2
     },
     {
+     "id": "c1",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 25.5,
+      "w": 23
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "TRABAJOS-INFORMADOS",
+     "leyenda": "**trabajos con comisión cobrada**",
+     "caja": "blanca",
+     "detalle": "con porteros de edificios"
+    },
+    {
+     "id": "c2",
+     "area": "libre",
+     "pos": {
+      "x": 30,
+      "y": 25.5,
+      "w": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "ESP-REGISTRADOS",
+     "leyenda": "**especialistas registrados**",
+     "caja": "blanca",
+     "detalle": "preregistro: no son activos ni verificados"
+    },
+    {
      "id": "ev",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 25,
-      "w": 47
+      "y": 65,
+      "w": 49
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "blanca",
+     "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**App de usuario** desarrollada"
+       "texto": "**2 apps** desarrolladas",
+       "icono": "celular"
       },
       {
-       "texto": "**App del profesional** desarrollada"
-      },
-      {
-       "texto": "**Pruebas cerradas** con porteros de edificios"
-      },
-      {
-       "texto": "**Primeros trabajos** realizados"
-      },
-      {
-       "texto": "**Primeras comisiones** cobradas"
+       "texto": "**Pruebas** con porteros",
+       "icono": "edificio"
       }
      ]
-    },
-    {
-     "id": "inf",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 71
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Informado por el fundador · cantidades en conciliación",
-     "tono": "aviso"
     },
     {
      "id": "tr",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 79,
+      "y": 81,
       "w": 50
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
      "texto": "Ahora queremos llevar esta experiencia **más allá de los edificios.**",
-     "tamano": "l"
+     "tamano": "m"
     },
     {
      "id": "u",
@@ -762,7 +791,7 @@
    "clasificacion": "meta",
    "transicion": "fundido",
    "objetivo": "Justificar el número con una cuenta visible (hogares × arreglos × ticket) y mostrar la aspiración del primer trimestre y la visión como objetivos.",
-   "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 20% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
+   "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
    "notas": "1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Si preguntan, decirlo así: el objetivo depende del ticket.\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Con los supuestos de 1 arreglo por hogar por año y USD 40 por arreglo, son ≈ USD 10,4 millones por año; el 20 % de un trimestre equivale a ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas (USD 100.000 requiere un ticket medio de ≈ USD 51). Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
    "referencias": [
@@ -949,7 +978,7 @@
      "filas": [
       [
        "Comisión por trabajo",
-       "Clickie (Argentina) · Taskrabbit (EE. UU. y Europa)"
+       "Clickie: {{COMP-CLICKIE-PRO}} al profesional · Taskrabbit (EE. UU.)"
       ],
       [
        "Pago por contacto u oportunidad",
@@ -1054,12 +1083,15 @@
    "transicion": "fundido",
    "objetivo": "Mostrar un equipo chico con sueños grandes, el pedido de inversión y cerrar con una imagen memorable.",
    "guion": "Somos un equipo chico, pero nuestros sueños no lo son. Desarrollé agentes de inteligencia artificial que superviso para potenciar distintas áreas del negocio.\n\nBuscamos cien mil dólares de inversión inicial para tecnología, operaciones y marketing. Queremos llegar a Silicon Valley para aprender y conectar con mentores e inversores.\n\nHoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo.\n\nNo queremos solamente conectar personas. Queremos ayudar a los profesionales a trabajar cada vez mejor.\n\nY con ellos, construir un mundo con más soluciones y menos problemas.\n\nMuchísimas gracias.",
-   "notas": "2:30–3:00. Dos pasos: avanzar (→) al decir «Hoy empezamos en Mar del Plata».\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Destinos generales sin porcentajes (asignación no aprobada; anexo E).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "2:30–3:00. Dos pasos: avanzar (→) al decir «Hoy empezamos en Mar del Plata».\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto 40/35/25 (tecnología, marketing, operaciones) = propuesta preparada a pedido de Ignacio el 04/11, a aprobar; detalle e hitos en el respaldo de inversión.\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Equipo: Ignacio (fundador, desarrollo, producto y coordinación) con el apoyo de su pareja en diseño y marketing, y agentes de inteligencia artificial que él desarrolló y supervisa. Handyx busca USD 100.000 de inversión inicial para tecnología, operaciones y marketing, y quiere llegar a Silicon Valley para aprender y conectar con mentores e inversores. Hoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo: un mundo con más soluciones y menos problemas.",
    "referencias": [
-    "INVERSION-BUSCADA"
+    "INV-TOTAL",
+    "INV-TECNOLOGIA",
+    "INV-MARKETING",
+    "INV-OPERACIONES"
    ],
-   "preguntas": "¿Por qué USD 100.000? → Para tecnología, operaciones y marketing; la asignación por partida y los hitos están pendientes de aprobación (anexo E).",
+   "preguntas": "¿Por qué USD 100.000? → USD 40.000 tecnología, USD 35.000 marketing y captación, USD 25.000 operaciones (propuesta). Hitos en el respaldo de inversión.",
    "elementos": [
     {
      "id": "k",
@@ -1117,7 +1149,7 @@
      ]
     },
     {
-     "id": "c",
+     "id": "inv",
      "area": "libre",
      "pos": {
       "x": 54,
@@ -1126,12 +1158,28 @@
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "cifra",
-     "afirmacion": "INVERSION-BUSCADA",
-     "leyenda": "**inversión inicial buscada**",
-     "caja": "azul",
-     "sale": 1,
-     "detalle": "Tecnología · operaciones · marketing"
+     "tipo": "reparto",
+     "total": "INV-TOTAL",
+     "leyendaTotal": "**inversión inicial buscada**",
+     "partes": [
+      {
+       "afirmacion": "INV-TECNOLOGIA",
+       "etiqueta": "tecnología",
+       "tono": "azul"
+      },
+      {
+       "afirmacion": "INV-MARKETING",
+       "etiqueta": "marketing",
+       "tono": "amarilla"
+      },
+      {
+       "afirmacion": "INV-OPERACIONES",
+       "etiqueta": "operaciones",
+       "tono": "gris"
+      }
+     ],
+     "pasoPartes": 0,
+     "sale": 1
     },
     {
      "id": "sv",
@@ -1208,89 +1256,490 @@
   },
   {
    "id": "x-proyeccion",
-   "titulo": "Anexo A · Proyección",
+   "titulo": "Proyección: de dónde sale el número",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
-   "objetivo": "Mostrar la cuenta que justifica los números y sus supuestos, como pidió el mentor.",
+   "objetivo": "Mostrar la cuenta que justifica los números, con supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Supuestos del mentor (Luigi, 04/11): 1 arreglo por hogar por año, ticket de USD 40, captar el 5 % en 2 años; mecánica: 50.000 autos, 3 arreglos por año, USD 200 (fuera de los 6 rubros iniciales; parque automotor sin fuente). Su ejemplo de «20 % de margen ~ 500 USD por usuario por mes y 80.000 usuarios = 40.000 USD por mes» mezcla unidades y no se usa.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Proyección con supuestos: 259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 millones por año en arreglos del hogar. El 5 % en dos años son ≈ 13.000 trabajos y ≈ USD 78.000 por año de tarifas Handyx (15 %), antes de costos. Si se sumara mecánica (50.000 autos × 3 arreglos × USD 200 = USD 30 millones), el 5 % daría ≈ USD 225.000 por año: escenario fuera del alcance inicial.",
+   "notas": "Cuenta sugerida por Luigi (mentor ATICMA, 04/11). Supuestos: 1 arreglo por hogar por año, ticket de USD 40, 5 % en 2 años. Mecánica (50.000 autos × 3 × USD 200) es un escenario fuera de los 6 rubros; parque automotor sin fuente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 millones por año. El 25 % de un trimestre son ≈ 16.200 trabajos: con ticket de USD 40 dejan ≈ USD 97.000 de tarifas; con ≈ USD 41, USD 100.000. A dos años, el 5 % deja ≈ USD 78.000 por año; si se sumara mecánica, ≈ USD 225.000 más por año (escenario fuera de alcance).",
    "referencias": [
     "MERCADO-USD",
-    "PROY-ANUAL-5",
-    "MERCADO-AUTO-USD",
-    "PROY-AUTO-5",
+    "Q1-TRABAJOS",
     "Q1-TARIFAS-40",
-    "TICKET-PARA-OBJETIVO"
+    "TICKET-PARA-OBJETIVO",
+    "PROY-ANUAL-5",
+    "PROY-AUTO-5"
    ],
    "preguntas": "",
    "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · proyección",
+     "tono": "kicker"
+    },
     {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo A · ==Proyección==",
-     "nivel": 3
+     "texto": "De dónde sale ==el número==",
+     "nivel": 2
     },
     {
-     "id": "tab",
+     "id": "fl",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 19,
+      "y": 24,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Cuenta",
-      "Hogar (6 rubros)",
-      "Mecánica (escenario, fuera de alcance)"
-     ],
-     "filas": [
-      [
-       "Unidades",
-       "{{MDP-HOGARES}} hogares",
-       "{{SUP-AUTOS}} autos (a verificar)"
-      ],
-      [
-       "Arreglos por año",
-       "× {{SUP-ARREGLOS-HOGAR}}",
-       "× {{SUP-ARREGLOS-AUTO}}"
-      ],
-      [
-       "Ticket medio",
-       "× {{SUP-TICKET-USD}}",
-       "× {{SUP-TICKET-AUTO}}"
-      ],
-      [
-       "Mercado anual",
-       "{{MERCADO-USD}}",
-       "{{MERCADO-AUTO-USD}}"
-      ],
-      [
-       "Captar {{SUP-CAPTURA-2A}} en 2 años × tarifa {{TARIFA-USUARIO}}",
-       "{{PROY-ANUAL-5}} por año",
-       "{{PROY-AUTO-5}} por año"
-      ]
-     ],
-     "destacar": 4,
-     "pasoDestacada": 0
+     "tipo": "flujo",
+     "nodos": [
+      {
+       "texto": "{{MDP-HOGARES}} hogares",
+       "detalle": "Censo 2022"
+      },
+      {
+       "texto": "× {{SUP-ARREGLOS-HOGAR}} arreglo por año",
+       "detalle": "supuesto"
+      },
+      {
+       "texto": "× {{SUP-TICKET-USD}}",
+       "detalle": "ticket medio, supuesto"
+      },
+      {
+       "texto": "{{MERCADO-USD}}",
+       "detalle": "por año en el partido"
+      }
+     ]
     },
     {
-     "id": "q",
+     "id": "c1",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 56,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "Q1-TRABAJOS",
+     "leyenda": "**trabajos en el trimestre**",
+     "caja": "blanca",
+     "detalle": "{{META-CUOTA-LOCAL}} de los arreglos"
+    },
+    {
+     "id": "c2",
+     "area": "libre",
+     "pos": {
+      "x": 36,
+      "y": 56,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "Q1-TARIFAS-40",
+     "leyenda": "**de tarifas Handyx**",
+     "caja": "azul",
+     "detalle": "con ticket de {{SUP-TICKET-USD}}"
+    },
+    {
+     "id": "c3",
+     "area": "libre",
+     "pos": {
+      "x": 67,
+      "y": 56,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "TICKET-PARA-OBJETIVO",
+     "leyenda": "**de ticket = USD 100.000**",
+     "caja": "amarilla",
+     "detalle": "objetivo del primer trimestre"
+    }
+   ]
+  },
+  {
+   "id": "x-costos",
+   "titulo": "Costos y punto de equilibrio",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Costos mensuales estimados por Ignacio (04/11): servidores USD 100, desarrollo USD 200, marketing USD 100 (en USD; si eran pesos, corregir). Equilibrio con ticket de USD 40 (supuesto): USD 400 ÷ USD 6 ≈ 67 trabajos por mes. No incluye sueldos ni impuestos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mantener Handyx hoy cuesta ≈ USD 400 por mes: desarrollo USD 200, servidores USD 100 y marketing USD 100. Con USD 6 de tarifa por trabajo (ticket de USD 40), ≈ 67 trabajos por mes cubren esos costos.",
+   "referencias": [
+    "COSTOS-MES",
+    "COSTO-SERVIDORES",
+    "COSTO-DESARROLLO",
+    "COSTO-MARKETING",
+    "EQUILIBRIO-TRABAJOS",
+    "INGRESO-POR-TRABAJO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · costos",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Mantener Handyx cuesta ==poco==",
+     "nivel": 2
+    },
+    {
+     "id": "rep",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 25,
+      "w": 55
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "reparto",
+     "total": "COSTOS-MES",
+     "leyendaTotal": "**por mes, hoy**",
+     "partes": [
+      {
+       "afirmacion": "COSTO-DESARROLLO",
+       "etiqueta": "desarrollo",
+       "tono": "azul"
+      },
+      {
+       "afirmacion": "COSTO-SERVIDORES",
+       "etiqueta": "servidores e IA",
+       "tono": "gris"
+      },
+      {
+       "afirmacion": "COSTO-MARKETING",
+       "etiqueta": "marketing",
+       "tono": "amarilla"
+      }
+     ],
+     "pasoPartes": 0
+    },
+    {
+     "id": "eq",
+     "area": "libre",
+     "pos": {
+      "x": 64,
+      "y": 24,
+      "w": 31
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "EQUILIBRIO-TRABAJOS",
+     "leyenda": "**trabajos por mes cubren los costos**",
+     "caja": "amarilla",
+     "detalle": "a {{INGRESO-POR-TRABAJO}} de tarifa por trabajo"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Servidores** · {{COSTO-SERVIDORES}} por mes",
+       "icono": "servidor"
+      },
+      {
+       "texto": "**Desarrollo** · {{COSTO-DESARROLLO}} por mes",
+       "icono": "codigo"
+      },
+      {
+       "texto": "**Marketing** · {{COSTO-MARKETING}} por mes",
+       "icono": "megafono"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "x-cac",
+   "titulo": "CAC y LTV",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Responder cuánto cuesta conseguir un cliente y cuánto deja.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "CAC estimado = USD 100 de marketing ÷ 50 clientes nuevos por mes (SUPUESTO: igual a la meta de diciembre llevada a un mes; medir). LTV = USD 6 × 1 arreglo por año × 3 años (SUPUESTO de permanencia). CAC máximo USD 6: se recupera con el primer trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "CAC estimado ≈ USD 2 (USD 100 de marketing para 50 clientes nuevos por mes, supuesto). LTV estimado ≈ USD 18 (USD 6 por arreglo, 1 arreglo por año, 3 años). LTV/CAC ≈ 9. Regla: mientras el CAC esté por debajo de USD 6, se recupera con el primer trabajo.",
+   "referencias": [
+    "CAC-ESTIMADO",
+    "LTV-ESTIMADO",
+    "LTV-CAC",
+    "CAC-MAXIMO",
+    "SUP-CLIENTES-MES",
+    "SUP-ANIOS-CLIENTE"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · unit economics",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Conseguir un cliente cuesta ==menos de lo que deja==",
+     "nivel": 2
+    },
+    {
+     "id": "c1",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "CAC-ESTIMADO",
+     "leyenda": "**CAC estimado**",
+     "caja": "blanca",
+     "detalle": "{{COSTO-MARKETING}} ÷ {{SUP-CLIENTES-MES}} clientes nuevos por mes"
+    },
+    {
+     "id": "c2",
+     "area": "libre",
+     "pos": {
+      "x": 36,
+      "y": 27,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "LTV-ESTIMADO",
+     "leyenda": "**LTV estimado**",
+     "caja": "azul",
+     "detalle": "{{INGRESO-POR-TRABAJO}} × 1 arreglo por año × {{SUP-ANIOS-CLIENTE}} años"
+    },
+    {
+     "id": "c3",
+     "area": "libre",
+     "pos": {
+      "x": 67,
+      "y": 27,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "LTV-CAC",
+     "leyenda": "**veces: LTV / CAC**",
+     "caja": "amarilla",
+     "detalle": "CAC máximo: {{CAC-MAXIMO}}, se recupera con el primer trabajo"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 70,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Porteros y administradores:** canal de bajo costo",
+       "icono": "edificio"
+      },
+      {
+       "texto": "**Clientes que vuelven:** cada arreglo suma al LTV",
+       "icono": "repetir"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "x-validacion",
+   "titulo": "Validación",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la evidencia y la próxima prueba.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "5 y 56: informados por Ignacio; conciliación de comprobantes y corte del CRM pendientes. Los 56 no son activos ni verificados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Validación: dos apps desarrolladas y en pruebas; con porteros de edificios se concretaron 5 trabajos con comisión cobrada (informado; comprobantes en conciliación); 56 especialistas registrados en el preregistro (no son activos ni verificados). Próxima prueba: 50 trabajos con tarifa cobrada y 5 clientes que vuelvan en diciembre de 2026.",
+   "referencias": [
+    "TRABAJOS-INFORMADOS",
+    "ESP-REGISTRADOS",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · validación",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Lo que ya ==probamos==",
+     "nivel": 2
+    },
+    {
+     "id": "c1",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 25,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "TRABAJOS-INFORMADOS",
+     "leyenda": "**trabajos con comisión cobrada**",
+     "caja": "blanca",
+     "detalle": "con porteros · comprobantes en conciliación"
+    },
+    {
+     "id": "c2",
+     "area": "libre",
+     "pos": {
+      "x": 36,
+      "y": 25,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "cifra",
+     "afirmacion": "ESP-REGISTRADOS",
+     "leyenda": "**especialistas registrados**",
+     "caja": "blanca",
+     "detalle": "preregistro · no activos ni verificados"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 67,
+      "y": 25,
+      "w": 28
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**2 apps** en pruebas",
+       "icono": "celular"
+      },
+      {
+       "texto": "**Porteros** como canal",
+       "icono": "edificio"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "prox",
      "area": "libre",
      "pos": {
       "x": 5,
@@ -1300,208 +1749,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Primer trimestre:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}} trabajos → {{Q1-TARIFAS-40}} con ticket de {{SUP-TICKET-USD}}; el objetivo de {{META-INGRESOS-TRIM}} pide un ticket de {{TICKET-PARA-OBJETIVO}}. Supuestos del mentor, a validar con datos propios.",
-     "tamano": "s",
-     "caja": "amarilla"
-    }
-   ]
-  },
-  {
-   "id": "x-economia",
-   "titulo": "Anexo B · Unit economics",
-   "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
-   "clasificacion": "proyeccion",
-   "transicion": "fundido",
-   "objetivo": "Separar valor del trabajo, tarifa, facturación bruta, CAC, LTV, costos y resultado; sin inventar lo que no se midió.",
-   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "CAC, costos de IA y servidor, y resultado neto: sin dato confirmado. Con 1 arreglo por año y ticket de USD 40, un cliente deja ≈ USD 6 por año: captar un cliente tiene que costar menos que eso multiplicado por los años que se queda. Por eso importan los canales baratos (porteros) y que el cliente vuelva.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Unit economics: P es el presupuesto del profesional; F, la tarifa de servicio, es el 15 % de P; el usuario paga T = P + F; la facturación bruta de Handyx es F. Con ticket de USD 40, F ≈ USD 6 por trabajo. CAC, costos de IA y servidor y resultado neto: sin dato confirmado. LTV = tarifa por trabajo × trabajos por año × años como cliente; con 1 arreglo por año ≈ USD 6 por año: el CAC tiene que ser menor que eso por los años de permanencia.",
-   "referencias": [
-    "EJ-P",
-    "EJ-F",
-    "EJ-T",
-    "INGRESO-POR-TRABAJO",
-    "PUENTE-PRESUP"
-   ],
-   "preguntas": "",
-   "elementos": [
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 7,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "titulo",
-     "texto": "Anexo B · ==Unit economics==",
-     "nivel": 3
-    },
-    {
-     "id": "tab",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 19,
-      "w": 56
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Concepto",
-      "Cómo se calcula",
-      "Valor"
-     ],
-     "filas": [
-      [
-       "Valor del trabajo (P)",
-       "Lo fija el profesional",
-       "{{EJ-P}} (ejemplo)"
-      ],
-      [
-       "Tarifa de servicio (F)",
-       "{{TARIFA-USUARIO}} de P, la paga el usuario",
-       "{{EJ-F}} (ejemplo)"
-      ],
-      [
-       "Facturación bruta Handyx",
-       "= F · con ticket de {{SUP-TICKET-USD}}",
-       "{{INGRESO-POR-TRABAJO}} por trabajo"
-      ],
-      [
-       "CAC (costo de captar un cliente)",
-       "Gasto de captación ÷ clientes nuevos",
-       "Sin dato confirmado"
-      ],
-      [
-       "Costos de IA y servidor",
-       "Por trabajo",
-       "Sin dato confirmado"
-      ],
-      [
-       "LTV",
-       "F × trabajos por año × años como cliente",
-       "{{INGRESO-POR-TRABAJO}} por año con 1 arreglo"
-      ],
-      [
-       "Resultado neto",
-       "F − cobro − impuestos − IA y servidor − soporte",
-       "Sin dato confirmado"
-      ]
-     ]
-    },
-    {
-     "id": "vol",
-     "area": "libre",
-     "pos": {
-      "x": 65,
-      "y": 19,
-      "w": 30
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "texto",
-     "texto": "**Regla:** el CAC tiene que ser menor que el LTV. Con {{INGRESO-POR-TRABAJO}} por trabajo, importan los canales baratos (porteros) y que el cliente vuelva.\n**Volumen:** {{META-INGRESOS-TRIM}} de tarifas: {{PUENTE-PRESUP}} en presupuestos.",
-     "tamano": "s",
-     "caja": "gris"
-    }
-   ]
-  },
-  {
-   "id": "x-validacion",
-   "titulo": "Anexo C · Validación",
-   "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
-   "clasificacion": "informado",
-   "transicion": "fundido",
-   "objetivo": "Mostrar qué evidencia hay, qué falta documentar y cuál es la próxima prueba.",
-   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Cifras informadas por Ignacio (5 trabajos con comisión cobrada; 56 especialistas registrados al 31/10) NO se muestran hasta conciliarlas con los registros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Validación: las dos apps están desarrolladas y en pruebas cerradas; los primeros trabajos y comisiones se informan y se están conciliando con comprobantes; la base de especialistas registrados no implica actividad ni verificación; no hay dato de usuarios. Próxima prueba: 50 trabajos con tarifa cobrada y 5 clientes que vuelvan a contratar en diciembre de 2026.",
-   "referencias": [
-    "META-TRABAJOS",
-    "META-REPETIDORES"
-   ],
-   "preguntas": "",
-   "elementos": [
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 7,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "titulo",
-     "texto": "Anexo C · ==Validación==",
-     "nivel": 3
-    },
-    {
-     "id": "tab",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 19,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Evidencia",
-      "Estado",
-      "Documento"
-     ],
-     "filas": [
-      [
-       "Aplicaciones (usuario y profesional)",
-       "Desarrolladas, en pruebas cerradas",
-       "Repositorios y prototipos en modo de prueba"
-      ],
-      [
-       "Primeros trabajos con porteros",
-       "Realizados (informado por el fundador)",
-       "Cantidad y comprobantes en conciliación"
-      ],
-      [
-       "Comisiones cobradas",
-       "Primeras cobradas (informado)",
-       "Comprobantes en conciliación · cobro coordinado a mano"
-      ],
-      [
-       "Usuarios",
-       "Sin dato confirmado",
-       "—"
-      ],
-      [
-       "Especialistas registrados",
-       "Base de preregistro: no son activos ni verificados",
-       "Corte del CRM pendiente"
-      ]
-     ]
-    },
-    {
-     "id": "prox",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 78,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "texto",
-     "texto": "**Próxima prueba (diciembre 2026):** {{META-TRABAJOS}} trabajos con tarifa de Handyx cobrada y {{META-REPETIDORES}} clientes que vuelvan a contratar.",
+     "texto": "**Próxima prueba · diciembre 2026:** {{META-TRABAJOS}} trabajos con tarifa cobrada y {{META-REPETIDORES}} clientes que vuelven.",
      "tamano": "m",
      "caja": "amarilla"
     }
@@ -1509,42 +1757,55 @@
   },
   {
    "id": "x-roadmap",
-   "titulo": "Anexo D · Roadmap",
+   "titulo": "Roadmap",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
    "transicion": "fundido",
-   "objetivo": "Separar lo que existe, lo próximo comprometido y la visión, sin fechas inventadas.",
+   "objetivo": "Separar lo que existe, lo próximo y la visión, sin fechas inventadas.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "HandIA, gastos, herramientas por oficio e IA para el profesional: visión sin fecha. La tarifa del 15 % está definida pero su circuito de cobro está en implementación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Existe hoy, en prototipo: pedir por oficio con descripción y fotos, propuestas con precio del profesional, chat, seguimiento por etapas, agenda, trabajos, caja de cobros y disponibilidad. Próximo: lanzamiento de la PWA (fecha objetivo 10/11/2026) y tarifa del 15 % visible antes de contratar. Visión sin fecha: HandIA, gastos, herramientas por oficio, IA para el profesional, historial de proyectos y más profesiones.",
+   "notas": "HandIA, gastos, herramientas por oficio e IA para el profesional: visión sin fecha. Circuito de cobro del 15 % en implementación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Hoy: pedir por oficio con descripción y fotos, propuestas con precio del profesional, chat, agenda, trabajos y cobros. Próximo: lanzamiento de la PWA (10/11/2026) y tarifa del 15 % visible antes de contratar. Visión: HandIA con referencia de costo, gastos, herramientas por oficio, IA para el profesional, historial y más profesiones.",
    "referencias": [
     "LANZAMIENTO"
    ],
    "preguntas": "",
    "elementos": [
     {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · producto",
+     "tono": "kicker"
+    },
+    {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo D · ==Roadmap==",
-     "nivel": 3
+     "texto": "Hoy, próximo y ==visión==",
+     "nivel": 2
     },
     {
      "id": "hoy",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 19,
+      "y": 25,
       "w": 28
      },
      "paso": 0,
@@ -1552,19 +1813,16 @@
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "blanca",
-     "encabezado": "Existe hoy · prototipo",
+     "encabezado": "Hoy",
      "items": [
       {
-       "texto": "Pedir por oficio con descripción y fotos"
+       "texto": "Pedido por oficio con fotos"
       },
       {
        "texto": "Propuestas con el precio del profesional"
       },
       {
-       "texto": "Chat y seguimiento por etapas"
-      },
-      {
-       "texto": "Agenda, trabajos, caja y disponibilidad"
+       "texto": "Chat, agenda, trabajos y cobros"
       }
      ]
     },
@@ -1573,7 +1831,7 @@
      "area": "libre",
      "pos": {
       "x": 36,
-      "y": 19,
+      "y": 25,
       "w": 28
      },
      "paso": 0,
@@ -1584,10 +1842,10 @@
      "encabezado": "Próximo",
      "items": [
       {
-       "texto": "Lanzamiento de la PWA · fecha objetivo {{LANZAMIENTO}}"
+       "texto": "Lanzamiento de la PWA · {{LANZAMIENTO}}"
       },
       {
-       "texto": "Tarifa del {{TARIFA-USUARIO}} visible antes de contratar · circuito de cobro en implementación"
+       "texto": "Tarifa del {{TARIFA-USUARIO}} visible antes de contratar"
       }
      ]
     },
@@ -1596,7 +1854,7 @@
      "area": "libre",
      "pos": {
       "x": 67,
-      "y": 19,
+      "y": 25,
       "w": 28
      },
      "paso": 0,
@@ -1604,19 +1862,19 @@
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "azul",
-     "encabezado": "Visión · sin fecha",
+     "encabezado": "Visión",
      "items": [
       {
-       "texto": "HandIA: foto + descripción → oficio y costo orientativo"
+       "texto": "HandIA con referencia de costo"
       },
       {
        "texto": "Gastos y herramientas por oficio"
       },
       {
-       "texto": "IA para la mejora continua del profesional"
+       "texto": "IA para la mejora continua"
       },
       {
-       "texto": "Historial de proyectos, materiales y etapas"
+       "texto": "De {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones"
       }
      ]
     }
@@ -1624,439 +1882,1370 @@
   },
   {
    "id": "x-competidores",
-   "titulo": "Anexo E · Competidores en Argentina",
+   "titulo": "Competidores en Argentina",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "informado",
    "transicion": "fundido",
-   "objetivo": "Matriz honesta de los competidores directos, con fuente y estado de verificación.",
+   "objetivo": "Mostrar a los competidores directos con datos y el diferencial.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Clickie, Muovi y Home Solution: fuentes indicadas por Ignacio (clickie.com.ar/terminos-y-condiciones y /como-funciona; muovi.com.ar/own-boss y App Store id6757713850; homesolution.net); dominios bloqueados en esta sesión. IguanaFix: Cronista (giro a clientes corporativos) e Infonegocios. Servidos: servidos.ar. Yo te lo arreglo: Infonegocios. Zolvers: Developargentina. Búsqueda web del 04/11/2026; revalidar.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Competidores directos en Argentina: Clickie (comisión al profesional; orientación con IA y estimación de precio), Muovi (comisión cero temporal anunciada; herramientas para profesionales), Home Solution (cobro por acceso a oportunidades; comparar propuestas), IguanaFix (reparaciones con tarifas estandarizadas; según Cronista, se enfocó en empresas), Servidos y Yo te lo arreglo (oficios del hogar; modelo sin dato confirmado) y Zolvers (prestadores verificados). Handyx: 0 % al profesional y 15 % al usuario visible antes de contratar.",
+   "notas": "Clickie: iProfesional, Forbes Argentina, La Gaceta, Mercado (2026): 15 % al profesional (12 % con Pro de USD 15/mes), 5 % o 10 % al usuario según la nota; ronda ángel de USD 150.000; ya opera en Mar del Plata. Muovi y Home Solution: datos de Ignacio (sitios bloqueados aquí). IguanaFix: Cronista (foco corporativo). Zolvers: servicio doméstico, fee al cliente (Cronista). Servidos y Yo te lo arreglo: modelo sin dato confirmado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Clickie cobra 15 % al profesional (12 % con plan Pro) y 5 % o 10 % al usuario, levantó USD 150.000 y ya está en Mar del Plata. Muovi anuncia comisión cero temporal. Home Solution cobra al profesional por acceso a oportunidades. IguanaFix se enfocó en empresas. Zolvers se centra en servicio doméstico. Servidos y Yo te lo arreglo: modelo sin dato confirmado. Handyx: 0 % al profesional y 15 % al usuario, visible.",
    "referencias": [
+    "COMP-CLICKIE-PRO",
+    "COMP-CLICKIE-RONDA",
     "FEE-ESPECIALISTA",
     "TARIFA-USUARIO"
    ],
    "preguntas": "",
    "elementos": [
     {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · competencia",
+     "tono": "kicker"
+    },
+    {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo E · ==Competidores en Argentina==",
-     "nivel": 3
+     "texto": "Competidores en ==Argentina==",
+     "nivel": 2
     },
     {
-     "id": "tab",
+     "id": "a",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 18,
-      "w": 90
+      "y": 23,
+      "w": 44
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Plataforma",
-      "Cobro al profesional",
-      "Funciones conocidas",
-      "Fuente (a revalidar)"
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Clickie** · {{COMP-CLICKIE-PRO}} al profesional, IA, ya en Mar del Plata · ronda de {{COMP-CLICKIE-RONDA}}",
+       "icono": "porcentaje"
+      },
+      {
+       "texto": "**Muovi** · comisión cero temporal, herramientas",
+       "icono": "monedas"
+      },
+      {
+       "texto": "**Home Solution** · paga por oportunidades",
+       "icono": "billete"
+      },
+      {
+       "texto": "**IguanaFix** · giró a empresas",
+       "icono": "edificio"
+      }
      ],
-     "filas": [
-      [
-       "Clickie",
-       "Comisión (términos 14/10/2026)",
-       "Orientación con IA, estimación de precio",
-       "clickie.com.ar"
-      ],
-      [
-       "Muovi",
-       "Comisión cero, temporal (anunciada)",
-       "Herramientas para profesionales",
-       "muovi.com.ar · App Store"
-      ],
-      [
-       "Home Solution",
-       "Pago por acceso a oportunidades",
-       "Recibir y comparar propuestas",
-       "homesolution.net"
-      ],
-      [
-       "IguanaFix",
-       "Sin dato confirmado",
-       "Reparaciones con tarifas estandarizadas; foco en empresas",
-       "Cronista · Infonegocios"
-      ],
-      [
-       "Servidos",
-       "Sin dato confirmado",
-       "Oficios del hogar, local y obra",
-       "servidos.ar"
-      ],
-      [
-       "Yo te lo arreglo",
-       "Sin dato confirmado",
-       "Electricidad, plomería, gas y más",
-       "Infonegocios"
-      ],
-      [
-       "Zolvers",
-       "Sin dato confirmado",
-       "Prestadores verificados (hogar y empresas)",
-       "Developargentina"
-      ],
-      [
-       "Handyx",
-       "{{FEE-ESPECIALISTA}} · el usuario paga {{TARIFA-USUARIO}}",
-       "Pedido por oficio, HandIA (en desarrollo), agenda",
-       "Modelo definido 04/11"
-      ]
+     "columnas": 1
+    },
+    {
+     "id": "b",
+     "area": "libre",
+     "pos": {
+      "x": 51,
+      "y": 23,
+      "w": 44
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Zolvers** · servicio doméstico",
+       "icono": "usuarios"
+      },
+      {
+       "texto": "**Servidos** · oficios, modelo sin dato",
+       "icono": "llave-inglesa"
+      },
+      {
+       "texto": "**Yo te lo arreglo** · modelo sin dato",
+       "icono": "martillo2"
+      },
+      {
+       "texto": "**Handyx** · {{FEE-ESPECIALISTA}} al profesional, {{TARIFA-USUARIO}} visible al usuario",
+       "icono": "escudo-ok"
+      }
      ],
-     "destacar": 7,
-     "pasoDestacada": 0
+     "columnas": 1
     }
    ]
   },
   {
    "id": "x-competidores-mundo",
-   "titulo": "Anexo F · Competidores en la región y el mundo",
+   "titulo": "Competidores en la región y el mundo",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "informado",
    "transicion": "fundido",
-   "objetivo": "Mostrar que el modelo existe afuera y en qué se diferencia Handyx.",
+   "objetivo": "Mostrar que el modelo existe afuera y cómo cobran.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Fuentes de la búsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix en Uruguay, México y Brasil), Housecall Pro / Jobber / comparadores (Thumbtack, Angi, Taskrabbit, Checkatrade). Los modelos de cobro de EE. UU. y Reino Unido vienen de sitios de comparación y algunos se contradicen (Taskrabbit): revalidar en sus páginas oficiales. Uruguay: sin resultados propios, solo IguanaFix.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Región: Zolvers (Chile, México, Colombia), Ay Fix (México), GoFixii (Colombia, con pagos protegidos) e IguanaFix (Uruguay, México; Brasil vendido). EE. UU. y Europa: Thumbtack y Angi cobran al profesional por contacto (Thumbtack suma membresía), Taskrabbit cobra comisión según fuentes que se contradicen, Checkatrade (Reino Unido) cobra suscripción. Diferencial posible de Handyx: el profesional no paga comisión por su trabajo, más herramientas por oficio, historial y clientes que vuelven; no está demostrado.",
+   "notas": "Búsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix), Housecall Pro, Jobber y comparadores (Thumbtack USD 15–80+ por contacto; Angi USD 50–200 por contacto compartido; Taskrabbit 15–30 % según fuentes en conflicto; Checkatrade suscripción). Revalidar en las páginas oficiales.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "México: Ay Fix, Zolvers, IguanaFix. Colombia: GoFixii (pagos protegidos), Zolvers. Chile: Zolvers. Uruguay: IguanaFix. EE. UU.: Thumbtack y Angi cobran al profesional por contacto; Taskrabbit, comisión. Reino Unido: Checkatrade, suscripción. Diferencial de Handyx: el profesional no paga por su trabajo.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · competencia",
+     "tono": "kicker"
+    },
     {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo F · ==Competidores en la región y el mundo==",
-     "nivel": 3
+     "texto": "El modelo existe ==en todo el mundo==",
+     "nivel": 2
     },
     {
-     "id": "tab",
+     "id": "a",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 18,
-      "w": 90
+      "y": 24,
+      "w": 44
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Dónde",
-      "Plataformas",
-      "Cómo cobran al profesional (según fuentes públicas)"
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**México** · Ay Fix, Zolvers, IguanaFix",
+       "icono": "ubicacion"
+      },
+      {
+       "texto": "**Colombia** · GoFixii, Zolvers",
+       "icono": "ubicacion"
+      },
+      {
+       "texto": "**Chile y Uruguay** · Zolvers, IguanaFix",
+       "icono": "ubicacion"
+      }
      ],
-     "filas": [
-      [
-       "México",
-       "Ay Fix · Zolvers · IguanaFix",
-       "Sin dato confirmado"
-      ],
-      [
-       "Colombia",
-       "GoFixii (pagos protegidos) · Zolvers",
-       "Sin dato confirmado"
-      ],
-      [
-       "Chile",
-       "Zolvers",
-       "Sin dato confirmado"
-      ],
-      [
-       "Uruguay",
-       "IguanaFix",
-       "Sin dato confirmado"
-      ],
-      [
-       "EE. UU.",
-       "Thumbtack · Angi · Taskrabbit",
-       "Pago por contacto (Thumbtack, Angi) · comisión (Taskrabbit, fuentes en conflicto)"
-      ],
-      [
-       "Reino Unido",
-       "Checkatrade",
-       "Suscripción"
-      ]
-     ]
+     "columnas": 1
+    },
+    {
+     "id": "b",
+     "area": "libre",
+     "pos": {
+      "x": 51,
+      "y": 24,
+      "w": 44
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**EE. UU.** · Thumbtack y Angi: pago por contacto",
+       "icono": "mundo"
+      },
+      {
+       "texto": "**EE. UU. y Europa** · Taskrabbit: comisión",
+       "icono": "mundo"
+      },
+      {
+       "texto": "**Reino Unido** · Checkatrade: suscripción",
+       "icono": "mundo"
+      }
+     ],
+     "columnas": 1
     },
     {
      "id": "dif",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 72,
+      "y": 76,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Diferencial posible (no demostrado):** el profesional no paga comisión por su trabajo; Handyx cobra una tarifa visible al usuario y suma herramientas por oficio, historial y clientes que vuelven. Las funciones se copian; la combinación y el uso diario son la apuesta.",
-     "tamano": "s",
+     "texto": "**Nuestro camino:** el profesional no paga por su trabajo; el usuario paga {{TARIFA-USUARIO}}, visible. Herramientas, historial y clientes que vuelven.",
+     "tamano": "m",
      "caja": "amarilla"
     }
    ]
   },
   {
    "id": "x-inversion",
-   "titulo": "Anexo G · Inversión",
+   "titulo": "Uso de la inversión",
    "disposicion": "izquierda",
    "paleta": "azul",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "plan",
    "transicion": "fundido",
-   "objetivo": "Mostrar el pedido y lo que falta aprobar, sin porcentajes inventados.",
+   "objetivo": "Mostrar cómo se usarían los USD 100.000 y qué hitos financian.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "No existe una distribución aprobada: solo categorías generales. Hitos a financiar: pendientes de definir.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Inversión inicial buscada: USD 100.000 (no recibida), distinta del objetivo de USD 100.000 de ingresos brutos. Categorías: tecnología, operaciones y marketing; la asignación por partida y los hitos están pendientes de aprobación. Silicon Valley: aprendizaje, mentoría y conexiones; sin inversión comprometida.",
+   "notas": "Propuesta de asignación preparada a pedido de Ignacio (04/11): 40 % tecnología, 35 % marketing y captación, 25 % operaciones. A aprobar. Silicon Valley: aprendizaje y conexiones; sin inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "USD 100.000 de inversión inicial buscada (no recibida): USD 40.000 en tecnología (HandIA, apps, servidores e IA), USD 35.000 en marketing y captación (porteros, administradores, digital y presencial) y USD 25.000 en operaciones (soporte, verificación de profesionales, legal y contable). Hitos: lanzamiento y 50 trabajos con 5 clientes que vuelven en diciembre de 2026; 25 % de los trabajos del partido en el primer trimestre comercial; nuevas profesiones y ciudades.",
    "referencias": [
-    "INVERSION-BUSCADA"
+    "INV-TOTAL",
+    "INV-TECNOLOGIA",
+    "INV-MARKETING",
+    "INV-OPERACIONES"
    ],
    "preguntas": "",
    "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · inversión",
+     "tono": "kicker"
+    },
     {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo G · ==Inversión==",
-     "nivel": 3
+     "texto": "En qué usamos ==USD 100.000==",
+     "nivel": 2
     },
     {
-     "id": "c",
+     "id": "rep",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 19,
-      "w": 40
+      "y": 25,
+      "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "cifra",
-     "afirmacion": "INVERSION-BUSCADA",
-     "leyenda": "**inversión inicial buscada**",
-     "detalle": "No recibida · distinta del objetivo de ingresos"
-    },
-    {
-     "id": "tab",
-     "area": "libre",
-     "pos": {
-      "x": 50,
-      "y": 19,
-      "w": 45
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Categoría",
-      "Asignación"
+     "tipo": "reparto",
+     "total": "INV-TOTAL",
+     "leyendaTotal": "**propuesta de uso** (a aprobar)",
+     "partes": [
+      {
+       "afirmacion": "INV-TECNOLOGIA",
+       "etiqueta": "tecnología: HandIA, apps, servidores e IA",
+       "tono": "azul"
+      },
+      {
+       "afirmacion": "INV-MARKETING",
+       "etiqueta": "marketing: porteros, administradores, digital",
+       "tono": "amarilla"
+      },
+      {
+       "afirmacion": "INV-OPERACIONES",
+       "etiqueta": "operaciones: soporte, verificación, legal",
+       "tono": "gris"
+      }
      ],
-     "filas": [
-      [
-       "Tecnología",
-       "Pendiente de aprobar"
-      ],
-      [
-       "Operaciones",
-       "Pendiente de aprobar"
-      ],
-      [
-       "Marketing",
-       "Pendiente de aprobar"
-      ],
-      [
-       "Hitos que financia",
-       "Por definir"
-      ]
-     ]
+     "pasoPartes": 0
     },
     {
-     "id": "sv",
+     "id": "hitos",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 74,
+      "y": 62,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "flujo",
+     "nodos": [
+      {
+       "texto": "Dic. 2026",
+       "detalle": "{{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} clientes que vuelven"
+      },
+      {
+       "texto": "Primer trimestre",
+       "detalle": "{{META-CUOTA-LOCAL}} de los trabajos del partido"
+      },
+      {
+       "texto": "2027",
+       "detalle": "más profesiones y ciudades"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q-01",
+   "titulo": "Pregunta 1: ¿Cuál es tu CAC?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuál es tu CAC? Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
+   "referencias": [
+    "CAC-ESTIMADO",
+    "LTV-ESTIMADO",
+    "LTV-CAC"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 1 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Cuál es tu CAC?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Silicon Valley: aprendizaje, mentoría y conexiones. Sin inversión comprometida.",
-     "tamano": "m"
+     "texto": "Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**CAC ≈ {{CAC-ESTIMADO}}**",
+       "icono": "cliente-nuevo"
+      },
+      {
+       "texto": "**LTV ≈ {{LTV-ESTIMADO}}**",
+       "icono": "alcancia"
+      },
+      {
+       "texto": "**LTV / CAC ≈ {{LTV-CAC}}**",
+       "icono": "balanza"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "tamano": 26,
+     "acciones": []
     }
    ]
   },
   {
-   "id": "x-preguntas-1",
-   "titulo": "Anexo H · Preguntas difíciles",
+   "id": "q-02",
+   "titulo": "Pregunta 2: ¿Cuánto cuesta mantener Handyx?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuánto cuesta mantener Handyx? Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
+   "referencias": [
+    "COSTOS-MES",
+    "EQUILIBRIO-TRABAJOS"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 2 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Cuánto cuesta mantener Handyx?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Servidores** · {{COSTO-SERVIDORES}}",
+       "icono": "servidor"
+      },
+      {
+       "texto": "**Desarrollo** · {{COSTO-DESARROLLO}}",
+       "icono": "codigo"
+      },
+      {
+       "texto": "**Marketing** · {{COSTO-MARKETING}}",
+       "icono": "megafono"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-03",
+   "titulo": "Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
    "transicion": "fundido",
-   "objetivo": "Respuestas breves y defendibles, sin cifras ni certezas inventadas.",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuestas completas en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "1. ¿Por qué creen posible captar el 20 % de los trabajos locales? Es una aspiración: con 1 arreglo por hogar por año serían ≈ 13.000 trabajos en el trimestre. Todavía no medimos frecuencia ni ticket; primero, la meta operativa de diciembre. 2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina? Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores. 3. ¿Qué significa USD 100.000 de ingresos brutos? Tarifas de Handyx (15 %) antes de costos: ≈ USD 666.667 en presupuestos. Con el 20 % del trimestre pide un ticket de ≈ USD 51; con USD 40 serían ≈ USD 78.000. 4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran? Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados. 5. ¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
-   "referencias": [],
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿De dónde salen el 25 % y los USD 100.000? {{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos: con un ticket de {{TICKET-PARA-OBJETIVO}} dejan USD 100.000 de tarifas.",
+   "referencias": [
+    "MERCADO-USD",
+    "Q1-TRABAJOS",
+    "Q1-TARIFAS-40",
+    "TICKET-PARA-OBJETIVO"
+   ],
    "preguntas": "",
    "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 3 de 10",
+     "tono": "kicker"
+    },
     {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 10,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo H · ==Preguntas difíciles (1/2)==",
-     "nivel": 3
+     "texto": "¿De dónde salen el 25 % y los USD 100.000?",
+     "nivel": 2
     },
     {
-     "id": "tab",
+     "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 19,
+      "y": 28,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Pregunta",
-      "Respuesta breve"
+     "tipo": "texto",
+     "texto": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos: con un ticket de {{TICKET-PARA-OBJETIVO}} dejan USD 100.000 de tarifas.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**{{MERCADO-USD}}** por año",
+       "icono": "casa"
+      },
+      {
+       "texto": "**{{Q1-TRABAJOS}}** trabajos",
+       "icono": "objetivo"
+      },
+      {
+       "texto": "**{{Q1-TARIFAS-40}}** con USD 40",
+       "icono": "dolar"
+      }
      ],
-     "filas": [
-      [
-       "1. ¿Por qué creen posible captar el 20 % de los trabajos locales?",
-       "Es una aspiración: con 1 arreglo por hogar por año serían ≈ 13.000 trabajos en el trimestre. Todavía no medimos frecuencia ni ticket; primero, la meta operativa de diciembre."
-      ],
-      [
-       "2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina?",
-       "Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores."
-      ],
-      [
-       "3. ¿Qué significa USD 100.000 de ingresos brutos?",
-       "Tarifas de Handyx (15 %) antes de costos: ≈ USD 666.667 en presupuestos. Con el 20 % del trimestre pide un ticket de ≈ USD 51; con USD 40 serían ≈ USD 78.000."
-      ],
-      [
-       "4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran?",
-       "Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados."
-      ],
-      [
-       "5. ¿HandIA funciona hoy?",
-       "Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas."
-      ]
-     ]
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "tamano": 26,
+     "acciones": []
     }
    ]
   },
   {
-   "id": "x-preguntas-2",
-   "titulo": "Anexo I · Preguntas difíciles",
+   "id": "q-04",
+   "titulo": "Pregunta 4: ¿Cuántos trabajos tienen cobrados?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
+   "referencias": [
+    "TRABAJOS-INFORMADOS",
+    "ESP-REGISTRADOS"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 4 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Cuántos trabajos tienen cobrados?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**{{TRABAJOS-INFORMADOS}}** trabajos cobrados",
+       "icono": "tilde-circulo"
+      },
+      {
+       "texto": "**{{ESP-REGISTRADOS}}** registrados",
+       "icono": "usuarios"
+      },
+      {
+       "texto": "**Próximo:** {{META-TRABAJOS}} y {{META-REPETIDORES}} que vuelven",
+       "icono": "bandera"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-05",
+   "titulo": "Pregunta 5: ¿HandIA funciona hoy?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
    "transicion": "fundido",
-   "objetivo": "Respuestas breves y defendibles, sin cifras ni certezas inventadas.",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuestas completas en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "6. ¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar? Afuera cobran al profesional por comisión, contacto o suscripción. Nosotros no le cobramos por su trabajo y sumamos herramientas e historial. Las funciones se copian; hay que demostrarlo con uso. 7. ¿Cómo recauda Handyx el 15 %? El circuito de cobro y rendición está en definición; en las pruebas se coordinó a mano. La tarifa se muestra antes de contratar. 8. ¿Cómo van a captar y retener profesionales? Captar: preregistro, porteros y boca a boca de oficios. Retener: 0 % de comisión, herramientas para el día a día y clientes que vuelven. Lo medimos. 9. ¿Por qué USD 100.000 y qué hitos financian? Tecnología, operaciones y marketing. La asignación y los hitos están pendientes de aprobación; el primero es la meta operativa de diciembre. 10. ¿Qué harían si los primeros clientes no vuelven? Es la prueba clave. Revisaríamos precio, calidad y seguimiento antes de escalar: mejor aprender con pocos casos que crecer sin retención.",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 5 de 10",
+     "tono": "kicker"
+    },
     {
      "id": "t",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 10,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo I · ==Preguntas difíciles (2/2)==",
-     "nivel": 3
+     "texto": "¿HandIA funciona hoy?",
+     "nivel": 2
     },
     {
-     "id": "tab",
+     "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 19,
+      "y": 28,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "tabla",
-     "columnas": [
-      "Pregunta",
-      "Respuesta breve"
+     "tipo": "texto",
+     "texto": "Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Foto** del problema",
+       "icono": "camara"
+      },
+      {
+       "texto": "**Detecta** el oficio",
+       "icono": "chispas"
+      },
+      {
+       "texto": "**Arma** el pedido",
+       "icono": "lista"
+      }
      ],
-     "filas": [
-      [
-       "6. ¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar?",
-       "Afuera cobran al profesional por comisión, contacto o suscripción. Nosotros no le cobramos por su trabajo y sumamos herramientas e historial. Las funciones se copian; hay que demostrarlo con uso."
-      ],
-      [
-       "7. ¿Cómo recauda Handyx el 15 %?",
-       "El circuito de cobro y rendición está en definición; en las pruebas se coordinó a mano. La tarifa se muestra antes de contratar."
-      ],
-      [
-       "8. ¿Cómo van a captar y retener profesionales?",
-       "Captar: preregistro, porteros y boca a boca de oficios. Retener: 0 % de comisión, herramientas para el día a día y clientes que vuelven. Lo medimos."
-      ],
-      [
-       "9. ¿Por qué USD 100.000 y qué hitos financian?",
-       "Tecnología, operaciones y marketing. La asignación y los hitos están pendientes de aprobación; el primero es la meta operativa de diciembre."
-      ],
-      [
-       "10. ¿Qué harían si los primeros clientes no vuelven?",
-       "Es la prueba clave. Revisaríamos precio, calidad y seguimiento antes de escalar: mejor aprender con pocos casos que crecer sin retención."
-      ]
-     ]
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "gota",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-06",
+   "titulo": "Pregunta 6: ¿Qué los diferencia de Clickie y el resto?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué los diferencia de Clickie y el resto? Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros cobran por contacto o suscripción. Nosotros no le cobramos al profesional por su trabajo y sumamos herramientas, historial y clientes que vuelven.",
+   "referencias": [
+    "COMP-CLICKIE-PRO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 6 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Qué los diferencia de Clickie y el resto?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros cobran por contacto o suscripción. Nosotros no le cobramos al profesional por su trabajo y sumamos herramientas, historial y clientes que vuelven.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**{{FEE-ESPECIALISTA}}** al profesional",
+       "icono": "porcentaje"
+      },
+      {
+       "texto": "**Herramientas** por oficio",
+       "icono": "herramienta"
+      },
+      {
+       "texto": "**Clientes** que vuelven",
+       "icono": "repetir"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "aire",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-07",
+   "titulo": "Pregunta 7: ¿Cómo cobran el 15 %?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo cobran el 15 %? La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 7 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Cómo cobran el 15 %?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Visible** antes de contratar",
+       "icono": "recibo"
+      },
+      {
+       "texto": "**El profesional** cobra su presupuesto",
+       "icono": "billetera"
+      },
+      {
+       "texto": "**Sin** comisión al profesional",
+       "icono": "escudo-ok"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "medidor",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-08",
+   "titulo": "Pregunta 8: ¿Cómo captan y retienen profesionales?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo captan y retienen profesionales? Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 8 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Cómo captan y retienen profesionales?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Captar:** porteros y boca a boca",
+       "icono": "megafono"
+      },
+      {
+       "texto": "**Retener:** herramientas y 0 %",
+       "icono": "herramienta"
+      },
+      {
+       "texto": "**Medir:** actividad y repetición",
+       "icono": "crecimiento"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "brocha",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-09",
+   "titulo": "Pregunta 9: ¿En qué usarían los USD 100.000?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿En qué usarían los USD 100.000? {{INV-TECNOLOGIA}} en tecnología, {{INV-MARKETING}} en marketing y captación y {{INV-OPERACIONES}} en operaciones. Primer hito: {{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} clientes que vuelven en diciembre.",
+   "referencias": [
+    "INV-TECNOLOGIA",
+    "INV-MARKETING",
+    "INV-OPERACIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 9 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿En qué usarían los USD 100.000?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "{{INV-TECNOLOGIA}} en tecnología, {{INV-MARKETING}} en marketing y captación y {{INV-OPERACIONES}} en operaciones. Primer hito: {{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} clientes que vuelven en diciembre.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Tecnología** · {{INV-TECNOLOGIA}}",
+       "icono": "ia"
+      },
+      {
+       "texto": "**Marketing** · {{INV-MARKETING}}",
+       "icono": "megafono"
+      },
+      {
+       "texto": "**Operaciones** · {{INV-OPERACIONES}}",
+       "icono": "acuerdo"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-10",
+   "titulo": "Pregunta 10: ¿Qué hacen si los clientes no vuelven?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué hacen si los clientes no vuelven? Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 10 de 10",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Qué hacen si los clientes no vuelven?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Preguntamos** por qué",
+       "icono": "pregunta"
+      },
+      {
+       "texto": "**Ajustamos** precio y calidad",
+       "icono": "calculadora"
+      },
+      {
+       "texto": "**Medimos** de nuevo",
+       "icono": "repetir"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "tamano": 26,
+     "acciones": []
     }
    ]
   }

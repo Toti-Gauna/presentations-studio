@@ -1,15 +1,26 @@
 # Pitch ATICMA 2026 · preguntas difíciles (respuestas completas)
 
+> Actualizado el 04/11 (noche): las diez preguntas del jurado tienen ahora una diapositiva cada una (Mayús + I…Q). Respuestas de pantalla:
+> CAC, costos, de dónde sale el número, trabajos cobrados, HandIA, diferencia con Clickie, cobro del 15 %, captar y retener, uso de la inversión,
+> clientes que no vuelven.
+
+**¿Cuál es tu CAC?** ≈ USD 2 por cliente: USD 100 de marketing por mes ÷ 50 clientes nuevos (supuesto). El techo es USD 6 (la tarifa de un
+trabajo con ticket de USD 40): se recupera con el primer trabajo. LTV ≈ USD 18 (1 arreglo por año durante 3 años, supuesto): LTV/CAC ≈ 9.
+
+**¿Cuánto cuesta mantener Handyx?** ≈ USD 400 por mes (servidores 100, desarrollo 200, marketing 100). Con USD 6 por trabajo, ≈ 67 trabajos por
+mes cubren esos costos.
+
+
 Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta agrega cifras ni certezas que no estén en el deck.
 
 1. **¿Por qué creen posible captar el 20 % de los trabajos locales?** Es una aspiración del fundador, no un pronóstico ni una participación
-   actual. Con 1 arreglo por hogar por año (supuesto del mentor) serían ≈ 13.000 trabajos en el trimestre; todavía no medimos la frecuencia ni el ticket real. Lo primero es la meta operativa de diciembre: 50 trabajos con
+   actual. Con 1 arreglo por hogar por año (supuesto del mentor), el 25 % del trimestre serían ≈ 16.200 trabajos; todavía no medimos la frecuencia ni el ticket real. Lo primero es la meta operativa de diciembre: 50 trabajos con
    tarifa cobrada y 5 clientes que vuelvan a contratar. Con esos datos revisamos la aspiración.
 2. **¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina?** Es la visión a fines de 2027, no un plan validado. Haría
    falta pasar de 6 a 72 profesiones, una red local en cada ciudad y canales como porteros y administradores. No la presentamos como meta
    medible todavía.
 3. **¿Qué significa USD 100.000 de ingresos brutos?** Son las tarifas que cobra Handyx (15 % del presupuesto del profesional) en el primer
-   trimestre comercial, antes de costos de cobro, fiscales y operativos. Requieren ≈ USD 666.667 en presupuestos de profesionales. Con el 20 % del trimestre y un ticket de USD 40 serían ≈ USD 78.000: los USD 100.000 piden un ticket de ≈ USD 51. No es la
+   trimestre comercial, antes de costos de cobro, fiscales y operativos. Requieren ≈ USD 666.667 en presupuestos de profesionales. Con el 25 % del trimestre y un ticket de USD 40 serían ≈ USD 97.000: los USD 100.000 piden un ticket de ≈ USD 41. No es la
    facturación de los profesionales ni la inversión de USD 100.000 que buscamos.
 4. **¿Cuántos trabajos tienen efectivamente cobrados y cómo pueden demostrarlo?** Los primeros trabajos se hicieron con ayuda de porteros de
    edificios y cobramos comisión. Estamos conciliando cantidades y comprobantes con los registros; preferimos mostrar la cifra cuando esté
@@ -25,8 +36,8 @@ Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta
 8. **¿Cómo van a captar y retener profesionales?** Captar: el preregistro, los porteros y administradores, y el boca a boca entre oficios.
    Retener: 0 % de comisión, herramientas para el día a día (trabajos, agenda, ingresos) y clientes que vuelven. Lo medimos con actividad y
    repetición, no con registros.
-9. **¿Por qué necesitan USD 100.000 de inversión y qué hitos financiarían?** Tecnología, operaciones y marketing. La asignación por partida y
-   los hitos están pendientes de aprobación; no damos porcentajes que no estén decididos. El primer hito medible es la meta operativa de
+9. **¿Por qué necesitan USD 100.000 de inversión y qué hitos financiarían?** Tecnología, operaciones y marketing. Propuesta: USD 40.000 tecnología, USD 35.000
+   marketing y captación, USD 25.000 operaciones (a aprobar). El primer hito medible es la meta operativa de
    diciembre.
 10. **¿Qué harían si los primeros clientes no vuelven?** Es la prueba más importante. Revisaríamos precio visible, calidad del trabajo y
     seguimiento antes de escalar: preferimos aprender con pocos casos que crecer sin retención.

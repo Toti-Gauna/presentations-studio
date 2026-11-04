@@ -164,3 +164,6 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 04/11 (noche): pedido de Luigi (mentor ATICMA): diapositiva 5 con la cuenta de mercado (supuestos rotulados), diapositiva 6 como mapa
   por modelo de cobro con competidores de Argentina, región y EE. UU./Europa; anexos A proyección, B unit economics (CAC, LTV, IA + servidor),
   E y F competidores. 9 anexos (A–I). ⚠ Con sus supuestos el 20 % del trimestre da ≈ USD 78.000, no 100.000: ver ajustes sugeridos §4.
+- 04/11 (noche, 2): 25 % en el guion; costos mensuales (USD 400), equilibrio, CAC/LTV con supuestos rotulados; inversión 40/35/25 (propuesta);
+  respaldo visual (cifras, barras, íconos Lucide nuevos, mosaicos con columnas y rótulos agrupados) y 10 diapositivas de preguntas del jurado.
+  Motor: formato `usd`, `columnas` en mosaicos, rótulos agrupados en grillas, texto legible en nodos y cajas sobre fondo azul.

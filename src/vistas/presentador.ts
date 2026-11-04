@@ -11,7 +11,7 @@ import '../estilos/presentador.css';
 
 const raiz = document.getElementById('app') as HTMLElement;
 /** Atajos de anexos: Mayús + letra (e.key llega en mayúscula; la b minúscula sigue siendo pantalla negra). */
-const LETRAS = 'ABCDEFGHIJ';
+const LETRAS = 'ABCDEFGHIJKLMOPQSTUVWXYZ'; // sin N (notas) ni R (reloj): con Mayús son distintas, pero se evitan para no confundir
 const s = iniciar();
 if ('error' in s) pantallaError(raiz, s.error, false);
 else montar(s);

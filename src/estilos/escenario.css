@@ -258,3 +258,12 @@
 .rep-total > strong { white-space: nowrap; }
 .lista-mosaicos li, .lista-contraste li { color: var(--tinta-superficie, var(--tinta)); }
 .circulos { transform: scale(0.86); transform-origin: top left; }
+/* Rótulos de una grilla de mosaicos, juntos debajo */
+.rotulos-grilla { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 4px; }
+.rotulos-grilla .rotulo { margin-top: 10px; }
+/* Rótulos largos: cortan línea en vez de salirse de su caja */
+.rotulo { max-width: 100%; white-space: normal; }
+/* Dentro de una caja o un nodo blanco, el texto secundario usa la tinta de la superficie (legible en paletas oscuras) */
+.caja .cifra-detalle { color: inherit; opacity: 0.78; }
+.flujo-nodo { color: var(--tinta-superficie, var(--tinta)); }
+.flujo-nodo small { color: var(--tinta-superficie, var(--suave)); opacity: 0.75; }
