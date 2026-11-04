@@ -778,5 +778,87 @@
   "verificacion": "sin-verificar",
   "uso": "publico",
   "formato": "texto"
+ },
+ {
+  "id": "PRUEBA-MONTO",
+  "descripcion": "Monto total de los 5 trabajos de la prueba (presupuestos de los profesionales)",
+  "valor": 350000,
+  "unidad": "ARS",
+  "periodo": "octubre 2026",
+  "tipo": "informado",
+  "fuente": "Ignacio Gauna, 04/11/2026, de memoria: cuatro trabajos de $ 50.000 y uno de $ 150.000. Conciliar con comprobantes.",
+  "corte": "2026-11-04",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "ars",
+  "formula": "4 * 50000 + 150000"
+ },
+ {
+  "id": "PRUEBA-TICKET",
+  "descripcion": "Ticket promedio de los 5 trabajos de la prueba",
+  "valor": 70000,
+  "unidad": "ARS",
+  "periodo": "octubre 2026",
+  "tipo": "informado",
+  "fuente": "Ignacio Gauna, 04/11/2026, de memoria: cuatro trabajos de $ 50.000 y uno de $ 150.000. Conciliar con comprobantes.",
+  "corte": "2026-11-04",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "ars",
+  "formula": "350000 / 5",
+  "dependencias": [
+   "PRUEBA-MONTO",
+   "TRABAJOS-INFORMADOS"
+  ]
+ },
+ {
+  "id": "TIPO-CAMBIO",
+  "descripcion": "Dólar oficial BNA usado para convertir",
+  "valor": 1560,
+  "unidad": "ARS por USD",
+  "periodo": "30/10/2026",
+  "tipo": "informado",
+  "fuente": "BNA, 30/10/2026 (según las láminas del 02/11). Solo para comparar con supuestos en dólares.",
+  "corte": "2026-11-04",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "PRUEBA-TICKET-USD",
+  "descripcion": "Ticket promedio de la prueba en dólares",
+  "valor": "≈ USD 45",
+  "unidad": "USD",
+  "periodo": "",
+  "tipo": "proyeccion",
+  "fuente": "70.000 / 1.560 = USD 44,9.",
+  "corte": "2026-11-04",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "70000 / 1560",
+  "dependencias": [
+   "PRUEBA-TICKET",
+   "TIPO-CAMBIO"
+  ]
+ },
+ {
+  "id": "Q1-TARIFAS-REAL",
+  "descripcion": "Tarifas Handyx del 25 % del trimestre con el ticket promedio de la prueba (≈ USD 45)",
+  "valor": "≈ USD 109.000",
+  "unidad": "USD",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "16.226 × USD 44,9 × 15 % = USD 109.200. Muestra de 5 trabajos: orientativo.",
+  "corte": "2026-11-04",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "16226 * (70000 / 1560) * 0.15",
+  "dependencias": [
+   "Q1-TRABAJOS",
+   "PRUEBA-TICKET-USD",
+   "TARIFA-USUARIO"
+  ]
  }
 ]

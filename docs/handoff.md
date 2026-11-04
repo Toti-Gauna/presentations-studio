@@ -167,3 +167,5 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 04/11 (noche, 2): 25 % en el guion; costos mensuales (USD 400), equilibrio, CAC/LTV con supuestos rotulados; inversión 40/35/25 (propuesta);
   respaldo visual (cifras, barras, íconos Lucide nuevos, mosaicos con columnas y rótulos agrupados) y 10 diapositivas de preguntas del jurado.
   Motor: formato `usd`, `columnas` en mosaicos, rótulos agrupados en grillas, texto legible en nodos y cajas sobre fondo azul.
+- 04/11 (noche, 3): tickets reales de la prueba (4 × $ 50.000 + 1 × $ 150.000, de memoria de Ignacio: $ 350.000, promedio $ 70.000 ≈ USD 45);
+  con ese ticket el 25 % del trimestre da ≈ USD 109.000. Respaldo «De 6 a 72 profesiones» con ejemplos (no confirmados). Preguntas: Mayús + J…U.

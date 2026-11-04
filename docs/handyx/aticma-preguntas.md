@@ -1,6 +1,6 @@
 # Pitch ATICMA 2026 · preguntas difíciles (respuestas completas)
 
-> Actualizado el 04/11 (noche): las diez preguntas del jurado tienen ahora una diapositiva cada una (Mayús + I…Q). Respuestas de pantalla:
+> Actualizado el 04/11 (noche): las diez preguntas del jurado tienen ahora una diapositiva cada una (Mayús + J…U). Respuestas de pantalla:
 > CAC, costos, de dónde sale el número, trabajos cobrados, HandIA, diferencia con Clickie, cobro del 15 %, captar y retener, uso de la inversión,
 > clientes que no vuelven.
 
@@ -14,7 +14,7 @@ mes cubren esos costos.
 Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta agrega cifras ni certezas que no estén en el deck.
 
 1. **¿Por qué creen posible captar el 20 % de los trabajos locales?** Es una aspiración del fundador, no un pronóstico ni una participación
-   actual. Con 1 arreglo por hogar por año (supuesto del mentor), el 25 % del trimestre serían ≈ 16.200 trabajos; todavía no medimos la frecuencia ni el ticket real. Lo primero es la meta operativa de diciembre: 50 trabajos con
+   actual. Con 1 arreglo por hogar por año (supuesto del mentor), el 25 % del trimestre serían ≈ 16.200 trabajos; con el ticket promedio de nuestros 5 trabajos ($ 70.000 ≈ USD 45) dejan ≈ USD 109.000 de tarifas; todavía no medimos la frecuencia ni el ticket real. Lo primero es la meta operativa de diciembre: 50 trabajos con
    tarifa cobrada y 5 clientes que vuelvan a contratar. Con esos datos revisamos la aspiración.
 2. **¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina?** Es la visión a fines de 2027, no un plan validado. Haría
    falta pasar de 6 a 72 profesiones, una red local en cada ciudad y canales como porteros y administradores. No la presentamos como meta

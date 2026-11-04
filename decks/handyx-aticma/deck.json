@@ -38,6 +38,7 @@
     "x-competidores",
     "x-competidores-mundo",
     "x-inversion",
+    "x-profesiones",
     "q-01",
     "q-02",
     "q-03",
@@ -75,6 +76,7 @@
     "x-competidores",
     "x-competidores-mundo",
     "x-inversion",
+    "x-profesiones",
     "q-01",
     "q-02",
     "q-03",
@@ -626,7 +628,7 @@
    "transicion": "fundido",
    "objetivo": "Distinguir lo hecho (apps desarrolladas, pruebas, primeros trabajos y comisiones) de lo que viene.",
    "guion": "Ya contamos con ambas aplicaciones desarrolladas y las estamos probando. Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos y cobramos nuestras primeras comisiones. Ahora queremos llevar esa experiencia más allá de los edificios.",
-   "notas": "1:17–1:38. Cifras informadas por Ignacio y mostradas a su pedido (04/11): 5 trabajos con comisión cobrada (prueba con porteros, conciliación de comprobantes pendiente) y 56 especialistas registrados en el preregistro (no son activos ni verificados). «2 apps» = las dos aplicaciones desarrolladas.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "1:17–1:38. Cifras informadas por Ignacio y mostradas a su pedido (04/11): 5 trabajos con comisión cobrada (prueba con porteros, conciliación de comprobantes pendiente) y 56 especialistas registrados en el preregistro (no son activos ni verificados). Montos de la prueba (Ignacio, de memoria): cuatro trabajos de $ 50.000 y uno de $ 150.000 = $ 350.000, ticket promedio $ 70.000 (≈ USD 45 al BNA del 30/10). Con la comisión que se cobró en la prueba, a confirmar el monto exacto.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Ya empezamos: la aplicación de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios se concretaron los primeros trabajos y se cobraron las primeras comisiones (cantidades en conciliación). Próximo paso: llevar esa experiencia más allá de los edificios.",
    "referencias": [],
    "preguntas": "¿Cuántos trabajos cobraron? → Los primeros, con ayuda de porteros; estamos conciliando cantidades y comprobantes y los mostramos cuando estén conciliados.",
@@ -664,7 +666,7 @@
      "pos": {
       "x": 5,
       "y": 25.5,
-      "w": 23
+      "w": 24
      },
      "paso": 0,
      "entrada": "fundido",
@@ -672,15 +674,15 @@
      "afirmacion": "TRABAJOS-INFORMADOS",
      "leyenda": "**trabajos con comisión cobrada**",
      "caja": "blanca",
-     "detalle": "con porteros de edificios"
+     "detalle": "con porteros: **{{PRUEBA-MONTO}}** en trabajos · ticket promedio **{{PRUEBA-TICKET}}**"
     },
     {
      "id": "c2",
      "area": "libre",
      "pos": {
-      "x": 30,
+      "x": 31,
       "y": 25.5,
-      "w": 24
+      "w": 23
      },
      "paso": 0,
      "entrada": "fundido",
@@ -689,29 +691,6 @@
      "leyenda": "**especialistas registrados**",
      "caja": "blanca",
      "detalle": "preregistro: no son activos ni verificados"
-    },
-    {
-     "id": "ev",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 65,
-      "w": 49
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**2 apps** desarrolladas",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Pruebas** con porteros",
-       "icono": "edificio"
-      }
-     ]
     },
     {
      "id": "tr",
@@ -792,7 +771,7 @@
    "transicion": "fundido",
    "objetivo": "Justificar el número con una cuenta visible (hogares × arreglos × ticket) y mostrar la aspiración del primer trimestre y la visión como objetivos.",
    "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
-   "notas": "1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Si preguntan, decirlo así: el objetivo depende del ticket.\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Ticket real de la prueba: $ 70.000 ≈ USD 45 (5 trabajos, muestra chica): con ese ticket el 25 % del trimestre da ≈ USD 109.000. Profesiones de ejemplo para llegar a 72: ver el respaldo «De 6 a 72 profesiones».\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Con los supuestos de 1 arreglo por hogar por año y USD 40 por arreglo, son ≈ USD 10,4 millones por año; el 20 % de un trimestre equivale a ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas (USD 100.000 requiere un ticket medio de ≈ USD 51). Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
    "referencias": [
     "MDP-HOGARES",
@@ -884,13 +863,13 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 67,
+      "y": 66,
       "w": 56
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Primer trimestre comercial · aspiración:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}} trabajos.\nCon ticket de {{SUP-TICKET-USD}}: {{Q1-TARIFAS-40}} de tarifas · el objetivo de {{META-INGRESOS-TRIM}} pide un ticket de {{TICKET-PARA-OBJETIVO}}.",
+     "texto": "**Primer trimestre · aspiración:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}}. Con nuestro ticket real ({{PRUEBA-TICKET}} ≈ USD 45): **{{Q1-TARIFAS-REAL}}** de tarifas.",
      "tamano": "s",
      "caja": "azul"
     },
@@ -899,13 +878,13 @@
      "area": "libre",
      "pos": {
       "x": 64,
-      "y": 67,
+      "y": 66,
       "w": 31
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Visión a fines de 2027:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
+     "texto": "**Visión 2027:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones (limpieza, mecánica, jardinería, pintura…) y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
      "tamano": "s",
      "caja": "blanca"
     }
@@ -1361,10 +1340,10 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "cifra",
-     "afirmacion": "Q1-TARIFAS-40",
+     "afirmacion": "Q1-TARIFAS-REAL",
      "leyenda": "**de tarifas Handyx**",
      "caja": "azul",
-     "detalle": "con ticket de {{SUP-TICKET-USD}}"
+     "detalle": "con nuestro ticket real ({{PRUEBA-TICKET}} ≈ USD 45)"
     },
     {
      "id": "c3",
@@ -1377,10 +1356,10 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "cifra",
-     "afirmacion": "TICKET-PARA-OBJETIVO",
-     "leyenda": "**de ticket = USD 100.000**",
+     "afirmacion": "Q1-TARIFAS-40",
+     "leyenda": "**con ticket de USD 40**",
      "caja": "amarilla",
-     "detalle": "objetivo del primer trimestre"
+     "detalle": "supuesto conservador del mentor"
     }
    ]
   },
@@ -2219,6 +2198,108 @@
    ]
   },
   {
+   "id": "x-profesiones",
+   "titulo": "De 6 a 72 profesiones",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar con ejemplos concretos cómo se llega a 72 profesiones.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Ejemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Hoy: electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado. Próximas posibles: limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, control de plagas y piletas; electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares; mecánica, electricidad del auto, gomería y lavado de autos; fletes y mudanzas, armado de muebles, tapicería y cuidado de mascotas.",
+   "referencias": [
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · crecimiento",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "De {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} ==profesiones==",
+     "nivel": 2
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 22,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Hoy · {{PROFESIONES-INICIALES}}:** electricidad, plomería, gas, cerrajería, albañilería, aire acondicionado",
+       "icono": "casa"
+      },
+      {
+       "texto": "**Hogar:** limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, plagas, piletas",
+       "icono": "sparkles"
+      },
+      {
+       "texto": "**Equipos y tecnología:** electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares, TV y antenas",
+       "icono": "celular"
+      },
+      {
+       "texto": "**Movilidad:** mecánica, electricidad del auto, gomería, lavado de autos",
+       "icono": "auto"
+      },
+      {
+       "texto": "**Servicios:** fletes y mudanzas, armado de muebles, tapicería, cuidado de mascotas",
+       "icono": "usuarios"
+      },
+      {
+       "texto": "**Cómo elegimos:** pedidos que hoy quedan fuera de rubro y profesionales que se preregistran",
+       "icono": "objetivo"
+      }
+     ],
+     "columnas": 2
+    },
+    {
+     "id": "n",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 94,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Ejemplos para crecer, no confirmados: cada profesión entra cuando hay demanda y podemos verificar a sus profesionales.",
+     "tamano": "xs"
+    }
+   ]
+  },
+  {
    "id": "q-01",
    "titulo": "Pregunta 1: ¿Cuál es tu CAC?",
    "disposicion": "izquierda",
@@ -2439,7 +2520,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿De dónde salen el 25 % y los USD 100.000? {{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos: con un ticket de {{TICKET-PARA-OBJETIVO}} dejan USD 100.000 de tarifas.",
+   "lectura": "¿De dónde salen el 25 % y los USD 100.000? {{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
    "referencias": [
     "MERCADO-USD",
     "Q1-TRABAJOS",
@@ -2486,7 +2567,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos: con un ticket de {{TICKET-PARA-OBJETIVO}} dejan USD 100.000 de tarifas.",
+     "texto": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
      "tamano": "l"
     },
     {
@@ -2511,7 +2592,7 @@
        "icono": "objetivo"
       },
       {
-       "texto": "**{{Q1-TARIFAS-40}}** con USD 40",
+       "texto": "**{{Q1-TARIFAS-REAL}}** con nuestro ticket",
        "icono": "dolar"
       }
      ],
@@ -2545,7 +2626,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
+   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos, ticket promedio de {{PRUEBA-TICKET}}; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
    "referencias": [
     "TRABAJOS-INFORMADOS",
     "ESP-REGISTRADOS"
@@ -2590,7 +2671,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
+     "texto": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos, ticket promedio de {{PRUEBA-TICKET}}; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
      "tamano": "l"
     },
     {

@@ -15,11 +15,11 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
    Solo presentación (sin presentador): `/presentar/?deck=handyx-aticma&version=evento`.
 4. Diapositiva 7 tiene dos pasos: → al decir «Hoy empezamos en Mar del Plata». Avanzar nunca entra a los anexos.
 5. **Respaldo para el jurado:** Mayús + A (proyección), B (costos y equilibrio), C (CAC y LTV), D (validación), E (roadmap), F (competidores
-   en Argentina), G (región y mundo), H (uso de la inversión) e I…Q (preguntas del jurado 1 a 10, una por diapositiva; sin N ni R);
+   en Argentina), G (región y mundo), H (uso de la inversión), I (de 6 a 72 profesiones) y J…U (preguntas del jurado 1 a 10, una por diapositiva; sin N ni R);
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (26 páginas: 7 diapositivas, el paso 2 de la 7, 8 de respaldo y 10 de preguntas), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (27 páginas: 7 diapositivas, el paso 2 de la 7, 9 de respaldo y 10 de preguntas), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
@@ -37,6 +37,10 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 
 **Ajuste del 04/11 (Ignacio):** la aspiración pasó de 20 % a **25 %** de los trabajos del trimestre (guion actualizado). Con los supuestos
 del mentor son ≈ 16.200 trabajos y ≈ USD 97.000 de tarifas con ticket de USD 40; USD 100.000 con ticket de ≈ USD 41.
+
+**Ticket real de la prueba (04/11, Ignacio, de memoria):** cuatro trabajos de $ 50.000 y uno de $ 150.000 = $ 350.000; ticket promedio
+$ 70.000 ≈ USD 45 (BNA 30/10). Con ese ticket, el 25 % del trimestre da ≈ USD 109.000 de tarifas (muestra de 5 trabajos: orientativo).
+Profesiones de ejemplo para llegar a 72: respaldo «De 6 a 72 profesiones» (no confirmadas).
 
 **Costos e inversión (04/11, Ignacio):** servidores USD 100, desarrollo USD 200 y marketing USD 100 por mes (≈ USD 400; se tomaron en
 dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 50 clientes nuevos por mes; LTV ≈ USD 18 con 3 años de permanencia

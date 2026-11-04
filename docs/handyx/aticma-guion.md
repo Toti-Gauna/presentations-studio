@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 18 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 19 láminas de respaldo.
 
 ## Ritmo
 
@@ -18,8 +18,8 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 1 | La odisea | 0:00–0:25 | 25 | 67 | 161 ppm ⚠ | Presentación, la odisea, la doble necesidad | Logo, casa con algo roto y profesional; encontrar, coordinar, organizar |
 | 2 | HandIA te orienta | 0:25–0:55 | 30 | 62 | 124 ppm | «Imaginen algo»: HandIA y el camino directo por oficio | Concepto de HandIA rotulado + capturas reales del pedido por oficio |
 | 3 | Herramientas para el profesional | 0:55–1:17 | 22 | 28 | 76 ppm | Trabajos, ingresos, gastos, herramientas; IA a futuro | Agenda y caja reales; gastos y herramientas como propuesta; visión IA |
-| 4 | Ya empezamos | 1:17–1:38 | 21 | 36 | 103 ppm | Apps desarrolladas, porteros, primeros trabajos y comisiones | Checklist de evidencia (sin cantidades sin conciliar) + inicio de las dos apps |
-| 5 | Mercado y visión | 1:38–2:04 | 26 | 61 | 141 ppm ⚠ | 6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10 | Cuenta: hogares × 1 arreglo × USD 40 ≈ USD 10,4 M/año; 20 % del trimestre ≈ 13.000 trabajos ≈ USD 78.000 (USD 100.000 pide ticket ≈ USD 51) |
+| 4 | Ya empezamos | 1:17–1:38 | 21 | 36 | 103 ppm | Apps desarrolladas, porteros, primeros trabajos y comisiones | 5 trabajos ($ 350.000, ticket $ 70.000) y 56 registrados, rotulados; agenda y pedido de la demo |
+| 5 | Mercado y visión | 1:38–2:04 | 26 | 61 | 141 ppm ⚠ | 6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10 | Cuenta: hogares × 1 arreglo × USD 40 ≈ USD 10,4 M/año; 25 % del trimestre ≈ 16.200 trabajos; con el ticket real de la prueba ($ 70.000 ≈ USD 45) ≈ USD 109.000; profesiones de ejemplo |
 | 6 | Competencia y modelo | 2:04–2:30 | 26 | 58 | 134 ppm | «La conocemos»: comisión al profesional vs. 15 % al usuario | Mapa por modelo de cobro (comisión, contacto, suscripción, cero temporal) con Argentina, región y EE. UU./Europa; reparto de $ 115.000 |
 | 7 | Equipo, inversión y visión | 2:30–3:00 | 30 | 88 | 176 ppm ⚠ | Equipo, agentes de IA, USD 100.000, Silicon Valley, cierre | Equipo e inversión → (paso 2) «Hoy empezamos… arreglar el mundo» con los Handys |
 
@@ -87,15 +87,16 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | Mayús + F | Competidores en Argentina | Mostrar a los competidores directos con datos y el diferencial. |
 | Mayús + G | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
 | Mayús + H | Uso de la inversión | Mostrar cómo se usarían los USD 100.000 y qué hitos financian. |
-| Mayús + I | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + J | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + K | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + L | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + M | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + O | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + P | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Q | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + S | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + T | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + I | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
+| Mayús + J | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + K | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + L | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + M | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + O | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + P | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Q | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + S | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + T | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + U | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.
