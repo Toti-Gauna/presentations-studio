@@ -280,5 +280,251 @@
   "verificacion": "pendiente",
   "uso": "notas",
   "formato": "entero"
+ },
+ {
+  "id": "SUP-ARREGLOS-HOGAR",
+  "descripcion": "Supuesto: arreglos contratados por hogar por año",
+  "valor": 1,
+  "unidad": "arreglos",
+  "periodo": "por año",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "SUP-TICKET-USD",
+  "descripcion": "Supuesto: ticket medio de un arreglo del hogar",
+  "valor": "USD 40",
+  "unidad": "USD",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto"
+ },
+ {
+  "id": "MERCADO-ARREGLOS",
+  "descripcion": "Arreglos del hogar por año en General Pueyrredon (hogares × arreglos por hogar)",
+  "valor": 259623,
+  "unidad": "arreglos",
+  "periodo": "por año",
+  "tipo": "proyeccion",
+  "fuente": "Cálculo con el supuesto del mentor.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "MDP-HOGARES * SUP-ARREGLOS-HOGAR",
+  "dependencias": [
+   "MDP-HOGARES",
+   "SUP-ARREGLOS-HOGAR"
+  ]
+ },
+ {
+  "id": "MERCADO-USD",
+  "descripcion": "Valor anual de esos arreglos (arreglos × ticket)",
+  "valor": "≈ USD 10,4 M",
+  "unidad": "USD",
+  "periodo": "por año",
+  "tipo": "proyeccion",
+  "fuente": "259.623 × USD 40 = USD 10.384.920.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "259623 * 40",
+  "dependencias": [
+   "MERCADO-ARREGLOS",
+   "SUP-TICKET-USD"
+  ]
+ },
+ {
+  "id": "Q1-TRABAJOS",
+  "descripcion": "Trabajos que representa el 20 % de los arreglos de un trimestre",
+  "valor": "≈ 13.000",
+  "unidad": "trabajos",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "259.623 / 4 × 20 % = 12.981.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "259623 / 4 * 0.20",
+  "dependencias": [
+   "MERCADO-ARREGLOS",
+   "META-CUOTA-LOCAL"
+  ]
+ },
+ {
+  "id": "Q1-TARIFAS-40",
+  "descripcion": "Tarifas Handyx de esos trabajos con ticket de USD 40 (15 %)",
+  "valor": "≈ USD 78.000",
+  "unidad": "USD",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "12.981 × USD 40 × 15 % = USD 77.887. Antes de costos.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "12981 * 40 * 0.15",
+  "dependencias": [
+   "Q1-TRABAJOS",
+   "SUP-TICKET-USD",
+   "TARIFA-USUARIO"
+  ]
+ },
+ {
+  "id": "TICKET-PARA-OBJETIVO",
+  "descripcion": "Ticket medio que hace falta para USD 100.000 de tarifas con el 20 % del trimestre",
+  "valor": "≈ USD 51",
+  "unidad": "USD",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "100.000 / (15 % × 12.981) = USD 51,4.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "100000 / (0.15 * 12981)",
+  "dependencias": [
+   "META-INGRESOS-TRIM",
+   "Q1-TRABAJOS",
+   "TARIFA-USUARIO"
+  ]
+ },
+ {
+  "id": "INGRESO-POR-TRABAJO",
+  "descripcion": "Tarifa Handyx por trabajo con ticket de USD 40",
+  "valor": "USD 6",
+  "unidad": "USD",
+  "periodo": "por trabajo",
+  "tipo": "proyeccion",
+  "fuente": "15 % × USD 40.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "texto",
+  "formula": "0.15 * 40",
+  "dependencias": [
+   "TARIFA-USUARIO",
+   "SUP-TICKET-USD"
+  ]
+ },
+ {
+  "id": "SUP-CAPTURA-2A",
+  "descripcion": "Supuesto del mentor: captar el 5 % de los arreglos en 2 años",
+  "valor": 5,
+  "unidad": "%",
+  "periodo": "en 2 años",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "porcentaje"
+ },
+ {
+  "id": "PROY-ANUAL-5",
+  "descripcion": "Tarifas Handyx por año con el 5 % de los arreglos del hogar (ticket USD 40)",
+  "valor": "≈ USD 78.000",
+  "unidad": "USD",
+  "periodo": "por año, a 2 años",
+  "tipo": "proyeccion",
+  "fuente": "259.623 × 5 % × USD 40 × 15 %. Antes de costos.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "texto",
+  "formula": "259623 * 0.05 * 40 * 0.15",
+  "dependencias": [
+   "MERCADO-ARREGLOS",
+   "SUP-CAPTURA-2A",
+   "SUP-TICKET-USD",
+   "TARIFA-USUARIO"
+  ]
+ },
+ {
+  "id": "SUP-AUTOS",
+  "descripcion": "Supuesto del mentor: autos en la zona (dato a verificar; mecánica no está en los 6 rubros iniciales)",
+  "valor": 50000,
+  "unidad": "autos",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios. Parque automotor sin fuente.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "entero"
+ },
+ {
+  "id": "SUP-ARREGLOS-AUTO",
+  "descripcion": "Supuesto del mentor: arreglos por auto por año",
+  "valor": 3,
+  "unidad": "arreglos",
+  "periodo": "por año",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "entero"
+ },
+ {
+  "id": "SUP-TICKET-AUTO",
+  "descripcion": "Supuesto del mentor: ticket medio de mecánica",
+  "valor": "USD 200",
+  "unidad": "USD",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Luigi (mentor ATICMA), WhatsApp del 04/11/2026: ejemplo de cuenta para justificar la proyección. Supuesto a validar con datos propios.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "texto"
+ },
+ {
+  "id": "MERCADO-AUTO-USD",
+  "descripcion": "Valor anual de arreglos de autos con esos supuestos",
+  "valor": "USD 30 M",
+  "unidad": "USD",
+  "periodo": "por año",
+  "tipo": "proyeccion",
+  "fuente": "50.000 × 3 × USD 200.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "texto",
+  "formula": "50000 * 3 * 200",
+  "dependencias": [
+   "SUP-AUTOS",
+   "SUP-ARREGLOS-AUTO",
+   "SUP-TICKET-AUTO"
+  ]
+ },
+ {
+  "id": "PROY-AUTO-5",
+  "descripcion": "Tarifas Handyx por año con el 5 % de los arreglos de autos",
+  "valor": "≈ USD 225.000",
+  "unidad": "USD",
+  "periodo": "por año, a 2 años",
+  "tipo": "proyeccion",
+  "fuente": "USD 30 M × 5 % × 15 %. Escenario fuera del alcance inicial.",
+  "corte": "2026-11-04",
+  "verificacion": "sin-verificar",
+  "uso": "anexo",
+  "formato": "texto",
+  "formula": "30000000 * 0.05 * 0.15",
+  "dependencias": [
+   "MERCADO-AUTO-USD",
+   "SUP-CAPTURA-2A",
+   "TARIFA-USUARIO"
+  ]
  }
 ]

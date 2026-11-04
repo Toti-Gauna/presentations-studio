@@ -30,10 +30,12 @@
     "a-equipo"
    ],
    "anexos": [
+    "x-proyeccion",
     "x-economia",
     "x-validacion",
     "x-roadmap",
     "x-competidores",
+    "x-competidores-mundo",
     "x-inversion",
     "x-preguntas-1",
     "x-preguntas-2"
@@ -56,10 +58,12 @@
     "a-equipo"
    ],
    "anexos": [
+    "x-proyeccion",
     "x-economia",
     "x-validacion",
     "x-roadmap",
     "x-competidores",
+    "x-competidores-mundo",
     "x-inversion",
     "x-preguntas-1",
     "x-preguntas-2"
@@ -757,19 +761,24 @@
    "pasos": 1,
    "clasificacion": "meta",
    "transicion": "fundido",
-   "objetivo": "Dar peso al mercado inicial y al objetivo inmediato; mostrar la visión nacional como aspiración.",
+   "objetivo": "Justificar el número con una cuenta visible (hogares × arreglos × ticket) y mostrar la aspiración del primer trimestre y la visión como objetivos.",
    "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 20% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
-   "notas": "1:38–2:04. 259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
+   "notas": "1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Si preguntan, decirlo así: el objetivo depende del ticket.\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Con los supuestos de 1 arreglo por hogar por año y USD 40 por arreglo, son ≈ USD 10,4 millones por año; el 20 % de un trimestre equivale a ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas (USD 100.000 requiere un ticket medio de ≈ USD 51). Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
    "referencias": [
     "MDP-HOGARES",
-    "PROFESIONES-INICIALES",
+    "SUP-ARREGLOS-HOGAR",
+    "SUP-TICKET-USD",
+    "MERCADO-USD",
+    "Q1-TRABAJOS",
+    "Q1-TARIFAS-40",
+    "TICKET-PARA-OBJETIVO",
     "META-CUOTA-LOCAL",
     "META-INGRESOS-TRIM",
     "META-PROFESIONES",
     "META-CUOTA-NACIONAL"
    ],
-   "preguntas": "¿Por qué creen posible el 20 %? → Es una aspiración, no un pronóstico: todavía no medimos cuántos trabajos se contratan en el partido. La primera prueba es la meta operativa de diciembre.",
+   "preguntas": "¿De dónde sale el número? → Hogares × 1 arreglo por año × USD 40 (supuestos) ≈ USD 10,4 M por año; el 20 % de un trimestre son ≈ 13.000 trabajos. Con USD 40 dan ≈ USD 78.000; los USD 100.000 piden un ticket de ≈ USD 51. Todavía no medimos el ticket ni la frecuencia: lo primero es la meta operativa de diciembre.",
    "elementos": [
     {
      "id": "k",
@@ -799,68 +808,77 @@
      "nivel": 2
     },
     {
-     "id": "c",
+     "id": "kc",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 26,
-      "w": 46
+      "y": 26
      },
      "paso": 0,
      "entrada": "fundido",
-     "tipo": "cifra",
-     "afirmacion": "MDP-HOGARES",
-     "leyenda": "**hogares en General Pueyrredon**",
-     "caja": "blanca",
-     "detalle": "Censo 2022 · empezamos con {{PROFESIONES-INICIALES}} profesiones"
+     "tipo": "etiqueta",
+     "texto": "Cómo se calcula · supuestos rotulados",
+     "tono": "proyeccion"
+    },
+    {
+     "id": "fl",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 31,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "flujo",
+     "nodos": [
+      {
+       "texto": "{{MDP-HOGARES}} hogares",
+       "detalle": "General Pueyrredon · Censo 2022"
+      },
+      {
+       "texto": "× {{SUP-ARREGLOS-HOGAR}} arreglo por año",
+       "detalle": "supuesto"
+      },
+      {
+       "texto": "× {{SUP-TICKET-USD}} por arreglo",
+       "detalle": "supuesto de ticket medio"
+      },
+      {
+       "texto": "{{MERCADO-USD}} por año",
+       "detalle": "arreglos del hogar en el partido"
+      }
+     ]
     },
     {
      "id": "q1",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 64,
-      "w": 46
+      "y": 67,
+      "w": 56
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Primer trimestre comercial · aspiración**\n{{META-CUOTA-LOCAL}} de los trabajos contratados en el partido · {{META-INGRESOS-TRIM}} de ingresos brutos propios",
+     "texto": "**Primer trimestre comercial · aspiración:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}} trabajos.\nCon ticket de {{SUP-TICKET-USD}}: {{Q1-TARIFAS-40}} de tarifas · el objetivo de {{META-INGRESOS-TRIM}} pide un ticket de {{TICKET-PARA-OBJETIVO}}.",
      "tamano": "s",
      "caja": "azul"
-    },
-    {
-     "id": "mapa",
-     "area": "libre",
-     "pos": {
-      "x": 56,
-      "y": 23
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "circulos",
-     "capas": [
-      {
-       "etiqueta": "Argentina"
-      },
-      {
-       "etiqueta": "General Pueyrredon"
-      }
-     ]
     },
     {
      "id": "v",
      "area": "libre",
      "pos": {
-      "x": 55,
-      "y": 78,
-      "w": 40
+      "x": 64,
+      "y": 67,
+      "w": 31
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Visión a fines de 2027:** {{META-PROFESIONES}} profesiones y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
-     "tamano": "s"
+     "texto": "**Visión a fines de 2027:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
+     "tamano": "s",
+     "caja": "blanca"
     }
    ]
   },
@@ -875,7 +893,7 @@
    "transicion": "fundido",
    "objetivo": "Comparar con honestidad y dejar claro el modelo: 0 % al profesional, 15 % al usuario, presupuesto completo.",
    "guion": "Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional. Nosotros creemos que ese no es el camino. El dinero que gana trabajando tiene que llegar completo a su casa.\n\nNuestro modelo es simple: el usuario paga una tarifa del 15%, visible antes de contratar. El profesional fija su presupuesto y Handyx no le cobra comisión.",
-   "notas": "2:04–2:30. Competidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "2:04–2:30. Pedido de Luigi (mentor ATICMA): mostrar que hay Clickie y 3 o 4 más en Argentina, y varios en Colombia, Uruguay, Chile, México, Europa y EE. UU., y encontrar el diferencial. El mapa agrupa por cómo le cobran al profesional; el diferencial buscado: el profesional no paga comisión por su trabajo. Modelos de Taskrabbit, Angi, Thumbtack y Checkatrade: búsqueda web del 04/11/2026 (fuentes de comparación, a revalidar). IguanaFix, según Cronista, se enfocó en clientes corporativos.\nCompetidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Competencia: Clickie cobra comisión al profesional según sus términos del 14/10/2026 y ofrece orientación con IA; Muovi anuncia comisión cero temporal y herramientas para profesionales; Home Solution cobra al prestador por acceso a oportunidades. Handyx: 0 % de comisión al profesional y 15 % de tarifa de servicio al usuario, visible antes de contratar. Ejemplo: presupuesto de $ 100.000; el usuario paga $ 115.000; el profesional recibe $ 100.000 y Handyx $ 15.000 brutos, antes de costos.",
    "referencias": [
     "FEE-ESPECIALISTA",
@@ -925,39 +943,47 @@
      "entrada": "fundido",
      "tipo": "tabla",
      "columnas": [
-      "",
-      "Al profesional",
-      "Al usuario",
-      "También ofrece"
+      "Cómo le cobran al profesional",
+      "Ejemplos"
      ],
      "filas": [
       [
-       "Clickie",
-       "Comisión (términos 14/10/2026)",
-       "Sin dato confirmado",
-       "Orientación con IA y estimación de precio"
+       "Comisión por trabajo",
+       "Clickie (Argentina) · Taskrabbit (EE. UU. y Europa)"
       ],
       [
-       "Muovi",
-       "Comisión cero, temporal (anunciada)",
-       "Sin dato confirmado",
-       "Herramientas para profesionales"
+       "Pago por contacto u oportunidad",
+       "Home Solution · Angi y Thumbtack (EE. UU.)"
       ],
       [
-       "Home Solution",
-       "Pago por acceso a oportunidades",
-       "Sin dato confirmado",
-       "Recibir y comparar propuestas"
+       "Suscripción o membresía",
+       "Checkatrade (Reino Unido) · Thumbtack Pro"
       ],
       [
-       "Handyx",
-       "{{FEE-ESPECIALISTA}} de comisión",
-       "{{TARIFA-USUARIO}}, visible antes de contratar",
-       "Herramientas por oficio, historial y volver a elegir al profesional"
+       "Comisión cero, temporal",
+       "Muovi (anunciada)"
+      ],
+      [
+       "Handyx: {{FEE-ESPECIALISTA}} de comisión",
+       "El usuario paga {{TARIFA-USUARIO}}, visible antes de contratar"
       ]
      ],
-     "destacar": 3,
+     "destacar": 4,
      "pasoDestacada": 0
+    },
+    {
+     "id": "otros",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 79,
+      "w": 54
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "También en Argentina: IguanaFix, Servidos, Yo te lo arreglo, Zolvers · Región: Ay Fix (México), GoFixii (Colombia), Zolvers (Chile, México, Colombia). Detalle en los anexos E y F.",
+     "tamano": "s"
     },
     {
      "id": "rep",
@@ -991,7 +1017,7 @@
      "area": "libre",
      "pos": {
       "x": 62,
-      "y": 61,
+      "y": 55,
       "w": 33
      },
      "paso": 0,
@@ -1005,15 +1031,15 @@
      "id": "pie",
      "area": "libre",
      "pos": {
-      "x": 5,
-      "y": 90,
-      "w": 90
+      "x": 62,
+      "y": 86,
+      "w": 33
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Ejemplo ilustrativo, sin descontar costos de cobro, fiscales y operativos. Competidores: información pública indicada al 04/11/2026; detalle y fuentes en el anexo D.",
-     "tamano": "s"
+     "texto": "Ejemplo ilustrativo, sin descontar costos de cobro, fiscales y operativos. Modelos de cobro según fuentes públicas consultadas el 04/11/2026; a revalidar.",
+     "tamano": "xs"
     }
    ]
   },
@@ -1181,25 +1207,25 @@
    ]
   },
   {
-   "id": "x-economia",
-   "titulo": "Anexo A · Unit economics",
+   "id": "x-proyeccion",
+   "titulo": "Anexo A · Proyección",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
-   "objetivo": "Separar valor del trabajo, tarifa, facturación bruta, costos y resultado; mostrar el volumen necesario sin pronosticar.",
+   "objetivo": "Mostrar la cuenta que justifica los números y sus supuestos, como pidió el mentor.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Costos y resultado neto: sin dato confirmado. Sin ticket medio medido no hay pronóstico de trabajos; el ticket de USD 100 es solo un ejemplo matemático.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Unit economics: P es el presupuesto del profesional; F, la tarifa de servicio, es el 15 % de P; el usuario paga T = P + F. La facturación bruta de Handyx es F. Costos de cobro, fiscales y operativos y resultado neto: sin dato confirmado. Para USD 100.000 de tarifas hacen falta ≈ USD 666.667 en presupuestos; la cantidad de trabajos depende del ticket medio, que todavía no está medido.",
+   "notas": "Supuestos del mentor (Luigi, 04/11): 1 arreglo por hogar por año, ticket de USD 40, captar el 5 % en 2 años; mecánica: 50.000 autos, 3 arreglos por año, USD 200 (fuera de los 6 rubros iniciales; parque automotor sin fuente). Su ejemplo de «20 % de margen ~ 500 USD por usuario por mes y 80.000 usuarios = 40.000 USD por mes» mezcla unidades y no se usa.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Proyección con supuestos: 259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 millones por año en arreglos del hogar. El 5 % en dos años son ≈ 13.000 trabajos y ≈ USD 78.000 por año de tarifas Handyx (15 %), antes de costos. Si se sumara mecánica (50.000 autos × 3 arreglos × USD 200 = USD 30 millones), el 5 % daría ≈ USD 225.000 por año: escenario fuera del alcance inicial.",
    "referencias": [
-    "EJ-P",
-    "EJ-F",
-    "EJ-T",
-    "PUENTE-PRESUP",
-    "EJ-TICKET-USD",
-    "EJ-TRABAJOS-USD"
+    "MERCADO-USD",
+    "PROY-ANUAL-5",
+    "MERCADO-AUTO-USD",
+    "PROY-AUTO-5",
+    "Q1-TARIFAS-40",
+    "TICKET-PARA-OBJETIVO"
    ],
    "preguntas": "",
    "elementos": [
@@ -1214,7 +1240,106 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo A · ==Unit economics==",
+     "texto": "Anexo A · ==Proyección==",
+     "nivel": 3
+    },
+    {
+     "id": "tab",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 19,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "tabla",
+     "columnas": [
+      "Cuenta",
+      "Hogar (6 rubros)",
+      "Mecánica (escenario, fuera de alcance)"
+     ],
+     "filas": [
+      [
+       "Unidades",
+       "{{MDP-HOGARES}} hogares",
+       "{{SUP-AUTOS}} autos (a verificar)"
+      ],
+      [
+       "Arreglos por año",
+       "× {{SUP-ARREGLOS-HOGAR}}",
+       "× {{SUP-ARREGLOS-AUTO}}"
+      ],
+      [
+       "Ticket medio",
+       "× {{SUP-TICKET-USD}}",
+       "× {{SUP-TICKET-AUTO}}"
+      ],
+      [
+       "Mercado anual",
+       "{{MERCADO-USD}}",
+       "{{MERCADO-AUTO-USD}}"
+      ],
+      [
+       "Captar {{SUP-CAPTURA-2A}} en 2 años × tarifa {{TARIFA-USUARIO}}",
+       "{{PROY-ANUAL-5}} por año",
+       "{{PROY-AUTO-5}} por año"
+      ]
+     ],
+     "destacar": 4,
+     "pasoDestacada": 0
+    },
+    {
+     "id": "q",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 74,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "**Primer trimestre:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}} trabajos → {{Q1-TARIFAS-40}} con ticket de {{SUP-TICKET-USD}}; el objetivo de {{META-INGRESOS-TRIM}} pide un ticket de {{TICKET-PARA-OBJETIVO}}. Supuestos del mentor, a validar con datos propios.",
+     "tamano": "s",
+     "caja": "amarilla"
+    }
+   ]
+  },
+  {
+   "id": "x-economia",
+   "titulo": "Anexo B · Unit economics",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Separar valor del trabajo, tarifa, facturación bruta, CAC, LTV, costos y resultado; sin inventar lo que no se midió.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "CAC, costos de IA y servidor, y resultado neto: sin dato confirmado. Con 1 arreglo por año y ticket de USD 40, un cliente deja ≈ USD 6 por año: captar un cliente tiene que costar menos que eso multiplicado por los años que se queda. Por eso importan los canales baratos (porteros) y que el cliente vuelva.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Unit economics: P es el presupuesto del profesional; F, la tarifa de servicio, es el 15 % de P; el usuario paga T = P + F; la facturación bruta de Handyx es F. Con ticket de USD 40, F ≈ USD 6 por trabajo. CAC, costos de IA y servidor y resultado neto: sin dato confirmado. LTV = tarifa por trabajo × trabajos por año × años como cliente; con 1 arreglo por año ≈ USD 6 por año: el CAC tiene que ser menor que eso por los años de permanencia.",
+   "referencias": [
+    "EJ-P",
+    "EJ-F",
+    "EJ-T",
+    "INGRESO-POR-TRABAJO",
+    "PUENTE-PRESUP"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 7,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Anexo B · ==Unit economics==",
      "nivel": 3
     },
     {
@@ -1231,38 +1356,43 @@
      "columnas": [
       "Concepto",
       "Cómo se calcula",
-      "Ejemplo"
+      "Valor"
      ],
      "filas": [
       [
        "Valor del trabajo (P)",
        "Lo fija el profesional",
-       "{{EJ-P}}"
+       "{{EJ-P}} (ejemplo)"
       ],
       [
        "Tarifa de servicio (F)",
        "{{TARIFA-USUARIO}} de P, la paga el usuario",
-       "{{EJ-F}}"
-      ],
-      [
-       "Total del usuario (T)",
-       "P + F",
-       "{{EJ-T}}"
+       "{{EJ-F}} (ejemplo)"
       ],
       [
        "Facturación bruta Handyx",
-       "= F",
-       "{{EJ-F}}"
+       "= F · con ticket de {{SUP-TICKET-USD}}",
+       "{{INGRESO-POR-TRABAJO}} por trabajo"
       ],
       [
-       "Costos (cobro, fiscales, operativos)",
-       "Sin dato confirmado",
-       "—"
+       "CAC (costo de captar un cliente)",
+       "Gasto de captación ÷ clientes nuevos",
+       "Sin dato confirmado"
+      ],
+      [
+       "Costos de IA y servidor",
+       "Por trabajo",
+       "Sin dato confirmado"
+      ],
+      [
+       "LTV",
+       "F × trabajos por año × años como cliente",
+       "{{INGRESO-POR-TRABAJO}} por año con 1 arreglo"
       ],
       [
        "Resultado neto",
-       "Sin dato confirmado",
-       "—"
+       "F − cobro − impuestos − IA y servidor − soporte",
+       "Sin dato confirmado"
       ]
      ]
     },
@@ -1277,7 +1407,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Volumen para {{META-INGRESOS-TRIM}} de ingresos brutos:** {{PUENTE-PRESUP}} en presupuestos de profesionales.\n**Trabajos** = objetivo ÷ ({{TARIFA-USUARIO}} × ticket medio). Sin ticket medido no hay pronóstico; con un ticket de ejemplo de {{EJ-TICKET-USD}} serían ≈ {{EJ-TRABAJOS-USD}}.",
+     "texto": "**Regla:** el CAC tiene que ser menor que el LTV. Con {{INGRESO-POR-TRABAJO}} por trabajo, importan los canales baratos (porteros) y que el cliente vuelva.\n**Volumen:** {{META-INGRESOS-TRIM}} de tarifas: {{PUENTE-PRESUP}} en presupuestos.",
      "tamano": "s",
      "caja": "gris"
     }
@@ -1285,7 +1415,7 @@
   },
   {
    "id": "x-validacion",
-   "titulo": "Anexo B · Validación",
+   "titulo": "Anexo C · Validación",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -1313,7 +1443,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo B · ==Validación==",
+     "texto": "Anexo C · ==Validación==",
      "nivel": 3
     },
     {
@@ -1379,7 +1509,7 @@
   },
   {
    "id": "x-roadmap",
-   "titulo": "Anexo C · Roadmap",
+   "titulo": "Anexo D · Roadmap",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -1406,7 +1536,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo C · ==Roadmap==",
+     "texto": "Anexo D · ==Roadmap==",
      "nivel": 3
     },
     {
@@ -1494,17 +1624,17 @@
   },
   {
    "id": "x-competidores",
-   "titulo": "Anexo D · Competidores",
+   "titulo": "Anexo E · Competidores en Argentina",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "informado",
    "transicion": "fundido",
-   "objetivo": "Matriz honesta con fuente y estado de verificación.",
+   "objetivo": "Matriz honesta de los competidores directos, con fuente y estado de verificación.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Fuentes indicadas por Ignacio: clickie.com.ar/terminos-y-condiciones y /como-funciona; muovi.com.ar/own-boss y App Store (id6757713850); homesolution.net y /ar/prestadores/registrar/1. Desde esta sesión no se pudieron abrir (dominios bloqueados): revalidar antes del evento.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Clickie: comisión al profesional según términos del 14/10/2026; orientación con IA y estimaciones de precio. Muovi: comisión cero temporal anunciada; herramientas para profesionales. Home Solution: recibir y comparar propuestas; cobro al prestador por acceso a oportunidades. Al usuario: sin dato confirmado en los tres. Handyx: 0 % al profesional, 15 % al usuario visible antes de contratar. Diferenciación posible (no demostrada): herramientas por oficio, confianza, historial y clientes que vuelven a elegir al profesional.",
+   "notas": "Clickie, Muovi y Home Solution: fuentes indicadas por Ignacio (clickie.com.ar/terminos-y-condiciones y /como-funciona; muovi.com.ar/own-boss y App Store id6757713850; homesolution.net); dominios bloqueados en esta sesión. IguanaFix: Cronista (giro a clientes corporativos) e Infonegocios. Servidos: servidos.ar. Yo te lo arreglo: Infonegocios. Zolvers: Developargentina. Búsqueda web del 04/11/2026; revalidar.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Competidores directos en Argentina: Clickie (comisión al profesional; orientación con IA y estimación de precio), Muovi (comisión cero temporal anunciada; herramientas para profesionales), Home Solution (cobro por acceso a oportunidades; comparar propuestas), IguanaFix (reparaciones con tarifas estandarizadas; según Cronista, se enfocó en empresas), Servidos y Yo te lo arreglo (oficios del hogar; modelo sin dato confirmado) y Zolvers (prestadores verificados). Handyx: 0 % al profesional y 15 % al usuario visible antes de contratar.",
    "referencias": [
     "FEE-ESPECIALISTA",
     "TARIFA-USUARIO"
@@ -1522,7 +1652,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo D · ==Competidores==",
+     "texto": "Anexo E · ==Competidores en Argentina==",
      "nivel": 3
     },
     {
@@ -1538,61 +1668,156 @@
      "tipo": "tabla",
      "columnas": [
       "Plataforma",
-      "Modelo de cobro",
+      "Cobro al profesional",
       "Funciones conocidas",
-      "Para el profesional",
-      "Fuente",
-      "Verificación"
+      "Fuente (a revalidar)"
      ],
      "filas": [
       [
        "Clickie",
-       "Comisión al profesional · al usuario: sin dato confirmado",
+       "Comisión (términos 14/10/2026)",
        "Orientación con IA, estimación de precio",
-       "Recibe trabajos con comisión",
-       "clickie.com.ar (términos 14/10/2026)",
-       "Indicada 04/11 · a revalidar"
+       "clickie.com.ar"
       ],
       [
        "Muovi",
-       "Comisión cero temporal (anunciada)",
+       "Comisión cero, temporal (anunciada)",
        "Herramientas para profesionales",
-       "Sin comisión por ahora",
-       "muovi.com.ar · App Store",
-       "Indicada 04/11 · a revalidar"
+       "muovi.com.ar · App Store"
       ],
       [
        "Home Solution",
-       "Cobro por acceso a oportunidades",
+       "Pago por acceso a oportunidades",
        "Recibir y comparar propuestas",
-       "Paga por oportunidades",
-       "homesolution.net",
-       "Indicada 04/11 · a revalidar"
+       "homesolution.net"
+      ],
+      [
+       "IguanaFix",
+       "Sin dato confirmado",
+       "Reparaciones con tarifas estandarizadas; foco en empresas",
+       "Cronista · Infonegocios"
+      ],
+      [
+       "Servidos",
+       "Sin dato confirmado",
+       "Oficios del hogar, local y obra",
+       "servidos.ar"
+      ],
+      [
+       "Yo te lo arreglo",
+       "Sin dato confirmado",
+       "Electricidad, plomería, gas y más",
+       "Infonegocios"
+      ],
+      [
+       "Zolvers",
+       "Sin dato confirmado",
+       "Prestadores verificados (hogar y empresas)",
+       "Developargentina"
       ],
       [
        "Handyx",
-       "{{FEE-ESPECIALISTA}} al profesional · {{TARIFA-USUARIO}} al usuario",
-       "Pedido por oficio, propuestas, agenda, caja",
-       "Cobra su presupuesto completo",
-       "Modelo definido 04/11",
-       "Propio"
+       "{{FEE-ESPECIALISTA}} · el usuario paga {{TARIFA-USUARIO}}",
+       "Pedido por oficio, HandIA (en desarrollo), agenda",
+       "Modelo definido 04/11"
       ]
      ],
-     "destacar": 3,
+     "destacar": 7,
      "pasoDestacada": 0
+    }
+   ]
+  },
+  {
+   "id": "x-competidores-mundo",
+   "titulo": "Anexo F · Competidores en la región y el mundo",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar que el modelo existe afuera y en qué se diferencia Handyx.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Fuentes de la búsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix en Uruguay, México y Brasil), Housecall Pro / Jobber / comparadores (Thumbtack, Angi, Taskrabbit, Checkatrade). Los modelos de cobro de EE. UU. y Reino Unido vienen de sitios de comparación y algunos se contradicen (Taskrabbit): revalidar en sus páginas oficiales. Uruguay: sin resultados propios, solo IguanaFix.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Región: Zolvers (Chile, México, Colombia), Ay Fix (México), GoFixii (Colombia, con pagos protegidos) e IguanaFix (Uruguay, México; Brasil vendido). EE. UU. y Europa: Thumbtack y Angi cobran al profesional por contacto (Thumbtack suma membresía), Taskrabbit cobra comisión según fuentes que se contradicen, Checkatrade (Reino Unido) cobra suscripción. Diferencial posible de Handyx: el profesional no paga comisión por su trabajo, más herramientas por oficio, historial y clientes que vuelven; no está demostrado.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 7,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Anexo F · ==Competidores en la región y el mundo==",
+     "nivel": 3
+    },
+    {
+     "id": "tab",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 18,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "tabla",
+     "columnas": [
+      "Dónde",
+      "Plataformas",
+      "Cómo cobran al profesional (según fuentes públicas)"
+     ],
+     "filas": [
+      [
+       "México",
+       "Ay Fix · Zolvers · IguanaFix",
+       "Sin dato confirmado"
+      ],
+      [
+       "Colombia",
+       "GoFixii (pagos protegidos) · Zolvers",
+       "Sin dato confirmado"
+      ],
+      [
+       "Chile",
+       "Zolvers",
+       "Sin dato confirmado"
+      ],
+      [
+       "Uruguay",
+       "IguanaFix",
+       "Sin dato confirmado"
+      ],
+      [
+       "EE. UU.",
+       "Thumbtack · Angi · Taskrabbit",
+       "Pago por contacto (Thumbtack, Angi) · comisión (Taskrabbit, fuentes en conflicto)"
+      ],
+      [
+       "Reino Unido",
+       "Checkatrade",
+       "Suscripción"
+      ]
+     ]
     },
     {
      "id": "dif",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 75,
+      "y": 72,
       "w": 90
      },
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "**Diferenciación posible (no demostrada):** herramientas útiles por oficio + confianza + historial de trabajo + clientes que vuelven a elegir al profesional. El uso recurrente podría fortalecerla. No decimos que otros no tengan IA, herramientas o comisión cero.",
+     "texto": "**Diferencial posible (no demostrado):** el profesional no paga comisión por su trabajo; Handyx cobra una tarifa visible al usuario y suma herramientas por oficio, historial y clientes que vuelven. Las funciones se copian; la combinación y el uso diario son la apuesta.",
      "tamano": "s",
      "caja": "amarilla"
     }
@@ -1600,7 +1825,7 @@
   },
   {
    "id": "x-inversion",
-   "titulo": "Anexo E · Inversión",
+   "titulo": "Anexo G · Inversión",
    "disposicion": "izquierda",
    "paleta": "azul",
    "duracion": 30,
@@ -1627,7 +1852,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo E · ==Inversión==",
+     "texto": "Anexo G · ==Inversión==",
      "nivel": 3
     },
     {
@@ -1697,7 +1922,7 @@
   },
   {
    "id": "x-preguntas-1",
-   "titulo": "Anexo F · Preguntas difíciles (1/2)",
+   "titulo": "Anexo H · Preguntas difíciles",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -1707,7 +1932,7 @@
    "objetivo": "Respuestas breves y defendibles, sin cifras ni certezas inventadas.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuestas completas en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "1. ¿Por qué creen posible captar el 20 % de los trabajos locales? Es una aspiración, no un pronóstico: todavía no medimos cuántos trabajos se contratan en el partido. Primero, la meta operativa de diciembre. 2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina? Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores. 3. ¿Qué significa USD 100.000 de ingresos brutos? Las tarifas que cobra Handyx (15 % del presupuesto), antes de costos: ≈ USD 666.667 en presupuestos. No es la inversión que pedimos. 4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran? Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados. 5. ¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
+   "lectura": "1. ¿Por qué creen posible captar el 20 % de los trabajos locales? Es una aspiración: con 1 arreglo por hogar por año serían ≈ 13.000 trabajos en el trimestre. Todavía no medimos frecuencia ni ticket; primero, la meta operativa de diciembre. 2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina? Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores. 3. ¿Qué significa USD 100.000 de ingresos brutos? Tarifas de Handyx (15 %) antes de costos: ≈ USD 666.667 en presupuestos. Con el 20 % del trimestre pide un ticket de ≈ USD 51; con USD 40 serían ≈ USD 78.000. 4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran? Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados. 5. ¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -1722,7 +1947,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo F · ==Preguntas difíciles (1/2)==",
+     "texto": "Anexo H · ==Preguntas difíciles (1/2)==",
      "nivel": 3
     },
     {
@@ -1743,7 +1968,7 @@
      "filas": [
       [
        "1. ¿Por qué creen posible captar el 20 % de los trabajos locales?",
-       "Es una aspiración, no un pronóstico: todavía no medimos cuántos trabajos se contratan en el partido. Primero, la meta operativa de diciembre."
+       "Es una aspiración: con 1 arreglo por hogar por año serían ≈ 13.000 trabajos en el trimestre. Todavía no medimos frecuencia ni ticket; primero, la meta operativa de diciembre."
       ],
       [
        "2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina?",
@@ -1751,7 +1976,7 @@
       ],
       [
        "3. ¿Qué significa USD 100.000 de ingresos brutos?",
-       "Las tarifas que cobra Handyx (15 % del presupuesto), antes de costos: ≈ USD 666.667 en presupuestos. No es la inversión que pedimos."
+       "Tarifas de Handyx (15 %) antes de costos: ≈ USD 666.667 en presupuestos. Con el 20 % del trimestre pide un ticket de ≈ USD 51; con USD 40 serían ≈ USD 78.000."
       ],
       [
        "4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran?",
@@ -1767,7 +1992,7 @@
   },
   {
    "id": "x-preguntas-2",
-   "titulo": "Anexo F · Preguntas difíciles (2/2)",
+   "titulo": "Anexo I · Preguntas difíciles",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -1777,7 +2002,7 @@
    "objetivo": "Respuestas breves y defendibles, sin cifras ni certezas inventadas.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuestas completas en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "6. ¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar? Las funciones se copian. Apostamos a la combinación: presupuesto completo, herramientas por oficio, historial y clientes que vuelven. Hay que demostrarlo con uso. 7. ¿Cómo recauda Handyx el 15 %? El circuito de cobro y rendición está en definición; en las pruebas se coordinó a mano. La tarifa se muestra antes de contratar. 8. ¿Cómo van a captar y retener profesionales? Captar: preregistro, porteros y boca a boca de oficios. Retener: 0 % de comisión, herramientas para el día a día y clientes que vuelven. Lo medimos. 9. ¿Por qué USD 100.000 y qué hitos financian? Tecnología, operaciones y marketing. La asignación y los hitos están pendientes de aprobación; el primero es la meta operativa de diciembre. 10. ¿Qué harían si los primeros clientes no vuelven? Es la prueba clave. Revisaríamos precio, calidad y seguimiento antes de escalar: mejor aprender con pocos casos que crecer sin retención.",
+   "lectura": "6. ¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar? Afuera cobran al profesional por comisión, contacto o suscripción. Nosotros no le cobramos por su trabajo y sumamos herramientas e historial. Las funciones se copian; hay que demostrarlo con uso. 7. ¿Cómo recauda Handyx el 15 %? El circuito de cobro y rendición está en definición; en las pruebas se coordinó a mano. La tarifa se muestra antes de contratar. 8. ¿Cómo van a captar y retener profesionales? Captar: preregistro, porteros y boca a boca de oficios. Retener: 0 % de comisión, herramientas para el día a día y clientes que vuelven. Lo medimos. 9. ¿Por qué USD 100.000 y qué hitos financian? Tecnología, operaciones y marketing. La asignación y los hitos están pendientes de aprobación; el primero es la meta operativa de diciembre. 10. ¿Qué harían si los primeros clientes no vuelven? Es la prueba clave. Revisaríamos precio, calidad y seguimiento antes de escalar: mejor aprender con pocos casos que crecer sin retención.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -1792,7 +2017,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "titulo",
-     "texto": "Anexo F · ==Preguntas difíciles (2/2)==",
+     "texto": "Anexo I · ==Preguntas difíciles (2/2)==",
      "nivel": 3
     },
     {
@@ -1813,7 +2038,7 @@
      "filas": [
       [
        "6. ¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar?",
-       "Las funciones se copian. Apostamos a la combinación: presupuesto completo, herramientas por oficio, historial y clientes que vuelven. Hay que demostrarlo con uso."
+       "Afuera cobran al profesional por comisión, contacto o suscripción. Nosotros no le cobramos por su trabajo y sumamos herramientas e historial. Las funciones se copian; hay que demostrarlo con uso."
       ],
       [
        "7. ¿Cómo recauda Handyx el 15 %?",

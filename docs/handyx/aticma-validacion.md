@@ -14,14 +14,29 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 3. **Presentación:** **Abrir pantalla pública** → arrastrar al proyector → **F** (pantalla completa). En la notebook queda el presentador.
    Solo presentación (sin presentador): `/presentar/?deck=handyx-aticma&version=evento`.
 4. Diapositiva 7 tiene dos pasos: → al decir «Hoy empezamos en Mar del Plata». Avanzar nunca entra a los anexos.
-5. **Anexos para el jurado:** Mayús + A (unit economics), B (validación), C (roadmap), D (competidores), E (inversión), F y G (preguntas 1/2 y 2/2);
+5. **Anexos para el jurado:** Mayús + A (proyección), B (unit economics), C (validación), D (roadmap), E (competidores en Argentina),
+   F (región y mundo), G (inversión), H e I (preguntas 1/2 y 2/2);
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (15 páginas: 7 diapositivas, el paso 2 de la 7 y 7 anexos), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (17 páginas: 7 diapositivas, el paso 2 de la 7 y 9 anexos), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
+
+## Pedido del mentor (Luigi, ATICMA, WhatsApp del 04/11)
+
+| Pedido | Dónde quedó |
+|---|---|
+| «Hay Clickie y 3 o 4 más en Argentina; varios en Colombia, Uruguay, Chile, México, Europa y EE. UU.» | Diapositiva 6 (mapa por modelo de cobro) y anexos E (Argentina: Clickie, Muovi, Home Solution, IguanaFix, Servidos, Yo te lo arreglo, Zolvers) y F (región y mundo) |
+| «Encontrar tu diferencial» | El profesional no paga comisión por su trabajo (afuera: comisión, pago por contacto o suscripción) + herramientas, historial y clientes que vuelven; rotulado como no demostrado |
+| «Tirar números aunque no los digas: que la filmina justifique "proyectamos ganar X"» | Diapositiva 5: hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 M; 20 % del trimestre ≈ 13.000 trabajos ≈ USD 78.000; USD 100.000 pide ticket ≈ USD 51. Anexo A con la cuenta completa y el 5 % en 2 años |
+| «Cobramos X, CAC, LTV, costos de IA + server, margen» | Anexo B: tarifa por trabajo ≈ USD 6 (ticket USD 40), LTV ≈ USD 6 por año con 1 arreglo; CAC, IA + servidor y resultado neto «sin dato confirmado» |
+| Ticket USD 40, 1 arreglo por año, 5 % en 2 años; mecánica 50.000 autos × 3 × USD 200 | Afirmaciones tipo **supuesto** con fuente «Luigi, 04/11»; mecánica como escenario fuera de los 6 rubros |
+| Ejemplo «20 % ~ 500 USD por usuario por mes, 80.000 usuarios, 40.000 USD por mes» | No se usa: mezcla unidades (500 × 80.000 no da 40.000) |
+
+⚠ **Coherencia:** con los supuestos del mentor, el 20 % del primer trimestre da ≈ USD 78.000 de tarifas, no USD 100.000 (hace falta un
+ticket de ≈ USD 51 o más participación). La pantalla lo muestra así; el guion sigue diciendo «cien mil dólares» (ver ajustes sugeridos).
 
 ## Control de calidad
 
@@ -55,6 +70,11 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 |---|---|---|
 | Guion, modelo 0 % / 15 %, metas (20 %, USD 100.000, 72, 40 %), inversión USD 100.000 | Prompt maestro del 04/11/2026 (Ignacio) | Decisión/aspiración del fundador |
 | 259.623 hogares (Censo 2022) | Ignacio; INDEC vía La Capital MdP lo publica como viviendas particulares ocupadas | **Confirmar la unidad** con la fuente municipal (mardelplata.gob.ar, bloqueada desde esta sesión) |
+| Supuestos de mercado (1 arreglo/año, USD 40, 5 % en 2 años, mecánica) | Luigi, mentor ATICMA (WhatsApp del 04/11/2026) | Supuestos a validar con datos propios |
+| IguanaFix | [Cronista (foco corporativo)](https://www.cronista.com/apertura/empresas/cambio-de-foco-iguanafix-deja-a-clientes-individuales-y-va-por-los-corporativos) · [Infonegocios](https://infonegocios.info/que-esta-pasando/iguanafix-supero-mas-de-150-mil-servicios-en-argentina-el-service-de-aire-acondicionado-lo-mas-pedido) | Búsqueda web 04/11/2026; notas de fechas variadas |
+| Servidos · Yo te lo arreglo · Zolvers | [servidos.ar](https://servidos.ar/prensa) · [Infonegocios](https://infonegocios.info/amp/nota-principal/yo-te-lo-arreglo) · [Developargentina](https://developargentina.com/directorio/zolvers) | Búsqueda web 04/11/2026 |
+| Ay Fix · GoFixii | [Xataka MX](https://www.xataka.com.mx/aplicaciones/ay-fix-es-la-aplicacion-mexicana-que-te-ayuda-a-encontrar-plomero-cerrajero-o-cualquier-servicio-que-necesites) · [Valora Analitik](https://www.valoraanalitik.com/app-para-contratar-plomero-electricista-y-otros-servicios-de-forma-segura-en-colombia/) | Búsqueda web 04/11/2026 |
+| Thumbtack · Angi · Taskrabbit · Checkatrade | [Housecall Pro](https://www.housecallpro.com/resources/thumbtack-vs-angi/) · [Jobber](https://getjobber.com/academy/taskrabbit-alternatives/) · [comparador 2026](https://unstar.app/blog/taskrabbit-thumbtack-angi-handy-porch-home-service-apps-ranked-2026) | Sitios de comparación (Taskrabbit con datos en conflicto): **revalidar** en las páginas oficiales |
 | Clickie | clickie.com.ar/terminos-y-condiciones (14/10/2026) y /como-funciona | Indicado por Ignacio el 04/11; dominio bloqueado aquí: **revalidar** |
 | Muovi | muovi.com.ar/own-boss · App Store id6757713850 | Ídem |
 | Home Solution | homesolution.net · /ar/prestadores/registrar/1 | Ídem |

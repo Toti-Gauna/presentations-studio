@@ -161,3 +161,6 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 04/11 (tarde): pedido de Ignacio — las pantallas de celular salen de la **demo de la landing** (la app todavía se está puliendo):
   `brands/handyx/assets/demo-landing/` (HandIA en uso, inicio, describir, agendas, mensajes, pedido nuevo) + `scripts/landing/`. Se descartan
   las pantallas con la tarifa anterior. Se quitó el concepto dibujado de HandIA.
+- 04/11 (noche): pedido de Luigi (mentor ATICMA): diapositiva 5 con la cuenta de mercado (supuestos rotulados), diapositiva 6 como mapa
+  por modelo de cobro con competidores de Argentina, región y EE. UU./Europa; anexos A proyección, B unit economics (CAC, LTV, IA + servidor),
+  E y F competidores. 9 anexos (A–I). ⚠ Con sus supuestos el 20 % del trimestre da ≈ USD 78.000, no 100.000: ver ajustes sugeridos §4.

@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 7 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 9 láminas de respaldo.
 
 ## Ritmo
 
@@ -19,8 +19,8 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 2 | HandIA te orienta | 0:25–0:55 | 30 | 62 | 124 ppm | «Imaginen algo»: HandIA y el camino directo por oficio | Concepto de HandIA rotulado + capturas reales del pedido por oficio |
 | 3 | Herramientas para el profesional | 0:55–1:17 | 22 | 28 | 76 ppm | Trabajos, ingresos, gastos, herramientas; IA a futuro | Agenda y caja reales; gastos y herramientas como propuesta; visión IA |
 | 4 | Ya empezamos | 1:17–1:38 | 21 | 36 | 103 ppm | Apps desarrolladas, porteros, primeros trabajos y comisiones | Checklist de evidencia (sin cantidades sin conciliar) + inicio de las dos apps |
-| 5 | Mercado y visión | 1:38–2:04 | 26 | 61 | 141 ppm ⚠ | 6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10 | 259.623 hogares, aspiración trimestral, círculos Argentina ⊃ General Pueyrredon |
-| 6 | Competencia y modelo | 2:04–2:30 | 26 | 58 | 134 ppm | «La conocemos»: comisión al profesional vs. 15 % al usuario | Tabla Clickie / Muovi / Home Solution / Handyx y reparto de $ 115.000 |
+| 5 | Mercado y visión | 1:38–2:04 | 26 | 61 | 141 ppm ⚠ | 6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10 | Cuenta: hogares × 1 arreglo × USD 40 ≈ USD 10,4 M/año; 20 % del trimestre ≈ 13.000 trabajos ≈ USD 78.000 (USD 100.000 pide ticket ≈ USD 51) |
+| 6 | Competencia y modelo | 2:04–2:30 | 26 | 58 | 134 ppm | «La conocemos»: comisión al profesional vs. 15 % al usuario | Mapa por modelo de cobro (comisión, contacto, suscripción, cero temporal) con Argentina, región y EE. UU./Europa; reparto de $ 115.000 |
 | 7 | Equipo, inversión y visión | 2:30–3:00 | 30 | 88 | 176 ppm ⚠ | Equipo, agentes de IA, USD 100.000, Silicon Valley, cierre | Equipo e inversión → (paso 2) «Hoy empezamos… arreglar el mundo» con los Handys |
 
 ## Guion literal
@@ -79,12 +79,14 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 
 | Atajo | Anexo | Para qué |
 |---|---|---|
-| Mayús + A | Anexo A · Unit economics | Separar valor del trabajo, tarifa, facturación bruta, costos y resultado; mostrar el volumen necesario sin pronosticar. |
-| Mayús + B | Anexo B · Validación | Mostrar qué evidencia hay, qué falta documentar y cuál es la próxima prueba. |
-| Mayús + C | Anexo C · Roadmap | Separar lo que existe, lo próximo comprometido y la visión, sin fechas inventadas. |
-| Mayús + D | Anexo D · Competidores | Matriz honesta con fuente y estado de verificación. |
-| Mayús + E | Anexo E · Inversión | Mostrar el pedido y lo que falta aprobar, sin porcentajes inventados. |
-| Mayús + F | Anexo F · Preguntas difíciles (1/2) | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
-| Mayús + G | Anexo F · Preguntas difíciles (2/2) | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
+| Mayús + A | Anexo A · Proyección | Mostrar la cuenta que justifica los números y sus supuestos, como pidió el mentor. |
+| Mayús + B | Anexo B · Unit economics | Separar valor del trabajo, tarifa, facturación bruta, CAC, LTV, costos y resultado; sin inventar lo que no se midió. |
+| Mayús + C | Anexo C · Validación | Mostrar qué evidencia hay, qué falta documentar y cuál es la próxima prueba. |
+| Mayús + D | Anexo D · Roadmap | Separar lo que existe, lo próximo comprometido y la visión, sin fechas inventadas. |
+| Mayús + E | Anexo E · Competidores en Argentina | Matriz honesta de los competidores directos, con fuente y estado de verificación. |
+| Mayús + F | Anexo F · Competidores en la región y el mundo | Mostrar que el modelo existe afuera y en qué se diferencia Handyx. |
+| Mayús + G | Anexo G · Inversión | Mostrar el pedido y lo que falta aprobar, sin porcentajes inventados. |
+| Mayús + H | Anexo H · Preguntas difíciles | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
+| Mayús + I | Anexo I · Preguntas difíciles | Respuestas breves y defendibles, sin cifras ni certezas inventadas. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.

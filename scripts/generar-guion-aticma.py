@@ -34,8 +34,8 @@ VOZ = {
     'a-handia': ('«Imaginen algo»: HandIA y el camino directo por oficio', 'Concepto de HandIA rotulado + capturas reales del pedido por oficio'),
     'a-profesional': ('Trabajos, ingresos, gastos, herramientas; IA a futuro', 'Agenda y caja reales; gastos y herramientas como propuesta; visión IA'),
     'a-empezamos': ('Apps desarrolladas, porteros, primeros trabajos y comisiones', 'Checklist de evidencia (sin cantidades sin conciliar) + inicio de las dos apps'),
-    'a-mercado': ('6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10', '259.623 hogares, aspiración trimestral, círculos Argentina ⊃ General Pueyrredon'),
-    'a-competencia': ('«La conocemos»: comisión al profesional vs. 15 % al usuario', 'Tabla Clickie / Muovi / Home Solution / Handyx y reparto de $ 115.000'),
+    'a-mercado': ('6 profesiones, 260 mil hogares, 20 %, USD 100.000, 72 y 4 de cada 10', 'Cuenta: hogares × 1 arreglo × USD 40 ≈ USD 10,4 M/año; 20 % del trimestre ≈ 13.000 trabajos ≈ USD 78.000 (USD 100.000 pide ticket ≈ USD 51)'),
+    'a-competencia': ('«La conocemos»: comisión al profesional vs. 15 % al usuario', 'Mapa por modelo de cobro (comisión, contacto, suscripción, cero temporal) con Argentina, región y EE. UU./Europa; reparto de $ 115.000'),
     'a-equipo': ('Equipo, agentes de IA, USD 100.000, Silicon Valley, cierre', 'Equipo e inversión → (paso 2) «Hoy empezamos… arreglar el mundo» con los Handys'),
 }
 for i, sid in enumerate(v['escenas'], 1):
