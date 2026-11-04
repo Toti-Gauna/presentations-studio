@@ -28,8 +28,8 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 | Pregunta | Estado |
 |---|---|
 | ¿El discurso sigue siendo el de Ignacio? | Sí: el guion oficial está literal en las notas, repartido por diapositiva. Ajustes solo sugeridos, en un archivo aparte. |
-| ¿Se muestra el recorrido de usuario y HandIA? | Sí (diapositiva 2): camino HandIA como **concepto rotulado** («Concepto · en desarrollo») y camino directo con capturas reales. |
-| ¿Se muestran las herramientas del profesional? | Sí (3): agenda e ingresos con capturas reales; gastos y herramientas por oficio rotulados como propuesta visual; IA como visión. |
+| ¿Se muestra el recorrido de usuario y HandIA? | Sí (diapositiva 2): HandIA en la demo de la landing (rotulado «Demo · HandIA en desarrollo») y camino directo por oficio. |
+| ¿Se muestran las herramientas del profesional? | Sí (3): agenda y mensajes de la demo; gastos y herramientas por oficio rotulados como propuesta visual; IA como visión. |
 | ¿Competencia sin mentir? | Sí (6 y anexo D): «Sin dato confirmado» donde no hay dato; no se dice que nadie más tenga IA, herramientas o comisión cero. |
 | ¿Tarifa 0 % / 15 % correcta? | Sí: 0 % al profesional, 15 % al usuario visible antes de contratar, ejemplo $ 100.000 → $ 115.000 sin descontar costos. No se mencionan modelos ni promociones anteriores. |
 | ¿Tracción comprobable vs. visión? | Sí: la 4 no muestra cantidades sin conciliar (rótulo «Informado por el fundador · cantidades en conciliación»). |
@@ -58,7 +58,7 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 | Clickie | clickie.com.ar/terminos-y-condiciones (14/10/2026) y /como-funciona | Indicado por Ignacio el 04/11; dominio bloqueado aquí: **revalidar** |
 | Muovi | muovi.com.ar/own-boss · App Store id6757713850 | Ídem |
 | Home Solution | homesolution.net · /ar/prestadores/registrar/1 | Ídem |
-| Capturas | Prototipos handyx-client-fe / handyx-specialist-fe en modo de prueba (datos ficticios) | Reales; HandIA desactivada en la app |
+| Pantallas de celular | Demo interactiva de la landing (landing.handyc.com/demo, `Handy-landing-page-fe` @ ac3b245), datos ficticios — pedido de Ignacio del 04/11: la app todavía se está puliendo | Rotuladas «Demo»; se descartaron las que muestran la tarifa anterior. Procedimiento: `brands/handyx/assets/demo-landing/LEEME.md` |
 
 ## Pendientes concretos
 
@@ -66,7 +66,7 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 2. **Conciliar** trabajos y comisiones cobradas (informados: 5) y sacar un corte del CRM de registrados (informados: 56) antes de mostrar cifras.
 3. **Revalidar** Clickie, Muovi y Home Solution y la fuente municipal de hogares desde una red con acceso (en esta sesión hay que habilitar
    esos dominios en la configuración de red).
-4. **Circuito de cobro del 15 %** (cómo se recauda y rinde) y su implementación en las apps: hoy las apps muestran el esquema anterior.
+4. **Circuito de cobro del 15 %** (cómo se recauda y rinde) y su implementación en las apps y en la demo de la landing: hoy muestran el esquema anterior (por eso no se usan las pantallas de presupuestos, precio y cobros).
 5. **Asignación de los USD 100.000** e hitos a financiar (anexo E queda «pendiente de aprobar»).
 6. Fechas del primer trimestre comercial y ticket medio real (sin ticket no hay cantidad de trabajos).
 7. Probar el control desde el celular en el lugar (datos móviles) y el proyector real.

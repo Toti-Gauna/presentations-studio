@@ -158,3 +158,6 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   tramo), F en el presentador, PDF con una página por paso cuando algo sale de escena, `npm run exportar:pptx`.
 - Docs: `docs/handyx/aticma-{guion,validacion,preguntas,ajustes-sugeridos}.md`, capturas en `docs/handyx/capturas-aticma/`.
 - Verificado: verify, e2e 32/32, capturas 1920 y 1366, PDF 15 p., lectura 17 p., PPTX 15. Pendientes en `aticma-validacion.md`.
+- 04/11 (tarde): pedido de Ignacio — las pantallas de celular salen de la **demo de la landing** (la app todavía se está puliendo):
+  `brands/handyx/assets/demo-landing/` (HandIA en uso, inicio, describir, agendas, mensajes, pedido nuevo) + `scripts/landing/`. Se descartan
+  las pantallas con la tarifa anterior. Se quitó el concepto dibujado de HandIA.

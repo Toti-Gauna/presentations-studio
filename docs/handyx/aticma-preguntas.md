@@ -15,7 +15,7 @@ Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta
    edificios y cobramos comisión. Estamos conciliando cantidades y comprobantes con los registros; preferimos mostrar la cifra cuando esté
    conciliada. Los cobros se coordinaron a mano, no con un flujo automatizado.
 5. **¿HandIA funciona hoy o es una función prevista?** Es prevista, en desarrollo; en la app actual está desactivada. Hoy se puede elegir el
-   oficio, describir el problema con fotos y recibir propuestas. La pantalla de HandIA del pitch es un concepto rotulado.
+   oficio, describir el problema con fotos y recibir propuestas. La pantalla de HandIA del pitch es la demo de la landing (rotulada), no el producto en uso.
 6. **¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar?** Las funciones se pueden copiar: Clickie ya describe
    orientación con IA y Muovi anuncia comisión cero temporal. Apostamos a la combinación de presupuesto completo para el profesional,
    herramientas útiles por oficio, confianza e historial con clientes que vuelven a elegirlo. Si se usa todos los días, eso pesa más que una

@@ -84,58 +84,58 @@
    "estado": "final"
   },
   {
-   "id": "handia-concepto",
+   "id": "demo-handia",
    "tipo": "imagen",
-   "archivo": "conceptos/handia-concepto.svg",
-   "procedencia": "Propuesta visual de HandIA creada para el pitch (04/11/2026); rotulada como concepto en desarrollo",
+   "archivo": "demo-landing/usuario-handia.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-usuario-pedido",
+   "id": "demo-usuario-inicio",
    "tipo": "imagen",
-   "archivo": "capturas/usuario-pedido.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/usuario-inicio.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-usuario-describir",
+   "id": "demo-usuario-describir",
    "tipo": "imagen",
-   "archivo": "capturas/usuario-pedido-describir.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/usuario-describir.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-usuario-inicio",
+   "id": "demo-usuario-agenda",
    "tipo": "imagen",
-   "archivo": "capturas/usuario-inicio.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/usuario-agenda.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-especialista-agenda",
+   "id": "demo-especialista-agenda",
    "tipo": "imagen",
-   "archivo": "capturas/especialista-agenda.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/especialista-agenda.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-especialista-cobro",
+   "id": "demo-especialista-mensajes",
    "tipo": "imagen",
-   "archivo": "capturas/especialista-cobro.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/especialista-mensajes.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
   {
-   "id": "cap-especialista-disponibilidad",
+   "id": "demo-especialista-pedido",
    "tipo": "imagen",
-   "archivo": "capturas/especialista-disponibilidad.webp",
-   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "archivo": "demo-landing/especialista-pedido.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   }
@@ -280,10 +280,10 @@
    "transicion": "fundido",
    "objetivo": "Mostrar el recorrido del usuario: el momento en que una foto y una descripción se convierten en una solicitud comprensible, y el camino directo por oficio.",
    "guion": "Imaginen algo: se les rompió algo y no saben a quién llamar. Con HandIA, nuestro asistente de inteligencia artificial, van a poder mandar una foto, describir el problema y recibir orientación sobre qué especialista necesitan y un costo aproximado para comparar presupuestos. El presupuesto final lo fija el profesional.\n\nSi ya saben a quién llamar, eligen directamente el oficio y comparan presupuestos.",
-   "notas": "0:25–0:55. Camino 1 (HandIA) = CONCEPTO en desarrollo: pantalla dibujada y rotulada, no es una captura. HandIA está desactivada en la app actual. La referencia de costo es orientativa y no es un presupuesto; el profesional fija precio, alcance y disponibilidad.\nCamino 2 = capturas reales del prototipo de usuario (modo de prueba, datos ficticios): elegir el oficio y contar qué pasa con fotos opcionales.\nNo se muestran capturas de propuestas con precios.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Camino 1, en desarrollo: el usuario saca una foto, cuenta qué pasó y HandIA le sugiere el oficio y una referencia aproximada de costo; después compara presupuestos y el profesional fija el precio final. Camino 2, en el prototipo: si ya sabe qué oficio necesita, lo elige y publica su solicitud.",
+   "notas": "0:25–0:55. Pantallas de la demo interactiva de la landing (landing.handyc.com/demo), referencia visual de la app con datos ficticios; la app en pruebas todavía se está puliendo.\nCamino 1: HandIA en la demo (detecta el rubro y arma el pedido con la descripción y la foto). En el producto HandIA está en desarrollo; la referencia de costo aproximado todavía no aparece en la demo. El profesional fija precio, alcance y disponibilidad.\nCamino 2: elegir el oficio en el inicio y contar qué pasó con fotos.\nNo se muestran pantallas de presupuestos con tarifas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Camino 1, con HandIA (en desarrollo; se ve en la demo): el usuario cuenta qué pasó y manda una foto; HandIA detecta el oficio y arma el pedido, y a futuro dará una referencia aproximada de costo. Después compara presupuestos y el profesional fija el precio final. Camino 2: si ya sabe qué oficio necesita, lo elige y publica su solicitud.",
    "referencias": [],
-   "preguntas": "¿HandIA funciona hoy? → No: es una función prevista, en desarrollo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
+   "preguntas": "¿HandIA funciona hoy? → Está en desarrollo: lo que se ve es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
    "elementos": [
     {
      "id": "k",
@@ -336,11 +336,11 @@
      "entrada": "fundido",
      "tipo": "telefono",
      "alto": 60,
-     "leyenda": "Concepto · en desarrollo",
+     "leyenda": "Demo · HandIA en desarrollo",
      "pantallas": [
       {
-       "recurso": "handia-concepto",
-       "alt": "Concepto de HandIA: foto y descripción convertidas en una sugerencia de oficio"
+       "recurso": "demo-handia",
+       "alt": "Demo de HandIA: la descripción y la foto se convierten en un pedido de plomería"
       }
      ]
     },
@@ -348,7 +348,7 @@
      "id": "pasos",
      "area": "libre",
      "pos": {
-      "x": 21,
+      "x": 23,
       "y": 31,
       "w": 31
      },
@@ -401,8 +401,8 @@
      "leyenda": "Elegís el oficio",
      "pantallas": [
       {
-       "recurso": "cap-usuario-pedido",
-       "alt": "Prototipo: elegir el rubro"
+       "recurso": "demo-usuario-inicio",
+       "alt": "Demo: elegir el rubro en el inicio"
       }
      ]
     },
@@ -420,8 +420,8 @@
      "leyenda": "Publicás tu solicitud",
      "pantallas": [
       {
-       "recurso": "cap-usuario-describir",
-       "alt": "Prototipo: contar qué pasa con fotos opcionales"
+       "recurso": "demo-usuario-describir",
+       "alt": "Demo: contar qué pasó con fotos y pedir presupuestos"
       }
      ]
     },
@@ -436,7 +436,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Prototipo en pruebas · datos ficticios",
+     "texto": "Demo de la app · datos ficticios",
      "tamano": "s"
     }
    ]
@@ -452,8 +452,8 @@
    "transicion": "fundido",
    "objetivo": "Mostrar que Handyx quiere acompañar el trabajo diario del especialista, no solo enviarle un contacto.",
    "guion": "Del lado del profesional, reunimos trabajos, ingresos, gastos y herramientas por oficio. A futuro queremos potenciarlas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
-   "notas": "0:55–1:17. Trabajos y agenda, e ingresos (Caja: cobros reportados y verificados) existen en el prototipo del profesional: capturas reales en modo de prueba.\nGastos y herramientas por oficio NO existen todavía: se muestran como propuesta visual. La IA para el profesional es la próxima evolución (visión), sin funciones automáticas inventadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Para el profesional, Handyx reúne trabajos y agenda, ingresos, gastos y herramientas por oficio. Trabajos, agenda e ingresos están en el prototipo; gastos y herramientas por oficio son una propuesta. Próxima evolución: herramientas potenciadas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
+   "notas": "0:55–1:17. Pantallas de la demo de la landing (agenda y mensajes del profesional, datos ficticios). Trabajos, agenda e ingresos (cobros) existen en la app; la pantalla de cobros no se muestra porque todavía tiene la tarifa anterior.\nGastos y herramientas por oficio NO existen todavía: se muestran como propuesta visual. La IA para el profesional es la próxima evolución (visión), sin funciones automáticas inventadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Para el profesional, Handyx reúne trabajos y agenda, ingresos, gastos y herramientas por oficio. Trabajos, agenda e ingresos están en la app; gastos y herramientas por oficio son una propuesta. Próxima evolución: herramientas potenciadas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -498,8 +498,8 @@
      "leyenda": "Trabajos y agenda",
      "pantallas": [
       {
-       "recurso": "cap-especialista-agenda",
-       "alt": "Prototipo: agenda del profesional"
+       "recurso": "demo-especialista-agenda",
+       "alt": "Demo: agenda del profesional"
       }
      ]
     },
@@ -514,11 +514,11 @@
      "entrada": "fundido",
      "tipo": "telefono",
      "alto": 62,
-     "leyenda": "Ingresos",
+     "leyenda": "Clientes y chats",
      "pantallas": [
       {
-       "recurso": "cap-especialista-cobro",
-       "alt": "Prototipo: caja con cobros"
+       "recurso": "demo-especialista-mensajes",
+       "alt": "Demo: mensajes con clientes"
       }
      ]
     },
@@ -536,10 +536,10 @@
      "estilo": "contraste",
      "items": [
       {
-       "texto": "**Mis trabajos y agenda** · en el prototipo"
+       "texto": "**Mis trabajos y agenda** · en la app"
       },
       {
-       "texto": "**Ingresos** · en el prototipo"
+       "texto": "**Ingresos** · en la app (cobros)"
       },
       {
        "texto": "**Gastos** · propuesta visual"
@@ -588,7 +588,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Prototipo en pruebas · datos ficticios",
+     "texto": "Demo de la app · datos ficticios",
      "tamano": "s"
     }
    ]
@@ -604,7 +604,7 @@
    "transicion": "fundido",
    "objetivo": "Distinguir lo hecho (apps desarrolladas, pruebas, primeros trabajos y comisiones) de lo que viene.",
    "guion": "Ya contamos con ambas aplicaciones desarrolladas y las estamos probando. Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos y cobramos nuestras primeras comisiones. Ahora queremos llevar esa experiencia más allá de los edificios.",
-   "notas": "1:17–1:38. Todo lo de esta lámina es informado por Ignacio. Cantidades (trabajos, comisiones, registrados) NO se muestran: están en conciliación con los registros; ver anexo B.\nCapturas: inicio de las dos apps en modo de prueba (datos ficticios).\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "1:17–1:38. Todo lo de esta lámina es informado por Ignacio. Cantidades (trabajos, comisiones, registrados) NO se muestran: están en conciliación con los registros; ver anexo B.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Ya empezamos: la aplicación de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios se concretaron los primeros trabajos y se cobraron las primeras comisiones (cantidades en conciliación). Próximo paso: llevar esa experiencia más allá de los edificios.",
    "referencias": [],
    "preguntas": "¿Cuántos trabajos cobraron? → Los primeros, con ayuda de porteros; estamos conciliando cantidades y comprobantes y los mostramos cuando estén conciliados.",
@@ -708,8 +708,8 @@
      "leyenda": "App de usuario",
      "pantallas": [
       {
-       "recurso": "cap-usuario-inicio",
-       "alt": "Prototipo: inicio de la app de usuario"
+       "recurso": "demo-usuario-agenda",
+       "alt": "Demo: agenda del usuario"
       }
      ]
     },
@@ -727,8 +727,8 @@
      "leyenda": "App del profesional",
      "pantallas": [
       {
-       "recurso": "cap-especialista-disponibilidad",
-       "alt": "Prototipo: inicio de la app del profesional"
+       "recurso": "demo-especialista-pedido",
+       "alt": "Demo: pedido nuevo, el precio lo pone el profesional"
       }
      ]
     },
@@ -743,7 +743,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Prototipos en pruebas · datos ficticios",
+     "texto": "Demo de las apps · datos ficticios",
      "tamano": "s"
     }
    ]
@@ -1707,7 +1707,7 @@
    "objetivo": "Respuestas breves y defendibles, sin cifras ni certezas inventadas.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuestas completas en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "1. ¿Por qué creen posible captar el 20 % de los trabajos locales? Es una aspiración, no un pronóstico: todavía no medimos cuántos trabajos se contratan en el partido. Primero, la meta operativa de diciembre. 2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina? Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores. 3. ¿Qué significa USD 100.000 de ingresos brutos? Las tarifas que cobra Handyx (15 % del presupuesto), antes de costos: ≈ USD 666.667 en presupuestos. No es la inversión que pedimos. 4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran? Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados. 5. ¿HandIA funciona hoy? No: está prevista, en desarrollo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
+   "lectura": "1. ¿Por qué creen posible captar el 20 % de los trabajos locales? Es una aspiración, no un pronóstico: todavía no medimos cuántos trabajos se contratan en el partido. Primero, la meta operativa de diciembre. 2. ¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina? Es la visión a fines de 2027, no un plan validado: necesita más profesiones, red local por ciudad y canales como porteros y administradores. 3. ¿Qué significa USD 100.000 de ingresos brutos? Las tarifas que cobra Handyx (15 % del presupuesto), antes de costos: ≈ USD 666.667 en presupuestos. No es la inversión que pedimos. 4. ¿Cuántos trabajos tienen cobrados y cómo lo demuestran? Los primeros, con ayuda de porteros. Estamos conciliando cantidades y comprobantes; los mostramos cuando estén conciliados. 5. ¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -1759,7 +1759,7 @@
       ],
       [
        "5. ¿HandIA funciona hoy?",
-       "No: está prevista, en desarrollo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas."
+       "Está en desarrollo: lo que mostramos es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas."
       ]
      ]
     }
