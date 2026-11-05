@@ -4,7 +4,7 @@
 // 2 «qué especialista necesitan y un costo aproximado para comparar presupuestos» → HandIA detecta Plomería y da un rango;
 //   salen del celular tres presupuestos que se comparan ·
 // 3 «el presupuesto final lo fija el profesional» → Llave sella el precio en el presupuesto elegido ·
-// 4 «si ya saben a quién llamar, eligen el oficio y comparan presupuestos» → Camino 2: grilla de rubros, Gas, pedido publicado
+// 4 «si ya saben a quién llamar, eligen el oficio y comparan presupuestos» → Camino 2: el inicio real de la app (demo), elige Gas, pedido publicado
 //   y presupuestos que llegan.
 // Los Handys acompañan cada paso con sus poses: Grifo (la canilla que gotea) y Gota (plomería), Foco (el vecino),
 // Engranaje (HandIA que piensa), Llave (el especialista), Medidor (gas), Brocha y Aire (los otros oficios).
@@ -13,14 +13,6 @@ import { COLOR, entraTitulo, escena, pose, type Kit } from './comun/kit.ts';
 
 const PRES = ['EJ-PRES-1', 'EJ-PRES-2', 'EJ-PRES-3'] as const;
 const ESTRELLAS = [5, 5, 4];
-const OFICIOS = [
-  { ic: 'electricidad', txt: 'Electricidad' },
-  { ic: 'plomeria', txt: 'Plomería' },
-  { ic: 'gas', txt: 'Gas' },
-  { ic: 'cerrajeria', txt: 'Cerrajería' },
-  { ic: 'albanileria', txt: 'Albañilería' },
-  { ic: 'aire', txt: 'Aire acondicionado' },
-];
 const MOSAICOS = [
   { x: 1600, y: 96, d: 92, ic: 'herramienta' },
   { x: 1738, y: 196, d: 80, ic: 'llave-inglesa' },
@@ -241,12 +233,11 @@ export default escena({
     .disparador { position: absolute; left: 50%; bottom: 52px; width: 74px; height: 74px; margin-left: -37px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px #0A1528, 0 0 0 10px #fff; }
     .flash { position: absolute; inset: 0; background: #fff; z-index: 6; }
     .scr-of { background: #fff; z-index: 7; }
-    .of-tit { position: absolute; left: 16px; right: 10px; top: 20px; font-size: 25px; font-stretch: 104%; white-space: nowrap; }
-    .grilla { position: absolute; left: 14px; right: 14px; top: 74px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .ofi { position: relative; height: 108px; border-radius: 18px; background: #ECECEC; box-shadow: 0 5px 0 #D2D2D2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 6px; font-size: 20px; font-weight: 700; color: #1D2C4A; text-align: center; line-height: 1.05; }
-    .ofi .icono { width: 40px; height: 40px; }
-    .ofi .sel { position: absolute; inset: 0; border-radius: 18px; background: ${COLOR.azul}; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 5px 0 ${COLOR.azulOscuro}; }
-    .toque2 { position: absolute; left: 50%; top: 50%; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; background: rgba(255,255,255,.7); }
+    /* Camino 2: la misma captura del inicio de la demo (la base empieza 38 px más arriba) y el oficio Gas elegido encima */
+    .scr-of .captura2 { position: absolute; left: 0; top: -38px; width: 100%; height: 748px; object-fit: cover; object-position: top; }
+    .sel-gas { position: absolute; left: 225px; top: 147px; width: 96px; height: 83px; border-radius: 15px; background: ${COLOR.azul}; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 17px; font-weight: 800; box-shadow: 0 4px 0 ${COLOR.azulOscuro}, 0 0 0 3px ${COLOR.amarillo}; }
+    .sel-gas .icono { width: 30px; height: 30px; }
+    .toque2 { position: absolute; left: 273px; top: 189px; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; background: rgba(255,255,255,.7); }
     .hoja { position: absolute; left: 0; right: 0; bottom: 0; height: 196px; padding: 14px 22px 0; border-radius: 28px 28px 0 0; background: ${COLOR.azul}; color: #fff; z-index: 3; }
     .manija { width: 56px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.5); margin: 0 auto 18px; }
     .hoja .ok { display: flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 800; }
@@ -313,8 +304,8 @@ export default escena({
           <div class="camara"><div class="cam-modo">FOTO</div><div class="visor">${cocina('k-visor', c.img('personajes/grifo-d.webp', 'k-grifo-img'))}<i class="esq a"></i><i class="esq b"></i><i class="esq c"></i><i class="esq d"></i><i class="enfoque"></i></div><i class="disparador"></i></div>
         </div>
         <div class="scr scr-of">
-          <div class="of-tit t">¿Qué necesitás <mark>hoy</mark>?</div>
-          <div class="grilla">${OFICIOS.map((o) => `<div class="ofi o-${o.ic}">${c.icono(o.ic)}<span>${o.txt}</span>${o.ic === 'gas' ? `<div class="sel">${c.icono(o.ic, 'blanco')}<span>${o.txt}</span></div><i class="toque2"></i>` : ''}</div>`).join('')}</div>
+          ${c.img('demo-landing/usuario-inicio.webp', 'captura2', 'Inicio de la app de Handyx en la demo: elegís el oficio')}
+          <div class="sel-gas">${c.icono('gas', 'blanco')}<span>Gas</span></div><i class="toque2"></i>
           <div class="hoja"><div class="manija"></div><div class="ok">${c.icono('tilde-circulo', 'blanco')}Pedido publicado</div><p>Gas · ya pueden mandarte presupuestos</p></div>
         </div>
         <div class="flash"></div>
@@ -402,9 +393,7 @@ export default escena({
     tl.fromTo([$('.sabe .p2'), $('.sabe .p1'), $('.sabe .nube-w')], { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.4)', stagger: 0.1 }, 13.7);
     tl.fromTo($('.toque2'), { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 0.8, scale: 0.5, duration: 0.06 }, 14.35);
     tl.to($('.toque2'), { autoAlpha: 0, scale: 2, duration: 0.45, ease: 'power2.out' }, 14.41);
-    tl.to($('.o-gas'), { y: 4, duration: 0.08 }, 14.35);
-    tl.to($('.o-gas'), { y: 0, duration: 0.14 }, 14.43);
-    tl.fromTo($('.o-gas .sel'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.15 }, 14.4);
+    tl.fromTo($('.sel-gas'), { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.2, ease: 'back.out(2)' }, 14.4);
     tl.fromTo($('.hoja'), { yPercent: 110 }, { yPercent: 0, duration: 0.45, ease: 'power3.out' }, 14.8);
     tl.fromTo($('.hoja .ok .icono'), { scale: 0 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' }, 15.05);
     tl.to(MOSAICOS_DE_PASO.map((i) => $(`.m${i}`)), { autoAlpha: 0, scale: 0.6, duration: 0.3, stagger: 0.05 }, 14.95);

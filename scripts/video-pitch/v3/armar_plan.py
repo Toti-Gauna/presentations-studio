@@ -52,8 +52,7 @@ DUR_PITCH = round(CIERRE + 7.0, 3)
 TOMAS = [
     ('odisea', 0.0, 41.5, [(0.0, 0), (2.6, 1), (5.5, 2), (12.1, 3), (25.1, 4)]),
     ('handia', 41.5, 78.1, [(41.62, 0), (50.8, 1), (55.6, 2), (64.4, 3), (68.6, 4)]),
-    ('profesional', 78.1, 88.4, [(78.3, 0), (80.9, 1), (85.0, 2)]),
-    ('profesional', 88.4, 101.55, [(None, 0)]),                       # «…trabajos, gastos e ingresos»: vuelve a la app
+    ('profesional', 78.1, 101.55, [(78.3, 0), (80.9, 1), (95.4, 2)]),  # las herramientas quedan hasta HandIA para profesionales (pedido de Ignacio)
     ('empezamos', 101.55, 112.9, [(101.7, 0), (104.6, 1), (108.4, 2)]),
     ('mercado', 112.9, 130.2, [(113.0, 0), (117.3, 1), (124.4, 2)]),
     ('equipo', 130.2, 154.3, [(130.3, 0), (136.0, 1), (145.8, 2)]),
