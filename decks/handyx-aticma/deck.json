@@ -769,12 +769,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
    "objetivo": "Mostrar la cuenta que justifica los números, con supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Cuenta sugerida por Luigi (mentor ATICMA, 04/11). Supuestos: 1 arreglo por hogar por año, ticket de USD 40, 5 % en 2 años. Mecánica (50.000 autos × 3 × USD 200) es un escenario fuera de los 6 rubros; parque automotor sin fuente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 M por año · 2 nuestro objetivo es el 25 % de un trimestre: ≈ 16.200 trabajos · 3 con el ticket real de la prueba ($ 70.000 ≈ USD 45) y la tarifa del 15 %: ≈ USD 109.000 en el trimestre · 4 con el ticket supuesto de USD 40, el escenario conservador: ≈ USD 97.000 (para llegar a USD 100.000 hace falta un ticket de ≈ USD 41).\nCuenta sugerida por Luigi (mentor ATICMA, 04/11). Supuestos: 1 arreglo por hogar por año, ticket de USD 40, 5 % en 2 años. Mecánica (50.000 autos × 3 × USD 200) es un escenario fuera de los 6 rubros; parque automotor sin fuente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 millones por año. El 25 % de un trimestre son ≈ 16.200 trabajos: con ticket de USD 40 dejan ≈ USD 97.000 de tarifas; con ≈ USD 41, USD 100.000. A dos años, el 5 % deja ≈ USD 78.000 por año; si se sumara mecánica, ≈ USD 225.000 más por año (escenario fuera de alcance).",
    "referencias": [
     "MERCADO-USD",
@@ -787,109 +787,32 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-proyeccion",
+     "alt": "Animación: embudo de la proyección. Los hogares de General Pueyrredon, por un arreglo al año y un ticket supuesto, dan el valor anual de los arreglos del hogar; la parte objetivo de un trimestre da los trabajos, que con la tarifa de Handyx pasan a una balanza: de un lado las tarifas del trimestre con el ticket real de la prueba, del otro el escenario conservador con el ticket supuesto. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "MERCADO-USD",
+      "META-CUOTA-LOCAL",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "Q1-TARIFAS-40",
+      "Q1-TARIFAS-REAL-N",
+      "Q1-TRABAJOS-N",
+      "SUP-ARREGLOS-HOGAR",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · proyección",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "De dónde sale ==el número==",
-     "nivel": 2
-    },
-    {
-     "id": "fl",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "{{MDP-HOGARES}} hogares",
-       "detalle": "Censo 2022"
-      },
-      {
-       "texto": "× {{SUP-ARREGLOS-HOGAR}} arreglo por año",
-       "detalle": "supuesto"
-      },
-      {
-       "texto": "× {{SUP-TICKET-USD}}",
-       "detalle": "ticket medio, supuesto"
-      },
-      {
-       "texto": "{{MERCADO-USD}}",
-       "detalle": "por año en el partido"
-      }
-     ]
-    },
-    {
-     "id": "c1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 56,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "Q1-TRABAJOS",
-     "leyenda": "**trabajos en el trimestre**",
-     "caja": "blanca",
-     "detalle": "{{META-CUOTA-LOCAL}} de los arreglos"
-    },
-    {
-     "id": "c2",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 56,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "Q1-TARIFAS-REAL",
-     "leyenda": "**de tarifas Handyx**",
-     "caja": "azul",
-     "detalle": "con nuestro ticket real ({{PRUEBA-TICKET}} ≈ USD 45)"
-    },
-    {
-     "id": "c3",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 56,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "Q1-TARIFAS-40",
-     "leyenda": "**con ticket de USD 40**",
-     "caja": "amarilla",
-     "detalle": "supuesto conservador del mentor"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -899,12 +822,12 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "informado",
    "transicion": "fundido",
    "objetivo": "Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Costos mensuales estimados por Ignacio (04/11): servidores USD 100, desarrollo USD 200, marketing USD 100 (en USD; si eran pesos, corregir). Equilibrio con ticket de USD 40 (supuesto): USD 400 ÷ USD 6 ≈ 67 trabajos por mes. No incluye sueldos ni impuestos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 mantener Handyx hoy cuesta ≈ USD 400 por mes, sin sueldos ni impuestos · 2 desarrollo USD 200, servidores USD 100, marketing USD 100 · 3 con un ticket supuesto de USD 40 y la tarifa del 15 %, cada trabajo deja USD 6 · 4 con ≈ 67 trabajos por mes cubrimos los costos: ese es el punto de equilibrio.\nCostos mensuales estimados por Ignacio (04/11): servidores USD 100, desarrollo USD 200, marketing USD 100 (en USD; si eran pesos, corregir). Equilibrio con ticket de USD 40 (supuesto): USD 400 ÷ USD 6 ≈ 67 trabajos por mes. No incluye sueldos ni impuestos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mantener Handyx hoy cuesta ≈ USD 400 por mes: desarrollo USD 200, servidores USD 100 y marketing USD 100. Con USD 6 de tarifa por trabajo (ticket de USD 40), ≈ 67 trabajos por mes cubren esos costos.",
    "referencias": [
     "COSTOS-MES",
@@ -917,106 +840,29 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · costos",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Mantener Handyx cuesta ==poco==",
-     "nivel": 2
-    },
-    {
-     "id": "rep",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 55
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "reparto",
-     "total": "COSTOS-MES",
-     "leyendaTotal": "**por mes, hoy**",
-     "partes": [
-      {
-       "afirmacion": "COSTO-DESARROLLO",
-       "etiqueta": "desarrollo",
-       "tono": "azul"
-      },
-      {
-       "afirmacion": "COSTO-SERVIDORES",
-       "etiqueta": "servidores e IA",
-       "tono": "gris"
-      },
-      {
-       "afirmacion": "COSTO-MARKETING",
-       "etiqueta": "marketing",
-       "tono": "amarilla"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-costos",
+     "alt": "Animación: columna con los costos mensuales estimados de Handyx, repartidos en desarrollo, servidores y marketing, sin sueldos ni impuestos. Al lado, un tanque de tarifas que se llena con la tarifa de cada trabajo (ticket supuesto por la tarifa de Handyx) hasta la línea de los costos: el punto de equilibrio en trabajos por mes. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.4
      ],
-     "pasoPartes": 0
-    },
-    {
-     "id": "eq",
-     "area": "libre",
-     "pos": {
-      "x": 64,
-      "y": 24,
-      "w": 31
-     },
+     "afirmaciones": [
+      "COSTO-DESARROLLO",
+      "COSTO-MARKETING",
+      "COSTO-SERVIDORES",
+      "COSTOS-MES",
+      "EQUILIBRIO-TRABAJOS",
+      "INGRESO-POR-TRABAJO",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "EQUILIBRIO-TRABAJOS",
-     "leyenda": "**trabajos por mes cubren los costos**",
-     "caja": "amarilla",
-     "detalle": "a {{INGRESO-POR-TRABAJO}} de tarifa por trabajo"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 62,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Servidores** · {{COSTO-SERVIDORES}} por mes",
-       "icono": "servidor"
-      },
-      {
-       "texto": "**Desarrollo** · {{COSTO-DESARROLLO}} por mes",
-       "icono": "codigo"
-      },
-      {
-       "texto": "**Marketing** · {{COSTO-MARKETING}} por mes",
-       "icono": "megafono"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1026,12 +872,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
    "objetivo": "Responder cuánto cuesta conseguir un cliente y cuánto deja.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "CAC estimado = USD 100 de marketing ÷ 50 clientes nuevos por mes (SUPUESTO: igual a la meta de diciembre llevada a un mes; medir). LTV = USD 6 × 1 arreglo por año × 3 años (SUPUESTO de permanencia). CAC máximo USD 6: se recupera con el primer trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 conseguir un cliente cuesta ≈ USD 2: USD 100 de marketing por mes ÷ 50 clientes nuevos (supuesto a medir) · 2 cada cliente deja USD 6 por arreglo, uno por año, durante 3 años supuestos: USD 18 · 3 o sea, ≈ 9 veces lo que cuesta conseguirlo · 4 aunque el CAC subiera hasta USD 6, se recupera con el primer trabajo.\nCAC estimado = USD 100 de marketing ÷ 50 clientes nuevos por mes (SUPUESTO: igual a la meta de diciembre llevada a un mes; medir). LTV = USD 6 × 1 arreglo por año × 3 años (SUPUESTO de permanencia). CAC máximo USD 6: se recupera con el primer trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "CAC estimado ≈ USD 2 (USD 100 de marketing para 50 clientes nuevos por mes, supuesto). LTV estimado ≈ USD 18 (USD 6 por arreglo, 1 arreglo por año, 3 años). LTV/CAC ≈ 9. Regla: mientras el CAC esté por debajo de USD 6, se recupera con el primer trabajo.",
    "referencias": [
     "CAC-ESTIMADO",
@@ -1044,102 +890,30 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-cac",
+     "alt": "Animación: barras en la misma escala. El costo estimado de conseguir un cliente (marketing del mes dividido por los clientes nuevos, supuesto) y lo que ese cliente deja año por año con un arreglo anual (supuestos). Una regla de bloques del tamaño del CAC cubre el LTV y muestra cuántas veces entra; el CAC máximo mide lo mismo que la tarifa del primer año: se recupera con el primer trabajo. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.2,
+      3.4,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "CAC-MAXIMO",
+      "COSTO-MARKETING",
+      "INGRESO-POR-TRABAJO",
+      "LTV-CAC",
+      "LTV-ESTIMADO",
+      "SUP-ANIOS-CLIENTE",
+      "SUP-ARREGLOS-HOGAR",
+      "SUP-CLIENTES-MES"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · unit economics",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Conseguir un cliente cuesta ==menos de lo que deja==",
-     "nivel": 2
-    },
-    {
-     "id": "c1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "CAC-ESTIMADO",
-     "leyenda": "**CAC estimado**",
-     "caja": "blanca",
-     "detalle": "{{COSTO-MARKETING}} ÷ {{SUP-CLIENTES-MES}} clientes nuevos por mes"
-    },
-    {
-     "id": "c2",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 27,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "LTV-ESTIMADO",
-     "leyenda": "**LTV estimado**",
-     "caja": "azul",
-     "detalle": "{{INGRESO-POR-TRABAJO}} × 1 arreglo por año × {{SUP-ANIOS-CLIENTE}} años"
-    },
-    {
-     "id": "c3",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 27,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "LTV-CAC",
-     "leyenda": "**veces: LTV / CAC**",
-     "caja": "amarilla",
-     "detalle": "CAC máximo: {{CAC-MAXIMO}}, se recupera con el primer trabajo"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 70,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Porteros y administradores:** canal de bajo costo",
-       "icono": "edificio"
-      },
-      {
-       "texto": "**Clientes que vuelven:** cada arreglo suma al LTV",
-       "icono": "repetir"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
