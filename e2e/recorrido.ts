@@ -233,13 +233,14 @@ try {
   ok('ATICMA: la animación «HandIA te habla» arranca sola en la pantalla pública', nVoz > 0 && !!animVoz && animVoz.t > 0.3 && !animVoz.pausado, JSON.stringify({ nVoz, animVoz }));
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
   ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
-  await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);
+  // La 7.ª tiene varios golpes (equipo, agentes, inversión, Silicon Valley, mundo, QR): se retrocede hasta entrar en la 6.ª.
+  for (let i = 0; i < 12 && !(await actualA()).startsWith('6.'); i++) { await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(350); }
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);
   await presA.reload(); await presA.waitForTimeout(1500);
   ok('ATICMA: un refresco del presentador no vuelve a la primera diapositiva', (await actualA()).startsWith('6.'), await actualA());
   ok('ATICMA: el registro de ensayos sobrevive al refresco', (await presA.locator('.intentos li').count()) === 1);
   await presA.getByRole('button', { name: 'Nuevo ensayo' }).click(); await presA.waitForTimeout(600);
-  ok('ATICMA: Nuevo ensayo vuelve a la primera y pone el reloj en cero sin recargar', (await actualA()).startsWith('1.') && ((await presA.locator('.reloj').textContent()) ?? '') === '0:00', `${await actualA()} · ${await presA.locator('.reloj').textContent()}`);
+  ok('ATICMA: Nuevo ensayo vuelve a la primera y pone el reloj en cero sin recargar', (await actualA()).startsWith('1.') && ((await presA.locator('span.reloj').textContent()) ?? '') === '0:00', `${await actualA()} · ${await presA.locator('span.reloj').textContent()}`);
   ok('ATICMA: la pantalla pública no muestra notas ni guion', !/Si preguntan|Fuente del guion|Próxima transición/.test(await pubA.locator('body').innerText()));
   await evento.close();
   ok('sin errores de JavaScript', errores.length === 0, errores.join(' | '));

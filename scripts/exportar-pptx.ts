@@ -24,8 +24,8 @@ const navegador = await playwright().chromium.launch();
 try {
   const pagina = await navegador.newPage({ viewport: { width: 1920, height: 1080 } });
   const q = new URLSearchParams({ deck, version, movimiento: 'reducido', ...(a['sin-anexos'] ? { anexos: 'no' } : {}) });
-  await pagina.goto(`${srv.url}/imprimir/?${q}`);
-  await pagina.waitForSelector('body[data-listo="1"]', { timeout: 30_000 });
+  await pagina.goto(`${srv.url}/imprimir/?${q}`, { timeout: 300_000 }); // decks con cientos de pasos animados tardan en cargar
+  await pagina.waitForSelector('body[data-listo="1"]', { timeout: 300_000 });
   await pagina.waitForTimeout(500);
   const hojas = pagina.locator('section.hoja[data-escena]');
   const n = await hojas.count();
@@ -37,7 +37,7 @@ try {
     const i = escenas.findIndex((e) => e.id === id);
     const e = escenas[i];
     const imagen = `${dir}/${String(k + 1).padStart(2, '0')}.png`;
-    await hoja.locator('.marco').screenshot({ path: imagen });
+    await hoja.locator(':scope > .marco').first().screenshot({ path: imagen });
     const encabezado = i < principales ? `Diapositiva ${i + 1} de ${principales} · ${e?.duracion ?? ''} s` : 'Anexo · fuera del cronómetro';
     diapositivas.push({ imagen, escena: id, paso, notas: paso > 0 ? '(Continúa la misma diapositiva.)' : `${encabezado}\n\nGUION\n${e?.guion ?? ''}\n\nNOTAS\n${e?.notas ?? ''}` });
   }

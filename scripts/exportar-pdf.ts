@@ -15,8 +15,8 @@ try {
   const errores: string[] = [];
   pagina.on('pageerror', (e: Error) => errores.push(e.message));
   const q = new URLSearchParams({ deck, version, ...(lectura ? { modo: 'lectura' } : {}), ...(a['sin-anexos'] ? { anexos: 'no' } : {}), movimiento: 'reducido' });
-  await pagina.goto(`${srv.url}/imprimir/?${q}`);
-  await pagina.waitForSelector('body[data-listo="1"]', { timeout: 30_000 });
+  await pagina.goto(`${srv.url}/imprimir/?${q}`, { timeout: 300_000 }); // decks con cientos de pasos animados tardan en cargar
+  await pagina.waitForSelector('body[data-listo="1"]', { timeout: 300_000 });
   await pagina.waitForTimeout(500);
   if (errores.length) throw new Error(`errores en la página: ${errores.join(' | ')}`);
   mkdirSync('salida/pdf', { recursive: true });
