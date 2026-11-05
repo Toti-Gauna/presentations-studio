@@ -923,12 +923,12 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "informado",
    "transicion": "fundido",
    "objetivo": "Mostrar la evidencia y la próxima prueba.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "5 y 56: informados por Ignacio; conciliación de comprobantes y corte del CRM pendientes. Los 56 no son activos ni verificados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Las apps: desarrolladas y en pruebas · 2 Con porteros: trabajos con comisión cobrada · 3 Preregistro: especialistas registrados · 4 Lo que falta: la próxima prueba.\n5 y 56: informados por Ignacio; conciliación de comprobantes y corte del CRM pendientes. Los 56 no son activos ni verificados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Validación: dos apps desarrolladas y en pruebas; con porteros de edificios se concretaron 5 trabajos con comisión cobrada (informado; comprobantes en conciliación); 56 especialistas registrados en el preregistro (no son activos ni verificados). Próxima prueba: 50 trabajos con tarifa cobrada y 5 clientes que vuelvan en diciembre de 2026.",
    "referencias": [
     "TRABAJOS-INFORMADOS",
@@ -939,102 +939,25 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · validación",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Lo que ya ==probamos==",
-     "nivel": 2
-    },
-    {
-     "id": "c1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "TRABAJOS-INFORMADOS",
-     "leyenda": "**trabajos con comisión cobrada**",
-     "caja": "blanca",
-     "detalle": "con porteros · comprobantes en conciliación"
-    },
-    {
-     "id": "c2",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "ESP-REGISTRADOS",
-     "leyenda": "**especialistas registrados**",
-     "caja": "blanca",
-     "detalle": "preregistro · no activos ni verificados"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**2 apps** en pruebas",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Porteros** como canal",
-       "icono": "edificio"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-validacion",
+     "alt": "Animación: Validación. Las apps: desarrolladas y en pruebas; Con porteros: trabajos con comisión cobrada; Preregistro: especialistas registrados; Lo que falta: la próxima prueba.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.4,
+      3.6
      ],
-     "columnas": 1
-    },
-    {
-     "id": "prox",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 74,
-      "w": 90
-     },
+     "afirmaciones": [
+      "ESP-REGISTRADOS",
+      "META-REPETIDORES",
+      "META-TRABAJOS",
+      "TRABAJOS-INFORMADOS"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Próxima prueba · diciembre 2026:** {{META-TRABAJOS}} trabajos con tarifa cobrada y {{META-REPETIDORES}} clientes que vuelven.",
-     "tamano": "m",
-     "caja": "amarilla"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1087,12 +1010,12 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "informado",
    "transicion": "fundido",
    "objetivo": "Mostrar a la competencia directa por su modelo y funcionalidades (sin nombres) y cómo le gana Handyx.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Clickie: iProfesional, Forbes Argentina, La Gaceta, Mercado (2026): 15 % al profesional (12 % con Pro de USD 15/mes), 5 % o 10 % al usuario según la nota; ronda ángel de USD 150.000; ya opera en Mar del Plata. Muovi y Home Solution: datos de Ignacio (sitios bloqueados aquí). IguanaFix: Cronista (foco corporativo). Zolvers: servicio doméstico, fee al cliente (Cronista). Servidos y Yo te lo arreglo: modelo sin dato confirmado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada plataforma, por su modelo de cobro · 2 Qué paga el profesional en cada modelo · 3 Cómo Handyx le gana a cada modelo · 4 Del mar rojo a nuestro océano azul.\nClickie: iProfesional, Forbes Argentina, La Gaceta, Mercado (2026): 15 % al profesional (12 % con Pro de USD 15/mes), 5 % o 10 % al usuario según la nota; ronda ángel de USD 150.000; ya opera en Mar del Plata. Muovi y Home Solution: datos de Ignacio (sitios bloqueados aquí). IguanaFix: Cronista (foco corporativo). Zolvers: servicio doméstico, fee al cliente (Cronista). Servidos y Yo te lo arreglo: modelo sin dato confirmado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Plataforma A: cobra comisión al profesional y al usuario, ofrece orientación con IA y ya opera en Mar del Plata. Plataforma B: el profesional paga por acceso a oportunidades. Plataforma D: anuncia comisión cero por tiempo limitado. Plataforma E: se enfocó en empresas. Plataforma F: servicio doméstico. Plataformas G y H: oficios, modelo sin dato confirmado. Handyx: 0 % al profesional y 15 % al usuario, visible, más herramientas por oficio, HandIA y clientes que vuelven.",
    "referencias": [
     "COMP-CLICKIE-PRO",
@@ -1103,91 +1026,24 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · competencia",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "La competencia en ==Argentina==",
-     "nivel": 2
-    },
-    {
-     "id": "a",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 23,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Plataforma A** · {{COMP-CLICKIE-PRO}} de comisión al profesional, orientación con IA, ya en Mar del Plata",
-       "icono": "porcentaje"
-      },
-      {
-       "texto": "**Plataforma D** · comisión cero por tiempo limitado",
-       "icono": "monedas"
-      },
-      {
-       "texto": "**Plataforma B** · el profesional paga por oportunidades",
-       "icono": "billete"
-      },
-      {
-       "texto": "**Plataforma E** · giró a empresas",
-       "icono": "edificio"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-competidores",
+     "alt": "Animación: La competencia en Argentina, por modelo. Cada plataforma, por su modelo de cobro; Qué paga el profesional en cada modelo; Cómo Handyx le gana a cada modelo; Del mar rojo a nuestro océano azul.",
+     "tiempos": [
+      3.2,
+      3.4,
+      3.4,
+      3.8
      ],
-     "columnas": 1
-    },
-    {
-     "id": "b",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 23,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Plataforma F** · servicio doméstico",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Plataformas G y H** · oficios, modelo sin dato",
-       "icono": "llave-inglesa"
-      },
-      {
-       "texto": "**Handyx** · {{FEE-ESPECIALISTA}} al profesional, {{TARIFA-USUARIO}} visible al usuario, herramientas por oficio y HandIA",
-       "icono": "escudo-ok"
-      }
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "FEE-ESPECIALISTA",
+      "TARIFA-USUARIO"
      ],
-     "columnas": 1
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1197,113 +1053,33 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "informado",
    "transicion": "fundido",
    "objetivo": "Mostrar que el modelo existe afuera y cómo cobran.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Búsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix), Housecall Pro, Jobber y comparadores (Thumbtack USD 15–80+ por contacto; Angi USD 50–200 por contacto compartido; Taskrabbit 15–30 % según fuentes en conflicto; Checkatrade suscripción). Revalidar en las páginas oficiales.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Latinoamérica: apps de oficios y servicio doméstico · 2 Estados Unidos: pagar por cada contacto · 3 Europa: cuota mensual o comisión · 4 Nuestro camino: el profesional no paga.\nBúsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix), Housecall Pro, Jobber y comparadores (Thumbtack USD 15–80+ por contacto; Angi USD 50–200 por contacto compartido; Taskrabbit 15–30 % según fuentes en conflicto; Checkatrade suscripción). Revalidar en las páginas oficiales.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "El modelo existe en todo el mundo. En México, Colombia, Chile y Uruguay hay apps de oficios y de servicio doméstico. En EE. UU. hay plataformas que le cobran al profesional por contacto y otras con comisión; en el Reino Unido, con suscripción. Diferencial de Handyx: el profesional no paga por su trabajo y suma herramientas para trabajar mejor.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · competencia",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "El modelo existe ==en todo el mundo==",
-     "nivel": 2
-    },
-    {
-     "id": "a",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**México** · apps de oficios y de servicio doméstico",
-       "icono": "ubicacion"
-      },
-      {
-       "texto": "**Colombia** · apps de oficios con pagos protegidos",
-       "icono": "ubicacion"
-      },
-      {
-       "texto": "**Chile y Uruguay** · apps de servicio doméstico y de oficios",
-       "icono": "ubicacion"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-competidores-mundo",
+     "alt": "Animación: Competidores en la región y el mundo. Latinoamérica: apps de oficios y servicio doméstico; Estados Unidos: pagar por cada contacto; Europa: cuota mensual o comisión; Nuestro camino: el profesional no paga.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.6
      ],
-     "columnas": 1
-    },
-    {
-     "id": "b",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 24,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**EE. UU.** · el profesional paga por contacto",
-       "icono": "mundo"
-      },
-      {
-       "texto": "**EE. UU. y Europa** · comisión por trabajo",
-       "icono": "mundo"
-      },
-      {
-       "texto": "**Reino Unido** · suscripción mensual",
-       "icono": "mundo"
-      }
+     "afirmaciones": [
+      "TARIFA-USUARIO"
      ],
-     "columnas": 1
-    },
-    {
-     "id": "dif",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 76,
-      "w": 90
-     },
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Nuestro camino:** el profesional no paga por su trabajo; el usuario paga {{TARIFA-USUARIO}}, visible. Herramientas, historial y clientes que vuelven.",
-     "tamano": "m",
-     "caja": "amarilla"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1425,12 +1201,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar para qué se gasta cada dólar de los USD 100.000.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Propuesta de asignación preparada el 05/11 a pedido de Ignacio, a aprobar: 45 % marketing y captación, 30 % operaciones, 15 % tecnología, 10 % legal, contable y reserva. Se baja desarrollo porque hoy es más barato que nunca construir un producto premium con herramientas de IA. Silicon Valley: aprendizaje y conexiones; sin inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 La inversión buscada: cómo se reparte · 2 Marketing: publicidad con IA, redes y calle · 3 Operaciones: formar y acompañar a los profesionales · 4 Tecnología: una app que se diferencia.\nPropuesta de asignación preparada el 05/11 a pedido de Ignacio, a aprobar: 45 % marketing y captación, 30 % operaciones, 15 % tecnología, 10 % legal, contable y reserva. Se baja desarrollo porque hoy es más barato que nunca construir un producto premium con herramientas de IA. Silicon Valley: aprendizaje y conexiones; sin inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "USD 100.000 de inversión inicial buscada (no recibida). Marketing y captación USD 45.000: ads por barrio y urgencia USD 20.000, porteros y administradores USD 10.000, contenido con los Handys USD 8.000, presencia local USD 7.000. Operaciones USD 30.000: comunicación y formación de profesionales USD 10.000, soporte USD 10.000, verificación USD 6.000, cobros USD 4.000. Tecnología USD 15.000: HandIA y feedback USD 6.000, herramientas por oficio USD 5.000, servidores USD 4.000. Legal y contable USD 6.000 y reserva USD 4.000.",
    "referencias": [
     "INV-TOTAL",
@@ -1442,179 +1218,37 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · inversión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Para qué es ==cada dólar==",
-     "nivel": 2
-    },
-    {
-     "id": "rep",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 20,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "reparto",
-     "total": "INV-CRECIMIENTO",
-     "leyendaTotal": "**para crecer** · + {{INV-LEGAL}} de legal y reserva = {{INV-TOTAL}} (propuesta, a aprobar)",
-     "partes": [
-      {
-       "afirmacion": "INV-MARKETING",
-       "etiqueta": "marketing y captación",
-       "tono": "amarilla"
-      },
-      {
-       "afirmacion": "INV-OPERACIONES",
-       "etiqueta": "operaciones",
-       "tono": "azul"
-      },
-      {
-       "afirmacion": "INV-TECNOLOGIA",
-       "etiqueta": "tecnología",
-       "tono": "gris"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-inversion",
+     "alt": "Animación: Cada dólar de la inversión. La inversión buscada: cómo se reparte; Marketing: publicidad con IA, redes y calle; Operaciones: formar y acompañar a los profesionales; Tecnología: una app que se diferencia.",
+     "tiempos": [
+      3.0,
+      4.0,
+      3.4,
+      3.6
      ],
-     "pasoPartes": 0
-    },
-    {
-     "id": "m1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 47,
-      "w": 21
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{INV-M-ADS}}** ads por barrio",
-       "icono": "megafono"
-      },
-      {
-       "texto": "**{{INV-M-PORTEROS}}** porteros",
-       "icono": "edificio"
-      },
-      {
-       "texto": "**{{INV-M-HANDYS}}** Handys",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**{{INV-M-LOCAL}}** locales",
-       "icono": "tienda"
-      }
+     "afirmaciones": [
+      "INV-LEGAL",
+      "INV-M-ADS",
+      "INV-M-HANDYS",
+      "INV-M-LOCAL",
+      "INV-M-PORTEROS",
+      "INV-MARKETING",
+      "INV-O-COBROS",
+      "INV-O-FORMACION",
+      "INV-O-SOPORTE",
+      "INV-O-VERIF",
+      "INV-OPERACIONES",
+      "INV-T-HERR",
+      "INV-T-IA",
+      "INV-T-SERV",
+      "INV-TECNOLOGIA",
+      "INV-TOTAL"
      ],
-     "columnas": 1
-    },
-    {
-     "id": "m2",
-     "area": "libre",
-     "pos": {
-      "x": 28,
-      "y": 47,
-      "w": 21
-     },
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{INV-O-FORMACION}}** formación",
-       "icono": "escuela"
-      },
-      {
-       "texto": "**{{INV-O-SOPORTE}}** soporte",
-       "icono": "chat"
-      },
-      {
-       "texto": "**{{INV-O-VERIF}}** verificación",
-       "icono": "escudo-ok"
-      },
-      {
-       "texto": "**{{INV-O-COBROS}}** cobros",
-       "icono": "billetera"
-      }
-     ],
-     "columnas": 1
-    },
-    {
-     "id": "m3",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 47,
-      "w": 21
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{INV-T-IA}}** HandIA",
-       "icono": "chispas"
-      },
-      {
-       "texto": "**{{INV-T-HERR}}** herramientas",
-       "icono": "herramienta"
-      },
-      {
-       "texto": "**{{INV-T-SERV}}** servidores",
-       "icono": "servidor"
-      }
-     ],
-     "columnas": 1
-    },
-    {
-     "id": "m4",
-     "area": "libre",
-     "pos": {
-      "x": 74,
-      "y": 47,
-      "w": 21
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{INV-L-LEGAL}}** legal y contable",
-       "icono": "balanza"
-      },
-      {
-       "texto": "**{{INV-L-RESERVA}}** reserva",
-       "icono": "alcancia"
-      }
-     ],
-     "columnas": 1
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1624,12 +1258,12 @@
    "disposicion": "izquierda",
    "paleta": "azul",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
    "objetivo": "Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Aspiración de Ignacio (05/11): que la inversión de USD 100.000 impulse USD 1 millón en trabajos por Handyx. Horizonte supuesto: 12 meses. Ticket de la prueba ($ 70.000 ≈ USD 45). No es un retorno prometido ni un pronóstico validado. Si se entendiera USD 1 M de ingresos propios de Handyx harían falta ≈ 148.000 trabajos: varias ciudades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 El objetivo: trabajos movidos por Handyx · 2 La cuenta: cuántos trabajos hacen falta · 3 Qué significa: el partido y las tarifas · 4 El motor: marketing e IA que suman gente.\nAspiración de Ignacio (05/11): que la inversión de USD 100.000 impulse USD 1 millón en trabajos por Handyx. Horizonte supuesto: 12 meses. Ticket de la prueba ($ 70.000 ≈ USD 45). No es un retorno prometido ni un pronóstico validado. Si se entendiera USD 1 M de ingresos propios de Handyx harían falta ≈ 148.000 trabajos: varias ciudades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "USD 1 millón en trabajos por Handyx en 12 meses son ≈ 22.300 trabajos con el ticket de la prueba: ≈ 1.860 por mes, ≈ 62 por día, ≈ 8,6 % de los arreglos anuales del partido. Dejarían ≈ USD 150.000 de tarifas. Con un CAC de ≈ USD 2, los USD 45.000 de marketing alcanzan para ≈ 22.500 clientes. El marketing y la IA impulsan la adopción: más personas piden, más profesionales se suman y se forman.",
    "referencias": [
     "META-1M",
@@ -1643,109 +1277,34 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-un-millon",
+     "alt": "Animación: Hacia USD 1 millón. El objetivo: trabajos movidos por Handyx; La cuenta: cuántos trabajos hacen falta; Qué significa: el partido y las tarifas; El motor: marketing e IA que suman gente.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "INV-MARKETING",
+      "INV-TOTAL",
+      "M1-CLIENTES-CAC",
+      "M1-CUOTA",
+      "M1-DIA",
+      "M1-MES",
+      "M1-TARIFAS",
+      "M1-TRABAJOS",
+      "META-1M",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · inversión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "De USD 100.000 a ==USD 1 millón== en trabajos",
-     "nivel": 2
-    },
-    {
-     "id": "c1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "META-1M",
-     "leyenda": "**en trabajos por Handyx**",
-     "caja": "blanca",
-     "detalle": "en 12 meses (aspiración)"
-    },
-    {
-     "id": "c2",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "M1-MES",
-     "leyenda": "**trabajos por mes**",
-     "caja": "blanca",
-     "detalle": "{{M1-DIA}} por día · {{M1-CUOTA}} de los arreglos del partido"
-    },
-    {
-     "id": "c3",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "M1-TARIFAS",
-     "leyenda": "**de tarifas Handyx**",
-     "caja": "amarilla",
-     "detalle": "15 % de los trabajos, antes de costos"
-    },
-    {
-     "id": "fl",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 64,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "Marketing + IA",
-       "detalle": "{{INV-MARKETING}} · CAC ≈ {{CAC-ESTIMADO}}"
-      },
-      {
-       "texto": "Más personas",
-       "detalle": "{{M1-CLIENTES-CAC}} clientes alcanzables"
-      },
-      {
-       "texto": "Más trabajos",
-       "detalle": "{{M1-TRABAJOS}} trabajos"
-      },
-      {
-       "texto": "Más profesionales",
-       "detalle": "se suman y se forman"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1796,141 +1355,31 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Mostrar la identidad de Handyx y su interfaz.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Pantallas de la demo de la landing (datos ficticios). Los Handys son los personajes de la marca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Los Handys: el vecino, el profesional y cada oficio · 2 Pensados para que los chicos los recuerden · 3 La paleta y la tipografía de la app · 4 La app: pedir en pocos pasos.\nPantallas de la demo de la landing (datos ficticios). Los Handys son los personajes de la marca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Handyx tiene identidad propia: los Handys (personajes de cada oficio), colores y tipografía de la app, y un tono cercano en español rioplatense. La interfaz está pensada para pedir en pocos pasos y para que el profesional ordene su trabajo.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · marca",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 46
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Una marca que ==se recuerda==",
-     "nivel": 2
-    },
-    {
-     "id": "hs",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 30
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "handys-grupo",
-     "alt": "Los Handys"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 56,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Los Handys:** un personaje por oficio",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Cercana:** español rioplatense, sin vueltas",
-       "icono": "sparkles"
-      },
-      {
-       "texto": "**Simple:** pedir en pocos pasos",
-       "icono": "celular"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-marca",
+     "alt": "Animación: Marca y UX/UI. Los Handys: el vecino, el profesional y cada oficio; Pensados para que los chicos los recuerden; La paleta y la tipografía de la app; La app: pedir en pocos pasos.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "u1",
-     "area": "libre",
-     "pos": {
-      "x": 52,
-      "y": 14
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 66,
-     "leyenda": "Usuario",
-     "pantallas": [
-      {
-       "recurso": "demo-usuario-inicio",
-       "alt": "Demo: inicio"
-      }
-     ]
-    },
-    {
-     "id": "u2",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 14
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 66,
-     "leyenda": "HandIA",
-     "pantallas": [
-      {
-       "recurso": "demo-handia",
-       "alt": "Demo: HandIA"
-      }
-     ]
-    },
-    {
-     "id": "u3",
-     "area": "libre",
-     "pos": {
-      "x": 82,
-      "y": 14
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 66,
-     "leyenda": "Profesional",
-     "pantallas": [
-      {
-       "recurso": "demo-especialista-pedido",
-       "alt": "Demo: pedido nuevo"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1940,130 +1389,30 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Mostrar las piezas listas para pautar.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Cuadros de los trailers de kinetic-studio que no muestran la tarifa anterior. Antes de pautar hay que renderizarlos con el modelo 0 % / 15 % (hoy dicen «Primer mes sin tarifa»).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "3 golpes (avanzar con cada frase): 1 Ya tenemos piezas para vecinos y profesionales · 2 En el celular y en cualquier pantalla · 3 Lo que viene: publicidades hechas con IA.\nCuadros de los trailers de kinetic-studio que no muestran la tarifa anterior. Antes de pautar hay que renderizarlos con el modelo 0 % / 15 % (hoy dicen «Primer mes sin tarifa»).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Piezas en video 16:9 y 9:16 para usuarios y profesionales: el problema (preguntás y esperás), cómo se pide (urgencia, programado u obra), la agenda del profesional y la privacidad (tu teléfono no se comparte).",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · marketing",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Publicidades ==listas para pautar==",
-     "nivel": 2
-    },
-    {
-     "id": "p1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 20,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "pub-presupuestas",
-     "alt": "Publicidad: presupuestás y esperás"
-    },
-    {
-     "id": "p2",
-     "area": "libre",
-     "pos": {
-      "x": 33,
-      "y": 20,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "pub-urgencia",
-     "alt": "Publicidad: urgencia, programado u obra"
-    },
-    {
-     "id": "p3",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 58,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "pub-agenda",
-     "alt": "Publicidad: tu agenda en orden"
-    },
-    {
-     "id": "p4",
-     "area": "libre",
-     "pos": {
-      "x": 33,
-      "y": 58,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "pub-telefono",
-     "alt": "Publicidad: tu teléfono no se comparte"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 63,
-      "y": 22,
-      "w": 32
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Video 16:9 y 9:16**",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Para usuarios y profesionales**",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Meta, Google y TikTok**",
-       "icono": "megafono"
-      },
-      {
-       "texto": "**Segmentadas** por barrio y urgencia",
-       "icono": "objetivo"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-publicidades",
+     "alt": "Animación: Publicidades. Ya tenemos piezas para vecinos y profesionales; En el celular y en cualquier pantalla; Lo que viene: publicidades hechas con IA.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.8
      ],
-     "columnas": 1
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2073,132 +1422,33 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar cómo captamos usuarios y profesionales.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Estrategias a medir con CAC y repetición. «Los chicos repiten lo que ven»: los Handys son personajes pensados para que los chicos los reconozcan y lo cuenten en casa; es una estrategia de recordación, no un dato medido.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Digital: publicidades con IA en todas las redes · 2 En la calle: postes, volantes y remeras · 3 En los edificios: porteros y administradores · 4 Y el boca a boca, en los dos lados.\nEstrategias a medir con CAC y repetición. «Los chicos repiten lo que ven»: los Handys son personajes pensados para que los chicos los reconozcan y lo cuenten en casa; es una estrategia de recordación, no un dato medido.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Usuarios: porteros y administradores, los Handys (los chicos los reconocen y lo cuentan en casa), ads por barrio y urgencia, y referidos. Profesionales: 0 % de comisión como mensaje, ferreterías y corralones, formación con herramientas por oficio y referidos entre oficios.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · marketing",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Tracción en ==los dos lados==",
-     "nivel": 2
-    },
-    {
-     "id": "ku",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 22
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Usuarios",
-     "tono": "neutro"
-    },
-    {
-     "id": "u",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Porteros y administradores:** el canal que ya probamos",
-       "icono": "edificio"
-      },
-      {
-       "texto": "**Los Handys:** los chicos los ven y lo cuentan en casa",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Ads por barrio y urgencia**",
-       "icono": "megafono"
-      },
-      {
-       "texto": "**Referidos:** el que vuelve trae a otro",
-       "icono": "repetir"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-marketing",
+     "alt": "Animación: Tracción en los dos lados. Digital: publicidades con IA en todas las redes; En la calle: postes, volantes y remeras; En los edificios: porteros y administradores; Y el boca a boca, en los dos lados.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "kp",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 22
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Profesionales",
-     "tono": "neutro"
-    },
-    {
-     "id": "p",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 27,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{FEE-ESPECIALISTA}} de comisión:** el mensaje que los trae",
-       "icono": "porcentaje"
-      },
-      {
-       "texto": "**Ferreterías y corralones:** donde ya compran",
-       "icono": "tienda"
-      },
-      {
-       "texto": "**Formación** con herramientas por oficio",
-       "icono": "escuela"
-      },
-      {
-       "texto": "**Referidos entre oficios**",
-       "icono": "acuerdo"
-      }
+     "afirmaciones": [
+      "FEE-ESPECIALISTA"
      ],
-     "columnas": 1
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2274,12 +1524,12 @@
    "disposicion": "izquierda",
    "paleta": "azul",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Visión: cada profesión nueva llega con sus herramientas; Handyx para negocios integra el CRM de un local (por ejemplo, un restaurante que busca mozos) y ordena a los disponibles por valoraciones y turnos cumplidos. Diseño propuesto, sin socios ni integraciones acordadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada profesión nueva llega con sus herramientas · 2 Cada profesional ordena sus números, con IA · 3 Handyx for Business: el local elige por mérito · 4 Ferreterías conectadas: stock para profesionales.\nVisión: cada profesión nueva llega con sus herramientas; Handyx para negocios integra el CRM de un local (por ejemplo, un restaurante que busca mozos) y ordena a los disponibles por valoraciones y turnos cumplidos. Diseño propuesto, sin socios ni integraciones acordadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Cada profesión nueva llega con sus herramientas: limpieza con checklist por ambiente, mecánica con diagnóstico y repuestos, jardinería con calendario de poda. Handyx para negocios: un restaurante pide mozos y elige entre los disponibles ordenados por valoraciones y turnos cumplidos, integrado a su sistema. El profesional ordena sus números y recibe feedback con IA.",
    "referencias": [
     "META-PROFESIONES"
@@ -2287,101 +1537,22 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · visión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 50
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Crecer con ==herramientas para cada uno==",
-     "nivel": 3
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27,
-      "w": 46
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Limpieza:** checklist por ambiente",
-       "icono": "sparkles"
-      },
-      {
-       "texto": "**Mecánica:** diagnóstico y repuestos",
-       "icono": "auto"
-      },
-      {
-       "texto": "**Jardinería:** calendario de poda",
-       "icono": "idea"
-      },
-      {
-       "texto": "**Negocios:** CRM para elegir disponibles por mérito",
-       "icono": "tienda"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-negocios",
+     "alt": "Animación: Más profesiones, herramientas y negocios. Cada profesión nueva llega con sus herramientas; Cada profesional ordena sus números, con IA; Handyx for Business: el local elige por mérito; Ferreterías conectadas: stock para profesionales.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "n1",
-     "area": "libre",
-     "pos": {
-      "x": 58,
-      "y": 13
-     },
+     "afirmaciones": [
+      "META-PROFESIONES"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 70,
-     "leyenda": "Handyx para negocios",
-     "pantallas": [
-      {
-       "recurso": "herr-negocios",
-       "alt": "Diseño propuesto: restaurante que busca mozos"
-      }
-     ]
-    },
-    {
-     "id": "n2",
-     "area": "libre",
-     "pos": {
-      "x": 78,
-      "y": 13
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 70,
-     "leyenda": "Mis números + IA",
-     "pantallas": [
-      {
-       "recurso": "herr-numeros",
-       "alt": "Diseño propuesto: ingresos, gastos y feedback"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2481,12 +1652,12 @@
    "disposicion": "izquierda",
    "paleta": "azul",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "proyeccion",
    "transicion": "fundido",
    "objetivo": "Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Aspiración de Ignacio (05/11): USD 5 M de ingresos de Handyx a fines de 2027. Supuestos a validar: 520.000 trabajos al año en Argentina (≈ 1.425 por día) con el ticket de la prueba (≈ USD 45); 1.000 comercios con 5 turnos por semana de USD 40. No incluye suscripciones de apps a medida ni otros ingresos. Antes de costos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 La aspiración: ingresos anuales de Handyx · 2 Handyx for People: trabajos en todo el país · 3 Handyx for Business: turnos para comercios · 4 Juntos: hacia la meta, antes de costos.\nAspiración de Ignacio (05/11): USD 5 M de ingresos de Handyx a fines de 2027. Supuestos a validar: 520.000 trabajos al año en Argentina (≈ 1.425 por día) con el ticket de la prueba (≈ USD 45); 1.000 comercios con 5 turnos por semana de USD 40. No incluye suscripciones de apps a medida ni otros ingresos. Antes de costos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Aspiración a fines de 2027: USD 5 millones de ingresos para Handyx. Handyx for People: 520.000 trabajos por año en las 72 profesiones (≈ 1.425 por día en Argentina) × USD 45 × 15 % ≈ USD 3,5 millones. Handyx for Business: 1.000 comercios × 5 turnos por semana × USD 40 × 15 % ≈ USD 1,56 millones. Supuestos a validar, antes de costos.",
    "referencias": [
     "META-5M",
@@ -2499,124 +1670,37 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · proyección 2027",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Hacia ==USD 5 millones== a fines de 2027",
-     "nivel": 2
-    },
-    {
-     "id": "rep",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 23,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "reparto",
-     "total": "TOTAL-5M-N",
-     "leyendaTotal": "**ingresos anuales Handyx** (aspiración, supuestos a validar)",
-     "partes": [
-      {
-       "afirmacion": "P-INGRESOS-N",
-       "etiqueta": "Handyx for People · 72 profesiones",
-       "tono": "amarilla"
-      },
-      {
-       "afirmacion": "B-INGRESOS-N",
-       "etiqueta": "Handyx for Business · turnos",
-       "tono": "gris"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-5m",
+     "alt": "Animación: Hacia USD 5 millones en 2027. La aspiración: ingresos anuales de Handyx; Handyx for People: trabajos en todo el país; Handyx for Business: turnos para comercios; Juntos: hacia la meta, antes de costos.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.4,
+      3.4
      ],
-     "pasoPartes": 0
-    },
-    {
-     "id": "fp",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 52,
-      "w": 44
-     },
+     "afirmaciones": [
+      "B-COMERCIOS",
+      "B-INGRESOS",
+      "B-INGRESOS-N",
+      "B-TURNO-USD",
+      "B-TURNOS",
+      "B-TURNOS-SEM",
+      "META-5M",
+      "META-PROFESIONES",
+      "P-DIA",
+      "P-INGRESOS",
+      "P-INGRESOS-N",
+      "P-TRABAJOS",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO",
+      "TOTAL-5M",
+      "TOTAL-5M-N"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "{{P-TRABAJOS}}",
-       "detalle": "trabajos por año · {{P-DIA}} por día"
-      },
-      {
-       "texto": "× {{PRUEBA-TICKET-USD}}",
-       "detalle": "ticket de la prueba"
-      },
-      {
-       "texto": "{{P-INGRESOS}}",
-       "detalle": "con 15 %"
-      }
-     ]
-    },
-    {
-     "id": "fb",
-     "area": "libre",
-     "pos": {
-      "x": 51,
-      "y": 52,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "{{B-COMERCIOS}} locales",
-       "detalle": "× {{B-TURNOS-SEM}} turnos por semana"
-      },
-      {
-       "texto": "× {{B-TURNO-USD}}",
-       "detalle": "por turno"
-      },
-      {
-       "texto": "{{B-INGRESOS}}",
-       "detalle": "con 15 %"
-      }
-     ]
-    },
-    {
-     "id": "n",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 90,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Sin contar suscripciones de apps a medida. Antes de costos. Supuestos a validar con los primeros datos.",
-     "tamano": "s"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2626,112 +1710,31 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Diseños propuestos (visión): turnos fijos (mozos viernes y sábados, repetir 4 semanas), reemplazo automático por mérito y app a medida para un comercio (reservas, carta, «trabajá con nosotros», mantenimiento) integrada a Handyx.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Handyx for Business: lo que necesita un local · 2 Personal por turnos: mozos, barra y cocina · 3 Mantenimiento con técnicos verificados · 4 Su propia app, integrada a Handyx.\nDiseños propuestos (visión): turnos fijos (mozos viernes y sábados, repetir 4 semanas), reemplazo automático por mérito y app a medida para un comercio (reservas, carta, «trabajá con nosotros», mantenimiento) integrada a Handyx.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Un local elige personal por días fijos o semanas (por ejemplo, mozos los viernes y sábados durante 4 semanas). Si alguien no puede, Handyx ofrece al siguiente disponible ordenado por valoraciones y turnos cumplidos. Además, Handyx for Business puede crear una app para cada comercio, integrada a Handyx: reservas, pedidos, postulantes y mantenimiento.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · visión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 46
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Un local, ==su equipo y su app==",
-     "nivel": 2
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 34,
-      "w": 44
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Turnos fijos:** por días o por semanas",
-       "icono": "calendario"
-      },
-      {
-       "texto": "**Reemplazo por mérito:** el siguiente mejor valorado",
-       "icono": "balanza"
-      },
-      {
-       "texto": "**App propia** del comercio, integrada a Handyx",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Mantenimiento:** técnicos verificados",
-       "icono": "herramienta"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-business",
+     "alt": "Animación: Handyx for Business. Handyx for Business: lo que necesita un local; Personal por turnos: mozos, barra y cocina; Mantenimiento con técnicos verificados; Su propia app, integrada a Handyx.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.2
      ],
-     "columnas": 1
-    },
-    {
-     "id": "b1",
-     "area": "libre",
-     "pos": {
-      "x": 53,
-      "y": 12
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 72,
-     "leyenda": "Turnos fijos · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-turnos",
-       "alt": "Diseño propuesto: turnos fijos de mozos"
-      }
-     ]
-    },
-    {
-     "id": "b2",
-     "area": "libre",
-     "pos": {
-      "x": 76,
-      "y": 12
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 72,
-     "leyenda": "App del local · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "app-local",
-       "alt": "Diseño propuesto: app de un restaurante integrada a Handyx"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2741,12 +1744,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Explicar cómo crecen los ingresos desde la operación.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Fuentes de ingreso y palancas de crecimiento. Tarifa y profesiones: modelo definido y metas del fundador. Handyx for Business y apps a medida: visión, sin precios aprobados. Materiales: idea a explorar, sin alianzas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Más trabajos: cada uno deja su tarifa · 2 Más profesiones: más motivos para volver · 3 Clientes que vuelven: sin pagar otra captación · 4 Handyx for Business: turnos para comercios.\nFuentes de ingreso y palancas de crecimiento. Tarifa y profesiones: modelo definido y metas del fundador. Handyx for Business y apps a medida: visión, sin precios aprobados. Materiales: idea a explorar, sin alianzas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Cómo se multiplican los ingresos desde la operación: más trabajos (cada uno deja la tarifa del 15 %), más profesiones (de 6 a 72, más motivos para volver), clientes que vuelven (cada repetición suma ingreso sin volver a pagar captación), Handyx for Business (turnos de personal con la misma tarifa), apps a medida para comercios (suscripción, opción futura) y alianzas de materiales con ferreterías y corralones (a explorar).",
    "referencias": [
     "TARIFA-USUARIO",
@@ -2756,84 +1759,24 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Material extra · crecimiento",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Maneras de ==multiplicar ingresos==",
-     "nivel": 2
-    },
-    {
-     "id": "kk",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 22
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "La operación",
-     "tono": "neutro"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Más trabajos:** cada trabajo deja la tarifa del {{TARIFA-USUARIO}}; marketing y porteros suman volumen",
-       "icono": "porcentaje"
-      },
-      {
-       "texto": "**Más profesiones:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}}, más motivos para volver a la app",
-       "icono": "objetivo"
-      },
-      {
-       "texto": "**Clientes que vuelven:** cada repetición suma ingreso sin volver a pagar la captación",
-       "icono": "repetir"
-      },
-      {
-       "texto": "**Handyx for Business:** turnos de personal para comercios, con la misma tarifa",
-       "icono": "tienda"
-      },
-      {
-       "texto": "**Apps a medida:** suscripción de comercios integrada a Handyx (opción futura)",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Materiales:** ferreterías conectadas, con stock para los profesionales (a explorar)",
-       "icono": "martillo2"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-multiplicar-1",
+     "alt": "Animación: Maneras de multiplicar ingresos (1/2). Más trabajos: cada uno deja su tarifa; Más profesiones: más motivos para volver; Clientes que vuelven: sin pagar otra captación; Handyx for Business: turnos para comercios.",
+     "tiempos": [
+      3.2,
+      3.0,
+      3.0,
+      3.2
      ],
-     "columnas": 2
+     "afirmaciones": [
+      "META-PROFESIONES",
+      "PROFESIONES-INICIALES",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2843,12 +1786,12 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Visión de Ignacio (05/11): reinvertir las ganancias en la empresa y formar una tesorería con activos (acciones, criptomonedas) como colchón y escudo de largo plazo. Encuadre propuesto para el jurado: la tesorería trabaja solo con excedentes —nunca con la inversión recibida ni con la caja operativa—, con política aprobada por el directorio, diversificación y cripto acotada. No se prometen rendimientos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Primero: reinvertir para crecer · 2 Antes de invertir: meses de costos guardados · 3 La tesorería protege; el negocio multiplica · 4 La plata de los inversores va al plan.\nVisión de Ignacio (05/11): reinvertir las ganancias en la empresa y formar una tesorería con activos (acciones, criptomonedas) como colchón y escudo de largo plazo. Encuadre propuesto para el jurado: la tesorería trabaja solo con excedentes —nunca con la inversión recibida ni con la caja operativa—, con política aprobada por el directorio, diversificación y cripto acotada. No se prometen rendimientos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Con las ganancias, dos caminos. Primero, reinvertir en crecer: marketing e IA mientras el costo de conseguir un cliente sea menor que lo que deja, y formación de profesionales. Segundo, una tesorería que protege: solo con excedentes, después de guardar 12 meses de costos; diversificada en bonos, ETFs y acciones, con criptomonedas como máximo el 10 %; aprobada por el directorio y reportada cada trimestre. Objetivo: salud financiera, protección frente a la inflación y un escudo para Handyx a largo plazo. No prometemos rendimientos: la tesorería protege, el negocio multiplica.",
    "referencias": [
     "POL-CAJA-MESES",
@@ -2857,104 +1800,23 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-multiplicar-2",
+     "alt": "Animación: Maneras de multiplicar ingresos (2/2). Primero: reinvertir para crecer; Antes de invertir: meses de costos guardados; La tesorería protege; el negocio multiplica; La plata de los inversores va al plan.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "POL-CAJA-MESES",
+      "POL-CRIPTO-MAX"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Material extra · finanzas",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Las ganancias ==trabajan dos veces==",
-     "nivel": 2
-    },
-    {
-     "id": "a",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24,
-      "w": 40
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "blanca",
-     "encabezado": "1 · Reinvertir para crecer",
-     "items": [
-      {
-       "texto": "**Marketing e IA** mientras el CAC sea menor que el LTV"
-      },
-      {
-       "texto": "**Producto:** herramientas por oficio que hacen volver"
-      },
-      {
-       "texto": "**Formación** de profesionales y nuevas profesiones"
-      },
-      {
-       "texto": "**Nuevas ciudades** con red local"
-      }
-     ]
-    },
-    {
-     "id": "b",
-     "area": "libre",
-     "pos": {
-      "x": 50,
-      "y": 24,
-      "w": 45
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "azul",
-     "encabezado": "2 · Una tesorería que protege",
-     "items": [
-      {
-       "texto": "**Solo excedentes:** nunca la inversión ni la caja operativa"
-      },
-      {
-       "texto": "**{{POL-CAJA-MESES}} meses de costos** guardados antes de invertir"
-      },
-      {
-       "texto": "**Diversificada:** bonos, ETFs y acciones; cripto como máximo el {{POL-CRIPTO-MAX}}"
-      },
-      {
-       "texto": "**Aprobada por el directorio** y reportada cada trimestre"
-      }
-     ]
-    },
-    {
-     "id": "n",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 79,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**No prometemos rendimientos:** la tesorería protege a Handyx frente a la inflación; el negocio es el que multiplica.",
-     "tamano": "m",
-     "caja": "amarilla"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2964,57 +1826,31 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Gráfico conceptual (sin cifras): más trabajos → más tarifas → ganancias → reinversión → más trabajos; con los excedentes, una tesorería diversificada con política.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada trabajo deja ingresos · 2 Las ganancias se reinvierten · 3 Mejor app y más profesiones · 4 Más trabajos: el círculo vuelve a girar.\nGráfico conceptual (sin cifras): más trabajos → más tarifas → ganancias → reinversión → más trabajos; con los excedentes, una tesorería diversificada con política.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "El círculo que multiplica: más trabajos generan más tarifas; las ganancias, después de costos, se reinvierten en marketing e IA para conseguir más trabajos. Con los excedentes, una tesorería diversificada (bonos, ETFs y acciones; cripto acotada) funciona como colchón de largo plazo, con política aprobada por el directorio.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-circulo",
+     "alt": "Animación: El círculo que multiplica. Cada trabajo deja ingresos; Las ganancias se reinvierten; Mejor app y más profesiones; Más trabajos: el círculo vuelve a girar.",
+     "tiempos": [
+      3.0,
+      3.0,
+      3.0,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Material extra · finanzas",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "El círculo que ==multiplica==",
-     "nivel": 2
-    },
-    {
-     "id": "c",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 19,
-      "w": 88
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "circulo-multiplica",
-     "alt": "Círculo: más trabajos, más tarifas, ganancias y reinversión; con los excedentes, una tesorería que protege",
-     "llenar": true
+     "entrada": "ninguna"
     }
    ]
   },
@@ -3024,12 +1860,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Visión de largo plazo, sin fechas ni valuación (no se inventan términos de inversión). Precedentes argentinos públicos: MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). Requisitos típicos de una IPO: ingresos recurrentes y crecientes, rentabilidad, estados contables auditados, gobierno corporativo y directorio independiente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Hoy: pre-seed en Mar del Plata · 2 Después: rondas seed y serie A · 3 Escala con rentabilidad y buen gobierno · 4 Visión: cotizar en bolsa.\nVisión de largo plazo, sin fechas ni valuación (no se inventan términos de inversión). Precedentes argentinos públicos: MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). Requisitos típicos de una IPO: ingresos recurrentes y crecientes, rentabilidad, estados contables auditados, gobierno corporativo y directorio independiente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Camino a la IPO, como visión: hoy pre-seed en Mar del Plata; después seed (Argentina y Handyx for Business), serie A (Latinoamérica y herramientas con IA) y escala con rentabilidad, estados auditados y directorio independiente; finalmente cotizar en bolsa, como lo hicieron MercadoLibre en Nasdaq (2007) y Globant en la NYSE (2014). Sin fechas ni valuación comprometidas.",
    "referencias": [
     "PREC-MELI",
@@ -3038,74 +1874,23 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-ipo",
+     "alt": "Animación: Camino a la IPO. Hoy: pre-seed en Mar del Plata; Después: rondas seed y serie A; Escala con rentabilidad y buen gobierno; Visión: cotizar en bolsa.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "PREC-GLOBANT",
+      "PREC-MELI"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Material extra · visión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 50
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Camino a la ==IPO==",
-     "nivel": 2
-    },
-    {
-     "id": "p",
-     "area": "libre",
-     "pos": {
-      "x": 52,
-      "y": 10.5,
-      "w": 43
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Como lo hicieron **MercadoLibre** ({{PREC-MELI}}) y **Globant** ({{PREC-GLOBANT}}).",
-     "tamano": "s"
-    },
-    {
-     "id": "c",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 20,
-      "w": 88
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "camino-ipo",
-     "alt": "Escalera: pre-seed hoy, seed, serie A, escala con rentabilidad e IPO",
-     "llenar": true
-    },
-    {
-     "id": "n",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 94,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Visión de largo plazo: sin fechas ni valuación comprometidas.",
-     "tamano": "xs"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -3182,12 +1967,12 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar con ejemplos concretos cómo se llega a 72 profesiones.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Ejemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio. Cuidado de adultos mayores (05/11, pedido de Ignacio): hay oferta en carteles de comercios del barrio; por ser un servicio dentro de la casa con personas mayores, entra con verificación reforzada.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "4 golpes (avanzar con cada frase): 1 Hoy: las profesiones del lanzamiento · 2 Ejemplos para el hogar y sus equipos · 3 Más ejemplos: movilidad y negocios · 4 Cuidados, con verificación reforzada.\nEjemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio. Cuidado de adultos mayores (05/11, pedido de Ignacio): hay oferta en carteles de comercios del barrio; por ser un servicio dentro de la casa con personas mayores, entra con verificación reforzada.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Hoy: electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado. Próximas posibles: limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, control de plagas y piletas; electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares; mecánica, electricidad del auto, gomería y lavado de autos; fletes y mudanzas, armado de muebles, tapicería y cuidado de mascotas.",
    "referencias": [
     "PROFESIONES-INICIALES",
@@ -3196,85 +1981,23 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · crecimiento",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "De {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} ==profesiones==",
-     "nivel": 2
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 22,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Hoy · {{PROFESIONES-INICIALES}}:** electricidad, plomería, gas, cerrajería, albañilería, aire acondicionado",
-       "icono": "casa"
-      },
-      {
-       "texto": "**Hogar:** limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, plagas, piletas",
-       "icono": "sparkles"
-      },
-      {
-       "texto": "**Equipos y tecnología:** electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares, TV y antenas",
-       "icono": "celular"
-      },
-      {
-       "texto": "**Movilidad:** mecánica, electricidad del auto, gomería, lavado de autos",
-       "icono": "auto"
-      },
-      {
-       "texto": "**Cuidados y servicios:** cuidado de adultos mayores, cuidado de mascotas, fletes y mudanzas, armado de muebles, tapicería",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Para negocios (B2B):** mozos, bartenders, cocina, limpieza de locales, seguridad, recepción, promotores, repartidores",
-       "icono": "tienda"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-profesiones",
+     "alt": "Animación: De 6 a 72 profesiones. Hoy: las profesiones del lanzamiento; Ejemplos para el hogar y sus equipos; Más ejemplos: movilidad y negocios; Cuidados, con verificación reforzada.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.4,
+      3.6
      ],
-     "columnas": 2
-    },
-    {
-     "id": "n",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 94,
-      "w": 62
-     },
+     "afirmaciones": [
+      "META-PROFESIONES",
+      "PROFESIONES-INICIALES"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Ejemplos, no confirmados: cada profesión entra cuando hay demanda y podemos verificar a sus profesionales. Todas pagan la misma tarifa visible.",
-     "tamano": "xs"
+     "entrada": "ninguna"
     }
    ]
   },
