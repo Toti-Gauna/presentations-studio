@@ -59,6 +59,13 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
   «De 6 a 72 profesiones» suma profesiones para negocios (mozos, bartenders, cocina…).
 - 15 preguntas del jurado. En el video, cada respuesta muestra sus láminas de respaldo.
 
+## Pedido del 05/11 (3): video más animado
+
+- Plan de 3 meses con una lámina por mes (lo que hacemos, lo que se valora y cómo se mide).
+- Video re-montado: la cámara recorre cada diapositiva siguiendo la transcripción palabra por palabra; frases clave animadas; láminas de
+  respaldo intercaladas cuando se habla de la inversión (cada dólar) y del crecimiento (mapa People/Business); final con el mundo roto que los
+  Handys arreglan; preguntas con tarjetas animadas y láminas con movimiento. Scripts en `scripts/video-pitch/montaje/`.
+
 ## Control de calidad
 
 | Pregunta | Estado |

@@ -1,0 +1,155 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script src="file:///home/user/presentations-studio/node_modules/gsap/dist/gsap.min.js"></script>
+<script src="d3-array.min.js"></script><script src="d3-geo.min.js"></script><script src="topojson-client.min.js"></script>
+<script src="land.js"></script><script src="plan.js"></script>
+<style>
+@font-face{font-family:'Archivo';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:'DM Sans';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2') format('woff2');font-weight:100 1000}
+*{margin:0;box-sizing:border-box}
+body{width:1920px;height:1080px;overflow:hidden;background:#13305E;font-family:'DM Sans'}
+.t{font-family:'Archivo';font-weight:900;font-stretch:118%}
+#fondo{position:absolute;inset:0}
+#stage{position:absolute;overflow:hidden;border-radius:18px;background:#FBFAF6;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.shot{position:absolute;inset:0;opacity:0;overflow:hidden}
+.shot img{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}
+.stk{position:absolute;left:70px;top:0;display:flex;align-items:center;gap:18px;background:#FFC93C;color:#13305E;border-radius:22px;padding:16px 28px 16px 18px;box-shadow:0 14px 0 rgba(19,48,94,.25),0 20px 40px rgba(0,0,0,.25);opacity:0;transform-origin:0 50%}
+.stk .ic{width:56px;height:56px;border-radius:16px;background:#13305E;display:grid;place-items:center}
+.stk .ic img{width:34px;height:34px;filter:brightness(0) invert(1)}
+.stk span{font-family:'Archivo';font-weight:900;font-stretch:112%;font-size:44px;white-space:nowrap}
+/* tarjetas de preguntas */
+.card{position:absolute;inset:0;opacity:0;background:#FBFAF6;display:flex;flex-direction:column;justify-content:center;padding:0 170px}
+.card .k{color:#1F57A8;font-size:32px;font-weight:800;letter-spacing:.08em}
+.card .q{font-family:'Archivo';font-weight:900;font-stretch:118%;font-size:104px;line-height:1.02;color:#13305E;margin-top:26px;max-width:1450px}
+.card .q i{font-style:normal;display:inline-block}
+.card .comilla{position:absolute;left:70px;top:330px;font-family:'Archivo';font-weight:900;font-size:220px;color:#FFC93C;line-height:1}
+.card .pj{position:absolute;right:140px;bottom:120px;height:300px}
+.card .barra{position:absolute;left:170px;bottom:150px;height:14px;border-radius:999px;background:#FFC93C;transform-origin:0 50%}
+/* final */
+#final{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at 40% 50%,#173a72 0%,#0B1F3F 55%,#06122a 100%);overflow:hidden}
+#final svg{position:absolute;left:0;top:0}
+#ftit{position:absolute;left:40px;right:380px;top:44px;text-align:center;font-family:'Archivo';font-weight:900;font-stretch:112%;font-size:62px;line-height:1.08;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+#ftit mark{background:#FFC93C;color:#13305E;padding:0 .12em;border-radius:.12em}
+#fsub{position:absolute;left:40px;right:380px;top:126px;text-align:center;color:#DCE6F6;font-size:32px;font-weight:700;letter-spacing:.06em;opacity:0}
+.fpj{position:absolute;width:150px;height:180px;margin:-90px 0 0 -75px}
+.fpj img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0}
+.fpj img.on{opacity:1}
+#pin{position:absolute;width:40px;height:40px;margin:-20px;border-radius:50%;background:#FFC93C;box-shadow:0 0 0 10px rgba(255,201,60,.35),0 0 40px #FFC93C}
+#pinl{position:absolute;color:#fff;font-family:'Archivo';font-weight:900;font-stretch:112%;font-size:46px;white-space:nowrap;text-shadow:0 4px 20px rgba(0,0,0,.6)}
+#gracias{position:absolute;left:0;right:360px;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0}
+#gracias .plato{background:#fff;border-radius:34px;padding:26px 44px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+#gracias .plato img{height:110px;display:block}
+#gracias .g{font-family:'Archivo';font-weight:900;font-stretch:118%;font-size:120px;color:#fff;margin-top:34px}
+#gracias .s{color:#FFC93C;font-size:40px;font-weight:800;margin-top:10px}
+.conf{position:absolute;width:16px;height:28px;border-radius:4px;opacity:0}
+</style></head><body>
+<img id="fondo"><div id="stage"></div><div id="stks"></div><div id="cards"></div>
+<div id="final"><svg id="globo" width="1920" height="1080"></svg><div id="pin"></div><div id="pinl">Hoy: Mar del Plata</div>
+ <div id="ftit"></div><div id="fsub"></div><div id="fpjs"></div><div id="gracias"><div class="plato"><img src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp"></div><div class="g">¡Muchas gracias!</div><div class="s">Un mundo con más soluciones y menos problemas</div></div><div id="fconf"></div></div>
+<script>
+const A='file:///home/user/presentations-studio/brands/handyx/assets/';
+const P=window.PLAN, tl=gsap.timeline({paused:true});
+const st=document.getElementById('stage');
+if(P.fondo){document.getElementById('fondo').src=P.fondo}else{document.getElementById('fondo').remove()}
+Object.assign(st.style,{left:P.stage[0]+'px',top:P.stage[1]+'px',width:P.stage[2]+'px',height:P.stage[3]+'px',borderRadius:P.stage[2]>1900?'0':'18px'});
+// tomas con cámara
+P.shots.forEach((s,i)=>{const d=document.createElement('div');d.className='shot';d.innerHTML=`<img src="${s.img}">`;st.appendChild(d);const im=d.firstChild;
+ const k0=s.keys[0];gsap.set(im,{x:k0[1],y:k0[2],scale:k0[3]});
+ const dx=(s.push||1)*90;
+ tl.fromTo(d,{opacity:0,x:dx,scale:1.02},{opacity:1,x:0,scale:1,duration:.55,ease:'power3.out'},Math.max(0,s.t0-0.25));
+ for(let j=1;j<s.keys.length;j++){const a=s.keys[j-1],b=s.keys[j];tl.to(im,{x:b[1],y:b[2],scale:b[3],duration:Math.max(.2,b[0]-a[0]),ease:b[4]||'power2.inOut'},a[0])}
+ tl.to(d,{opacity:0,duration:.35,ease:'power1.in'},s.t1-0.05);
+});
+// frases clave
+const sk=document.getElementById('stks');
+(P.stickers||[]).forEach(s=>{const d=document.createElement('div');d.className='stk';d.style.top=s.y+'px';d.innerHTML=`<div class="ic"><img src="${A}iconos/${s.icon}.svg"></div><span>${s.text}</span>`;sk.appendChild(d);
+ tl.fromTo(d,{opacity:0,scale:.5,rotation:-4,x:-30},{opacity:1,scale:1,rotation:0,x:0,duration:.45,ease:'back.out(2.2)'},s.t)
+   .to(d,{opacity:0,y:-20,duration:.3,ease:'power2.in'},s.t+s.dur)});
+// tarjetas de preguntas
+const cs=document.getElementById('cards');
+(P.cards||[]).forEach(c=>{const d=document.createElement('div');d.className='card';
+ d.innerHTML=`<div class="comilla">“</div><div class="k">PREGUNTA DEL JURADO · ${c.n} DE ${c.total}</div><div class="q">${c.q.split(' ').map(w=>`<i>${w}</i>`).join(' ')}</div><div class="barra"></div><img class="pj" src="${A}personajes/${c.pj}-b.webp">`;cs.appendChild(d);
+ tl.fromTo(d,{opacity:0},{opacity:1,duration:.3},c.t0)
+   .fromTo(d.querySelectorAll('.q i'),{opacity:0,y:50},{opacity:1,y:0,duration:.45,stagger:.06,ease:'power3.out'},c.t0+.1)
+   .fromTo(d.querySelector('.comilla'),{scale:0,rotation:-30},{scale:1,rotation:0,duration:.5,ease:'back.out(2)'},c.t0)
+   .fromTo(d.querySelector('.pj'),{x:300,opacity:0},{x:0,opacity:1,duration:.6,ease:'back.out(1.6)'},c.t0+.2)
+   .fromTo(d.querySelector('.barra'),{width:0},{width:c.barra||700,duration:(c.t1-c.t0)-.6,ease:'none'},c.t0+.3)
+   .to(d,{opacity:0,duration:.3},c.t1-.15)});
+// ── final: el mundo roto que los Handys arreglan ──
+if(P.finale){const F=P.finale, T0=F.t0;
+ const fin=document.getElementById('final'), svg=document.getElementById('globo');
+ const land=topojson.feature(window.LAND,window.LAND.objects.land);
+ const NS='http://www.w3.org/2000/svg';const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
+ // estrellas
+ let sd=11;const r=()=>{sd=(sd*16807)%2147483647;return sd/2147483647};
+ for(let i=0;i<160;i++)mk('circle',{cx:r()*1920,cy:r()*1080,r:(r()*1.8+.4).toFixed(2),fill:'#fff',opacity:(r()*.6+.2).toFixed(2)});
+ const defs=document.createElementNS(NS,'defs');defs.innerHTML=`<radialGradient id="sh" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;svg.appendChild(defs);
+ const halo=mk('circle',{fill:'none',stroke:'#FFC93C','stroke-width':0,opacity:0,filter:'url(#glow)'});
+ const rays=mk('g',{opacity:0});for(let i=0;i<24;i++)rays.appendChild(Object.assign(document.createElementNS(NS,'path'),{}));
+ const mar=mk('path',{});const tierra=mk('path',{stroke:'rgba(255,255,255,.25)','stroke-width':1});
+ const grat=mk('path',{fill:'none',stroke:'rgba(255,255,255,.08)','stroke-width':1});
+ const brillo=mk('path',{fill:'url(#sh)'});
+ const CR=F.grietas;const grietas=CR.map(()=>({osc:mk('path',{fill:'none',stroke:'#E5484D','stroke-width':6,'stroke-linejoin':'round','stroke-linecap':'round',filter:'url(#glow)',opacity:0}),
+   oro:mk('path',{fill:'none',stroke:'#FFC93C','stroke-width':8,'stroke-linejoin':'round','stroke-linecap':'round',filter:'url(#glow)',pathLength:1,'stroke-dasharray':'1 1','stroke-dashoffset':1,opacity:0})}));
+ const proj=d3.geoOrthographic().clipAngle(90).precision(.3);const path=d3.geoPath(proj);const g=d3.geoGraticule10();
+ const fpjs=document.getElementById('fpjs');const NOM=['gota','grifo','bombilla','engranaje','llave','medidor_gas','aire','brocha'];
+ const H=NOM.map((n,i)=>{const d=document.createElement('div');d.className='fpj';d.innerHTML=['a','b','c','d'].map(p=>`<img data-p="${p}" src="${A}personajes/${n}-${p}.webp">`).join('');fpjs.appendChild(d);return d});
+ const pose=(d,p)=>d.querySelectorAll('img').forEach(im=>im.classList.toggle('on',im.dataset.p===p));
+ const lerp=(a,b,x)=>a+(b-a)*x, cl=x=>Math.max(0,Math.min(1,x)), ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+ const hex=(h)=>[1,3,5].map(i=>parseInt(h.substr(i,2),16)), mix=(a,b,x)=>{const A_=hex(a),B=hex(b);return `rgb(${A_.map((v,i)=>Math.round(lerp(v,B[i],x))).join(',')})`};
+ const st_={u:0};window.FIN=st_;
+ // confeti final
+ const fc=document.getElementById('fconf');const cols=['#FFC93C','#4A9BEF','#FFFFFF','#F6A623','#1F57A8'];
+ const piezas=[];for(let i=0;i<110;i++){const c=document.createElement('div');c.className='conf';c.style.background=cols[i%5];c.style.left='780px';c.style.top='420px';fc.appendChild(c);piezas.push(c)}
+ piezas.forEach((c,i)=>{const a=r()*Math.PI*2,v=300+r()*700;const t=T0+F.gracias;tl.set(c,{opacity:1,x:0,y:0},t).to(c,{x:Math.cos(a)*v,y:Math.sin(a)*v*.6-150,rotation:r()*720-360,duration:.9,ease:'power3.out'},t).to(c,{y:'+=600',opacity:0,duration:1.6,ease:'power1.in'},t+.9)});
+ // timeline de entrada/salida y textos
+ tl.fromTo(fin,{opacity:0},{opacity:1,duration:.5},T0-.2);
+ const ftit=document.getElementById('ftit'),fsub=document.getElementById('fsub');
+ const texto=(html,t,t1)=>{tl.call(()=>{ftit.innerHTML=html},null,t).fromTo(ftit,{opacity:0,y:30},{opacity:1,y:0,duration:.5,ease:'power3.out'},t);if(t1)tl.to(ftit,{opacity:0,y:-20,duration:.3},t1)};
+ texto('Hoy empezamos en <mark>Mar del Plata</mark>',T0+.25,T0+F.zoomOut-.1);
+ texto('Mañana queremos <mark>arreglar el mundo</mark>',T0+F.zoomOut+.2,T0+F.frase-.15);
+ texto('Un mundo con más <mark>soluciones</mark><br>y menos problemas',T0+F.frase,T0+F.gracias-.2);
+ tl.fromTo(fsub,{opacity:0},{opacity:1,duration:.4},T0+F.zoomOut+.6).call(()=>{fsub.textContent='Los profesionales de Handyx, arreglando cada grieta'},null,T0+F.zoomOut+.6).to(fsub,{opacity:0,duration:.3},T0+F.frase-.15);
+ tl.fromTo('#gracias',{opacity:0,scale:.8},{opacity:1,scale:1,duration:.6,ease:'back.out(1.8)'},T0+F.gracias);
+ tl.to({},{duration:.01},P.dur);
+ // estado del globo por cuadro (u = segundos desde T0)
+ window.pintarFinal=(t)=>{const u=t-T0;if(u<-0.3||!fin)return;
+  const zo=ease(cl((u-F.zoomOut)/1.4));
+  const cx=lerp(F.mdp[0],F.rot0[0],zo), cy=lerp(F.mdp[1],F.rot0[1],zo);
+  const giro=lerp(0,F.giro,cl((u-F.zoomOut)/(F.gracias-F.zoomOut+2)));
+  const R=Math.exp(lerp(Math.log(F.R0),Math.log(F.R1),zo))*(u>F.gracias?lerp(1,.62,ease(cl((u-F.gracias)/1)) ):1);
+  const ox=760, oy=u>F.gracias?lerp(610,330,ease(cl((u-F.gracias)/1))):610;
+  const tiem=(u>F.romper&&u<F.romper+.6)?Math.sin(u*90)*10*(1-(u-F.romper)/.6):0;
+  proj.rotate([-(cx+giro),-cy,0]).scale(R).translate([ox+tiem,oy]);
+  const nf=CR.filter((c,i)=>u>F.arreglo[i]+.6).length, prog=nf/CR.length;
+  const roto=cl((u-F.romper)/.4)*(1-prog);
+  mar.setAttribute('d',path({type:'Sphere'}));mar.setAttribute('fill',mix('#1F57A8','#2b3247',roto));
+  tierra.setAttribute('d',path(land));tierra.setAttribute('fill',mix('#FFC93C','#8f97a8',roto));
+  grat.setAttribute('d',path(g));brillo.setAttribute('d',path({type:'Sphere'}));
+  halo.setAttribute('cx',ox);halo.setAttribute('cy',oy);halo.setAttribute('r',R+18);halo.setAttribute('opacity',u>F.frase?Math.min(1,(u-F.frase)*1.5):prog*.4);halo.setAttribute('stroke-width',6);
+  rays.setAttribute('opacity',u>F.frase?Math.min(.9,(u-F.frase)):0);
+  rays.setAttribute('transform',`translate(${ox},${oy}) rotate(${u*8})`);
+  [...rays.children].forEach((p,i)=>{const a=i*15*Math.PI/180,b=a+.06;p.setAttribute('d',`M${Math.cos(a)*(R+30)},${Math.sin(a)*(R+30)}L${Math.cos(a)*(R+260)},${Math.sin(a)*(R+260)}L${Math.cos(b)*(R+260)},${Math.sin(b)*(R+260)}Z`);p.setAttribute('fill','rgba(255,201,60,.35)')});
+  CR.forEach((c,i)=>{const L={type:'LineString',coordinates:c};const d=path(L)||'';const G=grietas[i];G.osc.setAttribute('d',d);G.oro.setAttribute('d',d);
+   const aparece=cl((u-F.romper-i*.05)/.25), fix=cl((u-F.arreglo[i])/.6);
+   G.osc.setAttribute('opacity',aparece*(1-fix));G.oro.setAttribute('stroke-dashoffset',1-fix);G.oro.setAttribute('opacity',fix>0?(u>F.arreglo[i]+1.2?.35:1):0)});
+  // Mar del Plata
+  const p=proj([-57.55,-38.0]),vis=d3.geoDistance([-57.55,-38.0],[cx+giro,cy])<1.5;
+  const pin=document.getElementById('pin'),pl=document.getElementById('pinl');
+  pin.style.left=p[0]+'px';pin.style.top=p[1]+'px';pin.style.opacity=vis?(u<F.frase?1:.0):0;pin.style.transform=`scale(${1+.25*Math.sin(u*6)})`;
+  pl.style.left=(p[0]+36)+'px';pl.style.top=(p[1]-30)+'px';pl.style.opacity=u<F.zoomOut?cl(u*2):0;
+  // Handys: vuelan a su grieta, la arreglan y festejan
+  H.forEach((d,i)=>{const c=CR[i%CR.length];const mid=c[Math.floor(c.length/2)];const q=proj(mid);const visq=d3.geoDistance(mid,[cx+giro,cy])<1.45;
+   const lle=F.llegada[i], fx=F.arreglo[i];const pr=ease(cl((u-lle)/.8));
+   const desde=[i%2?2100:-200, 150+i*110];const objetivo=[q[0]+(i%2?40:-40), q[1]-70];
+   let x=lerp(desde[0],objetivo[0],pr), y=lerp(desde[1],objetivo[1],pr)-Math.sin(pr*Math.PI)*120+Math.sin(u*5+i)*8;
+   if(u>F.frase){const k=ease(cl((u-F.frase)/1));const a=i/8*Math.PI*2+u*.6;x=lerp(x,ox+Math.cos(a)*(R+120),k);y=lerp(y,oy+Math.sin(a)*(R+60)*.72,k)}
+   if(u>F.gracias){const k=ease(cl((u-F.gracias)/.8));x=lerp(x,330+i*160,k);y=lerp(y,940,k)}
+   d.style.left=x+'px';d.style.top=y+'px';d.style.opacity=(u<lle?0:1)*(visq||u>F.frase?1:.0);
+   pose(d,u>F.gracias?(Math.floor(u*3+i)%2?'c':'b'):u>fx+.6?'c':u>lle+.7?'d':'d');
+   d.style.transform=`scale(${u>F.gracias?1.1:.9}) scaleX(${(i%2&&u<fx+.6)?-1:1})`});
+ };
+}
+window.DUR=P.dur;
+window.ir=(t)=>{tl.seek(t,false);if(typeof window.pintarFinal==="function")window.pintarFinal(t)};
+</script></body></html>

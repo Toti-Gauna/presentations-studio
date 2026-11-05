@@ -174,3 +174,5 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   Video re-renderizado: intro + pitch + preguntas con respaldo (`scripts/video-pitch/`).
 - 05/11 (2): mapa de crecimiento People/Business, USD 5 M a fines de 2027 con supuestos, Handyx for Business (turnos fijos y app del local),
   profesiones B2B; pregunta 14 «¿Hasta dónde puede crecer Handyx?».
+- 05/11 (3): láminas «Plan · mes 1/2/3»; video re-montado con cámara sincronizada a la transcripción, frases clave, final del mundo roto
+  arreglado por los Handys y preguntas animadas (`scripts/video-pitch/montaje/`).

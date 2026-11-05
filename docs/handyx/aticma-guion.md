@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 36 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 39 láminas de respaldo.
 
 ## Ritmo
 
@@ -95,14 +95,17 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | Mayús + O | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
 | Mayús + P | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
 | Mayús + Q | Lo que logramos en 3 meses | Mostrar el plan de desarrollo de los próximos 3 meses. |
-| Mayús + S | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
-| Mayús + T | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
-| Mayús + U | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
-| Mayús + V | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
-| Mayús + W | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
-| Mayús + X | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Y | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Z | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + S | Plan · mes 1: Lanzamos y cobramos | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
+| Mayús + T | Plan · mes 2: El profesional se queda | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
+| Mayús + U | Plan · mes 3: Crecemos a dos lados | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |
+| Mayús + V | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
+| Mayús + W | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
+| Mayús + X | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
+| Mayús + Y | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
+| Mayús + Z | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
+| índice / menú ☰ | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |

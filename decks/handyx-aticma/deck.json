@@ -46,6 +46,9 @@
     "x-negocios",
     "x-profesiones",
     "x-plan-3m",
+    "x-mes-1",
+    "x-mes-2",
+    "x-mes-3",
     "x-inversion",
     "x-un-millon",
     "x-mapa",
@@ -101,6 +104,9 @@
     "x-negocios",
     "x-profesiones",
     "x-plan-3m",
+    "x-mes-1",
+    "x-mes-2",
+    "x-mes-3",
     "x-inversion",
     "x-un-millon",
     "x-mapa",
@@ -2224,6 +2230,477 @@
      "texto": "**Nuestro camino:** el profesional no paga por su trabajo; el usuario paga {{TARIFA-USUARIO}}, visible. Herramientas, historial y clientes que vuelven.",
      "tamano": "m",
      "caja": "amarilla"
+    }
+   ]
+  },
+  {
+   "id": "x-mes-1",
+   "titulo": "Plan · mes 1: Lanzamos y cobramos",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 1: Lanzamos y cobramos. HandIA con referencia de costo Tarifa del {{TARIFA-USUARIO}} visible y cobro en la app Lanzamiento de la PWA ({{LANZAMIENTO}}) Valor: Ingresos reales desde el primer trabajo Ticket medio medido, no supuesto Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre).",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · plan de 3 meses · 1 de 3",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 72
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Mes 1: ==Lanzamos y cobramos==",
+     "nivel": 2
+    },
+    {
+     "id": "kh",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que hacemos",
+     "tono": "neutro"
+    },
+    {
+     "id": "h",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 29,
+      "w": 40
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**HandIA** con referencia de costo",
+       "icono": "chispas"
+      },
+      {
+       "texto": "**Tarifa del {{TARIFA-USUARIO}}** visible y cobro en la app",
+       "icono": "recibo"
+      },
+      {
+       "texto": "**Lanzamiento** de la PWA ({{LANZAMIENTO}})",
+       "icono": "cohete"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "kv",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que se valora",
+     "tono": "meta"
+    },
+    {
+     "id": "v",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 29,
+      "w": 26
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Ingresos reales** desde el primer trabajo",
+       "icono": "dolar"
+      },
+      {
+       "texto": "**Ticket medio** medido, no supuesto",
+       "icono": "calculadora"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 84,
+      "w": 69
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "**Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre)**",
+     "tamano": "s",
+     "caja": "amarilla"
+    },
+    {
+     "id": "tel",
+     "area": "libre",
+     "pos": {
+      "x": 78,
+      "y": 14
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "telefono",
+     "alto": 72,
+     "leyenda": "HandIA en la demo",
+     "pantallas": [
+      {
+       "recurso": "demo-handia",
+       "alt": "HandIA en la demo"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "x-mes-2",
+   "titulo": "Plan · mes 2: El profesional se queda",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 2: El profesional se queda. Herramientas de las {{PROFESIONES-INICIALES}} profesiones Ingresos y gastos del profesional Feedback con IA desde las valoraciones Valor: Retención: el profesional usa Handyx todos los días Mejor servicio: más clientes que vuelven Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}}).",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · plan de 3 meses · 2 de 3",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 72
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Mes 2: ==El profesional se queda==",
+     "nivel": 2
+    },
+    {
+     "id": "kh",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que hacemos",
+     "tono": "neutro"
+    },
+    {
+     "id": "h",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 29,
+      "w": 40
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Herramientas** de las {{PROFESIONES-INICIALES}} profesiones",
+       "icono": "herramienta"
+      },
+      {
+       "texto": "**Ingresos y gastos** del profesional",
+       "icono": "billetera"
+      },
+      {
+       "texto": "**Feedback con IA** desde las valoraciones",
+       "icono": "chispas"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "kv",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que se valora",
+     "tono": "meta"
+    },
+    {
+     "id": "v",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 29,
+      "w": 26
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Retención:** el profesional usa Handyx todos los días",
+       "icono": "repetir"
+      },
+      {
+       "texto": "**Mejor servicio:** más clientes que vuelven",
+       "icono": "estrella"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 84,
+      "w": 69
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "**Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}})**",
+     "tamano": "s",
+     "caja": "amarilla"
+    },
+    {
+     "id": "tel",
+     "area": "libre",
+     "pos": {
+      "x": 78,
+      "y": 14
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "telefono",
+     "alto": 72,
+     "leyenda": "Herramientas · diseño propuesto",
+     "pantallas": [
+      {
+       "recurso": "herr-electricidad",
+       "alt": "Herramientas · diseño propuesto"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "x-mes-3",
+   "titulo": "Plan · mes 3: Crecemos a dos lados",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 3: Crecemos a dos lados. Piloto de Handyx for Business con un local 2 profesiones nuevas Campaña con porteros en toda la ciudad Valor: Primer ingreso B2B y más demanda Más trabajo para más profesionales Mide: CAC por canal, turnos B2B y trabajos por mes.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · plan de 3 meses · 3 de 3",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 72
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Mes 3: ==Crecemos a dos lados==",
+     "nivel": 2
+    },
+    {
+     "id": "kh",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que hacemos",
+     "tono": "neutro"
+    },
+    {
+     "id": "h",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 29,
+      "w": 40
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Piloto** de Handyx for Business con un local",
+       "icono": "tienda"
+      },
+      {
+       "texto": "**2 profesiones nuevas**",
+       "icono": "sparkles"
+      },
+      {
+       "texto": "**Campaña con porteros** en toda la ciudad",
+       "icono": "edificio"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "kv",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 24
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Lo que se valora",
+     "tono": "meta"
+    },
+    {
+     "id": "v",
+     "area": "libre",
+     "pos": {
+      "x": 48,
+      "y": 29,
+      "w": 26
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Primer ingreso B2B** y más demanda",
+       "icono": "crecimiento"
+      },
+      {
+       "texto": "**Más trabajo** para más profesionales",
+       "icono": "usuarios"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 84,
+      "w": 69
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "**Mide: CAC por canal, turnos B2B y trabajos por mes**",
+     "tamano": "s",
+     "caja": "amarilla"
+    },
+    {
+     "id": "tel",
+     "area": "libre",
+     "pos": {
+      "x": 78,
+      "y": 14
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "telefono",
+     "alto": 72,
+     "leyenda": "Handyx for Business · diseño propuesto",
+     "pantallas": [
+      {
+       "recurso": "herr-turnos",
+       "alt": "Handyx for Business · diseño propuesto"
+      }
+     ]
     }
    ]
   },
