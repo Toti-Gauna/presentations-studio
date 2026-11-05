@@ -1334,7 +1334,11 @@
       3.4
      ],
      "afirmaciones": [
-      "META-TRABAJOS"
+      "LANZAMIENTO",
+      "META-BA-MESES",
+      "META-TRABAJOS",
+      "PROF-POR-MES",
+      "TARIFA-USUARIO"
      ],
      "area": "fondo",
      "paso": 0,
@@ -1369,7 +1373,9 @@
       3.4
      ],
      "afirmaciones": [
-      "META-REPETIDORES"
+      "META-BA-MESES",
+      "META-REPETIDORES",
+      "PROF-POR-MES"
      ],
      "area": "fondo",
      "paso": 0,
@@ -1403,7 +1409,10 @@
       3.2,
       3.4
      ],
-     "afirmaciones": [],
+     "afirmaciones": [
+      "META-BA-MESES",
+      "PROF-Q1"
+     ],
      "area": "fondo",
      "paso": 0,
      "entrada": "ninguna"
