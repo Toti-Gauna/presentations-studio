@@ -19,7 +19,7 @@ const OFICIOS = [
   { ic: 'aire', txt: 'Aire acondicionado' },
 ];
 // Herramientas de las profesiones que se suman (decorado: no nombra profesiones, que todavía no están confirmadas).
-const HERRAMIENTAS = ['martillo', 'llave-inglesa', 'sparkles', 'herramienta', 'camara', 'auto', 'martillo2', 'celular', 'usuarios', 'servidor', 'escudo', 'edificio'];
+const HERRAMIENTAS = ['martillo', 'llave-inglesa', 'sparkles', 'herramienta', 'camara', 'auto', 'capas', 'celular', 'usuarios', 'servidor', 'escudo', 'ruta'];
 // Columna 0: las profesiones de hoy; después, una columna por mes (nov 2026 → sep 2027).
 const MESES = ['hoy', 'nov', 'dic', 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep'];
 const FILAS = 6;
@@ -133,7 +133,9 @@ function campo(c: Kit): string {
       casas.push({ x, y, k: d * 1.5 + az * 0.55 });
     }
   }
-  const juntas = casas.filter((h) => casas.filter((o) => o !== h && Math.hypot(o.x - h.x, o.y - h.y) < 32).length >= 3);
+  // Fuera las casas sueltas del borde (menos de 3 vecinas), en dos pasadas
+  const vecinas = (lista: typeof casas) => lista.filter((h) => lista.filter((o) => o !== h && Math.hypot(o.x - h.x, o.y - h.y) < 36).length >= 3);
+  const juntas = vecinas(vecinas(casas));
   const casita = (x: number, y: number) =>
     `M${(x - 7).toFixed(1)} ${(y + 6).toFixed(1)}V${(y - 1).toFixed(1)}L${x.toFixed(1)} ${(y - 7.5).toFixed(1)}L${(x + 7).toFixed(1)} ${(y - 1).toFixed(1)}V${(y + 6).toFixed(1)}Z`;
   const orden = [...juntas].sort((p, q) => p.k - q.k);
@@ -222,12 +224,12 @@ export default escena({
     .ficha { background: #fff; display: grid; place-items: center; box-shadow: 0 5px 0 #D5DCE7, 0 10px 18px rgba(14,29,54,.08); }
     .ficha .icono { width: 32px; height: 32px; }
     .ficha.ini { background: ${COLOR.azul}; box-shadow: 0 5px 0 ${COLOR.azulOscuro}, 0 10px 18px rgba(14,29,54,.12); }
-    .regla { position: absolute; left: ${colX(0)}px; top: 746px; width: ${colX(11) - colX(0)}px; height: 8px; border-radius: 4px; background: #D5DCE7; }
+    .regla { position: absolute; left: ${colX(0)}px; top: 754px; width: ${colX(11) - colX(0)}px; height: 8px; border-radius: 4px; background: #D5DCE7; }
     .regla .lleno { position: absolute; left: 0; top: 0; width: 100%; height: 8px; border-radius: 4px; background: ${COLOR.amarillo}; transform-origin: 0 50%; }
     .regla .marca { position: absolute; left: -13px; top: -9px; width: 26px; height: 26px; border-radius: 50%; background: ${COLOR.amarillo}; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(14,29,54,.25); }
-    .mes { position: absolute; top: 764px; width: 80px; margin-left: -40px; text-align: center; font-size: 20px; font-weight: 700; color: ${COLOR.suave}; }
+    .mes { position: absolute; top: 772px; width: 80px; margin-left: -40px; text-align: center; font-size: 20px; font-weight: 700; color: ${COLOR.suave}; }
     .mes.on { color: ${COLOR.azulOscuro}; font-weight: 800; }
-    .anio { position: absolute; top: 798px; padding-top: 4px; border-top: 3px solid #C3CCDB; text-align: center; font-size: 20px; font-weight: 800; color: ${COLOR.noche}; }
+    .anio { position: absolute; top: 806px; padding-top: 4px; border-top: 3px solid #C3CCDB; text-align: center; font-size: 20px; font-weight: 800; color: ${COLOR.noche}; }
     .meta72 { position: absolute; left: 1110px; top: 292px; width: 714px; }
     .n72 { font-size: 230px; line-height: .86; color: ${COLOR.azul}; }
     .l72 { margin-top: 12px; font-size: 52px; color: ${COLOR.noche}; }
@@ -271,10 +273,16 @@ export default escena({
       `<path class="via v${i}" d="${v.d}" pathLength="1000"/><g class="gotas g${i}">${'<circle r="6"/>'.repeat(Math.max(3, Math.round(v.largo / 64)))}</g>`;
     let fichas = '';
     MESES.forEach((_, j) => {
+      // Cada mes, seis herramientas distintas (mezcla determinista)
+      const mezcla = [...HERRAMIENTAS];
+      for (let k = mezcla.length - 1; k > 0; k--) {
+        const r = Math.floor(c.azar() * (k + 1));
+        [mezcla[k], mezcla[r]] = [mezcla[r]!, mezcla[k]!];
+      }
       for (let i = 0; i < FILAS; i++) {
         const pos = `left:${j * GRILLA.paso}px;top:${i * GRILLA.paso}px`;
         fichas += `<i class="slot" style="${pos}"></i>`;
-        const ic = j === 0 ? OFICIOS[i]!.ic : HERRAMIENTAS[(j * 5 + i * 7) % HERRAMIENTAS.length]!;
+        const ic = j === 0 ? OFICIOS[i]!.ic : mezcla[i]!;
         fichas += `<div class="ficha ${j === 0 ? 'ini' : ''} f${j}" style="${pos}">${c.icono(ic, j === 0 ? 'blanco' : '')}</div>`;
       }
     });

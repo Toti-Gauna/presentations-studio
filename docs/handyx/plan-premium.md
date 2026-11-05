@@ -5,6 +5,39 @@ de «HandIA te habla» y «Ferreterías conectadas». Debe tener un golpe de ani
 coherentes en todo. En el video, la cara va dentro de la escena, los subtítulos integrados y sin silencios. Lo mismo para las respuestas y el
 material extra.
 
+## Plan rearmado (05/11, 2 h) · respuestas de Ignacio
+
+- **25 %** es la cifra oficial: va en pantalla, en las respuestas y en los subtítulos. En la grabación actual se dice 20 %; hasta que se
+  regrabe, el subtítulo muestra 25 %.
+- **Grabación**: para la semifinal se usa la actual. Hoy se practica y se graba una versión fluida; el video se rehace con esa (proceso
+  automatizado).
+- **En vivo con clicks** y, además, **modo «video de fondo»**: el pitch se desarrolla solo, de principio a fin, mientras Ignacio habla
+  encima. Va en la app (botón «Automático» en el presentador, el clicker pausa y sigue, con teleprompter) y en MP4 (con música suave y sin sonido).
+- **Semifinal: hoy 5/11. Final: 13/11.**
+- **$ 70.000** de ingreso bruto de la prueba: confirmado; rótulo «Dato informado por el fundador».
+- Nuevo:
+  - **Cierre con 2 QR**: la landing y el portafolio de Ignacio.
+  - **Los Handys como protagonistas** de las animaciones.
+  - **La inversión en marketing explicada**: publicidades con IA (Seedance 2.5), marketing digital en todas las redes y marketing físico
+    (carteles en postes, volantes en locales y remeras con el Handy de cada oficio para los profesionales).
+  - **La intro de los Handys** abre el video de fondo y el video final.
+
+### Bloque 1 · Para la semifinal (unas 3 h)
+1. Las 7 diapositivas animadas con leyendas, notas «→ al decir…» y Handys; integradas y revisadas.
+2. Marketing de la inversión explicado en la diapositiva 7, en «Cada dólar» y en la respuesta 9.
+3. Cierre con los 2 QR, un click después de «¡Muchas gracias!»; queda en pantalla durante las preguntas.
+4. Modo video de fondo (app y MP4) con teleprompter; los tiempos salen del guion oficial y se ajustan después del ensayo.
+5. Las 20 respuestas animadas y el machete en PDF.
+6. Respaldo en PDF y PPT por golpe, grabación en vivo nueva y pruebas completas.
+
+### Bloque 2 · Para la final (en paralelo, unas 4 a 6 h)
+1. Las 30 láminas del material extra animadas con los Handys, por familias, con agentes en paralelo.
+2. Respuestas a medida para multiplicar, cripto, IPO, materiales y voz.
+3. Video premium:
+   - Una versión ya, con la grabación actual: cara en círculo dentro de la escena, subtítulos integrados, música, sin silencios, intro y QR.
+   - Otra con la grabación fluida, cuando llegue.
+4. HandIA con voz real (ElevenLabs) cuando haya clave.
+
 ## Reglas para todo el material
 
 1. **Una escena animada por diapositiva**, con un golpe por frase del guion. Sin zoom ni pastillas flotantes encima de la lámina.
@@ -112,17 +145,7 @@ material extra.
 - Grabación en vivo nueva y video final.
 - PDF y PPT con cada golpe, zip de imágenes y machete.
 
-## Orden y tiempos estimados
+## Pendiente de Ignacio
 
-Fase 1 (resto: 3–4 h) → Fase 2 (2–3 h + render) → Fase 3, segunda pasada (2 h) → Fase 4 (8–10 h; por familias, empezando por las
-que se muestran en las preguntas más probables) → Fase 5 (2 h). Si la final es en menos de 48 h: 1 → 2 → 3 → números y competencia de la 4 → el resto.
-
-## Decisiones de Ignacio (con lo que hago si no hay respuesta)
-
-1. **20 % o 25 %**: en la grabación decís 20 % y en pantalla dice 25 %, y con 20 % el trimestre no llega a USD 100.000. Lo mejor es regrabar
-   esa frase. Si no se regraba, queda el 25 % en pantalla y en el guion.
-2. **Regrabar el pitch** (3 min, guion oficial, buena luz, cámara a la altura de los ojos). Lo recomiendo: así el video incluye la
-   competencia, que en la grabación actual no está. Si no, edito la actual.
-3. **En vivo**: si no decís otra cosa, clicker en cada golpe.
-4. **Fecha de la final**: si no la sé, trabajo como si fuera en menos de 48 h.
-5. **$ 70.000 de ingreso bruto de la prueba**: queda rotulado como «Dato informado por el fundador · conciliación pendiente».
+- Link del portafolio (QR del cierre).
+- Hora de la semifinal (para saber el margen).

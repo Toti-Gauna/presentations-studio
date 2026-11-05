@@ -36,7 +36,7 @@ const CIUDADES: Ciudad[] = [
   { n: 'Posadas', paso: 4, llega: 1.0, lado: 'der', desde: 'Corrientes', curva: 0.3 },
   { n: 'Salta', paso: 4, llega: 1.4, lado: 'izq', desde: 'Tucumán', curva: 0.35 },
   { n: 'Neuquén', paso: 5, llega: 0.75, lado: 'izq', desde: 'Bahía Blanca', curva: 0.2 },
-  { n: 'Comodoro Rivadavia', paso: 5, llega: 1.0, lado: 'der', desde: 'Bahía Blanca', curva: -0.2 },
+  { n: 'Comodoro Rivadavia', paso: 5, llega: 1.0, lado: 'der', desde: 'Bahía Blanca', curva: -0.12 },
   { n: 'Bariloche', paso: 5, llega: 1.35, lado: 'izq', desde: 'Neuquén', curva: -0.25 },
   { n: 'Ushuaia', paso: 5, llega: 1.6, lado: 'der', desde: 'Comodoro Rivadavia', curva: -0.18 },
 ];
@@ -97,7 +97,7 @@ const MOSAICOS: Mosaico[] = (() => {
       const p: Pt = [x, y];
       if (!dentro(p, tierra)) continue;
       let z = N - 1;
-      if (dentro(p, ba)) z = dist(p, mdp) < 30 ? 0 : 1;
+      if (dentro(p, ba)) z = dist(p, mdp) < 42 ? 0 : 1;
       else {
         let mejor = Infinity;
         for (const c of resto) {
@@ -123,7 +123,7 @@ const rect = (q: Mosaico) => `<rect x="${(q.x - LADO_M / 2).toFixed(1)}" y="${(q
 const PARADAS = ['Lanzamiento', 'Nov–ene', 'Feb–abr', 'May–jul', 'Ago–oct', 'Nov–dic 2027'];
 const RX = (k: number) => 66 + k * 157;
 const CARTA = { x: 96, y: 374, w: 914, h: 492 };
-const CUENTA = { x: 650, y: 206, w: 234, h: 96 };
+const CUENTA = { x: 632, y: 206, w: 252, h: 96 };
 const ABAJO = { x: 30, y: 332 };
 const OF = { w: 274, h: 62, gx: 16, gy: 14 };
 const OFICIOS = [
@@ -204,12 +204,12 @@ export default escena({
     .raya { position: absolute; left: 30px; right: 30px; height: 2px; background: ${COLOR.borde}; }
     .r1 { top: 196px; } .r2 { top: 318px; }
     .pm { top: 214px; } .pe { top: 208px; }
-    .pv { left: 104px; top: 236px; width: 520px; height: 64px; }
-    .pv .v { width: 520px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+    .pv { left: 104px; top: 236px; width: 512px; height: 64px; }
+    .pv .v { width: 512px; font-size: 24px; font-weight: 700; line-height: 1.25; }
     .cuenta { position: absolute; left: ${CUENTA.x}px; top: ${CUENTA.y}px; width: ${CUENTA.w}px; height: ${CUENTA.h}px; border-radius: 20px; background: ${COLOR.azul}; color: #fff; box-shadow: 0 6px 0 ${COLOR.azulOscuro}; }
-    .cuenta .arriba { position: absolute; left: 20px; top: 4px; display: flex; align-items: baseline; gap: 10px; }
-    .cuenta .n { font-size: 58px; line-height: 1.05; }
-    .cuenta .pal { font-size: 21px; font-weight: 700; }
+    .cuenta .arriba { position: absolute; left: 20px; top: 6px; display: flex; align-items: baseline; gap: 9px; }
+    .cuenta .n { font-size: 54px; line-height: 1.05; }
+    .cuenta .pal { font-size: 20px; font-weight: 700; }
     .barra { position: absolute; left: 20px; right: 20px; bottom: 14px; height: 9px; border-radius: 5px; background: rgba(255,255,255,.22); overflow: hidden; }
     .barra i { position: absolute; inset: 0; border-radius: 5px; background: ${COLOR.amarillo}; transform-origin: 0 50%; }
     .abajo { position: absolute; left: ${ABAJO.x}px; top: ${ABAJO.y}px; width: 854px; height: 138px; }
@@ -251,7 +251,7 @@ export default escena({
     .caja span { display: inline-block; padding: 4px 13px; border-radius: 999px; background: #fff; font-weight: 800; font-size: 20px; color: ${COLOR.noche}; box-shadow: 0 6px 16px rgba(14,29,54,.18); }
     .der span { transform-origin: 0 50%; } .izq span { transform-origin: 100% 50%; } .aba span { transform-origin: 50% 0; }
     .etq.casa span { background: ${COLOR.noche}; color: #fff; }
-    .placa { position: absolute; left: 1528px; top: 528px; width: 252px; padding: 16px 0 14px; border-radius: 26px; background: #fff; text-align: center; box-shadow: 0 0 0 8px rgba(255,201,60,.6), 0 22px 44px rgba(14,29,54,.28); }
+    .placa { position: absolute; left: 1548px; top: 528px; width: 252px; padding: 16px 0 14px; border-radius: 26px; background: #fff; text-align: center; box-shadow: 0 0 0 8px rgba(255,201,60,.6), 0 22px 44px rgba(14,29,54,.28); }
     .placa img { display: block; height: 42px; margin: 0 auto; }
     .placa div { margin-top: 6px; font-weight: 800; font-size: 22px; color: ${COLOR.azulOscuro}; }
   `,
@@ -361,7 +361,6 @@ export default escena({
       const etq = etiquetas[i];
       if (!pin || !etq) return;
       tl.fromTo(pin.querySelector('b'), { scale: 0 }, { scale: 1, duration: 0.45, ease: 'back.out(3)' }, ta);
-      tl.fromTo(pin.querySelector('.onda'), { scale: 0.3, autoAlpha: 1 }, { scale: 2.8, autoAlpha: 0, duration: 0.9, ease: 'power2.out' }, ta);
       tl.fromTo(etq, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.2)' }, ta + 0.08);
       if (ci.paso > 0 && ci.paso < N - 1) tl.to(etq, { autoAlpha: 0, scale: 0.85, duration: 0.3, ease: 'power2.in' }, m(ci.paso + 1) + 0.05);
     });
@@ -450,6 +449,18 @@ export default escena({
         }
         a.g.style.opacity = k <= 0 ? '0' : String(1 - 0.65 * tramo(t, m(a.paso + 1) + 0.2, m(a.paso + 1) + 0.7));
       }
+    });
+
+    // Onda de llegada de cada pin (pintor: invisible antes y después, también en los saltos)
+    const ondas = $.all('.pin .onda');
+    c.pintor((t) => {
+      CIUDADES.forEach((ci, i) => {
+        const o = ondas[i];
+        if (!o) return;
+        const k = tramo(t, m(ci.paso) + ci.llega, m(ci.paso) + ci.llega + 0.9);
+        o.style.opacity = k > 0 && k < 1 ? String(1 - k) : '0';
+        o.style.transform = `scale(${0.3 + 2.5 * (1 - (1 - k) ** 2)})`;
+      });
     });
 
     // Riel (estado de cada parada) y poses de Foco: saluda, corre entre paradas y festeja al final

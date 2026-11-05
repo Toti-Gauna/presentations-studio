@@ -275,6 +275,7 @@ export default escena({
     const alcancia = $('.alcancia .in');
     const ventEd = $.all('.ed .w');
     const ventLej = $.all('.lej i');
+    const [pjLlave, pjFoco0, pjFoco3] = [$('.llave .pj'), $('.foco0 .pj'), $('.foco3 .pj')];
     c.pintor((t) => {
       for (const v of vuelos) {
         if (t < v.t0 || t > v.t1 + 0.1) {
@@ -299,11 +300,10 @@ export default escena({
       // ventanas que se encienden (edificios y horizonte)
       for (const w of ventEd) w.classList.toggle('on', t >= Number(w.dataset['t']));
       for (const w of ventLej) w.classList.toggle('on', t >= Number(w.dataset['t']));
-      // poses
-      const llave = $('.llave .pj');
-      pose(llave, t >= 12.0 ? 'c' : t >= 10.9 ? 'b' : t >= 8.4 ? 'a' : t >= 7.0 ? 'd' : t >= 5.7 ? 'c' : t >= 4.1 ? 'd' : t >= 3.0 ? 'a' : t >= 0.9 ? 'b' : 'a');
-      pose($('.foco0 .pj'), t >= 3.0 ? 'd' : t >= 0.9 ? 'b' : 'a');
-      pose($('.foco3 .pj'), t >= 12.2 ? 'c' : t >= 11.55 ? 'b' : 'd');
+      // poses: Llave saluda los trabajos que llegan y festeja; al pagar su parte queda tranquilo (nunca «esfuerzo»)
+      pose(pjLlave, t >= 12.0 ? 'c' : t >= 10.9 ? 'b' : t >= 7.0 ? 'a' : t >= 5.7 ? 'c' : t >= 4.1 ? 'b' : t >= 3.0 ? 'a' : t >= 0.9 ? 'b' : 'a');
+      pose(pjFoco0, t >= 3.0 ? 'd' : t >= 0.9 ? 'b' : 'a');
+      pose(pjFoco3, t >= 12.2 ? 'c' : t >= 11.55 ? 'b' : 'd');
     });
   },
   ambiente(t, $, tl) {

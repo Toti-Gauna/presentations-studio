@@ -32,8 +32,9 @@ const MOSAICOS_DE_PASO = [3, 4, 5]; // los del medio se corren cuando llegan los
 const TEXTO = 'Se tapó la pileta de la cocina y pierde agua';
 const PRES_X = [120, 420, 720]; // tarjetas de 276 px con 24 px de aire
 const PRES_W = 276;
-const PRES_Y = 356;
+const PRES_Y = 350;
 const PRES_H = 214;
+const SELLO_Y = PRES_Y + PRES_H + 22; // centro del sello: apoya en el borde de la tarjeta sin tapar el monto
 
 /** Presupuesto que se destaca: el más cercano al medio del rango de HandIA (a igual distancia, el más bajo). */
 function elegida(c: Kit): number {
@@ -52,8 +53,7 @@ function elegida(c: Kit): number {
 const cocina = (clase: string) => `
   <div class="cocina ${clase}">
     <div class="k-pared"><i class="k-repisa"></i><i class="k-frasco f1"></i><i class="k-frasco f2"></i></div>
-    <div class="k-canilla"><i class="k-cano"></i><i class="k-pico"></i><i class="k-boca"></i><i class="k-mando"></i></div>
-    <i class="k-gota" data-d="40" style="left:347px;top:206px"></i>
+    <div class="k-canilla"><i class="k-cano"></i><i class="k-pico"></i><i class="k-boca"></i><i class="k-mando"></i><i class="k-gota" data-d="40" style="left:347px;top:206px"></i></div>
     <div class="k-mesada"></div>
     <div class="k-bacha"><i class="k-burb" style="left:64px"></i><i class="k-burb" style="left:150px"></i><i class="k-burb" style="left:108px"></i></div>
     <div class="k-mueble">
@@ -118,6 +118,27 @@ export default escena({
     .k-charco i { left: 20%; top: 7px; width: 26%; height: 6px; border-radius: 3px; background: rgba(255,255,255,.6); }
     .flash-k { position: absolute; left: 100px; top: 330px; width: 940px; height: 548px; border-radius: 30px; background: #fff; }
 
+    /* Cocina a gas del camino 2 (600 × 520, mismo lugar que la pileta) */
+    .estufa { position: absolute; left: 120px; top: 352px; width: 600px; height: 520px; }
+    .estufa i { position: absolute; display: block; }
+    .e-pared { position: absolute; left: 40px; top: 38px; width: 520px; height: 234px; border-radius: 22px 22px 0 0; background-color: #FBFBF9; background-image: linear-gradient(90deg, rgba(14,29,54,.07) 2px, transparent 2px), linear-gradient(rgba(14,29,54,.07) 2px, transparent 2px); background-size: 50px 50px; background-position: -1px -1px; transform-origin: 50% 100%; }
+    .e-cuerpo { position: absolute; left: 170px; top: 264px; width: 260px; height: 252px; border-radius: 6px 6px 12px 12px; background: #fff; box-shadow: inset 0 0 0 3px ${COLOR.borde}, 0 10px 24px rgba(14,29,54,.08); }
+    .e-perilla { top: 16px; width: 22px; height: 22px; border-radius: 50%; background: #C3CAD6; }
+    .e-perilla::after { content: ''; position: absolute; left: 9px; top: 3px; width: 4px; height: 8px; border-radius: 2px; background: ${COLOR.suave}; }
+    .e-puerta { position: absolute; left: 18px; top: 52px; width: 224px; height: 184px; border-radius: 8px; box-shadow: inset 0 0 0 3px ${COLOR.borde}; }
+    .e-manija { left: 22px; top: 14px; width: 180px; height: 10px; border-radius: 5px; background: #C3CAD6; }
+    .e-vidrio { left: 22px; top: 42px; width: 180px; height: 116px; border-radius: 10px; background: #2E3D5C; }
+    .e-tapa { position: absolute; left: 158px; top: 246px; width: 284px; height: 20px; border-radius: 6px; background: #3A4660; }
+    .e-hornalla { top: -9px; width: 86px; height: 10px; border-radius: 4px 4px 0 0; background: ${COLOR.texto}; }
+    .e-olla { position: absolute; left: 172px; top: 166px; width: 120px; height: 72px; }
+    .o-cuerpo { left: 12px; top: 16px; width: 96px; height: 56px; border-radius: 6px 6px 18px 18px; background: ${COLOR.azul}; box-shadow: inset 0 -8px 0 rgba(0,0,0,.14); }
+    .o-tapa { left: 6px; top: 6px; width: 108px; height: 12px; border-radius: 6px; background: ${COLOR.azulOscuro}; }
+    .o-pomo { left: 50px; top: -4px; width: 20px; height: 12px; border-radius: 6px 6px 2px 2px; background: ${COLOR.azulOscuro}; }
+    .o-asa { top: 24px; width: 16px; height: 10px; border-radius: 5px; background: ${COLOR.azulOscuro}; }
+    .e-chispas { position: absolute; left: 336px; top: 196px; width: 54px; height: 40px; }
+    .e-chispas i { width: 5px; height: 16px; border-radius: 3px; background: ${COLOR.amarillo}; }
+    .e-alerta { position: absolute; left: 404px; top: 150px; width: 54px; height: 54px; border-radius: 50%; background: ${COLOR.naranja}; color: #fff; display: grid; place-items: center; font-size: 34px; font-weight: 900; box-shadow: 0 10px 22px rgba(14,29,54,.2); }
+
     /* Foco, la duda y la idea */
     .mov { position: absolute; }
     .pj { transform-origin: 50% 100%; }
@@ -147,11 +168,10 @@ export default escena({
     .marco { position: absolute; inset: -10px; border-radius: 34px; border: 6px solid ${COLOR.amarillo}; }
     .eleccion { position: absolute; left: 0; right: 0; top: -24px; text-align: center; }
     .eleccion .chip { padding: 6px 16px; font-size: 20px; }
-    .sellito { position: absolute; top: ${PRES_Y + PRES_H - 52}px; width: 320px; text-align: center; }
-    .sellito .sello { font-size: 28px; line-height: 1.05; text-align: left; padding: 14px 22px; }
-    .sellito .icono { width: 36px; height: 36px; flex: none; }
-    .golpe { position: absolute; top: ${PRES_Y + PRES_H - 90}px; width: 180px; height: 180px; border-radius: 50%; border: 6px solid ${COLOR.amarillo}; }
-    .llave { top: 650px; width: 220px; height: 220px; }
+    .sellito { position: absolute; top: ${SELLO_Y - 39}px; width: 360px; text-align: center; }
+    .sellito .sello { display: inline-block; font-size: 24px; line-height: 1.1; padding: 12px 22px; white-space: nowrap; text-align: center; box-shadow: 0 8px 0 ${COLOR.azulOscuro}, 0 18px 36px rgba(14,29,54,.25), inset 0 0 0 3px rgba(255,255,255,.35); }
+    .golpe { position: absolute; top: ${SELLO_Y - 90}px; width: 180px; height: 180px; border-radius: 50%; border: 6px solid ${COLOR.amarillo}; }
+    .llave { top: 660px; width: 210px; height: 210px; }
     .sugiere { position: absolute; left: 120px; top: 664px; width: 300px; font-size: 26px; font-weight: 800; line-height: 1.25; color: ${COLOR.noche}; }
     .sugiere small { display: block; margin-bottom: 6px; font-size: 20px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: ${COLOR.azul}; }
 
@@ -174,13 +194,13 @@ export default escena({
     .scr { position: absolute; left: 0; right: 0; top: 38px; bottom: 0; overflow: hidden; }
     .scr-chat { background: #F4F6FA; }
     .chat-cab { position: absolute; left: 0; right: 0; top: 0; height: 76px; display: flex; align-items: center; gap: 10px; padding: 0 14px; background: #fff; box-shadow: 0 2px 10px rgba(14,29,54,.08); z-index: 2; }
-    .atras { width: 18px; font-size: 30px; font-weight: 800; color: ${COLOR.azul}; line-height: 1; }
+    .atras { flex: none; width: 14px; height: 14px; margin: 0 2px 0 6px; border-left: 3px solid ${COLOR.azul}; border-bottom: 3px solid ${COLOR.azul}; border-radius: 2px; transform: rotate(45deg); }
     .av { flex: none; width: 48px; height: 48px; border-radius: 50%; background: #F5F59A; overflow: hidden; display: grid; place-items: end center; }
     .av img { height: 44px; display: block; }
     .chat-cab b { display: block; font-size: 22px; font-weight: 800; line-height: 1.1; }
     .chat-cab small { display: block; font-size: 20px; color: ${COLOR.suave}; line-height: 1.15; white-space: nowrap; }
-    .lista { position: absolute; left: 0; right: 0; top: 90px; padding: 0 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-    .msg { max-width: 272px; padding: 11px 16px; border-radius: 22px 22px 22px 8px; background: ${COLOR.azul}; color: #fff; font-size: 20px; line-height: 1.3; font-weight: 600; box-shadow: 0 6px 14px rgba(14,29,54,.12); }
+    .lista { position: absolute; left: 0; right: 0; top: 90px; padding: 0 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .msg { max-width: 280px; padding: 11px 16px; border-radius: 22px 22px 22px 8px; background: ${COLOR.azul}; color: #fff; font-size: 20px; line-height: 1.3; font-weight: 600; box-shadow: 0 6px 14px rgba(14,29,54,.12); }
     .msg.yo { align-self: flex-end; border-radius: 22px 22px 8px 22px; background: #fff; color: ${COLOR.noche}; }
     .m-foto { padding: 8px; }
     .mini { position: relative; width: 170px; height: 112px; border-radius: 14px; overflow: hidden; background: #E9EDF3; }
@@ -193,8 +213,8 @@ export default escena({
     .m-resp { position: relative; align-self: stretch; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
     .m-puntos { position: absolute; left: 0; top: 0; display: flex; gap: 7px; padding: 17px 18px; border-radius: 22px 22px 22px 8px; background: ${COLOR.azul}; }
     .m-puntos i { width: 10px; height: 10px; border-radius: 50%; background: #fff; }
-    .m-rubro { align-self: center; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #F5F59A; box-shadow: 0 3px 0 #D8D86A; font-size: 20px; font-weight: 800; white-space: nowrap; }
-    .m-rubro .icono { width: 26px; height: 26px; }
+    .m-rubro { align-self: center; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; background: #F5F59A; box-shadow: 0 3px 0 #D8D86A; font-size: 20px; font-weight: 800; white-space: nowrap; }
+    .m-rubro .icono { width: 24px; height: 24px; }
     .m-rango { max-width: none; }
     .m-rango span { display: block; color: #DCE7FA; }
     .m-rango b { display: block; margin-top: 2px; font-size: 24px; white-space: nowrap; }
@@ -217,7 +237,7 @@ export default escena({
     .disparador { position: absolute; left: 50%; bottom: 52px; width: 74px; height: 74px; margin-left: -37px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px #0A1528, 0 0 0 10px #fff; }
     .flash { position: absolute; inset: 0; background: #fff; z-index: 6; }
     .scr-of { background: #fff; z-index: 7; }
-    .of-tit { position: absolute; left: 18px; top: 18px; font-size: 28px; }
+    .of-tit { position: absolute; left: 16px; right: 10px; top: 20px; font-size: 25px; font-stretch: 104%; white-space: nowrap; }
     .grilla { position: absolute; left: 14px; right: 14px; top: 74px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .ofi { position: relative; height: 108px; border-radius: 18px; background: #ECECEC; box-shadow: 0 5px 0 #D2D2D2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 6px; font-size: 20px; font-weight: 700; color: #1D2C4A; text-align: center; line-height: 1.05; }
     .ofi .icono { width: 40px; height: 40px; }
@@ -242,6 +262,14 @@ export default escena({
     <div class="ejemplo">Ejemplo ilustrativo</div>
     ${cocina('k-escena')}
     <div class="flash-k"></div>
+    <div class="estufa">
+      <div class="e-pared"></div>
+      <div class="e-cuerpo">${[34, 92, 150, 208].map((x) => `<i class="e-perilla" style="left:${x}px"></i>`).join('')}<div class="e-puerta"><i class="e-manija"></i><i class="e-vidrio"></i></div></div>
+      <div class="e-tapa"><i class="e-hornalla" style="left:30px"></i><i class="e-hornalla" style="left:166px"></i></div>
+      <div class="e-olla"><i class="o-asa" style="left:0"></i><i class="o-asa" style="left:104px"></i><i class="o-cuerpo"></i><i class="o-tapa"></i><i class="o-pomo"></i></div>
+      <div class="e-chispas"><i style="left:4px;top:10px;transform:rotate(-28deg)"></i><i style="left:24px;top:0"></i><i style="left:44px;top:10px;transform:rotate(28deg)"></i></div>
+      <div class="e-alerta">!</div>
+    </div>
     <div class="rayos"><i></i></div>
     <div class="mov foco">${c.pj('bombilla', '', 270)}<div class="sombra-pj"></div></div>
     <div class="pensar duda"><i class="bur p2"></i><i class="bur p1"></i><div class="nube-w"><div class="nube bur"><span class="q t">?</span><span class="r">${c.icono('plomeria')}</span></div></div></div>
@@ -250,10 +278,10 @@ export default escena({
       ${i === e ? `<div class="marco"></div><div class="eleccion"><span class="chip amarillo">Tu elección</span></div>` : ''}
       <div class="cab"><b class="ini">E${i + 1}</b><div><div class="nom">Especialista ${i + 1}</div>${estrellas(ESTRELLAS[i] ?? 5)}</div></div>
       <div class="lbl">Presupuesto</div><div class="monto t">${c.cifra(id)}</div></div>`).join('')}
-    <div class="mov llave" style="left:${cx - 110}px">${c.pj('llave', '', 220)}<div class="sombra-pj"></div></div>
+    <div class="mov llave" style="left:${cx - 105}px">${c.pj('llave', '', 210)}<div class="sombra-pj"></div></div>
     <div class="golpe" style="left:${cx - 90}px"></div>
-    <div class="sellito" style="left:${cx - 160}px"><span class="sello">${c.icono('tilde-circulo', 'blanco')}<span>El precio lo pone<br>el profesional</span></span></div>
-    <div class="sugiere"><small>Precio final</small>Handyx sugiere, nunca impone.</div>
+    <div class="sellito" style="left:${cx - 180}px"><span class="sello">El precio lo pone<br>el profesional</span></div>
+    <div class="sugiere"><small>Precio final</small>Handyx sugiere,<br>nunca impone.</div>
     ${[0, 1, 2].map((i) => `<div class="aviso a${i}" style="top:${404 + i * 112}px"><span class="ic">${c.icono('gas', 'blanco')}</span><span><b>Nuevo presupuesto</b><small>Gas · Especialista ${i + 1}</small></span></div>`).join('')}
     <div class="tel">
       <div class="demo">${c.icono('ia')}Demo · HandIA en desarrollo</div>
@@ -261,7 +289,7 @@ export default escena({
         ${c.img('demo-landing/usuario-inicio.webp', 'captura', 'Inicio de la app de Handyx en la demo')}
         <div class="anillo"><i></i></div><div class="toque"></div>
         <div class="scr scr-chat">
-          <div class="chat-cab"><span class="atras">‹</span><span class="av">${c.img('personajes/bombilla-a.webp')}</span><span><b>HandIA</b><small>Asistente de Handyx</small></span></div>
+          <div class="chat-cab"><i class="atras"></i><span class="av">${c.img('personajes/bombilla-a.webp')}</span><span><b>HandIA</b><small>Asistente de Handyx</small></span></div>
           <div class="lista">
             <div class="msg m-hola">¡Hola! Soy HandIA. Contame qué pasó en tu casa.</div>
             <div class="msg yo m-foto"><div class="mini">${cocina('k-foto')}</div><span>Así está</span></div>
@@ -337,7 +365,7 @@ export default escena({
     tl.fromTo($('.eleccion .chip'), { autoAlpha: 0, y: 12, scale: 0.6 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: 'back.out(2.2)' }, 9.7);
     tl.fromTo($('.ejemplo'), { autoAlpha: 0, y: -8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 9.75);
     // 3 · el precio final lo pone el profesional
-    tl.to(otras, { autoAlpha: 0.45, scale: 0.97, duration: 0.35 }, 10.42);
+    tl.to(otras, { autoAlpha: 0.45, duration: 0.35 }, 10.42);
     tl.fromTo($('.llave'), { autoAlpha: 0, y: 140 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'back.out(1.7)' }, 10.45);
     tl.to($('.llave'), { y: -46, duration: 0.16, ease: 'power2.out' }, 10.98);
     tl.to($('.llave'), { y: 0, duration: 0.2, ease: 'power2.in' }, 11.14);
@@ -353,6 +381,11 @@ export default escena({
     tl.to($('.c1'), { autoAlpha: 0, rotationX: 90, transformPerspective: 600, duration: 0.25, ease: 'power2.in' }, 13.25);
     tl.fromTo($('.c2'), { autoAlpha: 0, rotationX: -90, transformPerspective: 600 }, { autoAlpha: 1, rotationX: 0, duration: 0.35, ease: 'back.out(1.6)' }, 13.45);
     tl.fromTo($('.scr-of'), { xPercent: 100 }, { xPercent: 0, duration: 0.5, ease: 'power3.inOut' }, 13.4);
+    tl.fromTo($('.e-pared'), { autoAlpha: 0, scaleY: 0.2 }, { autoAlpha: 1, scaleY: 1, duration: 0.5, ease: 'back.out(1.4)' }, 13.45);
+    tl.fromTo([$('.e-cuerpo'), $('.e-tapa')], { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.05 }, 13.55);
+    tl.fromTo($('.e-olla'), { autoAlpha: 0, y: -60 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'bounce.out' }, 13.8);
+    tl.fromTo($('.e-chispas'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2 }, 14.0);
+    tl.fromTo($('.e-alerta'), { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, 14.05);
     tl.fromTo([$('.sabe .p2'), $('.sabe .p1'), $('.sabe .nube-w')], { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.4)', stagger: 0.1 }, 13.7);
     tl.fromTo($('.toque2'), { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 0.8, scale: 0.5, duration: 0.06 }, 14.35);
     tl.to($('.toque2'), { autoAlpha: 0, scale: 2, duration: 0.45, ease: 'power2.out' }, 14.41);
@@ -386,6 +419,8 @@ export default escena({
       b.style.opacity = String(1 - k);
     });
     for (const ch of $.all('.k-charco i')) ch.style.transform = `scaleX(${1 + Math.sin(t * 2.2) * 0.12})`;
+    // La hornalla que no prende: solo chispas
+    $.all('.e-chispas i').forEach((ch, i) => (ch.style.opacity = Math.floor(t * 7 + i * 2) % 3 === 0 ? '0.15' : '1'));
     // Nubes de pensamiento que flotan; anillo que late sobre «Contale a HandIA»
     $.all('.nube').forEach((n, i) => (n.style.transform = `translateY(${Math.sin(t * 1.6 + i) * 6}px) rotate(${Math.sin(t * 1.1 + i) * 4}deg)`));
     const kp = (t % 1.1) / 1.1;
