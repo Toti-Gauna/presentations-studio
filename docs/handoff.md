@@ -245,4 +245,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (mediodía): equipo con «Abigail» (antes «su pareja») y subtítulos del video en una sola línea (ya no tapan la leyenda del paso).
 - 05/11 (mediodía, 2): HandIA, camino 2 («de una manera más directa») con la pantalla real del inicio de la demo y el oficio elegido;
   en el video, las herramientas del profesional quedan hasta HandIA para profesionales (sin volver a la pantalla inicial).
-- Pendiente: grabar la versión fluida (Ignacio, 05/11) y re-sincronizar con su transcripción; voz de HandIA con ElevenLabs (clave + red).
+- 05/11 (tarde) · **Video v4** con la grabación fluida de Ignacio (2:35 → 2:28 sin pausas largas) y su cierre de 15 s hablado sobre
+  el clip del mundo (`scripts/video-pitch/v4/`): golpes anclados a cada frase (ahora entra la competencia, con nombres), música
+  re-compuesta para la nueva duración, subtítulos corregidos (Handyx, odisea, comisión, «casi 260.000», 25 %) también durante el mundo.
+- Pendiente: voz de HandIA con ElevenLabs (clave + red).
