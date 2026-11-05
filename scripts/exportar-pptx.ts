@@ -44,7 +44,8 @@ try {
   const manifiesto = `${dir}/manifiesto.json`;
   writeFileSync(manifiesto, JSON.stringify({ titulo: `${deck} · ${version}`, diapositivas }, null, 1));
   const archivo = `salida/pptx/${deck}-${version}.pptx`;
-  execFileSync('python3', ['-I', 'scripts/armar-pptx.py', manifiesto, archivo], { stdio: 'inherit' });
+  // Por defecto, imágenes JPEG de 1600 × 900 (archivo liviano que abre bien en el celular); --png deja las capturas originales.
+  execFileSync('python3', ['-I', 'scripts/armar-pptx.py', manifiesto, archivo, ...(a['png'] ? [] : ['--liviano'])], { stdio: 'inherit' });
   console.log(`PPTX → ${archivo} (${diapositivas.length} diapositivas)`);
 } finally {
   await navegador.close();
