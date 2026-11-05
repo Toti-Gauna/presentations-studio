@@ -251,4 +251,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (tarde, 2) · Portadas de sección «Material extra» y «Preguntas del jurado» en el deck (PPT, PDF, zip e índice del
   presentador). Campo nuevo del motor `seccion: true`: la portada aparece en el índice y en las exportaciones pero **no toma letra**
   de atajo, así Mayús + A…Z no se corren (A = proyección, F = competencia). PPT de 214 diapositivas; e2e 42/42.
+- 05/11 (tarde, 3) · Orden de los anexos (pedido de Ignacio): **primero las preguntas del jurado y después el material extra**, igual
+  que en el video. Con eso las letras pasan a las preguntas: Mayús + A…V = preguntas 1 a 20, W…Z = proyección, costos, CAC y validación;
+  el resto, número + Enter. Machete con la página de atajos al día: `python3 -I scripts/generar-machete-aticma.py`.
 - Pendiente: voz de HandIA con ElevenLabs (clave + red).

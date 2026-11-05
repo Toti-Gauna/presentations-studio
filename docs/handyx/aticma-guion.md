@@ -79,59 +79,59 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 
 | N.º | Atajo | Anexo | Para qué |
 |---|---|---|---|
-| 8 | 8 + Enter | **Material extra** (portada de sección) | Separar el material extra: números, planes, producto y visión. |
-| 9 | Mayús + A · 9 + Enter | Proyección: de dónde sale el número | Mostrar la cuenta que justifica los números, con supuestos rotulados. |
-| 10 | Mayús + B · 10 + Enter | Costos y punto de equilibrio | Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren. |
-| 11 | Mayús + C · 11 + Enter | CAC y LTV | Responder cuánto cuesta conseguir un cliente y cuánto deja. |
-| 12 | Mayús + D · 12 + Enter | Validación | Mostrar la evidencia y la próxima prueba. |
-| 13 | Mayús + E · 13 + Enter | Roadmap | Separar lo que existe, lo próximo y la visión, sin fechas inventadas. |
-| 14 | Mayús + F · 14 + Enter | La competencia en Argentina, por modelo | Mostrar a la competencia directa por su modelo y funcionalidades (con nombres, sin logos) y cómo le gana Handyx. |
-| 15 | Mayús + G · 15 + Enter | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
-| 16 | Mayús + H · 16 + Enter | UX + IA: el diferencial | Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx. |
-| 17 | Mayús + I · 17 + Enter | Marca y UX/UI | Mostrar la identidad de Handyx y su interfaz. |
-| 18 | Mayús + J · 18 + Enter | Publicidades | Mostrar las piezas listas para pautar. |
-| 19 | Mayús + K · 19 + Enter | Tracción en los dos lados | Mostrar cómo captamos usuarios y profesionales. |
-| 20 | Mayús + L · 20 + Enter | Herramientas por oficio (1/2) | Mostrar las herramientas que queremos dar a cada profesión. |
-| 21 | Mayús + M · 21 + Enter | Herramientas por oficio (2/2) | Mostrar las herramientas que queremos dar a cada profesión. |
-| 22 | Mayús + O · 22 + Enter | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
-| 23 | Mayús + P · 23 + Enter | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
-| 24 | Mayús + Q · 24 + Enter | Lo que logramos en 3 meses | Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires. |
-| 25 | Mayús + S · 25 + Enter | Cómo crece Handyx, trimestre a trimestre | Mostrar el plan de crecimiento por trimestre: zonas del país, profesiones nuevas cada mes y lo que suman Handyx for People y Handyx for Business. |
-| 26 | Mayús + T · 26 + Enter | Plan · mes 1: HandIA premium y lanzamiento | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
-| 27 | Mayús + U · 27 + Enter | Plan · mes 2: HandIA para profesionales | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
-| 28 | Mayús + V · 28 + Enter | Plan · mes 3: Toda Buenos Aires | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |
-| 29 | Mayús + W · 29 + Enter | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
-| 30 | Mayús + X · 30 + Enter | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
-| 31 | Mayús + Y · 31 + Enter | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
-| 32 | Mayús + Z · 32 + Enter | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
-| 33 | 33 + Enter | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
-| 34 | 34 + Enter | Maneras de multiplicar ingresos (1/2) | Explicar cómo crecen los ingresos desde la operación. |
-| 35 | 35 + Enter | Maneras de multiplicar ingresos (2/2) | Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo. |
-| 36 | 36 + Enter | El círculo que multiplica | Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería. |
-| 37 | 37 + Enter | Ferreterías conectadas: stock para los profesionales | Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales. |
-| 38 | 38 + Enter | HandIA te habla: un mejor servicio, con tu voz | Mostrar qué suma la inversión en IA: HandIA con voz natural para ayudarte a conseguir un mejor servicio. |
-| 39 | 39 + Enter | Camino a la IPO | Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa. |
-| 40 | 40 + Enter | **Preguntas del jurado** (portada de sección) | Separar las posibles preguntas del jurado y sus respuestas. |
-| 41 | 41 + Enter | Posible pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| 42 | 42 + Enter | Posible pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 43 | 43 + Enter | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| 44 | 44 + Enter | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| 45 | 45 + Enter | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| 46 | 46 + Enter | Posible pregunta 6: ¿Qué los diferencia de la competencia? | Respuesta breve, con números y supuestos rotulados. |
-| 47 | 47 + Enter | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
-| 48 | 48 + Enter | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| 49 | 49 + Enter | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| 50 | 50 + Enter | Posible pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
-| 51 | 51 + Enter | Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 52 | 52 + Enter | Posible pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| 53 | 53 + Enter | Posible pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
-| 54 | 54 + Enter | Posible pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 55 | 55 + Enter | Posible pregunta 15: ¿Cómo van a multiplicar los ingresos? | Respuesta breve, con números y supuestos rotulados. |
-| 56 | 56 + Enter | Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto? | Respuesta breve, con números y supuestos rotulados. |
-| 57 | 57 + Enter | Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO? | Respuesta breve, con números y supuestos rotulados. |
-| 58 | 58 + Enter | Posible pregunta 18: ¿Cómo consiguen los materiales? | Respuesta breve, con números y supuestos rotulados. |
-| 59 | 59 + Enter | Posible pregunta 19: ¿Qué suma HandIA con la inversión? | Respuesta breve, con números y supuestos rotulados. |
-| 60 | 60 + Enter | Posible pregunta 20: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
+| 8 | 8 + Enter | **Preguntas del jurado** (portada de sección) | Separar las posibles preguntas del jurado y sus respuestas. |
+| 9 | Mayús + A · 9 + Enter | Posible pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| 10 | Mayús + B · 10 + Enter | Posible pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 11 | Mayús + C · 11 + Enter | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| 12 | Mayús + D · 12 + Enter | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| 13 | Mayús + E · 13 + Enter | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| 14 | Mayús + F · 14 + Enter | Posible pregunta 6: ¿Qué los diferencia de la competencia? | Respuesta breve, con números y supuestos rotulados. |
+| 15 | Mayús + G · 15 + Enter | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| 16 | Mayús + H · 16 + Enter | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| 17 | Mayús + I · 17 + Enter | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| 18 | Mayús + J · 18 + Enter | Posible pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| 19 | Mayús + K · 19 + Enter | Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 20 | Mayús + L · 20 + Enter | Posible pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| 21 | Mayús + M · 21 + Enter | Posible pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
+| 22 | Mayús + O · 22 + Enter | Posible pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 23 | Mayús + P · 23 + Enter | Posible pregunta 15: ¿Cómo van a multiplicar los ingresos? | Respuesta breve, con números y supuestos rotulados. |
+| 24 | Mayús + Q · 24 + Enter | Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto? | Respuesta breve, con números y supuestos rotulados. |
+| 25 | Mayús + S · 25 + Enter | Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO? | Respuesta breve, con números y supuestos rotulados. |
+| 26 | Mayús + T · 26 + Enter | Posible pregunta 18: ¿Cómo consiguen los materiales? | Respuesta breve, con números y supuestos rotulados. |
+| 27 | Mayús + U · 27 + Enter | Posible pregunta 19: ¿Qué suma HandIA con la inversión? | Respuesta breve, con números y supuestos rotulados. |
+| 28 | Mayús + V · 28 + Enter | Posible pregunta 20: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
+| 29 | 29 + Enter | **Material extra** (portada de sección) | Separar el material extra: números, planes, producto y visión. |
+| 30 | Mayús + W · 30 + Enter | Proyección: de dónde sale el número | Mostrar la cuenta que justifica los números, con supuestos rotulados. |
+| 31 | Mayús + X · 31 + Enter | Costos y punto de equilibrio | Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren. |
+| 32 | Mayús + Y · 32 + Enter | CAC y LTV | Responder cuánto cuesta conseguir un cliente y cuánto deja. |
+| 33 | Mayús + Z · 33 + Enter | Validación | Mostrar la evidencia y la próxima prueba. |
+| 34 | 34 + Enter | Roadmap | Separar lo que existe, lo próximo y la visión, sin fechas inventadas. |
+| 35 | 35 + Enter | La competencia en Argentina, por modelo | Mostrar a la competencia directa por su modelo y funcionalidades (con nombres, sin logos) y cómo le gana Handyx. |
+| 36 | 36 + Enter | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
+| 37 | 37 + Enter | UX + IA: el diferencial | Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx. |
+| 38 | 38 + Enter | Marca y UX/UI | Mostrar la identidad de Handyx y su interfaz. |
+| 39 | 39 + Enter | Publicidades | Mostrar las piezas listas para pautar. |
+| 40 | 40 + Enter | Tracción en los dos lados | Mostrar cómo captamos usuarios y profesionales. |
+| 41 | 41 + Enter | Herramientas por oficio (1/2) | Mostrar las herramientas que queremos dar a cada profesión. |
+| 42 | 42 + Enter | Herramientas por oficio (2/2) | Mostrar las herramientas que queremos dar a cada profesión. |
+| 43 | 43 + Enter | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
+| 44 | 44 + Enter | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
+| 45 | 45 + Enter | Lo que logramos en 3 meses | Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires. |
+| 46 | 46 + Enter | Cómo crece Handyx, trimestre a trimestre | Mostrar el plan de crecimiento por trimestre: zonas del país, profesiones nuevas cada mes y lo que suman Handyx for People y Handyx for Business. |
+| 47 | 47 + Enter | Plan · mes 1: HandIA premium y lanzamiento | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
+| 48 | 48 + Enter | Plan · mes 2: HandIA para profesionales | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
+| 49 | 49 + Enter | Plan · mes 3: Toda Buenos Aires | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |
+| 50 | 50 + Enter | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
+| 51 | 51 + Enter | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
+| 52 | 52 + Enter | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
+| 53 | 53 + Enter | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
+| 54 | 54 + Enter | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
+| 55 | 55 + Enter | Maneras de multiplicar ingresos (1/2) | Explicar cómo crecen los ingresos desde la operación. |
+| 56 | 56 + Enter | Maneras de multiplicar ingresos (2/2) | Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo. |
+| 57 | 57 + Enter | El círculo que multiplica | Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería. |
+| 58 | 58 + Enter | Ferreterías conectadas: stock para los profesionales | Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales. |
+| 59 | 59 + Enter | HandIA te habla: un mejor servicio, con tu voz | Mostrar qué suma la inversión en IA: HandIA con voz natural para ayudarte a conseguir un mejor servicio. |
+| 60 | 60 + Enter | Camino a la IPO | Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa. |
 
 Volver a la última diapositiva principal: tecla **0** (sin número antes). Escribir un número muestra a qué lámina va; **Esc** cancela.
 Avanzar (→, espacio, clicker, celular) nunca entra a los anexos. En el celular: menú ☰.
