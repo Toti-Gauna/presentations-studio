@@ -54,7 +54,10 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
   tracción en los dos lados (incluye «los chicos repiten lo que ven»: estrategia de recordación, no un dato medido), herramientas por oficio
   (diseños propuestos de las 6 profesiones + números + negocios con meritocracia), plan de 3 meses, cada dólar (45/30/15/10, a aprobar) y
   camino a USD 1 millón en trabajos (aspiración, horizonte supuesto de 12 meses).
-- 14 preguntas del jurado. En el video, cada respuesta muestra sus láminas de respaldo.
+- Mapa de crecimiento (Handyx for People B2C + Handyx for Business B2B), proyección de USD 5 M a fines de 2027 (People ≈ 3,5 M + Business
+  ≈ 1,56 M, supuestos rotulados) y Handyx for Business (turnos fijos por días o semanas, reemplazo por mérito, app a medida del comercio).
+  «De 6 a 72 profesiones» suma profesiones para negocios (mozos, bartenders, cocina…).
+- 15 preguntas del jurado. En el video, cada respuesta muestra sus láminas de respaldo.
 
 ## Control de calidad
 

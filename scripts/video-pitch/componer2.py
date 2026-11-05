@@ -5,7 +5,7 @@ E = f'{S}/edicion'; T = f'{E}/tmp'; os.makedirs(T, exist_ok=True)
 D = '/home/user/presentations-studio/salida/pptx/handyx-aticma-evento'
 ORIG = f'{S}/video/original.mp4'
 TOTAL = 199.52
-TRAMOS = [('01', 0.0), ('02', 43.3), ('03', 79.9), ('04', 104.6), ('05', 115.9), ('07', 136.3), ('23', 162.0), ('07', 175.8), ('08', 183.4)]
+TRAMOS = [('01', 0.0), ('02', 43.3), ('03', 79.9), ('04', 104.6), ('05', 115.9), ('07', 136.3), ('23', 162.0), ('07', 175.8), ('08', 183.4)]  # 23 = De 6 a 72 profesiones
 INTRO = 5.3
 SX, SY, SW, SH = 40, 110, 1504, 846
 CW, CH = 304, 540
@@ -45,12 +45,23 @@ if etapa == 'pitch':
          '-filter_complex', ';'.join(f), '-map', '[v]', '-map', '2:a', '-r', '30', *X264, '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-t', str(TOTAL), f'{E}/pitch.mp4'])
 
 if etapa == 'preguntas':
-    # Cada pregunta: tarjeta (3,2 s) + respuesta (7 s) + láminas de respaldo (5,5 s cada una)
-    RESPALDO = {1: [11], 2: [10], 3: [9], 4: [12], 5: [], 6: [16, 14, 15], 7: [], 8: [19], 9: [25, 26], 10: [], 11: [26], 12: [20, 21, 22], 13: [19, 18, 17], 14: [24]}
+    # Cada pregunta: tarjeta (3,2 s) + respuesta (7 s) + láminas de respaldo (5,5 s cada una). Imágenes por id de escena.
+    import json
+    dk = json.load(open('/home/user/presentations-studio/decks/handyx-aticma/deck.json')); v = dk['versiones'][0]; ES = {e['id']: e for e in dk['escenas']}
+    num = {}; n = 0
+    for i_ in v['escenas'] + v['anexos']:
+        pasos = ES[i_]['pasos'] if any('sale' in x for x in ES[i_]['elementos']) else 1
+        for p_ in range(pasos):
+            n += 1; num[i_ if pasos == 1 else f'{i_}#{p_}'] = n
+    im = lambda i_: f'{D}/{num[i_]:02d}.png'
+    RESPALDO = {1: ['x-cac'], 2: ['x-costos'], 3: ['x-proyeccion'], 4: ['x-validacion'], 5: [], 6: ['x-ux-ia', 'x-competidores', 'x-competidores-mundo'],
+                7: [], 8: ['x-marketing'], 9: ['x-inversion', 'x-un-millon'], 10: [], 11: ['x-un-millon', 'x-5m'],
+                12: ['x-herramientas-1', 'x-herramientas-2', 'x-negocios'], 13: ['x-marketing', 'x-publicidades', 'x-marca'],
+                14: ['x-mapa', 'x-5m', 'x-business', 'x-profesiones'], 15: ['x-plan-3m']}
     seq = [(f'{E}/preguntas-intro.png', 3.5)]
-    for k in range(1, 15):
-        seq += [(f'{E}/pregunta-{k:02d}.png', 3.2), (f'{D}/{26 + k:02d}.png', 7.0)] + [(f'{D}/{n:02d}.png', 5.5) for n in RESPALDO[k]]
-    seq += [(f'{D}/08.png', 4.0)]
+    for k in range(1, 16):
+        seq += [(f'{E}/pregunta-{k:02d}.png', 3.2), (im(f'q-{k:02d}'), 7.0)] + [(im(x), 5.5) for x in RESPALDO[k]]
+    seq += [(im('a-equipo#1'), 4.0)]
     lista = []
     for k, (img, d) in enumerate(seq):
         out = f'{T}/q{k:02d}.mp4'; clip(img, d, out, 1920, 1080, fade=0.3); lista.append(out)

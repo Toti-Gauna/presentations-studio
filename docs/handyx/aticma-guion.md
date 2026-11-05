@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 32 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 36 láminas de respaldo.
 
 ## Ritmo
 
@@ -97,12 +97,15 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | Mayús + Q | Lo que logramos en 3 meses | Mostrar el plan de desarrollo de los próximos 3 meses. |
 | Mayús + S | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
 | Mayús + T | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
-| Mayús + U | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + V | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + W | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + X | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Y | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Z | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + U | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
+| Mayús + V | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
+| Mayús + W | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
+| Mayús + X | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Y | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Z | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
@@ -110,6 +113,7 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | índice / menú ☰ | Pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
 | índice / menú ☰ | Pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 14: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 15: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.

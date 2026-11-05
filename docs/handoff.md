@@ -172,3 +172,5 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11: intro animada con los Handys; respaldo de UX + IA, marca, publicidades, marketing, herramientas por oficio (diseños propuestos en
   `brands/handyx/assets/conceptos/herramientas-*.webp`), negocios, plan de 3 meses, cada dólar (45/30/15/10) y USD 1 millón; 14 preguntas.
   Video re-renderizado: intro + pitch + preguntas con respaldo (`scripts/video-pitch/`).
+- 05/11 (2): mapa de crecimiento People/Business, USD 5 M a fines de 2027 con supuestos, Handyx for Business (turnos fijos y app del local),
+  profesiones B2B; pregunta 14 «¿Hasta dónde puede crecer Handyx?».

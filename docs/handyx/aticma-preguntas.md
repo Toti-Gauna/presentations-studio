@@ -55,6 +55,11 @@ Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta
 13. **¿Cómo van a conseguir tracción?** Usuarios: porteros y administradores, ads por barrio y urgencia, referidos y los Handys —los chicos
     reconocen a los personajes y lo cuentan en casa (estrategia de recordación, a medir)—. Profesionales: 0 % de comisión, ferreterías y
     corralones, formación con herramientas por oficio y referidos entre oficios. Cada canal se mide con CAC y repetición.
-14. **¿Qué logran en los próximos 3 meses?** Mes 1: HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento. Mes 2: herramientas
+14. **¿Hasta dónde puede crecer Handyx?** Con 72 profesiones y Handyx for Business, aspiramos a USD 5 millones de ingresos a fines de 2027:
+    Handyx for People ≈ USD 3,5 M (520.000 trabajos por año en Argentina, ≈ 1.425 por día, × USD 45 × 15 %) y Handyx for Business ≈ USD 1,56 M
+    (1.000 comercios × 5 turnos por semana × USD 40 × 15 %), sin contar apps a medida. Un local puede llamar a su personal por días fijos o
+    semanas (por ejemplo, mozos los viernes y sábados) y Handyx ofrece reemplazos ordenados por mérito; además, Handyx for Business puede
+    crear una app para cada comercio integrada a Handyx. Con IA, esto es más barato que nunca. Supuestos a validar.
+15. **¿Qué logran en los próximos 3 meses?** Mes 1: HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento. Mes 2: herramientas
     de las 6 profesiones, ingresos y gastos, feedback con IA. Mes 3: piloto de Handyx para negocios (por ejemplo, un restaurante que busca
     mozos elige entre disponibles ordenados por mérito), 2 profesiones nuevas y campaña con porteros. Plan propuesto, a validar.

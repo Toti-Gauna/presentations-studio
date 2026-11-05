@@ -1180,5 +1180,203 @@
    "INV-OPERACIONES",
    "INV-TECNOLOGIA"
   ]
+ },
+ {
+  "id": "META-5M",
+  "descripcion": "Aspiración: ingresos anuales de Handyx a fines de 2027 (Handyx for People + Handyx for Business)",
+  "valor": "USD 5 M",
+  "unidad": "USD",
+  "periodo": "fines de 2027",
+  "tipo": "meta",
+  "fuente": "Aspiración de Ignacio Gauna (05/11/2026). No es un retorno prometido ni un pronóstico validado.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto"
+ },
+ {
+  "id": "P-INGRESOS",
+  "descripcion": "Handyx for People: ingresos anuales del supuesto (tarifas de 72 profesiones)",
+  "valor": "≈ USD 3,5 M",
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "520.000 trabajos × USD 45 × 15 % = USD 3,5 M.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "520000 * (70000 / 1560) * 0.15",
+  "dependencias": [
+   "P-TRABAJOS",
+   "PRUEBA-TICKET-USD",
+   "TARIFA-USUARIO"
+  ]
+ },
+ {
+  "id": "P-TRABAJOS",
+  "descripcion": "Supuesto: trabajos por año en Argentina con 72 profesiones",
+  "valor": 520000,
+  "unidad": "trabajos",
+  "periodo": "2027",
+  "tipo": "supuesto",
+  "fuente": "Supuesto de la proyección del 05/11 (≈ 1.425 trabajos por día en todo el país); a validar.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "P-DIA",
+  "descripcion": "Trabajos por día que representa el supuesto",
+  "valor": "≈ 1.425",
+  "unidad": "trabajos",
+  "periodo": "por día",
+  "tipo": "proyeccion",
+  "fuente": "520.000 / 365.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "520000 / 365",
+  "dependencias": [
+   "P-TRABAJOS"
+  ]
+ },
+ {
+  "id": "B-COMERCIOS",
+  "descripcion": "Supuesto: comercios con Handyx for Business",
+  "valor": 1000,
+  "unidad": "comercios",
+  "periodo": "2027",
+  "tipo": "supuesto",
+  "fuente": "Supuesto de la proyección del 05/11; a validar.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "B-TURNOS-SEM",
+  "descripcion": "Supuesto: turnos de personal por comercio por semana",
+  "valor": 5,
+  "unidad": "turnos",
+  "periodo": "por semana",
+  "tipo": "supuesto",
+  "fuente": "Supuesto de la proyección del 05/11 (por ejemplo, mozos viernes y sábados).",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "B-TURNO-USD",
+  "descripcion": "Supuesto: valor de un turno de personal",
+  "valor": "USD 40",
+  "unidad": "USD",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Supuesto de la proyección del 05/11; a validar.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto"
+ },
+ {
+  "id": "B-TURNOS",
+  "descripcion": "Turnos por año con esos supuestos",
+  "valor": "260.000",
+  "unidad": "turnos",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "1.000 × 5 × 52.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "1000 * 5 * 52",
+  "dependencias": [
+   "B-COMERCIOS",
+   "B-TURNOS-SEM"
+  ]
+ },
+ {
+  "id": "B-INGRESOS",
+  "descripcion": "Handyx for Business: ingresos anuales del supuesto (15 % por turno)",
+  "valor": "≈ USD 1,56 M",
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "260.000 × USD 40 × 15 %. No suma suscripciones de apps a medida.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "260000 * 40 * 0.15",
+  "dependencias": [
+   "B-TURNOS",
+   "B-TURNO-USD",
+   "TARIFA-USUARIO"
+  ]
+ },
+ {
+  "id": "TOTAL-5M",
+  "descripcion": "Total del supuesto (People + Business)",
+  "valor": "≈ USD 5,06 M",
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "3,50 + 1,56.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "3500000 + 1560000",
+  "dependencias": [
+   "P-INGRESOS",
+   "B-INGRESOS"
+  ]
+ },
+ {
+  "id": "P-INGRESOS-N",
+  "descripcion": "Handyx for People (valor numérico para el reparto)",
+  "valor": 3500000,
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "Ver P-INGRESOS.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "usd",
+  "formula": "520000 * 44.87 * 0.15"
+ },
+ {
+  "id": "B-INGRESOS-N",
+  "descripcion": "Handyx for Business (valor numérico para el reparto)",
+  "valor": 1560000,
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "Ver B-INGRESOS.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "usd",
+  "formula": "260000 * 40 * 0.15"
+ },
+ {
+  "id": "TOTAL-5M-N",
+  "descripcion": "Total (valor numérico para el reparto)",
+  "valor": 5060000,
+  "unidad": "USD",
+  "periodo": "2027",
+  "tipo": "proyeccion",
+  "fuente": "Ver 5M-TOTAL.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "usd",
+  "formula": "3500000 + 1560000"
  }
 ]

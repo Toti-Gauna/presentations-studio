@@ -48,6 +48,9 @@
     "x-plan-3m",
     "x-inversion",
     "x-un-millon",
+    "x-mapa",
+    "x-5m",
+    "x-business",
     "q-01",
     "q-02",
     "q-03",
@@ -61,7 +64,8 @@
     "q-11",
     "q-12",
     "q-13",
-    "q-14"
+    "q-14",
+    "q-15"
    ]
   },
   {
@@ -99,6 +103,9 @@
     "x-plan-3m",
     "x-inversion",
     "x-un-millon",
+    "x-mapa",
+    "x-5m",
+    "x-business",
     "q-01",
     "q-02",
     "q-03",
@@ -112,7 +119,8 @@
     "q-11",
     "q-12",
     "q-13",
-    "q-14"
+    "q-14",
+    "q-15"
    ]
   }
  ],
@@ -250,6 +258,30 @@
    "tipo": "imagen",
    "archivo": "conceptos/herramientas-negocios.webp",
    "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "mapa-crecimiento",
+   "tipo": "imagen",
+   "archivo": "conceptos/mapa-crecimiento.png",
+   "procedencia": "Mapa de crecimiento creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-turnos",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-turnos.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "app-local",
+   "tipo": "imagen",
+   "archivo": "conceptos/app-local.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026)",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
@@ -3500,6 +3532,327 @@
    ]
   },
   {
+   "id": "x-mapa",
+   "titulo": "Cómo crece Handyx",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión (05/11): Handyx for People (oficios y profesiones para particulares) y Handyx for Business (personal por turnos, mantenimiento y apps a medida integradas para comercios). Sin socios ni integraciones acordadas. «Con IA, crear y mantener apps para cada comercio es más barato que nunca» es una opinión del equipo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Handyx crece en dos ramas sobre un mismo núcleo (verificación, valoraciones, pagos y HandIA). Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio y clientes que vuelven. Handyx for Business: personal por turnos (mozos, bartenders, cocina) por días o semanas, mantenimiento del local con técnicos verificados, apps a medida para cada comercio integradas a Handyx y meritocracia. Hoy Mar del Plata; en 2027, Argentina.",
+   "referencias": [
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · visión",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 7,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Cómo crece ==Handyx==",
+     "nivel": 2
+    },
+    {
+     "id": "mapa",
+     "area": "libre",
+     "pos": {
+      "x": 12.5,
+      "y": 21,
+      "w": 75
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "imagen",
+     "recurso": "mapa-crecimiento",
+     "alt": "Mapa: Handyx for People (B2C) y Handyx for Business (B2B) alrededor del núcleo de Handyx"
+    }
+   ]
+  },
+  {
+   "id": "x-5m",
+   "titulo": "Hacia USD 5 millones en 2027",
+   "disposicion": "izquierda",
+   "paleta": "azul",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Aspiración de Ignacio (05/11): USD 5 M de ingresos de Handyx a fines de 2027. Supuestos a validar: 520.000 trabajos al año en Argentina (≈ 1.425 por día) con el ticket de la prueba (≈ USD 45); 1.000 comercios con 5 turnos por semana de USD 40. No incluye suscripciones de apps a medida ni otros ingresos. Antes de costos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Aspiración a fines de 2027: USD 5 millones de ingresos para Handyx. Handyx for People: 520.000 trabajos por año en las 72 profesiones (≈ 1.425 por día en Argentina) × USD 45 × 15 % ≈ USD 3,5 millones. Handyx for Business: 1.000 comercios × 5 turnos por semana × USD 40 × 15 % ≈ USD 1,56 millones. Supuestos a validar, antes de costos.",
+   "referencias": [
+    "META-5M",
+    "P-INGRESOS",
+    "B-INGRESOS",
+    "P-TRABAJOS",
+    "B-COMERCIOS",
+    "TOTAL-5M"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · proyección 2027",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Hacia ==USD 5 millones== a fines de 2027",
+     "nivel": 2
+    },
+    {
+     "id": "rep",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 23,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "reparto",
+     "total": "TOTAL-5M-N",
+     "leyendaTotal": "**ingresos anuales Handyx** (aspiración, supuestos a validar)",
+     "partes": [
+      {
+       "afirmacion": "P-INGRESOS-N",
+       "etiqueta": "Handyx for People · 72 profesiones",
+       "tono": "amarilla"
+      },
+      {
+       "afirmacion": "B-INGRESOS-N",
+       "etiqueta": "Handyx for Business · turnos",
+       "tono": "gris"
+      }
+     ],
+     "pasoPartes": 0
+    },
+    {
+     "id": "fp",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 52,
+      "w": 44
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "flujo",
+     "nodos": [
+      {
+       "texto": "{{P-TRABAJOS}}",
+       "detalle": "trabajos por año · {{P-DIA}} por día"
+      },
+      {
+       "texto": "× {{PRUEBA-TICKET-USD}}",
+       "detalle": "ticket de la prueba"
+      },
+      {
+       "texto": "{{P-INGRESOS}}",
+       "detalle": "con 15 %"
+      }
+     ]
+    },
+    {
+     "id": "fb",
+     "area": "libre",
+     "pos": {
+      "x": 51,
+      "y": 52,
+      "w": 44
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "flujo",
+     "nodos": [
+      {
+       "texto": "{{B-COMERCIOS}} locales",
+       "detalle": "× {{B-TURNOS-SEM}} turnos por semana"
+      },
+      {
+       "texto": "× {{B-TURNO-USD}}",
+       "detalle": "por turno"
+      },
+      {
+       "texto": "{{B-INGRESOS}}",
+       "detalle": "con 15 %"
+      }
+     ]
+    },
+    {
+     "id": "n",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 90,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Sin contar suscripciones de apps a medida. Antes de costos. Supuestos a validar con los primeros datos.",
+     "tamano": "s"
+    }
+   ]
+  },
+  {
+   "id": "x-business",
+   "titulo": "Handyx for Business",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Diseños propuestos (visión): turnos fijos (mozos viernes y sábados, repetir 4 semanas), reemplazo automático por mérito y app a medida para un comercio (reservas, carta, «trabajá con nosotros», mantenimiento) integrada a Handyx.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Un local elige personal por días fijos o semanas (por ejemplo, mozos los viernes y sábados durante 4 semanas). Si alguien no puede, Handyx ofrece al siguiente disponible ordenado por valoraciones y turnos cumplidos. Además, Handyx for Business puede crear una app para cada comercio, integrada a Handyx: reservas, pedidos, postulantes y mantenimiento.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Respaldo · visión",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 46
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "Un local, ==su equipo y su app==",
+     "nivel": 2
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 34,
+      "w": 44
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Turnos fijos:** por días o por semanas",
+       "icono": "calendario"
+      },
+      {
+       "texto": "**Reemplazo por mérito:** el siguiente mejor valorado",
+       "icono": "balanza"
+      },
+      {
+       "texto": "**App propia** del comercio, integrada a Handyx",
+       "icono": "celular"
+      },
+      {
+       "texto": "**Mantenimiento:** técnicos verificados",
+       "icono": "herramienta"
+      }
+     ],
+     "columnas": 1
+    },
+    {
+     "id": "b1",
+     "area": "libre",
+     "pos": {
+      "x": 53,
+      "y": 12
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "telefono",
+     "alto": 72,
+     "leyenda": "Turnos fijos · diseño propuesto",
+     "pantallas": [
+      {
+       "recurso": "herr-turnos",
+       "alt": "Diseño propuesto: turnos fijos de mozos"
+      }
+     ]
+    },
+    {
+     "id": "b2",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 12
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "telefono",
+     "alto": 72,
+     "leyenda": "App del local · diseño propuesto",
+     "pantallas": [
+      {
+       "recurso": "app-local",
+       "alt": "Diseño propuesto: app de un restaurante integrada a Handyx"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "x-profesiones",
    "titulo": "De 6 a 72 profesiones",
    "disposicion": "izquierda",
@@ -3579,8 +3932,8 @@
        "icono": "usuarios"
       },
       {
-       "texto": "**Cómo elegimos:** pedidos que hoy quedan fuera de rubro y profesionales que se preregistran",
-       "icono": "objetivo"
+       "texto": "**Para negocios (B2B):** mozos, bartenders, cocina, limpieza de locales, seguridad, recepción, promotores, repartidores",
+       "icono": "tienda"
       }
      ],
      "columnas": 2
@@ -3596,7 +3949,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "texto",
-     "texto": "Ejemplos para crecer, no confirmados: cada profesión entra cuando hay demanda y podemos verificar a sus profesionales.",
+     "texto": "Ejemplos, no confirmados: cada profesión entra cuando hay demanda y podemos verificar a sus profesionales. Todas pagan la misma tarifa visible.",
      "tamano": "xs"
     }
    ]
@@ -3631,7 +3984,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 1 de 14",
+     "texto": "Preguntas del jurado · 1 de 15",
      "tono": "kicker"
     },
     {
@@ -3735,7 +4088,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 2 de 14",
+     "texto": "Preguntas del jurado · 2 de 15",
      "tono": "kicker"
     },
     {
@@ -3841,7 +4194,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 3 de 14",
+     "texto": "Preguntas del jurado · 3 de 15",
      "tono": "kicker"
     },
     {
@@ -3945,7 +4298,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 4 de 14",
+     "texto": "Preguntas del jurado · 4 de 15",
      "tono": "kicker"
     },
     {
@@ -4046,7 +4399,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 5 de 14",
+     "texto": "Preguntas del jurado · 5 de 15",
      "tono": "kicker"
     },
     {
@@ -4149,7 +4502,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 6 de 14",
+     "texto": "Preguntas del jurado · 6 de 15",
      "tono": "kicker"
     },
     {
@@ -4250,7 +4603,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 7 de 14",
+     "texto": "Preguntas del jurado · 7 de 15",
      "tono": "kicker"
     },
     {
@@ -4351,7 +4704,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 8 de 14",
+     "texto": "Preguntas del jurado · 8 de 15",
      "tono": "kicker"
     },
     {
@@ -4457,7 +4810,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 9 de 14",
+     "texto": "Preguntas del jurado · 9 de 15",
      "tono": "kicker"
     },
     {
@@ -4558,7 +4911,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 10 de 14",
+     "texto": "Preguntas del jurado · 10 de 15",
      "tono": "kicker"
     },
     {
@@ -4664,7 +5017,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 11 de 14",
+     "texto": "Preguntas del jurado · 11 de 15",
      "tono": "kicker"
     },
     {
@@ -4765,7 +5118,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 12 de 14",
+     "texto": "Preguntas del jurado · 12 de 15",
      "tono": "kicker"
     },
     {
@@ -4866,7 +5219,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 13 de 14",
+     "texto": "Preguntas del jurado · 13 de 15",
      "tono": "kicker"
     },
     {
@@ -4943,9 +5296,114 @@
   },
   {
    "id": "q-14",
-   "titulo": "Pregunta 14: ¿Qué logran en los próximos 3 meses?",
+   "titulo": "Pregunta 14: ¿Hasta dónde puede crecer Handyx?",
    "disposicion": "izquierda",
    "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Hasta dónde puede crecer Handyx? Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
+   "referencias": [
+    "META-5M",
+    "P-INGRESOS",
+    "B-INGRESOS"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Preguntas del jurado · 14 de 15",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "titulo",
+     "texto": "¿Hasta dónde puede crecer Handyx?",
+     "nivel": 2
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "texto",
+     "texto": "Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 62,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**For People** · {{P-INGRESOS}}",
+       "icono": "usuarios"
+      },
+      {
+       "texto": "**For Business** · {{B-INGRESOS}}",
+       "icono": "tienda"
+      },
+      {
+       "texto": "**Con IA:** apps para cada comercio",
+       "icono": "ia"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 54
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "aire",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-15",
+   "titulo": "Pregunta 15: ¿Qué logran en los próximos 3 meses?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
@@ -4967,7 +5425,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 14 de 14",
+     "texto": "Preguntas del jurado · 15 de 15",
      "tono": "kicker"
     },
     {
@@ -5036,7 +5494,7 @@
      "paso": 0,
      "entrada": "ninguna",
      "tipo": "personaje",
-     "personaje": "aire",
+     "personaje": "medidor",
      "tamano": 26,
      "acciones": []
     }
