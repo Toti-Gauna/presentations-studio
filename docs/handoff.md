@@ -234,4 +234,12 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   (la escena que entra va encima), escenas aisladas, cara en el lugar libre de cada escena, subtítulos corregidos (**25 %** en pantalla aunque
   la grabación dice 20 %), clip del mundo y cierre con QR. Tres cortes: con voz (entrega completa), **de fondo sin voz** (mismo ritmo que la
   grabación, para hablar encima) y **de fondo con el guion oficial** (7 diapositivas en orden, ≈ 3:13 con el cierre).
+- **Entregado** (`salida/entregables/`, fuera del repo): 1) video completo 15:55 (intro + pitch con voz, cara, subtítulos y música +
+  cierre con QR + 20 respuestas + material extra con «HandIA te habla»), 1080p y 720p; 2) pitch de fondo sin voz (3:28, ritmo de la
+  grabación) y 2b) pitch de fondo con el guion oficial (3:20, las 7 diapositivas en orden); 3) `Handyx-ATICMA-presentacion.zip` (PPTX de
+  212 diapositivas, una por paso, con guion y notas + PDF) y `Handyx-ATICMA-imagenes.zip` (212 imágenes por sección).
+- Verificado: verify (61 pruebas, validar, guion), e2e 40/40, hojas de contacto de las 57 escenas, cuadros de cada fundido del video.
+- **Decisiones de Ignacio:** confirmar que `portafolio.eclipse-business.com` esté publicado (lo apunta el QR); el plan dice tarifa del 15 %
+  desde el mes 1 y las apps prevén 0 % hasta el 10/12 (elegir cuál va en el pitch); la grabación dice 20 % y «más de 260.000» (en
+  pantalla y subtítulos: 25 % y «casi 260.000»); la grabación no incluye la diapositiva 6 (competencia).
 - Pendiente: grabar la versión fluida (Ignacio, 05/11) y re-sincronizar con su transcripción; voz de HandIA con ElevenLabs (clave + red).
