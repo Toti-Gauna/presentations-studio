@@ -13,7 +13,7 @@ export default respuesta({
     },
     {
       "ic": "escudo-ok",
-      "txt": "**Clickie, Home Solution, Muovi:** el profesional paga"
+      "txt": "**Clickie y Home Solution:** el profesional paga"
     }
   ],
   "quien": "medidor_gas",
