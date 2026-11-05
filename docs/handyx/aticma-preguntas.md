@@ -21,9 +21,10 @@ falta, la lámina de respaldo.
    por año. El 25 % de un trimestre son unos **16.200 trabajos**; con el ticket promedio de nuestros 5 trabajos ($ 70.000 ≈ USD 45) dejan
    **≈ USD 109.000** de tarifas. Es una aspiración: todavía medimos frecuencia y ticket. *Respaldo: proyección.*
 4. **¿Cuántos trabajos tienen cobrados?**
-   **5 trabajos con comisión cobrada**, con ayuda de porteros: $ 350.000 en trabajos, ticket promedio de $ 70.000. Estamos conciliando los
-   comprobantes. Además, **56 especialistas registrados** en el preregistro: no son activos ni verificados todavía. Próxima prueba: 50 trabajos
-   con tarifa cobrada y 5 clientes que vuelvan en diciembre. *Respaldo: validación.*
+   **5 trabajos con comisión cobrada**, con ayuda de porteros: $ 350.000 en trabajos y **$ 70.000 de ingresos brutos para Handyx** con el
+   plan original de la prueba (10 % al usuario + 10 % al profesional; desde el lanzamiento, 0 % al profesional y 15 % al usuario). Estamos
+   conciliando los comprobantes. Además, **56 especialistas registrados** en el preregistro: no son activos ni verificados todavía. Próxima
+   prueba: 50 trabajos con tarifa cobrada y 5 clientes que vuelvan en diciembre. *Respaldo: validación.*
 5. **¿Cómo cobran el 15 %?**
    La tarifa se muestra **antes de contratar** y la paga el usuario. El profesional cobra su presupuesto completo y no paga comisión. El
    circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.
@@ -42,9 +43,10 @@ falta, la lámina de respaldo.
    calculadora de frigorías y recordatorio de service (aire). Además, ingresos y gastos y feedback con IA. Son diseños propuestos.
    *Respaldo: herramientas por oficio.*
 9. **¿Qué logran en los próximos 3 meses?**
-   **Mes 1:** HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento (ingresos reales y ticket medido). **Mes 2:** herramientas
-   de las 6 profesiones, ingresos y gastos, feedback con IA (retención del profesional). **Mes 3:** piloto de Handyx for Business, 2 profesiones
-   nuevas y campaña con porteros (primer ingreso B2B y más demanda). *Respaldo: plan mes a mes.*
+   **Mes 1:** HandIA premium (foto, voz y referencia de costo), tarifa del 15 % y lanzamiento con **6 profesiones nuevas**, cada una con sus
+   herramientas. **Mes 2:** **HandIA para profesionales** (presupuesto, materiales, recordatorios y feedback) y otras 6 profesiones. **Mes 3:**
+   **toda Buenos Aires** con 24 profesiones, piloto de Handyx for Business y ferreterías conectadas. Después, una región por trimestre hasta
+   llegar a las 72 profesiones. *Respaldo: plan mes a mes y «Cómo crece Handyx, trimestre a trimestre».*
 
 ## Competencia
 

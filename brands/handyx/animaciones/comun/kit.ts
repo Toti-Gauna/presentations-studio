@@ -154,11 +154,12 @@ export function escena(def: DefEscena): CrearAnimacion {
     };
     let tLinea = 0;
     let congelado = ctx.reducido;
+    let relojFijo: number | null = null;
     const inicio = performance.now();
     const reloj = () => (performance.now() - inicio) / 1000;
     const pintar = () => {
       for (const f of pintores) f(tLinea);
-      def.ambiente?.(congelado ? tLinea : reloj(), $, tLinea);
+      def.ambiente?.(relojFijo ?? (congelado ? tLinea : reloj()), $, tLinea);
     };
     let raf = 0;
     let estuvo = false;
@@ -178,6 +179,10 @@ export function escena(def: DefEscena): CrearAnimacion {
       },
       congelar(si) {
         congelado = si;
+        pintar();
+      },
+      reloj(t) {
+        relojFijo = t;
         pintar();
       },
       destruir() {

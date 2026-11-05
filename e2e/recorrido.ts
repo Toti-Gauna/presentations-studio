@@ -194,6 +194,8 @@ try {
   await presA.goto(`${base}/presentador/?${qa}`);
   await pubA.goto(`${base}/presentar/?${qa}`);
   await presA.waitForTimeout(1200);
+  const animada = await pubA.waitForFunction(() => Boolean(document.querySelector('section.escena .animacion')?.shadowRoot?.querySelector('.lienzo')), null, { timeout: 8000 }).then(() => true, () => false);
+  ok('ATICMA: la diapositiva 1 es una escena animada (montada en la pantalla pública)', animada);
   const actualA = async () => ((await presA.locator('.indice li.actual .item').textContent()) ?? '').trim();
   await presA.keyboard.press('r');
   // Las diapositivas animadas tienen un paso por frase: se avanza hasta que el recorrido se detiene en la 7.ª.

@@ -16,6 +16,8 @@ export interface Animacion {
   destruir(): void;
   /** Lugar que la escena deja libre para la cara del presentador en el video (px de 1920 × 1080), si reserva uno. */
   cara?(p: number): { x: number; y: number; d: number } | null;
+  /** Video cuadro a cuadro: fija el reloj del movimiento ambiente (sin esto, congelada usa el tiempo de la línea). */
+  reloj?(t: number | null): void;
 }
 
 export interface ContextoAnimacion {

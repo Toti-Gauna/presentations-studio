@@ -1,0 +1,707 @@
+[
+ {
+  "n": 1,
+  "pregunta": "¿Cuál es tu CAC?",
+  "respuesta": "Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
+  "puntos": [
+   {
+    "ic": "cliente-nuevo",
+    "txt": "**CAC ≈ {{CAC-ESTIMADO}}**"
+   },
+   {
+    "ic": "alcancia",
+    "txt": "**LTV ≈ {{LTV-ESTIMADO}}**"
+   },
+   {
+    "ic": "balanza",
+    "txt": "**LTV / CAC ≈ {{LTV-CAC}}**"
+   }
+  ],
+  "quien": "bombilla",
+  "viz": {
+   "tipo": "cifras",
+   "items": [
+    {
+     "id": "CAC-ESTIMADO",
+     "txt": "**CAC** estimado por cliente",
+     "contar": {
+      "antes": "USD "
+     }
+    },
+    {
+     "id": "LTV-ESTIMADO",
+     "txt": "**LTV**: lo que deja en 3 años",
+     "contar": {
+      "antes": "USD "
+     }
+    },
+    {
+     "id": "LTV-CAC",
+     "txt": "veces: **LTV / CAC**",
+     "contar": {}
+    }
+   ]
+  },
+  "respaldo": "CAC y LTV"
+ },
+ {
+  "n": 2,
+  "pregunta": "¿Cuánto cuesta mantener Handyx?",
+  "respuesta": "Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
+  "puntos": [
+   {
+    "ic": "servidor",
+    "txt": "**Servidores** · {{COSTO-SERVIDORES}}"
+   },
+   {
+    "ic": "codigo",
+    "txt": "**Desarrollo** · {{COSTO-DESARROLLO}}"
+   },
+   {
+    "ic": "megafono",
+    "txt": "**Marketing** · {{COSTO-MARKETING}}"
+   }
+  ],
+  "quien": "gota",
+  "viz": {
+   "tipo": "barras",
+   "total": "COSTOS-MES",
+   "items": [
+    {
+     "id": "COSTO-DESARROLLO",
+     "txt": "desarrollo"
+    },
+    {
+     "id": "COSTO-SERVIDORES",
+     "txt": "servidores e IA"
+    },
+    {
+     "id": "COSTO-MARKETING",
+     "txt": "marketing"
+    }
+   ]
+  },
+  "respaldo": "Costos y punto de equilibrio"
+ },
+ {
+  "n": 3,
+  "pregunta": "¿De dónde salen el 25 % y los USD 100.000?",
+  "respuesta": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
+  "puntos": [
+   {
+    "ic": "casa",
+    "txt": "**{{MERCADO-USD}}** por año"
+   },
+   {
+    "ic": "objetivo",
+    "txt": "**{{Q1-TRABAJOS}}** trabajos"
+   },
+   {
+    "ic": "dolar",
+    "txt": "**{{Q1-TARIFAS-REAL}}** con nuestro ticket"
+   }
+  ],
+  "quien": "grifo",
+  "viz": {
+   "tipo": "cuenta",
+   "items": [
+    {
+     "id": "MDP-HOGARES",
+     "txt": "hogares · 1 arreglo por año"
+    },
+    {
+     "op": "→",
+     "id": "MERCADO-TRIM-N",
+     "txt": "arreglos por trimestre"
+    },
+    {
+     "op": "×",
+     "id": "Q1-TRABAJOS",
+     "txt": "trabajos ({{META-CUOTA-LOCAL}} del trimestre)"
+    },
+    {
+     "op": "→",
+     "id": "Q1-TARIFAS-REAL",
+     "txt": "de tarifas (ticket {{PRUEBA-TICKET-USD}} × {{TARIFA-USUARIO}})"
+    }
+   ]
+  },
+  "respaldo": "Proyección: de dónde sale el número"
+ },
+ {
+  "n": 4,
+  "pregunta": "¿Cuántos trabajos tienen cobrados?",
+  "respuesta": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos y **{{PRUEBA-INGRESO-HANDYX}} de ingresos para Handyx** con el plan original ({{PRUEBA-COM-USUARIO}} al usuario + {{PRUEBA-COM-PROFESIONAL}} al profesional). Además, {{ESP-REGISTRADOS}} especialistas registrados (todavía no activos ni verificados).",
+  "puntos": [
+   {
+    "ic": "tilde-circulo",
+    "txt": "**{{TRABAJOS-INFORMADOS}}** trabajos cobrados"
+   },
+   {
+    "ic": "usuarios",
+    "txt": "**{{ESP-REGISTRADOS}}** registrados"
+   },
+   {
+    "ic": "bandera",
+    "txt": "**Próximo:** {{META-TRABAJOS}} y {{META-REPETIDORES}} que vuelven"
+   }
+  ],
+  "quien": "engranaje",
+  "viz": {
+   "tipo": "cifras",
+   "items": [
+    {
+     "id": "TRABAJOS-INFORMADOS",
+     "txt": "trabajos con comisión cobrada",
+     "contar": {}
+    },
+    {
+     "id": "PRUEBA-MONTO",
+     "txt": "en trabajos, con porteros"
+    },
+    {
+     "id": "PRUEBA-INGRESO-HANDYX",
+     "txt": "ingresos de Handyx (plan {{PRUEBA-COM-USUARIO}} + {{PRUEBA-COM-PROFESIONAL}})"
+    }
+   ]
+  },
+  "respaldo": "Validación"
+ },
+ {
+  "n": 5,
+  "pregunta": "¿HandIA funciona hoy?",
+  "respuesta": "Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
+  "puntos": [
+   {
+    "ic": "camara",
+    "txt": "**Foto** del problema"
+   },
+   {
+    "ic": "chispas",
+    "txt": "**Detecta** el oficio"
+   },
+   {
+    "ic": "lista",
+    "txt": "**Arma** el pedido"
+   }
+  ],
+  "quien": "llave",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "camara",
+     "titulo": "Foto",
+     "txt": "del problema"
+    },
+    {
+     "ic": "ia",
+     "titulo": "Detecta",
+     "txt": "el oficio que hace falta"
+    },
+    {
+     "ic": "lista",
+     "titulo": "Arma",
+     "txt": "el pedido para el especialista"
+    }
+   ]
+  },
+  "respaldo": "UX + IA"
+ },
+ {
+  "n": 6,
+  "pregunta": "¿Qué los diferencia de Clickie y el resto?",
+  "respuesta": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
+  "puntos": [],
+  "quien": "medidor_gas",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "porcentaje",
+     "txt": "**{{FEE-ESPECIALISTA}}** al profesional"
+    },
+    {
+     "ic": "herramienta",
+     "txt": "**Herramientas** por oficio"
+    },
+    {
+     "ic": "repetir",
+     "txt": "**Clientes** que vuelven"
+    }
+   ]
+  },
+  "respaldo": "Competidores"
+ },
+ {
+  "n": 7,
+  "pregunta": "¿Cómo cobran el 15 %?",
+  "respuesta": "La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
+  "puntos": [
+   {
+    "ic": "recibo",
+    "txt": "**Visible** antes de contratar"
+   },
+   {
+    "ic": "billetera",
+    "txt": "**El profesional** cobra su presupuesto"
+   },
+   {
+    "ic": "escudo-ok",
+    "txt": "**Sin** comisión al profesional"
+   }
+  ],
+  "quien": "aire",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "billetera",
+     "titulo": "{{EJ-T}}",
+     "txt": "paga el usuario, visible antes de contratar"
+    },
+    {
+     "ic": "porcentaje",
+     "titulo": "{{EJ-F}}",
+     "txt": "tarifa Handyx ({{TARIFA-USUARIO}})"
+    },
+    {
+     "ic": "casa",
+     "titulo": "{{EJ-P}}",
+     "txt": "llega completo al profesional ({{FEE-ESPECIALISTA}} de comisión)"
+    }
+   ]
+  },
+  "respaldo": "Competencia y modelo"
+ },
+ {
+  "n": 8,
+  "pregunta": "¿Cómo captan y retienen profesionales?",
+  "respuesta": "Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
+  "puntos": [],
+  "quien": "brocha",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "megafono",
+     "txt": "**Captar:** porteros y boca a boca"
+    },
+    {
+     "ic": "herramienta",
+     "txt": "**Retener:** herramientas y 0 %"
+    },
+    {
+     "ic": "crecimiento",
+     "txt": "**Medir:** actividad y repetición"
+    }
+   ]
+  },
+  "respaldo": "Tracción en los dos lados"
+ },
+ {
+  "n": 9,
+  "pregunta": "¿En qué usarían los USD 100.000?",
+  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
+  "puntos": [
+   {
+    "ic": "megafono",
+    "txt": "**Marketing** · {{INV-MARKETING}}"
+   },
+   {
+    "ic": "escuela",
+    "txt": "**Operaciones** · {{INV-OPERACIONES}}"
+   },
+   {
+    "ic": "ia",
+    "txt": "**Tecnología** · {{INV-TECNOLOGIA}}"
+   }
+  ],
+  "quien": "bombilla",
+  "viz": {
+   "tipo": "barras",
+   "total": "INV-TOTAL",
+   "items": [
+    {
+     "id": "INV-MARKETING",
+     "txt": "marketing: más vecinos y profesionales"
+    },
+    {
+     "id": "INV-OPERACIONES",
+     "txt": "operaciones: formar y acompañar"
+    },
+    {
+     "id": "INV-TECNOLOGIA",
+     "txt": "tecnología: HandIA y herramientas"
+    },
+    {
+     "id": "INV-LEGAL",
+     "txt": "legal y reserva"
+    }
+   ]
+  },
+  "respaldo": "Cada dólar de la inversión"
+ },
+ {
+  "n": 10,
+  "pregunta": "¿Qué hacen si los clientes no vuelven?",
+  "respuesta": "Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
+  "puntos": [],
+  "quien": "gota",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "pregunta",
+     "txt": "**Preguntamos** por qué"
+    },
+    {
+     "ic": "calculadora",
+     "txt": "**Ajustamos** precio y calidad"
+    },
+    {
+     "ic": "repetir",
+     "txt": "**Medimos** de nuevo"
+    }
+   ]
+  },
+  "respaldo": "Plan de 3 meses"
+ },
+ {
+  "n": 11,
+  "pregunta": "¿Por qué invertirían USD 100.000 en Handyx?",
+  "respuesta": "Porque el marketing y la IA pueden mover USD 1 millón en trabajos: {{M1-MES}} trabajos por mes, {{M1-CUOTA}} de los arreglos del partido. Es nuestra aspiración, con la cuenta a la vista.",
+  "puntos": [
+   {
+    "ic": "dolar",
+    "txt": "**{{META-1M}}** en trabajos"
+   },
+   {
+    "ic": "objetivo",
+    "txt": "**{{M1-MES}}** por mes"
+   },
+   {
+    "ic": "crecimiento",
+    "txt": "**{{M1-TARIFAS}}** de tarifas"
+   }
+  ],
+  "quien": "grifo",
+  "viz": {
+   "tipo": "cifras",
+   "items": [
+    {
+     "id": "META-1M",
+     "txt": "en trabajos en 12 meses (aspiración)"
+    },
+    {
+     "id": "M1-MES",
+     "txt": "trabajos por mes"
+    },
+    {
+     "id": "M1-TARIFAS",
+     "txt": "de tarifas para Handyx"
+    }
+   ]
+  },
+  "respaldo": "Hacia USD 1 millón"
+ },
+ {
+  "n": 12,
+  "pregunta": "¿Qué herramientas van a tener los profesionales?",
+  "respuesta": "Herramientas para cada oficio: calculadoras, checklists de seguridad, registros y fotos del trabajo. Además, sus números (ingresos y gastos) y feedback con IA para mejorar.",
+  "puntos": [],
+  "quien": "engranaje",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "calculadora",
+     "txt": "**Calculadoras** por oficio"
+    },
+    {
+     "ic": "escudo-ok",
+     "txt": "**Checklists** de seguridad"
+    },
+    {
+     "ic": "chispas",
+     "txt": "**Feedback** con IA"
+    }
+   ]
+  },
+  "respaldo": "Herramientas por oficio"
+ },
+ {
+  "n": 13,
+  "pregunta": "¿Cómo van a conseguir tracción?",
+  "respuesta": "En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
+  "puntos": [],
+  "quien": "llave",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "edificio",
+     "txt": "**Porteros** y administradores"
+    },
+    {
+     "ic": "usuarios",
+     "txt": "**Handys** que se recuerdan"
+    },
+    {
+     "ic": "tienda",
+     "txt": "**Ferreterías** y corralones"
+    }
+   ]
+  },
+  "respaldo": "Tracción y publicidades"
+ },
+ {
+  "n": 14,
+  "pregunta": "¿Hasta dónde puede crecer Handyx?",
+  "respuesta": "Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
+  "puntos": [
+   {
+    "ic": "usuarios",
+    "txt": "**For People** · {{P-INGRESOS}}"
+   },
+   {
+    "ic": "tienda",
+    "txt": "**For Business** · {{B-INGRESOS}}"
+   },
+   {
+    "ic": "ia",
+    "txt": "**Con IA:** apps para cada comercio"
+   }
+  ],
+  "quien": "medidor_gas",
+  "viz": {
+   "tipo": "barras",
+   "total": "TOTAL-5M",
+   "items": [
+    {
+     "id": "P-INGRESOS-N",
+     "txt": "Handyx for People · 72 profesiones"
+    },
+    {
+     "id": "B-INGRESOS-N",
+     "txt": "Handyx for Business · turnos"
+    }
+   ]
+  },
+  "respaldo": "Hacia USD 5 millones"
+ },
+ {
+  "n": 15,
+  "pregunta": "¿Cómo van a multiplicar los ingresos?",
+  "respuesta": "Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
+  "puntos": [],
+  "quien": "aire",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "crecimiento",
+     "txt": "**Más trabajos** y profesiones"
+    },
+    {
+     "ic": "tienda",
+     "txt": "**For Business** y apps"
+    },
+    {
+     "ic": "alcancia",
+     "txt": "**Tesorería** con política"
+    }
+   ]
+  },
+  "respaldo": "Maneras de multiplicar ingresos"
+ },
+ {
+  "n": 16,
+  "pregunta": "¿Van a invertir la plata de los inversores en cripto?",
+  "respuesta": "No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
+  "puntos": [],
+  "quien": "brocha",
+  "viz": {
+   "tipo": "lista",
+   "items": [
+    {
+     "ic": "escudo-ok",
+     "txt": "**La inversión:** al plan"
+    },
+    {
+     "ic": "alcancia",
+     "txt": "**Solo excedentes**"
+    },
+    {
+     "ic": "balanza",
+     "txt": "**Cripto:** máximo {{POL-CRIPTO-MAX}}"
+    }
+   ]
+  },
+  "respaldo": "Las ganancias trabajan dos veces"
+ },
+ {
+  "n": 17,
+  "pregunta": "¿Piensan en una salida? ¿Una IPO?",
+  "respuesta": "Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
+  "puntos": [
+   {
+    "ic": "cohete",
+    "txt": "**Hoy:** pre-seed"
+   },
+   {
+    "ic": "balanza",
+    "txt": "**Escala:** rentabilidad y gobierno"
+   },
+   {
+    "ic": "banco",
+    "txt": "**Visión:** IPO"
+   }
+  ],
+  "quien": "bombilla",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "cohete",
+     "titulo": "Hoy",
+     "txt": "pre-seed en Mar del Plata"
+    },
+    {
+     "ic": "balanza",
+     "titulo": "Escala",
+     "txt": "rentabilidad, auditoría y directorio"
+    },
+    {
+     "ic": "banco",
+     "titulo": "Visión",
+     "txt": "IPO, como MercadoLibre y Globant"
+    }
+   ]
+  },
+  "respaldo": "Camino a la IPO"
+ },
+ {
+  "n": 18,
+  "pregunta": "¿Cómo consiguen los materiales los profesionales?",
+  "respuesta": "Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
+  "puntos": [
+   {
+    "ic": "tienda",
+    "txt": "**Stock** en ferreterías cercanas"
+   },
+   {
+    "ic": "ruta",
+    "txt": "**Retira** camino al trabajo"
+   },
+   {
+    "ic": "crecimiento",
+    "txt": "**Otra fuente** de ingresos"
+   }
+  ],
+  "quien": "gota",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "tienda",
+     "titulo": "Stock",
+     "txt": "en ferreterías cercanas"
+    },
+    {
+     "ic": "ruta",
+     "titulo": "Retira",
+     "txt": "camino al trabajo"
+    },
+    {
+     "ic": "crecimiento",
+     "titulo": "Otra fuente",
+     "txt": "de ingresos, a explorar"
+    }
+   ]
+  },
+  "respaldo": "Ferreterías conectadas"
+ },
+ {
+  "n": 19,
+  "pregunta": "¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+  "respuesta": "Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
+  "puntos": [
+   {
+    "ic": "chat",
+    "txt": "**Hablás**, no escribís"
+   },
+   {
+    "ic": "camara",
+    "txt": "**Pedido claro** con foto"
+   },
+   {
+    "ic": "ia",
+    "txt": "**Te guía** en cada paso"
+   }
+  ],
+  "quien": "grifo",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "chat",
+     "titulo": "Hablás",
+     "txt": "en vez de escribir"
+    },
+    {
+     "ic": "camara",
+     "titulo": "Pedido claro",
+     "txt": "con foto y descripción"
+    },
+    {
+     "ic": "ia",
+     "titulo": "Te guía",
+     "txt": "antes, durante y después"
+    }
+   ]
+  },
+  "respaldo": "HandIA te habla"
+ },
+ {
+  "n": 20,
+  "pregunta": "¿Qué logran en los próximos 3 meses?",
+  "respuesta": "Mes 1: HandIA premium y {{PROF-POR-MES}} profesiones nuevas con sus herramientas. Mes 2: HandIA para profesionales y otras {{PROF-POR-MES}}. Mes 3: toda Buenos Aires, con {{PROF-Q1}} profesiones y el piloto de Handyx for Business.",
+  "puntos": [
+   {
+    "ic": "chispas",
+    "txt": "**Mes 1:** HandIA"
+   },
+   {
+    "ic": "herramienta",
+    "txt": "**Mes 2:** herramientas"
+   },
+   {
+    "ic": "tienda",
+    "txt": "**Mes 3:** negocios"
+   }
+  ],
+  "quien": "engranaje",
+  "viz": {
+   "tipo": "flujo",
+   "items": [
+    {
+     "ic": "chispas",
+     "titulo": "Mes 1",
+     "txt": "HandIA premium · +{{PROF-POR-MES}} profesiones"
+    },
+    {
+     "ic": "ia",
+     "titulo": "Mes 2",
+     "txt": "HandIA para profesionales · +{{PROF-POR-MES}} profesiones"
+    },
+    {
+     "ic": "ubicacion",
+     "titulo": "Mes 3",
+     "txt": "toda Buenos Aires · {{PROF-Q1}} profesiones"
+    }
+   ]
+  },
+  "respaldo": "Cómo crece Handyx, trimestre a trimestre"
+ }
+]

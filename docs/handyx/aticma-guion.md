@@ -94,7 +94,7 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 20 | Mayús + M · 20 + Enter | Herramientas por oficio (2/2) | Mostrar las herramientas que queremos dar a cada profesión. |
 | 21 | Mayús + O · 21 + Enter | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
 | 22 | Mayús + P · 22 + Enter | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
-| 23 | Mayús + Q · 23 + Enter | Lo que logramos en 3 meses | Mostrar el plan de desarrollo de los próximos 3 meses. |
+| 23 | Mayús + Q · 23 + Enter | Lo que logramos en 3 meses | Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires. |
 | 24 | Mayús + S · 24 + Enter | Plan · mes 1: Lanzamos y cobramos | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
 | 25 | Mayús + T · 25 + Enter | Plan · mes 2: El profesional se queda | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
 | 26 | Mayús + U · 26 + Enter | Plan · mes 3: Crecemos a dos lados | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |

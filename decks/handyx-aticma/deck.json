@@ -3869,11 +3869,17 @@
    "pasos": 1,
    "clasificacion": "plan",
    "transicion": "fundido",
-   "objetivo": "Mostrar el plan de desarrollo de los próximos 3 meses.",
+   "objetivo": "Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto a pedido de Ignacio (05/11), a validar. Desarrollo potenciado con IA: más rápido y más barato que nunca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Mes 1: HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento. Mes 2: herramientas de las 6 profesiones, ingresos y gastos, feedback con IA. Mes 3: piloto de Handyx para negocios, 2 profesiones nuevas y campaña con porteros en toda la ciudad.",
-   "referencias": [],
+   "notas": "Plan de Ignacio (05/11), a validar: en los primeros 3 meses, HandIA a nivel premium y aplicada al especialista; los desarrollos de las diapositivas; 6 profesiones nuevas por mes, cada una con sus herramientas (6 → 24); y toda Buenos Aires. Desarrollo potenciado con IA: más rápido y más barato que nunca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 1: HandIA premium (foto, voz y referencia de costo), tarifa del 15 % y lanzamiento con 6 profesiones nuevas. Mes 2: HandIA para profesionales y herramientas de cada oficio, con 6 profesiones nuevas. Mes 3: toda Buenos Aires con 24 profesiones, piloto de Handyx for Business y ferreterías conectadas.",
+   "referencias": [
+    "PROF-POR-MES",
+    "PROF-Q1",
+    "META-BA-MESES",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
    "preguntas": "",
    "elementos": [
     {
@@ -3917,15 +3923,15 @@
      "nodos": [
       {
        "texto": "Mes 1",
-       "detalle": "HandIA con referencia de costo · tarifa del 15 % y cobro · lanzamiento"
+       "detalle": "HandIA premium · tarifa del 15 % · lanzamiento · +{{PROF-POR-MES}} profesiones"
       },
       {
        "texto": "Mes 2",
-       "detalle": "Herramientas de las 6 profesiones · ingresos y gastos · feedback con IA"
+       "detalle": "HandIA para profesionales · herramientas de cada oficio · +{{PROF-POR-MES}} profesiones"
       },
       {
        "texto": "Mes 3",
-       "detalle": "Piloto para negocios · 2 profesiones nuevas · campaña con porteros"
+       "detalle": "Toda Buenos Aires · {{PROF-Q1}} profesiones · Handyx for Business"
       }
      ]
     },
@@ -3951,7 +3957,7 @@
        "icono": "objetivo"
       },
       {
-       "texto": "**Después:** más ciudades",
+       "texto": "**Después:** una región por trimestre",
        "icono": "crecimiento"
       }
      ],
@@ -4823,116 +4829,45 @@
    "titulo": "Posible pregunta 1: ¿Cuál es tu CAC?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: CAC y LTV.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cuál es tu CAC? Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
    "referencias": [
     "CAC-ESTIMADO",
+    "CAC-MAXIMO",
+    "COSTO-MARKETING",
+    "LTV-CAC",
     "LTV-ESTIMADO",
-    "LTV-CAC"
+    "SUP-CLIENTES-MES"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 1 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cuál es tu CAC?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**CAC ≈ {{CAC-ESTIMADO}}**",
-       "icono": "cliente-nuevo"
-      },
-      {
-       "texto": "**LTV ≈ {{LTV-ESTIMADO}}**",
-       "icono": "alcancia"
-      },
-      {
-       "texto": "**LTV / CAC ≈ {{LTV-CAC}}**",
-       "icono": "balanza"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-01",
+     "alt": "Animación de la respuesta: ¿Cuál es tu CAC?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "CAC-MAXIMO",
+      "COSTO-MARKETING",
+      "LTV-CAC",
+      "LTV-ESTIMADO",
+      "SUP-CLIENTES-MES"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "foco",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -4940,116 +4875,46 @@
    "id": "q-02",
    "titulo": "Posible pregunta 2: ¿Cuánto cuesta mantener Handyx?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Costos y punto de equilibrio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cuánto cuesta mantener Handyx? Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
    "referencias": [
+    "COSTO-DESARROLLO",
+    "COSTO-MARKETING",
+    "COSTO-SERVIDORES",
     "COSTOS-MES",
-    "EQUILIBRIO-TRABAJOS"
+    "EQUILIBRIO-TRABAJOS",
+    "INGRESO-POR-TRABAJO"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 2 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cuánto cuesta mantener Handyx?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Servidores** · {{COSTO-SERVIDORES}}",
-       "icono": "servidor"
-      },
-      {
-       "texto": "**Desarrollo** · {{COSTO-DESARROLLO}}",
-       "icono": "codigo"
-      },
-      {
-       "texto": "**Marketing** · {{COSTO-MARKETING}}",
-       "icono": "megafono"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-02",
+     "alt": "Animación de la respuesta: ¿Cuánto cuesta mantener Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "COSTO-DESARROLLO",
+      "COSTO-MARKETING",
+      "COSTO-SERVIDORES",
+      "COSTOS-MES",
+      "EQUILIBRIO-TRABAJOS",
+      "INGRESO-POR-TRABAJO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "llave",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5058,117 +4923,53 @@
    "titulo": "Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Proyección: de dónde sale el número.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿De dónde salen el 25 % y los USD 100.000? {{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
    "referencias": [
+    "MDP-HOGARES",
+    "MERCADO-TRIM-N",
     "MERCADO-USD",
+    "META-CUOTA-LOCAL",
+    "PRUEBA-TICKET",
+    "PRUEBA-TICKET-USD",
+    "Q1-TARIFAS-REAL",
     "Q1-TRABAJOS",
-    "Q1-TARIFAS-40",
-    "TICKET-PARA-OBJETIVO"
+    "SUP-TICKET-USD",
+    "TARIFA-USUARIO"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 3 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿De dónde salen el 25 % y los USD 100.000?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{MERCADO-USD}}** por año",
-       "icono": "casa"
-      },
-      {
-       "texto": "**{{Q1-TRABAJOS}}** trabajos",
-       "icono": "objetivo"
-      },
-      {
-       "texto": "**{{Q1-TARIFAS-REAL}}** con nuestro ticket",
-       "icono": "dolar"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-03",
+     "alt": "Animación de la respuesta: ¿De dónde salen el 25 % y los USD 100.000?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "MERCADO-TRIM-N",
+      "MERCADO-USD",
+      "META-CUOTA-LOCAL",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "Q1-TARIFAS-REAL",
+      "Q1-TRABAJOS",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "grifo",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5176,116 +4977,50 @@
    "id": "q-04",
    "titulo": "Posible pregunta 4: ¿Cuántos trabajos tienen cobrados?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos, ticket promedio de {{PRUEBA-TICKET}}; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Validación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos y **{{PRUEBA-INGRESO-HANDYX}} de ingresos para Handyx** con el plan original ({{PRUEBA-COM-USUARIO}} al usuario + {{PRUEBA-COM-PROFESIONAL}} al profesional). Además, {{ESP-REGISTRADOS}} especialistas registrados (todavía no activos ni verificados).",
    "referencias": [
-    "TRABAJOS-INFORMADOS",
-    "ESP-REGISTRADOS"
+    "ESP-REGISTRADOS",
+    "META-REPETIDORES",
+    "META-TRABAJOS",
+    "PRUEBA-COM-PROFESIONAL",
+    "PRUEBA-COM-USUARIO",
+    "PRUEBA-INGRESO-HANDYX",
+    "PRUEBA-MONTO",
+    "TRABAJOS-INFORMADOS"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 4 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cuántos trabajos tienen cobrados?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos, ticket promedio de {{PRUEBA-TICKET}}; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{TRABAJOS-INFORMADOS}}** trabajos cobrados",
-       "icono": "tilde-circulo"
-      },
-      {
-       "texto": "**{{ESP-REGISTRADOS}}** registrados",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Próximo:** {{META-TRABAJOS}} y {{META-REPETIDORES}} que vuelven",
-       "icono": "bandera"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-04",
+     "alt": "Animación de la respuesta: ¿Cuántos trabajos tienen cobrados?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "ESP-REGISTRADOS",
+      "META-REPETIDORES",
+      "META-TRABAJOS",
+      "PRUEBA-COM-PROFESIONAL",
+      "PRUEBA-COM-USUARIO",
+      "PRUEBA-INGRESO-HANDYX",
+      "PRUEBA-MONTO",
+      "TRABAJOS-INFORMADOS"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "engranaje",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5294,112 +5029,31 @@
    "titulo": "Posible pregunta 5: ¿HandIA funciona hoy?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: UX + IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 5 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿HandIA funciona hoy?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Foto** del problema",
-       "icono": "camara"
-      },
-      {
-       "texto": "**Detecta** el oficio",
-       "icono": "chispas"
-      },
-      {
-       "texto": "**Arma** el pedido",
-       "icono": "lista"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-05",
+     "alt": "Animación de la respuesta: ¿HandIA funciona hoy?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "gota",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5407,115 +5061,38 @@
    "id": "q-06",
    "titulo": "Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Competidores.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Qué los diferencia de Clickie y el resto? El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
    "referencias": [
-    "COMP-CLICKIE-PRO"
+    "COMP-CLICKIE-PRO",
+    "FEE-ESPECIALISTA"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 6 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Qué los diferencia de Clickie y el resto?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{FEE-ESPECIALISTA}}** al profesional",
-       "icono": "porcentaje"
-      },
-      {
-       "texto": "**Herramientas** por oficio",
-       "icono": "herramienta"
-      },
-      {
-       "texto": "**Clientes** que vuelven",
-       "icono": "repetir"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-06",
+     "alt": "Animación de la respuesta: ¿Qué los diferencia de Clickie y el resto?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "aire",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5524,112 +5101,43 @@
    "titulo": "Posible pregunta 7: ¿Cómo cobran el 15 %?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Competencia y modelo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo cobran el 15 %? La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
-   "referencias": [],
+   "referencias": [
+    "EJ-F",
+    "EJ-P",
+    "EJ-T",
+    "FEE-ESPECIALISTA",
+    "TARIFA-USUARIO"
+   ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 7 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo cobran el 15 %?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Visible** antes de contratar",
-       "icono": "recibo"
-      },
-      {
-       "texto": "**El profesional** cobra su presupuesto",
-       "icono": "billetera"
-      },
-      {
-       "texto": "**Sin** comisión al profesional",
-       "icono": "escudo-ok"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-07",
+     "alt": "Animación de la respuesta: ¿Cómo cobran el 15 %?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "EJ-F",
+      "EJ-P",
+      "EJ-T",
+      "FEE-ESPECIALISTA",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "medidor",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5637,113 +5145,32 @@
    "id": "q-08",
    "titulo": "Posible pregunta 8: ¿Cómo captan y retienen profesionales?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Tracción en los dos lados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo captan y retienen profesionales? Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 8 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo captan y retienen profesionales?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Captar:** porteros y boca a boca",
-       "icono": "megafono"
-      },
-      {
-       "texto": "**Retener:** herramientas y 0 %",
-       "icono": "herramienta"
-      },
-      {
-       "texto": "**Medir:** actividad y repetición",
-       "icono": "crecimiento"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-08",
+     "alt": "Animación de la respuesta: ¿Cómo captan y retienen profesionales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "brocha",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5752,117 +5179,43 @@
    "titulo": "Posible pregunta 9: ¿En qué usarían los USD 100.000?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Cada dólar de la inversión.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿En qué usarían los USD 100.000? Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
    "referencias": [
+    "INV-LEGAL",
     "INV-MARKETING",
     "INV-OPERACIONES",
     "INV-TECNOLOGIA",
-    "INV-LEGAL"
+    "INV-TOTAL"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 9 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿En qué usarían los USD 100.000?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Marketing** · {{INV-MARKETING}}",
-       "icono": "megafono"
-      },
-      {
-       "texto": "**Operaciones** · {{INV-OPERACIONES}}",
-       "icono": "escuela"
-      },
-      {
-       "texto": "**Tecnología** · {{INV-TECNOLOGIA}}",
-       "icono": "ia"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-09",
+     "alt": "Animación de la respuesta: ¿En qué usarían los USD 100.000?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "INV-LEGAL",
+      "INV-MARKETING",
+      "INV-OPERACIONES",
+      "INV-TECNOLOGIA",
+      "INV-TOTAL"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "foco",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5870,113 +5223,32 @@
    "id": "q-10",
    "titulo": "Posible pregunta 10: ¿Qué hacen si los clientes no vuelven?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Plan de 3 meses.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Qué hacen si los clientes no vuelven? Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 10 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Qué hacen si los clientes no vuelven?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Preguntamos** por qué",
-       "icono": "pregunta"
-      },
-      {
-       "texto": "**Ajustamos** precio y calidad",
-       "icono": "calculadora"
-      },
-      {
-       "texto": "**Medimos** de nuevo",
-       "icono": "repetir"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-10",
+     "alt": "Animación de la respuesta: ¿Qué hacen si los clientes no vuelven?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "llave",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5985,117 +5257,41 @@
    "titulo": "Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Hacia USD 1 millón.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Por qué invertirían USD 100.000 en Handyx? Porque el marketing y la IA pueden mover USD 1 millón en trabajos: {{M1-MES}} trabajos por mes, {{M1-CUOTA}} de los arreglos del partido. Es nuestra aspiración, con la cuenta a la vista.",
    "referencias": [
-    "META-1M",
-    "M1-MES",
     "M1-CUOTA",
-    "M1-TARIFAS"
+    "M1-MES",
+    "M1-TARIFAS",
+    "META-1M"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 11 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Por qué invertirían USD 100.000 en Handyx?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Porque el marketing y la IA pueden mover USD 1 millón en trabajos: {{M1-MES}} trabajos por mes, {{M1-CUOTA}} de los arreglos del partido. Es nuestra aspiración, con la cuenta a la vista.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**{{META-1M}}** en trabajos",
-       "icono": "dolar"
-      },
-      {
-       "texto": "**{{M1-MES}}** por mes",
-       "icono": "objetivo"
-      },
-      {
-       "texto": "**{{M1-TARIFAS}}** de tarifas",
-       "icono": "crecimiento"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-11",
+     "alt": "Animación de la respuesta: ¿Por qué invertirían USD 100.000 en Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "M1-CUOTA",
+      "M1-MES",
+      "M1-TARIFAS",
+      "META-1M"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "grifo",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6103,113 +5299,32 @@
    "id": "q-12",
    "titulo": "Posible pregunta 12: ¿Qué herramientas van a tener los profesionales?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Herramientas por oficio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Qué herramientas van a tener los profesionales? Herramientas para cada oficio: calculadoras, checklists de seguridad, registros y fotos del trabajo. Además, sus números (ingresos y gastos) y feedback con IA para mejorar.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 12 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Qué herramientas van a tener los profesionales?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Herramientas para cada oficio: calculadoras, checklists de seguridad, registros y fotos del trabajo. Además, sus números (ingresos y gastos) y feedback con IA para mejorar.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Calculadoras** por oficio",
-       "icono": "calculadora"
-      },
-      {
-       "texto": "**Checklists** de seguridad",
-       "icono": "escudo-ok"
-      },
-      {
-       "texto": "**Feedback** con IA",
-       "icono": "chispas"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-12",
+     "alt": "Animación de la respuesta: ¿Qué herramientas van a tener los profesionales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "engranaje",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6218,112 +5333,35 @@
    "titulo": "Posible pregunta 13: ¿Cómo van a conseguir tracción?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Tracción y publicidades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo van a conseguir tracción? En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
-   "referencias": [],
+   "referencias": [
+    "FEE-ESPECIALISTA"
+   ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 13 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo van a conseguir tracción?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Porteros** y administradores",
-       "icono": "edificio"
-      },
-      {
-       "texto": "**Handys** que se recuerdan",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**Ferreterías** y corralones",
-       "icono": "tienda"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-13",
+     "alt": "Animación de la respuesta: ¿Cómo van a conseguir tracción?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "gota",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6331,117 +5369,46 @@
    "id": "q-14",
    "titulo": "Posible pregunta 14: ¿Hasta dónde puede crecer Handyx?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Hacia USD 5 millones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Hasta dónde puede crecer Handyx? Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
    "referencias": [
+    "B-INGRESOS",
+    "B-INGRESOS-N",
     "META-5M",
     "P-INGRESOS",
-    "B-INGRESOS"
+    "P-INGRESOS-N",
+    "TOTAL-5M"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 14 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Hasta dónde puede crecer Handyx?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**For People** · {{P-INGRESOS}}",
-       "icono": "usuarios"
-      },
-      {
-       "texto": "**For Business** · {{B-INGRESOS}}",
-       "icono": "tienda"
-      },
-      {
-       "texto": "**Con IA:** apps para cada comercio",
-       "icono": "ia"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-14",
+     "alt": "Animación de la respuesta: ¿Hasta dónde puede crecer Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "B-INGRESOS",
+      "B-INGRESOS-N",
+      "META-5M",
+      "P-INGRESOS",
+      "P-INGRESOS-N",
+      "TOTAL-5M"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "aire",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6450,112 +5417,31 @@
    "titulo": "Posible pregunta 15: ¿Cómo van a multiplicar los ingresos?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Maneras de multiplicar ingresos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo van a multiplicar los ingresos? Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 15 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo van a multiplicar los ingresos?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Más trabajos** y profesiones",
-       "icono": "crecimiento"
-      },
-      {
-       "texto": "**For Business** y apps",
-       "icono": "tienda"
-      },
-      {
-       "texto": "**Tesorería** con política",
-       "icono": "alcancia"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-15",
+     "alt": "Animación de la respuesta: ¿Cómo van a multiplicar los ingresos?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "medidor",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6563,14 +5449,14 @@
    "id": "q-16",
    "titulo": "Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Las ganancias trabajan dos veces.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Van a invertir la plata de los inversores en cripto? No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
    "referencias": [
     "POL-CAJA-MESES",
@@ -6579,100 +5465,22 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 16 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Van a invertir la plata de los inversores en cripto?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**La inversión:** al plan",
-       "icono": "escudo-ok"
-      },
-      {
-       "texto": "**Solo excedentes**",
-       "icono": "alcancia"
-      },
-      {
-       "texto": "**Cripto:** máximo {{POL-CRIPTO-MAX}}",
-       "icono": "balanza"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-16",
+     "alt": "Animación de la respuesta: ¿Van a invertir la plata de los inversores en cripto?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "POL-CAJA-MESES",
+      "POL-CRIPTO-MAX"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "brocha",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6681,112 +5489,31 @@
    "titulo": "Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Camino a la IPO.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Piensan en una salida? ¿Una IPO? Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 17 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Piensan en una salida? ¿Una IPO?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Hoy:** pre-seed",
-       "icono": "cohete"
-      },
-      {
-       "texto": "**Escala:** rentabilidad y gobierno",
-       "icono": "balanza"
-      },
-      {
-       "texto": "**Visión:** IPO",
-       "icono": "banco"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-17",
+     "alt": "Animación de la respuesta: ¿Piensan en una salida? ¿Una IPO?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "foco",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6794,113 +5521,32 @@
    "id": "q-18",
    "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales los profesionales?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Ferreterías conectadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo consiguen los materiales los profesionales? Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 18 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo consiguen los materiales los profesionales?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Stock** en ferreterías cercanas",
-       "icono": "tienda"
-      },
-      {
-       "texto": "**Retira** camino al trabajo",
-       "icono": "ruta"
-      },
-      {
-       "texto": "**Otra fuente** de ingresos",
-       "icono": "crecimiento"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-18",
+     "alt": "Animación de la respuesta: ¿Cómo consiguen los materiales los profesionales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "llave",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -6909,112 +5555,31 @@
    "titulo": "Posible pregunta 19: ¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
    "disposicion": "izquierda",
    "paleta": "neutro",
-   "duracion": 30,
-   "pasos": 1,
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: HandIA te habla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "¿Cómo te ayuda HandIA a conseguir un mejor servicio? Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 19 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Hablás**, no escribís",
-       "icono": "chat"
-      },
-      {
-       "texto": "**Pedido claro** con foto",
-       "icono": "camara"
-      },
-      {
-       "texto": "**Te guía** en cada paso",
-       "icono": "ia"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-19",
+     "alt": "Animación de la respuesta: ¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "grifo",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   },
@@ -7022,113 +5587,38 @@
    "id": "q-20",
    "titulo": "Posible pregunta 20: ¿Qué logran en los próximos 3 meses?",
    "disposicion": "izquierda",
-   "paleta": "gris",
-   "duracion": 30,
-   "pasos": 1,
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Qué logran en los próximos 3 meses? Mes 1: HandIA con referencia de costo y la tarifa del 15 %. Mes 2: herramientas de las 6 profesiones y feedback con IA. Mes 3: piloto para negocios y 2 profesiones nuevas.",
-   "referencias": [],
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Cómo crece Handyx, trimestre a trimestre.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué logran en los próximos 3 meses? Mes 1: HandIA premium y {{PROF-POR-MES}} profesiones nuevas con sus herramientas. Mes 2: HandIA para profesionales y otras {{PROF-POR-MES}}. Mes 3: toda Buenos Aires, con {{PROF-Q1}} profesiones y el piloto de Handyx for Business.",
+   "referencias": [
+    "PROF-POR-MES",
+    "PROF-Q1"
+   ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 20 de 20",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 10,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "¿Qué logran en los próximos 3 meses?",
-     "nivel": 2
-    },
-    {
-     "id": "kr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 27
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Nuestra respuesta",
-     "tono": "meta"
-    },
-    {
-     "id": "r",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 32,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Mes 1: HandIA con referencia de costo y la tarifa del 15 %. Mes 2: herramientas de las 6 profesiones y feedback con IA. Mes 3: piloto para negocios y 2 profesiones nuevas.",
-     "tamano": "l"
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 74
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Mes 1:** HandIA",
-       "icono": "chispas"
-      },
-      {
-       "texto": "**Mes 2:** herramientas",
-       "icono": "herramienta"
-      },
-      {
-       "texto": "**Mes 3:** negocios",
-       "icono": "tienda"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-20",
+     "alt": "Animación de la respuesta: ¿Qué logran en los próximos 3 meses?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
      ],
-     "columnas": 3
-    },
-    {
-     "id": "pj",
-     "area": "libre",
-     "pos": {
-      "x": 84,
-      "y": 58
-     },
+     "afirmaciones": [
+      "PROF-POR-MES",
+      "PROF-Q1"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "engranaje",
-     "tamano": 26,
-     "acciones": []
+     "entrada": "ninguna"
     }
    ]
   }
