@@ -242,4 +242,5 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - **Decisiones de Ignacio:** confirmar que `portafolio.eclipse-business.com` esté publicado (lo apunta el QR); el plan dice tarifa del 15 %
   desde el mes 1 y las apps prevén 0 % hasta el 10/12 (elegir cuál va en el pitch); la grabación dice 20 % y «más de 260.000» (en
   pantalla y subtítulos: 25 % y «casi 260.000»); la grabación no incluye la diapositiva 6 (competencia).
+- 05/11 (mediodía): equipo con «Abigail» (antes «su pareja») y subtítulos del video en una sola línea (ya no tapan la leyenda del paso).
 - Pendiente: grabar la versión fluida (Ignacio, 05/11) y re-sincronizar con su transcripción; voz de HandIA con ElevenLabs (clave + red).
