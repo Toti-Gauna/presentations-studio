@@ -1,0 +1,20 @@
+[
+  {
+    "id": "landing",
+    "etiqueta": "Conocé Handyx",
+    "modo": "directo",
+    "destinos": { "A": "https://landing.handyc.com/" },
+    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "landing" },
+    "textoCorto": "landing.handyc.com",
+    "definitivo": true
+  },
+  {
+    "id": "portafolio",
+    "etiqueta": "Conocé a Ignacio",
+    "modo": "directo",
+    "destinos": { "A": "https://portafolio.eclipse-business.com/" },
+    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "portafolio" },
+    "textoCorto": "portafolio.eclipse-business.com",
+    "definitivo": true
+  }
+]

@@ -1,13 +1,14 @@
-// Diapositiva 4 · Ya empezamos. Un golpe por frase del guion:
-// 0 «Ya contamos con ambas aplicaciones desarrolladas y las estamos probando» → las dos apps llegan con su sello ·
-// 1 «Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos…» → los edificios se encienden,
-//   cada portero conecta y los trabajos viajan hasta Llave (el contador suma uno por llegada) ·
-// 2 «…y cobramos nuestras primeras comisiones» → monedas del usuario (edificios) y del profesional (Llave) llegan a Handyx;
-//   especialistas registrados · 3 «Ahora queremos llevar esa experiencia más allá de los edificios» → la ciudad se expande:
-//   casas con Foco, comercios y pines.
+// Diapositiva 4 · Ya empezamos. Un golpe por frase del guion, con los Handys como protagonistas:
+// 0 «Ya contamos con ambas aplicaciones desarrolladas y las estamos probando» → las dos apps llegan con su sello; Foco (vecino)
+//   y Llave (especialista) saludan y festejan ·
+// 1 «Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos…» → los edificios se encienden y de cada
+//   puerta (con su portero) sale un Handy de otro oficio que salta hasta Llave: el contador suma uno por llegada ·
+// 2 «…y cobramos nuestras primeras comisiones» → Foco sale de un edificio: monedas del usuario (Foco) y del profesional (Llave)
+//   llegan a la alcancía de Handyx; especialistas registrados · 3 «Ahora queremos llevar esa experiencia más allá de los
+//   edificios» → la ciudad se expande: Foco va a su casa, aparece un comercio con su aire, pines; el equipo festeja.
 // La franja centrada entre y = 880 y 950 queda libre (solo la calle) para la leyenda por paso que agrega el kit.
 import { COLOR, entraTitulo, escena, pose, tramo } from './comun/kit.ts';
-import type { Kit } from './comun/kit.ts';
+import type { Kit, Personaje, Pose } from './comun/kit.ts';
 
 const SUELO = 860; // línea de la vereda: todo lo importante queda arriba
 const ABAJO = 1080 - SUELO;
@@ -29,17 +30,33 @@ function ventanas(e: Edif): Array<{ x: number; y: number }> {
   return out;
 }
 
-// Lo nuevo del paso 3: casas y comercios alrededor de los edificios (y un poco más allá del borde)
+// Los primeros trabajos: un Handy de otro oficio por trabajo, que sale de un edificio y queda junto a Llave
+const OFICIOS: Personaje[] = ['gota', 'medidor_gas', 'brocha', 'engranaje', 'grifo'];
+const PUESTOS = [134, 216, 472, 550, 626]; // centro de cada lugar en la vereda (Llave ocupa 256–426)
+const DE_PUERTA = [1, 0, 2, 1, 0]; // edificio del que sale cada trabajo
+const A_PUESTO = [2, 1, 3, 0, 4]; // lugar donde aterriza
+const ALTO_OFICIO = 90;
+// El contador de trabajos (ease cúbico del kit) y las llegadas, sincronizadas con él
+const T0 = 4.6;
+const DUR = 2.4;
+const LISTO1 = 5.95; // terminaron de llegar los trabajos
+const LISTO2 = 9.4; // la cuenta de Handyx llegó a su cifra
+
+// Lo nuevo del paso 3: un comercio (con su aire en el techo) y casas, una más allá del borde
 interface Nuevo { tipo: 'casa' | 'local'; x: number; w: number; h: number }
 const NUEVOS: Nuevo[] = [
-  { tipo: 'casa', x: 92, w: 170, h: 132 },
   { tipo: 'local', x: 1334, w: 186, h: 150 },
   { tipo: 'casa', x: 1544, w: 166, h: 168 },
   { tipo: 'casa', x: 1812, w: 176, h: 150 },
 ];
+const PINES = [
+  { x: 1427, punta: 644 }, // sobre el aire del comercio
+  { x: 1627, punta: SUELO - 168 - 6 },
+  { x: 1866, punta: SUELO - 150 - 6 },
+];
 
-// Destinos de las monedas (la cifra de la tarjeta de Handyx) y del trabajo (Llave)
-const LLAVE = { x: 415, y: 752 };
+const LLAVE = { x: 341, y: 742 }; // de dónde salen las monedas del profesional
+const FOCO = { x: 1385, y: 742 }; // de dónde salen las monedas del usuario
 const CAJA = { x: 1560, y: 400 }; // alcancía en la esquina de la tarjeta de Handyx
 
 export default escena({
@@ -50,6 +67,7 @@ export default escena({
     { desde: 2, x: 1730, y: 170, d: 250 },
     { desde: 3, x: 1730, y: 170, d: 250 },
   ],
+  leyendas: ['Las dos apps: **desarrolladas y en pruebas**', 'Con porteros: **los primeros trabajos**', 'Las **primeras comisiones** cobradas', 'Ahora: **más allá de los edificios**'],
   css: `
     .fondo { position: absolute; inset: 0; background: ${COLOR.azul}; }
     .sol { position: absolute; left: 1730px; top: 170px; width: 0; height: 0; }
@@ -83,11 +101,14 @@ export default escena({
     .local .frente-l { position: absolute; left: 4px; right: 4px; top: 72px; bottom: 0; background: ${COLOR.hueso}; }
     .local .vidriera { position: absolute; left: 12px; top: 12px; width: 90px; height: 50px; border-radius: 6px; background: ${COLOR.celeste}; box-shadow: inset 0 0 0 4px #fff, 0 0 0 2px #D6D9E0; }
     .local .puer { position: absolute; right: 14px; bottom: 0; width: 44px; height: 62px; border-radius: 8px 8px 0 0; background: ${COLOR.azul}; }
-    .mov { position: absolute; }
-    .foco0 { left: 120px; top: ${SUELO - 170}px; width: 170px; height: 170px; }
-    .llave { left: 320px; top: ${SUELO - 190}px; width: 190px; height: 190px; }
-    .foco3 { left: 1672px; top: ${SUELO - 150}px; width: 150px; height: 150px; }
-    .destello { position: absolute; left: ${LLAVE.x - 46}px; top: ${LLAVE.y - 46}px; width: 92px; height: 92px; border-radius: 50%; border: 6px solid ${COLOR.amarillo}; opacity: 0; }
+    .mov { position: absolute; transform-origin: 50% 100%; }
+    .foco0 { left: 90px; top: ${SUELO - 170}px; width: 170px; height: 170px; }
+    .llave { left: 256px; top: ${SUELO - 170}px; width: 170px; height: 170px; }
+    .focoU { left: 1310px; top: ${SUELO - 150}px; width: 150px; height: 150px; }
+    .aireS { left: 1397px; top: 650px; width: 60px; height: 60px; }
+    .oficio { left: 0; top: 0; width: ${ALTO_OFICIO}px; height: ${ALTO_OFICIO}px; opacity: 0; }
+    .oficio.vuela .sombra-pj { opacity: 0; }
+    .aterriza { position: absolute; left: -46px; top: -46px; width: 92px; height: 92px; border-radius: 50%; border: 6px solid ${COLOR.amarillo}; opacity: 0; }
     .centrar { position: absolute; width: 0; display: flex; justify-content: center; }
     .portero { font-size: 22px; padding: 8px 16px 8px 10px; color: ${COLOR.noche}; }
     .portero img { width: 26px; height: 26px; }
@@ -98,7 +119,7 @@ export default escena({
     .tel { width: 290px; height: 628px; border-radius: 44px; padding: 11px; }
     .tel .pantalla { border-radius: 36px; }
     .tel .isla { width: 84px; height: 24px; margin-left: -42px; top: 10px; }
-    .telU, .telE { top: 178px; width: 290px; height: 628px; }
+    .telU, .telE { top: 178px; width: 290px; height: 628px; transform-origin: 50% 50%; }
     .telU { left: 920px; } .telE { left: 1290px; }
     .toque { position: absolute; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; border: 5px solid rgba(31,87,168,.8); background: rgba(31,87,168,.16); opacity: 0; z-index: 7; }
     .telU .toque { left: 50%; top: 31%; } .telE .toque { left: 28%; top: 80%; }
@@ -132,8 +153,6 @@ export default escena({
     .alcancia .icono { width: 42px; height: 42px; }
     .mas { font-size: 24px; padding: 12px 22px 12px 14px; box-shadow: 0 12px 26px rgba(14,29,54,.3); }
     .mas img { width: 30px; height: 30px; }
-    .ficha { position: absolute; left: 0; top: 0; width: 58px; height: 58px; margin: -29px 0 0 -29px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 8px 18px rgba(14,29,54,.3); opacity: 0; }
-    .ficha .icono { width: 30px; height: 30px; }
     .moneda { position: absolute; left: 0; top: 0; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: ${COLOR.amarillo}; box-shadow: inset 0 -5px 0 #D9A21E, 0 6px 14px rgba(14,29,54,.3); display: grid; place-items: center; font-family: var(--fuente-titulos, 'Archivo Variable', sans-serif); font-weight: 900; font-size: 24px; color: #8A5B00; opacity: 0; }
   `,
   html: (c: Kit) => {
@@ -162,9 +181,8 @@ export default escena({
         ? `<div class="nuevo casa" style="left:${n.x}px;width:${n.w}px;height:${n.h}px"><div class="techo"></div><div class="muro"><i class="vent"></i><i class="puer"></i></div></div>`
         : `<div class="nuevo local" style="left:${n.x}px;width:${n.w}px;height:${n.h}px"><div class="cartel">${c.icono('tienda', 'oro')}</div><div class="toldo"></div><div class="frente-l"><i class="vidriera"></i><i class="puer"></i></div></div>`,
     ).join('');
-    const pines = NUEVOS.map((n) => `<div class="pin" style="left:${(n.x + Math.min(n.x + n.w, 1920)) / 2 - 30}px;top:${SUELO - n.h - 82}px"><div class="cabeza">${c.icono('ubicacion')}</div></div>`).join('');
     const trabajos = Math.max(0, Math.round(c.valor('TRABAJOS-INFORMADOS') ?? 0));
-    const fichas = Array.from({ length: Math.min(trabajos, 12) }, () => `<div class="ficha">${c.icono('herramienta')}</div>`).join('');
+    const oficios = Array.from({ length: Math.min(trabajos, PUESTOS.length) }, (_, i) => `<div class="mov oficio">${c.pj(OFICIOS[i % OFICIOS.length]!, '', ALTO_OFICIO)}<div class="sombra-pj"></div></div>`).join('');
     const monedas = Array.from({ length: 10 }, () => '<div class="moneda">$</div>').join('');
     return `
     <div class="fondo"></div>
@@ -174,12 +192,14 @@ export default escena({
     <div class="onda"></div><div class="onda"></div>
     ${edificios}
     ${nuevos}
+    <div class="mov aireS">${c.pj('aire', '', 60)}</div>
     <div class="mov foco0">${c.pj('bombilla', '', 170)}<div class="sombra-pj"></div></div>
-    <div class="mov llave">${c.pj('llave', '', 190)}<div class="sombra-pj"></div></div>
-    <div class="mov foco3">${c.pj('bombilla', '', 150)}<div class="sombra-pj"></div></div>
-    <div class="destello"></div>
+    <div class="mov llave">${c.pj('llave', '', 170)}<div class="sombra-pj"></div></div>
+    <div class="mov focoU">${c.pj('bombilla', '', 150)}<div class="sombra-pj"></div></div>
+    ${oficios}
+    <div class="aterriza"></div>
     ${EDIF.map((e) => `<div class="centrar" style="left:${puerta(e)}px;top:${SUELO - 48}px"><span class="chip portero">${c.icono('cliente-nuevo')}Portero</span></div>`).join('')}
-    ${pines}
+    ${PINES.map((p) => `<div class="pin" style="left:${p.x - 30}px;top:${p.punta - 76}px"><div class="cabeza">${c.icono('ubicacion')}</div></div>`).join('')}
     <div class="mov telU">${c.celular(`${c.img('demo-landing/usuario-inicio.webp', 'captura', 'Demo: inicio de la app de usuario')}<i class="toque"></i>`, 'tel')}</div>
     <div class="mov telE">${c.celular(`${c.img('demo-landing/especialista-pedido.webp', 'captura', 'Demo: pedido nuevo en la app del profesional')}<i class="toque"></i>`, 'tel')}</div>
     <div class="centrar rU" style="left:1065px;top:124px"><span class="rot-app">App de usuario</span></div>
@@ -190,16 +210,15 @@ export default escena({
     ${monedas}
     <div class="encabezado"><div class="kicker">Ya empezamos</div><div class="titulo t"><span class="l"><span>No nos quedamos</span></span><span class="l"><span>en <mark>una idea.</mark></span></span></div></div>
     <div class="tarjeta cA"><div class="k">Prueba con porteros</div>
-      <div class="fila"><div class="st"><b class="t nTrab">0</b><span>trabajos</span></div><div class="st monto"><b class="t">${c.cifra('PRUEBA-MONTO')}</b><span>en trabajos</span></div></div></div>
+      <div class="fila"><div class="st"><b class="t nTrab">&nbsp;</b><span class="lTrab">trabajos</span></div><div class="st monto"><b class="t">${c.cifra('PRUEBA-MONTO')}</b><span>en trabajos</span></div></div></div>
     <div class="tarjeta cB"><div class="cab">${c.logo()}<span>Plan original de la prueba:</span></div>
-      <div class="plan"><span class="pp">${c.cifra('PRUEBA-COM-USUARIO')} usuario</span>+<span class="pp">${c.cifra('PRUEBA-COM-PROFESIONAL')} profesional</span></div>
-      <div class="t nIng">$ 0</div><div class="cap">ingresos brutos de Handyx</div>
-      <div class="nota">Dato informado por el fundador · conciliación pendiente</div></div>
+      <div class="plan"><span class="pp ppU">${c.cifra('PRUEBA-COM-USUARIO')} usuario</span>+<span class="pp ppP">${c.cifra('PRUEBA-COM-PROFESIONAL')} profesional</span></div>
+      <div class="t nIng">&nbsp;</div><div class="cap">ingresos brutos de Handyx</div>
+      <div class="nota">Dato informado por el fundador</div></div>
     <div class="alcancia"><div class="in">${c.icono('alcancia')}</div></div>
     <div class="tarjeta cC"><div class="fila"><b class="t">${c.cifra('ESP-REGISTRADOS')}</b><span>especialistas registrados</span></div>
       <div class="nota">preregistro: no son activos ni verificados</div></div>
     <div class="centrar masW" style="left:1550px;top:466px"><span class="chip amarillo mas">${c.icono('casa')}Más allá de los edificios: casas y comercios</span></div>
-    ${fichas}
   `;
   },
   armar(tl, $, c) {
@@ -215,105 +234,127 @@ export default escena({
     tl.fromTo([$('.rU'), $('.rE')], { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out', stagger: 0.12 }, 1.25);
     tl.fromTo([$('.okU .chip'), $('.okE .chip')], { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.4)', stagger: 0.18 }, 1.6);
     tl.fromTo($('.dem'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 2.1);
-    // 1 · los porteros conectan y llegan los primeros trabajos
+    // 1 · los porteros conectan: de cada puerta sale un Handy de otro oficio hacia Llave
     tl.to([$('.rU'), $('.rE'), $('.okU'), $('.okE'), $('.dem')], { autoAlpha: 0, duration: 0.25 }, 3.0);
     tl.to([$('.telU'), $('.telE')], { y: 1000, rotation: 0, autoAlpha: 0, duration: 0.55, ease: 'power3.in', stagger: 0.07 }, 3.0);
     tl.to($('.foco0'), { x: -340, duration: 0.8, ease: 'power1.in' }, 3.0);
     $.all('.ed').forEach((e, i) => tl.fromTo(e, { scaleY: 0 }, { scaleY: 1, duration: 0.65, ease: 'back.out(1.25)' }, 3.35 + i * 0.12));
     tl.fromTo($.all('.portero'), { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.12 }, 3.95);
     tl.fromTo($('.cA'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' }, 4.05);
-    const nTrab = c.valor('TRABAJOS-INFORMADOS') ?? 0;
-    const T0 = 4.75;
-    const DUR = 1.6;
-    c.contador($('.nTrab'), { t0: T0, dur: DUR, hasta: nTrab });
-    tl.fromTo($('.cA .monto'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, 5.75);
-    // 2 · comisiones: monedas del usuario (edificios) y del profesional (Llave) hacia Handyx
+    c.contador($('.nTrab'), { t0: T0, dur: DUR, hasta: c.valor('TRABAJOS-INFORMADOS') ?? 0 });
+    tl.fromTo($('.cA .monto'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, LISTO1);
+    // 2 · comisiones: Foco (usuario) sale de un edificio; monedas de Foco y de Llave a la alcancía de Handyx
     tl.fromTo($('.cB'), { autoAlpha: 0, y: 40, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.5)' }, 6.45);
-    tl.fromTo($('.alcancia'), { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.6)' }, 6.85);
     tl.fromTo($.all('.cB .pp'), { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.18 }, 6.8);
-    const ingreso = c.valor('PRUEBA-INGRESO-HANDYX') ?? 0;
-    c.contador($('.nIng'), { t0: 7.8, dur: 1.45, hasta: ingreso, antes: '$ ' });
-    tl.fromTo($('.cB .nota'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 9.0);
-    tl.fromTo($('.cC'), { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'back.out(1.6)' }, 9.2);
-    // 3 · más allá de los edificios: casas, comercios y pines
+    tl.fromTo($('.alcancia'), { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.6)' }, 6.85);
+    tl.fromTo($('.focoU'), { autoAlpha: 0, x: puerta(EDIF[2]!) - 75 - 1310, scale: 0.7 }, { autoAlpha: 1, x: 0, scale: 1, duration: 0.6, ease: 'power2.out' }, 6.5);
+    c.contador($('.nIng'), { t0: 7.95, dur: 1.45, hasta: c.valor('PRUEBA-INGRESO-HANDYX') ?? 0, antes: '$ ' });
+    tl.fromTo($('.cB .nota'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, 9.3);
+    tl.fromTo($('.cC'), { autoAlpha: 0, x: -40 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'back.out(1.6)' }, 9.45);
+    // 3 · más allá de los edificios: Foco va a su casa, el comercio con su aire, pines
     $.all('.onda').forEach((o, i) => {
       tl.fromTo(o, { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 0.9, scale: 0.5, duration: 0.2, ease: 'none' }, 10.25 + i * 0.4);
       tl.to(o, { autoAlpha: 0, scale: 3.4, duration: 1.3, ease: 'power2.out' }, 10.45 + i * 0.4);
     });
     tl.fromTo($.all('.nuevo'), { autoAlpha: 0, scaleY: 0 }, { autoAlpha: 1, scaleY: 1, duration: 0.5, ease: 'back.out(1.7)', stagger: 0.12 }, 10.4);
+    tl.to($('.focoU'), { x: 1672 - 1310, duration: 0.75, ease: 'power1.inOut' }, 10.3);
     tl.fromTo($('.masW'), { autoAlpha: 0, y: 20, scale: 0.85 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2)' }, 10.6);
-    tl.fromTo($('.foco3'), { autoAlpha: 0, x: 260 }, { autoAlpha: 1, x: 0, duration: 0.7, ease: 'power2.out' }, 10.85);
-    tl.fromTo($.all('.pin'), { autoAlpha: 0, y: -110 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'bounce.out', stagger: 0.1 }, 11.1);
+    tl.fromTo($('.aireS'), { autoAlpha: 0, y: 30, scale: 0.4 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, 10.85);
+    tl.fromTo($.all('.pin'), { autoAlpha: 0, y: -110 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'bounce.out', stagger: 0.12 }, 11.1);
 
-    // Vuelos (trabajos y monedas): posición calculada en cada render, vale también en los saltos
-    interface Vuelo { el: HTMLElement; t0: number; t1: number; a: [number, number]; m: [number, number]; b: [number, number] }
-    const vuelos: Vuelo[] = [];
-    const fichas = $.all('.ficha');
-    const llegadas = fichas.map((_, i) => {
-      // llega cuando el contador (ease cúbico) pasa al número siguiente
-      const frac = (i + 0.5) / fichas.length;
-      return T0 + DUR * (1 - (1 - frac) ** (1 / 3));
+    // Trabajos: cada Handy de oficio aparece en su puerta, salta y aterriza junto a Llave cuando el contador suma uno
+    const oficios = $.all('.oficio');
+    const llegadas = oficios.map((_, i) => T0 + DUR * (1 - (1 - (i + 0.5) / oficios.length) ** (1 / 3)));
+    const saltos = oficios.map((el, i) => {
+      const x0 = puerta(EDIF[DE_PUERTA[i % DE_PUERTA.length]!]!);
+      const x1 = PUESTOS[A_PUESTO[i] ?? i]!;
+      return { el, pj: el.querySelector('.pj') as HTMLElement, x0, x1, alto: SUELO - Math.abs(x1 - x0) * 0.55, llega: llegadas[i]! };
     });
-    const orden = [1, 0, 2];
-    fichas.forEach((el, i) => {
-      const e = EDIF[orden[i % 3]!]!;
-      const a: [number, number] = [puerta(e), SUELO - 30];
-      vuelos.push({ el, t0: llegadas[i]! - 0.65, t1: llegadas[i]!, a, m: [(a[0] + LLAVE.x) / 2, SUELO - 300], b: [LLAVE.x, LLAVE.y] });
-    });
-    const desde = EDIF.flatMap((e) => ventanas(e).map((v) => [e.x + v.x + VENT.w / 2, SUELO - e.h + 18 + v.y + VENT.h / 2] as [number, number]));
-    $.all('.moneda').forEach((el, i) => {
-      const t0 = 7.0 + i * 0.15;
+    // Monedas: pares del usuario (Foco), impares del profesional (Llave)
+    interface Vuelo { el: HTMLElement; t0: number; t1: number; a: [number, number]; m: [number, number]; usuario: boolean }
+    const monedas: Vuelo[] = $.all('.moneda').map((el, i) => {
       const usuario = i % 2 === 0;
-      const a: [number, number] = usuario ? desde[(i * 7 + 3) % desde.length]! : [LLAVE.x + 20, LLAVE.y - 40];
-      const b: [number, number] = [CAJA.x, CAJA.y];
-      const m: [number, number] = usuario ? [CAJA.x - 60, a[1] + 40] : [1320, 780];
-      vuelos.push({ el, t0, t1: t0 + 0.8, a, m, b });
+      const t0 = 7.15 + i * 0.15;
+      return usuario ? { el, t0, t1: t0 + 0.8, a: [FOCO.x, FOCO.y], m: [1440, 560], usuario } : { el, t0, t1: t0 + 0.8, a: [LLAVE.x, LLAVE.y], m: [1150, 820], usuario };
     });
     const bez = (a: number, m: number, b: number, k: number) => (1 - k) * (1 - k) * a + 2 * (1 - k) * k * m + k * k * b;
-    const destello = $('.destello');
-    const llegaMoneda = vuelos.filter((v) => v.el.classList.contains('moneda')).map((v) => v.t1);
+    const suave = (k: number) => (k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2);
+    const aterriza = $('.aterriza');
     const alcancia = $('.alcancia .in');
+    const [ppU, ppP] = [$('.ppU'), $('.ppP')];
     const ventEd = $.all('.ed .w');
     const ventLej = $.all('.lej i');
-    const [pjLlave, pjFoco0, pjFoco3] = [$('.llave .pj'), $('.foco0 .pj'), $('.foco3 .pj')];
+    const [pjLlave, pjFoco0, pjFocoU, pjAire] = [$('.llave .pj'), $('.foco0 .pj'), $('.focoU .pj'), $('.aireS .pj')];
+    const [nTrab, lTrab] = [$('.nTrab'), $('.lTrab')];
+    // Reacciones del equipo (Llave y los Handys de oficio ya aterrizados)
+    const equipo = (t: number): Pose => (t >= 12.0 ? 'c' : t >= 10.4 ? 'b' : t >= LISTO2 ? 'c' : t >= 6.4 ? 'a' : t >= LISTO1 ? 'c' : 'a');
     c.pintor((t) => {
-      for (const v of vuelos) {
-        if (t < v.t0 || t > v.t1 + 0.1) {
+      for (const s of saltos) {
+        const sale = s.llega - 0.65;
+        const salta = sale + 0.15;
+        if (t < sale) {
+          s.el.style.opacity = '0';
+          continue;
+        }
+        let x = s.x0;
+        let y = SUELO;
+        let esc = 1;
+        if (t < salta) esc = 0.3 + 0.7 * tramo(t, sale, salta);
+        else if (t < s.llega) {
+          const k = suave(tramo(t, salta, s.llega));
+          x = bez(s.x0, (s.x0 + s.x1) / 2, s.x1, k);
+          y = bez(SUELO, s.alto, SUELO, k);
+        } else x = s.x1;
+        s.el.style.opacity = '1';
+        s.el.style.transform = `translate(${x - ALTO_OFICIO / 2}px, ${y - ALTO_OFICIO}px) scale(${esc})`;
+        s.el.classList.toggle('vuela', t >= salta && t < s.llega);
+        pose(s.pj, t < salta ? 'b' : t < s.llega ? 'c' : equipo(t));
+      }
+      // destello donde aterriza cada trabajo
+      const ult = saltos.filter((s) => s.llega <= t).pop();
+      const d = ult ? (t - ult.llega) / 0.4 : 1;
+      aterriza.style.opacity = String(d < 1 ? 1 - d : 0);
+      aterriza.style.transform = `translate(${ult?.x1 ?? 0}px, ${SUELO - 40}px) scale(${0.6 + Math.min(1, d) * 0.7})`;
+      // monedas hacia la alcancía; cada llegada hace saltar la alcancía y enciende la parte que paga
+      for (const v of monedas) {
+        if (t < v.t0 || t >= v.t1) {
           v.el.style.opacity = '0';
           continue;
         }
         const k = tramo(t, v.t0, v.t1);
-        const e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+        const e = suave(k);
         const s = k < 0.15 ? k / 0.15 : k > 0.85 ? 1 - ((k - 0.85) / 0.15) * 0.55 : 1;
-        v.el.style.opacity = String(t > v.t1 ? 0 : 1);
-        v.el.style.transform = `translate(${bez(v.a[0], v.m[0], v.b[0], e)}px, ${bez(v.a[1], v.m[1], v.b[1], e)}px) scale(${s})`;
+        v.el.style.opacity = '1';
+        v.el.style.transform = `translate(${bez(v.a[0], v.m[0], CAJA.x, e)}px, ${bez(v.a[1], v.m[1], CAJA.y, e)}px) scale(${s})`;
       }
-      // destello de Llave al recibir cada trabajo
-      const ult = llegadas.filter((x) => x <= t).pop();
-      const d = ult === undefined ? 1 : (t - ult) / 0.4;
-      destello.style.opacity = String(d < 1 ? 1 - d : 0);
-      destello.style.transform = `scale(${0.6 + Math.min(1, d) * 0.7})`;
-      // la alcancía salta un poco con cada moneda
-      const um = llegaMoneda.filter((x) => x <= t).pop();
-      const dm = um === undefined ? 1 : (t - um) / 0.25;
-      alcancia.style.transform = `scale(${1 + (dm < 1 ? Math.sin(dm * Math.PI) * 0.14 : 0)})`;
+      const golpe = (ts: number[]) => {
+        const u = ts.filter((x) => x <= t).pop();
+        const dm = u === undefined ? 1 : (t - u) / 0.25;
+        return dm < 1 ? Math.sin(dm * Math.PI) : 0;
+      };
+      alcancia.style.transform = `scale(${1 + golpe(monedas.map((v) => v.t1)) * 0.14})`;
+      ppU.style.background = golpe(monedas.filter((v) => v.usuario).map((v) => v.t1)) > 0.3 ? COLOR.amarillo : COLOR.celeste;
+      ppP.style.background = golpe(monedas.filter((v) => !v.usuario).map((v) => v.t1)) > 0.3 ? COLOR.amarillo : COLOR.celeste;
+      // singular mientras cuenta (el pintor del contador corre antes)
+      lTrab.textContent = nTrab.textContent === '1' ? 'trabajo' : 'trabajos';
       // ventanas que se encienden (edificios y horizonte)
       for (const w of ventEd) w.classList.toggle('on', t >= Number(w.dataset['t']));
       for (const w of ventLej) w.classList.toggle('on', t >= Number(w.dataset['t']));
-      // poses: Llave saluda los trabajos que llegan y festeja; al pagar su parte queda tranquilo (nunca «esfuerzo»)
-      pose(pjLlave, t >= 12.0 ? 'c' : t >= 10.9 ? 'b' : t >= 7.0 ? 'a' : t >= 5.7 ? 'c' : t >= 4.1 ? 'b' : t >= 3.0 ? 'a' : t >= 0.9 ? 'b' : 'a');
-      pose(pjFoco0, t >= 3.0 ? 'd' : t >= 0.9 ? 'b' : 'a');
-      pose(pjFoco3, t >= 12.2 ? 'c' : t >= 11.55 ? 'b' : 'd');
+      // poses: saludan al llegar las apps y festejan con el sello; Llave recibe los trabajos saludando y paga su parte tranquilo
+      pose(pjLlave, t >= LISTO1 ? equipo(t) : t >= T0 ? 'b' : t >= 3.0 ? 'a' : t >= 1.75 ? 'c' : t >= 0.9 ? 'b' : 'a');
+      pose(pjFoco0, t >= 3.0 ? 'd' : t >= 1.75 ? 'c' : t >= 0.9 ? 'b' : 'a');
+      pose(pjFocoU, t >= 12.2 ? 'c' : t >= 11.05 ? 'b' : t >= 10.3 ? 'd' : t >= LISTO2 ? 'c' : t >= 7.1 ? 'b' : 'd');
+      pose(pjAire, t >= 12.2 ? 'c' : 'b');
     });
   },
   ambiente(t, $, tl) {
     $('.sol .rayos').style.transform = `rotate(${t * 8}deg)`;
-    // Respiración (dueño: el ambiente; la línea de tiempo mueve los contenedores .mov). Al caminar, rebote.
-    const camina: Record<string, [number, number]> = { foco0: [3.0, 3.8], foco3: [10.85, 11.55] };
+    // Respiración (dueño: el ambiente; la línea de tiempo y los saltos mueven los contenedores .mov). Al caminar, rebote.
+    const camina: Record<string, Array<[number, number]>> = { foco0: [[3.0, 3.8]], focoU: [[6.5, 7.1], [10.3, 11.05]] };
     $.all('.mov .pj').forEach((p, i) => {
       const quien = (p.parentElement as HTMLElement).classList[1] ?? '';
-      const tramoCamina = camina[quien];
-      if (tramoCamina && tl >= tramoCamina[0] && tl <= tramoCamina[1]) {
+      const tramoCamina = camina[quien]?.find(([a, b]) => tl >= a && tl <= b);
+      if (tramoCamina) {
         const f = Math.sin((tl - tramoCamina[0]) * 14);
         p.style.transform = `translateY(${-Math.abs(f) * 12}px) rotate(${f * 5}deg)`;
       } else p.style.transform = `scaleY(${1 + Math.sin(t * 2.4 + i) * 0.018})`;
@@ -321,8 +362,7 @@ export default escena({
     // Toques en las pantallas: «las estamos probando»
     $.all('.toque').forEach((el, i) => {
       const k = ((t + i * 0.8) % 1.6) / 1.6;
-      const visible = tl > 1.3 && tl < 3.0;
-      el.style.opacity = visible ? String((1 - k) * 0.9) : '0';
+      el.style.opacity = tl > 1.3 && tl < 3.0 ? String((1 - k) * 0.9) : '0';
       el.style.transform = `scale(${0.3 + k * 1.1})`;
     });
     // Pines que flotan apenas (dueño: el ambiente mueve la cabeza; la línea de tiempo, el contenedor)

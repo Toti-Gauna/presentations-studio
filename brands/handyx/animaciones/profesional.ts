@@ -60,6 +60,7 @@ const CHISPAS = [
 
 export default escena({
   marcas: [0, 3.4, 7.2, 11.0],
+  leyendas: ['Trabajos, clientes, **ingresos y gastos**', 'Herramientas para **cada oficio**', '**HandIA para profesionales**: cada trabajo, mejor'],
   cara: [
     { desde: 0, x: 1690, y: 200, d: 250 },
     { desde: 1, x: 1690, y: 200, d: 250 },

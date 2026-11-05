@@ -6,6 +6,8 @@
 // 3 «el presupuesto final lo fija el profesional» → Llave sella el precio en el presupuesto elegido ·
 // 4 «si ya saben a quién llamar, eligen el oficio y comparan presupuestos» → Camino 2: grilla de rubros, Gas, pedido publicado
 //   y presupuestos que llegan.
+// Los Handys acompañan cada paso con sus poses: Grifo (la canilla que gotea) y Gota (plomería), Foco (el vecino),
+// Engranaje (HandIA que piensa), Llave (el especialista), Medidor (gas), Brocha y Aire (los otros oficios).
 // La franja y 880–950 queda libre (leyenda del kit) y la de y > 960 también (subtítulos del video).
 import { COLOR, entraTitulo, escena, pose, type Kit } from './comun/kit.ts';
 
@@ -23,10 +25,9 @@ const MOSAICOS = [
   { x: 1600, y: 96, d: 92, ic: 'herramienta' },
   { x: 1738, y: 196, d: 80, ic: 'llave-inglesa' },
   { x: 1612, y: 252, d: 64, ic: 'martillo' },
-  { x: 1520, y: 452, d: 86, ic: 'plomeria' },
-  { x: 1736, y: 540, d: 98, ic: 'electricidad' },
-  { x: 1560, y: 680, d: 76, ic: 'gas' },
-  { x: 1724, y: 764, d: 84, ic: 'cerrajeria' },
+  { x: 1520, y: 430, d: 86, ic: 'plomeria' },
+  { x: 1740, y: 500, d: 98, ic: 'electricidad' },
+  { x: 1556, y: 612, d: 76, ic: 'gas' },
 ];
 const MOSAICOS_DE_PASO = [3, 4, 5]; // los del medio se corren cuando llegan los avisos (paso 4)
 const TEXTO = 'Se tapó la pileta de la cocina y pierde agua';
@@ -49,13 +50,13 @@ function elegida(c: Kit): number {
   return mejor;
 }
 
-/** La cocina con la pileta tapada que pierde (se usa en la escena, en el visor de la cámara y en la foto del chat). */
-const cocina = (clase: string) => `
+/** La cocina con la pileta tapada que pierde; la canilla es Grifo (se usa en la escena, en el visor y en la foto del chat). */
+const cocina = (clase: string, grifo: string) => `
   <div class="cocina ${clase}">
     <div class="k-pared"><i class="k-repisa"></i><i class="k-frasco f1"></i><i class="k-frasco f2"></i></div>
-    <div class="k-canilla"><i class="k-cano"></i><i class="k-pico"></i><i class="k-boca"></i><i class="k-mando"></i><i class="k-gota" data-d="40" style="left:347px;top:206px"></i></div>
+    ${grifo}
     <div class="k-mesada"></div>
-    <div class="k-bacha"><i class="k-burb" style="left:64px"></i><i class="k-burb" style="left:150px"></i><i class="k-burb" style="left:108px"></i></div>
+    <div class="k-bacha"><i class="k-burb" style="left:40px"></i><i class="k-burb" style="left:128px"></i><i class="k-burb" style="left:84px"></i><i class="k-gota" data-d="100" style="left:174px;top:-98px"></i></div>
     <div class="k-mueble">
       <div class="k-hueco"><i class="k-desague"></i><i class="k-sifon"></i><i class="k-salida"></i><i class="k-pozo"></i><i class="k-gota" data-d="60" style="left:186px;top:102px"></i></div>
       <div class="k-puerta"></div>
@@ -75,6 +76,7 @@ export default escena({
     { desde: 3, x: 1680, y: 215, d: 250 },
     { desde: 4, x: 1680, y: 215, d: 250 },
   ],
+  leyendas: ['Se rompió algo y **no sabés a quién llamar**', 'Mandás una **foto** y contás qué pasó', 'HandIA detecta el **oficio** y da un **costo aproximado**', 'El **profesional** fija el precio final', 'Camino 2: elegís el **oficio** y comparás presupuestos'],
   css: `
     .fondo { position: absolute; inset: 0; background: #ECECEC; }
     .piso { position: absolute; left: 96px; top: 868px; width: 960px; height: 8px; border-radius: 4px; background: rgba(14,29,54,.07); }
@@ -92,18 +94,15 @@ export default escena({
     .cocina i { position: absolute; display: block; }
     .k-escena { left: 120px; top: 352px; }
     .k-pared { position: absolute; left: 20px; top: 0; width: 560px; height: 252px; border-radius: 22px 22px 0 0; background-color: #FBFBF9; background-image: linear-gradient(90deg, rgba(14,29,54,.07) 2px, transparent 2px), linear-gradient(rgba(14,29,54,.07) 2px, transparent 2px); background-size: 50px 50px; background-position: -1px -1px; transform-origin: 50% 100%; }
-    .k-repisa { left: 372px; top: 92px; width: 148px; height: 12px; border-radius: 6px; background: #C3CAD6; }
+    .k-repisa { left: 40px; top: 92px; width: 148px; height: 12px; border-radius: 6px; background: #C3CAD6; }
     .k-frasco { border-radius: 9px 9px 6px 6px; }
-    .k-frasco.f1 { left: 392px; top: 46px; width: 38px; height: 46px; background: ${COLOR.naranja}; box-shadow: inset 0 8px 0 rgba(255,255,255,.35); }
-    .k-frasco.f2 { left: 444px; top: 58px; width: 32px; height: 34px; background: ${COLOR.azul}; box-shadow: inset 0 7px 0 rgba(255,255,255,.3); }
-    .k-canilla { position: absolute; inset: 0; }
-    .k-cano { left: 272px; top: 126px; width: 18px; height: 126px; border-radius: 9px 9px 0 0; background: #C3CAD6; box-shadow: inset -5px 0 0 #A9B2C2; }
-    .k-pico { left: 272px; top: 118px; width: 90px; height: 80px; border: 18px solid #C3CAD6; border-left: 0; border-bottom: 0; border-radius: 0 50px 0 0; }
-    .k-boca { left: 340px; top: 194px; width: 26px; height: 12px; border-radius: 4px; background: #9AA4B5; }
-    .k-mando { left: 256px; top: 230px; width: 50px; height: 12px; border-radius: 6px; background: #9AA4B5; }
+    .k-frasco.f1 { left: 60px; top: 46px; width: 38px; height: 46px; background: ${COLOR.naranja}; box-shadow: inset 0 8px 0 rgba(255,255,255,.35); }
+    .k-frasco.f2 { left: 112px; top: 58px; width: 32px; height: 34px; background: ${COLOR.azul}; box-shadow: inset 0 7px 0 rgba(255,255,255,.3); }
+    .cocina .grifo { left: 300px; top: 80px; width: 170px; height: 170px; }
+    .k-grifo-img { position: absolute; left: 385px; top: 80px; height: 170px; transform: translateX(-50%); }
     .k-gota { width: 12px; height: 16px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #6FA3EA; }
     .k-mesada { position: absolute; left: 0; top: 248px; width: 600px; height: 36px; border-radius: 10px; background: #9AA4B5; box-shadow: inset 0 13px 0 #C3CAD6; }
-    .k-bacha { position: absolute; left: 220px; top: 240px; width: 250px; height: 28px; border-radius: 50%; background: #6FA3EA; box-shadow: 0 0 0 7px #E6EAF0, inset 0 5px 0 #9CC3F5; }
+    .k-bacha { position: absolute; left: 150px; top: 240px; width: 230px; height: 28px; border-radius: 50%; background: #6FA3EA; box-shadow: 0 0 0 7px #E6EAF0, inset 0 5px 0 #9CC3F5; }
     .k-burb { top: -4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid #9CC3F5; background: rgba(255,255,255,.5); }
     .k-mueble { position: absolute; left: 26px; top: 284px; width: 548px; height: 206px; background: #fff; border-radius: 0 0 14px 14px; box-shadow: inset 0 0 0 3px #E3E8F2; }
     .k-hueco { position: absolute; left: 12px; top: 12px; width: 258px; height: 182px; border-radius: 8px; background: #2E3D5C; overflow: hidden; }
@@ -121,7 +120,7 @@ export default escena({
     /* Cocina a gas del camino 2 (600 × 520, mismo lugar que la pileta) */
     .estufa { position: absolute; left: 120px; top: 352px; width: 600px; height: 520px; }
     .estufa i { position: absolute; display: block; }
-    .e-pared { position: absolute; left: 40px; top: 38px; width: 520px; height: 234px; border-radius: 22px 22px 0 0; background-color: #FBFBF9; background-image: linear-gradient(90deg, rgba(14,29,54,.07) 2px, transparent 2px), linear-gradient(rgba(14,29,54,.07) 2px, transparent 2px); background-size: 50px 50px; background-position: -1px -1px; transform-origin: 50% 100%; }
+    .e-pared { position: absolute; left: 126px; top: 70px; width: 348px; height: 202px; border-radius: 22px 22px 0 0; background-color: #FBFBF9; background-image: linear-gradient(90deg, rgba(14,29,54,.07) 2px, transparent 2px), linear-gradient(rgba(14,29,54,.07) 2px, transparent 2px); background-size: 50px 50px; background-position: -1px -1px; transform-origin: 50% 100%; }
     .e-cuerpo { position: absolute; left: 170px; top: 264px; width: 260px; height: 252px; border-radius: 6px 6px 12px 12px; background: #fff; box-shadow: inset 0 0 0 3px ${COLOR.borde}, 0 10px 24px rgba(14,29,54,.08); }
     .e-perilla { top: 16px; width: 22px; height: 22px; border-radius: 50%; background: #C3CAD6; }
     .e-perilla::after { content: ''; position: absolute; left: 9px; top: 3px; width: 4px; height: 8px; border-radius: 2px; background: ${COLOR.suave}; }
@@ -143,6 +142,11 @@ export default escena({
     .mov { position: absolute; }
     .pj { transform-origin: 50% 100%; }
     .foco { left: 760px; top: 600px; width: 270px; height: 270px; }
+    .gota { left: 128px; top: 740px; width: 130px; height: 130px; }
+    .engranaje { left: 1590px; top: 750px; width: 120px; height: 120px; }
+    .medidor { left: 132px; top: 730px; width: 140px; height: 140px; }
+    .brocha { left: 1473px; top: 760px; width: 110px; height: 110px; }
+    .aire { left: 1772px; top: 794px; width: 76px; height: 76px; }
     .rayos { position: absolute; left: 745px; top: 570px; width: 300px; height: 300px; }
     .rayos i { position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(rgba(255,201,60,.38) 0 9deg, transparent 9deg 22deg); -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 70%); mask-image: radial-gradient(circle, #000 25%, transparent 70%); }
     .pensar { position: absolute; left: 790px; top: 330px; width: 200px; height: 270px; }
@@ -172,7 +176,7 @@ export default escena({
     .sellito .sello { display: inline-block; font-size: 24px; line-height: 1.1; padding: 12px 22px; white-space: nowrap; text-align: center; box-shadow: 0 8px 0 ${COLOR.azulOscuro}, 0 18px 36px rgba(14,29,54,.25), inset 0 0 0 3px rgba(255,255,255,.35); }
     .golpe { position: absolute; top: ${SELLO_Y - 90}px; width: 180px; height: 180px; border-radius: 50%; border: 6px solid ${COLOR.amarillo}; }
     .llave { top: 660px; width: 210px; height: 210px; }
-    .sugiere { position: absolute; left: 120px; top: 664px; width: 300px; font-size: 26px; font-weight: 800; line-height: 1.25; color: ${COLOR.noche}; }
+    .sugiere { position: absolute; left: 120px; top: 598px; width: 280px; font-size: 26px; font-weight: 800; line-height: 1.25; color: ${COLOR.noche}; }
     .sugiere small { display: block; margin-bottom: 6px; font-size: 20px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: ${COLOR.azul}; }
 
     /* Avisos del camino 2 */
@@ -260,7 +264,7 @@ export default escena({
     <div class="camino c1"><span class="chip azul">${c.icono('ia', 'blanco')}Camino 1 · no sabés el oficio</span></div>
     <div class="camino c2"><span class="chip azul">${c.icono('herramienta', 'blanco')}Camino 2 · ya sabés el oficio</span></div>
     <div class="ejemplo">Ejemplo ilustrativo</div>
-    ${cocina('k-escena')}
+    ${cocina('k-escena', `<div class="mov grifo">${c.pj('grifo', '', 170)}</div>`)}
     <div class="flash-k"></div>
     <div class="estufa">
       <div class="e-pared"></div>
@@ -272,6 +276,11 @@ export default escena({
     </div>
     <div class="rayos"><i></i></div>
     <div class="mov foco">${c.pj('bombilla', '', 270)}<div class="sombra-pj"></div></div>
+    <div class="mov gota">${c.pj('gota', '', 130)}<div class="sombra-pj"></div></div>
+    <div class="mov medidor">${c.pj('medidor_gas', '', 140)}<div class="sombra-pj"></div></div>
+    <div class="mov engranaje">${c.pj('engranaje', '', 120)}<div class="sombra-pj"></div></div>
+    <div class="mov brocha">${c.pj('brocha', '', 110)}<div class="sombra-pj"></div></div>
+    <div class="mov aire">${c.pj('aire', '', 76)}</div>
     <div class="pensar duda"><i class="bur p2"></i><i class="bur p1"></i><div class="nube-w"><div class="nube bur"><span class="q t">?</span><span class="r">${c.icono('plomeria')}</span></div></div></div>
     <div class="pensar sabe"><i class="bur p2"></i><i class="bur p1"></i><div class="nube-w"><div class="nube bur"><span class="r">${c.icono('gas')}</span></div></div></div>
     ${PRES.map((id, i) => `<div class="pres tarjeta p${i}" style="left:${PRES_X[i]}px">
@@ -292,7 +301,7 @@ export default escena({
           <div class="chat-cab"><i class="atras"></i><span class="av">${c.img('personajes/bombilla-a.webp')}</span><span><b>HandIA</b><small>Asistente de Handyx</small></span></div>
           <div class="lista">
             <div class="msg m-hola">¡Hola! Soy HandIA. Contame qué pasó en tu casa.</div>
-            <div class="msg yo m-foto"><div class="mini">${cocina('k-foto')}</div><span>Así está</span></div>
+            <div class="msg yo m-foto"><div class="mini">${cocina('k-foto', c.img('personajes/grifo-b.webp', 'k-grifo-img'))}</div><span>Así está</span></div>
             <div class="msg yo m-texto"><span class="fantasma">${TEXTO}</span><span class="vivo"><span class="txt"></span><i class="caret"></i></span></div>
             <div class="m-resp">
               <div class="m-rubro">${c.icono('plomeria')}Rubro detectado: Plomería</div>
@@ -301,7 +310,7 @@ export default escena({
             </div>
           </div>
           <div class="entrada"><span class="b-cam">${c.icono('camara')}</span><span class="campo">Escribí acá…</span><span class="b-env"></span></div>
-          <div class="camara"><div class="cam-modo">FOTO</div><div class="visor">${cocina('k-visor')}<i class="esq a"></i><i class="esq b"></i><i class="esq c"></i><i class="esq d"></i><i class="enfoque"></i></div><i class="disparador"></i></div>
+          <div class="camara"><div class="cam-modo">FOTO</div><div class="visor">${cocina('k-visor', c.img('personajes/grifo-d.webp', 'k-grifo-img'))}<i class="esq a"></i><i class="esq b"></i><i class="esq c"></i><i class="esq d"></i><i class="enfoque"></i></div><i class="disparador"></i></div>
         </div>
         <div class="scr scr-of">
           <div class="of-tit t">¿Qué necesitás <mark>hoy</mark>?</div>
@@ -325,10 +334,11 @@ export default escena({
     entraTitulo(tl, $.all('.encabezado .l > span'), 0.15);
     tl.fromTo(k('.k-pared'), { autoAlpha: 0, scaleY: 0.2 }, { autoAlpha: 1, scaleY: 1, duration: 0.55, ease: 'back.out(1.4)' }, 0.25);
     tl.fromTo([k('.k-mesada'), k('.k-mueble'), k('.k-abierta')], { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.06 }, 0.4);
-    tl.fromTo(k('.k-canilla'), { autoAlpha: 0, y: -50 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'bounce.out' }, 0.62);
+    tl.fromTo(k('.grifo'), { autoAlpha: 0, y: -50 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'bounce.out' }, 0.62);
     tl.fromTo(k('.k-bacha'), { autoAlpha: 0, scaleX: 0.3 }, { autoAlpha: 1, scaleX: 1, duration: 0.4, ease: 'back.out(2)' }, 0.7);
     tl.fromTo($('.foco'), { autoAlpha: 0, x: 140 }, { autoAlpha: 1, x: 0, duration: 0.6, ease: 'power3.out' }, 0.85);
     tl.fromTo(k('.k-charco'), { autoAlpha: 0, scaleX: 0.05, scaleY: 0.4 }, { autoAlpha: 1, scaleX: 1, scaleY: 1, duration: 1.6, ease: 'power1.out' }, 1.05);
+    tl.fromTo($('.gota'), { autoAlpha: 0, y: 40, scale: 0.4 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, 1.2);
     tl.fromTo([$('.duda .p2'), $('.duda .p1'), $('.duda .nube-w')], { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.4)', stagger: 0.1 }, 1.4);
     tl.fromTo($('.tel'), { autoAlpha: 0, x: 520, rotation: 10 }, { autoAlpha: 1, x: 0, rotation: 0, duration: 0.8, ease: 'power3.out' }, 1.85);
     tl.fromTo($('.demo'), { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 2.3);
@@ -352,6 +362,7 @@ export default escena({
     c.escribir($('.m-texto .txt'), TEXTO, 5.55, 0.9);
     // 2 · HandIA orienta: rubro y costo aproximado; llegan tres presupuestos
     tl.fromTo($('.m-puntos'), { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.2 }, 6.65);
+    tl.fromTo($('.engranaje'), { autoAlpha: 0, y: 90 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(1.8)' }, 6.62);
     tl.to($('.m-puntos'), { autoAlpha: 0, duration: 0.12 }, 7.3);
     tl.fromTo($('.m-rubro'), { autoAlpha: 0, scale: 0.3 }, { autoAlpha: 1, scale: 1, duration: 0.4, ease: 'back.out(2.4)' }, 7.3);
     tl.fromTo($('.m-rango'), { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: 'power3.out' }, 7.55);
@@ -366,18 +377,20 @@ export default escena({
     tl.fromTo($('.ejemplo'), { autoAlpha: 0, y: -8 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 9.75);
     // 3 · el precio final lo pone el profesional
     tl.to(otras, { autoAlpha: 0.45, duration: 0.35 }, 10.42);
-    tl.fromTo($('.llave'), { autoAlpha: 0, y: 140 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'back.out(1.7)' }, 10.45);
-    tl.to($('.llave'), { y: -46, duration: 0.16, ease: 'power2.out' }, 10.98);
-    tl.to($('.llave'), { y: 0, duration: 0.2, ease: 'power2.in' }, 11.14);
-    tl.fromTo($('.sellito'), { autoAlpha: 0, scale: 2.3, rotation: -18 }, { autoAlpha: 1, scale: 1, rotation: -6, duration: 0.26, ease: 'power4.in' }, 11.06);
-    tl.to(elegidaEl, { x: 6, duration: 0.05 }, 11.32);
-    tl.to(elegidaEl, { x: -5, duration: 0.06 }, 11.37);
-    tl.to(elegidaEl, { x: 0, duration: 0.08 }, 11.43);
-    tl.fromTo($('.golpe'), { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 0.9, scale: 0.7, duration: 0.04 }, 11.32);
-    tl.to($('.golpe'), { autoAlpha: 0, scale: 1.7, duration: 0.45, ease: 'power2.out' }, 11.36);
-    tl.fromTo($('.sugiere'), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out' }, 11.75);
+    tl.fromTo($('.llave'), { autoAlpha: 0, y: 140 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: 'back.out(1.7)' }, 10.5);
+    tl.to($('.llave'), { y: -46, duration: 0.16, ease: 'power2.out' }, 11.2);
+    tl.to($('.llave'), { y: 0, duration: 0.2, ease: 'power2.in' }, 11.36);
+    tl.fromTo($('.sellito'), { autoAlpha: 0, scale: 2.3, rotation: -18 }, { autoAlpha: 1, scale: 1, rotation: -6, duration: 0.26, ease: 'power4.in' }, 11.28);
+    tl.to(elegidaEl, { x: 6, duration: 0.05 }, 11.54);
+    tl.to(elegidaEl, { x: -5, duration: 0.06 }, 11.59);
+    tl.to(elegidaEl, { x: 0, duration: 0.08 }, 11.65);
+    tl.fromTo($('.golpe'), { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 0.9, scale: 0.7, duration: 0.04 }, 11.54);
+    tl.to($('.golpe'), { autoAlpha: 0, scale: 1.7, duration: 0.45, ease: 'power2.out' }, 11.58);
+    tl.fromTo($('.sugiere'), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out' }, 11.95);
     // 4 · camino 2: ya sabés el oficio
-    tl.to([...tarjetas, $('.sellito'), $('.sugiere'), $('.ejemplo'), $('.llave')], { autoAlpha: 0, y: '+=40', duration: 0.4, ease: 'power2.in', stagger: 0.03 }, 13.2);
+    tl.to([...tarjetas, $('.sellito'), $('.sugiere'), $('.ejemplo'), $('.llave'), $('.gota')], { autoAlpha: 0, y: '+=40', duration: 0.4, ease: 'power2.in', stagger: 0.03 }, 13.2);
+    tl.fromTo([$('.brocha'), $('.aire')], { autoAlpha: 0, y: 70 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(2)', stagger: 0.1 }, 13.55);
+    tl.fromTo($('.medidor'), { autoAlpha: 0, y: 80 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.8)' }, 13.7);
     tl.to($('.c1'), { autoAlpha: 0, rotationX: 90, transformPerspective: 600, duration: 0.25, ease: 'power2.in' }, 13.25);
     tl.fromTo($('.c2'), { autoAlpha: 0, rotationX: -90, transformPerspective: 600 }, { autoAlpha: 1, rotationX: 0, duration: 0.35, ease: 'back.out(1.6)' }, 13.45);
     tl.fromTo($('.scr-of'), { xPercent: 100 }, { xPercent: 0, duration: 0.5, ease: 'power3.inOut' }, 13.4);
@@ -397,11 +410,20 @@ export default escena({
     tl.to(MOSAICOS_DE_PASO.map((i) => $(`.m${i}`)), { autoAlpha: 0, scale: 0.6, duration: 0.3, stagger: 0.05 }, 14.95);
     $.all('.aviso').forEach((a, i) => tl.fromTo(a, { autoAlpha: 0, x: -420, scale: 0.8 }, { autoAlpha: 1, x: 0, scale: 1, duration: 0.55, ease: 'power3.out' }, 15.2 + i * 0.3));
     // Poses (pintor: valen también en los saltos)
-    const foco = $('.foco .pj');
-    const llave = $('.llave .pj');
+    // Foco: llega caminando, se ilumina con la respuesta, festeja el precio y los presupuestos.
+    // Grifo y Gota: alarma por la pérdida, posan para la foto, festejan «Plomería»; Gota saluda a Llave.
+    // Engranaje trabaja mientras HandIA piensa; Medidor reacciona a la hornalla y al rubro Gas; Brocha y Aire saludan.
+    const [foco, grifo, gota, engranaje, llave, medidor, brocha, aire] = ['.foco', '.grifo', '.gota', '.engranaje', '.llave', '.medidor', '.brocha', '.aire'].map((s) => $(`${s} .pj`));
     c.pintor((t) => {
-      pose(foco, t >= 16.0 ? 'c' : t >= 7.6 ? 'b' : t >= 0.85 && t < 1.4 ? 'd' : 'a');
-      pose(llave, t >= 11.3 ? 'c' : t >= 10.98 ? 'd' : 'b');
+      if (!foco || !grifo || !gota || !engranaje || !llave || !medidor || !brocha || !aire) return;
+      pose(foco, t >= 16.0 ? 'c' : t >= 13.6 ? 'b' : t >= 11.58 ? 'c' : t >= 7.6 ? 'b' : t >= 0.85 && t < 1.4 ? 'd' : 'a');
+      pose(grifo, t >= 7.3 ? 'c' : t >= 4.74 ? 'b' : 'd');
+      pose(gota, t >= 10.5 ? 'b' : t >= 9.0 ? 'a' : t >= 7.3 ? 'c' : t >= 4.74 ? 'b' : 'd');
+      pose(engranaje, t >= 15.2 ? 'c' : t >= 13.5 ? 'b' : t >= 8.4 ? 'a' : t >= 7.3 ? 'c' : 'd');
+      pose(llave, t >= 11.52 ? 'c' : t >= 11.2 ? 'd' : 'b');
+      pose(medidor, t >= 15.2 ? 'c' : t >= 14.35 ? 'b' : t >= 14.05 ? 'd' : 'a');
+      pose(brocha, t >= 15.5 ? 'c' : t >= 14.0 ? 'a' : 'b');
+      pose(aire, t >= 15.6 ? 'c' : t >= 14.0 ? 'a' : 'b');
     });
   },
   ambiente(t, $, tl) {

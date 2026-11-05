@@ -47,6 +47,7 @@
     "x-negocios",
     "x-profesiones",
     "x-plan-3m",
+    "x-trimestres",
     "x-mes-1",
     "x-mes-2",
     "x-mes-3",
@@ -116,6 +117,7 @@
     "x-negocios",
     "x-profesiones",
     "x-plan-3m",
+    "x-trimestres",
     "x-mes-1",
     "x-mes-2",
     "x-mes-3",
@@ -453,169 +455,38 @@
    "disposicion": "dividido",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 5,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Mostrar el recorrido del usuario: el momento en que una foto y una descripción se convierten en una solicitud comprensible, y el camino directo por oficio.",
    "guion": "Imaginen algo: se les rompió algo y no saben a quién llamar. Con HandIA, nuestro asistente de inteligencia artificial, van a poder mandar una foto, describir el problema y recibir orientación sobre qué especialista necesitan y un costo aproximado para comparar presupuestos. El presupuesto final lo fija el profesional.\n\nSi ya saben a quién llamar, eligen directamente el oficio y comparan presupuestos.",
-   "notas": "0:25–0:55. Pantallas de la demo interactiva de la landing (landing.handyc.com/demo), referencia visual de la app con datos ficticios; la app en pruebas todavía se está puliendo.\nCamino 1: HandIA en la demo (detecta el rubro y arma el pedido con la descripción y la foto). En el producto HandIA está en desarrollo; la referencia de costo aproximado todavía no aparece en la demo. El profesional fija precio, alcance y disponibilidad.\nCamino 2: elegir el oficio en el inicio y contar qué pasó con fotos.\nNo se muestran pantallas de presupuestos con tarifas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "0:25–0:55. Cinco golpes (→ al decir…): 1 «Imaginen algo: se les rompió algo y no saben a quién llamar» (entra solo) · 2 «…van a poder mandar una foto, describir el problema» · 3 «…y recibir orientación sobre qué especialista necesitan y un costo aproximado» · 4 «El presupuesto final lo fija el profesional» · 5 «Si ya saben a quién llamar, eligen directamente el oficio».\nPantallas y celular: demo de la landing (landing.handyc.com/demo), datos ficticios; HandIA está en desarrollo (rótulo «Demo · HandIA en desarrollo»). El rango de costo y los tres presupuestos son un ejemplo ilustrativo (afirmaciones HANDIA-EJ-* y EJ-PRES-*), no precios reales. El profesional fija precio, alcance y disponibilidad: Handyx sugiere, nunca impone.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Camino 1, con HandIA (en desarrollo; se ve en la demo): el usuario cuenta qué pasó y manda una foto; HandIA detecta el oficio y arma el pedido, y a futuro dará una referencia aproximada de costo. Después compara presupuestos y el profesional fija el precio final. Camino 2: si ya sabe qué oficio necesita, lo elige y publica su solicitud.",
    "referencias": [],
    "preguntas": "¿HandIA funciona hoy? → Está en desarrollo: lo que se ve es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "handia",
+     "alt": "Animación: Foco ve que la pileta de la cocina pierde y no sabe a quién llamar; con HandIA saca una foto y describe el problema, HandIA detecta Plomería y da un costo aproximado, salen tres presupuestos de ejemplo para comparar y Llave sella que el precio lo pone el profesional; en el camino 2 elige Gas en la grilla de oficios, publica el pedido y le llegan presupuestos.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.8,
+      2.8,
+      3.6
+     ],
+     "afirmaciones": [
+      "HANDIA-EJ-MIN",
+      "HANDIA-EJ-MAX",
+      "EJ-PRES-1",
+      "EJ-PRES-2",
+      "EJ-PRES-3"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "La experiencia del usuario",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "No sabés a quién llamar. ==HandIA te orienta.==",
-     "nivel": 2
-    },
-    {
-     "id": "k1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Camino 1 · no sabés qué oficio necesitás",
-     "tono": "proyeccion"
-    },
-    {
-     "id": "h",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 31
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 60,
-     "leyenda": "Demo · HandIA en desarrollo",
-     "pantallas": [
-      {
-       "recurso": "demo-handia",
-       "alt": "Demo de HandIA: la descripción y la foto se convierten en un pedido de plomería"
-      }
-     ]
-    },
-    {
-     "id": "pasos",
-     "area": "libre",
-     "pos": {
-      "x": 23,
-      "y": 31,
-      "w": 31
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "numerada",
-     "items": [
-      {
-       "texto": "**Sacás una foto** del problema"
-      },
-      {
-       "texto": "**Contás** qué pasó"
-      },
-      {
-       "texto": "**HandIA orienta:** oficio y costo aproximado"
-      },
-      {
-       "texto": "**Comparás** presupuestos"
-      },
-      {
-       "texto": "El profesional **fija el precio final**"
-      }
-     ]
-    },
-    {
-     "id": "k2",
-     "area": "libre",
-     "pos": {
-      "x": 58,
-      "y": 25
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Camino 2 · ya sabés qué oficio necesitás",
-     "tono": "neutro"
-    },
-    {
-     "id": "p1",
-     "area": "libre",
-     "pos": {
-      "x": 58,
-      "y": 31
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 52,
-     "leyenda": "Elegís el oficio",
-     "pantallas": [
-      {
-       "recurso": "demo-usuario-inicio",
-       "alt": "Demo: elegir el rubro en el inicio"
-      }
-     ]
-    },
-    {
-     "id": "p2",
-     "area": "libre",
-     "pos": {
-      "x": 77,
-      "y": 31
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 52,
-     "leyenda": "Publicás tu solicitud",
-     "pantallas": [
-      {
-       "recurso": "demo-usuario-describir",
-       "alt": "Demo: contar qué pasó con fotos y pedir presupuestos"
-      }
-     ]
-    },
-    {
-     "id": "pp",
-     "area": "libre",
-     "pos": {
-      "x": 58,
-      "y": 91,
-      "w": 37
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Demo de la app · datos ficticios",
-     "tamano": "s"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -625,149 +496,30 @@
    "disposicion": "dividido",
    "paleta": "neutro",
    "duracion": 22,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Mostrar que Handyx quiere acompañar el trabajo diario del especialista, no solo enviarle un contacto.",
    "guion": "Del lado del profesional, reunimos trabajos, ingresos, gastos y herramientas por oficio. A futuro queremos potenciarlas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
-   "notas": "0:55–1:17. Pantallas de la demo de la landing (agenda y mensajes del profesional, datos ficticios). Trabajos, agenda e ingresos (cobros) existen en la app; la pantalla de cobros no se muestra porque todavía tiene la tarifa anterior.\nGastos y herramientas por oficio NO existen todavía: se muestran como propuesta visual. La IA para el profesional es la próxima evolución (visión), sin funciones automáticas inventadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "0:55–1:17. Tres golpes (→ al decir…): 1 «Del lado del profesional, reunimos trabajos, ingresos, gastos» (entra solo) · 2 «…y herramientas por oficio» · 3 «A futuro queremos potenciarlas con inteligencia artificial».\nPantallas de la demo de la landing (agenda y mensajes del profesional, datos ficticios). Trabajos, agenda e ingresos (cobros) existen en la app; la pantalla de cobros no se muestra porque todavía tiene la tarifa anterior.\nGastos y herramientas por oficio NO existen todavía: se muestran como propuesta visual. La IA para el profesional es la próxima evolución (visión), sin funciones automáticas inventadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Para el profesional, Handyx reúne trabajos y agenda, ingresos, gastos y herramientas por oficio. Trabajos, agenda e ingresos están en la app; gastos y herramientas por oficio son una propuesta. Próxima evolución: herramientas potenciadas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "profesional",
+     "alt": "Animación: la app del profesional (demo, datos ficticios) con trabajos, clientes, ingresos y gastos; las herramientas propuestas para los seis oficios, con Electricidad al frente; y HandIA para profesionales: presupuesto, materiales, recordatorios y fotos, para que cada trabajo sea mejor que el anterior",
+     "tiempos": [
+      3.4,
+      3.8,
+      3.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Para el profesional",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Más que clientes: herramientas para ==trabajar mejor.==",
-     "nivel": 2
-    },
-    {
-     "id": "ag",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 62,
-     "leyenda": "Trabajos y agenda",
-     "pantallas": [
-      {
-       "recurso": "demo-especialista-agenda",
-       "alt": "Demo: agenda del profesional"
-      }
-     ]
-    },
-    {
-     "id": "ca",
-     "area": "libre",
-     "pos": {
-      "x": 22,
-      "y": 25
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 62,
-     "leyenda": "Clientes y chats",
-     "pantallas": [
-      {
-       "recurso": "demo-especialista-mensajes",
-       "alt": "Demo: mensajes con clientes"
-      }
-     ]
-    },
-    {
-     "id": "mod",
-     "area": "libre",
-     "pos": {
-      "x": 41,
-      "y": 26,
-      "w": 54
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "contraste",
-     "items": [
-      {
-       "texto": "**Mis trabajos y agenda** · en la app"
-      },
-      {
-       "texto": "**Ingresos** · en la app (cobros)"
-      },
-      {
-       "texto": "**Gastos** · propuesta visual"
-      },
-      {
-       "texto": "**Herramientas por oficio** · propuesta visual"
-      }
-     ]
-    },
-    {
-     "id": "kv",
-     "area": "libre",
-     "pos": {
-      "x": 41,
-      "y": 69
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Visión",
-     "tono": "proyeccion"
-    },
-    {
-     "id": "ia",
-     "area": "libre",
-     "pos": {
-      "x": 41,
-      "y": 74,
-      "w": 54
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Próxima evolución:** herramientas potenciadas con IA, para que cada trabajo sea mejor que el anterior.",
-     "tamano": "m",
-     "caja": "amarilla"
-    },
-    {
-     "id": "pp",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 93,
-      "w": 34
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Demo de la app · datos ficticios",
-     "tamano": "s"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -777,140 +529,38 @@
    "disposicion": "dividido",
    "paleta": "azul",
    "duracion": 21,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "informado",
    "transicion": "fundido",
    "objetivo": "Distinguir lo hecho (apps desarrolladas, pruebas, primeros trabajos y comisiones) de lo que viene.",
    "guion": "Ya contamos con ambas aplicaciones desarrolladas y las estamos probando. Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos y cobramos nuestras primeras comisiones. Ahora queremos llevar esa experiencia más allá de los edificios.",
-   "notas": "1:17–1:38. Cifras informadas por Ignacio y mostradas a su pedido (04/11): 5 trabajos con comisión cobrada (prueba con porteros, conciliación de comprobantes pendiente) y 56 especialistas registrados en el preregistro (no son activos ni verificados). Montos de la prueba (Ignacio, de memoria): cuatro trabajos de $ 50.000 y uno de $ 150.000 = $ 350.000, ticket promedio $ 70.000 (≈ USD 45 al BNA del 30/10). Con la comisión que se cobró en la prueba, a confirmar el monto exacto.\nPantallas: demo de la landing (agenda del usuario; pedido nuevo del profesional con «El precio lo ponés vos»), datos ficticios. Las apps desarrolladas están en pruebas y se están puliendo.\nNo atribuir los cobros a un flujo automatizado de pagos: se coordinaron a mano con porteros.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Ya empezamos: la aplicación de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios se concretaron los primeros trabajos y se cobraron las primeras comisiones (cantidades en conciliación). Próximo paso: llevar esa experiencia más allá de los edificios.",
+   "notas": "1:17–1:38. Cuatro golpes (→ al decir…): 1 «Ya contamos con ambas aplicaciones desarrolladas» (entra solo) · 2 «Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos» · 3 «…y cobramos nuestras primeras comisiones» · 4 «Ahora queremos llevar esa experiencia más allá de los edificios».\nCifras informadas por Ignacio: 5 trabajos con comisión cobrada en la prueba con porteros ($ 350.000 en trabajos: cuatro de $ 50.000 y uno de $ 150.000) con el plan original de la prueba, 10 % al usuario + 10 % al profesional = $ 70.000 de ingresos brutos de Handyx (confirmado por Ignacio el 05/11). 56 especialistas registrados en el preregistro: no son activos ni verificados.\nLos cobros se coordinaron a mano con los porteros: no atribuirlos a un flujo automático de pagos. El modelo vigente (0 % al profesional, 15 % al usuario) es posterior a la prueba.\nPantallas: demo de la landing con datos ficticios; las apps están desarrolladas y en pruebas cerradas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Ya empezamos: la app de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios concretamos los primeros trabajos y cobramos las primeras comisiones con el plan original de la prueba (10 % al usuario y 10 % al profesional). Además hay especialistas registrados en el preregistro, que todavía no son activos ni verificados. Próximo paso: llevar esa experiencia más allá de los edificios.",
    "referencias": [],
    "preguntas": "¿Cuántos trabajos cobraron? → Los primeros, con ayuda de porteros; estamos conciliando cantidades y comprobantes y los mostramos cuando estén conciliados.",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "empezamos",
+     "alt": "Animación: las apps de usuario y del profesional llegan con su sello «Desarrollada · en pruebas»; de los edificios con porteros salen Handys de distintos oficios hasta Llave, las comisiones del usuario (Foco) y del profesional (Llave) llegan a la alcancía de Handyx, y la ciudad se expande con casas, un comercio y pines más allá de los edificios.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.8,
+      3.2
+     ],
+     "afirmaciones": [
+      "TRABAJOS-INFORMADOS",
+      "PRUEBA-MONTO",
+      "PRUEBA-COM-USUARIO",
+      "PRUEBA-COM-PROFESIONAL",
+      "PRUEBA-INGRESO-HANDYX",
+      "ESP-REGISTRADOS"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Ya empezamos",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 52
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "No nos quedamos en ==una idea.==",
-     "nivel": 2
-    },
-    {
-     "id": "c1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25.5,
-      "w": 24
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "TRABAJOS-INFORMADOS",
-     "leyenda": "**trabajos con comisión cobrada**",
-     "caja": "blanca",
-     "detalle": "con porteros: **{{PRUEBA-MONTO}}** en trabajos · ticket promedio **{{PRUEBA-TICKET}}**"
-    },
-    {
-     "id": "c2",
-     "area": "libre",
-     "pos": {
-      "x": 31,
-      "y": 25.5,
-      "w": 23
-     },
-     "paso": 0,
-     "entrada": "contar",
-     "tipo": "cifra",
-     "afirmacion": "ESP-REGISTRADOS",
-     "leyenda": "**especialistas registrados**",
-     "caja": "blanca",
-     "detalle": "preregistro: no son activos ni verificados"
-    },
-    {
-     "id": "tr",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 81,
-      "w": 50
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Ahora queremos llevar esta experiencia **más allá de los edificios.**",
-     "tamano": "m"
-    },
-    {
-     "id": "u",
-     "area": "libre",
-     "pos": {
-      "x": 59,
-      "y": 12
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 70,
-     "leyenda": "App de usuario",
-     "pantallas": [
-      {
-       "recurso": "demo-usuario-agenda",
-       "alt": "Demo: agenda del usuario"
-      }
-     ]
-    },
-    {
-     "id": "e",
-     "area": "libre",
-     "pos": {
-      "x": 78,
-      "y": 12
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 70,
-     "leyenda": "App del profesional",
-     "pantallas": [
-      {
-       "recurso": "demo-especialista-pedido",
-       "alt": "Demo: pedido nuevo, el precio lo pone el profesional"
-      }
-     ]
-    },
-    {
-     "id": "pp",
-     "area": "libre",
-     "pos": {
-      "x": 59,
-      "y": 89,
-      "w": 36
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Demo de las apps · datos ficticios",
-     "tamano": "s"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -920,12 +570,12 @@
    "disposicion": "dividido",
    "paleta": "gris",
    "duracion": 26,
-   "pasos": 1,
+   "pasos": 5,
    "clasificacion": "meta",
    "transicion": "fundido",
    "objetivo": "Justificar el número con una cuenta visible (hogares × arreglos × ticket) y mostrar la aspiración del primer trimestre y la visión como objetivos.",
    "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
-   "notas": "1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Ticket real de la prueba: $ 70.000 ≈ USD 45 (5 trabajos, muestra chica): con ese ticket el 25 % del trimestre da ≈ USD 109.000. Profesiones de ejemplo para llegar a 72: ver el respaldo «De 6 a 72 profesiones».\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "1:38–2:04. Cinco golpes (→ al decir…): 1 «Arrancamos con seis profesiones en General Pueyrredon» (entra solo) · 2 «…un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25 %» · 3 «…y generar cien mil dólares de ingresos brutos» · 4 «Para fines de 2027 queremos llegar a 72 profesiones» · 5 «…y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx».\nOJO: en la grabación actual Ignacio dice «20 %»; la cifra oficial es 25 % (pantalla y subtítulos).\n1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Ticket real de la prueba: $ 70.000 ≈ USD 45 (5 trabajos, muestra chica): con ese ticket el 25 % del trimestre da ≈ USD 109.000. Profesiones de ejemplo para llegar a 72: ver el respaldo «De 6 a 72 profesiones».\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Con los supuestos de 1 arreglo por hogar por año y USD 40 por arreglo, son ≈ USD 10,4 millones por año; el 20 % de un trimestre equivale a ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas (USD 100.000 requiere un ticket medio de ≈ USD 51). Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
    "referencias": [
     "MDP-HOGARES",
@@ -943,104 +593,35 @@
    "preguntas": "¿De dónde sale el número? → Hogares × 1 arreglo por año × USD 40 (supuestos) ≈ USD 10,4 M por año; el 20 % de un trimestre son ≈ 13.000 trabajos. Con USD 40 dan ≈ USD 78.000; los USD 100.000 piden un ticket de ≈ USD 51. Todavía no medimos el ticket ni la frecuencia: lo primero es la meta operativa de diciembre.",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "mercado",
+     "alt": "Animación: los seis oficios con sus Handys y los hogares de General Pueyrredon que se encienden; la cuenta del primer trimestre en bloques conectados (hogares, arreglos por año, trimestre, participación, ticket real y tarifa) hasta los ingresos brutos contra el objetivo; la grilla de profesiones que se llena mes a mes hasta fines de 2027; y el mapa de Argentina con Buenos Aires, Mar del Plata y cuatro de cada diez casas con Handyx.",
+     "tiempos": [
+      3.2,
+      3.6,
+      3.2,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "PROFESIONES-INICIALES",
+      "SUP-ARREGLOS-HOGAR",
+      "MERCADO-TRIM-N",
+      "META-CUOTA-LOCAL",
+      "Q1-TRABAJOS-N",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO",
+      "Q1-TARIFAS-REAL-N",
+      "META-INGRESOS-TRIM",
+      "PROF-POR-MES",
+      "META-PROFESIONES",
+      "META-CUOTA-NACIONAL"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Mercado y visión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Empezamos en Mar del Plata. ==Pensamos en grande.==",
-     "nivel": 2
-    },
-    {
-     "id": "kc",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 26
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Cómo se calcula · supuestos rotulados",
-     "tono": "proyeccion"
-    },
-    {
-     "id": "fl",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 31,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "{{MDP-HOGARES}} hogares",
-       "detalle": "General Pueyrredon · Censo 2022"
-      },
-      {
-       "texto": "× {{SUP-ARREGLOS-HOGAR}} arreglo por año",
-       "detalle": "supuesto"
-      },
-      {
-       "texto": "× {{SUP-TICKET-USD}} por arreglo",
-       "detalle": "supuesto de ticket medio"
-      },
-      {
-       "texto": "{{MERCADO-USD}} por año",
-       "detalle": "arreglos del hogar en el partido"
-      }
-     ]
-    },
-    {
-     "id": "q1",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 56
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Primer trimestre · aspiración:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}}. Con nuestro ticket real ({{PRUEBA-TICKET}} ≈ USD 45): **{{Q1-TARIFAS-REAL}}** de tarifas.",
-     "tamano": "s",
-     "caja": "azul"
-    },
-    {
-     "id": "v",
-     "area": "libre",
-     "pos": {
-      "x": 64,
-      "y": 66,
-      "w": 31
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Visión 2027:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones (limpieza, mecánica, jardinería, pintura…) y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
-     "tamano": "s",
-     "caja": "blanca"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -5551,6 +5132,62 @@
      "afirmaciones": [
       "PROF-POR-MES",
       "PROF-Q1"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-trimestres",
+   "titulo": "Cómo crece Handyx, trimestre a trimestre",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 6,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el plan de crecimiento por trimestre: zonas del país, profesiones nuevas cada mes y lo que suman Handyx for People y Handyx for Business.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Seis golpes (avanzar con cada frase): 1 lanzamiento en Mar del Plata (10/11/2026) con 6 profesiones · 2 primer trimestre (nov–ene): toda Buenos Aires en 3 meses, 6 profesiones nuevas por mes, HandIA premium para usuarios y para profesionales · 3 segundo trimestre: Centro (Córdoba, Rosario, Santa Fe) · 4 tercer trimestre: Cuyo y Litoral · 5 cuarto trimestre: Norte · 6 fines de 2027: toda Argentina y la visión del 40 %.\nPlan propuesto por Ignacio (05/11), a validar con los primeros datos: no hay oficinas, socios ni presupuesto por región. Las zonas del mapa son estilizadas, no límites provinciales. Las profesiones nuevas no están confirmadas ni ordenadas: los Handys de cada trimestre son decorado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Plan de crecimiento por trimestre (propuesto, a validar): lanzamiento en Mar del Plata con seis profesiones; en el primer trimestre, toda Buenos Aires, seis profesiones nuevas por mes con sus herramientas, HandIA premium para usuarios y HandIA para profesionales, y un primer piloto con locales; después, una región por trimestre (Centro, Cuyo y Litoral, Norte y Patagonia) mientras mejoran Handyx for People y Handyx for Business, hasta 72 profesiones y la visión de fines de 2027.",
+   "referencias": [
+    "LANZAMIENTO",
+    "PROFESIONES-INICIALES",
+    "PROF-POR-MES",
+    "META-BA-MESES",
+    "PROF-Q1",
+    "PROF-Q2",
+    "PROF-Q3",
+    "PROF-Q4",
+    "META-CUOTA-NACIONAL"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "trimestres",
+     "alt": "Animación: mapa de Argentina en mosaicos que se enciende zona por zona —Mar del Plata, Buenos Aires, Centro, Cuyo y Litoral, Norte y Patagonia— con un Handy que llega a cada región, mientras la tarjeta de cada trimestre suma profesiones de 6 a 72, Handyx for People y Handyx for Business, hasta la visión de fines de 2027.",
+     "tiempos": [
+      2.8,
+      3.2,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "PROFESIONES-INICIALES",
+      "PROF-POR-MES",
+      "META-BA-MESES",
+      "PROF-Q1",
+      "PROF-Q2",
+      "PROF-Q3",
+      "PROF-Q4",
+      "META-CUOTA-NACIONAL"
      ],
      "area": "fondo",
      "paso": 0,

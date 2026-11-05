@@ -2,9 +2,11 @@
 // 0 lanzamiento en Mar del Plata · 1 primer trimestre: toda Buenos Aires · 2 Centro · 3 Cuyo y Litoral · 4 Norte ·
 // 5 nov–dic 2027: Patagonia, toda Argentina y la visión. Mapa de mosaicos (cada zona se enciende desde la anterior, con
 // arcos y pines), tarjeta del trimestre (zona · profesiones · People · Business), riel de avance con Foco y contador de
-// profesiones con las afirmaciones PROF-Q1…Q4. La franja y 880–950 de la columna izquierda queda libre (leyenda del kit).
+// profesiones con las afirmaciones PROF-Q1…Q4. Handys: uno distinto llega a cada región cuando se enciende y un equipo
+// por trimestre en la tarjeta (sin nombrar profesiones: las próximas no están confirmadas ni ordenadas).
+// La franja y 880–950 de la columna izquierda queda libre (leyenda del kit).
 import { ARGENTINA } from './comun/argentina.ts';
-import { COLOR, entraTitulo, escena, pose, tramo, type Kit } from './comun/kit.ts';
+import { COLOR, entraTitulo, escena, pose, tramo, type Kit, type Personaje, type Pose } from './comun/kit.ts';
 
 type Pt = readonly [number, number];
 type Lado = 'der' | 'izq' | 'aba';
@@ -32,7 +34,7 @@ const CIUDADES: Ciudad[] = [
   { n: 'Paraná', paso: 3, llega: 0.95, lado: 'der', desde: 'Rosario', curva: 0.45, dy: 8 },
   { n: 'San Juan', paso: 3, llega: 1.4, lado: 'izq', desde: 'Mendoza', curva: 0.4, dy: -10 },
   { n: 'Corrientes', paso: 3, llega: 1.55, lado: 'der', desde: 'Paraná', curva: 0.2 },
-  { n: 'Tucumán', paso: 4, llega: 0.75, lado: 'izq', desde: 'Córdoba', curva: 0.2 },
+  { n: 'Tucumán', paso: 4, llega: 0.75, lado: 'izq', desde: 'Córdoba', curva: -0.2 },
   { n: 'Posadas', paso: 4, llega: 1.0, lado: 'der', desde: 'Corrientes', curva: 0.3 },
   { n: 'Salta', paso: 4, llega: 1.4, lado: 'izq', desde: 'Tucumán', curva: 0.35 },
   { n: 'Neuquén', paso: 5, llega: 0.75, lado: 'izq', desde: 'Bahía Blanca', curva: 0.2 },
@@ -136,6 +138,29 @@ const OFICIOS = [
 ] as const;
 const ofPos = (i: number) => ({ x: (i % 3) * (OF.w + OF.gx), y: Math.floor(i / 3) * (OF.h + OF.gy) });
 
+// Handys. Ancho visible por alto (el aire es ancho); los del mapa llevan contorno blanco tipo calco.
+const ASPECTO: Record<Personaje, number> = { aire: 2.3, bombilla: 0.8, brocha: 1.0, engranaje: 1.1, gota: 1.0, grifo: 0.9, llave: 1.07, medidor_gas: 1.02 };
+/** Un Handy por región (x, y = pies en pantalla), en lugares sin pines, rótulos ni arcos. */
+const VIAJEROS: Array<{ n: Personaje; x: number; y: number; alto: number }> = [
+  { n: 'llave', x: 1673, y: 566, alto: 62 }, // Mar del Plata (en el mar, al sudeste)
+  { n: 'gota', x: 1535, y: 450, alto: 62 }, // Buenos Aires
+  { n: 'engranaje', x: 1495, y: 268, alto: 58 }, // Centro (al noreste de Córdoba)
+  { n: 'grifo', x: 1402, y: 421, alto: 62 }, // Cuyo
+  { n: 'medidor_gas', x: 1502, y: 146, alto: 62 }, // Norte
+  { n: 'brocha', x: 1383, y: 801, alto: 64 }, // Patagonia (Santa Cruz)
+];
+/** Equipo de Handys de la tarjeta en cada paso (el del lanzamiento: plomería, gas y aire acondicionado). */
+const EQUIPOS: Array<Array<[Personaje, number]>> = [
+  [['grifo', 60], ['medidor_gas', 60], ['aire', 38]],
+  [['brocha', 62], ['engranaje', 58], ['aire', 38]],
+  [['llave', 60], ['gota', 58], ['medidor_gas', 60]],
+  [['brocha', 62], ['aire', 38], ['engranaje', 58]],
+  [['gota', 58], ['llave', 60], ['grifo', 60]],
+  [['grifo', 60], ['medidor_gas', 60], ['gota', 58], ['engranaje', 58]],
+];
+const LLEGA_HANDY = (z: number) => m(z) + (OLAS[z]?.t ?? 0) + 0.35;
+const FIESTA = m(N - 1) + 1.7;
+
 function textos(c: Kit) {
   const mes = c.cifra('PROF-POR-MES');
   return {
@@ -171,6 +196,8 @@ function textos(c: Kit) {
 export default escena({
   marcas: MARCAS,
   cara: [{ desde: 0, x: 1790, y: 820, d: 250 }],
+  leyendas: ['Lanzamiento en **Mar del Plata**', 'Primer trimestre: **toda Buenos Aires**', 'Segundo trimestre: **el Centro**', 'Tercer trimestre: **Cuyo y Litoral**', 'Cuarto trimestre: **el Norte**', 'Fines de 2027: **toda Argentina**'],
+  lugarLeyenda: { x: 660, y: 915 },
   css: `
     .fondo { position: absolute; inset: 0; background: ${COLOR.hueso}; }
     .mar { position: absolute; left: 1110px; top: 0; width: 810px; height: 1080px; background-color: ${COLOR.celeste}; background-image: radial-gradient(rgba(31,87,168,.12) 1.6px, transparent 2px); background-size: 28px 28px; }
@@ -251,8 +278,16 @@ export default escena({
     .caja span { display: inline-block; padding: 4px 13px; border-radius: 999px; background: #fff; font-weight: 800; font-size: 20px; color: ${COLOR.noche}; box-shadow: 0 6px 16px rgba(14,29,54,.18); }
     .der span { transform-origin: 0 50%; } .izq span { transform-origin: 100% 50%; } .aba span { transform-origin: 50% 0; }
     .etq.casa span { background: ${COLOR.noche}; color: #fff; }
-    .placa { position: absolute; left: 1548px; top: 528px; width: 252px; padding: 16px 0 14px; border-radius: 26px; background: #fff; text-align: center; box-shadow: 0 0 0 8px rgba(255,201,60,.6), 0 22px 44px rgba(14,29,54,.28); }
+    .placa { position: absolute; left: 1652px; top: 250px; width: 232px; padding: 16px 0 14px; border-radius: 26px; background: #fff; text-align: center; box-shadow: 0 0 0 8px rgba(255,201,60,.6), 0 22px 44px rgba(14,29,54,.28); }
     .placa img { display: block; height: 42px; margin: 0 auto; }
+    .hmapa { position: absolute; }
+    .hmapa .cae, .equipo .mov { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-end; }
+    .hmapa .pj, .equipo .pj { position: relative; transform-origin: 50% 100%; }
+    .hmapa .pj { filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff) drop-shadow(0 5px 6px rgba(14,29,54,.3)); }
+    .hmapa .sombra-pj { bottom: -6px; height: 12px; }
+    .equipo { position: absolute; left: 500px; top: 8px; width: 384px; height: 66px; }
+    .grupo { position: absolute; right: 0; bottom: 0; height: 66px; display: flex; align-items: flex-end; gap: 8px; }
+    .grupo .mov { position: relative; inset: auto; height: 66px; transform-origin: 50% 100%; }
     .placa div { margin-top: 6px; font-weight: 800; font-size: 22px; color: ${COLOR.azulOscuro}; }
   `,
   html: (c) => {
@@ -263,6 +298,7 @@ export default escena({
       return `left:${x.toFixed(1)}px;top:${y.toFixed(1)}px" data-i="${i}`;
     };
     const valores = (lista: string[], clase = '') => lista.map((t, k) => (t ? `<div class="v ${clase}" data-k="${k}">${t}</div>` : '')).join('');
+    const ancho = (n: Personaje, alto: number) => Math.round(alto * ASPECTO[n]);
     return `
     <div class="fondo"></div><div class="mar"></div>
     <svg class="mapa" viewBox="0 0 ${A.ancho} ${A.alto}" style="left:${MAPA.x}px;top:${MAPA.y}px;width:${A.ancho * MAPA.s}px;height:${A.alto * MAPA.s}px">
@@ -278,6 +314,7 @@ export default escena({
       <path class="borde" d="${A.contorno}"/><path class="borde" d="${A.malvinas}"/>
       ${ARCOS.map((a) => `<g class="arco"><path class="halo" d="${a.d}"/><path class="linea" d="${a.d}"/><circle class="cabeza" r="6.5" cx="0" cy="0"/></g>`).join('')}
     </svg>
+    ${VIAJEROS.map((h) => `<div class="hmapa" style="left:${h.x - ancho(h.n, h.alto) / 2}px;top:${h.y - h.alto}px;width:${ancho(h.n, h.alto)}px;height:${h.alto}px"><i class="sombra-pj"></i><div class="cae">${c.pj(h.n, '', h.alto)}</div></div>`).join('')}
     ${CIUDADES.map((ci, i) => `<div class="pin${i === 0 ? ' casa' : ''}" style="${ciudad(ci, i)}"><i class="latido"></i><i class="onda"></i><b></b></div>`).join('')}
     ${CIUDADES.map((ci, i) => `<div class="etq${i === 0 ? ' casa' : ''}" style="${ciudad(ci, i)}"><div class="caja ${ci.lado}"${ci.dy ? ` style="margin-top:${ci.dy}px"` : ''}><span>${ci.n}</span></div></div>`).join('')}
     <div class="placa">${c.logo()}<div>en toda Argentina</div></div>
@@ -292,6 +329,7 @@ export default escena({
     </div>
     <div class="carta tarjeta">
       <div class="vis per">${tx.periodos.map(([ic, t], k) => { const am = k === 0 || k === N - 1; return `<span class="v chip ${am ? 'amarillo' : 'azul'}" data-k="${k}">${c.icono(ic ?? '', am ? '' : 'blanco')}${t}</span>`; }).join('')}</div>
+      <div class="equipo">${EQUIPOS.map((g) => `<div class="grupo">${g.map(([n, a]) => `<div class="mov" style="width:${ancho(n, a)}px">${c.pj(n, '', a)}</div>`).join('')}</div>`).join('')}</div>
       <span class="mos zm">${c.icono('ubicacion')}</span><div class="et ze">Zona</div>
       <div class="vis zv">${tx.zonas.map(([h, s], k) => `<div class="v" data-k="${k}"><div class="h t">${h}</div><div class="sub">${s}</div></div>`).join('')}</div>
       <div class="raya r1"></div>
@@ -324,8 +362,8 @@ export default escena({
     const rotar = (vals: Array<HTMLElement | undefined>, k: number, t: number) => {
       const sale = vals[k - 1];
       const entra = vals[k];
-      if (sale) tl.to(sale, { autoAlpha: 0, y: -26, duration: 0.3, ease: 'power2.in' }, t);
-      if (entra) tl.fromTo(entra, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, t + 0.2);
+      if (sale) tl.to(sale, { autoAlpha: 0, y: -26, duration: 0.26, ease: 'power2.in' }, t);
+      if (entra) tl.fromTo(entra, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out' }, t + 0.27);
     };
 
     // 0 · título, mapa, riel y tarjeta de lanzamiento
@@ -387,16 +425,28 @@ export default escena({
       const p = ofPos(i);
       const dx = CUENTA.x + CUENTA.w / 2 - (ABAJO.x + p.x + OF.w / 2);
       const dy = CUENTA.y + CUENTA.h / 2 - (ABAJO.y + p.y + OF.h / 2);
-      tl.to(o, { x: dx, y: dy, scale: 0.15, autoAlpha: 0, duration: 0.55, ease: 'power2.in' }, m(1) + 0.1 + i * 0.05);
+      tl.to(o, { x: dx, y: dy, scale: 0.15, autoAlpha: 0, duration: 0.45, ease: 'power2.in' }, m(1) + 0.1 + i * 0.04);
     });
     const ramas = $.all('.rama');
-    tl.fromTo(ramas, { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)', stagger: 0.12 }, m(1) + 0.6);
+    tl.fromTo(ramas, { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)', stagger: 0.12 }, m(1) + 0.72);
     // 5 · la visión reemplaza a las ramas; el mapa se completa y aparece la placa
     tl.to(ramas, { autoAlpha: 0, y: -18, duration: 0.3, ease: 'power2.in', stagger: 0.06 }, m(5) + 0.2);
     tl.fromTo($('.vision'), { autoAlpha: 0, y: 34, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.6)' }, m(5) + 0.55);
     tl.fromTo($('.relleno'), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'power1.out' }, m(5) + 1.7);
-    tl.to($.all('.borde'), { attr: { 'stroke-width': 4 }, stroke: COLOR.azulOscuro, duration: 0.5 }, m(5) + 1.7);
+    tl.to($.all('.borde'), { strokeWidth: 4, stroke: COLOR.azulOscuro, duration: 0.5 }, m(5) + 1.7);
     tl.fromTo($('.placa'), { autoAlpha: 0, scale: 0.5, y: 30 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(2)' }, m(5) + 1.85);
+
+    // Handys: uno cae en cada región cuando se enciende; el equipo de la tarjeta cambia con el trimestre
+    $.all('.hmapa').forEach((h, z) => {
+      tl.fromTo(h.querySelector('.cae'), { autoAlpha: 0, y: -80 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'bounce.out' }, LLEGA_HANDY(z));
+      tl.fromTo(h.querySelector('.sombra-pj'), { autoAlpha: 0, scaleX: 0.3 }, { autoAlpha: 1, scaleX: 1, duration: 0.5, ease: 'power2.out' }, LLEGA_HANDY(z) + 0.1);
+    });
+    const grupos = $.all('.grupo');
+    grupos.forEach((g, k) => {
+      const hs = [...g.querySelectorAll<HTMLElement>('.mov')];
+      tl.fromTo(hs, { autoAlpha: 0, y: 26, scale: 0.6 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2.2)', stagger: 0.09 }, k === 0 ? 0.85 : m(k) + 0.5);
+      if (k < N - 1) tl.to(hs, { autoAlpha: 0, y: -16, duration: 0.25, ease: 'power2.in', stagger: 0.04 }, m(k + 1) + 0.08);
+    });
 
     // Contador de profesiones: un número por trimestre (c.contador), visible solo en su tramo; la barra va a la meta
     const valores = ['PROFESIONES-INICIALES', 'PROF-Q1', 'PROF-Q2', 'PROF-Q3', 'PROF-Q4'].map((id) => c.valor(id) ?? 0);
@@ -473,10 +523,31 @@ export default escena({
       const corre = MARCAS.slice(1, N).some((mk) => t >= mk + 0.05 && t < mk + 0.85);
       pose(foco, corre ? 'd' : t >= m(N - 1) + 0.85 ? 'c' : t >= 0.75 && t < m(1) ? 'b' : 'a');
     });
+    // Poses de los Handys del mapa: saltan al caer, saludan en su trimestre, descansan después, festejan cuando
+    // llega uno nuevo y todos juntos al final. Los de la tarjeta trabajan mientras cuenta el contador y después festejan.
+    const viajeros = $.all('.hmapa .pj');
+    const equipos = grupos.map((g) => [...g.querySelectorAll<HTMLElement>('.pj')]);
+    c.pintor((t) => {
+      viajeros.forEach((pj, z) => {
+        const ta = LLEGA_HANDY(z);
+        const otroLlega = VIAJEROS.some((_, j) => j > z && t >= LLEGA_HANDY(j) + 0.3 && t < LLEGA_HANDY(j) + 1.1);
+        let p: Pose = 'a';
+        if (t >= FIESTA || t < ta + 0.35) p = 'c';
+        else if (z === N - 1 || t < m(z + 1) + 0.3) p = 'b';
+        else if (otroLlega) p = 'c';
+        pose(pj, p);
+      });
+      equipos.forEach((pjs, k) => {
+        let p: Pose = 'b';
+        if (k >= 1 && k < N - 1) p = t >= (inicio[k] ?? 0) + 1.2 ? 'c' : 'd';
+        if (k === N - 1) p = t >= FIESTA ? 'c' : 'b';
+        for (const pj of pjs) pose(pj, p);
+      });
+    });
   },
   ambiente(t, $, tl) {
-    // Respiración de Foco (dueño: el ambiente; la línea mueve .caminante y .salto)
-    $('.caminante .pj').style.transform = `scaleY(${1 + Math.sin(t * 2.4) * 0.02})`;
+    // Respiración de los Handys (dueño: el ambiente; la línea mueve sus contenedores .caminante, .salto, .cae y .mov)
+    $.all('.pj').forEach((p, i) => (p.style.transform = `scaleY(${1 + Math.sin(t * 2.4 + i * 0.9) * 0.02})`));
     // Latido de Mar del Plata y de los pines del paso actual, una vez que llegaron
     let actual = 0;
     for (let k = 1; k < N; k++) if (tl >= m(k)) actual = k;

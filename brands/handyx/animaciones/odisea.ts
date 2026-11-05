@@ -6,11 +6,10 @@
 import { COLOR, entraTitulo, escena, pose, tramo } from './comun/kit.ts';
 
 const CHATS = [
-  { txt: '¿Alguien conoce un plomero?', hora: '10:02', mia: true, x: 470, y: 290, r: -3 },
-  { txt: 'Te paso el de mi cuñado', hora: '10:47', mia: false, x: 600, y: 400, r: 2 },
-  { txt: 'No contesta…', hora: '13:15', mia: true, x: 520, y: 510, r: -2 },
-  { txt: '¿Puede el jueves? ¿Cuánto sale?', hora: '17:30', mia: true, x: 440, y: 620, r: 3 },
-  { txt: 'Recién veo tu mensaje', hora: 'Ayer 21:40', mia: false, x: 610, y: 730, r: -2 },
+  { txt: '¿Alguien conoce un plomero?', hora: '10:02', mia: true, x: 1000, y: 330, r: -2 },
+  { txt: 'No contesta…', hora: '13:15', mia: true, x: 1090, y: 470, r: 2 },
+  { txt: '¿Puede el jueves? ¿Cuánto sale?', hora: '17:30', mia: true, x: 980, y: 610, r: -2 },
+  { txt: 'Recién veo tu mensaje', hora: 'Ayer 21:40', mia: false, x: 1110, y: 750, r: 2 },
 ];
 const HERR = [
   { ic: 'lista', txt: 'Cuaderno' },
@@ -47,7 +46,7 @@ export default escena({
     .fila { position: absolute; left: 50%; top: 690px; width: 1480px; margin-left: -740px; height: 200px; }
     .fila .mov { position: absolute; bottom: 0; }
     .encabezado { position: absolute; left: 96px; top: 56px; }
-    .encabezado .titulo { margin-top: 10px; font-size: 58px; }
+    .encabezado .titulo { margin-top: 10px; font-size: 54px; }
     .casa { position: absolute; left: 110px; top: 300px; width: 760px; height: 640px; }
     .techo { position: absolute; left: -30px; top: 0; width: 820px; height: 150px; background: ${COLOR.azulOscuro}; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
     .pared { position: absolute; left: 20px; top: 150px; width: 720px; height: 490px; background-color: #ECECEC; background-image: linear-gradient(90deg, rgba(14,29,54,.06) 2px, transparent 2px), linear-gradient(rgba(14,29,54,.06) 2px, transparent 2px); background-size: 48px 48px; border-radius: 0 0 18px 18px; box-shadow: inset 0 -10px 0 rgba(14,29,54,.06); }
@@ -69,10 +68,11 @@ export default escena({
     .tel-foco::after { content: ''; position: absolute; inset: 6px; border-radius: 8px; background: #CFE0FA; }
     .chat { position: absolute; transform-origin: 0 100%; }
     .chat .burbuja { white-space: nowrap; font-size: 25px; }
-    .pro { position: absolute; left: 960px; top: 0; width: 960px; height: 1080px; background: ${COLOR.azul}; overflow: hidden; }
+    .pro { position: absolute; left: 1000px; top: 0; width: 920px; height: 1080px; background: ${COLOR.azul}; overflow: hidden; }
     .pro .kicker { position: absolute; left: 70px; top: 250px; color: ${COLOR.amarillo}; }
     .pro .txt { position: absolute; left: 70px; top: 290px; width: 380px; font-size: 44px; color: #fff; }
-    .agenda { position: absolute; left: 1030px; top: 640px; width: 360px; padding: 22px; }
+    .agenda { position: absolute; left: 1070px; top: 480px; width: 300px; padding: 22px; }
+    .nuevos { position: absolute; left: 1420px; top: 650px; }
     .agenda b { font-size: 22px; } .agenda small { display: block; margin-top: 4px; font-size: 16px; color: ${COLOR.suave}; }
     .dias { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 14px; }
     .dias i { display: block; height: 34px; border-radius: 8px; background: ${COLOR.celeste}; }
@@ -112,10 +112,11 @@ export default escena({
       <div class="kicker">Del otro lado</div>
       <div class="txt t">Profesionales buscando clientes</div>
     </div>
+    <div class="chip verde nuevos">✓ Trabajos nuevos con Handyx</div>
     <div class="agenda tarjeta"><b>Agenda · esta semana</b><small>Especialista</small><div class="dias">${'<i></i>'.repeat(7)}</div><div class="vacia">Sin trabajos confirmados</div></div>
     <div class="mov llave">${c.pj('llave', '', 250)}</div>
     ${HERR.map((h, i) => `<div class="herr hz${i}">${c.icono(h.ic)}${h.txt}</div>`).join('')}
-    <svg class="puente" viewBox="0 0 1920 1080"><path class="linea" d="M 700 600 C 800 640, 860 640, 960 640 S 1320 640, 1500 690" fill="none" stroke="${COLOR.amarillo}" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 22"/></svg>
+    <svg class="puente" viewBox="0 0 1920 1080"><path class="linea" d="M 1130 640 C 1240 650, 1300 640, 1380 600 S 1460 520, 1500 500" fill="none" stroke="${COLOR.amarillo}" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 22"/></svg>
     <div class="placa">${c.logo()}</div>
     <div class="cierre"><div><div class="k">Por esa doble necesidad creamos Handyx</div><div class="t">Más que conectar: una experiencia para los dos</div></div>
       <div class="sellos">${SELLOS.map((s, i) => `<span class="sello ${i === 1 ? 'amarillo' : ''}">${c.icono(s.ic, i === 1 ? '' : 'blanco')}${s.txt}</span>`).join('')}</div></div>
@@ -142,24 +143,23 @@ export default escena({
     // 2 · la odisea: chats, reloj, título
     tl.fromTo($('.tel-foco'), { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(3)' }, 5.85);
     $.all('.chat').forEach((ch, i) => tl.fromTo(ch, { autoAlpha: 0, scale: 0.4, y: 30 }, { autoAlpha: 1, scale: 1, y: 0, duration: 0.42, ease: 'back.out(2.2)' }, 6.1 + i * 0.5));
-    tl.fromTo($('.reloj .mm'), { rotation: 0 }, { rotation: 360 * 6, duration: 3.2, ease: 'power1.inOut' }, 6.0);
+    tl.fromTo($('.reloj .mm'), { rotation: 0 }, { rotation: 360 * 4, duration: 3.0, ease: 'power1.inOut' }, 6.0);
     tl.fromTo($('.reloj .hh'), { rotation: 60 }, { rotation: 60 + 360 / 2, duration: 3.2, ease: 'power1.inOut' }, 6.0);
     tl.fromTo($('.encabezado .kicker'), { autoAlpha: 0, y: -14 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 6.0);
     entraTitulo(tl, $.all('.encabezado .l > span'), 6.15);
     // 3 · del otro lado: el especialista
     tl.fromTo($('.pro'), { xPercent: 100 }, { xPercent: 0, duration: 0.75, ease: 'power3.inOut' }, 9.65);
-    tl.to($.all('.chat'), { x: -40, duration: 0.6, ease: 'power2.inOut' }, 9.65);
+    tl.to($.all('.chat'), { autoAlpha: 0, x: -60, scale: 0.9, duration: 0.45, ease: 'power2.in', stagger: 0.05 }, 9.65);
     tl.fromTo([$('.pro .kicker'), $('.pro .txt')], { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out', stagger: 0.12 }, 10.2);
     tl.fromTo($('.agenda'), { autoAlpha: 0, y: 60, rotation: -4 }, { autoAlpha: 1, y: 0, rotation: -2, duration: 0.6, ease: 'back.out(1.6)' }, 10.5);
     tl.to([$('.pro .kicker'), $('.pro .txt')], { autoAlpha: 0, x: -30, duration: 0.35, ease: 'power2.in' }, 12.85);
-    tl.to($('.agenda'), { y: 60, rotation: 0, duration: 0.6, ease: 'power3.inOut' }, 13.1);
-    tl.to($('.llave'), { y: 130, duration: 0.6, ease: 'power3.inOut' }, 13.1);
+    tl.to($('.agenda'), { autoAlpha: 0, y: 30, duration: 0.35, ease: 'power2.in' }, 12.85);
+    tl.fromTo($('.nuevos'), { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.4)' }, 14.0);
     tl.fromTo($('.llave'), { autoAlpha: 0, y: 80 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'back.out(1.8)' }, 10.4);
     tl.fromTo($.all('.herr'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35, stagger: 0.1 }, 10.9);
     // 4 · Handyx une los dos lados
     tl.to($('.encabezado'), { autoAlpha: 0, y: -30, duration: 0.4, ease: 'power2.in' }, 12.85);
     tl.fromTo($('.placa'), { autoAlpha: 0, y: -380, scale: 0.6 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, ease: 'bounce.out' }, 12.9);
-    $.all('.chat').forEach((ch, i) => tl.to(ch, { x: 960 - CHATS[i]!.x - 120, y: 600 - CHATS[i]!.y - 30, scale: 0.1, autoAlpha: 0, rotation: 0, duration: 0.55, ease: 'power3.in' }, 13.3 + i * 0.06));
     tl.fromTo($('.linea'), { strokeDashoffset: 900, autoAlpha: 0 }, { strokeDashoffset: 0, autoAlpha: 1, duration: 0.9, ease: 'power2.out' }, 13.4);
     tl.to($('.charco'), { scaleX: 0, scaleY: 0, autoAlpha: 0, duration: 0.7, ease: 'power2.in' }, 13.6);
     tl.to($('.tel-foco'), { autoAlpha: 0, duration: 0.3 }, 13.4);
@@ -191,9 +191,9 @@ export default escena({
     // Herramientas: dispersas, girando alrededor del especialista; con Handyx se ordenan en una columna
     const k = 1 - (1 - tramo(tl, 13.5, 14.4)) ** 3;
     $.all('.herr').forEach((h, i) => {
-      const a = t * 0.35 + (i * Math.PI * 2) / 6;
-      const ox = 1605 + Math.cos(a) * 230 - 70;
-      const oy = 500 + Math.sin(a) * 190 - 52 + Math.sin(t * 1.3 + i) * 10;
+      const a = t * 0.25 + (i * Math.PI * 2) / 6;
+      const ox = 1640 + Math.cos(a) * 180 - 70;
+      const oy = 500 + Math.sin(a) * 175 - 52 + Math.sin(t * 1.3 + i) * 8;
       const tx = 1040 + i * 142;
       const ty = 300;
       h.style.transform = `translate(${ox + (tx - ox) * k}px, ${oy + (ty - oy) * k}px) rotate(${(1 - k) * Math.sin(t + i) * 8}deg)`;

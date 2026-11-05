@@ -8,16 +8,17 @@
 // 4 «…y que cuatro de cada diez servicios… en Argentina pasen por Handyx» → el mapa, Buenos Aires, Mar del Plata y 4 de cada 10 casas.
 // La franja y 880–950 queda libre en todos los pasos (leyenda del kit) y la de abajo (y > 960), para subtítulos.
 import { ARGENTINA } from './comun/argentina.ts';
-import { COLOR, entraTitulo, escena, tramo, type Kit } from './comun/kit.ts';
+import { COLOR, entraTitulo, escena, pose, tramo, type Kit, type Personaje, type Pose } from './comun/kit.ts';
 
-const OFICIOS = [
-  { ic: 'electricidad', txt: 'Electricidad' },
-  { ic: 'plomeria', txt: 'Plomería' },
-  { ic: 'gas', txt: 'Gas' },
-  { ic: 'cerrajeria', txt: 'Cerrajería' },
-  { ic: 'albanileria', txt: 'Albañilería' },
-  { ic: 'aire', txt: 'Aire acondicionado' },
+const OFICIOS: Array<{ ic: string; txt: string; pj: Personaje; alto: number }> = [
+  { ic: 'electricidad', txt: 'Electricidad', pj: 'bombilla', alto: 76 },
+  { ic: 'plomeria', txt: 'Plomería', pj: 'gota', alto: 74 },
+  { ic: 'gas', txt: 'Gas', pj: 'medidor_gas', alto: 74 },
+  { ic: 'cerrajeria', txt: 'Cerrajería', pj: 'llave', alto: 72 },
+  { ic: 'albanileria', txt: 'Albañilería', pj: 'brocha', alto: 74 },
+  { ic: 'aire', txt: 'Aire acondicionado', pj: 'aire', alto: 36 },
 ];
+const T_OFI = (i: number) => 0.4 + i * 0.08; // entrada de cada oficio
 // Herramientas de las profesiones que se suman (decorado: no nombra profesiones, que todavía no están confirmadas).
 const HERRAMIENTAS = ['martillo', 'llave-inglesa', 'sparkles', 'herramienta', 'camara', 'auto', 'capas', 'celular', 'usuarios', 'servidor', 'escudo', 'ruta'];
 // Columna 0: las profesiones de hoy; después, una columna por mes (nov 2026 → sep 2027).
@@ -159,6 +160,7 @@ export default escena({
     { desde: 3, x: 1700, y: 140, d: 250 },
     { desde: 4, x: 1700, y: 140, d: 250 },
   ],
+  leyendas: ['Arrancamos en **General Pueyrredon**', 'La cuenta del **primer trimestre**, paso a paso', 'Objetivo: **ingresos brutos** del primer trimestre', 'Más profesiones **cada mes**, con sus herramientas', 'Visión: **Handyx en toda Argentina**'],
   css: `
     .fondo { position: absolute; inset: 0; background: #EEF0F6; }
     .halo { position: absolute; left: 560px; top: 560px; width: 1500px; height: 1500px; margin: -750px 0 0 -750px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,.9), rgba(255,255,255,0) 62%); }
@@ -170,18 +172,23 @@ export default escena({
     .campo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
     .apagadas { fill: #CDD5E2; }
     .lz { fill: ${COLOR.azul}; opacity: 0; }
-    .cuenta0 { position: absolute; left: 1090px; top: 290px; width: 734px; }
-    .c0-n { font-size: 146px; color: ${COLOR.azulOscuro}; line-height: 1; white-space: nowrap; }
-    .c0-l { margin-top: 10px; font-size: 34px; font-weight: 800; color: ${COLOR.noche}; }
-    .c0-f { display: inline-flex; align-items: center; gap: 10px; margin-top: 12px; padding: 8px 18px 8px 12px; border-radius: 999px; background: #fff; font-size: 22px; font-weight: 700; color: ${COLOR.suave}; box-shadow: 0 6px 16px rgba(14,29,54,.08); }
+    .cuenta0 { position: absolute; left: 1090px; top: 282px; width: 734px; }
+    .c0-n { font-size: 140px; color: ${COLOR.azulOscuro}; line-height: 1; white-space: nowrap; }
+    .c0-fila { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+    .c0-l { font-size: 32px; font-weight: 800; color: ${COLOR.noche}; white-space: nowrap; }
+    .c0-f { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px 8px 12px; border-radius: 999px; background: #fff; font-size: 22px; font-weight: 700; color: ${COLOR.suave}; white-space: nowrap; box-shadow: 0 6px 16px rgba(14,29,54,.08); }
     .c0-f .icono { width: 28px; height: 28px; }
-    .oficios { position: absolute; left: 1090px; top: 586px; width: 734px; }
+    .oficios { position: absolute; left: 1090px; top: 500px; width: 734px; }
     .ofi-t { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 800; color: ${COLOR.noche}; }
     .ofi-t .n { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: ${COLOR.amarillo}; font-size: 34px; box-shadow: 0 5px 0 #C9971E; }
-    .ofi-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 14px; margin-top: 18px; }
-    .ofi { display: flex; align-items: center; gap: 12px; height: 80px; padding: 0 12px; border-radius: 20px; background: #fff; box-shadow: 0 6px 0 #D5DCE7, 0 14px 26px rgba(14,29,54,.08); font-weight: 700; font-size: 20px; line-height: 1.1; color: ${COLOR.noche}; }
-    .ofi i { flex: none; width: 52px; height: 52px; border-radius: 14px; background: #E6EAF1; display: grid; place-items: center; }
-    .ofi .icono { width: 30px; height: 30px; }
+    .ofi-g { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 14px; margin-top: 16px; }
+    .ofi { display: flex; align-items: center; gap: 10px; height: 84px; padding: 0 16px 0 6px; border-radius: 22px; background: #fff; box-shadow: 0 6px 0 #D5DCE7, 0 14px 26px rgba(14,29,54,.08); font-weight: 800; font-size: 24px; color: ${COLOR.noche}; white-space: nowrap; }
+    .ofi-pj { flex: none; display: flex; align-items: flex-end; justify-content: center; width: 96px; height: 78px; border-radius: 16px; background: #E6EAF1; }
+    .ofi-pj .pj { position: relative; }
+    .ofi .icono { width: 26px; height: 26px; margin-left: auto; opacity: .55; }
+    /* Handys: el contenedor .mov lo mueve la línea de tiempo; el .pj de adentro respira (ambiente) */
+    .mov { position: absolute; transform-origin: 50% 100%; }
+    .pj { transform-origin: 50% 100%; }
 
     /* 1-2 · la cuenta */
     .calc, .fila { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
@@ -269,6 +276,8 @@ export default escena({
       `<div class="op ${cls}" style="left:${x}px;top:${y}px"><div class="op-in"><div class="pil"><b>${sim}</b><span class="t">${val}</span></div><div class="op-l">${lbl}${tag}</div></div></div>`;
     const bloque = (cls: string, ic: string, cab: string, num: string, pie: string) =>
       `<div class="bloque ${cls}"><div class="b-cab">${c.icono(ic)}<span>${cab}</span></div><div class="b-num t">${num}</div><div class="b-pie">${pie}</div></div>`;
+    const handy = (cls: string, nombre: Personaje, x: number, y: number, alto: number) =>
+      `<div class="mov ${cls}" style="left:${x}px;top:${y}px;width:${alto}px;height:${alto}px">${c.pj(nombre, '', alto)}</div>`;
     const gotas = (v: Via, i: number) =>
       `<path class="via v${i}" d="${v.d}" pathLength="1000"/><g class="gotas g${i}">${'<circle r="6"/>'.repeat(Math.max(3, Math.round(v.largo / 64)))}</g>`;
     let fichas = '';
@@ -289,9 +298,9 @@ export default escena({
     return `
     <div class="fondo"></div><div class="halo"></div>
     <div class="campo">${campo(c)}</div>
-    <div class="cuenta0"><div class="c0-n t">0</div><div class="c0-l">hogares en General Pueyrredon</div><div class="c0-f">${c.icono('casa')}Censo 2022</div></div>
+    <div class="cuenta0"><div class="c0-n t">0</div><div class="c0-fila"><div class="c0-l">hogares en General Pueyrredon</div><div class="c0-f">${c.icono('casa')}Censo 2022</div></div></div>
     <div class="oficios"><div class="ofi-t"><span class="n t">${c.cifra('PROFESIONES-INICIALES')}</span>profesiones para arrancar</div>
-      <div class="ofi-g">${OFICIOS.map((o) => `<div class="ofi"><i>${c.icono(o.ic)}</i><span>${o.txt}</span></div>`).join('')}</div></div>
+      <div class="ofi-g">${OFICIOS.map((o) => `<div class="ofi"><span class="ofi-pj">${c.pj(o.pj, '', o.alto)}</span><span>${o.txt}</span>${c.icono(o.ic)}</div>`).join('')}</div></div>
 
     <div class="calc">
       <div class="fila fila1">
@@ -303,6 +312,8 @@ export default escena({
         ${bloque('bB', 'herramienta', 'Arreglos', '', 'por trimestre')}
         ${op('o3 meta', OP.o3, '×', c.cifra('META-CUOTA-LOCAL'), 'de los trabajos', '<em class="tag obj">objetivo</em>')}
         ${bloque('bC', 'acuerdo', 'Trabajos', '', 'en el primer trimestre')}
+        ${handy('h-foco1', 'bombilla', 306, 188, 128)}
+        ${handy('h-llave1', 'llave', 1676, 192, 124)}
       </div>
       <div class="fila fila2">
         <svg class="flujo" viewBox="0 0 1920 1080">${gotas(VIAS[2]!, 2)}</svg>
@@ -310,6 +321,8 @@ export default escena({
         ${op('o5', OP.o5, '×', c.cifra('TARIFA-USUARIO'), 'tarifa Handyx')}
         <div class="foco fD"></div>
         <div class="bloque bD"><div class="b-num t"></div><div class="b-pie">de ingresos brutos en el primer trimestre</div><div class="ok">${tilde}Objetivo: ${c.cifra('META-INGRESOS-TRIM')}</div></div>
+        ${handy('h-foco2', 'bombilla', 1556, 728, 106)}
+        ${handy('h-llave2', 'llave', 1672, 732, 102)}
       </div>
     </div>
 
@@ -321,6 +334,7 @@ export default escena({
       <div class="anio" style="left:${colX(3) - 32}px;width:${colX(11) - colX(3) + 64}px">2027</div>
       <div class="meta72"><div class="n72 t">0</div><div class="l72 t">profesiones</div><span class="chip obj">Objetivo · fines de 2027</span>
         <div class="ritmo"><span class="n t">${c.cifra('PROF-POR-MES')}</span><span>profesiones nuevas por mes, cada una con sus herramientas</span></div></div>
+      ${handy('h-eng', 'engranaje', 1494, 300, 178)}
     </div>
 
     <div class="vision">
@@ -334,6 +348,9 @@ export default escena({
       <div class="casas">${Array.from({ length: 10 }, () => `<div class="casa"><svg viewBox="0 0 86 82"><path class="cu" d="M8 38 L43 8 L78 38 V78 H8 Z"/><rect class="pu" x="34" y="52" width="18" height="26" rx="4"/></svg></div>`).join('')}</div>
       <div class="llave4" style="width:${n4 * CASA.w + (n4 - 1) * CASA.gap}px"></div>
       <div class="cap4">${n4} de cada 10 con ${c.logo()}</div>
+      ${handy('h-foco4', 'bombilla', 606, 452, 130)}
+      ${handy('h-llave4', 'llave', 1194, 452, 116)}
+      ${handy('h-gota4', 'gota', 1318, 454, 114)}
       <div class="cuota"><div class="n40 t">${c.cifra('META-CUOTA-NACIONAL')}</div><div class="l40">de los servicios contratados por particulares en Argentina<br><span class="chip obj">Objetivo 2027</span></div></div>
     </div>
 
@@ -372,7 +389,7 @@ export default escena({
     tl.fromTo($('.fila1'), { y: BAJA }, { y: 0, duration: 0.55, ease: 'power3.inOut' }, ARRIBA);
     tl.to($('.oficios'), { autoAlpha: 0, y: 40, duration: 0.35, ease: 'power2.in' }, 3.2);
     tl.to($('.campo'), { x: 261 - 546, y: F1 + BAJA - 563, scale: 0.1, autoAlpha: 0, duration: 0.6, ease: 'power3.in' }, 3.2);
-    tl.to($('.cuenta0'), { x: 261 - 1457, y: F1 + BAJA - 420, scale: 0.25, autoAlpha: 0, duration: 0.55, ease: 'power3.in' }, 3.25);
+    tl.to($('.cuenta0'), { x: 261 - 1457, y: F1 + BAJA - 380, scale: 0.25, autoAlpha: 0, duration: 0.55, ease: 'power3.in' }, 3.25);
     tl.to($('.halo'), { x: 400, y: 0, duration: 1, ease: 'power2.inOut' }, 3.2);
     entra($('.bA'), 3.62);
     VIAS.forEach((v, i) => tl.fromTo($(`.v${i}`), { strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration: v.dur, ease: 'none' }, v.t0));
@@ -450,6 +467,45 @@ export default escena({
     tl.fromTo($('.pin-l'), { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: 'power3.out' }, 15.95);
     tl.fromTo($('.n40'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'back.out(1.8)' }, 15.2);
     tl.fromTo($('.l40'), { autoAlpha: 0, x: 30 }, { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out' }, 15.4);
+
+    // Handys: entran saltando, reaccionan con sus poses y festejan cuando la cuenta llega al resultado
+    const salta = (el: HTMLElement, t: number) =>
+      tl.fromTo(el, { autoAlpha: 0, y: 46, scale: 0.6 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, t);
+    salta($('.h-foco1'), 3.8);
+    salta($('.h-llave1'), tC + 0.05);
+    tl.to([$('.h-foco1'), $('.h-llave1')], { autoAlpha: 0, y: 30, duration: 0.2, ease: 'power2.in' }, ARRIBA);
+    salta($('.h-foco2'), tD + 0.25);
+    salta($('.h-llave2'), tD + 0.35);
+    salta($('.h-eng'), 10.55);
+    salta($('.h-llave4'), 14.4);
+    salta($('.h-gota4'), 14.5);
+    salta($('.h-foco4'), 15.9);
+    const poser = (el: HTMLElement) => {
+      let ultima = '';
+      return (p: Pose) => {
+        if (p !== ultima) {
+          ultima = p;
+          pose(el, p);
+        }
+      };
+    };
+    const pj = (sel: string) => poser($(`${sel} .pj`));
+    const oficios = $.all('.ofi .pj').map(poser);
+    const [foco1, llave1, foco2, llave2, eng, foco4, llave4, gota4] = ['.h-foco1', '.h-llave1', '.h-foco2', '.h-llave2', '.h-eng', '.h-foco4', '.h-llave4', '.h-gota4'].map(pj) as Array<(p: Pose) => void>;
+    const festejoC = tC + 0.85; // el contador de trabajos llega
+    const festejoD = tD + 1.1; // ingresos con el objetivo tildado
+    const festejo72 = mesLleno(MESES.length - 1) + 0.1;
+    c.pintor((t) => {
+      oficios.forEach((f, i) => f(t >= T_OFI(i) + 0.35 ? 'b' : 'a')); // saludan al presentarse
+      foco1!(t >= festejoC ? 'c' : t >= 4.8 ? 'a' : 'b');
+      llave1!(t >= festejoC ? 'c' : 'd');
+      foco2!(t >= festejoD ? 'c' : 'd');
+      llave2!(t >= festejoD ? 'c' : 'd');
+      eng!(t >= festejo72 ? 'c' : 'd');
+      llave4!(t >= 15.2 ? 'c' : 'b');
+      gota4!(t >= 15.2 ? 'c' : 'b');
+      foco4!('b');
+    });
   },
   ambiente(t, $, tl) {
     // Puntos que fluyen por las vías ya dibujadas (dueño: el ambiente; la línea de tiempo dibuja la vía)
@@ -464,6 +520,8 @@ export default escena({
         g.style.opacity = f > 0 && s <= f * v.largo ? '1' : '0';
       });
     });
+    // Respiración de los Handys (dueño: el ambiente; las entradas mueven el contenedor)
+    $.all('.pj').forEach((p, i) => (p.style.transform = `scaleY(${(1 + Math.sin(t * 2.4 + i) * 0.02).toFixed(4)})`));
     // Mar del Plata late
     const k = (t % 1.6) / 1.6;
     const onda = $('.pin .onda');
