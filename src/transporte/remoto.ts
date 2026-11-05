@@ -16,7 +16,7 @@ export function wsDesde(servidor: string): string {
 /** Servidor permitido: el configurado en el build o el mismo origen de la página (ensayo en red local). */
 export function servidorPermitido(candidato: string | null): string | null {
   const configurado = (import.meta.env['VITE_SERVIDOR'] as string | undefined) ?? '';
-  if (!candidato) return configurado || null;
+  if (!candidato) return configurado || location.origin;
   try {
     const u = new URL(candidato);
     if (!/^https?:$/.test(u.protocol) || u.username || u.password) return null;

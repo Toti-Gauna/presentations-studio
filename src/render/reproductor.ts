@@ -7,9 +7,11 @@ import { posicionMedio } from '../core/estado.ts';
 import { construir, type Contexto } from './elementos.ts';
 import { LineaEscena, type Modo } from './movimiento.ts';
 import { h } from './dom.ts';
+import { sonar } from './sonido.ts';
 
 export function variablesTema(tema: Tema): string {
   const v: string[] = [`--fuente-titulos:${tema.fuentes.titulos}`, `--fuente-texto:${tema.fuentes.texto}`];
+  if (tema.titulos) v.push(`--titulo-peso:${tema.titulos.peso}`, `--titulo-ancho:${tema.titulos.ancho}`);
   for (const [k, c] of Object.entries(tema.colores)) v.push(`--c-${k}:${c}`);
   for (const [k, r] of Object.entries(tema.radios)) v.push(`--radio-${k}:${r}`);
   return v.join(';');
@@ -18,12 +20,13 @@ export function variablesTema(tema: Tema): string {
 export function paleta(tema: Tema, nombre: string): string {
   const p = tema.paletas[nombre] ?? tema.paletas['neutro'];
   if (!p) return '';
-  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento}`;
+  return `--fondo:${p.fondo};--tinta:${p.tinta};--acento:${p.acento};--suave:${p.suave};--superficie:${p.superficie};--marcador:${p.marcador ?? p.acento};--marcador-tinta:${p.marcadorTinta ?? 'inherit'};--tinta-superficie:${p.tintaSuperficie ?? p.tinta}`;
 }
 
-export function modoMovimiento(): Modo {
+export function modoMovimiento(defecto?: Modo): Modo {
   const q = new URLSearchParams(location.search).get('movimiento');
   if (q === 'reducido' || q === 'ligero' || q === 'completo') return q;
+  if (defecto) return defecto;
   return matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reducido' : 'completo';
 }
 
@@ -40,6 +43,33 @@ export interface OpcionesReproductor {
   escalar?: boolean;
   /** Pie con marca y número de escena. */
   pie?: boolean;
+}
+
+/** Junta los rótulos de las cifras de una escena en una sola línea al pie (tipos de dato y corte), sin repetirlos. */
+function agruparRotulos(nodo: HTMLElement): void {
+  const chips = [...nodo.querySelectorAll<HTMLElement>('.rotulo')].filter((c) => !c.closest('figcaption'));
+  if (!chips.length) return;
+  const tipos: string[] = [];
+  const cortes: string[] = [];
+  // El pie entra con la primera pieza rotulada y, si todas esas piezas salen, sale con la última (no queda encima de un cierre).
+  let paso = Number.POSITIVE_INFINITY;
+  let sale = -1;
+  let todasSalen = true;
+  for (const c of chips) {
+    const [tipo, corte] = (c.textContent ?? '').split(' · corte ');
+    if (tipo && !tipos.includes(tipo)) tipos.push(tipo);
+    if (corte && !cortes.includes(corte)) cortes.push(corte);
+    const pieza = c.closest<HTMLElement>('[data-paso]');
+    paso = Math.min(paso, pieza ? Number(pieza.dataset['paso']) : 0);
+    const raiz = c.closest<HTMLElement>('[data-sale]');
+    if (raiz) sale = Math.max(sale, Number(raiz.dataset['sale']));
+    else todasSalen = false;
+    c.remove();
+  }
+  for (const g of nodo.querySelectorAll('.rotulos-grilla')) if (!g.querySelector('.rotulo')) g.remove();
+  const pie = h('div', { class: 'rotulos-pie', 'data-paso': String(Number.isFinite(paso) ? paso : 0), 'data-entrada': 'fundido' }, `${tipos.join(' · ')}${cortes.length ? ` · corte ${cortes.join(', ')}` : ''}`);
+  if (todasSalen && sale >= 0) pie.dataset['sale'] = String(sale);
+  nodo.append(pie);
 }
 
 export class Reproductor {
@@ -61,12 +91,12 @@ export class Reproductor {
     this.contenedor = contenedor;
     this.escenas = escenas;
     this.tema = tema;
-    this.ctx = ctx;
     this.modo = opciones.modo ?? modoMovimiento();
+    this.ctx = { ...ctx, reducido: this.modo === 'reducido' };
     this.lienzo = h('div', { class: 'lienzo' });
     this.negro = h('div', { class: 'negro', 'aria-hidden': 'true' });
     this.escenario = h('div', { class: `escenario modo-${this.modo}`, style: variablesTema(tema), role: 'region', 'aria-roledescription': 'presentación', 'aria-live': 'polite' }, this.lienzo, this.negro);
-    if (opciones.pie !== false) this.escenario.append(h('div', { class: 'pie' }, h('span', { class: 'pie-marca' }, tema.pie), h('span', { class: 'pie-num' })));
+    if (opciones.pie !== false && tema.pie !== '') this.escenario.append(h('div', { class: 'pie' }, h('span', { class: 'pie-marca' }, tema.pie), h('span', { class: 'pie-num' })));
     contenedor.append(this.escenario);
     if (opciones.escalar !== false) {
       this.observador = new ResizeObserver(() => this.escalar());
@@ -85,6 +115,7 @@ export class Reproductor {
     const escena = this.escenas[indice] as Escena;
     const nodo = h('section', { class: `escena disp-${escena.disposicion}`, 'data-escena': escena.id, 'aria-label': escena.titulo });
     for (const el of escena.elementos) nodo.append(construir(el, this.ctx));
+    if (this.ctx.rotulos === 'pie') agruparRotulos(nodo);
     this.lienzo.append(nodo);
     const linea = new LineaEscena(nodo, escena.pasos, this.modo);
     return { indice, escena, nodo, linea };
@@ -133,10 +164,13 @@ export class Reproductor {
     };
     if (tipo === 'corte') return limpiar();
     const d = this.modo === 'ligero' ? 0.3 : 0.6;
+    if (adelante) sonar('whoosh');
     if (tipo === 'continuidad') this.continuidad(fuera, entra.nodo, d);
     const dx = tipo === 'deslizar' ? (adelante ? 1 : -1) * 120 : 0;
-    gsap.fromTo(entra.nodo, { autoAlpha: 0, x: dx }, { autoAlpha: 1, x: 0, duration: d, ease: 'power2.out' });
-    gsap.to(fuera, { autoAlpha: 0, x: -dx, duration: d * 0.8, ease: 'power2.in', onComplete: limpiar });
+    // Sin doble exposición: la escena que sale se va rápido y la que entra aparece apenas después
+    // (dos láminas densas superpuestas a media opacidad se leen como un borrón).
+    gsap.fromTo(entra.nodo, { autoAlpha: 0, x: dx }, { autoAlpha: 1, x: 0, duration: d * 0.8, delay: d * 0.2, ease: 'power2.out' });
+    gsap.to(fuera, { autoAlpha: 0, x: -dx, duration: d * 0.45, ease: 'power1.out', onComplete: limpiar });
   }
 
   /** Objetos compartidos: un personaje con continuidad viaja de su posición anterior a la nueva (FLIP). */

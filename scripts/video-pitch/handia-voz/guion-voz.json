@@ -1,0 +1,11 @@
+{
+  "nota": "Frases de «HandIA te habla» con los tiempos de la animación (handia-voz.html, DIALOGO). Si una voz dura más que su tramo, ajustar los tiempos en el HTML y volver a renderizar.",
+  "lineas": [
+    { "quien": "HandIA", "desde": 1.9, "hasta": 4.1, "texto": "¡Hola! Soy HandIA. Contame qué pasó en tu casa." },
+    { "quien": "Vos", "desde": 4.3, "hasta": 6.4, "texto": "Se rompió el calefón y no tengo agua caliente." },
+    { "quien": "HandIA", "desde": 6.6, "hasta": 8.9, "texto": "Tranqui, te ayudo. ¿Me mostrás una foto del calefón?" },
+    { "quien": "HandIA", "desde": 9.4, "hasta": 11.7, "texto": "Es un trabajo de gas: te armé el pedido con la foto y te muestro especialistas cerca." },
+    { "quien": "Vos", "desde": 11.9, "hasta": 12.9, "texto": "¡Dale, mandalo!" },
+    { "quien": "HandIA", "desde": 13.5, "hasta": 15.0, "texto": "Listo. Te aviso cuando respondan." }
+  ]
+}

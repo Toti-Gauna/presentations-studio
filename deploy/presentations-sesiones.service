@@ -1,0 +1,16 @@
+# systemd (VPS). Copiar a /etc/systemd/system/ y: systemctl enable --now presentations-sesiones
+[Unit]
+Description=Servidor de sesiones de presentaciones
+After=network.target
+
+[Service]
+WorkingDirectory=/srv/presentations-studio
+ExecStart=/usr/bin/node server/main.ts
+EnvironmentFile=/srv/presentations-studio/.env
+Restart=always
+RestartSec=2
+User=presentaciones
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

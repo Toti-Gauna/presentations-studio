@@ -1,0 +1,13 @@
+{
+  "id": "demo-cafe",
+  "nombre": "Café Demo (marca ficticia para probar Eclipse)",
+  "fuentes": { "titulos": "Georgia, 'Times New Roman', serif", "texto": "'DM Sans Variable', system-ui, sans-serif" },
+  "colores": { "cafe": "#4B2E1E", "crema": "#F3E9DC", "verde": "#2F5D50" },
+  "paletas": {
+    "neutro": { "fondo": "#F3E9DC", "tinta": "#2B1A10", "acento": "#2F5D50", "suave": "#6B5444", "superficie": "#FFFFFF", "marcador": "#E8C99B" },
+    "oscuro": { "fondo": "#2B1A10", "tinta": "#F3E9DC", "acento": "#E8C99B", "suave": "#C9B49C", "superficie": "#4B2E1E", "marcador": "#2F5D50", "marcadorTinta": "#FFFFFF" }
+  },
+  "radios": { "chico": "2px", "medio": "4px", "grande": "6px" },
+  "personajes": {},
+  "pie": "Café Demo · marca ficticia"
+}

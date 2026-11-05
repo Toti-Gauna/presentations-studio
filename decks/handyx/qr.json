@@ -1,0 +1,31 @@
+[
+  {
+    "id": "registro-usuarios",
+    "etiqueta": "Quiero usar Handyx",
+    "modo": "directo",
+    "destinos": { "A": "https://landing.handyc.com/registro/?tipo=usuario" },
+    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "usuarios" },
+    "textoCorto": "landing.handyc.com/registro",
+    "definitivo": false
+  },
+  {
+    "id": "registro-especialistas",
+    "etiqueta": "Soy especialista",
+    "modo": "directo",
+    "destinos": { "A": "https://landing.handyc.com/registro/?tipo=especialista" },
+    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "especialistas" },
+    "textoCorto": "landing.handyc.com/registro",
+    "definitivo": false
+  },
+  {
+    "id": "handyx",
+    "etiqueta": "Handyx",
+    "modo": "estable",
+    "urlEstable": "https://api.handyc.com/r/handyx",
+    "destinos": { "A": "https://landing.handyc.com/registro/?tipo=usuario", "B": "https://landing.handyc.com/registro/?tipo=especialista" },
+    "activo": "A",
+    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "estable" },
+    "textoCorto": "api.handyc.com/r/handyx",
+    "definitivo": false
+  }
+]

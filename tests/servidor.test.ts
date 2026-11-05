@@ -120,3 +120,17 @@ describe('servidor de sesiones', () => {
     await control.esperar('revocado');
   });
 });
+
+describe('modo un solo servicio (Render): mismo origen', () => {
+  it('acepta el origen que sirve el build y rechaza otros', async () => {
+    const app2 = crearApp({ puerto: 0, origenes: [], redirecciones: [], version: 'test', confiarProxy: false, mismoOrigen: true });
+    await new Promise<void>((ok) => app2.servidor.listen(0, '127.0.0.1', ok));
+    const { port } = app2.servidor.address() as AddressInfo;
+    const propio = `http://127.0.0.1:${port}`;
+    const r1 = await fetch(`${propio}/api/sesiones`, { method: 'POST', headers: { 'content-type': 'application/json', origin: propio }, body: JSON.stringify(nueva) });
+    expect(r1.status).toBe(201);
+    const r2 = await fetch(`${propio}/api/sesiones`, { method: 'POST', headers: { 'content-type': 'application/json', origin: 'https://otro.example.test' }, body: JSON.stringify(nueva) });
+    expect(r2.status).toBe(403);
+    await app2.cerrar();
+  });
+});

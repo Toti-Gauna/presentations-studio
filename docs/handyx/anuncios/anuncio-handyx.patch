@@ -1,0 +1,198 @@
+diff -ruN diffa/src/handy/anuncio/STORYBOARD.md diffb/src/handy/anuncio/STORYBOARD.md
+--- diffa/src/handy/anuncio/STORYBOARD.md	2026-10-31 08:41:25.620886407 +0000
++++ diffb/src/handy/anuncio/STORYBOARD.md	2026-10-31 08:41:25.624301112 +0000
+@@ -15,7 +15,7 @@
+ - Voseo rioplatense, pesos `$ 45.000`, **verificados**, nada en inglés, nombres ficticios (Martín R., Carla M.;
+   nunca el nombre real de las maquetas). No inventar cifras, funciones ni promesas: todo sale de los storyboards de
+   `trailers/handy-usuario` y `trailers/handy-especialista`.
+-- Comisión: el cliente paga una tarifa de servicio del 5 % (no hace falta mostrarla); al especialista Handy le cobra el
++- Tarifa: el cliente paga una tarifa de servicio del 10 % (no hace falta mostrarla); al especialista Handyx le cobra el
+   10 % de su presupuesto: de $ 45.000 recibe **$ 40.500** (`netoEspecialista` de `src/handy/tokens.ts`).
+ - Se tiene que poder leer: cada texto queda quieto **al menos 1,2 s**; titulares grandes y cortos.
+ - Vertical: el texto vive entre y 220 y y 1560 (`formato(D).seguro`): arriba y abajo las interfaces de las apps tapan.
+@@ -30,17 +30,17 @@
+ | película | receta (`id`) | qué pasa |
+ |---|---|---|
+ | 0–4 | `ha-golpe` (`gancho`) | Golpes de palabras, uno por tiempo de compás (0 · 1 · 2 · 3): **¿Se rompió** (azul) / **algo?** (amarillo, mitad de abajo, la Gota preocupada) · **¿Sabés** (blanco) / **arreglarlo?** (azul, mitad, la Llave). El anuncio arranca pegando: la primera palabra ya está en el cuadro 0. |
+-| 4–6 | `ha-marca` (`marca`) | Destello. Los cinco Handys saltan a cuadro y forman el logo **Handy** + **Soluciones, no problemas** (versión corta de la entrada de los tráileres). |
++| 4–6 | `ha-marca` (`marca`) | Destello. Los cinco Handys saltan a cuadro y forman el logo **Handyx** + **Soluciones, no problemas** (versión corta de la entrada de los tráileres). |
+ | 6–14 | `ha-usuario` (`usuario`) | El que necesita. Ficha arriba: **Si necesitás**. Titulares: **Pedí lo que necesitás.** (6–8,5: el inicio de la app, el dedo toca Plomería) → **Te llegan presupuestos.** (8,5–11: llegan los tres presupuestos: Martín R. $ 45.000, Lucía G. $ 48.500, Diego P. $ 51.000) → **Elegí el tuyo.** (11–14: el dedo toca Aceptar en el de Martín; **¡Pedido confirmado!**). Los presupuestos saltan del teléfono como tarjetas grandes (vertical: Lucía y Diego arriba, Martín adelante abajo; horizontal: el teléfono se corre al centro, el bloque del titular sube y quedan los tres en fila); la de Martín vuelve volando al chat. Ver `usuario.js`. |
+ | 14–16 | `ha-golpe` (`giro`) | **¿Y si sos** (azul) / **especialista?** (amarillo, mitad, el Engranaje); sale tirándose contra la cámara. |
+-| 16–24 | `ha-especialista` (`especialista`) | El que sabe. DROP (destello). Ficha: **Si sabés**. **Te llegan pedidos cerca.** (16–18,5: el inicio del especialista con Trabajando prendido; llega el pedido de Plomería · Jue 15 oct · 16:00) → **Vos ponés el precio.** (18,5–21: la hoja Tu presupuesto: $ 32.000 + $ 13.000 = **$ 45.000** · Comisión Handy 10 % · recibís **$ 40.500**; como en el celular la hoja se lee chiquita, del total sale una "lupa": una tarjeta grande con el total y la comisión, resaltada) → **¡Te eligieron!** (21–24: el aviso de Carla M., papelitos). |
++| 16–24 | `ha-especialista` (`especialista`) | El que sabe. DROP (destello). Ficha: **Si sabés**. **Te llegan pedidos cerca.** (16–18,5: el inicio del especialista con Trabajando prendido; llega el pedido de Plomería · Jue 19 nov · 16:00) → **Vos ponés el precio.** (18,5–21: la hoja Tu presupuesto: $ 32.000 + $ 13.000 = **$ 45.000** · Tarifa Handyx 10 % · recibís **$ 40.500**; como en el celular la hoja se lee chiquita, del total sale una "lupa": una tarjeta grande con el total y la comisión, resaltada) → **¡Te eligieron!** (21–24: el aviso de Carla M., papelitos). |
+ | 24–26 | `ha-golpe` (`remate`) | **Para el que necesita.** (azul, la Gota) · **Para el que sabe.** (amarillo, la Llave). |
+-| 26–30 | `ha-final` (`final`) | Destello. Logo **Handy** · **Soluciones, no problemas**, los cinco Handys en fila festejan, **Mar del Plata · Llegamos el 28/10**. Desde 28,5 todo queda quieto (el último cuadro es la placa del anuncio). |
++| 26–30 | `ha-final` (`final`) | Destello. Logo **Handyx** · **Soluciones, no problemas**, los cinco Handys en fila festejan, **Mar del Plata · Llegamos el 10/11**. Desde 28,5 todo queda quieto (el último cuadro es la placa del anuncio). |
+ 
+ Notas de las recetas (`golpes.js`, `marca.js`): en `ha-golpe`, `at` va en segundos desde T (una palabra por
+ segundo) y la primera palabra del gancho ya está en el cuadro 0 (sin barrido); las frases largas que quedarían chicas
+ en una línea van en dos, cortadas antes de la última palabra ("Para el que / necesita."). En `ha-final` vertical la
+-línea va en dos renglones, sin el punto medio: **Mar del Plata** / **Llegamos el 28/10**.
++línea va en tres renglones, sin el punto medio: **Mar del Plata** / **Llegamos el 10/11** / **Primer mes sin tarifa.** (en horizontal, en dos).
+ 
+ ## Componentes que se reusan
+ `src/handy/ui/PhoneFrame.ts` (`phoneFrame`), `pantallas/usuario.ts`, `pantallas/usuario-chat.ts` (presupuestos),
+diff -ruN diffa/src/handy/anuncio/especialista.js diffb/src/handy/anuncio/especialista.js
+--- diffa/src/handy/anuncio/especialista.js	2026-10-31 08:41:25.621025065 +0000
++++ diffb/src/handy/anuncio/especialista.js	2026-10-31 08:41:25.624222672 +0000
+@@ -6,13 +6,13 @@
+             del especialista (Trabajando prendido): sale un anillo de pulso desde Martín y la ficha "Trabajando" late.
+      0,125  salta la ficha "Si sabés" (arriba del titular).
+      0,25   "Te llegan pedidos cerca."
+-     0,5    ding-dong: salta el pin de la casa de Carla · 0,625 sube la tarjeta del pedido (Plomería · Jue 15 oct · 16:00)
++     0,5    ding-dong: salta el pin de la casa de Carla · 0,625 sube la tarjeta del pedido (Plomería · Jue 19 nov · 16:00)
+             y sus filas entran de a una (semicorcheas).
+      1,5    entra el dedo · 2,125 toca "Mandar presupuesto" · 2,25 sale el titular.
+      2,5    sube la hoja "Tu presupuesto" · "Vos ponés el precio."
+      2,625  Mano de obra $ 32.000, un dígito por semicorchea (calculadora) · 3,25 Materiales $ 13.000, de corrido.
+      3,625  Total $ 45.000: golpe; del total sale la LUPA (una tarjeta grande, legible en el celular) con el total
+-            · 3,875 "Comisión Handy 10 % · recibís $ 40.500" (se marca con el resaltador amarillo).
++            · 3,875 "Tarifa Handyx 10 % · recibís $ 40.500" (se marca con el resaltador amarillo).
+      4,75   la lupa vuelve al total, sale el titular y la hoja baja.
+      5,0    cae el aviso "¡Te eligieron!" de Carla M. · 5,125 el titular "¡Te eligieron!" · 5,25 el sello y los papelitos.
+      6,0    golpe al total del aviso · 6,5 late el avatar de Carla. Desde ≈ 7 el aviso queda quieto hasta el corte (24: el
+@@ -206,7 +206,7 @@
+   const lupaPx = 46;
+   raiz.insertAdjacentHTML('beforeend', `<div class="ha-e-lupa" style="--ha-e-lupa:${lupaPx}px">`
+     + `<div class="ha-e-lupa-fila"><span class="ha-e-lupa-etiqueta">Total</span><span class="ha-e-lupa-total">${formatARS(PRESUPUESTO.total)}</span></div>`
+-    + `<div class="ha-e-lupa-recibis"><i class="ha-e-lupa-resalta"></i><span>Comisión Handy ${PRESUPUESTO.porcentaje} · recibís <b>${formatARS(PRESUPUESTO.neto)}</b></span></div>`
++    + `<div class="ha-e-lupa-recibis"><i class="ha-e-lupa-resalta"></i><span>Tarifa Handyx ${PRESUPUESTO.porcentaje} · recibís <b>${formatARS(PRESUPUESTO.neto)}</b></span></div>`
+     + '</div>');
+   const lupa = raiz.lastElementChild;
+   const lupaTotal = lupa.querySelector('.ha-e-lupa-total');
+diff -ruN diffa/src/handy/anuncio/marca.js diffb/src/handy/anuncio/marca.js
+--- diffa/src/handy/anuncio/marca.js	2026-10-31 08:41:25.621266580 +0000
++++ diffb/src/handy/anuncio/marca.js	2026-10-31 08:41:25.624371450 +0000
+@@ -3,7 +3,7 @@
+ 
+    'ha-marca'  { dur: 2 }  La entrada de los tráileres ('hd-entrada' de trailers/handy-usuario/js/escenas-b.js y
+      'he-entrada' de trailers/handy-especialista/js/escenas-esp-b.js) comprimida en dos segundos: los cinco Handys saltan
+-     a cuadro, cada uno tira su letra de "Handy" y queda el logo con la bajada "Soluciones, no problemas".
++     a cuadro, cada uno tira su letra de "Handyx" (la x viaja con la y) y queda el logo con la bajada "Soluciones, no problemas".
+        4,0     destello (el golpe en Do de la música) · los cinco salen disparados desde abajo de lo que se ve
+        4,375   aterrizan todos juntos en la fila (bombo + plic) · la Gota tira la H
+        4,5 · 4,625 · 4,75 · 4,875   el Caño la a, el Engranaje la n, la Lamparita la d, la Llave la y: cada uno pega un
+@@ -12,14 +12,14 @@
+        5,0     la bajada "Soluciones, no problemas" (palabra por palabra) · caras de festejo, la lamparita se enciende
+        5,2     el logo ya se lee entero; desde ≈ 5,4 todo quieto hasta el corte de las 6,0
+      Cuadro: vertical, el logo de ~900 px arriba del medio y la fila de los Handys debajo; horizontal, el logo de ~1100 px
+-     centrado arriba y la fila debajo. La palabra "Handy" va centrada sobre la bajada (en el lockup va a la izquierda).
++     centrado arriba y la fila debajo. La palabra "Handyx" va centrada sobre la bajada (en el lockup va a la izquierda).
+ 
+    'ha-final'  { dur: 4 }  El cierre ('hdr-final' de trailers/handy-usuario/js/escenas-final.js, en cuatro segundos).
+        26,0    destello, temblor y "punch" de escala · dos aros desde atrás de la fila · papelitos · los cinco saltan a
+                cuadro desde abajo con cara de festejo (el engranaje da una vuelta en el aire)
+        26,5    aterrizan juntos en la fila (aplastón) · el logo letra por letra en semicorcheas (H 26,5 … y 27,0, una
+                campana por letra) · 27,0 la bajada y un brinco de todos · 27,5 "Mar del Plata · Llegamos el
+-               28/10" (en vertical en dos líneas: "Mar del Plata" / "Llegamos el 28/10")
++               10/11" + "Primer mes sin tarifa." (en horizontal en dos líneas; en vertical en tres: "Mar del Plata" / "Llegamos el 10/11" / "Primer mes sin tarifa.")
+        27,4    se agachan y saltan alto con los brazos arriba (el engranaje con otra vuelta)…
+        28,0    …y caen en el tiempo: latido del logo, destello suave
+        28,5    todo quieto: el último cuadro es la placa del anuncio (los papelitos ya salieron por abajo)
+@@ -48,7 +48,7 @@
+ .ha-m-logo svg, .ha-f-logo svg { display: block; }
+ .ha-m-h, .ha-f-h { position: absolute; }
+ .ha-f .hd-titular { margin: 0; }
+-.ha-f-txt.is-vertical .hd-tit-grupo { display: block; }
++.ha-f-txt .hd-tit-grupo { display: block; }
+ .ha-f-aro { position: absolute; border-radius: 50%; border: 10px solid var(--hd-blanco); }
+ .ha-f-confeti { position: absolute; inset: 0; pointer-events: none; }
+ .ha-f-c { position: absolute; display: block; }
+@@ -144,7 +144,7 @@
+ const VUELO_MARCA = {
+   gota: [-220, 150, 0.0625], cano: [-120, 110, 0], engranaje: [0, 170, 0], lamparita: [120, 130, 0.0625], llave: [220, 160, 0.0625],
+ };
+-/** la letra de cada uno (orden de la fila = orden de "Handy") */
++/** la letra de cada uno (orden de la fila = orden de "Handyx") */
+ const LETRA = { gota: 'H', cano: 'a', engranaje: 'n', lamparita: 'd', llave: 'y' };
+ 
+ Trailer.recipe('ha-marca', (D, T, o) => {
+@@ -260,17 +260,17 @@
+ const FORMAS = ['tira', 'punto', 'tri'];
+ const COLORES_PAPELITOS = [COLORS.azul, COLORS.azulHandy, COLORS.amarilloAlerta, COLORS.amarillo, COLORS.blanco, '#8EC5FF'];
+ const N_PAPELITOS = 40;
+-const TEXTO = 'Mar del Plata · Llegamos el 28/10';
++const TEXTO = 'Mar del Plata · Llegamos el 10/11|*Primer mes sin tarifa.*';
+ /** en vertical, en dos líneas (cada grupo "|" en su línea; el punto medio sobra al final de una línea) */
+-const TEXTO_VERTICAL = 'Mar del Plata|Llegamos el 28/10';
++const TEXTO_VERTICAL = 'Mar del Plata|Llegamos el 10/11|*Primer mes sin tarifa.*';
+ 
+ Trailer.recipe('ha-final', (D, T, o) => {
+   const tl = D.tl, L = formato(D), ABAJO = visible().abajo;
+   const quieto = T + 2.5; // 28,5: desde acá, nada se mueve
+   // el cuadro de cada formato: alto del caño, piso de la fila, ancho del logo, cuerpo de la línea
+   const C = L.vertical
+-    ? { cano: 480, piso: 1540, logo: 900, txt: 100, gap: 56 }
+-    : { cano: 430, piso: 1000, logo: 1300, txt: 92, gap: 44 };
++    ? { cano: 480, piso: 1540, logo: 900, txt: 80, gap: 56 }
++    : { cano: 380, piso: 1000, logo: 1040, txt: 76, gap: 32 }; // dos/tres renglones con "Primer mes sin tarifa.
+   const hs = armarFila(C.cano, L.CX, C.piso);
+   const filaArriba = C.piso - C.cano;
+   const zona = { y0: L.seguro.arriba, y1: filaArriba - 30 };
+@@ -408,7 +408,7 @@
+   }));
+   hs.forEach(h => humor(tl, cuerpo[h.tipo], 'feliz', T + 1.125, 0.15));
+ 
+-  // 27,5 · "Mar del Plata · Llegamos el 28/10" (termina de entrar antes de las 28,3)
++  // 27,5 · "Mar del Plata · Llegamos el 10/11" (termina de entrar antes de las 28,3)
+   entraTitular(tl, txt, T + 1.5, { dur: 0.6, stagger: 0.04 });
+   D.sfx('whoosh', T + 1.375, 0.45, 0.05);
+   D.sfx('bell', T + 1.75, hz(79), 0.035, 1.2);
+diff -ruN diffa/src/handy/anuncio/pelicula.js diffb/src/handy/anuncio/pelicula.js
+--- diffa/src/handy/anuncio/pelicula.js	2026-10-31 08:41:25.621390546 +0000
++++ diffb/src/handy/anuncio/pelicula.js	2026-10-31 08:41:25.623880145 +0000
+@@ -16,7 +16,7 @@
+     stage,
+     lang: 'es',
+     locale: 'es-AR',
+-    meta: { title: 'Handy', hud: 'HANDY', back: '../../index.html', ...meta },
++    meta: { title: 'Handyx', hud: 'HANDYX', back: '../../index.html', ...meta },
+     ui: {
+       play: 'Tocá para empezar', seconds: 'segundos', sound: 'con sonido', replay: 'Ver de nuevo', back: 'Volver',
+       keys: 'Tocá la pantalla para pausar', paused: 'En pausa', soundOn: 'Sonido activado', soundOff: 'Sin sonido',
+@@ -36,7 +36,7 @@
+         { texto: '¿Sabés', at: 2, fondo: 'blanco', desde: 'izq' },
+         { texto: 'arreglarlo?', at: 3, fondo: 'azul', mitad: true, handy: 'llave', lado: 'izq' },
+       ] },
+-      { type: 'ha-marca', id: 'marca', titulo: 'Handy', dur: 2 },
++      { type: 'ha-marca', id: 'marca', titulo: 'Handyx', dur: 2 },
+       { type: 'ha-usuario', id: 'usuario', titulo: 'Si necesitás', dur: 8 },
+       { type: 'ha-golpe', id: 'giro', titulo: '¿Y si sos especialista?', dur: 2, salida: 'camara', palabras: [
+         { texto: '¿Y si sos', at: 0, fondo: 'azul', desde: 'der' },
+diff -ruN diffa/trailers/handy-anuncio/index.html diffb/trailers/handy-anuncio/index.html
+--- diffa/trailers/handy-anuncio/index.html	2026-10-31 08:41:25.632670387 +0000
++++ diffb/trailers/handy-anuncio/index.html	2026-10-31 08:41:25.634659912 +0000
+@@ -3,12 +3,12 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+-<title>Handy — Anuncio</title>
+-<meta name="description" content="Anuncio de Handy para YouTube y Meta: para el que necesita y para el que sabe. 30 segundos hechos 100% con código.">
++<title>Handyx — Anuncio</title>
++<meta name="description" content="Anuncio de Handyx para YouTube y Meta: para el que necesita y para el que sabe. 30 segundos hechos 100% con código.">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-<meta name="apple-mobile-web-app-title" content="Handy">
++<meta name="apple-mobile-web-app-title" content="Handyx">
+ <meta name="theme-color" content="#CFCFCF">
+ <meta name="format-detection" content="telephone=no">
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231F57A8'/%3E%3Cpath d='M32 11c5 9 15 17 15 29a15 15 0 0 1-30 0c0-12 10-20 15-29z' fill='%238EC5FF'/%3E%3Ccircle cx='27' cy='40' r='2.6' fill='%23141414'/%3E%3Ccircle cx='37' cy='40' r='2.6' fill='%23141414'/%3E%3C/svg%3E">
+diff -ruN diffa/trailers/handy-vertical/index.html diffb/trailers/handy-vertical/index.html
+--- diffa/trailers/handy-vertical/index.html	2026-10-31 08:41:25.642840915 +0000
++++ diffb/trailers/handy-vertical/index.html	2026-10-31 08:41:25.645223570 +0000
+@@ -3,12 +3,12 @@
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+-<title>Handy — Anuncio vertical</title>
++<title>Handyx — Anuncio vertical</title>
+ <meta name="description" content="Anuncio vertical de Handy (Reels, TikTok, Shorts): para el que necesita y para el que sabe. 30 segundos hechos 100% con código.">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+-<meta name="apple-mobile-web-app-title" content="Handy">
++<meta name="apple-mobile-web-app-title" content="Handyx">
+ <meta name="theme-color" content="#CFCFCF">
+ <meta name="format-detection" content="telephone=no">
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231F57A8'/%3E%3Cpath d='M32 11c5 9 15 17 15 29a15 15 0 0 1-30 0c0-12 10-20 15-29z' fill='%238EC5FF'/%3E%3Ccircle cx='27' cy='40' r='2.6' fill='%23141414'/%3E%3Ccircle cx='37' cy='40' r='2.6' fill='%23141414'/%3E%3C/svg%3E">

@@ -5,6 +5,11 @@
 export interface Forma {
   /** Cantidad de pasos por escena, en el orden de la versión que se presenta. */
   pasos: number[];
+  /**
+   * Cantidad de escenas del recorrido principal (las siguientes son anexos). Si se indica, avanzar
+   * nunca entra a los anexos: solo se abren con "ir" (acción explícita). Retroceder sí puede salir de ellos.
+   */
+  principales?: number;
 }
 
 export interface Reproduccion {
@@ -90,8 +95,16 @@ function mover(estado: Estado, escena: number, paso: number, forma: Forma): Esta
   return { ...estado, ...pos, reproduccion: cambiaEscena ? sinMedio(estado.reproduccion) : estado.reproduccion };
 }
 
+/** Última escena a la que se puede llegar avanzando desde `escena` (no se cruza de principales a anexos). */
+function tope(forma: Forma, escena: number): number {
+  const n = forma.pasos.length;
+  const p = forma.principales;
+  if (p === undefined || p <= 0 || p >= n) return n - 1;
+  return escena < p ? p - 1 : n - 1;
+}
+
 function transicion(estado: Estado, c: Comando, forma: Forma, ahora: number): Estado {
-  const ultimaEscena = forma.pasos.length - 1;
+  const ultimaEscena = tope(forma, estado.escena);
   switch (c.tipo) {
     case 'siguiente': {
       if (estado.paso < pasosDe(forma, estado.escena) - 1) return mover(estado, estado.escena, estado.paso + 1, forma);

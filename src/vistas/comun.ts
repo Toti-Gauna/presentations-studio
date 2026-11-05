@@ -3,7 +3,8 @@ import '@fontsource-variable/archivo/wdth.css';
 import '@fontsource-variable/dm-sans/wght.css';
 import '../estilos/base.css';
 import '../estilos/escenario.css';
-import { cargar, parametros, urlRecurso, type Cargado } from '../decks.ts';
+import { cargadorAnimaciones, cargar, carpetaDe, parametros, urlRecurso, type Cargado } from '../decks.ts';
+import { animacionesListas } from '../render/animacion.ts';
 import type { Escena, VersionDeck } from '../core/esquema.ts';
 import { escenasDeVersion } from '../core/validar.ts';
 import type { Forma } from '../core/estado.ts';
@@ -36,16 +37,20 @@ export function iniciar(): Sesion | { error: string[] } {
     tema,
     afirmaciones: new Map(paquete.afirmaciones.map((a) => [a.id, a])),
     qrs: new Map(paquete.qrs.map((q) => [q.id, q])),
-    url: (archivo) => urlRecurso(tema.id, archivo),
+    url: (archivo) => urlRecurso(carpetaDe(tema), archivo),
     recursos: new Map(paquete.deck.recursos.map((r) => [r.id, r])),
+    rotulos: paquete.deck.rotulos,
+    cargarAnimacion: cargadorAnimaciones(carpetaDe(tema)),
   };
+  // Las animaciones del recorrido se descargan de entrada: al llegar a la diapositiva ya están listas.
+  for (const e of escenas) for (const el of e.elementos) if (el.tipo === 'animacion') void ctx.cargarAnimacion?.(el.modulo);
   return {
     cargado,
     paquete,
     version,
     escenas,
     principales: version.escenas.length,
-    forma: { pasos: escenas.map((e) => e.pasos) },
+    forma: { pasos: escenas.map((e) => e.pasos), principales: version.escenas.length },
     notas: escenas.map((e) => ({ titulo: e.titulo, notas: e.notas, guion: e.guion, duracion: e.duracion, medios: e.elementos.flatMap((x) => (x.tipo === 'video' ? [x.recurso] : [])) })),
     ctx,
   };
@@ -66,6 +71,7 @@ export async function precargar(raiz: HTMLElement, alAvanzar?: (listos: number, 
   const total = urls.size + 1;
   const marcar = () => alAvanzar?.(++listos, total);
   await Promise.all([
+    animacionesListas(),
     document.fonts.ready.then(marcar),
     ...[...urls].map((u) => {
       const i = new Image();

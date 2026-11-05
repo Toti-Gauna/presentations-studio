@@ -11,8 +11,8 @@
 .conexion[data-estado='conectado'] { background: #134d33; }
 .conexion[data-estado='reconectando'], .conexion[data-estado='sin-confirmar'], .conexion[data-estado='cerrado'] { background: #5c3a06; }
 .tablero { flex: 1; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(260px, 0.7fr); gap: 16px; padding: 16px; }
-.tablero h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d9ab8; margin: 14px 0 6px; }
-.tablero h3 { font-size: 14px; margin: 12px 0 4px; }
+.tablero section > h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #8d9ab8; margin: 14px 0 6px; }
+.tablero .remoto h3 { font-size: 14px; margin: 12px 0 4px; }
 .monitor { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; }
 .monitor-siguiente { width: 60%; opacity: 0.9; }
 .etiqueta-monitor { font-size: 13px; color: #8d9ab8; margin: 8px 0 4px; }
@@ -26,6 +26,7 @@
 .indice .item { flex: 1; text-align: left; background: #18223b; box-shadow: none; min-height: 36px; padding: 6px 10px; font-weight: 500; }
 .indice li.actual .item { background: #1F57A8; }
 .indice li.anexo .item { font-style: italic; color: #b9c3da; }
+.indice li.anexo.seccion .item { font-style: normal; font-weight: 800; color: #FFC93C; letter-spacing: .02em; }
 .indice .dur { font-size: 12px; color: #8d9ab8; }
 .tiempos table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .tiempos td, .tiempos th { padding: 3px 6px; border-bottom: 1px solid #263252; text-align: left; }
@@ -41,3 +42,22 @@
 .manual a { color: #9cc0ff; }
 .ayuda { font-size: 13px; color: #8d9ab8; }
 @media (max-width: 1100px) { .tablero { grid-template-columns: 1fr; } }
+.remoto.sin-servidor .ayuda { color: #F6A623; font-weight: 700; }
+.indice li.separador-anexos { list-style: none; margin: 14px 0 6px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #8fa0c4; }
+/* Ensayo */
+.progreso { width: 220px; height: 8px; border-radius: 999px; background: #263252; overflow: hidden; margin-top: 6px; }
+.progreso-barra { display: block; height: 100%; width: 0; background: #4A9E6B; transition: width .4s linear; }
+.progreso.excedido .progreso-barra { background: #F6A623; }
+.tiempos tr.actual td { color: #fff; font-weight: 700; }
+.tiempos .intentos { margin: 10px 0 0; padding-left: 20px; font-size: 14px; }
+.tiempos .intentos .dentro { color: #8fd6a8; }
+.tiempos .intentos .fuera { color: #F6A623; }
+.ayuda-ensayo { font-size: 13px; color: #8d9ab8; }
+.guion .tramo { color: #FFC93C; }
+.guion .transicion { color: #9fc0ff; border-left: 3px solid #4A72B0; padding-left: 10px; }
+body.sin-notas .col-notas .notas, body.sin-notas .col-notas .guion { display: none; }
+body.sin-notas .col-notas > h2:nth-of-type(1), body.sin-notas .col-notas > h2:nth-of-type(2) { display: none; }
+
+/* Ir a una diapositiva por número: cartel arriba, visible solo mientras se escribe */
+.ir-numero { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 50; padding: 12px 22px; border-radius: 14px; background: #FFC93C; color: #13305E; font-size: 22px; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .15s; }
+.ir-numero.activo { opacity: 1; }

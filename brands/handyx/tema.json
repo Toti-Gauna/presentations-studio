@@ -29,7 +29,8 @@
       "acento": "#1F57A8",
       "suave": "#5F6B84",
       "superficie": "#FFFFFF",
-      "marcador": "#F5F59A"
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
     },
     "problema": {
       "fondo": "#1D2C4A",
@@ -37,7 +38,8 @@
       "acento": "#F6A623",
       "suave": "#A9B4CB",
       "superficie": "#26385C",
-      "marcador": "#F6A623"
+      "marcador": "#F6A623",
+      "marcadorTinta": "#0E1D36"
     },
     "encuentro": {
       "fondo": "#1F57A8",
@@ -45,7 +47,8 @@
       "acento": "#F5F59A",
       "suave": "#CFDCF2",
       "superficie": "#2A63B8",
-      "marcador": "#F5F59A"
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
     },
     "solucion": {
       "fondo": "#F5F59A",
@@ -61,7 +64,8 @@
       "acento": "#1F57A8",
       "suave": "#5F6B84",
       "superficie": "#ECECEC",
-      "marcador": "#F5F59A"
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
     },
     "cierre": {
       "fondo": "#0E1D36",
@@ -69,7 +73,17 @@
       "acento": "#F5F59A",
       "suave": "#A9B4CB",
       "superficie": "#1D2C4A",
-      "marcador": "#F5F59A"
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
+    },
+    "kinetic": {
+      "fondo": "#CFCFCF",
+      "tinta": "#0E1D36",
+      "acento": "#1F57A8",
+      "suave": "#3C4A66",
+      "superficie": "#FFFFFF",
+      "marcador": "#F5F59A",
+      "marcadorTinta": "#0E1D36"
     }
   },
   "radios": {

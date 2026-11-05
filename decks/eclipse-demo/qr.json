@@ -1,0 +1,1 @@
+[ { "id": "menu", "etiqueta": "Ver el menú", "modo": "directo", "destinos": { "A": "https://example.com/menu" }, "textoCorto": "example.com/menu", "definitivo": false } ]

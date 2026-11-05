@@ -11,19 +11,28 @@ export function referencias(texto: string): string[] {
 
 const miles = (n: number) => Math.round(n).toLocaleString('es-AR').replace(/ /g, ' ');
 
+/** Valor numérico con su formato. También lo usa el conteo animado de las cifras, así el número que sube y el final coinciden. */
+export function formatearNumero(valor: number, formato: Afirmacion['formato']): string {
+  switch (formato) {
+    case 'ars':
+      return `$ ${miles(valor)}`;
+    case 'usd':
+      return `USD ${miles(valor)}`;
+    case 'millones':
+      return `$ ${miles(valor / 1e6)} M`;
+    case 'porcentaje':
+      return `${valor.toLocaleString('es-AR')} %`;
+    case 'entero':
+      return miles(valor);
+    default:
+      return String(valor);
+  }
+}
+
 export function formatear(a: Afirmacion): string {
   if (a.valor === null) return 's/d';
   if (typeof a.valor === 'string') return a.valor;
-  switch (a.formato) {
-    case 'ars':
-      return `$ ${miles(a.valor)}`;
-    case 'porcentaje':
-      return `${a.valor.toLocaleString('es-AR')} %`;
-    case 'entero':
-      return miles(a.valor);
-    default:
-      return String(a.valor);
-  }
+  return formatearNumero(a.valor, a.formato);
 }
 
 export const ROTULOS: Record<Afirmacion['tipo'], string> = {
@@ -32,6 +41,7 @@ export const ROTULOS: Record<Afirmacion['tipo'], string> = {
   supuesto: 'Supuesto',
   proyeccion: 'Proyección',
   meta: 'Objetivo',
+  ejemplo: 'Ejemplo ilustrativo',
 };
 
 /** Rótulo visible obligatorio: los datos observados no lo necesitan; el resto sí. */

@@ -1,0 +1,12 @@
+node_modules
+dist
+salida
+.git
+.github
+e2e
+tests
+docs
+*.log
+.env
+.env.*
+brands/handyx/source
