@@ -21,7 +21,7 @@ const AGENTES = [
   { ic: 'codigo', txt: 'Desarrollo', a: 220 },
 ];
 const T_AG = 3.65; // los agentes salen de la tarjeta de Ignacio
-// Tarjetas del equipo: lugar en el paso 0 (fila centrada) y en el paso 1 (Ignacio al centro, su pareja a la derecha).
+// Tarjetas del equipo: lugar en el paso 0 (fila centrada) y en el paso 1 (Ignacio al centro, Abigail a la derecha).
 const TARJ = { w: 480, h: 190, top: 475, ig: 440, pa: 1000, pa1: 1344 };
 
 // Reparto de la inversión (paso 2): qué mejora cada parte de la app.
@@ -165,7 +165,7 @@ export default escena({
     <div class="mov asoma a2">${c.pj('llave', '', 160)}</div>
     ${AGENTES.map((a) => `<div class="orb"><div class="ag">${c.icono(a.ic)}${a.txt}<span class="ia">IA</span></div></div>`).join('')}
     <div class="persona tarjeta ig"><div class="av t">IG</div><div><div class="nom t">Ignacio</div><div class="tag">Fundador</div><div class="rol">Desarrollo, producto y coordinación</div></div></div>
-    <div class="persona tarjeta pa"><div class="av oro">${c.icono('sparkles')}</div><div><div class="nom t">Su pareja</div><div class="tag">Diseño y marketing</div><div class="rol">Dedicación parcial</div></div></div>
+    <div class="persona tarjeta pa"><div class="av oro">${c.icono('sparkles')}</div><div><div class="nom t">Abigail</div><div class="tag">Diseño y marketing</div><div class="rol">Dedicación parcial</div></div></div>
     <div class="sup"><span class="chip">${c.icono('escudo-ok')}Supervisados por Ignacio</span></div>
     <div class="mov lado l1">${c.pj('gota', '', 190)}</div>
     <div class="mov lado l2">${c.pj('engranaje', '', 190)}</div>
