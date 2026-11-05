@@ -227,6 +227,8 @@ export const Escena = z
     sonido: z.string().optional(),
     respaldo: z.string().default(''),
     preguntas: z.string().default(''),
+    /** Portada de sección (separador entre bloques de anexos): aparece en el índice y en las exportaciones, pero no toma letra de atajo. */
+    seccion: z.boolean().default(false),
   })
   .strict()
   .superRefine((e, ctx) => {

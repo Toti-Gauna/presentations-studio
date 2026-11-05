@@ -216,6 +216,9 @@ try {
   await presA.keyboard.press('n');
   await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
   ok('ATICMA: Mayús + F abre el respaldo F (la competencia en Argentina, por modelo)', (await actualA()).includes('La competencia en Argentina'), await actualA());
+  ok('ATICMA: las portadas de sección están en el índice y no toman letra', (await presA.locator('.indice li.anexo.seccion').count()) === 2);
+  await presA.keyboard.press('Shift+A'); await presA.waitForTimeout(500);
+  ok('ATICMA: Mayús + A abre la proyección (la portada «Material extra» no corre las letras)', (await actualA()).includes('Proyección'), await actualA());
   const item35 = ((await presA.locator('.indice li:not(.separador-anexos) .item').nth(34).textContent()) ?? '').replace(/^35\. /, '').trim();
   await presA.keyboard.press('3'); await presA.keyboard.press('5'); await presA.waitForTimeout(200);
   ok('ATICMA: al escribir un número se ve a qué lámina va', ((await presA.locator('.ir-numero.activo').textContent()) ?? '').includes(item35), item35);

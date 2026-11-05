@@ -82,9 +82,11 @@ function montar(s: Sesion) {
   const siguiente = new Reproductor(vistaSiguiente, s.escenas, s.paquete.tema, s.ctx, { modo: 'reducido', pie: false });
   void precargar(actual.escenario, (a, b) => (recursos.textContent = a >= b ? `Recursos listos ${a}/${b}` : `Precargando ${a}/${b}`));
 
+  // Anexos con letra de atajo: las portadas de sección no toman letra (así las letras no se corren al sumar una portada).
+  const conLetra = s.escenas.map((e, i) => ({ e, i })).filter(({ e, i }) => i >= s.principales && !e.seccion).map(({ i }) => i);
   s.escenas.forEach((e, i) => {
-    const li = h('li', { class: i >= s.principales ? 'anexo' : '' });
-    if (i === s.principales) indice.append(h('li', { class: 'separador-anexos' }, `Anexos (fuera del recorrido) · Mayús + A…${LETRAS[Math.min(s.escenas.length - s.principales, LETRAS.length) - 1] ?? 'A'} o número + Enter · volver: 0`));
+    const li = h('li', { class: i >= s.principales ? `anexo${e.seccion ? ' seccion' : ''}` : '' });
+    if (i === s.principales) indice.append(h('li', { class: 'separador-anexos' }, `Anexos (fuera del recorrido) · Mayús + A…${LETRAS[Math.min(conLetra.length, LETRAS.length) - 1] ?? 'A'} o número + Enter · volver: 0`));
     const b = boton(`${i + 1}. ${e.titulo}`, () => ejecutar({ tipo: 'ir', escena: i }), 'item');
     li.append(b, h('span', { class: 'dur' }, `${e.duracion}s`));
     indice.append(li);
@@ -211,7 +213,7 @@ function montar(s: Sesion) {
   }
   const volverPrincipal = () => ejecutar({ tipo: 'ir', escena: ultimaPrincipal, paso: (s.forma.pasos[ultimaPrincipal] ?? 1) - 1 });
   const anexos: Record<string, () => void> = {};
-  for (let k = 0; k < s.escenas.length - s.principales && k < LETRAS.length; k++) anexos[LETRAS[k] as string] = () => ejecutar({ tipo: 'ir', escena: s.principales + k });
+  conLetra.slice(0, LETRAS.length).forEach((i, k) => (anexos[LETRAS[k] as string] = () => ejecutar({ tipo: 'ir', escena: i })));
 
   // ── Ir a cualquier diapositiva por su número del índice (número + Enter). Esc cancela; 0 sin número vuelve a la última principal. ──
   let numero = '';

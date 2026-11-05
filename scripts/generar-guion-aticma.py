@@ -49,11 +49,15 @@ for i, sid in enumerate(v['escenas'], 1):
     e = S[sid]
     md += [f"### Diapositiva {i} · {e['titulo']}", "", *[f"> {l}" if l else ">" for l in e['guion'].split('\n')], ""]
 md += ["## Anexos (fuera de los 180 segundos; se abren con Mayús + letra, con su número + Enter o desde el índice)", "", "| N.º | Atajo | Anexo | Para qué |", "|---|---|---|---|"]
+letras, k_letra = 'ABCDEFGHIJKLMOPQSTUVWXYZ', 0
 for k, sid in enumerate(v['anexos']):
     e = S[sid]
-    letras = 'ABCDEFGHIJKLMOPQSTUVWXYZ'
     n = len(v['escenas']) + k + 1
-    atajo = f"Mayús + {letras[k]} · {n} + Enter" if k < len(letras) else f"{n} + Enter"
+    if e.get('seccion'):   # portada de sección: no toma letra
+        md.append(f"| {n} | {n} + Enter | **{e['titulo']}** (portada de sección) | {e['objetivo']} |")
+        continue
+    atajo = f"Mayús + {letras[k_letra]} · {n} + Enter" if k_letra < len(letras) else f"{n} + Enter"
+    k_letra += 1
     md.append(f"| {n} | {atajo} | {e['titulo']} | {e['objetivo']} |")
 md += ["", "Volver a la última diapositiva principal: tecla **0** (sin número antes). Escribir un número muestra a qué lámina va; **Esc** cancela.",
        "Avanzar (→, espacio, clicker, celular) nunca entra a los anexos. En el celular: menú ☰.", ""]

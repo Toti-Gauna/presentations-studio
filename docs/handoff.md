@@ -248,4 +248,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (tarde) · **Video v4** con la grabación fluida de Ignacio (2:35 → 2:28 sin pausas largas) y su cierre de 15 s hablado sobre
   el clip del mundo (`scripts/video-pitch/v4/`): golpes anclados a cada frase (ahora entra la competencia, con nombres), música
   re-compuesta para la nueva duración, subtítulos corregidos (Handyx, odisea, comisión, «casi 260.000», 25 %) también durante el mundo.
+- 05/11 (tarde, 2) · Portadas de sección «Material extra» y «Preguntas del jurado» en el deck (PPT, PDF, zip e índice del
+  presentador). Campo nuevo del motor `seccion: true`: la portada aparece en el índice y en las exportaciones pero **no toma letra**
+  de atajo, así Mayús + A…Z no se corren (A = proyección, F = competencia). PPT de 214 diapositivas; e2e 42/42.
 - Pendiente: voz de HandIA con ElevenLabs (clave + red).

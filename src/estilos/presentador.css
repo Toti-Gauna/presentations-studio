@@ -26,6 +26,7 @@
 .indice .item { flex: 1; text-align: left; background: #18223b; box-shadow: none; min-height: 36px; padding: 6px 10px; font-weight: 500; }
 .indice li.actual .item { background: #1F57A8; }
 .indice li.anexo .item { font-style: italic; color: #b9c3da; }
+.indice li.anexo.seccion .item { font-style: normal; font-weight: 800; color: #FFC93C; letter-spacing: .02em; }
 .indice .dur { font-size: 12px; color: #8d9ab8; }
 .tiempos table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .tiempos td, .tiempos th { padding: 3px 6px; border-bottom: 1px solid #263252; text-align: left; }
