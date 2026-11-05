@@ -199,4 +199,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   profesionales?». Visión a explorar, sin alianzas firmadas (rotulado en pantalla). Fuente de la animación:
   `scripts/video-pitch/ferreterias/` (HTML + GSAP cuadro a cuadro, efectos sintetizados). El montaje del video acepta tomas que son
   secuencias de cuadros (`frames`), con su audio mezclado en la música de las preguntas. 29 láminas de respaldo y 19 preguntas.
+- 05/11 (6) · **Video con música y cierre sin cámara** (pedido de Ignacio): canción original corporativa y alegre en todo el video
+  (`scripts/video-pitch/montaje/musica.py`), siempre por debajo de la voz (baja sola cuando habla) y loudness parejo; en el final la
+  cámara se funde y el mundo queda centrado. El pitch en vivo no lleva música (solo los efectos del clip del cierre).
 

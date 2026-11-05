@@ -47,3 +47,14 @@ Subtítulos del ensayo: `subtitulos-ensayo-04-11.srt` (transcripción automátic
 - ffmpeg (H.264 high CRF 20 + AAC, `+faststart`) → `brands/handyx/assets/video/ferreterias.mp4`; póster = último cuadro.
 - En el video del pitch entra como toma `frames` del montaje (`plan_q.py`, `ANIM`), con su audio mezclado en `sonidos.py preguntas`.
 
+## Música y cierre sin cámara (05/11)
+
+- `montaje/musica.py pitch|preguntas <salida.wav> [duración]`: **música original** sintetizada con numpy (sin licencias de
+  terceros): 112 BPM, do mayor, progresión do–sol–lam–fa; guitarra pulsada, piano, campanas, bajo y batería suave. En el pitch sigue
+  el relato: tranquila en el problema, alegre desde la solución, se corta cuando se rompe el mundo, vuelve mientras los Handys lo
+  arreglan y cierra con un acorde de do justo en «¡Muchas gracias!». Las preguntas usan una versión más calma de la misma canción.
+- `componer3.py pitch`: la música va 12 dB por debajo de la voz y **baja sola cuando Ignacio habla** (`sidechaincompress` con la voz
+  como llave); el resultado se normaliza a −16 LUFS. La burbuja de la cámara se funde al empezar el final (183,4 s) y el mundo queda
+  centrado (`ox: 960`, `derecha: 0` en `plan_pitch.py`).
+- `componer3.py preguntas-audio`: cambia el audio de las preguntas (música + efectos + animaciones) sin recodificar la imagen; −18 LUFS.
+

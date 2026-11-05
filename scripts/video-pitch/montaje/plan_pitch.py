@@ -38,7 +38,8 @@ grietas=[[[-68,-25],[-64,-29],[-60,-32],[-63,-35],[-58,-40]],[[-62,-5],[-57,-9],
  [[-6,41],[1,45],[8,43],[15,47],[22,45]],[[-108,41],[-100,36],[-93,39],[-85,34]]]
 T0=183.4
 finale={'t0':T0,'zoomOut':3.2,'romper':3.7,'frase':11.1,'gracias':15.15,'mdp':[-57.55,-38.0],'rot0':[-42,6],'giro':14,'R0':2600,'R1':360,
- 'llegada':[4.4+i*0.38 for i in range(8)],'arreglo':[5.5+i*0.62 for i in range(8)],'grietas':grietas}
+ 'llegada':[4.4+i*0.38 for i in range(8)],'arreglo':[5.5+i*0.62 for i in range(8)],'grietas':grietas,
+ 'ox':960,'derecha':0}  # sin la cámara en el final: el mundo queda centrado
 plan={'dur':202.0,'stage':[SX,SY,SW,SH],'fondo':f'file://{S}/edicion/fondo.png','shots':shots,'stickers':stickers,'finale':finale}
 open(f'{S}/montaje/plan.js','w').write('window.PLAN='+json.dumps(plan,ensure_ascii=False)+';')
 print('ok', len(shots), len(stickers))

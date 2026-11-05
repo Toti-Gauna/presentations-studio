@@ -41,7 +41,14 @@ else:
         m=((t%16)>=i*4)&((t%16)<(i+1)*4)
         for f in ch: pad+=np.where(m,np.sin(2*np.pi*f*t),0)
     pad*=0.05*(0.65+0.35*np.sin(2*np.pi*0.25*t))*np.clip(t/1.5,0,1)*np.clip((T-t)/2,0,1)
-    L+=pad; R+=pad
+    if len(sys.argv)>4:   # música del video en lugar del colchón
+        w=wave.open(sys.argv[4]); mu=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).reshape(-1,w.getnchannels()).astype(float)/32768; w.close()
+        g=np.full(len(L),.5)
+        for t0,_ in tj.get('clips',[]):  # durante las animaciones, la música baja
+            a,b=int(t0*SR),int((t0+16.6)*SR); g[a:b]=.22
+        g=np.convolve(g,np.ones(SR//4)/(SR//4),'same'); n=min(len(L),len(mu)); L[:n]+=mu[:n,0]*g[:n]; R[:n]+=mu[:n,-1]*g[:n]
+    else:
+        L+=pad; R+=pad
     for c in tj['cards']: add(L,R,ruido(.6,400,5000,.18),c-.1); add(L,R,tono(880,.3,.06),c+.15)
     for t0,archivo in tj.get('clips',[]):   # audio de las animaciones a pantalla completa
         w=wave.open(archivo); x=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).reshape(-1,w.getnchannels()).astype(float)/32768; w.close()
