@@ -209,4 +209,8 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (8) · Colores de «El círculo que multiplica» (anillo de cuatro arcos con flechas: el ciclo trabajos → tarifas → ganancias →
   reinversión; íconos en cajas claras) y de «Camino a la IPO» (progresión blanco → celeste → azul → azul de marca → noche con oro para la
   IPO). Colores planos de la marca, sin manchas de gradiente. Generador: `scripts/video-pitch/graficos-finanzas.cjs`.
+- 05/11 (9) · **Grabación de la versión en vivo** (`npm run grabar:vivo`, `scripts/grabar-en-vivo.ts`): maneja el presentador como en vivo
+  y captura la pantalla pública cuadro a cuadro con el reloj de Playwright controlado (animaciones exactas, sin cuadros perdidos), en
+  partes en paralelo; los pasos que son un video a pantalla completa se empalman desde su archivo con su sonido. Sin audio en el resto
+  (los efectos suenan en vivo). Reemplaza para este uso a `exportar:video`, que graba en tiempo real y con menos calidad.
 

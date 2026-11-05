@@ -26,7 +26,8 @@
     "escenarios": "node scripts/escenarios.ts",
     "publicar": "node scripts/publicar.ts",
     "configurar": "node scripts/configurar-deploy.ts",
-    "docker:build": "docker build -t presentaciones:actual ."
+    "docker:build": "docker build -t presentaciones:actual .",
+    "grabar:vivo": "node scripts/grabar-en-vivo.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "5.3.0",

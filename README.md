@@ -28,6 +28,9 @@ Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=han
 4. Refrescar el presentador no vuelve al inicio. Sin animaciones: `version=estatica`. Celular: Conectar control remoto → QR privado → Aprobar.
 5. Contingencia: `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y
    `npm run exportar:pptx -- --deck=handyx-aticma --version=evento` (python-pptx) → `salida/`.
+6. Grabación de la versión en vivo (respaldo para reproducir o compartir): `npm run build && npm run grabar:vivo -- --deck=handyx-aticma
+   --version=evento` → `salida/video/handyx-aticma-evento-en-vivo.mp4` (pitch a sus tiempos + respaldo + preguntas, 1080p; cuadro a cuadro
+   con el reloj controlado; los clips con su sonido). `--anexos=no` graba solo los 3 minutos.
 
 ## Deploy en Hostinger (Docker)
 `./configurar.sh` te pide los datos por consola y genera todo lo que hay que pegar en Hostinger y en GitHub. Ver [`docs/deploy-hostinger.md`](docs/deploy-hostinger.md). Render: [`docs/deploy.md`](docs/deploy.md).
