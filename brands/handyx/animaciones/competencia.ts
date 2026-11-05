@@ -1,6 +1,6 @@
 // Diapositiva 6 · Competencia y modelo. Un golpe por frase del guion:
 // 0 «Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional.» → océano rojo: un bote
-//   por plataforma (anónimas, por modelo de cobro) y las monedas de Llave que se van a las que le cobran ·
+//   por plataforma (con su nombre, sin logos; un ejemplo por modelo de cobro) y las monedas de Llave que se van a las que le cobran ·
 // 1 «Nosotros creemos que ese no es el camino.» → al lado de cada plataforma, cómo lo resuelve Handyx ·
 // 2 «El dinero que gana trabajando tiene que llegar completo a su casa.» → el presupuesto viaja entero hasta su casa ·
 // 3 «Nuestro modelo es simple: …» → el recibo del ejemplo se arma línea por línea y Foco (el usuario) lo mira ·
@@ -30,12 +30,13 @@ function ola(nivel: number, amp: number, largo: number): string {
   return `${d} L3840 1080 L0 1080 Z`;
 }
 
-// Una fila por plataforma: el bote (con su letra) navega en su ola; a la derecha, cómo lo resuelve Handyx.
+// Una fila por plataforma: el bote navega en su ola; a la derecha, cómo lo resuelve Handyx. Un ejemplo con nombre por modelo de
+// cobro (fuentes públicas e información del equipo, 04/11/2026; a revalidar). Sin logos de terceros.
 const FILAS = [
-  { letra: 'A', ic: 'porcentaje', monedas: 3 },
-  { letra: 'B', ic: 'cliente-nuevo', monedas: 2 },
-  { letra: 'C', ic: 'calendario', monedas: 2 },
-  { letra: 'D', ic: 'reloj', monedas: 0 },
+  { nombre: 'Clickie', donde: '', ic: 'porcentaje', monedas: 3 },
+  { nombre: 'Home Solution', donde: '', ic: 'cliente-nuevo', monedas: 2 },
+  { nombre: 'Checkatrade', donde: 'Reino Unido', ic: 'calendario', monedas: 2 },
+  { nombre: 'Muovi', donde: '', ic: 'reloj', monedas: 0 },
 ] as const;
 const filaY = (i: number) => 400 + i * 120;
 const BOTE_X = 452;
@@ -164,6 +165,7 @@ export default escena({
     .etq .ic { flex: none; width: 50px; height: 50px; border-radius: 14px; background: #FBE1DE; display: grid; place-items: center; }
     .etq .ic i { width: 30px; height: 30px; background: ${COLOR.rojo}; -webkit-mask: var(--u) center / contain no-repeat; mask: var(--u) center / contain no-repeat; }
     .etq b { display: block; font-weight: 800; font-size: 24px; line-height: 28px; }
+    .etq b small { font-size: 20px; font-weight: 700; color: #7A3440; }
     .etq span { display: block; font-weight: 600; font-size: 21px; line-height: 26px; color: #7A3440; white-space: nowrap; }
     .flecha { position: absolute; left: 1112px; width: 52px; height: 36px; z-index: 15; }
     .resp { position: absolute; left: 1174px; width: 690px; height: 82px; z-index: 15; display: flex; align-items: center; gap: 14px; padding: 0 22px 0 18px; border-radius: 20px; background: ${COLOR.azul}; color: #fff; font-size: 21px; font-weight: 600; line-height: 27px; box-shadow: 0 7px 0 ${COLOR.azulOscuro}, 0 18px 34px rgba(14,29,54,.3); }
@@ -260,7 +262,7 @@ export default escena({
       if (!f) return '';
       const pila = MONEDAS.filter((m) => m.r === i).map((m) => `<i class="pm" style="left:${-64 + m.j * 3}px;top:${-40 - m.j * 8}px"></i>`).join('');
       return `<div class="bote" style="left:${BOTE_X}px;top:${filaY(i) + 50}px;z-index:${4 + i * 2}"><div class="flota">
-        <i class="b-mastil"></i><div class="b-vela"><b class="t">${f.letra}</b></div><i class="b-ban ondea"></i><div class="b-casco"></div>${pila}</div></div>`;
+        <i class="b-mastil"></i><div class="b-vela"></div><i class="b-ban ondea"></i><div class="b-casco"></div>${pila}</div></div>`;
     };
     const puntos = Array.from({ length: PUNTOS }, (_, i) => {
       const p = CAMINO(0.08 + (0.86 * i) / (PUNTOS - 1));
@@ -294,7 +296,7 @@ export default escena({
     <div class="brillo b0" style="left:300px;top:330px">${c.icono('sparkles', 'oro')}</div>
     <div class="brillo b1" style="left:800px;top:400px">${c.icono('sparkles', 'oro')}</div>
     <div class="brillo b2" style="left:175px;top:560px">${c.icono('sparkles', 'oro')}</div>
-    ${FILAS.map((f, i) => `<div class="etq" style="top:${filaY(i) - 41}px"><span class="ic"><i style="--u:url('${c.url(`iconos/${f.ic}.svg`)}')"></i></span><div><b>Plataforma ${f.letra}</b><span>${que[i] ?? ''}</span></div></div>
+    ${FILAS.map((f, i) => `<div class="etq" style="top:${filaY(i) - 41}px"><span class="ic"><i style="--u:url('${c.url(`iconos/${f.ic}.svg`)}')"></i></span><div><b>${f.nombre}${f.donde ? ` <small>· ${f.donde}</small>` : ''}</b><span>${que[i] ?? ''}</span></div></div>
       <svg class="flecha" style="top:${filaY(i) - 18}px" viewBox="0 0 52 36"><path d="M4 18 H42 M28 5 L45 18 L28 31" fill="none" stroke="${COLOR.amarillo}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="resp" style="top:${filaY(i) - 41}px">${c.icono('tilde-circulo', 'blanco')}<div><b>Handyx:</b> ${como[i] ?? ''}</div></div>`).join('')}
     ${MONEDAS.map(() => '<i class="moneda">$</i>').join('')}

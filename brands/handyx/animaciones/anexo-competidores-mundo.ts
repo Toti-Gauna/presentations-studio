@@ -142,9 +142,9 @@ const FILA_GAP = 10;
 const Y0 = 262;
 interface Region { k: string; titulo: string; detalle: string; aprendemos?: string; resumen: string; ic: string }
 const regiones = (c: Kit): Region[] => [
-  { k: 'Latinoamérica', titulo: 'Apps de oficios y de servicio doméstico', detalle: 'México, Colombia, Chile y Uruguay', aprendemos: 'La confianza importa: en Colombia ofrecen <b>pagos protegidos</b>.', resumen: 'oficios y servicio doméstico', ic: 'ubicacion' },
-  { k: 'Estados Unidos', titulo: 'El profesional paga por contacto', detalle: 'Y plataformas de tareas con comisión por trabajo', aprendemos: 'Pagar por contacto es pagar también <b>los que no se concretan</b>.', resumen: 'pago por contacto', ic: 'ubicacion' },
-  { k: 'Reino Unido y Europa', titulo: 'Suscripción mensual o comisión por trabajo', detalle: 'Reino Unido: cuota · Europa: comisión', aprendemos: 'Comisión o cuota: <b>el costo lo carga el profesional</b>.', resumen: 'cuota o comisión', ic: 'ubicacion' },
+  { k: 'Latinoamérica', titulo: 'Apps de oficios y de servicio doméstico', detalle: '<b>Ay Fix</b> (México), <b>GoFixii</b> (Colombia), <b>Zolvers</b> e <b>IguanaFix</b>', aprendemos: 'La confianza importa: en Colombia ofrecen <b>pagos protegidos</b>.', resumen: 'Ay Fix, GoFixii, Zolvers', ic: 'ubicacion' },
+  { k: 'Estados Unidos', titulo: 'El profesional paga por contacto', detalle: '<b>Thumbtack</b> y <b>Angi</b>; <b>Taskrabbit</b> cobra comisión', aprendemos: 'Pagar por contacto es pagar también <b>los que no se concretan</b>.', resumen: 'Thumbtack y Angi: por contacto', ic: 'ubicacion' },
+  { k: 'Reino Unido y Europa', titulo: 'Suscripción mensual o comisión por trabajo', detalle: '<b>Checkatrade</b>: cuota · <b>Taskrabbit</b>: comisión', aprendemos: 'Comisión o cuota: <b>el costo lo carga el profesional</b>.', resumen: 'Checkatrade: cuota mensual', ic: 'ubicacion' },
   { k: 'Nuestro camino · Argentina', titulo: 'El profesional no paga por su trabajo', detalle: `El usuario paga <b>${c.cifra('TARIFA-USUARIO')}</b>, visible antes de contratar`, resumen: '', ic: 'bandera' },
 ];
 

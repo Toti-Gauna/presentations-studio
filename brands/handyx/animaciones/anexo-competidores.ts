@@ -1,10 +1,10 @@
 // Anexo de respaldo · La competencia en Argentina, por modelo (el detalle de la diapositiva 6). Un golpe por clic:
-// 0 los modelos: una columna por plataforma (anónimas, por cómo cobran) y la de Handyx en alto, con Llave arriba ·
+// 0 los modelos: una columna por plataforma (con su nombre, por cómo cobran) y la de Handyx en alto, con Llave arriba ·
 // 1 qué paga el profesional en cada modelo: Llave se preocupa; en la columna de Handyx, 0 %, y festeja ·
 // 2 cómo le gana Handyx a cada modelo: la respuesta sale de la columna de Handyx hacia cada plataforma; Foco se suma ·
 // 3 océano azul: las plataformas quedan en el mar rojo (competir por comisiones) y la columna de Handyx se abre en el
 //   océano azul (0 % al profesional, herramientas por oficio, HandIA y clientes que vuelven); suben los Handys de cada oficio.
-// Sin nombres ni logos de terceros. Una banda amarilla marca la fila de cada paso. La franja y 880–950 queda libre (leyenda).
+// Con nombres (fuentes públicas e información del equipo, a revalidar) y sin logos de terceros. Una banda amarilla marca la fila de cada paso. La franja y 880–950 queda libre (leyenda).
 import { COLOR, entraTitulo, escena, pose, type Kit, type Personaje, type Pose } from './comun/kit.ts';
 
 const T1 = 3.2;
@@ -25,15 +25,15 @@ const FILAS = [
 const PIE = HX.y; // los Handys se paran sobre la columna (y después sobre el océano azul)
 
 const PLATAFORMAS = [
-  { letra: 'A', ic: 'porcentaje', modelo: 'Comisión' },
-  { letra: 'B', ic: 'cliente-nuevo', modelo: 'Por contacto' },
-  { letra: 'C', ic: 'calendario', modelo: 'Suscripción' },
-  { letra: 'D', ic: 'reloj', modelo: 'Comisión cero' },
+  { nombre: 'Clickie', ic: 'porcentaje', modelo: 'Comisión' },
+  { nombre: 'Home Solution', ic: 'cliente-nuevo', modelo: 'Por contacto' },
+  { nombre: 'Checkatrade', ic: 'calendario', modelo: 'Suscripción' },
+  { nombre: 'Muovi', ic: 'reloj', modelo: 'Comisión cero' },
 ] as const;
 const paga = (c: Kit) => [
   `Hasta <b>${c.cifra('COMP-CLICKIE-PRO')}</b> de cada trabajo`,
   '<b>Cada contacto</b>, se concrete o no',
-  '<b>Una cuota</b> todos los meses',
+  '<b>Una cuota</b> todos los meses (Reino Unido)',
   '<b>Nada</b>, por tiempo limitado',
 ];
 const gana = (c: Kit) => [
@@ -119,7 +119,7 @@ export default escena({
     .hx-gana .mi { flex: none; width: 34px; height: 34px; color: ${COLOR.amarillo}; }
     .hx-gana p { font-size: 23px; font-weight: 600; line-height: 1.25; }
     .hx-gana b { color: ${COLOR.amarillo}; font-weight: 800; }
-    .fuente { position: absolute; left: ${COL.x0}px; top: 764px; z-index: 3; font-size: 20px; font-weight: 600; color: ${COLOR.suave}; }
+    .fuente { position: absolute; left: ${COL.x0}px; top: 756px; z-index: 3; font-size: 20px; line-height: 28px; font-weight: 600; color: ${COLOR.suave}; }
     /* Cierre: mar rojo y océano azul */
     .rojo { position: absolute; left: 96px; top: ${FILAS[0].y}px; width: 608px; height: ${HX.y + HX.h - FILAS[0].y}px; z-index: 2; border-radius: 30px; background: #F8E9E7; box-shadow: 0 16px 34px rgba(80,14,20,.10), 0 4px 0 #EBCFCB; overflow: hidden; }
     .rojo svg { position: absolute; left: 0; bottom: 0; width: 1216px; height: 120px; }
@@ -168,7 +168,7 @@ export default escena({
     <div class="banda"></div>
     ${['Modelo de cobro', 'Qué paga el profesional', 'Cómo le gana Handyx'].map((t, i) => `<div class="rot r${i}" style="top:${FILAS[i]!.y}px;height:${FILAS[i]!.h}px">${i ? mi(i === 1 ? 'monedas' : 'escudo-ok') : ''}<b>${t}</b></div>`).join('')}
     ${PLATAFORMAS.map((pl, i) => `
-      <div class="celda cab k${i}" style="left:${colX(i)}px;top:${FILAS[0].y}px;height:${FILAS[0].h}px"><div class="fila"><span class="insignia">${mi(pl.ic)}</span><b>Plataforma ${pl.letra}</b></div><span>${pl.modelo}</span></div>
+      <div class="celda cab k${i}" style="left:${colX(i)}px;top:${FILAS[0].y}px;height:${FILAS[0].h}px"><div class="fila"><span class="insignia">${mi(pl.ic)}</span><b>${pl.nombre}</b></div><span>${pl.modelo}</span></div>
       <div class="celda paga ${i === 3 ? 'temporal' : ''}" style="left:${colX(i)}px;top:${FILAS[1].y}px;height:${FILAS[1].h}px">${mi(i === 3 ? 'reloj' : 'monedas')}<p>${p[i] ?? ''}</p></div>
       <div class="celda gana" style="left:${colX(i)}px;top:${FILAS[2].y}px;height:${FILAS[2].h}px">${mi('tilde-circulo')}<p>${g[i] ?? ''}</p></div>`).join('')}
     ${[1, 2].map((f) => [0, 1, 2, 3].map((i) => `<i class="hueco f${f}" style="left:${colX(i)}px;top:${FILAS[f]!.y}px;height:${FILAS[f]!.h}px"></i>`).join('') + `<i class="hueco hx-h f${f}" style="top:${FILAS[f]!.y + 4}px;height:${FILAS[f]!.h - 8}px"></i>`).join('')}
@@ -176,12 +176,12 @@ export default escena({
     <div class="hx hx-cab"><span class="pastilla">${c.logo()}</span><span>Tarifa visible al usuario</span></div>
     <div class="hx hx-paga"><div class="linea"><span class="cero t">${c.cifra('FEE-ESPECIALISTA')}</span><span class="ok">${mi('tilde-circulo')}</span></div><p>por su trabajo</p></div>
     <div class="hx hx-gana">${mi('recibo')}<p>El usuario paga <b>${c.cifra('TARIFA-USUARIO')}</b>, visible antes de contratar</p></div>
-    <div class="fuente">Modelos de cobro según fuentes públicas e información del equipo · noviembre de 2026</div>
+    <div class="fuente">También en Argentina: IguanaFix, Zolvers, Servidos y Yo te lo arreglo.<br>Modelos de cobro según fuentes públicas e información del equipo · noviembre de 2026 · a revalidar</div>
 
     <div class="rojo"><svg viewBox="0 0 1216 120" preserveAspectRatio="none">${olasRojo.map((o, i) => `<path class="or${i}" d="${ola(o.n, o.a, o.l, 608, 120)}" fill="${o.f}"/>`).join('')}</svg></div>
     <div class="r-k">${mi('porcentaje')}Mar rojo</div>
     <div class="r-t t">Competir por comisiones</div>
-    ${PLATAFORMAS.map((pl, i) => `<div class="r-fila" style="top:${388 + i * 72}px"><span class="insignia">${mi(pl.ic)}</span><b>Plataforma ${pl.letra}</b><span>· ${pl.modelo.toLowerCase()}</span></div>`).join('')}
+    ${PLATAFORMAS.map((pl, i) => `<div class="r-fila" style="top:${388 + i * 72}px"><span class="insignia">${mi(pl.ic)}</span><b>${pl.nombre}</b><span>· ${pl.modelo.toLowerCase()}</span></div>`).join('')}
     <svg class="flecha" viewBox="0 0 48 40"><path d="M4 20 H38 M24 6 L41 20 L24 34" fill="none" stroke="${COLOR.amarillo}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <div class="a-k">${c.icono('sparkles', 'oro')}Nuestro océano azul</div>
     <div class="a-t t">Crear valor para el profesional</div>

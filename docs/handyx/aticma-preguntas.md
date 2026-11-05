@@ -52,16 +52,18 @@ falta, la lámina de respaldo.
 
 10. **¿Qué los diferencia de la competencia?**
     El recorrido completo: foto → HandIA arma el pedido → precio visible antes de contratar → el profesional cobra todo. Otras plataformas le
-    cobran al profesional una comisión (hasta 15 %), por contacto u oportunidad, o una suscripción; alguna anuncia comisión cero por un
-    tiempo. Nosotros: 0 % al profesional como modelo y, además, HandIA, herramientas por oficio, ferreterías conectadas y Handyx for Business
+    cobran al profesional: Clickie una comisión (hasta 15 %), Home Solution por contacto u oportunidad, Checkatrade una suscripción;
+    Muovi anuncia comisión cero por un tiempo. Nosotros: 0 % al profesional como modelo y, además, HandIA, herramientas por oficio, ferreterías conectadas y Handyx for Business
     (24 desarrollos en el plan). Las funciones se copian; la combinación, el 0 % y el uso diario son la apuesta. *Respaldo: la competencia,
     por modelo.*
 11. **¿Qué pasa si la competencia baja su comisión a 0 %?** *(extra)*
     Bienvenido: confirma que el profesional valora quedarse con todo. Nuestra diferencia no es solo el porcentaje: son las herramientas por
     oficio, el historial y que el cliente vuelva a elegir al mismo profesional.
 
-*Para vos:* en pantalla y en lo que decís, la competencia va **sin nombres** (pedido del 05/11): se habla de modelos y funcionalidades. Las
-fuentes con los nombres están en `aticma-validacion.md`, por si un jurado pregunta por una en particular.
+*Para vos:* la competencia ya va **con nombres** (pedido de Ignacio del 05/11, a la mañana), sin logos: Clickie (comisión al profesional,
+hasta 15 %), Home Solution (por contacto u oportunidad), Checkatrade (suscripción, Reino Unido) y Muovi (comisión cero anunciada por un
+tiempo); también IguanaFix, Zolvers, Servidos y Yo te lo arreglo en Argentina, y Thumbtack, Angi, Taskrabbit, Ay Fix y GoFixii afuera.
+Son datos de fuentes públicas y de lo que informaste: **a revalidar** (fuentes en `aticma-validacion.md`).
 
 ## Crecimiento e inversión
 

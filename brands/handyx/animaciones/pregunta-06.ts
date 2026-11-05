@@ -5,7 +5,7 @@ export default respuesta({
   "n": 6,
   "total": 20,
   "pregunta": "¿Qué los diferencia de la competencia?",
-  "respuesta": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y **{{FEE-ESPECIALISTA}} al profesional**. Otras plataformas le cobran al profesional una comisión (hasta {{COMP-CLICKIE-PRO}}), por contacto o una suscripción.",
+  "respuesta": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y **{{FEE-ESPECIALISTA}} al profesional**. Clickie le cobra al profesional hasta {{COMP-CLICKIE-PRO}}, Home Solution por contacto y Muovi anuncia comisión cero por tiempo limitado.",
   "puntos": [
     {
       "ic": "cohete",
@@ -13,7 +13,7 @@ export default respuesta({
     },
     {
       "ic": "escudo-ok",
-      "txt": "Comparamos **modelos**, no marcas"
+      "txt": "**Clickie, Home Solution, Muovi:** el profesional paga"
     }
   ],
   "quien": "medidor_gas",
