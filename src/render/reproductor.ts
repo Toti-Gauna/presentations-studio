@@ -167,8 +167,10 @@ export class Reproductor {
     if (adelante) sonar('whoosh');
     if (tipo === 'continuidad') this.continuidad(fuera, entra.nodo, d);
     const dx = tipo === 'deslizar' ? (adelante ? 1 : -1) * 120 : 0;
-    gsap.fromTo(entra.nodo, { autoAlpha: 0, x: dx }, { autoAlpha: 1, x: 0, duration: d, ease: 'power2.out' });
-    gsap.to(fuera, { autoAlpha: 0, x: -dx, duration: d * 0.8, ease: 'power2.in', onComplete: limpiar });
+    // Sin doble exposición: la escena que sale se va rápido y la que entra aparece apenas después
+    // (dos láminas densas superpuestas a media opacidad se leen como un borrón).
+    gsap.fromTo(entra.nodo, { autoAlpha: 0, x: dx }, { autoAlpha: 1, x: 0, duration: d * 0.8, delay: d * 0.2, ease: 'power2.out' });
+    gsap.to(fuera, { autoAlpha: 0, x: -dx, duration: d * 0.45, ease: 'power1.out', onComplete: limpiar });
   }
 
   /** Objetos compartidos: un personaje con continuidad viaja de su posición anterior a la nueva (FLIP). */

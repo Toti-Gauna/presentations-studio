@@ -192,6 +192,6 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   - Presentador: **número + Enter** salta a cualquier lámina (cartel con el título; Esc cancela; 0 sin número vuelve a la principal).
   - Motor (sin marca): `rotulos: 'pie'` en el deck (el pie entra y sale con las piezas rotuladas), cascada en modo completo, `llenar` en
     `imagen` (gráficos anchos sin tope de alto), el conteo animado usa el mismo formateador que la cifra final (antes `usd` terminaba sin
-    «USD»), manifiesto del PPTX con escena y paso.
+    «USD»), fundido entre escenas sin doble exposición (la que sale se va antes), manifiesto del PPTX con escena y paso.
   - Verificado: verify, e2e 36/36, revisión automática de superposiciones del pie (53 escenas), PDF, PPTX (54), zip y capturas (54).
 
