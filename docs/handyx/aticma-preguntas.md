@@ -36,8 +36,25 @@ Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta
 8. **¿Cómo van a captar y retener profesionales?** Captar: el preregistro, los porteros y administradores, y el boca a boca entre oficios.
    Retener: 0 % de comisión, herramientas para el día a día (trabajos, agenda, ingresos) y clientes que vuelven. Lo medimos con actividad y
    repetición, no con registros.
-9. **¿Por qué necesitan USD 100.000 de inversión y qué hitos financiarían?** Tecnología, operaciones y marketing. Propuesta: USD 40.000 tecnología, USD 35.000
-   marketing y captación, USD 25.000 operaciones (a aprobar). El primer hito medible es la meta operativa de
+9. **¿Por qué necesitan USD 100.000 de inversión y qué hitos financiarían?** Tecnología, operaciones y marketing. Propuesta (05/11, a aprobar): USD 45.000 marketing y captación (ads por barrio
+   20.000, porteros y administradores 10.000, contenido con los Handys 8.000, presencia local 7.000), USD 30.000 operaciones (formación y
+   comunicación con profesionales 10.000, soporte 10.000, verificación 6.000, cobros 4.000), USD 15.000 tecnología (HandIA 6.000,
+   herramientas 5.000, servidores 4.000) y USD 10.000 legal, contable y reserva. Se baja desarrollo: con IA es más barato que nunca. El primer hito medible es la meta operativa de
    diciembre.
 10. **¿Qué harían si los primeros clientes no vuelven?** Es la prueba más importante. Revisaríamos precio visible, calidad del trabajo y
     seguimiento antes de escalar: preferimos aprender con pocos casos que crecer sin retención.
+
+11. **¿Por qué invertirían USD 100.000 en Handyx?** Porque el marketing y la IA pueden impulsar un volumen alto: la aspiración es mover
+    USD 1 millón en trabajos en 12 meses (supuesto). Con el ticket de la prueba (≈ USD 45) son ≈ 22.300 trabajos, ≈ 1.860 por mes, ≈ 8,6 % de
+    los arreglos del partido, y dejan ≈ USD 150.000 de tarifas. Es una aspiración con la cuenta a la vista, no un retorno prometido. (Si se
+    entendiera USD 1 M de ingresos propios, harían falta ≈ 148.000 trabajos: varias ciudades.)
+12. **¿Qué herramientas van a tener los profesionales?** Por oficio: lector de esquemas y calculadora de cable (electricidad), detector de
+    pérdidas y lista de materiales (plomería), checklist de seguridad y registro de revisiones (gas), registro de aperturas (cerrajería),
+    calculadora de materiales y etapas de obra (albañilería), calculadora de frigorías y recordatorio de service (aire). Además, ingresos y
+    gastos y feedback con IA. Son diseños propuestos; valores orientativos.
+13. **¿Cómo van a conseguir tracción?** Usuarios: porteros y administradores, ads por barrio y urgencia, referidos y los Handys —los chicos
+    reconocen a los personajes y lo cuentan en casa (estrategia de recordación, a medir)—. Profesionales: 0 % de comisión, ferreterías y
+    corralones, formación con herramientas por oficio y referidos entre oficios. Cada canal se mide con CAC y repetición.
+14. **¿Qué logran en los próximos 3 meses?** Mes 1: HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento. Mes 2: herramientas
+    de las 6 profesiones, ingresos y gastos, feedback con IA. Mes 3: piloto de Handyx para negocios (por ejemplo, un restaurante que busca
+    mozos elige entre disponibles ordenados por mérito), 2 profesiones nuevas y campaña con porteros. Plan propuesto, a validar.

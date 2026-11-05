@@ -267,3 +267,6 @@
 .caja .cifra-detalle { color: inherit; opacity: 0.78; }
 .flujo-nodo { color: var(--tinta-superficie, var(--tinta)); }
 .flujo-nodo small { color: var(--tinta-superficie, var(--suave)); opacity: 0.75; }
+/* Mosaicos en columnas angostas: más compactos */
+.lista-mosaicos[style*="repeat(1,"] li { padding: 18px 22px; font-size: 30px; }
+.lista-mosaicos[style*="repeat(1,"] { gap: 16px; }

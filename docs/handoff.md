@@ -169,3 +169,6 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   Motor: formato `usd`, `columnas` en mosaicos, rótulos agrupados en grillas, texto legible en nodos y cajas sobre fondo azul.
 - 04/11 (noche, 3): tickets reales de la prueba (4 × $ 50.000 + 1 × $ 150.000, de memoria de Ignacio: $ 350.000, promedio $ 70.000 ≈ USD 45);
   con ese ticket el 25 % del trimestre da ≈ USD 109.000. Respaldo «De 6 a 72 profesiones» con ejemplos (no confirmados). Preguntas: Mayús + J…U.
+- 05/11: intro animada con los Handys; respaldo de UX + IA, marca, publicidades, marketing, herramientas por oficio (diseños propuestos en
+  `brands/handyx/assets/conceptos/herramientas-*.webp`), negocios, plan de 3 meses, cada dólar (45/30/15/10) y USD 1 millón; 14 preguntas.
+  Video re-renderizado: intro + pitch + preguntas con respaldo (`scripts/video-pitch/`).

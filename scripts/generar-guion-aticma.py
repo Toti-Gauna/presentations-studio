@@ -51,7 +51,9 @@ for i, sid in enumerate(v['escenas'], 1):
 md += ["## Anexos (fuera de los 180 segundos; se abren con Mayús + letra o desde el índice)", "", "| Atajo | Anexo | Para qué |", "|---|---|---|"]
 for k, sid in enumerate(v['anexos']):
     e = S[sid]
-    md.append(f"| Mayús + {'ABCDEFGHIJKLMOPQSTUVWXYZ'[k]} | {e['titulo']} | {e['objetivo']} |")
+    letras = 'ABCDEFGHIJKLMOPQSTUVWXYZ'
+    atajo = f"Mayús + {letras[k]}" if k < len(letras) else 'índice / menú ☰'
+    md.append(f"| {atajo} | {e['titulo']} | {e['objetivo']} |")
 md += ["", "Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.", ""]
 salida = '\n'.join(md)
 ruta = 'docs/handyx/aticma-guion.md'

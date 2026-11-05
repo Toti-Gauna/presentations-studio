@@ -46,6 +46,16 @@ Profesiones de ejemplo para llegar a 72: respaldo «De 6 a 72 profesiones» (no 
 dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 50 clientes nuevos por mes; LTV ≈ USD 18 con 3 años de permanencia
 (supuesto). Inversión: propuesta 40 % tecnología, 35 % marketing, 25 % operaciones, a aprobar.
 
+## Pedido del 05/11 (Ignacio)
+
+- Intro animada original con los Handys (no copia la de ninguna marca): `scripts/video-pitch/intro.html` + sonido sintetizado.
+- Respaldo nuevo: UX + IA frente a la competencia (comparación de recorridos; capturas de la competencia pendientes: mandarlas desde las
+  apps), marca y UX/UI, publicidades (cuadros de los trailers sin la tarifa anterior; los trailers completos hay que renderizarlos de nuevo),
+  tracción en los dos lados (incluye «los chicos repiten lo que ven»: estrategia de recordación, no un dato medido), herramientas por oficio
+  (diseños propuestos de las 6 profesiones + números + negocios con meritocracia), plan de 3 meses, cada dólar (45/30/15/10, a aprobar) y
+  camino a USD 1 millón en trabajos (aspiración, horizonte supuesto de 12 meses).
+- 14 preguntas del jurado. En el video, cada respuesta muestra sus láminas de respaldo.
+
 ## Control de calidad
 
 | Pregunta | Estado |

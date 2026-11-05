@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script src="file:///home/user/presentations-studio/node_modules/gsap/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:'Archivo';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:'DM Sans';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2') format('woff2');font-weight:100 1000}
+*{margin:0;box-sizing:border-box}
+body{width:1920px;height:1080px;overflow:hidden;background:#0B1F3F;font-family:'DM Sans'}
+#esc{position:absolute;inset:0;overflow:hidden}
+.mos{position:absolute;width:150px;height:150px;border-radius:30px;background:#1F57A8;opacity:0}
+#rayos{position:absolute;left:960px;top:330px;width:2400px;height:2400px;margin:-1200px;opacity:0;background:repeating-conic-gradient(from 0deg,rgba(255,201,60,.16) 0deg 9deg,transparent 9deg 22.5deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000 18%,transparent 62%)}
+#piso{position:absolute;left:0;right:0;bottom:0;height:330px;background:linear-gradient(180deg,transparent,rgba(31,87,168,.07));opacity:0}
+#rev{position:absolute;left:960px;top:540px;width:10px;height:10px;margin:-5px;border-radius:50%;background:#FBFAF6;transform:scale(0)}
+#anillo{position:absolute;left:960px;top:540px;width:10px;height:10px;margin:-5px;border-radius:50%;border:6px solid #FFC93C;transform:scale(0);opacity:0}
+#logo{position:absolute;left:50%;top:215px;width:900px;margin-left:-450px;opacity:0}
+#brillo{position:absolute;left:50%;top:215px;width:900px;height:210px;margin-left:-450px;overflow:hidden;
+ -webkit-mask:url('file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp') center/contain no-repeat;opacity:0}
+#brillo i{position:absolute;top:-40px;bottom:-40px;width:160px;left:-200px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);transform:skewX(-18deg)}
+#lema{position:absolute;left:0;right:0;top:455px;text-align:center;font-family:'Archivo';font-weight:900;font-stretch:118%;font-size:58px;color:#13305E;opacity:0}
+#lema span{position:relative;display:inline-block}
+#lema span::before{content:'';position:absolute;left:-10px;right:-10px;bottom:4px;height:30px;background:#FFC93C;border-radius:6px;z-index:-1;transform-origin:left;transform:scaleX(var(--m,0))}
+#sub{position:absolute;left:0;right:0;top:550px;text-align:center;font-size:30px;font-weight:700;color:#4A72B0;letter-spacing:.14em;opacity:0}
+.pj{position:absolute;width:190px;height:228px;bottom:70px}
+.pj img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0}
+.pj img.on{opacity:1}
+.sombra{position:absolute;left:30px;right:30px;bottom:-10px;height:22px;border-radius:50%;background:rgba(19,48,94,.18)}
+.conf{position:absolute;width:16px;height:28px;border-radius:4px;opacity:0}
+</style></head><body><div id="esc">
+<div id="mosaicos"></div><div id="rev"></div><div id="rayos"></div><div id="piso"></div><div id="anillo"></div>
+<img id="logo" src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp">
+<div id="brillo"><i></i></div>
+<div id="lema"><span>Soluciones, no problemas</span></div>
+<div id="sub">MAR DEL PLATA · ATICMA 2026</div>
+<div id="pjs"></div><div id="confeti"></div>
+</div>
+<script>
+const P='file:///home/user/presentations-studio/brands/handyx/assets/personajes/';
+const W=1920,H=1080;
+// mosaicos de fondo (como la grilla de rubros de la app)
+const mos=document.getElementById('mosaicos');
+const celdas=[];
+for(let r=0;r<7;r++)for(let c=0;c<12;c++){const d=document.createElement('div');d.className='mos';d.style.left=(c*170-40+(r%2)*40)+'px';d.style.top=(r*170-60)+'px';mos.appendChild(d);celdas.push(d);}
+// personajes
+const nombres=['gota','grifo','bombilla','engranaje','llave','medidor_gas','aire','brocha'];
+const xs=[150,360,570,780,960,1170,1380,1590];
+const pjs=document.getElementById('pjs');
+const P_=nombres.map((n,i)=>{const d=document.createElement('div');d.className='pj';d.style.left=xs[i]+'px';
+ d.innerHTML='<div class="sombra"></div>'+['a','b','c','d'].map(p=>`<img data-p="${p}" src="${P}${n}-${p}.webp">`).join('');pjs.appendChild(d);return d;});
+const pose=(d,p)=>d.querySelectorAll('img').forEach(im=>im.classList.toggle('on',im.dataset.p===p));
+// confeti determinista
+const conf=document.getElementById('confeti');let semilla=7;const rnd=()=>{semilla=(semilla*16807)%2147483647;return semilla/2147483647};
+const cols=['#FFC93C','#1F57A8','#4A9BEF','#F6A623','#FFFFFF','#13305E'];
+const piezas=[];for(let i=0;i<90;i++){const c=document.createElement('div');c.className='conf';c.style.background=cols[i%cols.length];c.style.left='960px';c.style.top='320px';conf.appendChild(c);piezas.push(c);}
+
+const tl=gsap.timeline({paused:true});
+// 0 — mosaicos que se encienden en ola
+tl.to(celdas,{opacity:.55,scale:1,duration:.5,ease:'power2.out',stagger:{each:.008,from:'center',grid:[7,12]}},0)
+  .fromTo(celdas,{scale:.3,rotation:-15},{scale:1,rotation:0,duration:.6,ease:'back.out(2)',stagger:{each:.008,from:'center',grid:[7,12]}},0);
+// 0.9 — revelado: círculo crema que crece + anillo amarillo
+tl.to('#rev',{scale:450,duration:.9,ease:'power3.inOut'},.9)
+  .fromTo('#anillo',{scale:0,opacity:1},{scale:260,opacity:0,duration:1.1,ease:'power2.out'},1.0);
+// 1.4 — personajes entran corriendo desde los costados
+P_.forEach((d,i)=>{const desde=i<4?-400:W+200;const t=1.35+(i<4?(3-i):(i-4))*.09;
+ tl.call(()=>pose(d,'d'),null,0).set(d,{x:desde-xs[i],opacity:1,scaleX:i<4?1:-1},0)
+  .to(d,{x:0,duration:.75,ease:'power3.out'},t)
+  .to(d,{y:-22,duration:.12,yoyo:true,repeat:5,ease:'sine.inOut'},t)
+  .call(()=>pose(d,'a'),null,t+.75)
+  .to(d,{scaleY:.86,duration:.08,yoyo:true,repeat:1,ease:'power1.out'},t+.75);
+});
+// 2.5 — logo golpea
+tl.fromTo('#logo',{opacity:0,scale:2.6,rotation:-6,y:-40},{opacity:1,scale:1,rotation:0,y:0,duration:.55,ease:'back.out(2.3)'},2.5)
+// personajes saltan con el golpe
+P_.forEach((d,i)=>{tl.call(()=>pose(d,'c'),null,2.62).to(d,{y:-110,duration:.28,ease:'power2.out'},2.62+i*.025).to(d,{y:0,duration:.4,ease:'bounce.out'},2.9+i*.025).call(()=>pose(d,'a'),null,3.4)});
+// confeti
+piezas.forEach((c,i)=>{const a=rnd()*Math.PI*2,v=350+rnd()*650;tl.set(c,{opacity:1,x:0,y:0,rotation:0},2.6)
+ .to(c,{x:Math.cos(a)*v,y:Math.sin(a)*v*.6-120,rotation:rnd()*720-360,duration:.9,ease:'power3.out'},2.6)
+ .to(c,{y:'+=520',opacity:0,duration:1.4,ease:'power1.in'},3.5)});
+// 3.1 — lema con marcador
+tl.fromTo('#lema',{opacity:0,y:30},{opacity:1,y:0,duration:.45,ease:'power3.out'},3.1)
+  .fromTo('#lema span',{'--m':0},{'--m':1,duration:.5,ease:'power2.inOut'},3.35)
+  .fromTo('#sub',{opacity:0,letterSpacing:'.5em'},{opacity:1,letterSpacing:'.14em',duration:.7,ease:'power3.out'},3.6);
+// 4.0 — brillo sobre el logo
+tl.set('#brillo',{opacity:1},4.0).fromTo('#brillo i',{left:-200},{left:1100,duration:.7,ease:'power2.inOut'},4.0);
+// 4.3 — saludan
+P_.forEach((d,i)=>{tl.call(()=>pose(d,'b'),null,4.3+i*.05).to(d,{rotation:i%2?4:-4,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut',transformOrigin:'50% 100%'},4.3+i*.05)});
+tl.fromTo('#rayos',{opacity:0,rotation:0,scale:.6},{opacity:1,scale:1,duration:.8,ease:'power2.out'},2.55).to('#rayos',{rotation:40,duration:4.2,ease:'none'},2.55).to('#piso',{opacity:1,duration:.6},1.5);
+// 6.0 — salida: todo se achica y fundido a blanco crema
+tl.to('#rayos',{opacity:0,duration:.5},6.1).to(['#logo','#lema','#sub'],{scale:.92,opacity:0,duration:.5,ease:'power2.in'},6.1)
+  .to(P_,{y:40,opacity:0,duration:.4,stagger:.03,ease:'power2.in'},6.05);
+tl.to({},{duration:.2},6.6);
+window.DUR=tl.duration();
+window.ir=(t)=>{tl.seek(t,false);};
+</script></body></html>

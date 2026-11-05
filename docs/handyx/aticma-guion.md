@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 19 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 32 láminas de respaldo.
 
 ## Ritmo
 
@@ -86,17 +86,30 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | Mayús + E | Roadmap | Separar lo que existe, lo próximo y la visión, sin fechas inventadas. |
 | Mayús + F | Competidores en Argentina | Mostrar a los competidores directos con datos y el diferencial. |
 | Mayús + G | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
-| Mayús + H | Uso de la inversión | Mostrar cómo se usarían los USD 100.000 y qué hitos financian. |
-| Mayús + I | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
-| Mayús + J | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + K | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + L | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + M | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + O | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + P | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + Q | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + S | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + T | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| Mayús + U | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + H | UX + IA: el diferencial | Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx. |
+| Mayús + I | Marca y UX/UI | Mostrar la identidad de Handyx y su interfaz. |
+| Mayús + J | Publicidades | Mostrar las piezas listas para pautar. |
+| Mayús + K | Tracción en los dos lados | Mostrar cómo captamos usuarios y profesionales. |
+| Mayús + L | Herramientas por oficio (1/2) | Mostrar las herramientas que queremos dar a cada profesión. |
+| Mayús + M | Herramientas por oficio (2/2) | Mostrar las herramientas que queremos dar a cada profesión. |
+| Mayús + O | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
+| Mayús + P | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
+| Mayús + Q | Lo que logramos en 3 meses | Mostrar el plan de desarrollo de los próximos 3 meses. |
+| Mayús + S | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
+| Mayús + T | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
+| Mayús + U | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + V | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + W | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + X | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Y | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| Mayús + Z | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Pregunta 14: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.

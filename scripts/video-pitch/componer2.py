@@ -5,7 +5,7 @@ E = f'{S}/edicion'; T = f'{E}/tmp'; os.makedirs(T, exist_ok=True)
 D = '/home/user/presentations-studio/salida/pptx/handyx-aticma-evento'
 ORIG = f'{S}/video/original.mp4'
 TOTAL = 199.52
-TRAMOS = [('01', 0.0), ('02', 43.3), ('03', 79.9), ('04', 104.6), ('05', 115.9), ('07', 136.3), ('17', 162.0), ('07', 175.8), ('08', 183.4)]
+TRAMOS = [('01', 0.0), ('02', 43.3), ('03', 79.9), ('04', 104.6), ('05', 115.9), ('07', 136.3), ('23', 162.0), ('07', 175.8), ('08', 183.4)]
 INTRO = 5.3
 SX, SY, SW, SH = 40, 110, 1504, 846
 CW, CH = 304, 540
@@ -45,8 +45,11 @@ if etapa == 'pitch':
          '-filter_complex', ';'.join(f), '-map', '[v]', '-map', '2:a', '-r', '30', *X264, '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-t', str(TOTAL), f'{E}/pitch.mp4'])
 
 if etapa == 'preguntas':
+    # Cada pregunta: tarjeta (3,2 s) + respuesta (7 s) + láminas de respaldo (5,5 s cada una)
+    RESPALDO = {1: [11], 2: [10], 3: [9], 4: [12], 5: [], 6: [16, 14, 15], 7: [], 8: [19], 9: [25, 26], 10: [], 11: [26], 12: [20, 21, 22], 13: [19, 18, 17], 14: [24]}
     seq = [(f'{E}/preguntas-intro.png', 3.5)]
-    for k in range(1, 11): seq += [(f'{E}/pregunta-{k:02d}.png', 3.2), (f'{D}/{17 + k:02d}.png', 7.0)]
+    for k in range(1, 15):
+        seq += [(f'{E}/pregunta-{k:02d}.png', 3.2), (f'{D}/{26 + k:02d}.png', 7.0)] + [(f'{D}/{n:02d}.png', 5.5) for n in RESPALDO[k]]
     seq += [(f'{D}/08.png', 4.0)]
     lista = []
     for k, (img, d) in enumerate(seq):
@@ -60,7 +63,7 @@ if etapa == 'preguntas':
     run(['-f', 'concat', '-safe', '0', '-i', f'{T}/q.txt', '-i', f'{T}/colchon.m4a', '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'copy', '-shortest', f'{E}/preguntas.mp4'])
 
 if etapa == 'unir':
-    run(['-i', f'{E}/pitch.mp4', '-i', f'{E}/preguntas.mp4', '-filter_complex',
-         '[0:v]fps=30,format=yuv420p,setsar=1[v0];[1:v]fps=30,format=yuv420p,setsar=1[v1];[0:a]aformat=sample_rates=48000:channel_layouts=stereo[a0];[1:a]aformat=sample_rates=48000:channel_layouts=stereo[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]',
+    run(['-i', f'{E}/intro.mp4', '-i', f'{E}/pitch.mp4', '-i', f'{E}/preguntas.mp4', '-filter_complex',
+         ';'.join(f'[{i}:v]fps=30,format=yuv420p,setsar=1[v{i}];[{i}:a]aformat=sample_rates=48000:channel_layouts=stereo[a{i}]' for i in range(3)) + ';[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[v][a]',
          '-map', '[v]', '-map', '[a]', *X264, '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', f'{E}/handyx-pitch-aticma.mp4'])
 print('listo', etapa)

@@ -20,7 +20,7 @@ Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=han
 1. Presentador: `/presentador/?deck=handyx-aticma&version=evento` (o el hub). **Abrir pantalla pública** → proyector → **F**.
 2. Ensayo: **▶ Reloj** (R) · → / espacio / clicker · **■ Finalizar** registra el tiempo y el de cada diapositiva · **Nuevo ensayo** vuelve
    a cero sin recargar · **N** oculta notas. Las notas muestran tramo, guion y próxima transición.
-3. Avanzar nunca entra a los anexos: **Mayús + A…U** los abre (sin N ni R; A…I = respaldo, J…U = preguntas del jurado) y **0** vuelve. Diapositiva 7: → en «Hoy empezamos en Mar del Plata».
+3. Avanzar nunca entra a los anexos: **Mayús + letra** abre los primeros 24 (sin N ni R) y el resto se abre desde el índice o el menú ☰ del celular y **0** vuelve. Diapositiva 7: → en «Hoy empezamos en Mar del Plata».
 4. Refrescar el presentador no vuelve al inicio. Sin animaciones: `version=estatica`. Celular: Conectar control remoto → QR privado → Aprobar.
 5. Contingencia: `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y
    `npm run exportar:pptx -- --deck=handyx-aticma --version=evento` (python-pptx) → `salida/`.
