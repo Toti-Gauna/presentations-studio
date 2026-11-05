@@ -68,3 +68,11 @@ Subtítulos del ensayo: `subtitulos-ensayo-04-11.srt` (transcripción automátic
   `node voz-elevenlabs.mjs guion-voz.json <audio-del-clip.wav> <handia-voz.mp4> <salida.mp4>` genera cada frase (modelo multilingüe) y la
   mezcla en su segundo, con la música bajando cuando alguien habla. No se pudo probar contra la API desde esta sesión.
 
+## Láminas enteras y cámara en círculo (05/11)
+
+- `plan_pitch.py` (`COMPLETO=True`): cada lámina se ve entera, con un acercamiento suave (≤ 3,5 %) que no sale de los márgenes; las frases
+  clave van en la columna derecha, debajo de la cámara.
+- `componer3.py pitch`: la cámara es un **círculo** de 300 px (recorte 600 × 600 centrado en la cara, `RECORTE`) con un aro amarillo y
+  sombra (`camara-aro.html` → `camara-aro.cjs` lo pasa a PNG transparente), en la columna derecha; se funde al empezar el final.
+  Subtítulos en la franja de abajo, fuera de la lámina.
+

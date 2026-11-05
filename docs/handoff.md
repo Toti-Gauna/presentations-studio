@@ -217,4 +217,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   comercios del barrio; entra con verificación reforzada). No se usa la foto del cartel ni sus datos (persona real). Títulos de «Cómo crece
   Handyx» y «Publicidades» separados de su etiqueta. Video: las láminas se ven **enteras** (sin el zoom que recortaba) y las frases clave
   pasan a la columna derecha, debajo de la cámara.
+- 05/11 (11) · Entregada la **grabación de la versión en vivo** (`salida/video/handyx-aticma-evento-en-vivo.mp4`, 8:46, 1080p, 33 MB):
+  pitch a sus tiempos + 30 láminas de respaldo + 20 preguntas, revisada escena por escena. Video editado: cámara en círculo en la columna
+  derecha (sin tapar la lámina) y láminas enteras.
 
