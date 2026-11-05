@@ -225,7 +225,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - **Pitch**: las 7 diapositivas son escenas animadas (`brands/handyx/animaciones/{odisea,handia,profesional,empezamos,mercado,competencia,equipo}.ts`)
   con los Handys, una leyenda numerada por paso y notas «→ al decir…» con la frase que dispara cada golpe. Competencia: océano rojo con
   Clickie, Home Solution, Checkatrade y Muovi (con nombres desde el 05/11 a la mañana, a pedido de Ignacio; sin logos) → océano azul. La 7.ª suma el **cierre con los dos QR** (`decks/handyx-aticma/qr.json`: landing y
-  portafolio de Ignacio, `portafolio.eclipse-business.com` según el repo `Toti-Gauna/portafolio-2026`; **confirmar que esté publicado**).
+  portafolio de Ignacio, `https://toti-gauna.github.io/portafolio-2026/en/`, confirmado por Ignacio el 05/11).
 - **Marketing con destino** (pedido de Ignacio): publicidades hechas con IA (Seedance 2.5), redes, postes, volantes en locales y remeras para
   los profesionales con el Handy de su oficio (afirmaciones INV-M-*, tarjeta de la 7.ª, respuestas 9 y 13, machete, anexo de inversión).
 - **Respuestas**: 20 escenas (`comun/respuesta.ts` + `decks/handyx-aticma/preguntas.json` → `scripts/generar-respuestas.py`).
@@ -239,7 +239,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   grabación) y 2b) pitch de fondo con el guion oficial (3:20, las 7 diapositivas en orden); 3) `Handyx-ATICMA-presentacion.zip` (PPTX de
   212 diapositivas, una por paso, con guion y notas + PDF) y `Handyx-ATICMA-imagenes.zip` (212 imágenes por sección).
 - Verificado: verify (61 pruebas, validar, guion), e2e 40/40, hojas de contacto de las 57 escenas, cuadros de cada fundido del video.
-- **Decisiones de Ignacio:** confirmar que `portafolio.eclipse-business.com` esté publicado (lo apunta el QR); el plan dice tarifa del 15 %
+- **Decisiones de Ignacio:** el plan dice tarifa del 15 %
   desde el mes 1 y las apps prevén 0 % hasta el 10/12 (elegir cuál va en el pitch); la grabación dice 20 % y «más de 260.000» (en
   pantalla y subtítulos: 25 % y «casi 260.000»); la grabación no incluye la diapositiva 6 (competencia).
 - 05/11 (mediodía): equipo con «Abigail» (antes «su pareja») y subtítulos del video en una sola línea (ya no tapan la leyenda del paso).

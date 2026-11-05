@@ -3,8 +3,15 @@
     "id": "landing",
     "etiqueta": "Conocé Handyx",
     "modo": "directo",
-    "destinos": { "A": "https://landing.handyc.com/" },
-    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "landing" },
+    "destinos": {
+      "A": "https://landing.handyc.com/"
+    },
+    "campania": {
+      "source": "pitch",
+      "medium": "qr",
+      "campaign": "aticma-2026",
+      "content": "landing"
+    },
     "textoCorto": "landing.handyc.com",
     "definitivo": true
   },
@@ -12,9 +19,16 @@
     "id": "portafolio",
     "etiqueta": "Conocé a Ignacio",
     "modo": "directo",
-    "destinos": { "A": "https://portafolio.eclipse-business.com/" },
-    "campania": { "source": "pitch", "medium": "qr", "campaign": "aticma-2026", "content": "portafolio" },
-    "textoCorto": "portafolio.eclipse-business.com",
+    "destinos": {
+      "A": "https://toti-gauna.github.io/portafolio-2026/en/"
+    },
+    "campania": {
+      "source": "pitch",
+      "medium": "qr",
+      "campaign": "aticma-2026",
+      "content": "portafolio"
+    },
+    "textoCorto": "toti-gauna.github.io/portafolio-2026",
     "definitivo": true
   }
 ]
