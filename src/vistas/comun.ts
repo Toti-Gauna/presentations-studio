@@ -38,6 +38,7 @@ export function iniciar(): Sesion | { error: string[] } {
     qrs: new Map(paquete.qrs.map((q) => [q.id, q])),
     url: (archivo) => urlRecurso(carpetaDe(tema), archivo),
     recursos: new Map(paquete.deck.recursos.map((r) => [r.id, r])),
+    rotulos: paquete.deck.rotulos,
   };
   return {
     cargado,

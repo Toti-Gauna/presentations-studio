@@ -13,6 +13,8 @@ export interface Contexto {
   qrs: ReadonlyMap<string, QrPublico>;
   url: (archivo: string) => string;
   recursos: ReadonlyMap<string, { archivo: string; tipo: string }>;
+  /** 'pie': los rótulos de las cifras se agrupan en una línea discreta al pie de la escena. */
+  rotulos?: 'chips' | 'pie';
 }
 
 let traer: { por: string; desde: string } | null = null;
@@ -229,7 +231,7 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
     case 'imagen': {
       const r = ctx.recursos.get(el.recurso);
       const src = r ? ctx.url(r.archivo) : '';
-      const img = src ? h('img', { src, alt: el.alt, decoding: 'async', class: el.forma === 'circulo' ? 'img-circulo' : undefined }) : h('div', { class: 'faltante' }, `Falta: ${el.alt}`);
+      const img = src ? h('img', { src, alt: el.alt, decoding: 'async', class: el.forma === 'circulo' ? 'img-circulo' : el.llenar ? 'img-llena' : undefined }) : h('div', { class: 'faltante' }, `Falta: ${el.alt}`);
       raiz.append(animable(img, el.paso, el.entrada));
       break;
     }

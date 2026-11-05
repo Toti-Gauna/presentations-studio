@@ -23,5 +23,8 @@ if etapa=='preguntas':
 if etapa=='unir':
     ins=[f'{E}/intro.mp4',f'{S}/montaje/pitch.mp4',f'{S}/montaje-q/preguntas.mp4']
     fc=';'.join(f'[{i}:v]fps=30,format=yuv420p,setsar=1[v{i}];[{i}:a]aformat=sample_rates=48000:channel_layouts=stereo[a{i}]' for i in range(3))+';[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[v][a]'
-    run([*sum((['-i',x] for x in ins),[]),'-filter_complex',fc,'-map','[v]','-map','[a]',*X264,'-c:a','aac','-b:a','192k','-movflags','+faststart',f'{S}/montaje/handyx-pitch-aticma.mp4'])
+    fc=fc.replace('[v][a]','[vv][a]')+';[vv]split=2[v][w];[w]scale=1280:720[v7]'
+    run([*sum((['-i',x] for x in ins),[]),'-filter_complex',fc,
+         '-map','[v]','-map','[a]','-c:v','libx264','-preset','medium','-crf','23','-pix_fmt','yuv420p','-threads','4','-c:a','aac','-b:a','192k','-movflags','+faststart',f'{S}/montaje/handyx-pitch-aticma.mp4',
+         '-map','[v7]','-map','[a]','-c:v','libx264','-preset','medium','-crf','26','-pix_fmt','yuv420p','-threads','4','-c:a','aac','-b:a','128k','-movflags','+faststart',f'{S}/montaje/handyx-pitch-aticma-720p.mp4'])
 print('listo',etapa)

@@ -1,6 +1,6 @@
 # Pitch ATICMA 2026 · validación, fuentes y pendientes
 
-Deck `decks/handyx-aticma` (corte 04/11/2026). Versiones: `evento` (transiciones suaves) y `estatica` (sin animaciones).
+Deck `decks/handyx-aticma` (corte 04/11/2026). Versiones: `evento` (movimiento completo, entradas en cascada) y `estatica` (sin animaciones).
 Guion: [`aticma-guion.md`](aticma-guion.md) · preguntas: [`aticma-preguntas.md`](aticma-preguntas.md) · ajustes: [`aticma-ajustes-sugeridos.md`](aticma-ajustes-sugeridos.md) ·
 capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
 
@@ -13,13 +13,14 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
    Las notas muestran el tramo (p. ej. 0:25–0:55), el guion de la diapositiva y la **próxima transición**.
 3. **Presentación:** **Abrir pantalla pública** → arrastrar al proyector → **F** (pantalla completa). En la notebook queda el presentador.
    Solo presentación (sin presentador): `/presentar/?deck=handyx-aticma&version=evento`.
-4. Diapositiva 7 tiene dos pasos: → al decir «Hoy empezamos en Mar del Plata». Avanzar nunca entra a los anexos.
-5. **Respaldo para el jurado:** Mayús + A (proyección), B (costos y equilibrio), C (CAC y LTV), D (validación), E (roadmap), F (competidores
-   en Argentina), G (región y mundo), H (uso de la inversión), I (de 6 a 72 profesiones) y J…U (preguntas del jurado 1 a 10, una por diapositiva; sin N ni R);
+4. Diapositiva 7 tiene dos pasos: → al decir «Hoy empezamos en Mar del Plata» arranca el **clip del mundo** (≈ 19 s, con efectos de sonido;
+   la pantalla pública suena solo si recibió un clic o una tecla propios, por ejemplo F). Avanzar nunca entra a los anexos.
+5. **Respaldo para el jurado:** **número + Enter** abre cualquier lámina del índice (se ve el título antes de confirmar; Esc cancela);
+   los primeros 24 anexos también con Mayús + letra (tabla en [`aticma-guion.md`](aticma-guion.md) y última página del machete).
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (27 páginas: 7 diapositivas, el paso 2 de la 7, 9 de respaldo y 10 de preguntas), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (54 páginas: 7 diapositivas, el paso 2 de la 7, 28 de respaldo y 18 de preguntas), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
@@ -66,10 +67,24 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
   respaldo intercaladas cuando se habla de la inversión (cada dólar) y del crecimiento (mapa People/Business); final con el mundo roto que los
   Handys arreglan; preguntas con tarjetas animadas y láminas con movimiento. Scripts en `scripts/video-pitch/montaje/`.
 
+## Pedido del 05/11 (4): maneras de multiplicar ingresos, tesorería e IPO
+
+- **Maneras de multiplicar ingresos (1/2), la operación:** más trabajos (tarifa del 15 %), más profesiones (6 → 72), clientes que vuelven,
+  Handyx for Business, apps a medida (opción futura) y materiales con ferreterías (a explorar). Cada una con su explicación.
+- **(2/2), las finanzas:** reinvertir las ganancias para crecer (marketing e IA mientras CAC < LTV, producto, formación, ciudades) y una
+  **tesorería que protege** con los excedentes. El pedido de Ignacio (invertir en acciones y criptomonedas como colchón y escudo de largo
+  plazo) se presenta como **política propuesta**, con los resguardos que un jurado espera: solo excedentes (nunca la inversión recibida ni la
+  caja operativa), 12 meses de costos guardados antes, diversificación (bonos, ETFs y acciones) con cripto como máximo el 10 %, aprobación del
+  directorio y reporte trimestral, y la frase «no prometemos rendimientos: la tesorería protege, el negocio multiplica». Motivo: un jurado
+  suele leer «cripto» como riesgo con la plata de los inversores; así queda como salud financiera, no como especulación.
+- **El círculo que multiplica** (gráfico) y **Camino a la IPO** (pre-seed → seed → serie A → escala con rentabilidad, auditoría y directorio
+  independiente → IPO; precedentes MercadoLibre en Nasdaq 2007 y Globant en NYSE 2014). Visión sin fechas ni valuación.
+- Preguntas nuevas: 15 multiplicar ingresos, 16 cripto con la plata de los inversores («No»), 17 salida/IPO.
+
 ## Posibles preguntas del jurado
 
-Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (21
-preguntas: las 15 del video y 6 extra): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
+Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (24
+preguntas: las 18 del video y 6 extra, más una página con el número y el atajo de cada lámina): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
 (`scripts/video-pitch/machete-preguntas.py`).
 
 ## Control de calidad
@@ -91,11 +106,12 @@ preguntas: las 15 del video y 6 extra): `docs/handyx/aticma-preguntas.md` → `s
 
 ## Verificado en esta sesión
 
-- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (32/32, con 12
-  comprobaciones del pitch: avanzar no entra a anexos, Mayús + F / 0, refresco que conserva la posición y el registro de ensayos,
-  Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo sin recargar, pantalla pública sin notas).
-- Capturas 1920 × 1080 y 1366 × 768 de las 15 páginas, sin recortes ni superposiciones; vista del presentador durante un ensayo.
-- PDF de diapositivas (15 páginas), PDF de lectura (17) y PPTX (15 diapositivas con notas).
+- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (36/36, con 16
+  comprobaciones del pitch: avanzar no entra a anexos, movimiento completo, clip del mundo en el cierre, rótulos al pie, Mayús + F, número +
+  Enter, 0, refresco que conserva la posición y el registro de ensayos, Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo
+  sin recargar, pantalla pública sin notas).
+- Revisión automática de las 53 escenas (el pie de rótulos no pisa ninguna pieza; nada se sale del escenario) y capturas 1920 × 1080.
+- PDF de diapositivas (54 páginas), PDF de lectura, PPTX (54 diapositivas con notas), zip de imágenes y machete (5 páginas).
 - Control remoto y reconexión: cubiertos por el e2e con el deck `handyx` (mismo motor); no probados con un celular real ni con este deck.
 
 ## Fuentes
@@ -125,3 +141,5 @@ preguntas: las 15 del video y 6 extra): `docs/handyx/aticma-preguntas.md` → `s
 6. Fechas del primer trimestre comercial y ticket medio real (sin ticket no hay cantidad de trabajos).
 7. Probar el control desde el celular en el lugar (datos móviles) y el proyector real.
 8. Merge a `main` del PR para publicar en Hostinger (no se desplegó nada).
+9. **Confirmar la política de tesorería** (12 meses de costos, cripto ≤ 10 %, aprobación del directorio) o ajustar los números.
+10. Probar en la sala el clip del cierre con sonido (clic o F en la pantalla pública antes de empezar).

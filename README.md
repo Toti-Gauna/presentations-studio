@@ -2,7 +2,7 @@
 
 Motor web de **presentaciones dirigidas en vivo**: escenario 16:9, vista del presentador, control desde el celular por QR
 privado, QR públicos A/B, cifras rotuladas desde una única fuente, respaldo PDF/MP4/local. Primer caso: el pitch de **Handyx**
-para ATICMA (semifinal prevista 05/11/2026). Después: producto **Eclipse** (presentaciones creadas con Claude, sin editor).
+para ATICMA 2026. Después: producto **Eclipse** (presentaciones creadas con Claude, sin editor).
 
 ## Uso rápido
 ```sh
@@ -12,7 +12,8 @@ npm run build && SERVIR_ESTATICOS=dist npm run servidor   # http://localhost:878
 ```
 Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=handyx&version=aticma` · Pantalla pública: `/presentar/?deck=…`.
 - **Handyx ATICMA 2026** (`deck=handyx-aticma&version=evento` o `estatica`): siete diapositivas (180 s) con el guion de Ignacio, modo de
-  ensayo y siete láminas de respaldo. Ver [`docs/handyx/aticma-validacion.md`](docs/handyx/aticma-validacion.md).
+  ensayo, cierre con el clip del mundo, 28 láminas de respaldo (proyección, costos, CAC/LTV, competencia, marca, herramientas, plan mes a
+  mes, inversión, USD 1 M / 5 M, Business, maneras de multiplicar ingresos, tesorería, IPO) y 18 posibles preguntas del jurado. Ver [`docs/handyx/aticma-validacion.md`](docs/handyx/aticma-validacion.md).
 - **Handyx v1 institucional** (`deck=handyx`): `aticma` (180 s), `corta` (60 s), `angel` (≈ 6 min), `vc` (≈ 9 min).
 - **Handyx v2 comercial** (`deck=handyx-v2`, mismas cifras): `comercial` (≈ 5 min), `marca-marketing` (2 min), `anuncios` (reel).
 
@@ -20,7 +21,9 @@ Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=han
 1. Presentador: `/presentador/?deck=handyx-aticma&version=evento` (o el hub). **Abrir pantalla pública** → proyector → **F**.
 2. Ensayo: **▶ Reloj** (R) · → / espacio / clicker · **■ Finalizar** registra el tiempo y el de cada diapositiva · **Nuevo ensayo** vuelve
    a cero sin recargar · **N** oculta notas. Las notas muestran tramo, guion y próxima transición.
-3. Avanzar nunca entra a los anexos: **Mayús + letra** abre los primeros 24 (sin N ni R) y el resto se abre desde el índice o el menú ☰ del celular y **0** vuelve. Diapositiva 7: → en «Hoy empezamos en Mar del Plata».
+3. Avanzar nunca entra a los anexos: **número + Enter** abre cualquier lámina (Esc cancela), **Mayús + letra** los primeros 24 anexos
+   (sin N ni R), también el índice o el menú ☰ del celular; **0** vuelve. Diapositiva 7: → en «Hoy empezamos en Mar del Plata» arranca el
+   clip del mundo (para que suene, un clic o F en la pantalla pública antes de empezar).
 4. Refrescar el presentador no vuelve al inicio. Sin animaciones: `version=estatica`. Celular: Conectar control remoto → QR privado → Aprobar.
 5. Contingencia: `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y
    `npm run exportar:pptx -- --deck=handyx-aticma --version=evento` (python-pptx) → `salida/`.

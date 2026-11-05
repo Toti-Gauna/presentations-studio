@@ -148,7 +148,7 @@ export const Elemento = z.discriminatedUnion('tipo', [
       continuidad: z.boolean().default(false),
     })
     .strict(),
-  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string(), forma: z.enum(['normal', 'circulo']).default('normal') }).strict(),
+  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string(), forma: z.enum(['normal', 'circulo']).default('normal'), /** Ocupa todo el ancho de su caja, sin el tope de alto (gráficos anchos). */ llenar: z.boolean().default(false) }).strict(),
   z
     .object({
       ...base,
@@ -272,6 +272,8 @@ export const Deck = z
     tema: id,
     /** Deck del que se toman afirmaciones y QR (misma base factual para varias presentaciones). */
     datosDe: id.optional(),
+    /** Rótulos de las cifras (dato informado, supuesto, proyección…): junto a cada cifra o agrupados en un pie discreto por escena. */
+    rotulos: z.enum(['chips', 'pie']).default('chips'),
     /** Cómo aparece en el hub de presentaciones. */
     hub: z
       .object({ grupo: z.string(), descripcion: z.string(), orden: z.number().int().default(50), estilo: z.string().optional(), visible: z.boolean().default(true) })

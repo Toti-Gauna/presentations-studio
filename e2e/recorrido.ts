@@ -198,7 +198,9 @@ try {
   await presA.keyboard.press('r');
   for (let i = 0; i < 10; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(500); }
   ok('ATICMA: avanzar se detiene en la 7.ª diapositiva (no entra a anexos)', (await actualA()).startsWith('7.'), await actualA());
-  ok('ATICMA: la pantalla pública usa transiciones suaves (modo ligero)', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-ligero'));
+  ok('ATICMA: la pantalla pública usa el movimiento completo', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-completo'));
+  ok('ATICMA: el cierre (7.ª, paso 2) es el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);
+  ok('ATICMA: los rótulos de las cifras van en un pie discreto', (await pubA.locator('.rotulos-pie').count()) >= 1 && (await pubA.locator('section.escena .rotulo:not(figcaption .rotulo)').count()) === 0);
   await presA.getByRole('button', { name: '■ Finalizar' }).click(); await presA.waitForTimeout(400);
   const intento = (await presA.locator('.intentos li').first().textContent()) ?? '';
   ok('ATICMA: Finalizar registra el tiempo del ensayo', /^Ensayo 1: \d+:\d\d · dentro de 3:00/.test(intento), intento);
@@ -209,6 +211,11 @@ try {
   await presA.keyboard.press('n');
   await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
   ok('ATICMA: Mayús + F abre el respaldo F (competidores en Argentina)', (await actualA()).includes('Competidores en Argentina'), await actualA());
+  const item35 = ((await presA.locator('.indice li:not(.separador-anexos) .item').nth(34).textContent()) ?? '').replace(/^35\. /, '').trim();
+  await presA.keyboard.press('3'); await presA.keyboard.press('5'); await presA.waitForTimeout(200);
+  ok('ATICMA: al escribir un número se ve a qué lámina va', ((await presA.locator('.ir-numero.activo').textContent()) ?? '').includes(item35), item35);
+  await presA.keyboard.press('Enter'); await presA.waitForTimeout(500);
+  ok('ATICMA: número + Enter abre esa lámina (35)', (await actualA()).startsWith('35.'), await actualA());
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
   ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);

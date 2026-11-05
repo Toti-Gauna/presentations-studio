@@ -48,13 +48,15 @@ md += ["", "## Guion literal", ""]
 for i, sid in enumerate(v['escenas'], 1):
     e = S[sid]
     md += [f"### Diapositiva {i} · {e['titulo']}", "", *[f"> {l}" if l else ">" for l in e['guion'].split('\n')], ""]
-md += ["## Anexos (fuera de los 180 segundos; se abren con Mayús + letra o desde el índice)", "", "| Atajo | Anexo | Para qué |", "|---|---|---|"]
+md += ["## Anexos (fuera de los 180 segundos; se abren con Mayús + letra, con su número + Enter o desde el índice)", "", "| N.º | Atajo | Anexo | Para qué |", "|---|---|---|---|"]
 for k, sid in enumerate(v['anexos']):
     e = S[sid]
     letras = 'ABCDEFGHIJKLMOPQSTUVWXYZ'
-    atajo = f"Mayús + {letras[k]}" if k < len(letras) else 'índice / menú ☰'
-    md.append(f"| {atajo} | {e['titulo']} | {e['objetivo']} |")
-md += ["", "Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.", ""]
+    n = len(v['escenas']) + k + 1
+    atajo = f"Mayús + {letras[k]} · {n} + Enter" if k < len(letras) else f"{n} + Enter"
+    md.append(f"| {n} | {atajo} | {e['titulo']} | {e['objetivo']} |")
+md += ["", "Volver a la última diapositiva principal: tecla **0** (sin número antes). Escribir un número muestra a qué lámina va; **Esc** cancela.",
+       "Avanzar (→, espacio, clicker, celular) nunca entra a los anexos. En el celular: menú ☰.", ""]
 salida = '\n'.join(md)
 ruta = 'docs/handyx/aticma-guion.md'
 if '--comprobar' in sys.argv:

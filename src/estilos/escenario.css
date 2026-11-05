@@ -239,6 +239,7 @@
 .lista-enc { margin-bottom: 26px; }
 .escenario h1 { font-size: 104px; }
 .escenario h2 { font-size: 82px; }
+.el img.img-llena { width: 100%; height: auto; max-height: none; border-radius: 0; }
 .el img.img-circulo { width: 640px; height: 640px; max-height: none; border-radius: 50%; object-fit: contain; background: #FFFFFF; padding: 60px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); }
 .nota-pie { font-size: 20px !important; color: var(--suave); line-height: 1.35; }
 .caja-amarilla .kicker, .caja-blanca .kicker, .caja-gris .kicker { color: #1F57A8; }
@@ -270,3 +271,6 @@
 /* Mosaicos en columnas angostas: más compactos */
 .lista-mosaicos[style*="repeat(1,"] li { padding: 18px 22px; font-size: 30px; }
 .lista-mosaicos[style*="repeat(1,"] { gap: 16px; }
+/* Rótulos agrupados al pie de la escena (opción del deck rotulos: 'pie') */
+.rotulos-pie { position: absolute; right: 96px; bottom: 18px; z-index: 3; max-width: 70%; text-align: right; font-size: 19px; font-weight: 600; letter-spacing: .01em; color: var(--suave); opacity: .9; }
+.rotulos-pie::before { content: 'ⓘ  '; font-weight: 800; }

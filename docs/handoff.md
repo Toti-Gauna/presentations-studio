@@ -176,3 +176,22 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   profesiones B2B; pregunta 14 «¿Hasta dónde puede crecer Handyx?».
 - 05/11 (3): láminas «Plan · mes 1/2/3»; video re-montado con cámara sincronizada a la transcripción, frases clave, final del mundo roto
   arreglado por los Handys y preguntas animadas (`scripts/video-pitch/montaje/`).
+- 05/11 (4) · **Final ATICMA, versión súper premium** (pedido de Ignacio):
+  - Respaldo «Maneras de multiplicar ingresos» (1/2 la operación: más trabajos, más profesiones, clientes que vuelven, Handyx for
+    Business, apps a medida, materiales; 2/2 las finanzas: reinvertir para crecer y **una tesorería que protege**), «El círculo que
+    multiplica» y «Camino a la IPO» (pre-seed → seed → serie A → escala → IPO; precedentes MercadoLibre y Globant; sin fechas ni valuación).
+  - Tesorería (acciones y cripto, pedido de Ignacio) encuadrada para el jurado como **política propuesta (supuesto)**: solo excedentes, nunca
+    la inversión ni la caja operativa; 12 meses de costos guardados antes; diversificada (bonos, ETFs, acciones) con cripto ≤ 10 %; aprobada
+    por el directorio y reportada cada trimestre; «no prometemos rendimientos». **Decisión pendiente de Ignacio:** confirmar 12 meses y 10 %.
+  - 18 posibles preguntas del jurado (nuevas: multiplicar ingresos, cripto con la plata de los inversores, IPO). Machete de 24 preguntas +
+    página de atajos (`salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`).
+  - Diapositiva 7, paso 2 = **clip del mundo** (`video/mundo-final.mp4`, 18,85 s, con efectos de sonido) en lugar del cierre estático. Para
+    que suene, la pantalla pública necesita un clic o una tecla propios (por ejemplo F para pantalla completa); si no, corre sin sonido.
+    `?sonido=no` lo silencia. En el PDF y el PPTX queda su póster («¡Muchas gracias!»).
+  - Versión `evento` con **movimiento completo** (entradas en cascada por tipo de pieza) y rótulos de las cifras en un **pie discreto**.
+  - Presentador: **número + Enter** salta a cualquier lámina (cartel con el título; Esc cancela; 0 sin número vuelve a la principal).
+  - Motor (sin marca): `rotulos: 'pie'` en el deck (el pie entra y sale con las piezas rotuladas), cascada en modo completo, `llenar` en
+    `imagen` (gráficos anchos sin tope de alto), el conteo animado usa el mismo formateador que la cifra final (antes `usd` terminaba sin
+    «USD»), manifiesto del PPTX con escena y paso.
+  - Verificado: verify, e2e 36/36, revisión automática de superposiciones del pie (53 escenas), PDF, PPTX (54), zip y capturas (54).
+

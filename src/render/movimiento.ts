@@ -2,7 +2,8 @@
 // El estado visual se reconstruye siempre desde (escena, paso): avanzar un paso reproduce el
 // tramo; saltar, retroceder o reconectar hace seek al final del paso, sin acumular nada.
 import { gsap } from 'gsap';
-import type { Accion } from '../core/esquema.ts';
+import type { Accion, Afirmacion } from '../core/esquema.ts';
+import { formatearNumero } from '../core/afirmaciones.ts';
 import { palabras } from './dom.ts';
 import { sonar, type Efecto } from './sonido.ts';
 import { MOTORES } from './motores.ts';
@@ -130,10 +131,9 @@ function contar(nodo: HTMLElement, tl: gsap.core.Timeline, en: string, d: number
   const formato = nodo.dataset['formato'];
   const proxy = { v: 0 };
   const decimales = Number.isInteger(fin) ? 0 : 1;
+  // Mismo formateador que la cifra final: el prefijo (USD, $) y el sufijo (%, M) no aparecen recién al terminar.
   const pintar = () => {
-    const v = formato === 'millones' ? proxy.v / 1e6 : proxy.v;
-    const n = (Math.round(v * 10 ** decimales) / 10 ** decimales).toLocaleString('es-AR').replace(/\s/g, ' ');
-    nodo.textContent = formato === 'ars' ? `$ ${n}` : formato === 'millones' ? `$ ${n} M` : formato === 'porcentaje' ? `${n} %` : n;
+    nodo.textContent = formatearNumero(Math.round(proxy.v * 10 ** decimales) / 10 ** decimales, formato as Afirmacion['formato']);
   };
   // Los saltos (seek) suprimen eventos: el número se repinta a mano después de cada seek.
   contadores.set(tl, [...(contadores.get(tl) ?? []), pintar]);
@@ -247,14 +247,19 @@ export class LineaEscena {
     for (let k = 0; k < pasos; k++) {
       const etiqueta = `p${k}`;
       this.tl.addLabel(etiqueta, cursor);
+      let orden = 0; // en modo completo, las piezas de un mismo paso entran en cascada (no todas a la vez)
       for (const n of nodos) if (Number(n.dataset['paso']) === k && !n.classList.contains('pj') && !n.dataset['motor']) {
         if (n.dataset['entrada'] === 'traer' && modo !== 'reducido') {
           traerPieza(raiz, n, k, this.tl, etiqueta, d, modo);
           continue;
         }
-        entrada(n, n.dataset['entrada'] === 'traer' ? 'fundido' : (n.dataset['entrada'] ?? 'fundido'), this.tl, etiqueta, d, modo);
+        // Subetiqueta por pieza: las entradas que arman posiciones relativas (`${en}+=…`) siguen funcionando.
+        const desfase = modo === 'completo' ? Math.min(orden++ * 0.07, 0.7) : 0;
+        const en = desfase > 0 ? `${etiqueta}c${orden}` : etiqueta;
+        if (desfase > 0) this.tl.addLabel(en, `${etiqueta}+=${desfase.toFixed(2)}`);
+        entrada(n, n.dataset['entrada'] === 'traer' ? 'fundido' : (n.dataset['entrada'] ?? 'fundido'), this.tl, en, d, modo);
         const c = n.matches('[data-contar]') ? n : n.querySelector<HTMLElement>('[data-contar]');
-        if (c && modo !== 'reducido') contar(c, this.tl, etiqueta, d);
+        if (c && modo !== 'reducido') contar(c, this.tl, en, d);
       }
       for (const m of motores) m.alPaso(k, this.tl, etiqueta, d, modo === 'reducido');
       for (const s of salientes)

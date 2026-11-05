@@ -12,14 +12,15 @@
  },
  "corte": "2026-11-04",
  "estado": "borrador",
+ "rotulos": "pie",
  "versiones": [
   {
    "id": "evento",
-   "titulo": "Semifinal ATICMA (180 s)",
-   "audiencia": "Jurado ATICMA · transiciones suaves",
+   "titulo": "ATICMA (180 s)",
+   "audiencia": "Jurado ATICMA · movimiento completo",
    "duracionObjetivo": 180,
    "tolerancia": 0,
-   "movimiento": "ligero",
+   "movimiento": "completo",
    "escenas": [
     "a-odisea",
     "a-handia",
@@ -54,6 +55,10 @@
     "x-mapa",
     "x-5m",
     "x-business",
+    "x-multiplicar-1",
+    "x-multiplicar-2",
+    "x-circulo",
+    "x-ipo",
     "q-01",
     "q-02",
     "q-03",
@@ -68,12 +73,15 @@
     "q-12",
     "q-13",
     "q-14",
-    "q-15"
+    "q-15",
+    "q-16",
+    "q-17",
+    "q-18"
    ]
   },
   {
    "id": "estatica",
-   "titulo": "Semifinal ATICMA (180 s, sin animaciones)",
+   "titulo": "ATICMA (180 s, sin animaciones)",
    "audiencia": "Si la organización pide pantallas estáticas",
    "duracionObjetivo": 180,
    "tolerancia": 0,
@@ -112,6 +120,10 @@
     "x-mapa",
     "x-5m",
     "x-business",
+    "x-multiplicar-1",
+    "x-multiplicar-2",
+    "x-circulo",
+    "x-ipo",
     "q-01",
     "q-02",
     "q-03",
@@ -126,7 +138,10 @@
     "q-12",
     "q-13",
     "q-14",
-    "q-15"
+    "q-15",
+    "q-16",
+    "q-17",
+    "q-18"
    ]
   }
  ],
@@ -292,6 +307,38 @@
    "estado": "final"
   },
   {
+   "id": "video-mundo",
+   "tipo": "video",
+   "archivo": "video/mundo-final.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026): mapa con d3-geo y Natural Earth (world-atlas), personajes de Handyx",
+   "licencia": "Propia (Handyx); datos geográficos de dominio público",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-poster",
+   "tipo": "imagen",
+   "archivo": "video/mundo-final-poster.jpg",
+   "procedencia": "Último cuadro de la animación del mundo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "circulo-multiplica",
+   "tipo": "imagen",
+   "archivo": "conceptos/circulo-multiplica.png",
+   "procedencia": "Gráfico creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "camino-ipo",
+   "tipo": "imagen",
+   "archivo": "conceptos/camino-ipo.png",
+   "procedencia": "Gráfico creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
    "id": "pub-presupuestas",
    "tipo": "imagen",
    "archivo": "publicidades/especialista-presupuestas-esperas.webp",
@@ -350,7 +397,7 @@
       "w": 16
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "logo",
      "alt": "Handyx"
@@ -364,7 +411,7 @@
       "w": 88
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Conseguir un profesional no debería ser una ==odisea.==",
      "nivel": 2
@@ -392,7 +439,7 @@
       "w": 30
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**En casa**\nAlgo se rompió y no sabés a quién llamar.",
      "tamano": "s",
@@ -421,7 +468,7 @@
       "w": 30
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**El profesional**\nBusca clientes y organiza su trabajo como puede.",
      "tamano": "s",
@@ -436,7 +483,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "contraste",
      "items": [
@@ -491,7 +538,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "No sabés a quién llamar. ==HandIA te orienta.==",
      "nivel": 2
@@ -517,7 +564,7 @@
       "y": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 60,
      "leyenda": "Demo · HandIA en desarrollo",
@@ -537,7 +584,7 @@
       "w": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "numerada",
      "items": [
@@ -579,7 +626,7 @@
       "y": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 52,
      "leyenda": "Elegís el oficio",
@@ -598,7 +645,7 @@
       "y": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 52,
      "leyenda": "Publicás tu solicitud",
@@ -618,7 +665,7 @@
       "w": 37
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Demo de la app · datos ficticios",
      "tamano": "s"
@@ -663,7 +710,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Más que clientes: herramientas para ==trabajar mejor.==",
      "nivel": 2
@@ -676,7 +723,7 @@
       "y": 25
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 62,
      "leyenda": "Trabajos y agenda",
@@ -695,7 +742,7 @@
       "y": 25
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 62,
      "leyenda": "Clientes y chats",
@@ -715,7 +762,7 @@
       "w": 54
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "contraste",
      "items": [
@@ -755,7 +802,7 @@
       "w": 54
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Próxima evolución:** herramientas potenciadas con IA, para que cada trabajo sea mejor que el anterior.",
      "tamano": "m",
@@ -770,7 +817,7 @@
       "w": 34
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Demo de la app · datos ficticios",
      "tamano": "s"
@@ -815,7 +862,7 @@
       "w": 52
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "No nos quedamos en ==una idea.==",
      "nivel": 2
@@ -829,7 +876,7 @@
       "w": 24
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "TRABAJOS-INFORMADOS",
      "leyenda": "**trabajos con comisión cobrada**",
@@ -845,7 +892,7 @@
       "w": 23
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "ESP-REGISTRADOS",
      "leyenda": "**especialistas registrados**",
@@ -861,7 +908,7 @@
       "w": 50
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Ahora queremos llevar esta experiencia **más allá de los edificios.**",
      "tamano": "m"
@@ -874,7 +921,7 @@
       "y": 12
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 70,
      "leyenda": "App de usuario",
@@ -893,7 +940,7 @@
       "y": 12
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 70,
      "leyenda": "App del profesional",
@@ -909,11 +956,11 @@
      "area": "libre",
      "pos": {
       "x": 59,
-      "y": 93,
+      "y": 89,
       "w": 36
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Demo de las apps · datos ficticios",
      "tamano": "s"
@@ -970,7 +1017,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Empezamos en Mar del Plata. ==Pensamos en grande.==",
      "nivel": 2
@@ -997,7 +1044,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -1027,7 +1074,7 @@
       "w": 56
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Primer trimestre · aspiración:** {{META-CUOTA-LOCAL}} de los trabajos: {{Q1-TRABAJOS}}. Con nuestro ticket real ({{PRUEBA-TICKET}} ≈ USD 45): **{{Q1-TARIFAS-REAL}}** de tarifas.",
      "tamano": "s",
@@ -1042,7 +1089,7 @@
       "w": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Visión 2027:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones (limpieza, mecánica, jardinería, pintura…) y {{META-CUOTA-NACIONAL}} de los servicios contratados por particulares en Argentina.",
      "tamano": "s",
@@ -1094,7 +1141,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Conocemos la competencia. ==Elegimos otro camino.==",
      "nivel": 2
@@ -1108,7 +1155,7 @@
       "w": 54
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "tabla",
      "columnas": [
       "Cómo le cobran al profesional",
@@ -1148,7 +1195,7 @@
       "w": 54
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "También en Argentina: IguanaFix, Servidos, Yo te lo arreglo, Zolvers · Región: Ay Fix (México), GoFixii (Colombia), Zolvers (Chile, México, Colombia). Detalle en los anexos E y F.",
      "tamano": "s"
@@ -1189,7 +1236,7 @@
       "w": 33
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**El profesional conserva todo su presupuesto.** Handyx no le cobra comisión.",
      "tamano": "m",
@@ -1204,7 +1251,7 @@
       "w": 33
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Ejemplo ilustrativo, sin descontar costos de cobro, fiscales y operativos. Modelos de cobro según fuentes públicas consultadas el 04/11/2026; a revalidar.",
      "tamano": "xs"
@@ -1222,7 +1269,7 @@
    "transicion": "fundido",
    "objetivo": "Mostrar un equipo chico con sueños grandes, el pedido de inversión y cerrar con una imagen memorable.",
    "guion": "Somos un equipo chico, pero nuestros sueños no lo son. Desarrollé agentes de inteligencia artificial que superviso para potenciar distintas áreas del negocio.\n\nBuscamos cien mil dólares de inversión inicial para tecnología, operaciones y marketing. Queremos llegar a Silicon Valley para aprender y conectar con mentores e inversores.\n\nHoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo.\n\nNo queremos solamente conectar personas. Queremos ayudar a los profesionales a trabajar cada vez mejor.\n\nY con ellos, construir un mundo con más soluciones y menos problemas.\n\nMuchísimas gracias.",
-   "notas": "2:30–3:00. Dos pasos: avanzar (→) al decir «Hoy empezamos en Mar del Plata».\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto propuesto el 05/11 a pedido de Ignacio, a aprobar: marketing 45 %, operaciones 30 %, tecnología 15 % (se baja desarrollo: con IA es más barato que nunca) y legal/reserva 10 % (no entra en la barra; detalle en «Cada dólar de la inversión»).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "2:30–3:00. Dos pasos: avanzar (→) al decir «Hoy empezamos en Mar del Plata»: arranca el clip del mundo (≈ 19 s: Mar del Plata → el mundo con grietas → los Handys lo arreglan → «Un mundo con más soluciones y menos problemas» → ¡Muchas gracias!). Tiene efectos de sonido suaves; sin sonido: ?sonido=no.\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto propuesto el 05/11 a pedido de Ignacio, a aprobar: marketing 45 %, operaciones 30 %, tecnología 15 % (se baja desarrollo: con IA es más barato que nunca) y legal/reserva 10 % (no entra en la barra; detalle en «Cada dólar de la inversión»).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Equipo: Ignacio (fundador, desarrollo, producto y coordinación) con el apoyo de su pareja en diseño y marketing, y agentes de inteligencia artificial que él desarrolló y supervisa. Handyx busca USD 100.000 de inversión inicial para tecnología, operaciones y marketing, y quiere llegar a Silicon Valley para aprender y conectar con mentores e inversores. Hoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo: un mundo con más soluciones y menos problemas.",
    "referencias": [
     "INV-TOTAL",
@@ -1255,7 +1302,7 @@
       "w": 58
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Somos un equipo chico, pero ==nuestros sueños no lo son.==",
      "nivel": 2,
@@ -1270,7 +1317,7 @@
       "w": 45
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "blanca",
@@ -1296,7 +1343,7 @@
       "w": 41
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "INV-TOTAL",
      "leyenda": "**inversión inicial buscada**",
@@ -1313,67 +1360,24 @@
       "w": 41
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Silicon Valley:** aprender y conectar con mentores e inversores.",
      "tamano": "m",
      "sale": 1
     },
     {
-     "id": "logo2",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 8,
-      "w": 18
-     },
+     "id": "mundo",
+     "tipo": "video",
+     "recurso": "video-mundo",
+     "poster": "video-mundo-poster",
+     "alt": "Mar del Plata, un mundo con grietas que los Handys arreglan y el cierre de Handyx",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
      "paso": 1,
-     "entrada": "fundido",
-     "tipo": "imagen",
-     "recurso": "logo",
-     "alt": "Handyx"
-    },
-    {
-     "id": "f1",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 20,
-      "w": 88
-     },
-     "paso": 1,
-     "entrada": "fundido",
-     "tipo": "titulo",
-     "texto": "Hoy empezamos en Mar del Plata. ==Mañana queremos arreglar el mundo.==",
-     "nivel": 1
-    },
-    {
-     "id": "hs",
-     "area": "libre",
-     "pos": {
-      "x": 50,
-      "y": 54,
-      "w": 46
-     },
-     "paso": 1,
-     "entrada": "fundido",
-     "tipo": "imagen",
-     "recurso": "handys-grupo",
-     "alt": "Los Handys, personajes de Handyx"
-    },
-    {
-     "id": "f2",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 70,
-      "w": 44
-     },
-     "paso": 1,
-     "entrada": "fundido",
-     "tipo": "texto",
-     "texto": "**Un mundo con más soluciones y menos problemas.**",
-     "tamano": "l"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1422,7 +1426,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "De dónde sale ==el número==",
      "nivel": 2
@@ -1436,7 +1440,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -1466,7 +1470,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "Q1-TRABAJOS",
      "leyenda": "**trabajos en el trimestre**",
@@ -1482,7 +1486,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "Q1-TARIFAS-REAL",
      "leyenda": "**de tarifas Handyx**",
@@ -1498,7 +1502,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "Q1-TARIFAS-40",
      "leyenda": "**con ticket de USD 40**",
@@ -1552,7 +1556,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Mantener Handyx cuesta ==poco==",
      "nivel": 2
@@ -1598,7 +1602,7 @@
       "w": 31
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "EQUILIBRIO-TRABAJOS",
      "leyenda": "**trabajos por mes cubren los costos**",
@@ -1614,7 +1618,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -1679,7 +1683,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Conseguir un cliente cuesta ==menos de lo que deja==",
      "nivel": 2
@@ -1693,7 +1697,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "CAC-ESTIMADO",
      "leyenda": "**CAC estimado**",
@@ -1709,7 +1713,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "LTV-ESTIMADO",
      "leyenda": "**LTV estimado**",
@@ -1725,7 +1729,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "LTV-CAC",
      "leyenda": "**veces: LTV / CAC**",
@@ -1741,7 +1745,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -1800,7 +1804,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Lo que ya ==probamos==",
      "nivel": 2
@@ -1814,7 +1818,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "TRABAJOS-INFORMADOS",
      "leyenda": "**trabajos con comisión cobrada**",
@@ -1830,7 +1834,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "ESP-REGISTRADOS",
      "leyenda": "**especialistas registrados**",
@@ -1846,7 +1850,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -1870,7 +1874,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Próxima prueba · diciembre 2026:** {{META-TRABAJOS}} trabajos con tarifa cobrada y {{META-REPETIDORES}} clientes que vuelven.",
      "tamano": "m",
@@ -1918,7 +1922,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Hoy, próximo y ==visión==",
      "nivel": 2
@@ -1932,7 +1936,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "blanca",
@@ -1958,7 +1962,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "gris",
@@ -1981,7 +1985,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "azul",
@@ -2046,7 +2050,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Competidores en ==Argentina==",
      "nivel": 2
@@ -2060,7 +2064,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2092,7 +2096,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2155,7 +2159,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "El modelo existe ==en todo el mundo==",
      "nivel": 2
@@ -2169,7 +2173,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2197,7 +2201,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2225,7 +2229,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Nuestro camino:** el profesional no paga por su trabajo; el usuario paga {{TARIFA-USUARIO}}, visible. Herramientas, historial y clientes que vuelven.",
      "tamano": "m",
@@ -2271,7 +2275,7 @@
       "w": 72
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Mes 1: ==Lanzamos y cobramos==",
      "nivel": 2
@@ -2298,7 +2302,7 @@
       "w": 40
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2339,7 +2343,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2363,7 +2367,7 @@
       "w": 69
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre)**",
      "tamano": "s",
@@ -2377,7 +2381,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 72,
      "leyenda": "HandIA en la demo",
@@ -2428,7 +2432,7 @@
       "w": 72
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Mes 2: ==El profesional se queda==",
      "nivel": 2
@@ -2455,7 +2459,7 @@
       "w": 40
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2496,7 +2500,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2520,7 +2524,7 @@
       "w": 69
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}})**",
      "tamano": "s",
@@ -2534,7 +2538,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 72,
      "leyenda": "Herramientas · diseño propuesto",
@@ -2585,7 +2589,7 @@
       "w": 72
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Mes 3: ==Crecemos a dos lados==",
      "nivel": 2
@@ -2612,7 +2616,7 @@
       "w": 40
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2653,7 +2657,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2677,7 +2681,7 @@
       "w": 69
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Mide: CAC por canal, turnos B2B y trabajos por mes**",
      "tamano": "s",
@@ -2691,7 +2695,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 72,
      "leyenda": "Handyx for Business · diseño propuesto",
@@ -2748,7 +2752,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Para qué es ==cada dólar==",
      "nivel": 2
@@ -2794,7 +2798,7 @@
       "w": 21
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2826,7 +2830,7 @@
       "w": 21
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2858,7 +2862,7 @@
       "w": 21
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2886,7 +2890,7 @@
       "w": 21
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -2949,7 +2953,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "De USD 100.000 a ==USD 1 millón== en trabajos",
      "nivel": 2
@@ -2963,7 +2967,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "META-1M",
      "leyenda": "**en trabajos por Handyx**",
@@ -2979,7 +2983,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "M1-MES",
      "leyenda": "**trabajos por mes**",
@@ -2995,7 +2999,7 @@
       "w": 28
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "contar",
      "tipo": "cifra",
      "afirmacion": "M1-TARIFAS",
      "leyenda": "**de tarifas Handyx**",
@@ -3011,7 +3015,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -3076,7 +3080,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "El mismo arreglo, ==tres experiencias==",
      "nivel": 2
@@ -3090,7 +3094,7 @@
       "w": 27
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "gris",
@@ -3116,7 +3120,7 @@
       "w": 27
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "blanca",
@@ -3142,7 +3146,7 @@
       "w": 30
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "vinetas",
      "caja": "azul",
@@ -3168,7 +3172,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "**Lo que nos diferencia no es una función:** es el recorrido completo, de la foto al trabajo terminado, con el profesional cobrando su presupuesto.",
      "tamano": "m",
@@ -3214,7 +3218,7 @@
       "w": 46
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Una marca que ==se recuerda==",
      "nivel": 2
@@ -3228,7 +3232,7 @@
       "w": 30
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "handys-grupo",
      "alt": "Los Handys"
@@ -3242,7 +3246,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -3269,7 +3273,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 66,
      "leyenda": "Usuario",
@@ -3288,7 +3292,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 66,
      "leyenda": "HandIA",
@@ -3307,7 +3311,7 @@
       "y": 14
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 66,
      "leyenda": "Profesional",
@@ -3358,7 +3362,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Publicidades ==listas para pautar==",
      "nivel": 2
@@ -3372,7 +3376,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "pub-presupuestas",
      "alt": "Publicidad: presupuestás y esperás"
@@ -3386,7 +3390,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "pub-urgencia",
      "alt": "Publicidad: urgencia, programado u obra"
@@ -3400,7 +3404,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "pub-agenda",
      "alt": "Publicidad: tu agenda en orden"
@@ -3414,7 +3418,7 @@
       "w": 26
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "pub-telefono",
      "alt": "Publicidad: tu teléfono no se comparte"
@@ -3428,7 +3432,7 @@
       "w": 32
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -3491,7 +3495,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Tracción en ==los dos lados==",
      "nivel": 2
@@ -3518,7 +3522,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -3563,7 +3567,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -3626,7 +3630,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Herramientas para cada oficio ==(1/2)==",
      "nivel": 2
@@ -3639,7 +3643,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Electricidad · diseño propuesto",
@@ -3658,7 +3662,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Plomería · diseño propuesto",
@@ -3677,7 +3681,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Gas · diseño propuesto",
@@ -3728,7 +3732,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Herramientas para cada oficio ==(2/2)==",
      "nivel": 2
@@ -3741,7 +3745,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Cerrajería · diseño propuesto",
@@ -3760,7 +3764,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Albañilería · diseño propuesto",
@@ -3779,7 +3783,7 @@
       "y": 17
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 76,
      "leyenda": "Aire acondicionado · diseño propuesto",
@@ -3832,7 +3836,7 @@
       "w": 50
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Crecer con ==herramientas para cada uno==",
      "nivel": 3
@@ -3846,7 +3850,7 @@
       "w": 46
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -3877,7 +3881,7 @@
       "y": 13
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 70,
      "leyenda": "Handyx para negocios",
@@ -3896,7 +3900,7 @@
       "y": 13
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 70,
      "leyenda": "Mis números + IA",
@@ -3947,7 +3951,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Lo que logramos en ==3 meses==",
      "nivel": 2
@@ -3961,7 +3965,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -3987,7 +3991,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4048,7 +4052,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Cómo crece ==Handyx==",
      "nivel": 2
@@ -4062,7 +4066,7 @@
       "w": 75
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "escala",
      "tipo": "imagen",
      "recurso": "mapa-crecimiento",
      "alt": "Mapa: Handyx for People (B2C) y Handyx for Business (B2B) alrededor del núcleo de Handyx"
@@ -4114,7 +4118,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Hacia ==USD 5 millones== a fines de 2027",
      "nivel": 2
@@ -4155,7 +4159,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -4181,7 +4185,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "flujo",
      "nodos": [
       {
@@ -4207,7 +4211,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Sin contar suscripciones de apps a medida. Antes de costos. Supuestos a validar con los primeros datos.",
      "tamano": "s"
@@ -4252,7 +4256,7 @@
       "w": 46
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "Un local, ==su equipo y su app==",
      "nivel": 2
@@ -4266,7 +4270,7 @@
       "w": 44
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4297,7 +4301,7 @@
       "y": 12
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 72,
      "leyenda": "Turnos fijos · diseño propuesto",
@@ -4316,7 +4320,7 @@
       "y": 12
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "telefono",
      "alto": 72,
      "leyenda": "App del local · diseño propuesto",
@@ -4326,6 +4330,380 @@
        "alt": "Diseño propuesto: app de un restaurante integrada a Handyx"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "x-multiplicar-1",
+   "titulo": "Maneras de multiplicar ingresos (1/2)",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar cómo crecen los ingresos desde la operación.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Fuentes de ingreso y palancas de crecimiento. Tarifa y profesiones: modelo definido y metas del fundador. Handyx for Business y apps a medida: visión, sin precios aprobados. Materiales: idea a explorar, sin alianzas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Cómo se multiplican los ingresos desde la operación: más trabajos (cada uno deja la tarifa del 15 %), más profesiones (de 6 a 72, más motivos para volver), clientes que vuelven (cada repetición suma ingreso sin volver a pagar captación), Handyx for Business (turnos de personal con la misma tarifa), apps a medida para comercios (suscripción, opción futura) y alianzas de materiales con ferreterías y corralones (a explorar).",
+   "referencias": [
+    "TARIFA-USUARIO",
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Material extra · crecimiento",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "Maneras de ==multiplicar ingresos==",
+     "nivel": 2
+    },
+    {
+     "id": "kk",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 22
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "La operación",
+     "tono": "neutro"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Más trabajos:** cada trabajo deja la tarifa del {{TARIFA-USUARIO}}; marketing y porteros suman volumen",
+       "icono": "porcentaje"
+      },
+      {
+       "texto": "**Más profesiones:** de {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}}, más motivos para volver a la app",
+       "icono": "objetivo"
+      },
+      {
+       "texto": "**Clientes que vuelven:** cada repetición suma ingreso sin volver a pagar la captación",
+       "icono": "repetir"
+      },
+      {
+       "texto": "**Handyx for Business:** turnos de personal para comercios, con la misma tarifa",
+       "icono": "tienda"
+      },
+      {
+       "texto": "**Apps a medida:** suscripción de comercios integrada a Handyx (opción futura)",
+       "icono": "celular"
+      },
+      {
+       "texto": "**Materiales:** alianzas con ferreterías y corralones (a explorar)",
+       "icono": "martillo2"
+      }
+     ],
+     "columnas": 2
+    }
+   ]
+  },
+  {
+   "id": "x-multiplicar-2",
+   "titulo": "Maneras de multiplicar ingresos (2/2)",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión de Ignacio (05/11): reinvertir las ganancias en la empresa y formar una tesorería con activos (acciones, criptomonedas) como colchón y escudo de largo plazo. Encuadre propuesto para el jurado: la tesorería trabaja solo con excedentes —nunca con la inversión recibida ni con la caja operativa—, con política aprobada por el directorio, diversificación y cripto acotada. No se prometen rendimientos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Con las ganancias, dos caminos. Primero, reinvertir en crecer: marketing e IA mientras el costo de conseguir un cliente sea menor que lo que deja, y formación de profesionales. Segundo, una tesorería que protege: solo con excedentes, después de guardar 12 meses de costos; diversificada en bonos, ETFs y acciones, con criptomonedas como máximo el 10 %; aprobada por el directorio y reportada cada trimestre. Objetivo: salud financiera, protección frente a la inflación y un escudo para Handyx a largo plazo. No prometemos rendimientos: la tesorería protege, el negocio multiplica.",
+   "referencias": [
+    "POL-CAJA-MESES",
+    "POL-CRIPTO-MAX"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Material extra · finanzas",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "Las ganancias ==trabajan dos veces==",
+     "nivel": 2
+    },
+    {
+     "id": "a",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 24,
+      "w": 40
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "vinetas",
+     "caja": "blanca",
+     "encabezado": "1 · Reinvertir para crecer",
+     "items": [
+      {
+       "texto": "**Marketing e IA** mientras el CAC sea menor que el LTV"
+      },
+      {
+       "texto": "**Producto:** herramientas por oficio que hacen volver"
+      },
+      {
+       "texto": "**Formación** de profesionales y nuevas profesiones"
+      },
+      {
+       "texto": "**Nuevas ciudades** con red local"
+      }
+     ]
+    },
+    {
+     "id": "b",
+     "area": "libre",
+     "pos": {
+      "x": 50,
+      "y": 24,
+      "w": 45
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "vinetas",
+     "caja": "azul",
+     "encabezado": "2 · Una tesorería que protege",
+     "items": [
+      {
+       "texto": "**Solo excedentes:** nunca la inversión ni la caja operativa"
+      },
+      {
+       "texto": "**{{POL-CAJA-MESES}} meses de costos** guardados antes de invertir"
+      },
+      {
+       "texto": "**Diversificada:** bonos, ETFs y acciones; cripto como máximo el {{POL-CRIPTO-MAX}}"
+      },
+      {
+       "texto": "**Aprobada por el directorio** y reportada cada trimestre"
+      }
+     ]
+    },
+    {
+     "id": "n",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 79,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "**No prometemos rendimientos:** la tesorería protege a Handyx frente a la inflación; el negocio es el que multiplica.",
+     "tamano": "m",
+     "caja": "amarilla"
+    }
+   ]
+  },
+  {
+   "id": "x-circulo",
+   "titulo": "El círculo que multiplica",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Gráfico conceptual (sin cifras): más trabajos → más tarifas → ganancias → reinversión → más trabajos; con los excedentes, una tesorería diversificada con política.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "El círculo que multiplica: más trabajos generan más tarifas; las ganancias, después de costos, se reinvierten en marketing e IA para conseguir más trabajos. Con los excedentes, una tesorería diversificada (bonos, ETFs y acciones; cripto acotada) funciona como colchón de largo plazo, con política aprobada por el directorio.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Material extra · finanzas",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "El círculo que ==multiplica==",
+     "nivel": 2
+    },
+    {
+     "id": "c",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 19,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "escala",
+     "tipo": "imagen",
+     "recurso": "circulo-multiplica",
+     "alt": "Círculo: más trabajos, más tarifas, ganancias y reinversión; con los excedentes, una tesorería que protege",
+     "llenar": true
+    }
+   ]
+  },
+  {
+   "id": "x-ipo",
+   "titulo": "Camino a la IPO",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión de largo plazo, sin fechas ni valuación (no se inventan términos de inversión). Precedentes argentinos públicos: MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). Requisitos típicos de una IPO: ingresos recurrentes y crecientes, rentabilidad, estados contables auditados, gobierno corporativo y directorio independiente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Camino a la IPO, como visión: hoy pre-seed en Mar del Plata; después seed (Argentina y Handyx for Business), serie A (Latinoamérica y herramientas con IA) y escala con rentabilidad, estados auditados y directorio independiente; finalmente cotizar en bolsa, como lo hicieron MercadoLibre en Nasdaq (2007) y Globant en la NYSE (2014). Sin fechas ni valuación comprometidas.",
+   "referencias": [
+    "PREC-MELI",
+    "PREC-GLOBANT"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Material extra · visión",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 9,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "Camino a la ==IPO==",
+     "nivel": 2
+    },
+    {
+     "id": "p",
+     "area": "libre",
+     "pos": {
+      "x": 52,
+      "y": 10.5,
+      "w": 43
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Como lo hicieron **MercadoLibre** ({{PREC-MELI}}) y **Globant** ({{PREC-GLOBANT}}).",
+     "tamano": "s"
+    },
+    {
+     "id": "c",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 20,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "escala",
+     "tipo": "imagen",
+     "recurso": "camino-ipo",
+     "alt": "Escalera: pre-seed hoy, seed, serie A, escala con rentabilidad e IPO",
+     "llenar": true
+    },
+    {
+     "id": "n",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 94,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Visión de largo plazo: sin fechas ni valuación comprometidas.",
+     "tamano": "xs"
     }
    ]
   },
@@ -4370,7 +4748,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "De {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} ==profesiones==",
      "nivel": 2
@@ -4384,7 +4762,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4421,10 +4799,10 @@
      "pos": {
       "x": 5,
       "y": 94,
-      "w": 90
+      "w": 62
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Ejemplos, no confirmados: cada profesión entra cuando hay demanda y podemos verificar a sus profesionales. Todas pagan la misma tarifa visible.",
      "tamano": "xs"
@@ -4461,7 +4839,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 1 de 15",
+     "texto": "Posible pregunta del jurado · 1 de 18",
      "tono": "kicker"
     },
     {
@@ -4473,7 +4851,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cuál es tu CAC?",
      "nivel": 2
@@ -4500,7 +4878,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
      "tamano": "l"
@@ -4514,7 +4892,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4578,7 +4956,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 2 de 15",
+     "texto": "Posible pregunta del jurado · 2 de 18",
      "tono": "kicker"
     },
     {
@@ -4590,7 +4968,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cuánto cuesta mantener Handyx?",
      "nivel": 2
@@ -4617,7 +4995,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
      "tamano": "l"
@@ -4631,7 +5009,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4697,7 +5075,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 3 de 15",
+     "texto": "Posible pregunta del jurado · 3 de 18",
      "tono": "kicker"
     },
     {
@@ -4709,7 +5087,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿De dónde salen el 25 % y los USD 100.000?",
      "nivel": 2
@@ -4736,7 +5114,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "{{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
      "tamano": "l"
@@ -4750,7 +5128,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4814,7 +5192,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 4 de 15",
+     "texto": "Posible pregunta del jurado · 4 de 18",
      "tono": "kicker"
     },
     {
@@ -4826,7 +5204,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cuántos trabajos tienen cobrados?",
      "nivel": 2
@@ -4853,7 +5231,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "{{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos, ticket promedio de {{PRUEBA-TICKET}}; estamos conciliando los comprobantes. Además, {{ESP-REGISTRADOS}} especialistas registrados (no activos ni verificados todavía).",
      "tamano": "l"
@@ -4867,7 +5245,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -4928,7 +5306,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 5 de 15",
+     "texto": "Posible pregunta del jurado · 5 de 18",
      "tono": "kicker"
     },
     {
@@ -4940,7 +5318,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿HandIA funciona hoy?",
      "nivel": 2
@@ -4967,7 +5345,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
      "tamano": "l"
@@ -4981,7 +5359,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5044,7 +5422,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 6 de 15",
+     "texto": "Posible pregunta del jurado · 6 de 18",
      "tono": "kicker"
     },
     {
@@ -5056,7 +5434,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Qué los diferencia de Clickie y el resto?",
      "nivel": 2
@@ -5083,7 +5461,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
      "tamano": "l"
@@ -5097,7 +5475,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5158,7 +5536,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 7 de 15",
+     "texto": "Posible pregunta del jurado · 7 de 18",
      "tono": "kicker"
     },
     {
@@ -5170,7 +5548,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cómo cobran el 15 %?",
      "nivel": 2
@@ -5197,7 +5575,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
      "tamano": "l"
@@ -5211,7 +5589,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5272,7 +5650,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 8 de 15",
+     "texto": "Posible pregunta del jurado · 8 de 18",
      "tono": "kicker"
     },
     {
@@ -5284,7 +5662,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cómo captan y retienen profesionales?",
      "nivel": 2
@@ -5311,7 +5689,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
      "tamano": "l"
@@ -5325,7 +5703,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5391,7 +5769,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 9 de 15",
+     "texto": "Posible pregunta del jurado · 9 de 18",
      "tono": "kicker"
     },
     {
@@ -5403,7 +5781,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿En qué usarían los USD 100.000?",
      "nivel": 2
@@ -5430,7 +5808,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
      "tamano": "l"
@@ -5444,7 +5822,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5505,7 +5883,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 10 de 15",
+     "texto": "Posible pregunta del jurado · 10 de 18",
      "tono": "kicker"
     },
     {
@@ -5517,7 +5895,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Qué hacen si los clientes no vuelven?",
      "nivel": 2
@@ -5544,7 +5922,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
      "tamano": "l"
@@ -5558,7 +5936,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5624,7 +6002,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 11 de 15",
+     "texto": "Posible pregunta del jurado · 11 de 18",
      "tono": "kicker"
     },
     {
@@ -5636,7 +6014,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Por qué invertirían USD 100.000 en Handyx?",
      "nivel": 2
@@ -5663,7 +6041,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Porque el marketing y la IA pueden mover USD 1 millón en trabajos: {{M1-MES}} trabajos por mes, {{M1-CUOTA}} de los arreglos del partido. Es nuestra aspiración, con la cuenta a la vista.",
      "tamano": "l"
@@ -5677,7 +6055,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5738,7 +6116,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 12 de 15",
+     "texto": "Posible pregunta del jurado · 12 de 18",
      "tono": "kicker"
     },
     {
@@ -5750,7 +6128,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Qué herramientas van a tener los profesionales?",
      "nivel": 2
@@ -5777,7 +6155,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Herramientas para cada oficio: calculadoras, checklists de seguridad, registros y fotos del trabajo. Además, sus números (ingresos y gastos) y feedback con IA para mejorar.",
      "tamano": "l"
@@ -5791,7 +6169,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5852,7 +6230,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 13 de 15",
+     "texto": "Posible pregunta del jurado · 13 de 18",
      "tono": "kicker"
     },
     {
@@ -5864,7 +6242,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Cómo van a conseguir tracción?",
      "nivel": 2
@@ -5891,7 +6269,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
      "tamano": "l"
@@ -5905,7 +6283,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -5970,7 +6348,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 14 de 15",
+     "texto": "Posible pregunta del jurado · 14 de 18",
      "tono": "kicker"
     },
     {
@@ -5982,7 +6360,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Hasta dónde puede crecer Handyx?",
      "nivel": 2
@@ -6009,7 +6387,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
      "tamano": "l"
@@ -6023,7 +6401,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -6060,9 +6438,354 @@
   },
   {
    "id": "q-15",
-   "titulo": "Posible pregunta 15: ¿Qué logran en los próximos 3 meses?",
+   "titulo": "Posible pregunta 15: ¿Cómo van a multiplicar los ingresos?",
    "disposicion": "izquierda",
    "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo van a multiplicar los ingresos? Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Posible pregunta del jurado · 15 de 18",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "¿Cómo van a multiplicar los ingresos?",
+     "nivel": 2
+    },
+    {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 32,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 66,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Más trabajos** y profesiones",
+       "icono": "crecimiento"
+      },
+      {
+       "texto": "**For Business** y apps",
+       "icono": "tienda"
+      },
+      {
+       "texto": "**Tesorería** con política",
+       "icono": "alcancia"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 58
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "medidor",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-16",
+   "titulo": "Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Van a invertir la plata de los inversores en cripto? No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
+   "referencias": [
+    "POL-CAJA-MESES",
+    "POL-CRIPTO-MAX"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Posible pregunta del jurado · 16 de 18",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "¿Van a invertir la plata de los inversores en cripto?",
+     "nivel": 2
+    },
+    {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 32,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 66,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**La inversión:** al plan",
+       "icono": "escudo-ok"
+      },
+      {
+       "texto": "**Solo excedentes**",
+       "icono": "alcancia"
+      },
+      {
+       "texto": "**Cripto:** máximo {{POL-CRIPTO-MAX}}",
+       "icono": "balanza"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 58
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "brocha",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-17",
+   "titulo": "Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Piensan en una salida? ¿Una IPO? Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Posible pregunta del jurado · 17 de 18",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "¿Piensan en una salida? ¿Una IPO?",
+     "nivel": 2
+    },
+    {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 32,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 66,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Hoy:** pre-seed",
+       "icono": "cohete"
+      },
+      {
+       "texto": "**Escala:** rentabilidad y gobierno",
+       "icono": "balanza"
+      },
+      {
+       "texto": "**Visión:** IPO",
+       "icono": "banco"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 58
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-18",
+   "titulo": "Posible pregunta 18: ¿Qué logran en los próximos 3 meses?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
@@ -6084,7 +6807,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 15 de 15",
+     "texto": "Posible pregunta del jurado · 18 de 18",
      "tono": "kicker"
     },
     {
@@ -6096,7 +6819,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "mascara",
      "tipo": "titulo",
      "texto": "¿Qué logran en los próximos 3 meses?",
      "nivel": 2
@@ -6123,7 +6846,7 @@
       "w": 90
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "texto",
      "texto": "Mes 1: HandIA con referencia de costo y la tarifa del 15 %. Mes 2: herramientas de las 6 profesiones y feedback con IA. Mes 3: piloto para negocios y 2 profesiones nuevas.",
      "tamano": "l"
@@ -6137,7 +6860,7 @@
       "w": 74
      },
      "paso": 0,
-     "entrada": "fundido",
+     "entrada": "subir",
      "tipo": "lista",
      "estilo": "mosaicos",
      "items": [
@@ -6166,7 +6889,7 @@
      "paso": 0,
      "entrada": "ninguna",
      "tipo": "personaje",
-     "personaje": "medidor",
+     "personaje": "llave",
      "tamano": 26,
      "acciones": []
     }

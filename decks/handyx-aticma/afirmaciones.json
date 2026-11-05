@@ -1378,5 +1378,57 @@
   "uso": "publico",
   "formato": "usd",
   "formula": "3500000 + 1560000"
+ },
+ {
+  "id": "POL-CAJA-MESES",
+  "descripcion": "Política propuesta: meses de costos operativos que se guardan como caja intocable antes de invertir excedentes",
+  "valor": 12,
+  "unidad": "meses",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Política de tesorería propuesta el 05/11 a pedido de Ignacio (a aprobar por el directorio). Solo excedentes; nunca la inversión ni la caja operativa.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "POL-CRIPTO-MAX",
+  "descripcion": "Política propuesta: parte máxima de la tesorería en criptomonedas",
+  "valor": 10,
+  "unidad": "%",
+  "periodo": "",
+  "tipo": "supuesto",
+  "fuente": "Política de tesorería propuesta el 05/11 a pedido de Ignacio (a aprobar por el directorio). Solo excedentes; nunca la inversión ni la caja operativa.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "porcentaje"
+ },
+ {
+  "id": "PREC-MELI",
+  "descripcion": "MercadoLibre salió a la bolsa (IPO)",
+  "valor": "Nasdaq, 2007",
+  "unidad": "",
+  "periodo": "",
+  "tipo": "observado",
+  "fuente": "Registro público: IPO de MercadoLibre en Nasdaq, agosto de 2007.",
+  "corte": "2026-11-05",
+  "verificacion": "verificado",
+  "uso": "publico",
+  "formato": "texto"
+ },
+ {
+  "id": "PREC-GLOBANT",
+  "descripcion": "Globant salió a la bolsa (IPO)",
+  "valor": "NYSE, 2014",
+  "unidad": "",
+  "periodo": "",
+  "tipo": "observado",
+  "fuente": "Registro público: IPO de Globant en la Bolsa de Nueva York, julio de 2014.",
+  "corte": "2026-11-05",
+  "verificacion": "verificado",
+  "uso": "publico",
+  "formato": "texto"
  }
 ]

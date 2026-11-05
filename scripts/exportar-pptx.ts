@@ -29,7 +29,7 @@ try {
   await pagina.waitForTimeout(500);
   const hojas = pagina.locator('section.hoja[data-escena]');
   const n = await hojas.count();
-  const diapositivas: Array<{ imagen: string; notas: string }> = [];
+  const diapositivas: Array<{ imagen: string; notas: string; escena: string; paso: number }> = [];
   for (let k = 0; k < n; k++) {
     const hoja = hojas.nth(k);
     const id = (await hoja.getAttribute('data-escena')) ?? '';
@@ -39,7 +39,7 @@ try {
     const imagen = `${dir}/${String(k + 1).padStart(2, '0')}.png`;
     await hoja.locator('.marco').screenshot({ path: imagen });
     const encabezado = i < principales ? `Diapositiva ${i + 1} de ${principales} · ${e?.duracion ?? ''} s` : 'Anexo · fuera del cronómetro';
-    diapositivas.push({ imagen, notas: paso > 0 ? '(Continúa la misma diapositiva.)' : `${encabezado}\n\nGUION\n${e?.guion ?? ''}\n\nNOTAS\n${e?.notas ?? ''}` });
+    diapositivas.push({ imagen, escena: id, paso, notas: paso > 0 ? '(Continúa la misma diapositiva.)' : `${encabezado}\n\nGUION\n${e?.guion ?? ''}\n\nNOTAS\n${e?.notas ?? ''}` });
   }
   const manifiesto = `${dir}/manifiesto.json`;
   writeFileSync(manifiesto, JSON.stringify({ titulo: `${deck} · ${version}`, diapositivas }, null, 1));

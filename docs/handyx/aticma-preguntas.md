@@ -78,20 +78,39 @@ falta, la lámina de respaldo.
     (520.000 trabajos por año en Argentina) y unos USD 1,56 M de comercios que contratan personal por turnos (1.000 locales × 5 turnos por
     semana). Además, apps a medida para cada comercio, integradas a Handyx. Supuestos a validar. *Respaldo: mapa, USD 5 M, Handyx for Business.*
 
+## Multiplicar ingresos y largo plazo
+
+17. **¿Cómo van a multiplicar los ingresos?**
+    Con el negocio y con las finanzas. El negocio: **más trabajos** (cada uno deja la tarifa del 15 %), **más profesiones** (de 6 a 72),
+    **clientes que vuelven** (suman ingreso sin volver a pagar la captación), **Handyx for Business** (turnos de personal con la misma
+    tarifa), **apps a medida** para comercios (opción futura) y **materiales** con ferreterías y corralones (a explorar). Las finanzas:
+    reinvertimos las ganancias en crecer mientras el CAC sea menor que el LTV y, con los excedentes, armamos una tesorería que protege a
+    Handyx a largo plazo. *Respaldo: maneras de multiplicar ingresos (1/2 y 2/2), el círculo que multiplica.*
+18. **¿Van a invertir la plata de los inversores en cripto?**
+    **No.** La inversión va al plan: marketing, operaciones, tecnología y legal. La tesorería trabaja **solo con excedentes**, después de
+    guardar **12 meses de costos**; diversificada en bonos, ETFs y acciones, con **cripto como máximo el 10 %**, con una política aprobada por
+    el directorio y reportada cada trimestre. **No prometemos rendimientos:** la tesorería protege a Handyx frente a la inflación; el que
+    multiplica es el negocio. Si insisten: «Primero el negocio; la tesorería es una política para cuando haya ganancias».
+    *Respaldo: las ganancias trabajan dos veces.*
+19. **¿Piensan en una salida? ¿Una IPO?**
+    Sí, como visión de largo plazo y sin fechas: hoy pre-seed en Mar del Plata; después seed (Argentina y Handyx for Business), serie A
+    (Latinoamérica y herramientas con IA) y escala con rentabilidad, estados auditados y directorio independiente, hasta cotizar en bolsa,
+    como lo hicieron MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). No hablamos de valuación. *Respaldo: camino a la IPO.*
+
 ## Riesgos y confianza
 
-17. **¿Qué hacen si los clientes no vuelven?**
+20. **¿Qué hacen si los clientes no vuelven?**
     Es nuestra prueba más importante. Antes de escalar revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con
     pocos casos que crecer sin retención.
-18. **¿Cómo verifican a los profesionales?** *(extra)*
+21. **¿Cómo verifican a los profesionales?** *(extra)*
     Registrarse no es estar verificado: el sello de verificado solo lo da nuestro equipo de operaciones con datos reales, y lo mostramos solo
     cuando está confirmado. Las valoraciones de cada trabajo quedan en el historial.
-19. **¿Qué pasa si un trabajo sale mal?** *(extra)*
+22. **¿Qué pasa si un trabajo sale mal?** *(extra)*
     El trabajo queda registrado con lo acordado, las etapas y las fotos; soporte media entre las partes y las valoraciones lo reflejan. No
     prometemos garantías que todavía no tenemos.
-20. **¿Qué hacen con los datos personales?** *(extra)*
+23. **¿Qué hacen con los datos personales?** *(extra)*
     En el preregistro, nombre, WhatsApp y email se guardan **cifrados**; no los mostramos ni los usamos para otra cosa, y el teléfono no se
     comparte entre usuario y profesional: hablan por el chat de la app.
-21. **¿Cuál es el mayor riesgo?** *(extra)*
+24. **¿Cuál es el mayor riesgo?** *(extra)*
     Que los clientes no repitan o que no tengamos suficientes profesionales donde hay demanda. Por eso la meta de diciembre mide justamente
     eso: 50 trabajos cobrados y 5 clientes que vuelven, y crecemos por ciudad con red local.

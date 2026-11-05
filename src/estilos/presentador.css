@@ -56,3 +56,7 @@
 .guion .transicion { color: #9fc0ff; border-left: 3px solid #4A72B0; padding-left: 10px; }
 body.sin-notas .col-notas .notas, body.sin-notas .col-notas .guion { display: none; }
 body.sin-notas .col-notas > h2:nth-of-type(1), body.sin-notas .col-notas > h2:nth-of-type(2) { display: none; }
+
+/* Ir a una diapositiva por número: cartel arriba, visible solo mientras se escribe */
+.ir-numero { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 50; padding: 12px 22px; border-radius: 14px; background: #FFC93C; color: #13305E; font-size: 22px; font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .15s; }
+.ir-numero.activo { opacity: 1; }

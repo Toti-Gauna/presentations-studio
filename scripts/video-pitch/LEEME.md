@@ -23,3 +23,17 @@ Subtítulos del ensayo: `subtitulos-ensayo-04-11.srt` (transcripción automátic
 - `sonidos.py`: efectos del final (por debajo de la voz) y música de las preguntas, sintetizados.
 - `componer3.py pitch|preguntas|unir`: cámara, zócalo, subtítulos (hasta la frase final, que va en pantalla) y audio; une intro + pitch + preguntas.
 - `transcripcion-ensayo-04-11.json`: transcripción con marca de tiempo por palabra (faster-whisper small).
+
+## Final ATICMA (05/11): cierre en vivo, finanzas e IPO
+
+- `montaje/plan_final.py <carpeta>`: plan del **clip del cierre** que se usa en vivo (diapositiva 7, paso 2): el mismo final del
+  montaje (Mar del Plata → mundo con grietas → los Handys lo arreglan → «Un mundo con más soluciones y menos problemas» → «¡Muchas
+  gracias!»), centrado (`ox: 960`, `derecha: 0`). Cuadros con `render.cjs <carpeta> <cuadros> 0 18.85`; audio: efectos de
+  `sonidos.py final` desde 183,15 s (volumen 0,8, fundidos); H.264 + AAC con `+faststart` →
+  `brands/handyx/assets/video/mundo-final.mp4` y su póster (último cuadro) `mundo-final-poster.jpg`.
+- `graficos-finanzas.cjs <carpeta>`: gráficos del respaldo «El círculo que multiplica» y «Camino a la IPO» (PNG transparente) →
+  `brands/handyx/assets/conceptos/{circulo-multiplica,camino-ipo}.png`.
+- `plan_q.py`: 18 preguntas (se suman «¿Cómo van a multiplicar los ingresos?», «¿Van a invertir la plata de los inversores en cripto?»
+  y «¿Piensan en una salida? ¿Una IPO?», cada una con su respaldo). `componer3.py unir` deja el video en 1080p (CRF 23) y una copia en 720p.
+- `../machete-preguntas.py`: además de las respuestas, agrega una última página con el número de cada lámina en el presentador
+  (número + Enter) y su atajo.

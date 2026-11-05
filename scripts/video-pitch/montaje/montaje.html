@@ -67,7 +67,7 @@ const sk=document.getElementById('stks');
 // tarjetas de preguntas
 const cs=document.getElementById('cards');
 (P.cards||[]).forEach(c=>{const d=document.createElement('div');d.className='card';
- d.innerHTML=`<div class="comilla">“</div><div class="k">PREGUNTA DEL JURADO · ${c.n} DE ${c.total}</div><div class="q">${c.q.split(' ').map(w=>`<i>${w}</i>`).join(' ')}</div><div class="barra"></div><img class="pj" src="${A}personajes/${c.pj}-b.webp">`;cs.appendChild(d);
+ d.innerHTML=`<div class="comilla">“</div><div class="k">POSIBLE PREGUNTA DEL JURADO · ${c.n} DE ${c.total}</div><div class="q">${c.q.split(' ').map(w=>`<i>${w}</i>`).join(' ')}</div><div class="barra"></div><img class="pj" src="${A}personajes/${c.pj}-b.webp">`;cs.appendChild(d);
  tl.fromTo(d,{opacity:0},{opacity:1,duration:.3},c.t0)
    .fromTo(d.querySelectorAll('.q i'),{opacity:0,y:50},{opacity:1,y:0,duration:.45,stagger:.06,ease:'power3.out'},c.t0+.1)
    .fromTo(d.querySelector('.comilla'),{scale:0,rotation:-30},{scale:1,rotation:0,duration:.5,ease:'back.out(2)'},c.t0)
@@ -76,6 +76,7 @@ const cs=document.getElementById('cards');
    .to(d,{opacity:0,duration:.3},c.t1-.15)});
 // ── final: el mundo roto que los Handys arreglan ──
 if(P.finale){const F=P.finale, T0=F.t0;
+ if(F.derecha!==undefined){for(const id of ['ftit','fsub'])document.getElementById(id).style.right=(F.derecha+40)+'px';document.getElementById('gracias').style.right=F.derecha+'px';}
  const fin=document.getElementById('final'), svg=document.getElementById('globo');
  const land=topojson.feature(window.LAND,window.LAND.objects.land);
  const NS='http://www.w3.org/2000/svg';const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
@@ -100,7 +101,7 @@ if(P.finale){const F=P.finale, T0=F.t0;
  const st_={u:0};window.FIN=st_;
  // confeti final
  const fc=document.getElementById('fconf');const cols=['#FFC93C','#4A9BEF','#FFFFFF','#F6A623','#1F57A8'];
- const piezas=[];for(let i=0;i<110;i++){const c=document.createElement('div');c.className='conf';c.style.background=cols[i%5];c.style.left='780px';c.style.top='420px';fc.appendChild(c);piezas.push(c)}
+ const piezas=[];for(let i=0;i<110;i++){const c=document.createElement('div');c.className='conf';c.style.background=cols[i%5];c.style.left=((P.finale&&P.finale.ox)||780)+'px';c.style.top='420px';fc.appendChild(c);piezas.push(c)}
  piezas.forEach((c,i)=>{const a=r()*Math.PI*2,v=300+r()*700;const t=T0+F.gracias;tl.set(c,{opacity:1,x:0,y:0},t).to(c,{x:Math.cos(a)*v,y:Math.sin(a)*v*.6-150,rotation:r()*720-360,duration:.9,ease:'power3.out'},t).to(c,{y:'+=600',opacity:0,duration:1.6,ease:'power1.in'},t+.9)});
  // timeline de entrada/salida y textos
  tl.fromTo(fin,{opacity:0},{opacity:1,duration:.5},T0-.2);
@@ -118,7 +119,7 @@ if(P.finale){const F=P.finale, T0=F.t0;
   const cx=lerp(F.mdp[0],F.rot0[0],zo), cy=lerp(F.mdp[1],F.rot0[1],zo);
   const giro=lerp(0,F.giro,cl((u-F.zoomOut)/(F.gracias-F.zoomOut+2)));
   const R=Math.exp(lerp(Math.log(F.R0),Math.log(F.R1),zo))*(u>F.gracias?lerp(1,.62,ease(cl((u-F.gracias)/1)) ):1);
-  const ox=760, oy=u>F.gracias?lerp(610,330,ease(cl((u-F.gracias)/1))):610;
+  const ox=F.ox||760, oy=u>F.gracias?lerp(610,330,ease(cl((u-F.gracias)/1))):610;
   const tiem=(u>F.romper&&u<F.romper+.6)?Math.sin(u*90)*10*(1-(u-F.romper)/.6):0;
   proj.rotate([-(cx+giro),-cy,0]).scale(R).translate([ox+tiem,oy]);
   const nf=CR.filter((c,i)=>u>F.arreglo[i]+.6).length, prog=nf/CR.length;
@@ -144,7 +145,7 @@ if(P.finale){const F=P.finale, T0=F.t0;
    const desde=[i%2?2100:-200, 150+i*110];const objetivo=[q[0]+(i%2?40:-40), q[1]-70];
    let x=lerp(desde[0],objetivo[0],pr), y=lerp(desde[1],objetivo[1],pr)-Math.sin(pr*Math.PI)*120+Math.sin(u*5+i)*8;
    if(u>F.frase){const k=ease(cl((u-F.frase)/1));const a=i/8*Math.PI*2+u*.6;x=lerp(x,ox+Math.cos(a)*(R+120),k);y=lerp(y,oy+Math.sin(a)*(R+60)*.72,k)}
-   if(u>F.gracias){const k=ease(cl((u-F.gracias)/.8));x=lerp(x,330+i*160,k);y=lerp(y,940,k)}
+   if(u>F.gracias){const k=ease(cl((u-F.gracias)/.8));x=lerp(x,(ox-560)+i*160,k);y=lerp(y,940,k)}
    d.style.left=x+'px';d.style.top=y+'px';d.style.opacity=(u<lle?0:1)*(visq||u>F.frase?1:.0);
    pose(d,u>F.gracias?(Math.floor(u*3+i)%2?'c':'b'):u>fx+.6?'c':u>lle+.7?'d':'d');
    d.style.transform=`scale(${u>F.gracias?1.1:.9}) scaleX(${(i%2&&u<fx+.6)?-1:1})`});

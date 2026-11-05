@@ -45,6 +45,33 @@ export interface OpcionesReproductor {
   pie?: boolean;
 }
 
+/** Junta los rótulos de las cifras de una escena en una sola línea al pie (tipos de dato y corte), sin repetirlos. */
+function agruparRotulos(nodo: HTMLElement): void {
+  const chips = [...nodo.querySelectorAll<HTMLElement>('.rotulo')].filter((c) => !c.closest('figcaption'));
+  if (!chips.length) return;
+  const tipos: string[] = [];
+  const cortes: string[] = [];
+  // El pie entra con la primera pieza rotulada y, si todas esas piezas salen, sale con la última (no queda encima de un cierre).
+  let paso = Number.POSITIVE_INFINITY;
+  let sale = -1;
+  let todasSalen = true;
+  for (const c of chips) {
+    const [tipo, corte] = (c.textContent ?? '').split(' · corte ');
+    if (tipo && !tipos.includes(tipo)) tipos.push(tipo);
+    if (corte && !cortes.includes(corte)) cortes.push(corte);
+    const pieza = c.closest<HTMLElement>('[data-paso]');
+    paso = Math.min(paso, pieza ? Number(pieza.dataset['paso']) : 0);
+    const raiz = c.closest<HTMLElement>('[data-sale]');
+    if (raiz) sale = Math.max(sale, Number(raiz.dataset['sale']));
+    else todasSalen = false;
+    c.remove();
+  }
+  for (const g of nodo.querySelectorAll('.rotulos-grilla')) if (!g.querySelector('.rotulo')) g.remove();
+  const pie = h('div', { class: 'rotulos-pie', 'data-paso': String(Number.isFinite(paso) ? paso : 0), 'data-entrada': 'fundido' }, `${tipos.join(' · ')}${cortes.length ? ` · corte ${cortes.join(', ')}` : ''}`);
+  if (todasSalen && sale >= 0) pie.dataset['sale'] = String(sale);
+  nodo.append(pie);
+}
+
 export class Reproductor {
   readonly escenario: HTMLElement;
   private lienzo: HTMLElement;
@@ -88,6 +115,7 @@ export class Reproductor {
     const escena = this.escenas[indice] as Escena;
     const nodo = h('section', { class: `escena disp-${escena.disposicion}`, 'data-escena': escena.id, 'aria-label': escena.titulo });
     for (const el of escena.elementos) nodo.append(construir(el, this.ctx));
+    if (this.ctx.rotulos === 'pie') agruparRotulos(nodo);
     this.lienzo.append(nodo);
     const linea = new LineaEscena(nodo, escena.pasos, this.modo);
     return { indice, escena, nodo, linea };

@@ -84,7 +84,7 @@ function montar(s: Sesion) {
 
   s.escenas.forEach((e, i) => {
     const li = h('li', { class: i >= s.principales ? 'anexo' : '' });
-    if (i === s.principales) indice.append(h('li', { class: 'separador-anexos' }, `Anexos (fuera del recorrido) · Mayús + ${LETRAS.slice(0, s.escenas.length - s.principales).split('').join('/')} · volver: 0`));
+    if (i === s.principales) indice.append(h('li', { class: 'separador-anexos' }, `Anexos (fuera del recorrido) · Mayús + A…${LETRAS[Math.min(s.escenas.length - s.principales, LETRAS.length) - 1] ?? 'A'} o número + Enter · volver: 0`));
     const b = boton(`${i + 1}. ${e.titulo}`, () => ejecutar({ tipo: 'ir', escena: i }), 'item');
     li.append(b, h('span', { class: 'dur' }, `${e.duracion}s`));
     indice.append(li);
@@ -176,7 +176,14 @@ function montar(s: Sesion) {
       guion.innerHTML = `${tramo}<p class="objetivo"><strong>Objetivo:</strong> ${marcado(esc.objetivo)}</p><p class="texto-guion">${marcado(esc.guion).replace(/\n/g, '<br>')}</p>${transicion}${esc.preguntas ? `<p class="preguntas"><strong>Si preguntan:</strong> ${marcado(esc.preguntas)}</p>` : ''}`;
       medios.replaceChildren(...esc.elementos.filter((x) => x.tipo === 'video').map((v) => boton(e.reproduccion.medio === (v as { recurso: string }).recurso && e.reproduccion.reproduciendo ? `⏸ Pausar ${v.id}` : `▶ Reproducir ${v.id}`, () => ejecutar(e.reproduccion.reproduciendo && e.reproduccion.medio === (v as { recurso: string }).recurso ? { tipo: 'pausar' } : { tipo: 'reproducir', medio: (v as { recurso: string }).recurso }))));
     }
-    indice.querySelectorAll('li:not(.separador-anexos)').forEach((li, i) => li.classList.toggle('actual', i === e.escena));
+    indice.querySelectorAll<HTMLElement>('li:not(.separador-anexos)').forEach((li, i) => {
+      li.classList.toggle('actual', i === e.escena);
+      // Al saltar a un anexo lejano, el índice (lista con scroll propio) lo muestra; la página no se mueve.
+      if (i !== e.escena) return;
+      const r = li.getBoundingClientRect();
+      const c = indice.getBoundingClientRect();
+      if (r.top < c.top || r.bottom > c.bottom) indice.scrollTop += r.top - c.top - (c.height - r.height) / 2;
+    });
     btnNegro.classList.toggle('activo', e.negro);
     registrarEscena(e);
   }
@@ -202,8 +209,39 @@ function montar(s: Sesion) {
   } catch {
     /* arranca en la primera */
   }
-  const anexos: Record<string, () => void> = { '0': () => ejecutar({ tipo: 'ir', escena: ultimaPrincipal, paso: (s.forma.pasos[ultimaPrincipal] ?? 1) - 1 }) };
+  const volverPrincipal = () => ejecutar({ tipo: 'ir', escena: ultimaPrincipal, paso: (s.forma.pasos[ultimaPrincipal] ?? 1) - 1 });
+  const anexos: Record<string, () => void> = {};
   for (let k = 0; k < s.escenas.length - s.principales && k < LETRAS.length; k++) anexos[LETRAS[k] as string] = () => ejecutar({ tipo: 'ir', escena: s.principales + k });
+
+  // ── Ir a cualquier diapositiva por su número del índice (número + Enter). Esc cancela; 0 sin número vuelve a la última principal. ──
+  let numero = '';
+  let vencerNumero: number | undefined;
+  const cartelNumero = h('div', { class: 'ir-numero', role: 'status', 'aria-live': 'polite' });
+  document.body.append(cartelNumero);
+  const limpiarNumero = () => {
+    numero = '';
+    cartelNumero.classList.remove('activo');
+    window.clearTimeout(vencerNumero);
+  };
+  const teclear = (d: string) => {
+    numero = (numero + d).slice(-3);
+    const destino = s.escenas[Number(numero) - 1];
+    cartelNumero.textContent = `Ir a ${numero} · ${destino ? destino.titulo : 'no existe'} — Enter`;
+    cartelNumero.classList.add('activo');
+    window.clearTimeout(vencerNumero);
+    vencerNumero = window.setTimeout(limpiarNumero, 4000);
+  };
+  const numeros: Record<string, () => void> = {
+    '0': () => (numero ? teclear('0') : volverPrincipal()),
+    Enter: () => {
+      if (!numero) return ejecutar({ tipo: 'siguiente' });
+      const i = Number(numero) - 1;
+      limpiarNumero();
+      if (s.escenas[i]) ejecutar({ tipo: 'ir', escena: i });
+    },
+    Escape: () => limpiarNumero(),
+  };
+  for (const d of '123456789') numeros[d] = () => teclear(d);
 
   window.setInterval(() => {
     const t = tiempoReloj(anf.estado.reloj, Date.now());
@@ -226,6 +264,7 @@ function montar(s: Sesion) {
     n: () => alternarNotas(),
     f: () => void (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()),
     ...anexos,
+    ...numeros,
   });
 
   function abrirPublica() {
