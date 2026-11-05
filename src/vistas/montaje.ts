@@ -28,7 +28,7 @@ const CSS = `
 .esc{position:absolute;inset:0;opacity:0;isolation:isolate}
 .cara{position:absolute;left:0;top:0;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px #FFC93C,0 18px 44px rgba(0,0,0,.4);opacity:0}
 .cara img{width:100%;height:100%;object-fit:cover;display:block}
-.subs{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);max-width:1500px;padding:12px 28px;border-radius:20px;background:rgba(14,29,54,.78);color:#fff;font:600 36px/1.3 'DM Sans Variable','DM Sans',sans-serif;text-align:center;opacity:0}
+.subs{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);width:max-content;max-width:1640px;padding:12px 28px;border-radius:20px;background:rgba(14,29,54,.78);color:#fff;font:600 36px/1.3 'DM Sans Variable','DM Sans',sans-serif;text-align:center;opacity:0}
 .subs b{color:#FFC93C;font-weight:800}
 .final{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
 .qrs{position:absolute;inset:0;pointer-events:none}
