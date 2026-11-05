@@ -20,7 +20,7 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (54 páginas: 7 diapositivas, el paso 2 de la 7, 28 de respaldo y 18 de preguntas), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (56 páginas: 7 diapositivas, el paso 2 de la 7, 29 de respaldo y 19 de preguntas), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
@@ -81,10 +81,20 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
   independiente → IPO; precedentes MercadoLibre en Nasdaq 2007 y Globant en NYSE 2014). Visión sin fechas ni valuación.
 - Preguntas nuevas: 15 multiplicar ingresos, 16 cripto con la plata de los inversores («No»), 17 salida/IPO.
 
+## Pedido del 05/11 (5): ferreterías conectadas
+
+- Material extra **«Ferreterías conectadas: stock para los profesionales»**: animación de 16 s a pantalla completa que arranca sola al
+  abrir la lámina (edificios que se construyen, la ferretería con su vidriera, el edificio con la pérdida, el profesional que ve en Handyx
+  qué materiales necesita y qué ferretería cercana los tiene en stock, los reserva, los retira camino al trabajo y llega con todo).
+  Beneficios: profesional, ferretería, vecino y Handyx (otra fuente de ingresos a explorar). Rótulos en pantalla: «Visión · a explorar ·
+  sin alianzas firmadas» y «Diseño propuesto · datos ficticios» en el celular. Sin nombres de comercios reales ni precios.
+- Pregunta 18: «¿Cómo consiguen los materiales los profesionales?» (respaldo: la animación). «Materiales» en Maneras de multiplicar
+  ingresos (1/2) apunta a esta visión.
+
 ## Posibles preguntas del jurado
 
-Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (24
-preguntas: las 18 del video y 6 extra, más una página con el número y el atajo de cada lámina): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
+Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (25
+preguntas: las 19 del video y 6 extra, más una página con el número y el atajo de cada lámina): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
 (`scripts/video-pitch/machete-preguntas.py`).
 
 ## Control de calidad
@@ -106,12 +116,12 @@ preguntas: las 18 del video y 6 extra, más una página con el número y el ataj
 
 ## Verificado en esta sesión
 
-- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (36/36, con 16
+- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (37/37, con 17
   comprobaciones del pitch: avanzar no entra a anexos, movimiento completo, clip del mundo en el cierre, rótulos al pie, Mayús + F, número +
-  Enter, 0, refresco que conserva la posición y el registro de ensayos, Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo
+  Enter, animación de ferreterías que arranca sola, 0, refresco que conserva la posición y el registro de ensayos, Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo
   sin recargar, pantalla pública sin notas).
-- Revisión automática de las 53 escenas (el pie de rótulos no pisa ninguna pieza; nada se sale del escenario) y capturas 1920 × 1080.
-- PDF de diapositivas (54 páginas), PDF de lectura, PPTX (54 diapositivas con notas), zip de imágenes y machete (5 páginas).
+- Revisión automática de las escenas (el pie de rótulos no pisa ninguna pieza; nada se sale del escenario) y capturas 1920 × 1080.
+- PDF de diapositivas (56 páginas), PDF de lectura, PPTX (56 diapositivas con notas), zip de imágenes y machete (5 páginas).
 - Control remoto y reconexión: cubiertos por el e2e con el deck `handyx` (mismo motor); no probados con un celular real ni con este deck.
 
 ## Fuentes

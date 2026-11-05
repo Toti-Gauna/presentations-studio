@@ -194,4 +194,9 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
     `imagen` (gráficos anchos sin tope de alto), el conteo animado usa el mismo formateador que la cifra final (antes `usd` terminaba sin
     «USD»), fundido entre escenas sin doble exposición (la que sale se va antes), manifiesto del PPTX con escena y paso.
   - Verificado: verify, e2e 36/36, revisión automática de superposiciones del pie (53 escenas), PDF, PPTX (54), zip y capturas (54).
+- 05/11 (5) · **Ferreterías conectadas** (pedido de Ignacio): material extra animado de 16 s (`video/ferreterias.mp4` + póster) a pantalla
+  completa en el respaldo «Ferreterías conectadas: stock para los profesionales» y pregunta 18 «¿Cómo consiguen los materiales los
+  profesionales?». Visión a explorar, sin alianzas firmadas (rotulado en pantalla). Fuente de la animación:
+  `scripts/video-pitch/ferreterias/` (HTML + GSAP cuadro a cuadro, efectos sintetizados). El montaje del video acepta tomas que son
+  secuencias de cuadros (`frames`), con su audio mezclado en la música de las preguntas. 29 láminas de respaldo y 19 preguntas.
 

@@ -32,7 +32,9 @@ filas=[]
 for k,sid in enumerate(ver['escenas']+ver['anexos']):
     n=k+1; j=k-len(ver['escenas'])
     atajo='→ en orden' if j<0 else (f'Mayús + {LET[j]}' if j<len(LET) else '')
-    filas.append(f'<tr{" class=p" if j<0 else ""}><td class=num>{n}</td><td>{html.escape(tit[sid])}</td><td class=at>{atajo}</td></tr>')
+    nombre=tit[sid]
+    if nombre.startswith('Posible pregunta '): nombre='P'+nombre[len('Posible pregunta '):].replace(': ',' · ',1)
+    filas.append(f'<tr{" class=p" if j<0 else ""}><td class=num>{n}</td><td>{html.escape(nombre)}</td><td class=at>{atajo}</td></tr>')
 mitad=(len(filas)+1)//2
 partes.append('<section class="atajos"><h2>Láminas en el presentador · número + Enter</h2><p class="intro">Escribí el número y apretá Enter '
   '(se ve a qué lámina va; Esc cancela). <b>0</b> vuelve a la última diapositiva del pitch. En el celular: menú ☰.</p><div class=cols>'
@@ -52,7 +54,7 @@ h2{{font-family:'Archivo';font-weight:900;font-stretch:112%;font-size:13pt;color
 .x{{background:#FFC93C;color:#13305E;font-size:7.5pt;font-weight:800;padding:1px 6px;border-radius:999px;vertical-align:middle;text-transform:uppercase}}
 b{{color:#13305E}} i{{color:#4A5873}} code{{font-size:9pt}}
 .atajos{{break-before:page}} .cols{{display:flex;gap:12px}} .cols table{{flex:1;border-collapse:collapse;font-size:8.6pt}}
-.cols td{{padding:3px 6px;border-bottom:1px solid #E3E8F2;vertical-align:top}} .cols tr.p td{{background:#FFF6DA}}
+.cols td{{padding:2.5px 6px;border-bottom:1px solid #E3E8F2;vertical-align:top}} .cols tr.p td{{background:#FFF6DA}}
 .cols .num{{font-weight:800;color:#1F57A8;width:22px;text-align:right}} .cols .at{{color:#4A5873;white-space:nowrap}}
 </style></head><body>{''.join(partes)}</body></html>"""
 open(out,'w').write(doc)

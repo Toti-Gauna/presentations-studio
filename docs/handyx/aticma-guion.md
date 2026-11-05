@@ -3,7 +3,7 @@
 > Generado por `python3 -I scripts/generar-guion-aticma.py` desde `decks/handyx-aticma/deck.json`. No editar a mano:
 > el guion literal vive en el campo `guion` de cada escena (lo ve el presentador en sus notas).
 
-Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 46 láminas de respaldo.
+Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `evento`: 7 diapositivas principales y 48 láminas de respaldo.
 
 ## Ritmo
 
@@ -106,25 +106,27 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 32 | 32 + Enter | Maneras de multiplicar ingresos (1/2) | Explicar cómo crecen los ingresos desde la operación. |
 | 33 | 33 + Enter | Maneras de multiplicar ingresos (2/2) | Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo. |
 | 34 | 34 + Enter | El círculo que multiplica | Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería. |
-| 35 | 35 + Enter | Camino a la IPO | Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa. |
-| 36 | 36 + Enter | Posible pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| 37 | 37 + Enter | Posible pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 38 | 38 + Enter | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| 39 | 39 + Enter | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| 40 | 40 + Enter | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| 41 | 41 + Enter | Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
-| 42 | 42 + Enter | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
-| 43 | 43 + Enter | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| 44 | 44 + Enter | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| 45 | 45 + Enter | Posible pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
-| 46 | 46 + Enter | Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 47 | 47 + Enter | Posible pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| 48 | 48 + Enter | Posible pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
-| 49 | 49 + Enter | Posible pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| 50 | 50 + Enter | Posible pregunta 15: ¿Cómo van a multiplicar los ingresos? | Respuesta breve, con números y supuestos rotulados. |
-| 51 | 51 + Enter | Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto? | Respuesta breve, con números y supuestos rotulados. |
-| 52 | 52 + Enter | Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO? | Respuesta breve, con números y supuestos rotulados. |
-| 53 | 53 + Enter | Posible pregunta 18: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
+| 35 | 35 + Enter | Ferreterías conectadas: stock para los profesionales | Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales. |
+| 36 | 36 + Enter | Camino a la IPO | Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa. |
+| 37 | 37 + Enter | Posible pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| 38 | 38 + Enter | Posible pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 39 | 39 + Enter | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| 40 | 40 + Enter | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| 41 | 41 + Enter | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| 42 | 42 + Enter | Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| 43 | 43 + Enter | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| 44 | 44 + Enter | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| 45 | 45 + Enter | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| 46 | 46 + Enter | Posible pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| 47 | 47 + Enter | Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 48 | 48 + Enter | Posible pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| 49 | 49 + Enter | Posible pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
+| 50 | 50 + Enter | Posible pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| 51 | 51 + Enter | Posible pregunta 15: ¿Cómo van a multiplicar los ingresos? | Respuesta breve, con números y supuestos rotulados. |
+| 52 | 52 + Enter | Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto? | Respuesta breve, con números y supuestos rotulados. |
+| 53 | 53 + Enter | Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO? | Respuesta breve, con números y supuestos rotulados. |
+| 54 | 54 + Enter | Posible pregunta 18: ¿Cómo consiguen los materiales los profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| 55 | 55 + Enter | Posible pregunta 19: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0** (sin número antes). Escribir un número muestra a qué lámina va; **Esc** cancela.
 Avanzar (→, espacio, clicker, celular) nunca entra a los anexos. En el celular: menú ☰.

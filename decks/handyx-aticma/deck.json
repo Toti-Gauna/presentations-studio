@@ -6,7 +6,7 @@
  "tema": "handyx-premium",
  "hub": {
   "grupo": "Handyx · ATICMA 2026 (final)",
-  "descripcion": "Siete diapositivas para 180 segundos con el guion de Ignacio y cierre con el clip del mundo; modo de ensayo, 28 láminas de respaldo y 18 posibles preguntas del jurado. Modelo 0 % / 15 %.",
+  "descripcion": "Siete diapositivas para 180 segundos con el guion de Ignacio y cierre con el clip del mundo; modo de ensayo, 29 láminas de respaldo y 19 posibles preguntas del jurado. Modelo 0 % / 15 %.",
   "orden": 0,
   "estilo": "comercial"
  },
@@ -58,6 +58,7 @@
     "x-multiplicar-1",
     "x-multiplicar-2",
     "x-circulo",
+    "x-ferreterias",
     "x-ipo",
     "q-01",
     "q-02",
@@ -76,7 +77,8 @@
     "q-15",
     "q-16",
     "q-17",
-    "q-18"
+    "q-18",
+    "q-19"
    ]
   },
   {
@@ -123,6 +125,7 @@
     "x-multiplicar-1",
     "x-multiplicar-2",
     "x-circulo",
+    "x-ferreterias",
     "x-ipo",
     "q-01",
     "q-02",
@@ -141,7 +144,8 @@
     "q-15",
     "q-16",
     "q-17",
-    "q-18"
+    "q-18",
+    "q-19"
    ]
   }
  ],
@@ -335,6 +339,22 @@
    "tipo": "imagen",
    "archivo": "conceptos/camino-ipo.png",
    "procedencia": "Gráfico creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-ferreterias",
+   "tipo": "video",
+   "archivo": "video/ferreterias.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026) con los personajes de Handyx y los íconos Lucide; pantalla del celular: diseño propuesto con datos ficticios",
+   "licencia": "Propia (Handyx); íconos Lucide (ISC)",
+   "estado": "final"
+  },
+  {
+   "id": "video-ferreterias-poster",
+   "tipo": "imagen",
+   "archivo": "video/ferreterias-poster.jpg",
+   "procedencia": "Último cuadro de la animación de ferreterías conectadas",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
@@ -4427,7 +4447,7 @@
        "icono": "celular"
       },
       {
-       "texto": "**Materiales:** alianzas con ferreterías y corralones (a explorar)",
+       "texto": "**Materiales:** ferreterías conectadas, con stock para los profesionales (a explorar)",
        "icono": "martillo2"
       }
      ],
@@ -4708,6 +4728,37 @@
    ]
   },
   {
+   "id": "x-ferreterias",
+   "titulo": "Ferreterías conectadas: stock para los profesionales",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión de Ignacio (05/11): conectarnos con los ferreteros para conseguir stock para los profesionales. A explorar: no hay alianzas firmadas, acuerdos comerciales, comisiones ni precios definidos. Animación de 16 s que arranca sola al abrir la lámina (sonido suave; sin sonido: ?sonido=no): el vecino pide el arreglo → el profesional ve qué materiales necesita → Handyx le muestra stock en ferreterías cercanas → lo reserva y lo retira camino al trabajo → llega con todo. La pantalla del celular es un diseño propuesto con datos ficticios. Si preguntan cómo gana Handyx: otra fuente de ingresos a explorar con las ferreterías, sin modelo definido todavía.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Ferreterías conectadas: el profesional ve qué materiales necesita para el trabajo, Handyx le muestra qué ferreterías del barrio los tienen en stock, los reserva y los retira camino al trabajo, y llega con todo. El profesional llega con lo que necesita, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de ingresos. Es una visión a explorar, sin alianzas firmadas.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "clip",
+     "tipo": "video",
+     "recurso": "video-ferreterias",
+     "poster": "video-ferreterias-poster",
+     "alt": "Animación: una ciudad con una ferretería y un edificio; el profesional ve en Handyx los materiales y el stock cercano, los retira camino al trabajo y el arreglo queda listo",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
    "id": "x-profesiones",
    "titulo": "De 6 a 72 profesiones",
    "disposicion": "izquierda",
@@ -4839,7 +4890,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 1 de 18",
+     "texto": "Posible pregunta del jurado · 1 de 19",
      "tono": "kicker"
     },
     {
@@ -4956,7 +5007,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 2 de 18",
+     "texto": "Posible pregunta del jurado · 2 de 19",
      "tono": "kicker"
     },
     {
@@ -5075,7 +5126,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 3 de 18",
+     "texto": "Posible pregunta del jurado · 3 de 19",
      "tono": "kicker"
     },
     {
@@ -5192,7 +5243,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 4 de 18",
+     "texto": "Posible pregunta del jurado · 4 de 19",
      "tono": "kicker"
     },
     {
@@ -5306,7 +5357,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 5 de 18",
+     "texto": "Posible pregunta del jurado · 5 de 19",
      "tono": "kicker"
     },
     {
@@ -5422,7 +5473,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 6 de 18",
+     "texto": "Posible pregunta del jurado · 6 de 19",
      "tono": "kicker"
     },
     {
@@ -5536,7 +5587,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 7 de 18",
+     "texto": "Posible pregunta del jurado · 7 de 19",
      "tono": "kicker"
     },
     {
@@ -5650,7 +5701,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 8 de 18",
+     "texto": "Posible pregunta del jurado · 8 de 19",
      "tono": "kicker"
     },
     {
@@ -5769,7 +5820,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 9 de 18",
+     "texto": "Posible pregunta del jurado · 9 de 19",
      "tono": "kicker"
     },
     {
@@ -5883,7 +5934,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 10 de 18",
+     "texto": "Posible pregunta del jurado · 10 de 19",
      "tono": "kicker"
     },
     {
@@ -6002,7 +6053,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 11 de 18",
+     "texto": "Posible pregunta del jurado · 11 de 19",
      "tono": "kicker"
     },
     {
@@ -6116,7 +6167,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 12 de 18",
+     "texto": "Posible pregunta del jurado · 12 de 19",
      "tono": "kicker"
     },
     {
@@ -6230,7 +6281,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 13 de 18",
+     "texto": "Posible pregunta del jurado · 13 de 19",
      "tono": "kicker"
     },
     {
@@ -6348,7 +6399,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 14 de 18",
+     "texto": "Posible pregunta del jurado · 14 de 19",
      "tono": "kicker"
     },
     {
@@ -6462,7 +6513,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 15 de 18",
+     "texto": "Posible pregunta del jurado · 15 de 19",
      "tono": "kicker"
     },
     {
@@ -6579,7 +6630,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 16 de 18",
+     "texto": "Posible pregunta del jurado · 16 de 19",
      "tono": "kicker"
     },
     {
@@ -6693,7 +6744,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 17 de 18",
+     "texto": "Posible pregunta del jurado · 17 de 19",
      "tono": "kicker"
     },
     {
@@ -6783,9 +6834,123 @@
   },
   {
    "id": "q-18",
-   "titulo": "Posible pregunta 18: ¿Qué logran en los próximos 3 meses?",
+   "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales los profesionales?",
    "disposicion": "izquierda",
    "paleta": "gris",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo consiguen los materiales los profesionales? Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Posible pregunta del jurado · 18 de 19",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "¿Cómo consiguen los materiales los profesionales?",
+     "nivel": 2
+    },
+    {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 32,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 66,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Stock** en ferreterías cercanas",
+       "icono": "tienda"
+      },
+      {
+       "texto": "**Retira** camino al trabajo",
+       "icono": "ruta"
+      },
+      {
+       "texto": "**Otra fuente** de ingresos",
+       "icono": "crecimiento"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 58
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-19",
+   "titulo": "Posible pregunta 19: ¿Qué logran en los próximos 3 meses?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
@@ -6807,7 +6972,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 18 de 18",
+     "texto": "Posible pregunta del jurado · 19 de 19",
      "tono": "kicker"
     },
     {
@@ -6889,7 +7054,7 @@
      "paso": 0,
      "entrada": "ninguna",
      "tipo": "personaje",
-     "personaje": "llave",
+     "personaje": "grifo",
      "tamano": 26,
      "acciones": []
     }

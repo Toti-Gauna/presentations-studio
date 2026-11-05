@@ -96,21 +96,26 @@ falta, la lámina de respaldo.
     Sí, como visión de largo plazo y sin fechas: hoy pre-seed en Mar del Plata; después seed (Argentina y Handyx for Business), serie A
     (Latinoamérica y herramientas con IA) y escala con rentabilidad, estados auditados y directorio independiente, hasta cotizar en bolsa,
     como lo hicieron MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). No hablamos de valuación. *Respaldo: camino a la IPO.*
+20. **¿Cómo consiguen los materiales los profesionales?**
+    Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las **ferreterías y los corralones del barrio**: el
+    profesional ve qué materiales necesita para el trabajo y dónde hay stock cerca, los reserva y los retira camino al trabajo. El
+    profesional llega con todo, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de
+    ingresos. **Es una visión a explorar: no hay alianzas firmadas** ni comisiones definidas. *Respaldo: ferreterías conectadas (animación).*
 
 ## Riesgos y confianza
 
-20. **¿Qué hacen si los clientes no vuelven?**
+21. **¿Qué hacen si los clientes no vuelven?**
     Es nuestra prueba más importante. Antes de escalar revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con
     pocos casos que crecer sin retención.
-21. **¿Cómo verifican a los profesionales?** *(extra)*
+22. **¿Cómo verifican a los profesionales?** *(extra)*
     Registrarse no es estar verificado: el sello de verificado solo lo da nuestro equipo de operaciones con datos reales, y lo mostramos solo
     cuando está confirmado. Las valoraciones de cada trabajo quedan en el historial.
-22. **¿Qué pasa si un trabajo sale mal?** *(extra)*
+23. **¿Qué pasa si un trabajo sale mal?** *(extra)*
     El trabajo queda registrado con lo acordado, las etapas y las fotos; soporte media entre las partes y las valoraciones lo reflejan. No
     prometemos garantías que todavía no tenemos.
-23. **¿Qué hacen con los datos personales?** *(extra)*
+24. **¿Qué hacen con los datos personales?** *(extra)*
     En el preregistro, nombre, WhatsApp y email se guardan **cifrados**; no los mostramos ni los usamos para otra cosa, y el teléfono no se
     comparte entre usuario y profesional: hablan por el chat de la app.
-24. **¿Cuál es el mayor riesgo?** *(extra)*
+25. **¿Cuál es el mayor riesgo?** *(extra)*
     Que los clientes no repitan o que no tengamos suficientes profesionales donde hay demanda. Por eso la meta de diciembre mide justamente
     eso: 50 trabajos cobrados y 5 clientes que vuelven, y crecemos por ciudad con red local.

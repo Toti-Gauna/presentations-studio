@@ -37,3 +37,13 @@ Subtítulos del ensayo: `subtitulos-ensayo-04-11.srt` (transcripción automátic
   y «¿Piensan en una salida? ¿Una IPO?», cada una con su respaldo). `componer3.py unir` deja el video en 1080p (CRF 23) y una copia en 720p.
 - `../machete-preguntas.py`: además de las respuestas, agrega una última página con el número de cada lámina en el presentador
   (número + Enter) y su atajo.
+
+## Ferreterías conectadas (05/11)
+
+`ferreterias/`: animación de 16 s del respaldo «Ferreterías conectadas: stock para los profesionales» (visión a explorar).
+- `ferreterias.html`: escena 1920 × 1080 con GSAP; `window.ir(t)` la deja en el segundo `t` (la línea de tiempo mueve los contenedores;
+  autos, nubes, sol, ventanas y personajes se calculan desde `t`, así cada cuadro es reproducible).
+- `render.cjs <pagina.html> <cuadros> 0 16`: cuadros JPG; `sonido.py <salida.wav>` (numpy): efectos suaves sincronizados.
+- ffmpeg (H.264 high CRF 20 + AAC, `+faststart`) → `brands/handyx/assets/video/ferreterias.mp4`; póster = último cuadro.
+- En el video del pitch entra como toma `frames` del montaje (`plan_q.py`, `ANIM`), con su audio mezclado en `sonidos.py preguntas`.
+

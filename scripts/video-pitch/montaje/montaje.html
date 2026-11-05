@@ -52,7 +52,9 @@ const st=document.getElementById('stage');
 if(P.fondo){document.getElementById('fondo').src=P.fondo}else{document.getElementById('fondo').remove()}
 Object.assign(st.style,{left:P.stage[0]+'px',top:P.stage[1]+'px',width:P.stage[2]+'px',height:P.stage[3]+'px',borderRadius:P.stage[2]>1900?'0':'18px'});
 // tomas con cámara
+const CLIPS=[]; // tomas que son una animación ya renderizada (secuencia de cuadros)
 P.shots.forEach((s,i)=>{const d=document.createElement('div');d.className='shot';d.innerHTML=`<img src="${s.img}">`;st.appendChild(d);const im=d.firstChild;
+ if(s.frames)CLIPS.push({s,im});
  const k0=s.keys[0];gsap.set(im,{x:k0[1],y:k0[2],scale:k0[3]});
  const dx=(s.push||1)*90;
  tl.fromTo(d,{opacity:0,x:dx,scale:1.02},{opacity:1,x:0,scale:1,duration:.55,ease:'power3.out'},Math.max(0,s.t0-0.25));
@@ -152,5 +154,10 @@ if(P.finale){const F=P.finale, T0=F.t0;
  };
 }
 window.DUR=P.dur;
-window.ir=(t)=>{tl.seek(t,false);if(typeof window.pintarFinal==="function")window.pintarFinal(t)};
+window.ir=(t)=>{tl.seek(t,false);if(typeof window.pintarFinal==="function")window.pintarFinal(t);
+ const esperas=[];
+ for(const c of CLIPS){if(t<c.s.t0-0.5||t>c.s.t1+0.2)continue;
+  const n=Math.max(0,Math.min(c.s.n-1,Math.floor((t-c.s.t0)*c.s.fps)));const src=c.s.frames.replace('{n}',String(n).padStart(5,'0'));
+  if(c.im.getAttribute('src')!==src){c.im.src=src;esperas.push(c.im.decode().catch(()=>null))}}
+ return Promise.all(esperas)};
 </script></body></html>

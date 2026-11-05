@@ -43,4 +43,8 @@ else:
     pad*=0.05*(0.65+0.35*np.sin(2*np.pi*0.25*t))*np.clip(t/1.5,0,1)*np.clip((T-t)/2,0,1)
     L+=pad; R+=pad
     for c in tj['cards']: add(L,R,ruido(.6,400,5000,.18),c-.1); add(L,R,tono(880,.3,.06),c+.15)
+    for t0,archivo in tj.get('clips',[]):   # audio de las animaciones a pantalla completa
+        w=wave.open(archivo); x=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).reshape(-1,w.getnchannels()).astype(float)/32768; w.close()
+        i=int(t0*SR); n=min(len(x),len(L)-i)
+        if n>0: L[i:i+n]+=x[:n,0]*.22; R[i:i+n]+=x[:n,-1]*.22
     guardar((L,R),sys.argv[2])

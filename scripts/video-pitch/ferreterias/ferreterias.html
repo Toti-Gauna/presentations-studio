@@ -1,0 +1,311 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Ferreterías conectadas: animación del respaldo del pitch (visión a explorar, sin alianzas firmadas).
+     Se renderiza cuadro a cuadro: window.ir(t) deja la escena exactamente en el segundo t. -->
+<style>
+@font-face{font-family:'Archivo';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:'DM Sans';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2') format('woff2');font-weight:100 1000}
+*{margin:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#F7F6F1}
+body{font-family:'DM Sans';color:#0E1D36}
+#esc{position:absolute;inset:0;overflow:hidden}
+.t{font-family:'Archivo';font-weight:900;font-stretch:118%;letter-spacing:-.01em}
+mark{background:#FFC93C;color:#0E1D36;padding:0 .14em;border-radius:.12em;box-decoration-break:clone}
+.abs{position:absolute}
+#cielo{position:absolute;left:0;top:0;width:1920px;height:840px;background:linear-gradient(#C9DCF8 0%,#E3EDFB 55%,#F7F6F1 100%)}
+#sol{position:absolute;left:1180px;top:250px;width:110px;height:110px}
+#sol .disco{position:absolute;inset:0;border-radius:50%;background:#FFC93C;box-shadow:0 0 0 14px rgba(255,201,60,.22),0 0 70px rgba(255,201,60,.55)}
+#sol .rayos{position:absolute;left:-45px;top:-45px;width:200px;height:200px}
+#sol .rayos i{position:absolute;left:96px;top:0;width:8px;height:26px;border-radius:6px;background:#FFC93C;transform-origin:4px 100px}
+.nube{position:absolute;width:190px;height:52px;border-radius:52px;background:#fff;opacity:.95}
+.nube::before{content:'';position:absolute;left:30px;top:-30px;width:74px;height:74px;border-radius:50%;background:#fff}
+.nube::after{content:'';position:absolute;left:86px;top:-44px;width:92px;height:92px;border-radius:50%;background:#fff}
+.edif-fondo{position:absolute;bottom:240px;transform-origin:50% 100%;border-radius:8px 8px 0 0}
+.edif-fondo .v{position:absolute;width:14px;height:18px;border-radius:3px;background:rgba(255,255,255,.6)}
+.edif-fondo .v.on{background:#FFE9A8}
+#vereda{position:absolute;left:0;top:840px;width:1920px;height:42px;background-color:#ECECEC;background-image:linear-gradient(90deg,rgba(14,29,54,.07) 2px,transparent 2px),linear-gradient(rgba(14,29,54,.07) 2px,transparent 2px);background-size:42px 42px;border-top:4px solid #D6D9E0}
+#cordon{position:absolute;left:0;top:882px;width:1920px;height:9px;background:#B9C1D0}
+#calle{position:absolute;left:0;top:891px;width:1920px;height:99px;background:#26324A}
+#lineas{position:absolute;left:0;top:46px;width:2200px;height:6px;background:repeating-linear-gradient(90deg,#FFC93C 0 60px,transparent 60px 130px)}
+#vereda2{position:absolute;left:0;top:990px;width:1920px;height:90px;background-color:#ECECEC;background-image:linear-gradient(90deg,rgba(14,29,54,.07) 2px,transparent 2px),linear-gradient(rgba(14,29,54,.07) 2px,transparent 2px);background-size:42px 42px;border-top:6px solid #C9CFDA}
+.auto{position:absolute;width:156px;height:70px;transform-origin:50% 0}
+.auto .cab{position:absolute;left:32px;top:0;width:86px;height:32px;border-radius:14px 18px 4px 4px;background:inherit}
+.auto .cab::after{content:'';position:absolute;left:10px;top:6px;width:64px;height:18px;border-radius:8px 10px 3px 3px;background:#CFE0FA}
+.auto .car{position:absolute;left:0;top:26px;width:156px;height:32px;border-radius:14px}
+.auto .r{position:absolute;top:44px;width:28px;height:28px;border-radius:50%;background:#0E1D36;border:6px solid #3B4A68}
+.auto .luz{position:absolute;right:-2px;top:34px;width:10px;height:8px;border-radius:3px;background:#FFE9A8}
+/* ferretería */
+#ferr{position:absolute;left:110px;top:470px;width:500px;height:370px;transform-origin:50% 100%}
+#ferr .cornisa{position:absolute;left:-10px;top:0;width:520px;height:22px;background:#13305E;border-radius:8px 8px 2px 2px}
+#ferr .alto{position:absolute;left:0;top:22px;width:500px;height:128px;background:#FFF3D9;border-left:6px solid #E9D6AE;border-right:6px solid #E9D6AE}
+#ferr .ven{position:absolute;top:26px;width:96px;height:74px;border-radius:8px;background:#CFE0FA;border:6px solid #fff;box-shadow:0 0 0 3px #E2CC9E}
+#ferr .cartel{position:absolute;left:30px;top:146px;width:440px;height:62px;border-radius:12px;background:#13305E;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 8px 0 rgba(14,29,54,.18)}
+#ferr .cartel span{color:#FFC93C;font-size:38px}
+#ferr .cartel img{width:36px;height:36px;filter:brightness(0) saturate(100%) invert(80%) sepia(60%) saturate(800%) hue-rotate(350deg)}
+#ferr .glow{position:absolute;left:24px;top:140px;width:452px;height:74px;border-radius:16px;box-shadow:0 0 36px 10px rgba(255,201,60,.85);opacity:0}
+#ferr .toldo{position:absolute;left:-14px;top:214px;width:528px;height:40px;transform-origin:50% 0;background:repeating-linear-gradient(90deg,#1F57A8 0 44px,#FFC93C 44px 88px);border-radius:6px 6px 0 0}
+#ferr .toldo::after{content:'';position:absolute;left:0;top:40px;width:528px;height:20px;background:radial-gradient(circle at 22px 0,#1F57A8 21px,transparent 22px) 0 0/44px 20px repeat-x}
+#ferr .bajo{position:absolute;left:0;top:254px;width:500px;height:116px;background:#FFF3D9;border-left:6px solid #E9D6AE;border-right:6px solid #E9D6AE}
+#ferr .vitrina{position:absolute;left:22px;top:18px;width:318px;height:94px;border-radius:10px;background:#E7F0FD;border:5px solid #fff;box-shadow:0 0 0 3px #E2CC9E;overflow:hidden}
+#ferr .estante{position:absolute;left:0;width:100%;height:5px;background:#C9A86A}
+#ferr .prod{position:absolute;width:34px;height:34px}
+#ferr .puerta{position:absolute;left:364px;top:10px;width:104px;height:106px;border-radius:10px 10px 0 0;background:#13305E;border:5px solid #fff}
+#ferr .puerta::before{content:'';position:absolute;left:12px;top:12px;width:70px;height:52px;border-radius:6px;background:#CFE0FA}
+#ferr .puerta::after{content:'';position:absolute;right:12px;top:66px;width:8px;height:22px;border-radius:4px;background:#FFC93C}
+#ferr .abierto{position:absolute;left:378px;top:-22px;padding:4px 10px;border-radius:8px;background:#1E9E57;color:#fff;font-weight:800;font-size:16px;letter-spacing:.04em}
+#badge{position:absolute;left:286px;top:410px;padding:10px 20px;border-radius:999px;background:#1E9E57;color:#fff;font-weight:800;font-size:28px;display:flex;gap:10px;align-items:center;box-shadow:0 10px 24px rgba(30,158,87,.35)}
+.ping{position:absolute;left:360px;top:648px;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:5px solid #1E9E57;opacity:0}
+/* edificio */
+#edif{position:absolute;left:1400px;top:250px;width:380px;height:590px;transform-origin:50% 100%}
+#edif .tanque{position:absolute;left:250px;top:-46px;width:70px;height:46px;border-radius:8px 8px 0 0;background:#3B4A68}
+#edif .cornisa{position:absolute;left:-10px;top:0;width:400px;height:20px;border-radius:8px 8px 2px 2px;background:#13305E}
+#edif .frente{position:absolute;left:0;top:20px;width:380px;height:570px;background:#1D2C4A}
+#edif .w{position:absolute;width:58px;height:46px;border-radius:6px;background:#2E4470}
+#edif .w.on{background:#FFE9A8}
+#edif .ent{position:absolute;left:140px;top:500px;width:100px;height:90px;border-radius:12px 12px 0 0;background:#CFE0FA;border:6px solid #E6EEFB}
+#edif .marq{position:absolute;left:120px;top:488px;width:140px;height:16px;border-radius:6px;background:#FFC93C}
+#gota{position:absolute;left:1428px;top:394px;width:66px;height:84px}
+#gota img{position:absolute;left:0;bottom:0;height:84px;display:none}
+#burbuja{position:absolute;right:512px;top:380px;padding:16px 22px;border-radius:22px;background:#fff;box-shadow:0 14px 34px rgba(14,29,54,.2);display:flex;gap:12px;align-items:center;font-weight:800;font-size:26px;white-space:nowrap}
+#burbuja::after{content:'';position:absolute;right:-16px;top:26px;border:10px solid transparent;border-left:18px solid #fff}
+#burbuja .alerta{width:34px;height:34px;border-radius:50%;background:#F6A623;color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900}
+#listo{position:absolute;right:512px;top:380px;padding:16px 24px;border-radius:22px;background:#1E9E57;color:#fff;box-shadow:0 14px 34px rgba(30,158,87,.35);display:flex;gap:12px;align-items:center;font-weight:800;font-size:28px}
+#listo::after{content:'';position:absolute;right:-16px;top:26px;border:10px solid transparent;border-left:18px solid #1E9E57}
+.chispa{position:absolute;left:1455px;top:440px;width:22px;height:22px;background:#FFC93C;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0}
+/* profesional */
+#pro{position:absolute;left:0;top:676px;width:180px;height:176px}
+#pro .cuerpo{position:absolute;left:0;bottom:0;width:180px;height:176px;transform-origin:50% 100%}
+#pro .cuerpo img{position:absolute;left:50%;bottom:0;height:168px;transform:translateX(-50%);display:none}
+#pro .sombra{position:absolute;left:40px;bottom:-8px;width:100px;height:14px;border-radius:50%;background:rgba(14,29,54,.18)}
+#caja{position:absolute;left:118px;top:24px;width:84px;height:64px;border-radius:8px;background:#D9A35B;box-shadow:inset 0 -8px 0 rgba(0,0,0,.08),0 8px 18px rgba(14,29,54,.25)}
+#caja::before{content:'';position:absolute;left:34px;top:0;width:16px;height:64px;background:#1F57A8}
+#caja i{position:absolute;right:-12px;top:-12px;width:30px;height:30px;border-radius:50%;background:#1E9E57;color:#fff;font-style:normal;font-weight:900;font-size:18px;display:grid;place-items:center}
+/* ruta */
+#ruta{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible}
+.pin{position:absolute;width:44px;height:44px;margin:-44px 0 0 -22px;opacity:0}
+/* teléfono */
+#tel{position:absolute;left:760px;top:262px;width:262px;height:560px;border-radius:40px;background:#0E1D36;padding:10px;box-shadow:0 30px 60px rgba(14,29,54,.35);transform-origin:0% 100%}
+#tel .pant{position:relative;width:100%;height:100%;border-radius:31px;background:#F7F6F1;overflow:hidden;padding:44px 14px 14px}
+#tel .isla{position:absolute;left:50%;top:10px;width:78px;height:22px;margin-left:-39px;border-radius:12px;background:#0E1D36}
+#tel .cab{display:flex;align-items:center;justify-content:space-between}
+#tel .cab img{height:20px}
+#tel .cab b{font-size:15px;color:#1F57A8}
+#tel .tra{margin-top:10px;padding:10px 12px;border-radius:14px;background:#fff;box-shadow:0 2px 0 #E3E8F2}
+#tel .tra small{display:block;font-size:12px;font-weight:800;color:#1E9E57;letter-spacing:.03em}
+#tel .tra b{display:block;font-size:16px;line-height:1.2;margin-top:2px}
+#tel .tra span{font-size:12.5px;color:#5F6B84}
+#tel h5{font-size:12.5px;font-weight:800;color:#5F6B84;letter-spacing:.05em;text-transform:uppercase;margin:12px 2px 6px}
+#tel .it{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:11px;background:#fff;margin-bottom:6px;font-size:14.5px;font-weight:600}
+#tel .ck{flex:none;width:20px;height:20px;border-radius:6px;border:2.5px solid #A9B4CB;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:900;position:relative}
+#tel .ck b{position:absolute;inset:-2.5px;border-radius:6px;background:#1F57A8;display:grid;place-items:center;transform:scale(0)}
+#tel .st{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:11px;background:#fff;margin-bottom:6px;font-size:14px;font-weight:700}
+#tel .st img{width:20px;height:20px}
+#tel .st em{margin-left:auto;font-style:normal;font-size:11.5px;font-weight:800;padding:3px 8px;border-radius:999px;background:#E3F5EA;color:#1E9E57;white-space:nowrap}
+#tel .st em.gris{background:#ECECEC;color:#5F6B84}
+#tel .st.sel{box-shadow:0 0 0 2.5px #1E9E57}
+#tel .btn{position:absolute;left:14px;right:14px;bottom:16px;height:46px;border-radius:14px;background:#1F57A8;color:#fff;font-weight:800;font-size:16px;display:grid;place-items:center;box-shadow:0 5px 0 #13305E}
+#tel .btn .ok{position:absolute;inset:0;border-radius:14px;background:#1E9E57;display:grid;place-items:center;opacity:0;box-shadow:0 5px 0 #157443}
+#rotTel{position:absolute;left:1040px;top:770px;width:210px;font-size:15px;line-height:1.3;color:#5F6B84;font-weight:600}
+/* textos */
+#kick{position:absolute;left:96px;top:56px;color:#1F57A8;font-weight:800;font-size:24px;letter-spacing:.07em}
+#tit{position:absolute;left:96px;top:90px;font-size:70px;line-height:1.04;color:#0E1D36}
+#tit .l{display:block;overflow:hidden;padding-bottom:4px}
+#tit .l span{display:inline-block}
+#rot{position:absolute;right:96px;top:58px;padding:9px 18px;border-radius:999px;border:2.5px solid #13305E;color:#13305E;font-weight:800;font-size:21px;background:rgba(255,255,255,.75)}
+#cap{position:absolute;left:50%;top:1004px;height:62px;transform:translateX(-50%)}
+.paso{position:absolute;left:50%;top:0;transform:translateX(-50%);display:flex;align-items:center;gap:16px;padding:10px 28px 10px 12px;border-radius:999px;background:#fff;box-shadow:0 10px 26px rgba(14,29,54,.22);white-space:nowrap;font-size:29px;font-weight:700;opacity:0}
+.paso .n{width:42px;height:42px;border-radius:50%;background:#1F57A8;color:#fff;display:grid;place-items:center;font-family:'Archivo';font-weight:900;font-size:24px}
+.paso b{font-weight:800}
+#ben{position:absolute;left:96px;top:272px;width:1728px;display:flex;gap:20px}
+.bn{flex:1;display:flex;gap:16px;align-items:center;padding:16px 20px;border-radius:22px;background:#fff;box-shadow:0 14px 30px rgba(14,29,54,.16),0 3px 0 #E3E8F2;opacity:0}
+.bn .ic{flex:none;width:60px;height:60px;border-radius:18px;background:#E6EEFB;display:grid;place-items:center}
+.bn .ic img{width:34px;height:34px}
+.bn b{display:block;font-size:24px;color:#13305E}
+.bn span{display:block;font-size:19px;color:#3C4A66;line-height:1.25}
+</style></head><body><div id="esc">
+<div id="cielo"></div>
+<div id="sol"><div class="rayos"></div><div class="disco"></div></div>
+<div id="nubes"></div>
+<div id="fondo"></div>
+<div id="vereda"></div><div id="cordon"></div>
+<div id="calle"><div id="lineas"></div></div>
+<div id="autos"></div>
+<div id="vereda2"></div>
+<div id="ferr">
+  <div class="cornisa"></div>
+  <div class="alto"><div class="ven" style="left:40px"></div><div class="ven" style="left:202px"></div><div class="ven" style="left:364px"></div></div>
+  <div class="glow"></div>
+  <div class="cartel"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/martillo2.svg"><span class="t">FERRETERÍA</span></div>
+  <div class="bajo"><div class="vitrina" id="vitrina"></div><div class="puerta"></div><div class="abierto">ABIERTO</div></div>
+  <div class="toldo"></div>
+</div>
+<div class="ping" id="ping1"></div><div class="ping" id="ping2"></div>
+<div id="badge"><span>✓</span> En stock</div>
+<div id="edif"><div class="tanque"></div><div class="cornisa"></div><div class="frente" id="frente"></div><div class="marq"></div><div class="ent"></div></div>
+<div id="gota">
+  <img data-p="a" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/gota-a.webp">
+  <img data-p="c" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/gota-c.webp">
+</div>
+<div id="burbuja"><span class="alerta">!</span>¡Se rompió un caño!</div>
+<div id="listo"><span>✓</span> ¡Arreglo listo!</div>
+<div id="chispas"></div>
+<svg id="ruta" viewBox="0 0 1920 1080">
+  <defs>
+    <mask id="mA" maskUnits="userSpaceOnUse"><path id="mpA" d="M 690 864 L 525 864" stroke="#fff" stroke-width="16" fill="none"/></mask>
+    <mask id="mB" maskUnits="userSpaceOnUse"><path id="mpB" d="M 525 864 L 1590 864" stroke="#fff" stroke-width="16" fill="none"/></mask>
+  </defs>
+  <path d="M 690 864 L 525 864" stroke="#1F57A8" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 17" fill="none" mask="url(#mA)" id="rA"/>
+  <path d="M 525 864 L 1590 864" stroke="#1F57A8" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 17" fill="none" mask="url(#mB)" id="rB"/>
+</svg>
+<img class="pin" id="pinF" src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/ubicacion.svg" style="left:525px;top:858px">
+<img class="pin" id="pinE" src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/ubicacion.svg" style="left:1590px;top:858px">
+<div id="pro"><div class="sombra"></div><div class="cuerpo" id="cuerpo">
+  <img data-p="a" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/llave-a.webp">
+  <img data-p="b" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/llave-b.webp">
+  <img data-p="c" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/llave-c.webp">
+  <img data-p="d" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/llave-d.webp">
+  <div id="caja"><i>✓</i></div>
+</div></div>
+<div id="tel"><div class="pant">
+  <div class="isla"></div>
+  <div class="cab"><img src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp"><b>Materiales</b></div>
+  <div class="tra"><small>TRABAJO ACEPTADO</small><b>Cambiar el caño de la cocina</b><span>Edificio · departamento B</span></div>
+  <h5>Lo que necesitás</h5>
+  <div class="it"><span class="ck"><b>✓</b></span>Caño de termofusión</div>
+  <div class="it"><span class="ck"><b>✓</b></span>Codos y uniones</div>
+  <div class="it"><span class="ck"><b>✓</b></span>Cinta de teflón</div>
+  <div id="stock"><h5>Stock cerca</h5>
+    <div class="st sel" id="st1"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/tienda.svg">Ferretería del barrio<em>En stock</em></div>
+    <div class="st" id="st2"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/capas.svg">Corralón<em class="gris">Consultar</em></div>
+  </div>
+  <div class="btn" id="btn">Reservar y retirar<div class="ok">Reservado ✓</div></div>
+</div></div>
+<div id="rotTel">Diseño propuesto ·<br>datos ficticios</div>
+<div id="kick">MATERIAL EXTRA · VISIÓN</div>
+<div id="tit" class="t"><span class="l"><span>Ferreterías conectadas:</span></span><span class="l"><span><mark>stock para los profesionales</mark></span></span></div>
+<div id="rot">Visión · a explorar · sin alianzas firmadas</div>
+<div id="ben">
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/llave-inglesa.svg"></div><div><b>Profesional</b><span>llega con todo lo que necesita</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/tienda.svg"></div><div><b>Ferretería</b><span>más ventas en su barrio</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/casa.svg"></div><div><b>Vecino</b><span>menos idas y vueltas</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/crecimiento.svg"></div><div><b>Handyx</b><span>otra fuente de ingresos<br>a explorar</span></div></div>
+</div>
+<div id="cap">
+  <div class="paso"><span class="n">1</span><span>El vecino <b>pide el arreglo</b></span></div>
+  <div class="paso"><span class="n">2</span><span>El profesional ve <b>qué materiales necesita</b></span></div>
+  <div class="paso"><span class="n">3</span><span>Handyx le muestra <b>stock en ferreterías cercanas</b></span></div>
+  <div class="paso"><span class="n">4</span><span>Lo reserva y lo <b>retira camino al trabajo</b></span></div>
+  <div class="paso"><span class="n">5</span><span>Llega con todo: <b>el arreglo, listo</b></span></div>
+</div>
+</div>
+<script src="file:///home/user/presentations-studio/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const $=(s)=>document.querySelector(s), $$=(s)=>[...document.querySelectorAll(s)];
+const DUR=16.0; window.DUR=DUR;
+let semilla=7; const azar=()=>{semilla=(semilla*16807)%2147483647;return (semilla-1)/2147483646};
+// rayos del sol
+for(let i=0;i<12;i++){const r=document.createElement('i');r.style.transform=`rotate(${i*30}deg)`;$('#sol .rayos').appendChild(r)}
+// nubes
+const NUBES=[[1260,150,.9,14],[1640,200,.7,10],[700,330,.6,8],[1900,110,.8,12]].map(([x,y,s,v])=>{const n=document.createElement('div');n.className='nube';n.style.top=y+'px';n.style.transform=`scale(${s})`;$('#nubes').appendChild(n);return {n,x,v,s}});
+// edificios de fondo (skyline)
+const COLS=['#C9D8F0','#BACBE8','#D6E2F5','#AFC3E4'];const FONDO=[];let x=-30;
+while(x<1960){const w=90+Math.round(azar()*90),h=150+Math.round(azar()*190);const d=document.createElement('div');d.className='edif-fondo';
+ Object.assign(d.style,{left:x+'px',width:w+'px',height:h+'px',background:COLS[FONDO.length%4]});
+ for(let r=0;r<Math.floor((h-30)/34);r++)for(let c=0;c<Math.floor((w-18)/26);c++){const v=document.createElement('div');v.className='v'+(azar()<.3?' on':'');v.style.left=(14+c*26)+'px';v.style.top=(18+r*34)+'px';d.appendChild(v)}
+ $('#fondo').appendChild(d);FONDO.push(d);x+=w+8+Math.round(azar()*24)}
+// ventanas del edificio
+const VENT=[];for(let r=0;r<7;r++)for(let c=0;c<4;c++){const v=document.createElement('div');const prob=(r===2&&c===0);v.className='w'+(prob?' on':(azar()<.45?' on':''));
+ v.style.left=(32+c*86)+'px';v.style.top=(26+r*68)+'px';$('#frente').appendChild(v);VENT.push({v,prob,base:v.classList.contains('on'),k:azar()})}
+const vProb=VENT.find(o=>o.prob).v;
+// productos en la vitrina
+const PROD=['martillo2','llave-inglesa','herramienta','capas','martillo','llave-inglesa','herramienta','martillo2'];
+[18,58].forEach((y,fi)=>{const e=document.createElement('div');e.className='estante';e.style.top=(y+36)+'px';$('#vitrina').appendChild(e)});
+PROD.forEach((p,i)=>{const im=document.createElement('img');im.className='prod';im.src=`file:///home/user/presentations-studio/brands/handyx/assets/iconos/${p}.svg`;im.style.left=(16+(i%4)*76)+'px';im.style.top=(i<4?6:46)+'px';$('#vitrina').appendChild(im)});
+// autos
+const AUTOS=[[ '#FFC93C', 0, 893, 150, 1],[ '#FFFFFF', 1050, 893, 150, 1],[ '#4A72B0', 520, 941, 120, -1]].map(([c,o,y,v,dir])=>{const a=document.createElement('div');a.className='auto';a.style.top=y+'px';
+ a.innerHTML=`<div class="cab" style="background:${c}"></div><div class="car" style="background:${c};box-shadow:inset 0 -8px 0 rgba(0,0,0,.12)"></div><div class="r" style="left:18px"></div><div class="r" style="right:18px"></div><div class="luz"></div>`;
+ $('#autos').appendChild(a);return {a,o,v,dir}});
+// chispas
+const CH=[];for(let i=0;i<12;i++){const c=document.createElement('div');c.className='chispa';$('#chispas').appendChild(c);CH.push(c)}
+
+const tl=gsap.timeline({paused:true});
+const E=(sel,a,b,t)=>tl.fromTo(sel,a,b,t);
+// títulos
+E('#kick',{opacity:0,y:-14},{opacity:1,y:0,duration:.45,ease:'power2.out'},0);
+E('#tit .l span',{yPercent:110},{yPercent:0,duration:.7,ease:'power4.out',stagger:.14},.12);
+E('#rot',{opacity:0,scale:.85},{opacity:1,scale:1,duration:.45,ease:'back.out(2)'},.7);
+// cielo, sol y ciudad
+E('#cielo',{opacity:0},{opacity:1,duration:.6},0);
+E('#sol',{y:90,opacity:0},{y:0,opacity:1,duration:1.1,ease:'power3.out'},.3);
+E('#nubes',{opacity:0},{opacity:1,duration:.8},.4);
+E(FONDO,{scaleY:0},{scaleY:1,duration:.7,ease:'back.out(1.4)',stagger:{each:.06,from:'center'}},.25);
+E('#vereda,#cordon,#calle,#vereda2',{opacity:0},{opacity:1,duration:.5},.15);
+E('#autos',{opacity:0},{opacity:1,duration:.6},1.4);
+E('#ferr',{y:160,opacity:0},{y:0,opacity:1,duration:.9,ease:'back.out(1.3)'},.85);
+E('#ferr .toldo',{scaleY:0},{scaleY:1,duration:.5,ease:'back.out(2.2)'},1.55);
+E('#ferr .cartel',{scale:.4,opacity:0},{scale:1,opacity:1,duration:.5,ease:'back.out(2.4)'},1.75);
+E('#ferr .vitrina .prod',{scale:0},{scale:1,duration:.35,ease:'back.out(3)',stagger:.05},1.9);
+E('#ferr .abierto',{scale:0},{scale:1,duration:.35,ease:'back.out(3)'},2.2);
+E('#edif',{scaleY:0},{scaleY:1,duration:1.0,ease:'power3.out'},1.0);
+E(VENT.map(o=>o.v),{opacity:0},{opacity:1,duration:.25,stagger:{each:.025,from:'random'}},1.6);
+// 1 · el vecino pide el arreglo
+const pasos=$$('.paso');
+const paso=(i,t0,t1)=>{E(pasos[i],{opacity:0,y:30},{opacity:1,y:0,duration:.45,ease:'back.out(1.8)'},t0);if(t1)tl.to(pasos[i],{opacity:0,y:-20,duration:.3,ease:'power1.in'},t1)};
+paso(0,2.3,3.55);paso(1,3.6,6.1);paso(2,6.2,7.6);paso(3,7.7,11.8);paso(4,11.9,null);
+E('#gota',{scale:0,y:30},{scale:1,y:0,duration:.5,ease:'back.out(2.2)'},2.4);
+E('#burbuja',{scale:0,opacity:0,transformOrigin:'100% 50%'},{scale:1,opacity:1,duration:.45,ease:'back.out(2)'},2.65);
+tl.fromTo(vProb,{boxShadow:'0 0 0 4px rgba(246,166,35,1), 0 0 18px 6px rgba(255,201,60,.9)'},{boxShadow:'0 0 0 4px rgba(246,166,35,1), 0 0 44px 20px rgba(255,201,60,.35)',duration:.5,repeat:9,yoyo:true,ease:'sine.inOut'},2.6);
+// 2 · el profesional ve qué materiales necesita
+tl.fromTo('#pro',{x:-220},{x:600,duration:1.25,ease:'power2.inOut'},3.35);
+E('#tel',{scale:.15,opacity:0,y:40},{scale:1,opacity:1,y:0,duration:.6,ease:'back.out(1.5)'},4.45);
+E('#rotTel',{opacity:0},{opacity:1,duration:.4},4.9);
+$$('#tel .ck b').forEach((b,i)=>{E(b,{scale:0},{scale:1,duration:.3,ease:'back.out(3)'},5.0+i*.35)});
+// 3 · stock en ferreterías cercanas
+E('#stock',{opacity:0,y:20},{opacity:1,y:0,duration:.45,ease:'power2.out'},6.25);
+E('#st1 em',{scale:0},{scale:1,duration:.35,ease:'back.out(3)'},6.6);
+E('#ferr .glow',{opacity:0},{opacity:1,duration:.35},6.65);
+E('#badge',{scale:0,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(2.4)'},6.7);
+tl.fromTo('#ping1',{scale:.4,opacity:1},{scale:2.4,opacity:0,duration:1.0,ease:'power2.out',immediateRender:false},6.65);
+tl.fromTo('#ping2',{scale:.4,opacity:1},{scale:2.4,opacity:0,duration:1.0,ease:'power2.out',immediateRender:false},7.0);
+tl.fromTo('#mpA',{strokeDasharray:'165 2000',strokeDashoffset:165},{strokeDashoffset:0,duration:.5,ease:'power2.inOut'},6.9);
+E('#pinF',{scale:0,opacity:0},{scale:1,opacity:1,duration:.35,ease:'back.out(3)'},7.3);
+// 4 · lo reserva y lo retira camino al trabajo
+tl.fromTo('#btn',{scale:1},{scale:.93,duration:.12,yoyo:true,repeat:1,ease:'power1.inOut'},7.8);
+E('#btn .ok',{opacity:0},{opacity:1,duration:.25},8.0);
+tl.to('#tel',{scale:.15,opacity:0,y:40,duration:.45,ease:'power2.in'},8.45);
+tl.to('#rotTel',{opacity:0,duration:.3},8.45);
+tl.to('#pro',{x:435,duration:.8,ease:'power2.inOut'},8.6);
+E('#caja',{scale:0,y:-30},{scale:1,y:0,duration:.45,ease:'back.out(2.6)'},9.55);
+tl.fromTo('#mpB',{strokeDasharray:'1065 3000',strokeDashoffset:1065},{strokeDashoffset:0,duration:.8,ease:'power2.inOut'},9.7);
+E('#pinE',{scale:0,opacity:0},{scale:1,opacity:1,duration:.35,ease:'back.out(3)'},10.45);
+tl.to('#pro',{x:1500,duration:1.8,ease:'power2.inOut'},10.0);
+// 5 · llega con todo: el arreglo, listo
+tl.to('#caja',{scale:0,opacity:0,duration:.3,ease:'back.in(2)'},12.0);
+tl.to('#burbuja',{scale:0,opacity:0,duration:.3,ease:'back.in(2)'},12.2);
+E('#listo',{scale:0,opacity:0,transformOrigin:'100% 50%'},{scale:1,opacity:1,duration:.45,ease:'back.out(2.2)'},12.45);
+CH.forEach((c,i)=>{const a=i/CH.length*Math.PI*2,r=70+(i%3)*24;E(c,{x:0,y:0,scale:.3,opacity:1,rotate:0},{x:Math.cos(a)*r,y:Math.sin(a)*r,scale:1.2,opacity:0,rotate:180,duration:.9,ease:'power2.out'},12.3+(i%2)*.08)});
+tl.fromTo(vProb,{boxShadow:'0 0 0 4px rgba(246,166,35,1), 0 0 18px 6px rgba(255,201,60,.9)'},{boxShadow:'0 0 0 6px rgba(30,158,87,1), 0 0 30px 10px rgba(30,158,87,.45)',duration:.3,immediateRender:false},12.3);
+// beneficios
+tl.to('#sol',{opacity:0,duration:.4},13.0);
+E('.bn',{opacity:0,y:30},{opacity:1,y:0,duration:.5,ease:'back.out(1.6)',stagger:.16},13.0);
+tl.set({},{},DUR);
+
+// movimiento continuo (un solo dueño por propiedad: la línea de tiempo mueve contenedores; esto, lo de adentro)
+const caminando=[[3.35,4.6,1],[8.6,9.4,-1],[10.0,11.8,1]];
+function pose(cont,p){for(const im of cont.querySelectorAll('img[data-p]'))im.style.display=im.dataset.p===p?'block':'none'}
+function ambiente(t){
+ $('#sol .rayos').style.transform=`rotate(${t*14}deg)`;
+ NUBES.forEach(o=>{const xx=((o.x-t*o.v)%2300+2300)%2300-250;o.n.style.left=xx+'px'});
+ $('#lineas').style.transform=`translateX(${-((t*140)%130)}px)`;
+ AUTOS.forEach(o=>{const L=2300;let xx=((o.o+t*o.v)%L+L)%L-200;if(o.dir<0)xx=1920-xx;o.a.style.left=xx+'px';o.a.style.transform=`scale(${o.dir*0.72},0.72)`});
+ VENT.forEach((o,i)=>{if(o.prob)return;const tw=Math.floor(t*.6+o.k*9)%7===0;o.v.classList.toggle('on',o.base!==tw)});
+ const w=caminando.find(([a,b])=>t>=a&&t<=b);const cu=$('#cuerpo');
+ if(w){const f=Math.sin((t-w[0])*13);cu.style.transform=`translateY(${-Math.abs(f)*12}px) rotate(${f*5}deg) scaleX(${w[2]})`;pose(cu,'d')}
+ else{cu.style.transform=`translateY(${Math.sin(t*3)*3}px)`;pose(cu,t>=12.3?'c':(t>=9.4&&t<10)||(t>=6.6&&t<7.7)?'b':'a')}
+ const g=$('#gota');pose(g,t>=12.4?'c':'a');g.querySelectorAll('img').forEach(im=>im.style.transform=`translateY(${t>=12.4?-Math.abs(Math.sin(t*6))*10:Math.sin(t*4)*2}px)`);
+ $('#rB').style.strokeDashoffset=t>10.6?-(t-10.6)*36:0;$('#rA').style.strokeDashoffset=t>7.4?-(t-7.4)*36:0;
+}
+const imagenes=Promise.all([...document.images].map(i=>i.decode().catch(()=>null)));
+window.listo=Promise.all([imagenes,document.fonts.ready]);
+window.ir=(t)=>{tl.seek(Math.min(t,DUR),false);ambiente(t);return window.listo};
+window.ir(0);
+</script></body></html>

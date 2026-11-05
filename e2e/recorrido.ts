@@ -216,6 +216,11 @@ try {
   ok('ATICMA: al escribir un número se ve a qué lámina va', ((await presA.locator('.ir-numero.activo').textContent()) ?? '').includes(item35), item35);
   await presA.keyboard.press('Enter'); await presA.waitForTimeout(500);
   ok('ATICMA: número + Enter abre esa lámina (35)', (await actualA()).startsWith('35.'), await actualA());
+  const nFerr = (await presA.locator('.indice li:not(.separador-anexos) .item').allTextContents()).findIndex((t: string) => t.includes('Ferreterías conectadas')) + 1;
+  for (const d of String(nFerr)) await presA.keyboard.press(d);
+  await presA.keyboard.press('Enter'); await pubA.waitForTimeout(2000);
+  const animFerr = await pubA.locator('video[data-medio="video-ferreterias"]').evaluate((v: HTMLVideoElement) => ({ t: v.currentTime, pausado: v.paused })).catch(() => null);
+  ok('ATICMA: la animación de ferreterías arranca sola en la pantalla pública', nFerr > 0 && !!animFerr && animFerr.t > 0.3 && !animFerr.pausado, JSON.stringify({ nFerr, animFerr }));
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
   ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);

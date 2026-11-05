@@ -12,8 +12,9 @@ npm run build && SERVIR_ESTATICOS=dist npm run servidor   # http://localhost:878
 ```
 Hub (`/`): elegí presentación y versión. Presentador: `/presentador/?deck=handyx&version=aticma` · Pantalla pública: `/presentar/?deck=…`.
 - **Handyx ATICMA 2026** (`deck=handyx-aticma&version=evento` o `estatica`): siete diapositivas (180 s) con el guion de Ignacio, modo de
-  ensayo, cierre con el clip del mundo, 28 láminas de respaldo (proyección, costos, CAC/LTV, competencia, marca, herramientas, plan mes a
-  mes, inversión, USD 1 M / 5 M, Business, maneras de multiplicar ingresos, tesorería, IPO) y 18 posibles preguntas del jurado. Ver [`docs/handyx/aticma-validacion.md`](docs/handyx/aticma-validacion.md).
+  ensayo, cierre con el clip del mundo, 29 láminas de respaldo (proyección, costos, CAC/LTV, competencia, marca, herramientas, plan mes a
+  mes, inversión, USD 1 M / 5 M, Business, maneras de multiplicar ingresos, tesorería, ferreterías conectadas animada, IPO) y 19 posibles
+  preguntas del jurado. Ver [`docs/handyx/aticma-validacion.md`](docs/handyx/aticma-validacion.md).
 - **Handyx v1 institucional** (`deck=handyx`): `aticma` (180 s), `corta` (60 s), `angel` (≈ 6 min), `vc` (≈ 9 min).
 - **Handyx v2 comercial** (`deck=handyx-v2`, mismas cifras): `comercial` (≈ 5 min), `marca-marketing` (2 min), `anuncios` (reel).
 
