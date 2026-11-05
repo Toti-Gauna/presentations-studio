@@ -1,65 +1,97 @@
-# Pitch ATICMA 2026 · preguntas difíciles (respuestas completas)
+# Pitch ATICMA 2026 · posibles preguntas del jurado y nuestras respuestas
 
-> Actualizado el 04/11 (noche): las diez preguntas del jurado tienen ahora una diapositiva cada una (Mayús + J…U). Respuestas de pantalla:
-> CAC, costos, de dónde sale el número, trabajos cobrados, HandIA, diferencia con Clickie, cobro del 15 %, captar y retener, uso de la inversión,
-> clientes que no vuelven.
+Machete para estudiar. Las preguntas sin la marca «extra» tienen su diapositiva en el respaldo («Posible pregunta del jurado», desde el
+índice o el menú ☰ del celular) y aparecen en el video; las 6 extra no tienen lámina. Ninguna respuesta agrega cifras que no estén en el
+deck: lo que es supuesto o aspiración se dice así.
 
-**¿Cuál es tu CAC?** ≈ USD 2 por cliente: USD 100 de marketing por mes ÷ 50 clientes nuevos (supuesto). El techo es USD 6 (la tarifa de un
-trabajo con ticket de USD 40): se recupera con el primer trabajo. LTV ≈ USD 18 (1 arreglo por año durante 3 años, supuesto): LTV/CAC ≈ 9.
+**Regla para responder:** primero el número o la idea en una frase, después el «cómo lo sabemos» (dato, supuesto o aspiración), y si hace
+falta, la lámina de respaldo.
 
-**¿Cuánto cuesta mantener Handyx?** ≈ USD 400 por mes (servidores 100, desarrollo 200, marketing 100). Con USD 6 por trabajo, ≈ 67 trabajos por
-mes cubren esos costos.
+## Plata y unit economics
 
+1. **¿Cuál es tu CAC?**
+   Hoy, unos **USD 2 por cliente**: USD 100 de marketing por mes para unos 50 clientes nuevos (supuesto que vamos a medir). El techo es
+   **USD 6**, la tarifa de un trabajo con ticket de USD 40: se recupera con el primer trabajo. LTV ≈ USD 18 (1 arreglo por año durante 3
+   años, supuesto), LTV/CAC ≈ 9. *Respaldo: CAC y LTV.*
+2. **¿Cuánto cuesta mantener Handyx?**
+   Unos **USD 400 por mes**: desarrollo 200, servidores 100 y marketing 100. Con unos USD 6 de tarifa por trabajo, **67 trabajos por mes**
+   cubren esos costos. *Respaldo: costos y equilibrio.*
+3. **¿De dónde salen el 25 % y los USD 100.000?**
+   General Pueyrredon tiene 259.623 hogares (Censo 2022). Con 1 arreglo por hogar por año y USD 40 por arreglo, son unos USD 10,4 millones
+   por año. El 25 % de un trimestre son unos **16.200 trabajos**; con el ticket promedio de nuestros 5 trabajos ($ 70.000 ≈ USD 45) dejan
+   **≈ USD 109.000** de tarifas. Es una aspiración: todavía medimos frecuencia y ticket. *Respaldo: proyección.*
+4. **¿Cuántos trabajos tienen cobrados?**
+   **5 trabajos con comisión cobrada**, con ayuda de porteros: $ 350.000 en trabajos, ticket promedio de $ 70.000. Estamos conciliando los
+   comprobantes. Además, **56 especialistas registrados** en el preregistro: no son activos ni verificados todavía. Próxima prueba: 50 trabajos
+   con tarifa cobrada y 5 clientes que vuelvan en diciembre. *Respaldo: validación.*
+5. **¿Cómo cobran el 15 %?**
+   La tarifa se muestra **antes de contratar** y la paga el usuario. El profesional cobra su presupuesto completo y no paga comisión. El
+   circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.
+6. **¿Por qué el 15 % lo paga el usuario y no el profesional?** *(extra)*
+   Porque el profesional es quien sostiene el servicio: si llega a su casa todo lo que cobra, nos elige y vuelve. El usuario ve la tarifa
+   antes de contratar y paga por la tranquilidad de comparar, seguir el trabajo y tener historial.
 
-Versión corta en pantalla: anexo F (Mayús + F y Mayús + G). Ninguna respuesta agrega cifras ni certezas que no estén en el deck.
+## Producto
 
-1. **¿Por qué creen posible captar el 20 % de los trabajos locales?** Es una aspiración del fundador, no un pronóstico ni una participación
-   actual. Con 1 arreglo por hogar por año (supuesto del mentor), el 25 % del trimestre serían ≈ 16.200 trabajos; con el ticket promedio de nuestros 5 trabajos ($ 70.000 ≈ USD 45) dejan ≈ USD 109.000 de tarifas; todavía no medimos la frecuencia ni el ticket real. Lo primero es la meta operativa de diciembre: 50 trabajos con
-   tarifa cobrada y 5 clientes que vuelvan a contratar. Con esos datos revisamos la aspiración.
-2. **¿Cómo llegarían al 40 % de las contrataciones particulares de Argentina?** Es la visión a fines de 2027, no un plan validado. Haría
-   falta pasar de 6 a 72 profesiones, una red local en cada ciudad y canales como porteros y administradores. No la presentamos como meta
-   medible todavía.
-3. **¿Qué significa USD 100.000 de ingresos brutos?** Son las tarifas que cobra Handyx (15 % del presupuesto del profesional) en el primer
-   trimestre comercial, antes de costos de cobro, fiscales y operativos. Requieren ≈ USD 666.667 en presupuestos de profesionales. Con el 25 % del trimestre y un ticket de USD 40 serían ≈ USD 97.000: los USD 100.000 piden un ticket de ≈ USD 41. No es la
-   facturación de los profesionales ni la inversión de USD 100.000 que buscamos.
-4. **¿Cuántos trabajos tienen efectivamente cobrados y cómo pueden demostrarlo?** Los primeros trabajos se hicieron con ayuda de porteros de
-   edificios y cobramos comisión. Estamos conciliando cantidades y comprobantes con los registros; preferimos mostrar la cifra cuando esté
-   conciliada. Los cobros se coordinaron a mano, no con un flujo automatizado.
-5. **¿HandIA funciona hoy o es una función prevista?** Es prevista, en desarrollo; en la app actual está desactivada. Hoy se puede elegir el
-   oficio, describir el problema con fotos y recibir propuestas. La pantalla de HandIA del pitch es la demo de la landing (rotulada), no el producto en uso.
-6. **¿Qué tiene Handyx que Clickie, Muovi o Home Solution no puedan copiar?** Afuera el profesional paga comisión (Clickie, Taskrabbit), por contacto (Home Solution, Angi, Thumbtack) o suscripción (Checkatrade). Las funciones se pueden copiar: Clickie ya describe
-   orientación con IA y Muovi anuncia comisión cero temporal. Apostamos a la combinación de presupuesto completo para el profesional,
-   herramientas útiles por oficio, confianza e historial con clientes que vuelven a elegirlo. Si se usa todos los días, eso pesa más que una
-   función suelta; todavía tenemos que demostrarlo con recurrencia.
-7. **¿Cómo recauda Handyx efectivamente el 15 %?** El circuito de cobro y rendición está en definición e implementación; en las pruebas se
-   coordinó a mano. La tarifa se muestra antes de contratar. No decimos que haya un cobro automatizado funcionando.
-8. **¿Cómo van a captar y retener profesionales?** Captar: el preregistro, los porteros y administradores, y el boca a boca entre oficios.
-   Retener: 0 % de comisión, herramientas para el día a día (trabajos, agenda, ingresos) y clientes que vuelven. Lo medimos con actividad y
-   repetición, no con registros.
-9. **¿Por qué necesitan USD 100.000 de inversión y qué hitos financiarían?** Tecnología, operaciones y marketing. Propuesta (05/11, a aprobar): USD 45.000 marketing y captación (ads por barrio
-   20.000, porteros y administradores 10.000, contenido con los Handys 8.000, presencia local 7.000), USD 30.000 operaciones (formación y
-   comunicación con profesionales 10.000, soporte 10.000, verificación 6.000, cobros 4.000), USD 15.000 tecnología (HandIA 6.000,
-   herramientas 5.000, servidores 4.000) y USD 10.000 legal, contable y reserva. Se baja desarrollo: con IA es más barato que nunca. El primer hito medible es la meta operativa de
-   diciembre.
-10. **¿Qué harían si los primeros clientes no vuelven?** Es la prueba más importante. Revisaríamos precio visible, calidad del trabajo y
-    seguimiento antes de escalar: preferimos aprender con pocos casos que crecer sin retención.
+7. **¿HandIA funciona hoy?**
+   Está en desarrollo: lo que mostramos es la **demo**, que ya detecta el oficio y arma el pedido a partir de una foto y una descripción. La
+   referencia de costo viene en el mes 1 del plan. El precio final siempre lo fija el profesional.
+8. **¿Qué herramientas van a tener los profesionales?**
+   Por oficio: lector de esquemas y calculadora de cable (electricidad), detector de pérdidas y lista de materiales (plomería), checklist de
+   seguridad y registro de revisiones (gas), registro de aperturas (cerrajería), calculadora de materiales y etapas de obra (albañilería),
+   calculadora de frigorías y recordatorio de service (aire). Además, ingresos y gastos y feedback con IA. Son diseños propuestos.
+   *Respaldo: herramientas por oficio.*
+9. **¿Qué logran en los próximos 3 meses?**
+   **Mes 1:** HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento (ingresos reales y ticket medido). **Mes 2:** herramientas
+   de las 6 profesiones, ingresos y gastos, feedback con IA (retención del profesional). **Mes 3:** piloto de Handyx for Business, 2 profesiones
+   nuevas y campaña con porteros (primer ingreso B2B y más demanda). *Respaldo: plan mes a mes.*
 
-11. **¿Por qué invertirían USD 100.000 en Handyx?** Porque el marketing y la IA pueden impulsar un volumen alto: la aspiración es mover
-    USD 1 millón en trabajos en 12 meses (supuesto). Con el ticket de la prueba (≈ USD 45) son ≈ 22.300 trabajos, ≈ 1.860 por mes, ≈ 8,6 % de
-    los arreglos del partido, y dejan ≈ USD 150.000 de tarifas. Es una aspiración con la cuenta a la vista, no un retorno prometido. (Si se
-    entendiera USD 1 M de ingresos propios, harían falta ≈ 148.000 trabajos: varias ciudades.)
-12. **¿Qué herramientas van a tener los profesionales?** Por oficio: lector de esquemas y calculadora de cable (electricidad), detector de
-    pérdidas y lista de materiales (plomería), checklist de seguridad y registro de revisiones (gas), registro de aperturas (cerrajería),
-    calculadora de materiales y etapas de obra (albañilería), calculadora de frigorías y recordatorio de service (aire). Además, ingresos y
-    gastos y feedback con IA. Son diseños propuestos; valores orientativos.
-13. **¿Cómo van a conseguir tracción?** Usuarios: porteros y administradores, ads por barrio y urgencia, referidos y los Handys —los chicos
-    reconocen a los personajes y lo cuentan en casa (estrategia de recordación, a medir)—. Profesionales: 0 % de comisión, ferreterías y
-    corralones, formación con herramientas por oficio y referidos entre oficios. Cada canal se mide con CAC y repetición.
-14. **¿Hasta dónde puede crecer Handyx?** Con 72 profesiones y Handyx for Business, aspiramos a USD 5 millones de ingresos a fines de 2027:
-    Handyx for People ≈ USD 3,5 M (520.000 trabajos por año en Argentina, ≈ 1.425 por día, × USD 45 × 15 %) y Handyx for Business ≈ USD 1,56 M
-    (1.000 comercios × 5 turnos por semana × USD 40 × 15 %), sin contar apps a medida. Un local puede llamar a su personal por días fijos o
-    semanas (por ejemplo, mozos los viernes y sábados) y Handyx ofrece reemplazos ordenados por mérito; además, Handyx for Business puede
-    crear una app para cada comercio integrada a Handyx. Con IA, esto es más barato que nunca. Supuestos a validar.
-15. **¿Qué logran en los próximos 3 meses?** Mes 1: HandIA con referencia de costo, tarifa del 15 % y cobro, lanzamiento. Mes 2: herramientas
-    de las 6 profesiones, ingresos y gastos, feedback con IA. Mes 3: piloto de Handyx para negocios (por ejemplo, un restaurante que busca
-    mozos elige entre disponibles ordenados por mérito), 2 profesiones nuevas y campaña con porteros. Plan propuesto, a validar.
+## Competencia
+
+10. **¿Qué los diferencia de Clickie y el resto?**
+    El recorrido completo: foto → HandIA arma el pedido → precio visible antes de contratar → el profesional cobra todo. Clickie cobra 15 % al
+    profesional (12 % con su plan Pro); otros cobran por contacto (Home Solution, Angi, Thumbtack) o por suscripción (Checkatrade). Las
+    funciones se copian; la combinación, el 0 % al profesional y el uso diario son la apuesta. *Respaldo: UX + IA y competidores.*
+11. **¿Qué pasa si Clickie baja su comisión a 0 %?** *(extra)*
+    Bienvenido: confirma que el profesional valora quedarse con todo. Nuestra diferencia no es solo el porcentaje: son las herramientas por
+    oficio, el historial y que el cliente vuelva a elegir al mismo profesional.
+
+## Crecimiento e inversión
+
+12. **¿Cómo captan y retienen profesionales?**
+    Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a
+    día y clientes que vuelven. Lo medimos con actividad y repetición, no con registros.
+13. **¿Cómo van a conseguir tracción?**
+    En los dos lados. Usuarios: porteros y administradores, ads por barrio y urgencia, referidos y los Handys (los chicos reconocen a los
+    personajes y lo cuentan en casa; es una estrategia de recordación que vamos a medir). Profesionales: 0 % de comisión, ferreterías y
+    corralones, formación y referidos entre oficios. *Respaldo: tracción, publicidades, marca.*
+14. **¿En qué usarían los USD 100.000?**
+    Sobre todo en que más gente adopte Handyx: **USD 45.000 marketing** (ads 20.000, porteros 10.000, contenido con los Handys 8.000, locales
+    7.000), **USD 30.000 operaciones** (formar y comunicarnos con los profesionales 10.000, soporte 10.000, verificación 6.000, cobros 4.000),
+    **USD 15.000 tecnología** (con IA, construir es más barato que nunca) y **USD 10.000 legal y reserva**. Propuesta a aprobar.
+    *Respaldo: cada dólar.*
+15. **¿Por qué invertirían USD 100.000 en Handyx?**
+    Porque el marketing y la IA pueden mover **USD 1 millón en trabajos** en 12 meses: unos 22.300 trabajos, 1.860 por mes, un 8,6 % de los
+    arreglos del partido, y unos USD 150.000 de tarifas. Es una aspiración con la cuenta a la vista. *Respaldo: hacia USD 1 millón.*
+16. **¿Hasta dónde puede crecer Handyx?**
+    Con 72 profesiones y Handyx for Business, aspiramos a **USD 5 millones de ingresos a fines de 2027**: unos USD 3,5 M de personas
+    (520.000 trabajos por año en Argentina) y unos USD 1,56 M de comercios que contratan personal por turnos (1.000 locales × 5 turnos por
+    semana). Además, apps a medida para cada comercio, integradas a Handyx. Supuestos a validar. *Respaldo: mapa, USD 5 M, Handyx for Business.*
+
+## Riesgos y confianza
+
+17. **¿Qué hacen si los clientes no vuelven?**
+    Es nuestra prueba más importante. Antes de escalar revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con
+    pocos casos que crecer sin retención.
+18. **¿Cómo verifican a los profesionales?** *(extra)*
+    Registrarse no es estar verificado: el sello de verificado solo lo da nuestro equipo de operaciones con datos reales, y lo mostramos solo
+    cuando está confirmado. Las valoraciones de cada trabajo quedan en el historial.
+19. **¿Qué pasa si un trabajo sale mal?** *(extra)*
+    El trabajo queda registrado con lo acordado, las etapas y las fotos; soporte media entre las partes y las valoraciones lo reflejan. No
+    prometemos garantías que todavía no tenemos.
+20. **¿Qué hacen con los datos personales?** *(extra)*
+    En el preregistro, nombre, WhatsApp y email se guardan **cifrados**; no los mostramos ni los usamos para otra cosa, y el teléfono no se
+    comparte entre usuario y profesional: hablan por el chat de la app.
+21. **¿Cuál es el mayor riesgo?** *(extra)*
+    Que los clientes no repitan o que no tengamos suficientes profesionales donde hay demanda. Por eso la meta de diciembre mide justamente
+    eso: 50 trabajos cobrados y 5 clientes que vuelven, y crecemos por ciudad con red local.

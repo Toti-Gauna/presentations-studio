@@ -103,20 +103,20 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | Mayús + X | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
 | Mayús + Y | Hacia USD 5 millones en 2027 | Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta. |
 | Mayús + Z | Handyx for Business | Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada. |
-| índice / menú ☰ | Pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
-| índice / menú ☰ | Pregunta 15: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 1: ¿Cuál es tu CAC? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 2: ¿Cuánto cuesta mantener Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 10: ¿Qué hacen si los clientes no vuelven? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 12: ¿Qué herramientas van a tener los profesionales? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 13: ¿Cómo van a conseguir tracción? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 14: ¿Hasta dónde puede crecer Handyx? | Respuesta breve, con números y supuestos rotulados. |
+| índice / menú ☰ | Posible pregunta 15: ¿Qué logran en los próximos 3 meses? | Respuesta breve, con números y supuestos rotulados. |
 
 Volver a la última diapositiva principal: tecla **0**. Avanzar (→, espacio, clicker, celular) nunca entra a los anexos.

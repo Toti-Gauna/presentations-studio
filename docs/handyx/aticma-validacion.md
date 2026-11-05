@@ -66,6 +66,12 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
   respaldo intercaladas cuando se habla de la inversión (cada dólar) y del crecimiento (mapa People/Business); final con el mundo roto que los
   Handys arreglan; preguntas con tarjetas animadas y láminas con movimiento. Scripts en `scripts/video-pitch/montaje/`.
 
+## Posibles preguntas del jurado
+
+Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (21
+preguntas: las 15 del video y 6 extra): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
+(`scripts/video-pitch/machete-preguntas.py`).
+
 ## Control de calidad
 
 | Pregunta | Estado |

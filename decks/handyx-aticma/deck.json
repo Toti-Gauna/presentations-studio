@@ -4433,7 +4433,7 @@
   },
   {
    "id": "q-01",
-   "titulo": "Pregunta 1: ¿Cuál es tu CAC?",
+   "titulo": "Posible pregunta 1: ¿Cuál es tu CAC?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -4461,7 +4461,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 1 de 15",
+     "texto": "Posible pregunta del jurado · 1 de 15",
      "tono": "kicker"
     },
     {
@@ -4479,11 +4479,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -4497,7 +4510,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -4525,7 +4538,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -4538,7 +4551,7 @@
   },
   {
    "id": "q-02",
-   "titulo": "Pregunta 2: ¿Cuánto cuesta mantener Handyx?",
+   "titulo": "Posible pregunta 2: ¿Cuánto cuesta mantener Handyx?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -4565,7 +4578,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 2 de 15",
+     "texto": "Posible pregunta del jurado · 2 de 15",
      "tono": "kicker"
     },
     {
@@ -4583,11 +4596,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -4601,7 +4627,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -4629,7 +4655,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -4642,7 +4668,7 @@
   },
   {
    "id": "q-03",
-   "titulo": "Pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
+   "titulo": "Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -4671,7 +4697,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 3 de 15",
+     "texto": "Posible pregunta del jurado · 3 de 15",
      "tono": "kicker"
     },
     {
@@ -4689,11 +4715,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -4707,7 +4746,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -4735,7 +4774,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -4748,7 +4787,7 @@
   },
   {
    "id": "q-04",
-   "titulo": "Pregunta 4: ¿Cuántos trabajos tienen cobrados?",
+   "titulo": "Posible pregunta 4: ¿Cuántos trabajos tienen cobrados?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -4775,7 +4814,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 4 de 15",
+     "texto": "Posible pregunta del jurado · 4 de 15",
      "tono": "kicker"
     },
     {
@@ -4793,11 +4832,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -4811,7 +4863,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -4839,7 +4891,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -4852,7 +4904,7 @@
   },
   {
    "id": "q-05",
-   "titulo": "Pregunta 5: ¿HandIA funciona hoy?",
+   "titulo": "Posible pregunta 5: ¿HandIA funciona hoy?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -4876,7 +4928,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 5 de 15",
+     "texto": "Posible pregunta del jurado · 5 de 15",
      "tono": "kicker"
     },
     {
@@ -4894,11 +4946,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -4912,7 +4977,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -4940,7 +5005,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -4953,7 +5018,7 @@
   },
   {
    "id": "q-06",
-   "titulo": "Pregunta 6: ¿Qué los diferencia de Clickie y el resto?",
+   "titulo": "Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -4979,7 +5044,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 6 de 15",
+     "texto": "Posible pregunta del jurado · 6 de 15",
      "tono": "kicker"
     },
     {
@@ -4997,11 +5062,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5015,7 +5093,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5043,7 +5121,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5056,7 +5134,7 @@
   },
   {
    "id": "q-07",
-   "titulo": "Pregunta 7: ¿Cómo cobran el 15 %?",
+   "titulo": "Posible pregunta 7: ¿Cómo cobran el 15 %?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -5080,7 +5158,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 7 de 15",
+     "texto": "Posible pregunta del jurado · 7 de 15",
      "tono": "kicker"
     },
     {
@@ -5098,11 +5176,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5116,7 +5207,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5144,7 +5235,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5157,7 +5248,7 @@
   },
   {
    "id": "q-08",
-   "titulo": "Pregunta 8: ¿Cómo captan y retienen profesionales?",
+   "titulo": "Posible pregunta 8: ¿Cómo captan y retienen profesionales?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -5181,7 +5272,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 8 de 15",
+     "texto": "Posible pregunta del jurado · 8 de 15",
      "tono": "kicker"
     },
     {
@@ -5199,11 +5290,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5217,7 +5321,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5245,7 +5349,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5258,7 +5362,7 @@
   },
   {
    "id": "q-09",
-   "titulo": "Pregunta 9: ¿En qué usarían los USD 100.000?",
+   "titulo": "Posible pregunta 9: ¿En qué usarían los USD 100.000?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -5287,7 +5391,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 9 de 15",
+     "texto": "Posible pregunta del jurado · 9 de 15",
      "tono": "kicker"
     },
     {
@@ -5305,11 +5409,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5323,7 +5440,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5351,7 +5468,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5364,7 +5481,7 @@
   },
   {
    "id": "q-10",
-   "titulo": "Pregunta 10: ¿Qué hacen si los clientes no vuelven?",
+   "titulo": "Posible pregunta 10: ¿Qué hacen si los clientes no vuelven?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -5388,7 +5505,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 10 de 15",
+     "texto": "Posible pregunta del jurado · 10 de 15",
      "tono": "kicker"
     },
     {
@@ -5406,11 +5523,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5424,7 +5554,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5452,7 +5582,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5465,7 +5595,7 @@
   },
   {
    "id": "q-11",
-   "titulo": "Pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx?",
+   "titulo": "Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -5494,7 +5624,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 11 de 15",
+     "texto": "Posible pregunta del jurado · 11 de 15",
      "tono": "kicker"
     },
     {
@@ -5512,11 +5642,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5530,7 +5673,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5558,7 +5701,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5571,7 +5714,7 @@
   },
   {
    "id": "q-12",
-   "titulo": "Pregunta 12: ¿Qué herramientas van a tener los profesionales?",
+   "titulo": "Posible pregunta 12: ¿Qué herramientas van a tener los profesionales?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -5595,7 +5738,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 12 de 15",
+     "texto": "Posible pregunta del jurado · 12 de 15",
      "tono": "kicker"
     },
     {
@@ -5613,11 +5756,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5631,7 +5787,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5659,7 +5815,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5672,7 +5828,7 @@
   },
   {
    "id": "q-13",
-   "titulo": "Pregunta 13: ¿Cómo van a conseguir tracción?",
+   "titulo": "Posible pregunta 13: ¿Cómo van a conseguir tracción?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -5696,7 +5852,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 13 de 15",
+     "texto": "Posible pregunta del jurado · 13 de 15",
      "tono": "kicker"
     },
     {
@@ -5714,11 +5870,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5732,7 +5901,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5760,7 +5929,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5773,7 +5942,7 @@
   },
   {
    "id": "q-14",
-   "titulo": "Pregunta 14: ¿Hasta dónde puede crecer Handyx?",
+   "titulo": "Posible pregunta 14: ¿Hasta dónde puede crecer Handyx?",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -5801,7 +5970,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 14 de 15",
+     "texto": "Posible pregunta del jurado · 14 de 15",
      "tono": "kicker"
     },
     {
@@ -5819,11 +5988,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5837,7 +6019,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5865,7 +6047,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
@@ -5878,7 +6060,7 @@
   },
   {
    "id": "q-15",
-   "titulo": "Pregunta 15: ¿Qué logran en los próximos 3 meses?",
+   "titulo": "Posible pregunta 15: ¿Qué logran en los próximos 3 meses?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -5902,7 +6084,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Preguntas del jurado · 15 de 15",
+     "texto": "Posible pregunta del jurado · 15 de 15",
      "tono": "kicker"
     },
     {
@@ -5920,11 +6102,24 @@
      "nivel": 2
     },
     {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
      "id": "r",
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 28,
+      "y": 32,
       "w": 90
      },
      "paso": 0,
@@ -5938,7 +6133,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 62,
+      "y": 66,
       "w": 74
      },
      "paso": 0,
@@ -5966,7 +6161,7 @@
      "area": "libre",
      "pos": {
       "x": 84,
-      "y": 54
+      "y": 58
      },
      "paso": 0,
      "entrada": "ninguna",
