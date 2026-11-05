@@ -1,6 +1,7 @@
 .vista-imprimir { background: #555; }
 .modo-diapositivas .hoja { width: 1920px; height: 1080px; position: relative; overflow: hidden; break-after: page; margin: 0 auto 20px; }
 .modo-diapositivas .marco { position: absolute; inset: 0; }
+.marco > img.fotograma { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .modo-diapositivas .escenario { transform: none; left: 0; top: 0; }
 .modo-lectura { background: #fff; }
 .modo-lectura .hoja { width: 210mm; min-height: 297mm; padding: 14mm 16mm; margin: 0 auto; break-after: page; font-family: 'DM Sans Variable', system-ui, sans-serif; color: #0E1D36; }

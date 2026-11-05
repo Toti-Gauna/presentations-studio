@@ -337,6 +337,30 @@
    "estado": "final"
   },
   {
+   "id": "video-mundo-mdp",
+   "tipo": "imagen",
+   "archivo": "video/mundo-mar-del-plata.jpg",
+   "procedencia": "Cuadro de la animación del mundo (2,2 s): Hoy empezamos en Mar del Plata",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-arreglar",
+   "tipo": "imagen",
+   "archivo": "video/mundo-arreglar.jpg",
+   "procedencia": "Cuadro de la animación del mundo (8 s): Mañana queremos arreglar el mundo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-soluciones",
+   "tipo": "imagen",
+   "archivo": "video/mundo-soluciones.jpg",
+   "procedencia": "Cuadro de la animación del mundo (13,2 s): Un mundo con más soluciones y menos problemas",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
    "id": "circulo-multiplica",
    "tipo": "imagen",
    "archivo": "conceptos/circulo-multiplica.png",
@@ -737,7 +761,21 @@
      "area": "fondo",
      "paso": 4,
      "sale": 5,
-     "entrada": "ninguna"
+     "entrada": "ninguna",
+     "fotogramas": [
+      {
+       "recurso": "video-mundo-mdp",
+       "alt": "Hoy empezamos en Mar del Plata: el mapa con Mar del Plata marcado"
+      },
+      {
+       "recurso": "video-mundo-arreglar",
+       "alt": "Mañana queremos arreglar el mundo: los Handys arreglan las grietas del planeta"
+      },
+      {
+       "recurso": "video-mundo-soluciones",
+       "alt": "Un mundo con más soluciones y menos problemas: el planeta arreglado, rodeado de Handys"
+      }
+     ]
     },
     {
      "id": "qa",

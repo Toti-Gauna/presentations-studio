@@ -42,7 +42,8 @@ with zipfile.ZipFile(f'{OUT}/Handyx-ATICMA-imagenes.zip', 'w', zipfile.ZIP_STORE
         sec, n = seccion(d['escena'])
         titulo = ESC[d['escena']]['titulo']
         # numeración corrida (001…212) en el orden de la presentación: cualquier visor las muestra en orden
-        nombre = f"{k:03d}-{sec[2:]}-portada.png" if n == 0 else f"{k:03d}-{sec[2:]}-{n:02d}-{slug(titulo)}-paso-{d['paso'] + 1}.png"
+        extra = {'video-mundo-mdp': '-mar-del-plata', 'video-mundo-arreglar': '-el-mundo', 'video-mundo-soluciones': '-mas-soluciones'}.get(d.get('fotograma', ''), f"-{d['fotograma']}" if d.get('fotograma') else '')
+        nombre = f"{k:03d}-{sec[2:]}-portada.png" if n == 0 else f"{k:03d}-{sec[2:]}-{n:02d}-{slug(titulo)}-paso-{d['paso'] + 1}{extra}.png"
         z.write(f"{R}/{d['imagen']}" if not d['imagen'].startswith('/') else d['imagen'], nombre)
 print('zips listos', len(man['diapositivas']), 'imágenes')
 for f in sorted(os.listdir(OUT)): print(f, round(os.path.getsize(f'{OUT}/{f}') / 1e6, 1), 'MB')

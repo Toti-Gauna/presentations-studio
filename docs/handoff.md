@@ -254,4 +254,8 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (tarde, 3) · Orden de los anexos (pedido de Ignacio): **primero las preguntas del jurado y después el material extra**, igual
   que en el video. Con eso las letras pasan a las preguntas: Mayús + A…V = preguntas 1 a 20, W…Z = proyección, costos, CAC y validación;
   el resto, número + Enter. Machete con la página de atajos al día: `python3 -I scripts/generar-machete-aticma.py`.
+- 05/11 (tarde, 4) · Motor: `fotogramas` en el elemento video (imágenes fijas solo para PDF/PPTX: una página por imagen antes del
+  póster; en vivo no cambia nada). El clip del mundo suma Mar del Plata → «Mañana queremos arreglar el mundo» → «Un mundo con más
+  soluciones…» (`brands/handyx/assets/video/mundo-*.jpg`). PPT/PDF de 217 páginas; el zip nombra esas tres `…-mar-del-plata`, `…-el-mundo`
+  y `…-mas-soluciones`.
 - Pendiente: voz de HandIA con ElevenLabs (clave + red).

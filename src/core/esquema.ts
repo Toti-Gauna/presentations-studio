@@ -188,7 +188,11 @@ export const Elemento = z.discriminatedUnion('tipo', [
     })
     .strict(),
   z
-    .object({ ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false), cubrir: z.boolean().default(false) })
+    .object({
+      ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false), cubrir: z.boolean().default(false),
+      /** Imágenes fijas del video para las exportaciones (PDF, PPTX): una página por imagen, antes de la del póster, en el paso donde entra el video. En vivo no cambian nada. */
+      fotogramas: z.array(z.object({ recurso: z.string(), alt: z.string() }).strict()).default([]),
+    })
     .strict(),
   z
     .object({

@@ -122,6 +122,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
         }
       if ((el.tipo === 'imagen' || el.tipo === 'video') && !deck.recursos.some((r) => r.id === el.recurso))
         errores.push(`escena ${e.id}/${el.id}: recurso inexistente ${el.recurso}`);
+      if (el.tipo === 'video')
+        for (const f of el.fotogramas) if (!deck.recursos.some((r) => r.id === f.recurso)) errores.push(`escena ${e.id}/${el.id}: fotograma inexistente ${f.recurso}`);
     }
     for (const ref of e.referencias) if (!mapa.has(ref) && !/^(https?:|pdf:|doc:|notion:)/.test(ref)) errores.push(`escena ${e.id}: referencia desconocida ${ref}`);
   }

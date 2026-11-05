@@ -34,6 +34,16 @@ else {
     const pasos = conSalidas ? Array.from({ length: e.pasos }, (_, k) => k) : [e.pasos - 1];
     let hoja = h('section', { class: 'hoja' });
     for (const paso of pasos) {
+      // Fotogramas de un video (Mar del Plata, el mundo…): páginas fijas antes de la del póster, solo en diapositivas.
+      if (!lectura)
+        for (const v of e.elementos)
+          if (v.tipo === 'video' && v.paso === paso)
+            for (const f of v.fotogramas) {
+              const r = s.ctx.recursos.get(f.recurso);
+              if (!r) continue;
+              raiz.append(h('section', { class: 'hoja', 'data-escena': e.id, 'data-paso': String(paso), 'data-fotograma': f.recurso },
+                h('div', { class: 'marco' }, h('img', { class: 'fotograma', src: s.ctx.url(r.archivo), alt: f.alt }))));
+            }
       const marco = h('div', { class: 'marco' });
       hoja = h('section', { class: 'hoja', 'data-escena': e.id, 'data-paso': String(paso) }, marco);
       raiz.append(hoja);
