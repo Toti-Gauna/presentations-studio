@@ -7,7 +7,9 @@ def estado(fx,fy,s):
     sc=B*s; tx=SW/2-fx*sc; ty=SH/2-fy*sc
     tx=min(0,max(SW-1920*sc,tx)); ty=min(0,max(SH-1080*sc,ty))
     return [round(tx,2),round(ty,2),round(sc,5)]
+COMPLETO=True  # 05/11: las láminas se ven enteras (sin recortes); solo un acercamiento suave que no sale de los márgenes
 def toma(img,t0,t1,cams,push=1):
+    if COMPLETO: cams=[(t0,960,540,1.0)]
     keys=[]
     for i,(t,fx,fy,s) in enumerate(cams):
         e=estado(fx,fy,s); keys.append([t,*e,'power2.inOut'])
@@ -32,7 +34,7 @@ st=[(6.6,'La odisea','reloj2'),(15.6,'Profesionales buscando clientes','usuarios
     (97.3,'Trabajos · gastos · ingresos','billetera'),(106.8,'2 apps desarrolladas','celular'),(111.7,'Porteros: primeros ingresos','edificio'),
     (119.7,'259.623 hogares','casa'),(130.9,'USD 100.000 de ingresos brutos','dolar'),(145.1,'Sistema agéntico con IA','ia'),
     (154.9,'Inversión: USD 100.000','alcancia'),(167.4,'72 profesiones','objetivo'),(171.9,'Handyx for People + Business','tienda'),(177.1,'Silicon Valley','cohete')]
-stickers=[{'t':t,'dur':2.6,'text':x,'icon':i,'y':848} for t,x,i in st]
+stickers=[{'t':t,'dur':2.6,'text':x,'icon':i,'y':826} for t,x,i in st]  # en la columna derecha, debajo de la cámara: no tapan la lámina
 grietas=[[[-68,-25],[-64,-29],[-60,-32],[-63,-35],[-58,-40]],[[-62,-5],[-57,-9],[-52,-6],[-47,-11],[-41,-8]],[[-78,-2],[-74,-7],[-76,-12],[-71,-17]],
  [[-12,14],[-6,10],[0,12],[6,9],[12,11]],[[18,-4],[23,-10],[21,-17],[27,-24]],[[-2,26],[6,22],[13,27],[22,23],[30,26]],
  [[-6,41],[1,45],[8,43],[15,47],[22,45]],[[-108,41],[-100,36],[-93,39],[-85,34]]]

@@ -213,4 +213,8 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   y captura la pantalla pública cuadro a cuadro con el reloj de Playwright controlado (animaciones exactas, sin cuadros perdidos), en
   partes en paralelo; los pasos que son un video a pantalla completa se empalman desde su archivo con su sonido. Sin audio en el resto
   (los efectos suenan en vivo). Reemplaza para este uso a `exportar:video`, que graba en tiempo real y con menos calidad.
+- 05/11 (10) · Profesiones: «Cuidados y servicios» suma el **cuidado de adultos mayores** (pedido de Ignacio; hay oferta en carteles de
+  comercios del barrio; entra con verificación reforzada). No se usa la foto del cartel ni sus datos (persona real). Títulos de «Cómo crece
+  Handyx» y «Publicidades» separados de su etiqueta. Video: las láminas se ven **enteras** (sin el zoom que recortaba) y las frases clave
+  pasan a la columna derecha, debajo de la cámara.
 

@@ -3398,7 +3398,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 8,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
@@ -4088,7 +4088,7 @@
      "area": "libre",
      "pos": {
       "x": 5,
-      "y": 7,
+      "y": 9,
       "w": 90
      },
      "paso": 0,
@@ -4820,7 +4820,7 @@
    "transicion": "fundido",
    "objetivo": "Mostrar con ejemplos concretos cómo se llega a 72 profesiones.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Ejemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Ejemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio. Cuidado de adultos mayores (05/11, pedido de Ignacio): hay oferta en carteles de comercios del barrio; por ser un servicio dentro de la casa con personas mayores, entra con verificación reforzada.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Hoy: electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado. Próximas posibles: limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, control de plagas y piletas; electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares; mecánica, electricidad del auto, gomería y lavado de autos; fletes y mudanzas, armado de muebles, tapicería y cuidado de mascotas.",
    "referencias": [
     "PROFESIONES-INICIALES",
@@ -4885,7 +4885,7 @@
        "icono": "auto"
       },
       {
-       "texto": "**Servicios:** fletes y mudanzas, armado de muebles, tapicería, cuidado de mascotas",
+       "texto": "**Cuidados y servicios:** cuidado de adultos mayores, cuidado de mascotas, fletes y mudanzas, armado de muebles, tapicería",
        "icono": "usuarios"
       },
       {
