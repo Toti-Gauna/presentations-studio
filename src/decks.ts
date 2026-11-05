@@ -2,6 +2,7 @@
 // Con VITE_PUBLICADA=<etiqueta> el build usa la versión congelada (decks/<id>/publicadas/<etiqueta>/).
 import { validarPaquete, type Paquete, type Resultado } from './core/validar.ts';
 import { huella } from './core/afirmaciones.ts';
+import type { CargarAnimacion, CrearAnimacion } from './render/animacion.ts';
 
 const json = (patron: Record<string, unknown>) => patron;
 const decks = json(import.meta.glob('/decks/*/deck.json', { eager: true, import: 'default' }));
@@ -43,6 +44,17 @@ export function urlRecurso(tema: string, archivo: string): string {
 }
 
 /** Carpeta de archivos de un tema (puede compartir la de otra marca con assetsDe). */
+// Animaciones de cada marca (escenas en código): se cargan bajo demanda, una por diapositiva.
+const animaciones = import.meta.glob('/brands/*/animaciones/*.ts');
+export function cargadorAnimaciones(carpeta: string): CargarAnimacion {
+  return async (modulo) => {
+    const cargar = animaciones[`/brands/${carpeta}/animaciones/${modulo}.ts`];
+    if (!cargar) return null;
+    const m = (await cargar()) as { default: CrearAnimacion };
+    return m.default;
+  };
+}
+
 export function carpetaDe(tema: { id: string; assetsDe?: string | undefined }): string {
   return tema.assetsDe ?? tema.id;
 }

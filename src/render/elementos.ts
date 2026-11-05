@@ -6,6 +6,7 @@ import { svg, urlCodificada } from '../core/qr.ts';
 import { h, marcado } from './dom.ts';
 import { construirPersonaje } from './personajes.ts';
 import { circulos, oceano, reparto } from './motores.ts';
+import { construirAnimacion, type CargarAnimacion } from './animacion.ts';
 
 export interface Contexto {
   tema: Tema;
@@ -15,6 +16,10 @@ export interface Contexto {
   recursos: ReadonlyMap<string, { archivo: string; tipo: string }>;
   /** 'pie': los rótulos de las cifras se agrupan en una línea discreta al pie de la escena. */
   rotulos?: 'chips' | 'pie';
+  /** Carga las animaciones de la marca (escenas en código). */
+  cargarAnimacion?: CargarAnimacion;
+  /** Movimiento reducido (exportación, versión sin animaciones). */
+  reducido?: boolean;
 }
 
 let traer: { por: string; desde: string } | null = null;
@@ -227,6 +232,9 @@ export function construir(el: Elemento, ctx: Contexto): HTMLElement {
     }
     case 'circulos':
       raiz.append(circulos(el, ctx));
+      break;
+    case 'animacion':
+      raiz.append(construirAnimacion(el, ctx));
       break;
     case 'imagen': {
       const r = ctx.recursos.get(el.recurso);

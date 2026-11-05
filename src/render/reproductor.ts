@@ -91,8 +91,8 @@ export class Reproductor {
     this.contenedor = contenedor;
     this.escenas = escenas;
     this.tema = tema;
-    this.ctx = ctx;
     this.modo = opciones.modo ?? modoMovimiento();
+    this.ctx = { ...ctx, reducido: this.modo === 'reducido' };
     this.lienzo = h('div', { class: 'lienzo' });
     this.negro = h('div', { class: 'negro', 'aria-hidden': 'true' });
     this.escenario = h('div', { class: `escenario modo-${this.modo}`, style: variablesTema(tema), role: 'region', 'aria-roledescription': 'presentación', 'aria-live': 'polite' }, this.lienzo, this.negro);

@@ -274,3 +274,7 @@
 /* Rótulos agrupados al pie de la escena (opción del deck rotulos: 'pie') */
 .rotulos-pie { position: absolute; right: 96px; bottom: 18px; z-index: 3; max-width: 70%; text-align: right; font-size: 19px; font-weight: 600; letter-spacing: .01em; color: var(--suave); opacity: .9; }
 .rotulos-pie::before { content: 'ⓘ  '; font-weight: 800; }
+
+/* Animaciones de la marca (escenas en código, en un Shadow DOM): ocupan todo el escenario */
+.escena > .el.el-animacion { position: absolute; inset: 0; z-index: 0; }
+.el-animacion .animacion { position: absolute; inset: 0; display: block; }

@@ -196,7 +196,9 @@ try {
   await presA.waitForTimeout(1200);
   const actualA = async () => ((await presA.locator('.indice li.actual .item').textContent()) ?? '').trim();
   await presA.keyboard.press('r');
-  for (let i = 0; i < 10; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(500); }
+  // Las diapositivas animadas tienen un paso por frase: se avanza hasta que el recorrido se detiene en la 7.ª.
+  for (let i = 0; i < 48; i++) { await presA.keyboard.press('ArrowRight'); await presA.waitForTimeout(220); }
+  await presA.waitForTimeout(600);
   ok('ATICMA: avanzar se detiene en la 7.ª diapositiva (no entra a anexos)', (await actualA()).startsWith('7.'), await actualA());
   ok('ATICMA: la pantalla pública usa el movimiento completo', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-completo'));
   ok('ATICMA: el cierre (7.ª, paso 2) es el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);

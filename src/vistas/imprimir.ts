@@ -29,7 +29,8 @@ else {
   const usadas = new Set<string>();
   escenas.forEach((e, i) => {
     // Si algo sale de escena en un paso, el último paso no muestra todo: en diapositivas se imprime una página por paso.
-    const conSalidas = !lectura && e.elementos.some((x) => x.sale !== undefined);
+    // Las animaciones también: cada paso muestra un momento distinto de la escena.
+    const conSalidas = !lectura && e.elementos.some((x) => x.sale !== undefined || x.tipo === 'animacion');
     const pasos = conSalidas ? Array.from({ length: e.pasos }, (_, k) => k) : [e.pasos - 1];
     let hoja = h('section', { class: 'hoja' });
     for (const paso of pasos) {

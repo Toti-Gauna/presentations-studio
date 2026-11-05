@@ -89,6 +89,21 @@ Todas a escenas animadas, por familias de componentes reutilizables:
 En vivo con pasos por frase (clicker o ritmo automático), notas con «→ al decir…», ensayo cronometrado (180 s), pruebas e2e, grabación en
 vivo, video final, PPT/PDF con cada paso y machete actualizado.
 
+## Pedido del 05/11 (noche, 2): plan de crecimiento y diferenciación
+
+- **Primeros 3 meses**: HandIA llevada a nivel premium (foto, voz, referencia de costo) y aplicada al especialista (**HandIA para
+  profesionales**: presupuesto, materiales, recordatorios y feedback); todos los desarrollos que muestran las diapositivas; **6 profesiones
+  nuevas por mes, cada una con sus herramientas** (6 → 12 → 18 → 24); expansión hasta **toda Buenos Aires** en 3 meses.
+- **Por trimestre** (plan propuesto, a validar): T1 nov–ene Buenos Aires (24 profesiones) · T2 feb–abr Centro: Córdoba, Rosario, Santa Fe
+  (42) · T3 may–jul Cuyo y Litoral (60) · T4 ago–oct Norte (72, la meta) · nov–dic 2027 Patagonia → toda Argentina; en cada trimestre
+  mejora Handyx for People (HandIA premium, ferreterías conectadas, IA por oficio, clientes que vuelven) y Handyx for Business (piloto de
+  locales, turnos fijos, apps a medida, mantenimiento). Animación: respaldo «Cómo crece Handyx, trimestre a trimestre».
+- **Inversión ↔ diferenciación**: cada partida dice qué mejora del producto compra (tecnología: HandIA premium, HandIA para
+  profesionales y herramientas; operaciones: formar y acompañar a los profesionales; marketing: más vecinos y profesionales), y el océano
+  azul cuenta los desarrollos del plan (24).
+- Cifras nuevas (afirmaciones): ingreso bruto de la prueba $ 70.000 (10 % + 10 % de $ 350.000), 6 profesiones por mes, Buenos Aires
+  en 3 meses, profesiones por trimestre (24 / 42 / 60 / 72), 24 desarrollos del plan, ejemplos de HandIA y presupuestos.
+
 ## Orden y tiempos estimados
 
 Fase 0 (1–2 h) → Fase 1 (6–8 h) → Fase 2 (3–4 h + render) → Fase 3 (3–4 h) → Fase 4 (8–10 h) → Fase 5 (2 h).

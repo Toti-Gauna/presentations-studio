@@ -1430,5 +1430,300 @@
   "verificacion": "verificado",
   "uso": "publico",
   "formato": "texto"
+ },
+ {
+  "id": "PRUEBA-COM-USUARIO",
+  "descripcion": "Plan de comisiones original de la prueba con porteros: parte del usuario",
+  "valor": 10,
+  "unidad": "%",
+  "periodo": "octubre 2026",
+  "tipo": "informado",
+  "fuente": "Ignacio Gauna, 05/11/2026: plan original de la prueba (10 % al usuario y 10 % al profesional). Desde el lanzamiento: 0 % al profesional y 15 % al usuario.",
+  "corte": "2026-11-05",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "porcentaje"
+ },
+ {
+  "id": "PRUEBA-COM-PROFESIONAL",
+  "descripcion": "Plan de comisiones original de la prueba con porteros: parte del profesional",
+  "valor": 10,
+  "unidad": "%",
+  "periodo": "octubre 2026",
+  "tipo": "informado",
+  "fuente": "Ignacio Gauna, 05/11/2026: plan original de la prueba (10 % + 10 %).",
+  "corte": "2026-11-05",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "porcentaje"
+ },
+ {
+  "id": "PRUEBA-INGRESO-HANDYX",
+  "descripcion": "Ingreso bruto de Handyx en la prueba con porteros (plan original 10 % + 10 %)",
+  "valor": 70000,
+  "unidad": "ARS",
+  "periodo": "octubre 2026",
+  "tipo": "informado",
+  "fuente": "Cálculo sobre lo informado por Ignacio: 20 % (10 % usuario + 10 % profesional) de $ 350.000 en 5 trabajos. Conciliar con comprobantes.",
+  "corte": "2026-11-05",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "ars",
+  "formula": "350000 * 0.2",
+  "dependencias": [
+   "PRUEBA-MONTO",
+   "PRUEBA-COM-USUARIO",
+   "PRUEBA-COM-PROFESIONAL"
+  ]
+ },
+ {
+  "id": "PRUEBA-INGRESO-USD",
+  "descripcion": "Ingreso bruto de la prueba en dólares",
+  "valor": "≈ USD 45",
+  "unidad": "USD",
+  "periodo": "octubre 2026",
+  "tipo": "proyeccion",
+  "fuente": "70.000 / 1.560 = USD 44,9 (BNA 30/10).",
+  "corte": "2026-11-05",
+  "verificacion": "pendiente",
+  "uso": "publico",
+  "formato": "texto",
+  "formula": "70000 / 1560",
+  "dependencias": [
+   "PRUEBA-INGRESO-HANDYX",
+   "TIPO-CAMBIO"
+  ]
+ },
+ {
+  "id": "PROF-POR-MES",
+  "descripcion": "Profesiones nuevas por mes, cada una con sus herramientas",
+  "valor": 6,
+  "unidad": "profesiones por mes",
+  "periodo": "desde el lanzamiento",
+  "tipo": "meta",
+  "fuente": "Ignacio Gauna, 05/11/2026 (plan de crecimiento).",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "META-BA-MESES",
+  "descripcion": "Meses para llegar a toda Buenos Aires",
+  "valor": 3,
+  "unidad": "meses",
+  "periodo": "primer trimestre",
+  "tipo": "meta",
+  "fuente": "Ignacio Gauna, 05/11/2026 (plan de expansión).",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "PROF-Q1",
+  "descripcion": "Profesiones al cierre del primer trimestre (6 + 3 meses × 6)",
+  "valor": 24,
+  "unidad": "profesiones",
+  "periodo": "enero 2027",
+  "tipo": "proyeccion",
+  "fuente": "6 iniciales + 6 por mes durante 3 meses.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "6 + 3 * 6",
+  "dependencias": [
+   "PROFESIONES-INICIALES",
+   "PROF-POR-MES"
+  ]
+ },
+ {
+  "id": "PROF-Q2",
+  "descripcion": "Profesiones al cierre del segundo trimestre",
+  "valor": 42,
+  "unidad": "profesiones",
+  "periodo": "abril 2027",
+  "tipo": "proyeccion",
+  "fuente": "24 + 3 meses × 6.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "24 + 3 * 6",
+  "dependencias": [
+   "PROF-Q1",
+   "PROF-POR-MES"
+  ]
+ },
+ {
+  "id": "PROF-Q3",
+  "descripcion": "Profesiones al cierre del tercer trimestre",
+  "valor": 60,
+  "unidad": "profesiones",
+  "periodo": "julio 2027",
+  "tipo": "proyeccion",
+  "fuente": "42 + 3 meses × 6.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "42 + 3 * 6",
+  "dependencias": [
+   "PROF-Q2",
+   "PROF-POR-MES"
+  ]
+ },
+ {
+  "id": "PROF-Q4",
+  "descripcion": "Profesiones al llegar a la meta (septiembre de 2027)",
+  "valor": 72,
+  "unidad": "profesiones",
+  "periodo": "septiembre 2027",
+  "tipo": "proyeccion",
+  "fuente": "60 + 2 meses × 6 = 72 (META-PROFESIONES).",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "60 + 2 * 6",
+  "dependencias": [
+   "PROF-Q3",
+   "PROF-POR-MES",
+   "META-PROFESIONES"
+  ]
+ },
+ {
+  "id": "DESARROLLOS-PLAN",
+  "descripcion": "Desarrollos del plan: 18 herramientas por oficio (3 × 6 oficios) + HandIA con foto, HandIA con voz, HandIA para profesionales, números con IA, ferreterías conectadas y Handyx for Business",
+  "valor": 24,
+  "unidad": "desarrollos",
+  "periodo": "2027",
+  "tipo": "meta",
+  "fuente": "Inventario de los diseños del respaldo (05/11/2026); en desarrollo, a validar con los profesionales.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero"
+ },
+ {
+  "id": "HANDIA-EJ-MIN",
+  "descripcion": "Ejemplo: referencia de costo de HandIA (desde)",
+  "valor": 40000,
+  "unidad": "ARS",
+  "periodo": "",
+  "tipo": "ejemplo",
+  "fuente": "Ejemplo ilustrativo; HandIA está en desarrollo y el precio final lo fija el profesional.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "ars"
+ },
+ {
+  "id": "HANDIA-EJ-MAX",
+  "descripcion": "Ejemplo: referencia de costo de HandIA (hasta)",
+  "valor": 60000,
+  "unidad": "ARS",
+  "periodo": "",
+  "tipo": "ejemplo",
+  "fuente": "Ejemplo ilustrativo; HandIA está en desarrollo y el precio final lo fija el profesional.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "ars"
+ },
+ {
+  "id": "EJ-PRES-1",
+  "descripcion": "Ejemplo: presupuesto de un profesional",
+  "valor": 52000,
+  "unidad": "ARS",
+  "periodo": "",
+  "tipo": "ejemplo",
+  "fuente": "Ejemplo ilustrativo de comparación de presupuestos.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "ars"
+ },
+ {
+  "id": "EJ-PRES-2",
+  "descripcion": "Ejemplo: presupuesto de un profesional",
+  "valor": 48000,
+  "unidad": "ARS",
+  "periodo": "",
+  "tipo": "ejemplo",
+  "fuente": "Ejemplo ilustrativo de comparación de presupuestos.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "ars"
+ },
+ {
+  "id": "EJ-PRES-3",
+  "descripcion": "Ejemplo: presupuesto de un profesional",
+  "valor": 58000,
+  "unidad": "ARS",
+  "periodo": "",
+  "tipo": "ejemplo",
+  "fuente": "Ejemplo ilustrativo de comparación de presupuestos.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "ars"
+ },
+ {
+  "id": "Q1-TRABAJOS-N",
+  "descripcion": "Trabajos del 25 % de un trimestre (numérico, para conteos)",
+  "valor": 16200,
+  "unidad": "trabajos",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "259.623 / 4 × 25 % = 16.226 ≈ 16.200.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "259623 / 4 * 0.25",
+  "dependencias": [
+   "MERCADO-ARREGLOS",
+   "META-CUOTA-LOCAL"
+  ]
+ },
+ {
+  "id": "MERCADO-TRIM-N",
+  "descripcion": "Arreglos del hogar en el partido por trimestre",
+  "valor": 64900,
+  "unidad": "arreglos",
+  "periodo": "trimestre",
+  "tipo": "proyeccion",
+  "fuente": "259.623 hogares × 1 arreglo por año / 4 = 64.906 ≈ 64.900.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "entero",
+  "formula": "259623 / 4",
+  "dependencias": [
+   "MDP-HOGARES",
+   "SUP-ARREGLOS-HOGAR"
+  ]
+ },
+ {
+  "id": "Q1-TARIFAS-REAL-N",
+  "descripcion": "Tarifas del primer trimestre con el ticket real (numérico, para conteos)",
+  "valor": 109000,
+  "unidad": "USD",
+  "periodo": "primer trimestre comercial",
+  "tipo": "proyeccion",
+  "fuente": "16.226 trabajos × USD 45 × 15 % = USD 109.500 ≈ 109.000.",
+  "corte": "2026-11-05",
+  "verificacion": "sin-verificar",
+  "uso": "publico",
+  "formato": "usd",
+  "formula": "16226 * 45 * 0.15",
+  "dependencias": [
+   "Q1-TRABAJOS-N",
+   "PRUEBA-TICKET-USD",
+   "TARIFA-USUARIO"
+  ]
  }
 ]

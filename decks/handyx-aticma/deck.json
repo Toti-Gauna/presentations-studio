@@ -418,7 +418,7 @@
    "disposicion": "dividido",
    "paleta": "neutro",
    "duracion": 25,
-   "pasos": 1,
+   "pasos": 5,
    "clasificacion": "hecho",
    "transicion": "fundido",
    "objetivo": "Que el jurado entienda el problema de los dos lados antes de escuchar la solución.",
@@ -429,114 +429,21 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "logo",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 7,
-      "w": 16
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "odisea",
+     "alt": "Animación: la casa con una pérdida y los chats que se amontonan; del otro lado, el especialista con la agenda vacía y herramientas dispersas; Handyx une los dos lados",
+     "tiempos": [
+      2.6,
+      3.2,
+      3.8,
+      3.2,
+      3.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "logo",
-     "alt": "Handyx"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 6,
-      "y": 15,
-      "w": 88
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Conseguir un profesional no debería ser una ==odisea.==",
-     "nivel": 2
-    },
-    {
-     "id": "g",
-     "area": "libre",
-     "pos": {
-      "x": 10,
-      "y": 34
-     },
-     "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "grifo-roto",
-     "tamano": 34,
-     "acciones": []
-    },
-    {
-     "id": "cu",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 76,
-      "w": 30
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**En casa**\nAlgo se rompió y no sabés a quién llamar.",
-     "tamano": "s",
-     "caja": "gris"
-    },
-    {
-     "id": "l",
-     "area": "libre",
-     "pos": {
-      "x": 74,
-      "y": 36
-     },
-     "paso": 0,
-     "entrada": "ninguna",
-     "tipo": "personaje",
-     "personaje": "llave",
-     "tamano": 30,
-     "acciones": []
-    },
-    {
-     "id": "cp",
-     "area": "libre",
-     "pos": {
-      "x": 65,
-      "y": 76,
-      "w": 30
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**El profesional**\nBusca clientes y organiza su trabajo como puede.",
-     "tamano": "s",
-     "caja": "azul"
-    },
-    {
-     "id": "une",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 38,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "contraste",
-     "items": [
-      {
-       "texto": "Encontrar a quién llamar"
-      },
-      {
-       "texto": "Coordinar el arreglo"
-      },
-      {
-       "texto": "Organizar el trabajo"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },

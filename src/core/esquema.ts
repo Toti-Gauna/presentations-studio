@@ -190,6 +190,19 @@ export const Elemento = z.discriminatedUnion('tipo', [
   z
     .object({ ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false), cubrir: z.boolean().default(false) })
     .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('animacion'),
+      /** Escena animada de la marca: brands/<carpeta>/animaciones/<modulo>.ts. Cada paso de la diapositiva reproduce un tramo. */
+      modulo: z.string().regex(/^[a-z0-9-]+$/),
+      alt: z.string(),
+      /** Segundos de animación de cada paso (los mismos tramos que el módulo). Uno por paso de la escena. */
+      tiempos: z.array(z.number().positive().max(60)).min(1),
+      /** Afirmaciones que la animación muestra (sus cifras salen de acá; se rotulan al pie). */
+      afirmaciones: z.array(z.string()).default([]),
+    })
+    .strict(),
 ]);
 export type Elemento = z.infer<typeof Elemento>;
 

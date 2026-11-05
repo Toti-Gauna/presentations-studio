@@ -27,6 +27,8 @@ function textos(el: Elemento): string[] {
       return [el.texto];
     case 'cifra':
       return [el.leyenda, el.detalle ?? '', `{{${el.afirmacion}}}`];
+    case 'animacion':
+      return [el.alt, ...el.afirmaciones.map((a) => `{{${a}}}`)];
     case 'lista':
       return [el.encabezado ?? '', ...el.items.map((i) => i.texto)];
     case 'flujo':
@@ -100,6 +102,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
           if (af.valor === null) errores.push(`escena ${e.id}/${el.id}: ${ref} no tiene valor (null) y aparece en pantalla`);
         }
       }
+      if (el.tipo === 'animacion' && el.tiempos.length !== e.pasos)
+        errores.push(`escena ${e.id}/${el.id}: la animación tiene ${el.tiempos.length} tramos y la escena ${e.pasos} pasos`);
       if (el.tipo === 'qr') {
         const qr = qrs.get(el.qr);
         if (!qr) errores.push(`escena ${e.id}/${el.id}: QR inexistente ${el.qr}`);
