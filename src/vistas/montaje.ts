@@ -134,7 +134,7 @@ if (!('error' in s)) {
     if (fueraCara > 0 && caraImg.getAttribute('src') !== src) { caraImg.src = src; esperas.push(caraImg.decode().catch(() => null)); }
     // Subtítulos: la frase actual, con la palabra dicha resaltada.
     const frase = plan.subtitulos.find((f) => t >= f.t0 - 0.1 && t <= f.t1 + 0.35);
-    if (frase && t < plan.final.desde) {
+    if (frase) {
       subs.style.opacity = '1';
       subs.innerHTML = frase.palabras.map((w) => (t >= w.t0 && t < w.t1 + 0.12 ? `<b>${w.w}</b>` : w.w)).join(' ');
     } else subs.style.opacity = '0';
