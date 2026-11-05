@@ -203,7 +203,7 @@ try {
   await presA.waitForTimeout(600);
   ok('ATICMA: avanzar se detiene en la 7.ª diapositiva (no entra a anexos)', (await actualA()).startsWith('7.'), await actualA());
   ok('ATICMA: la pantalla pública usa el movimiento completo', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-completo'));
-  ok('ATICMA: el cierre (7.ª, paso 2) es el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);
+  ok('ATICMA: el cierre (7.ª, último golpe) es el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);
   ok('ATICMA: los rótulos de las cifras van en un pie discreto', (await pubA.locator('.rotulos-pie').count()) >= 1 && (await pubA.locator('section.escena .rotulo:not(figcaption .rotulo)').count()) === 0);
   await presA.getByRole('button', { name: '■ Finalizar' }).click(); await presA.waitForTimeout(400);
   const intento = (await presA.locator('.intentos li').first().textContent()) ?? '';

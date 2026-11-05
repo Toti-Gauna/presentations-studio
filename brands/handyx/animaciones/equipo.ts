@@ -51,6 +51,7 @@ const vaiven = (k: number) => (k < 0.5 ? 2 * k ** 2 : 1 - (-2 * k + 2) ** 2 / 2)
 
 export default escena({
   marcas: [0, 3.0, 6.6, 10.6, 13.8, 14.6],
+  leyendas: ['Un equipo chico, con **sueños grandes**', 'Agentes de IA **supervisados por Ignacio**', 'La inversión: **qué mejora cada dólar**', 'Próximo destino: **Silicon Valley**', ''],
   cara: [
     { desde: 0, x: 1740, y: 170, d: 250 },
     { desde: 1, x: 1740, y: 170, d: 250 },
