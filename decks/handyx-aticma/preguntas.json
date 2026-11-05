@@ -314,7 +314,7 @@
  {
   "n": 9,
   "pregunta": "¿En qué usarían los USD 100.000?",
-  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, marketing digital en todas las redes y marketing en la calle: carteles en postes, volantes en locales y remeras para los profesionales con el Handy de su oficio), {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología (HandIA premium y herramientas por oficio) y {{INV-LEGAL}} en legal y reserva.",
+  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, redes, postes, volantes y remeras con los Handys), {{INV-OPERACIONES}} en operaciones y {{INV-TECNOLOGIA}} en tecnología.",
   "puntos": [
    {
     "ic": "megafono",
@@ -595,7 +595,7 @@
  },
  {
   "n": 18,
-  "pregunta": "¿Cómo consiguen los materiales los profesionales?",
+  "pregunta": "¿Cómo consiguen los materiales?",
   "respuesta": "Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
   "puntos": [
    {
@@ -636,7 +636,7 @@
  },
  {
   "n": 19,
-  "pregunta": "¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+  "pregunta": "¿Qué suma HandIA con la inversión?",
   "respuesta": "Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
   "puntos": [
    {

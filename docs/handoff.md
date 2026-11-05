@@ -221,3 +221,17 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   pitch a sus tiempos + 30 láminas de respaldo + 20 preguntas, revisada escena por escena. Video editado: cámara en círculo en la columna
   derecha (sin tapar la lámina) y láminas enteras.
 
+## 05/11 (madrugada) · Semifinal: todo animado, videos v3 y entregables
+- **Pitch**: las 7 diapositivas son escenas animadas (`brands/handyx/animaciones/{odisea,handia,profesional,empezamos,mercado,competencia,equipo}.ts`)
+  con los Handys, una leyenda numerada por paso y notas «→ al decir…» con la frase que dispara cada golpe. Competencia: océano rojo con
+  plataformas A–D (sin nombres ni logos) → océano azul. La 7.ª suma el **cierre con los dos QR** (`decks/handyx-aticma/qr.json`: landing y
+  portafolio de Ignacio, `portafolio.eclipse-business.com` según el repo `Toti-Gauna/portafolio-2026`; **confirmar que esté publicado**).
+- **Marketing con destino** (pedido de Ignacio): publicidades hechas con IA (Seedance 2.5), redes, postes, volantes en locales y remeras para
+  los profesionales con el Handy de su oficio (afirmaciones INV-M-*, tarjeta de la 7.ª, respuestas 9 y 13, machete, anexo de inversión).
+- **Respuestas**: 20 escenas (`comun/respuesta.ts` + `decks/handyx-aticma/preguntas.json` → `scripts/generar-respuestas.py`).
+- **Material extra**: anexos como escenas (`anexo-*.ts`, `trimestres.ts`, `crece.ts`, `ferreterias.ts`); «HandIA te habla» sigue siendo video.
+- **Video v3** (`scripts/video-pitch/vite.render.config.ts` sirve sin recargas; montaje en `src/vistas/montaje.ts`): fundido encadenado
+  (la escena que entra va encima), escenas aisladas, cara en el lugar libre de cada escena, subtítulos corregidos (**25 %** en pantalla aunque
+  la grabación dice 20 %), clip del mundo y cierre con QR. Tres cortes: con voz (entrega completa), **de fondo sin voz** (mismo ritmo que la
+  grabación, para hablar encima) y **de fondo con el guion oficial** (7 diapositivas en orden, ≈ 3:13 con el cierre).
+- Pendiente: grabar la versión fluida (Ignacio, 05/11) y re-sincronizar con su transcripción; voz de HandIA con ElevenLabs (clave + red).

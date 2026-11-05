@@ -2422,12 +2422,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Comparación de recorridos, no de pantallas: las capturas de la competencia se suman cuando Ignacio las mande desde sus apps (no se pudieron obtener desde esta sesión). Clickie: comisión al profesional y orientación con IA (fuentes de prensa 2026).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 hoy, por WhatsApp, preguntás en grupos, esperás y el precio llega al final · 2 en las apps con comisión hay pedido y propuestas, algunas con IA, pero el profesional paga una comisión (el «hasta 15 %» es de una sola plataforma) · 3 en Handyx mandás una foto, HandIA arma el pedido, ves el precio antes de contratar y el profesional no paga comisión y suma herramientas · 4 lo que nos diferencia no es una función: es el recorrido completo, con historial para que el cliente vuelva a elegir al profesional (meta, todavía no demostrada).\nComparación de recorridos, no de pantallas: las capturas de la competencia se suman cuando Ignacio las mande desde sus apps (no se pudieron obtener desde esta sesión). Clickie: comisión al profesional y orientación con IA (fuentes de prensa 2026).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Hoy, por WhatsApp: preguntás en grupos, esperás respuestas y el precio llega al final. Apps con comisión: pedido y propuestas, algunas con IA, y el profesional paga una comisión. Handyx: foto y descripción, HandIA arma el pedido, propuestas con precio visible antes de contratar, 0 % al profesional y herramientas para su oficio.",
    "referencias": [
     "COMP-CLICKIE-PRO",
@@ -2437,124 +2437,23 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-ux-ia",
+     "alt": "Animación: el mismo arreglo en tres experiencias. Hoy, por WhatsApp, preguntás en grupos, esperás respuestas y el precio llega al final. En apps con comisión hay pedido y propuestas, algunas suman IA y el profesional paga una comisión. Con Handyx, una foto y HandIA arma el pedido, el precio es visible antes de contratar y el profesional no paga comisión y suma herramientas por oficio (HandIA y herramientas en desarrollo). Lo que nos diferencia no es una función: es el recorrido completo, con historial para que el cliente vuelva.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.8,
+      3.4
+     ],
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · competencia",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "El mismo arreglo, ==tres experiencias==",
-     "nivel": 2
-    },
-    {
-     "id": "a",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 27
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "gris",
-     "encabezado": "Hoy, por WhatsApp",
-     "items": [
-      {
-       "texto": "Preguntás en grupos"
-      },
-      {
-       "texto": "Esperás respuestas"
-      },
-      {
-       "texto": "El precio llega al final"
-      }
-     ]
-    },
-    {
-     "id": "b",
-     "area": "libre",
-     "pos": {
-      "x": 35,
-      "y": 25,
-      "w": 27
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "blanca",
-     "encabezado": "Apps con comisión",
-     "items": [
-      {
-       "texto": "Pedido y propuestas"
-      },
-      {
-       "texto": "Algunas suman IA"
-      },
-      {
-       "texto": "El profesional paga {{COMP-CLICKIE-PRO}}"
-      }
-     ]
-    },
-    {
-     "id": "c",
-     "area": "libre",
-     "pos": {
-      "x": 65,
-      "y": 25,
-      "w": 30
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "azul",
-     "encabezado": "Handyx",
-     "items": [
-      {
-       "texto": "**Foto** y HandIA arma el pedido"
-      },
-      {
-       "texto": "**Precio visible** antes de contratar"
-      },
-      {
-       "texto": "**{{FEE-ESPECIALISTA}}** al profesional + herramientas"
-      }
-     ]
-    },
-    {
-     "id": "n",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 74,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Lo que nos diferencia no es una función:** es el recorrido completo, de la foto al trabajo terminado, con el profesional cobrando su presupuesto.",
-     "tamano": "m",
-     "caja": "amarilla"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2976,99 +2875,30 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar las herramientas que queremos dar a cada profesión.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Diseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Tres golpes (avanzar con cada frase): 1 Electricidad: calculadora de cable y lector de esquemas con IA · 2 Plomería: detector de pérdidas guiado y materiales que se suman al presupuesto · 3 Gas: checklist de seguridad, registro de revisiones e informe para el cliente (la IA no certifica instalaciones; valores de ejemplo). Diseño propuesto: estas herramientas todavía no existen en la app.\nDiseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Herramientas por oficio, diseño propuesto: Electricidad; Plomería; Gas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-herramientas-1",
+     "alt": "Animación: herramientas para cada oficio, diseño propuesto con datos de ejemplo. Electricidad: calculá el cable y entendé cada esquema con IA. Plomería: ubicá la pérdida y presupuestá los materiales. Gas: revisá con checklist y dejale un informe al cliente. Cada celular entra con el Handy de su oficio en acción.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · producto",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 8,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Herramientas para cada oficio ==(1/2)==",
-     "nivel": 2
-    },
-    {
-     "id": "h0",
-     "area": "libre",
-     "pos": {
-      "x": 9,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Electricidad · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-electricidad",
-       "alt": "Diseño propuesto: herramientas de Electricidad"
-      }
-     ]
-    },
-    {
-     "id": "h1",
-     "area": "libre",
-     "pos": {
-      "x": 39,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Plomería · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-plomeria",
-       "alt": "Diseño propuesto: herramientas de Plomería"
-      }
-     ]
-    },
-    {
-     "id": "h2",
-     "area": "libre",
-     "pos": {
-      "x": 69,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Gas · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-gas",
-       "alt": "Diseño propuesto: herramientas de Gas"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -3078,99 +2908,30 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar las herramientas que queremos dar a cada profesión.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Diseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Tres golpes (avanzar con cada frase): 1 Cerrajería: cada apertura queda registrada con hora y fotos, en el historial · 2 Albañilería: calculadora de materiales, etapas y avance de obra con fotos · 3 Aire acondicionado: calculadora de frigorías y recordatorio del service. Diseño propuesto: estas herramientas todavía no existen en la app.\nDiseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Herramientas por oficio, diseño propuesto: Cerrajería; Albañilería; Aire acondicionado.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-herramientas-2",
+     "alt": "Animación: herramientas para cada oficio, diseño propuesto con datos de ejemplo. Cerrajería: hora y fotos de cada apertura, en el historial. Albañilería: calculá materiales y seguí cada etapa con fotos. Aire acondicionado: estimá frigorías y avisá cuándo toca el service. Cada celular entra con el Handy de su oficio en acción.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · producto",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 8,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Herramientas para cada oficio ==(2/2)==",
-     "nivel": 2
-    },
-    {
-     "id": "h0",
-     "area": "libre",
-     "pos": {
-      "x": 9,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Cerrajería · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-cerrajeria",
-       "alt": "Diseño propuesto: herramientas de Cerrajería"
-      }
-     ]
-    },
-    {
-     "id": "h1",
-     "area": "libre",
-     "pos": {
-      "x": 39,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Albañilería · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-albanileria",
-       "alt": "Diseño propuesto: herramientas de Albañilería"
-      }
-     ]
-    },
-    {
-     "id": "h2",
-     "area": "libre",
-     "pos": {
-      "x": 69,
-      "y": 17
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 76,
-     "leyenda": "Aire acondicionado · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-aire",
-       "alt": "Diseño propuesto: herramientas de Aire acondicionado"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -4607,7 +4368,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Cada dólar de la inversión.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿En qué usarían los USD 100.000? Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
+   "lectura": "¿En qué usarían los USD 100.000? Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, redes, postes, volantes y remeras con los Handys), {{INV-OPERACIONES}} en operaciones y {{INV-TECNOLOGIA}} en tecnología.",
    "referencias": [
     "INV-LEGAL",
     "INV-MARKETING",
@@ -4761,7 +4522,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Tracción y publicidades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Cómo van a conseguir tracción? En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
+   "lectura": "¿Cómo van a conseguir tracción? En los dos lados: publicidades hechas con IA (Seedance 2.5) en todas las redes, porteros, carteles en postes y volantes en los locales del barrio, y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, remeras con el Handy de su oficio, ferreterías y formación.",
    "referencias": [
     "FEE-ESPECIALISTA"
    ],
@@ -4940,7 +4701,7 @@
   },
   {
    "id": "q-18",
-   "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales los profesionales?",
+   "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 20,
@@ -4950,7 +4711,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Ferreterías conectadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Cómo consiguen los materiales los profesionales? Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
+   "lectura": "¿Cómo consiguen los materiales? Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -4958,7 +4719,7 @@
      "id": "anim",
      "tipo": "animacion",
      "modulo": "pregunta-18",
-     "alt": "Animación de la respuesta: ¿Cómo consiguen los materiales los profesionales?",
+     "alt": "Animación de la respuesta: ¿Cómo consiguen los materiales?",
      "tiempos": [
       2.6,
       3.8,
@@ -4973,7 +4734,7 @@
   },
   {
    "id": "q-19",
-   "titulo": "Posible pregunta 19: ¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+   "titulo": "Posible pregunta 19: ¿Qué suma HandIA con la inversión?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 20,
@@ -4983,7 +4744,7 @@
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: HandIA te habla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Cómo te ayuda HandIA a conseguir un mejor servicio? Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
+   "lectura": "¿Qué suma HandIA con la inversión? Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -4991,7 +4752,7 @@
      "id": "anim",
      "tipo": "animacion",
      "modulo": "pregunta-19",
-     "alt": "Animación de la respuesta: ¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+     "alt": "Animación de la respuesta: ¿Qué suma HandIA con la inversión?",
      "tiempos": [
       2.6,
       3.8,

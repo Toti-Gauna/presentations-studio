@@ -4,7 +4,7 @@ import { respuesta } from './comun/respuesta.ts';
 export default respuesta({
   "n": 18,
   "total": 20,
-  "pregunta": "¿Cómo consiguen los materiales los profesionales?",
+  "pregunta": "¿Cómo consiguen los materiales?",
   "respuesta": "Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
   "puntos": [
     {
