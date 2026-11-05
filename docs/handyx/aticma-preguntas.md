@@ -101,21 +101,26 @@ falta, la lámina de respaldo.
     profesional ve qué materiales necesita para el trabajo y dónde hay stock cerca, los reserva y los retira camino al trabajo. El
     profesional llega con todo, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de
     ingresos. **Es una visión a explorar: no hay alianzas firmadas** ni comisiones definidas. *Respaldo: ferreterías conectadas (animación).*
+21. **¿Cómo te ayuda HandIA a conseguir un mejor servicio?**
+    Con la inversión (partida de IA), HandIA te va a poder **hablar con una voz natural** (ElevenLabs, proveedor previsto): te pregunta qué
+    pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir —más fácil para todos, también para
+    los más grandes—, el pedido llega más claro y el especialista llega preparado. Hoy HandIA está en desarrollo; la voz es lo que financia
+    la inversión. *Respaldo: HandIA te habla (animación).*
 
 ## Riesgos y confianza
 
-21. **¿Qué hacen si los clientes no vuelven?**
+22. **¿Qué hacen si los clientes no vuelven?**
     Es nuestra prueba más importante. Antes de escalar revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con
     pocos casos que crecer sin retención.
-22. **¿Cómo verifican a los profesionales?** *(extra)*
+23. **¿Cómo verifican a los profesionales?** *(extra)*
     Registrarse no es estar verificado: el sello de verificado solo lo da nuestro equipo de operaciones con datos reales, y lo mostramos solo
     cuando está confirmado. Las valoraciones de cada trabajo quedan en el historial.
-23. **¿Qué pasa si un trabajo sale mal?** *(extra)*
+24. **¿Qué pasa si un trabajo sale mal?** *(extra)*
     El trabajo queda registrado con lo acordado, las etapas y las fotos; soporte media entre las partes y las valoraciones lo reflejan. No
     prometemos garantías que todavía no tenemos.
-24. **¿Qué hacen con los datos personales?** *(extra)*
+25. **¿Qué hacen con los datos personales?** *(extra)*
     En el preregistro, nombre, WhatsApp y email se guardan **cifrados**; no los mostramos ni los usamos para otra cosa, y el teléfono no se
     comparte entre usuario y profesional: hablan por el chat de la app.
-25. **¿Cuál es el mayor riesgo?** *(extra)*
+26. **¿Cuál es el mayor riesgo?** *(extra)*
     Que los clientes no repitan o que no tengamos suficientes profesionales donde hay demanda. Por eso la meta de diciembre mide justamente
     eso: 50 trabajos cobrados y 5 clientes que vuelven, y crecemos por ciudad con red local.

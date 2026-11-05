@@ -221,6 +221,11 @@ try {
   await presA.keyboard.press('Enter'); await pubA.waitForTimeout(2000);
   const animFerr = await pubA.locator('video[data-medio="video-ferreterias"]').evaluate((v: HTMLVideoElement) => ({ t: v.currentTime, pausado: v.paused })).catch(() => null);
   ok('ATICMA: la animación de ferreterías arranca sola en la pantalla pública', nFerr > 0 && !!animFerr && animFerr.t > 0.3 && !animFerr.pausado, JSON.stringify({ nFerr, animFerr }));
+  const nVoz = (await presA.locator('.indice li:not(.separador-anexos) .item').allTextContents()).findIndex((t: string) => t.includes('HandIA te habla')) + 1;
+  for (const d of String(nVoz)) await presA.keyboard.press(d);
+  await presA.keyboard.press('Enter'); await pubA.waitForTimeout(2000);
+  const animVoz = await pubA.locator('video[data-medio="video-handia-voz"]').evaluate((v: HTMLVideoElement) => ({ t: v.currentTime, pausado: v.paused })).catch(() => null);
+  ok('ATICMA: la animación «HandIA te habla» arranca sola en la pantalla pública', nVoz > 0 && !!animVoz && animVoz.t > 0.3 && !animVoz.pausado, JSON.stringify({ nVoz, animVoz }));
   await presA.keyboard.press('0'); await presA.waitForTimeout(500);
   ok('ATICMA: 0 vuelve a la última diapositiva principal', (await actualA()).startsWith('7.'), await actualA());
   await presA.keyboard.press('ArrowLeft'); await presA.waitForTimeout(500);

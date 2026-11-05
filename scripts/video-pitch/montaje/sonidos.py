@@ -44,13 +44,13 @@ else:
     if len(sys.argv)>4:   # música del video en lugar del colchón
         w=wave.open(sys.argv[4]); mu=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).reshape(-1,w.getnchannels()).astype(float)/32768; w.close()
         g=np.full(len(L),.5)
-        for t0,_ in tj.get('clips',[]):  # durante las animaciones, la música baja
-            a,b=int(t0*SR),int((t0+16.6)*SR); g[a:b]=.22
+        for c in tj.get('clips',[]):  # durante las animaciones (que traen su propia música), la del video baja
+            a,b=int(c[0]*SR),int((c[0]+(c[2] if len(c)>2 else 16.6))*SR); g[a:b]=.12
         g=np.convolve(g,np.ones(SR//4)/(SR//4),'same'); n=min(len(L),len(mu)); L[:n]+=mu[:n,0]*g[:n]; R[:n]+=mu[:n,-1]*g[:n]
     else:
         L+=pad; R+=pad
     for c in tj['cards']: add(L,R,ruido(.6,400,5000,.18),c-.1); add(L,R,tono(880,.3,.06),c+.15)
-    for t0,archivo in tj.get('clips',[]):   # audio de las animaciones a pantalla completa
+    for t0,archivo,*_ in tj.get('clips',[]):   # audio de las animaciones a pantalla completa
         w=wave.open(archivo); x=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).reshape(-1,w.getnchannels()).astype(float)/32768; w.close()
         i=int(t0*SR); n=min(len(x),len(L)-i)
         if n>0: L[i:i+n]+=x[:n,0]*.22; R[i:i+n]+=x[:n,-1]*.22

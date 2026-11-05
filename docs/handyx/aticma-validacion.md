@@ -20,7 +20,7 @@ capturas de revisión: [`capturas-aticma/`](capturas-aticma/).
    **0** vuelve a la última diapositiva. También desde el índice del presentador o el menú ☰ del celular.
 6. **Celular:** Conectar control remoto → QR privado (nunca se proyecta) → Aprobar.
 7. **Sin animaciones:** `version=estatica`. **Sin internet:** `npm run paquete:local` o el build servido en la notebook (fuentes y recursos locales).
-8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (56 páginas: 7 diapositivas, el paso 2 de la 7, 29 de respaldo y 19 de preguntas), el PDF de lectura y
+8. **Contingencia:** `salida/pdf/handyx-aticma-evento.pdf` (58 páginas: 7 diapositivas, el paso 2 de la 7, 30 de respaldo y 20 de preguntas), el PDF de lectura y
    `salida/pptx/handyx-aticma-evento.pptx` (imágenes + guion y notas en las notas del orador). Se regeneran con
    `npm run build && npm run exportar:pdf -- --deck=handyx-aticma --version=evento` y `npm run exportar:pptx -- --deck=handyx-aticma --version=evento`
    (el PPTX necesita python3 con python-pptx).
@@ -91,10 +91,22 @@ dólares). Equilibrio ≈ 67 trabajos por mes. CAC ≈ USD 2 con el supuesto de 
 - Pregunta 18: «¿Cómo consiguen los materiales los profesionales?» (respaldo: la animación). «Materiales» en Maneras de multiplicar
   ingresos (1/2) apunta a esta visión.
 
+## Pedido del 05/11 (6): HandIA te habla
+
+- Material extra **«HandIA te habla: un mejor servicio, con tu voz»**: animación de 18,5 s a pantalla completa (arranca sola) con música y
+  efectos sintetizados: HandIA saluda, el vecino cuenta que se rompió el calefón, HandIA pide una foto, arma el pedido con la foto y muestra
+  especialistas cerca, y el pedido se envía. Beneficios: hablás en vez de escribir (más fácil para todos), pedidos más claros, te guía en
+  cada paso y voz natural con ElevenLabs financiada con la inversión. Rótulos: «Visión · con la inversión», «Voz con ElevenLabs · a
+  integrar» y «Diseño propuesto · datos ficticios».
+- **La voz real no está en el video:** desde esta sesión no hay clave de ElevenLabs y la red bloquea `api.elevenlabs.io`. Se ve el texto y la
+  onda de la voz. Para sumarla: `scripts/video-pitch/handia-voz/voz-elevenlabs.mjs` (guion y tiempos en `guion-voz.json`) con
+  `ELEVENLABS_API_KEY`, `ELEVENLABS_VOZ_HANDIA` y, opcional, `ELEVENLABS_VOZ_VECINO`; o generar las frases en la web de ElevenLabs.
+- Pregunta 19: «¿Cómo te ayuda HandIA a conseguir un mejor servicio?» (respaldo: la animación).
+
 ## Posibles preguntas del jurado
 
-Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (25
-preguntas: las 19 del video y 6 extra, más una página con el número y el atajo de cada lámina): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
+Sección del video y láminas del respaldo con el rótulo «Posible pregunta del jurado» y «Nuestra respuesta». Machete para estudiar (26
+preguntas: las 20 del video y 6 extra, más una página con el número y el atajo de cada lámina): `docs/handyx/aticma-preguntas.md` → `salida/pdf/handyx-aticma-preguntas-del-jurado.pdf`
 (`scripts/video-pitch/machete-preguntas.py`).
 
 ## Control de calidad
@@ -116,12 +128,12 @@ preguntas: las 19 del video y 6 extra, más una página con el número y el ataj
 
 ## Verificado en esta sesión
 
-- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (37/37, con 17
+- `npm run verify` (typecheck, pruebas, validación de decks y afirmaciones, guion sincronizado, build) y `npm run e2e` (38/38, con 18
   comprobaciones del pitch: avanzar no entra a anexos, movimiento completo, clip del mundo en el cierre, rótulos al pie, Mayús + F, número +
-  Enter, animación de ferreterías que arranca sola, 0, refresco que conserva la posición y el registro de ensayos, Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo
+  Enter, animaciones de ferreterías y de HandIA que arrancan solas, 0, refresco que conserva la posición y el registro de ensayos, Finalizar, tiempos por diapositiva, N oculta notas, Nuevo ensayo
   sin recargar, pantalla pública sin notas).
 - Revisión automática de las escenas (el pie de rótulos no pisa ninguna pieza; nada se sale del escenario) y capturas 1920 × 1080.
-- PDF de diapositivas (56 páginas), PDF de lectura, PPTX (56 diapositivas con notas), zip de imágenes y machete (5 páginas).
+- PDF de diapositivas (58 páginas), PDF de lectura, PPTX (58 diapositivas con notas), zip de imágenes y machete (5 páginas).
 - Control remoto y reconexión: cubiertos por el e2e con el deck `handyx` (mismo motor); no probados con un celular real ni con este deck.
 
 ## Fuentes

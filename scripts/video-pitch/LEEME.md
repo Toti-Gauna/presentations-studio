@@ -58,3 +58,13 @@ Subtítulos del ensayo: `subtitulos-ensayo-04-11.srt` (transcripción automátic
   centrado (`ox: 960`, `derecha: 0` en `plan_pitch.py`).
 - `componer3.py preguntas-audio`: cambia el audio de las preguntas (música + efectos + animaciones) sin recodificar la imagen; −18 LUFS.
 
+## HandIA te habla (05/11)
+
+`handia-voz/`: animación de 18,5 s del respaldo «HandIA te habla» (visión con la inversión).
+- `handia-voz.html` (GSAP, `window.ir(t)`), cuadros con `../ferreterias/render.cjs`, música con `montaje/musica.py handia <salida.wav> 18.5`
+  y efectos + mezcla con `sonido.py <musica.wav> <salida.wav>`; H.264 + AAC → `brands/handyx/assets/video/handia-voz.mp4`.
+- **Voz real con ElevenLabs:** `guion-voz.json` tiene las frases con sus tiempos (iguales a `DIALOGO` en el HTML). Con
+  `ELEVENLABS_API_KEY`, `ELEVENLABS_VOZ_HANDIA` (y opcional `ELEVENLABS_VOZ_VECINO`) en el entorno y acceso de red a `api.elevenlabs.io`:
+  `node voz-elevenlabs.mjs guion-voz.json <audio-del-clip.wav> <handia-voz.mp4> <salida.mp4>` genera cada frase (modelo multilingüe) y la
+  mezcla en su segundo, con la música bajando cuando alguien habla. No se pudo probar contra la API desde esta sesión.
+

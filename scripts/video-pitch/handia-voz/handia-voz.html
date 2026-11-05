@@ -1,0 +1,209 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- HandIA te habla: animación del respaldo del pitch (visión con la inversión; la voz real se genera con ElevenLabs).
+     Se renderiza cuadro a cuadro: window.ir(t) deja la escena exactamente en el segundo t. -->
+<style>
+@font-face{font-family:'Archivo';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:'DM Sans';src:url('file:///home/user/presentations-studio/node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2') format('woff2');font-weight:100 1000}
+*{margin:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0E1D36}
+body{font-family:'DM Sans';color:#fff}
+#esc{position:absolute;inset:0;overflow:hidden;background:radial-gradient(1200px 800px at 20% 60%,#1F57A8 0%,#13305E 45%,#0E1D36 80%)}
+.t{font-family:'Archivo';font-weight:900;font-stretch:118%;letter-spacing:-.01em}
+mark{background:#FFC93C;color:#0E1D36;padding:0 .14em;border-radius:.12em}
+#parts{position:absolute;inset:0}
+.pt{position:absolute;width:6px;height:6px;border-radius:50%;background:#CFE0FA}
+#halo{position:absolute;left:370px;top:560px;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:radial-gradient(circle,rgba(255,201,60,.35) 0%,rgba(255,201,60,.08) 35%,transparent 65%)}
+.onda{position:absolute;left:370px;top:470px;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;border:3px solid rgba(255,201,60,.55);opacity:0}
+#kick{position:absolute;left:96px;top:56px;color:#FFC93C;font-weight:800;font-size:24px;letter-spacing:.07em}
+#tit{position:absolute;left:96px;top:92px;font-size:68px;line-height:1.05}
+#tit span{display:inline-block}
+#sub{position:absolute;left:96px;top:178px;font-size:30px;color:#CFDCF2}
+.chip{position:absolute;right:96px;padding:9px 18px;border-radius:999px;border:2.5px solid rgba(255,255,255,.7);color:#fff;font-weight:800;font-size:20px;background:rgba(14,29,54,.5);white-space:nowrap}
+#chip1{top:58px} #chip2{top:108px;border-color:#FFC93C;color:#FFC93C}
+/* teléfono */
+#tel{position:absolute;left:200px;top:258px;width:340px;height:730px;border-radius:50px;background:#0A1528;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,.45),0 0 0 2px rgba(255,255,255,.08)}
+#tel .pant{position:relative;width:100%;height:100%;border-radius:39px;background:#F7F6F1;overflow:hidden}
+#tel .isla{position:absolute;left:50%;top:12px;width:96px;height:28px;margin-left:-48px;border-radius:16px;background:#0A1528;z-index:5}
+.pantalla{position:absolute;inset:0;padding:58px 18px 18px;color:#0E1D36}
+.cab{display:flex;align-items:center;justify-content:space-between}
+.cab img{height:22px} .cab b{font-size:15px;color:#1F57A8}
+#orbe{position:absolute;left:50%;top:150px;width:200px;height:200px;margin-left:-100px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#FFF6D6,#FFE38A 55%,#FFC93C 100%);box-shadow:0 0 0 10px rgba(255,201,60,.25),0 20px 40px rgba(255,201,60,.35)}
+#orbe img{position:absolute;left:50%;bottom:22px;height:150px;transform:translateX(-50%);display:none}
+#barras{position:absolute;left:50%;top:388px;width:250px;height:80px;margin-left:-125px;display:flex;align-items:center;justify-content:space-between}
+#barras i{display:block;width:7px;border-radius:4px;background:#1F57A8;height:8px}
+#estado{position:absolute;left:0;right:0;top:486px;text-align:center;font-weight:800;font-size:18px;color:#1F57A8}
+#vivo{position:absolute;left:18px;right:18px;top:520px;text-align:center;font-size:15.5px;line-height:1.35;color:#3C4A66;min-height:60px}
+#mic{position:absolute;left:50%;bottom:26px;width:72px;height:72px;margin-left:-36px;border-radius:50%;background:#1F57A8;display:grid;place-items:center;box-shadow:0 6px 0 #13305E}
+#mic::after{content:'';position:absolute;inset:-10px;border-radius:50%;border:3px solid rgba(31,87,168,.4);opacity:var(--o,0);transform:scale(var(--s,1))}
+#mic svg{width:30px;height:30px}
+#camara{background:#0E1D36}
+#visor{position:absolute;left:30px;right:30px;top:120px;height:380px;border-radius:24px;background:linear-gradient(#5E6E8E,#2A3550);overflow:hidden}
+#visor .esq{position:absolute;width:36px;height:36px;border:4px solid #fff}
+#calefon{position:absolute;left:50%;top:60px;width:150px;height:240px;margin-left:-75px;border-radius:22px;background:#F7F6F1;box-shadow:0 10px 20px rgba(0,0,0,.3)}
+#calefon::before{content:'';position:absolute;left:35px;top:120px;width:80px;height:56px;border-radius:12px;background:#26324A}
+#calefon::after{content:'';position:absolute;left:66px;top:132px;width:18px;height:30px;border-radius:50% 50% 45% 45%;background:#9AA6BD}
+#calefon i{position:absolute;bottom:-60px;width:14px;height:60px;background:#B9C1D0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#disparo{position:absolute;left:50%;bottom:40px;width:78px;height:78px;margin-left:-39px;border-radius:50%;border:6px solid #fff;background:rgba(255,255,255,.25)}
+#pedido .card{margin-top:14px;padding:14px;border-radius:18px;background:#fff;box-shadow:0 2px 0 #E3E8F2;display:flex;gap:12px;align-items:center}
+#pedido .mini{flex:none;width:64px;height:64px;border-radius:12px;background:linear-gradient(#5E6E8E,#2A3550);position:relative;overflow:hidden}
+#pedido .mini::before{content:'';position:absolute;left:20px;top:8px;width:24px;height:44px;border-radius:6px;background:#F7F6F1}
+#pedido small{display:block;font-size:12px;font-weight:800;color:#1E9E57;letter-spacing:.04em}
+#pedido b{display:block;font-size:16.5px;line-height:1.2}
+#pedido span{font-size:13px;color:#5F6B84}
+#pedido h5{font-size:12.5px;font-weight:800;color:#5F6B84;letter-spacing:.05em;text-transform:uppercase;margin:18px 2px 8px}
+.esp{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:#fff;margin-bottom:8px}
+.esp .av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px}
+.esp b{font-size:15px} .esp span{display:block;font-size:12.5px;color:#5F6B84}
+.esp em{margin-left:auto;font-style:normal;color:#FFC93C;font-size:13px;letter-spacing:1px}
+#enviar{position:absolute;left:18px;right:18px;bottom:22px;height:56px;border-radius:16px;background:#1F57A8;color:#fff;font-weight:800;font-size:18px;display:grid;place-items:center;box-shadow:0 5px 0 #13305E}
+#enviar .ok{position:absolute;inset:0;border-radius:16px;background:#1E9E57;display:grid;place-items:center;opacity:0;box-shadow:0 5px 0 #157443}
+#rotTel{position:absolute;left:200px;top:1002px;width:340px;text-align:center;font-size:16px;color:rgba(255,255,255,.65);font-weight:600}
+/* conversación */
+#vista{position:absolute;left:640px;top:236px;width:1184px;height:800px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent 0,#000 80px);mask-image:linear-gradient(transparent 0,#000 80px)}
+#chat{position:absolute;left:0;top:44px;width:1184px}
+.msg{display:flex;gap:16px;align-items:flex-end;margin-bottom:22px;opacity:0}
+.msg.vos{flex-direction:row-reverse}
+.msg .av{flex:none;width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.msg .av img{height:52px}
+.msg.vos .av{background:#FFC93C;color:#0E1D36;font-weight:900;font-family:'Archivo';font-stretch:118%;font-size:20px}
+.burb{position:relative;max-width:900px;padding:20px 28px;border-radius:28px 28px 28px 8px;background:#fff;color:#0E1D36;font-size:31px;line-height:1.3;font-weight:600;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.msg.vos .burb{border-radius:28px 28px 8px 28px;background:#FFC93C;font-weight:700}
+.burb .w{opacity:.12}
+.burb .quien{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:800;letter-spacing:.05em;color:#1F57A8;margin-bottom:6px;text-transform:uppercase}
+.msg.vos .burb .quien{color:#13305E}
+.ond{display:inline-flex;gap:3px;align-items:center;height:18px}
+.ond i{display:block;width:4px;height:6px;border-radius:2px;background:currentColor}
+/* beneficios */
+#ben{position:absolute;left:640px;top:330px;width:1184px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.bn{display:flex;gap:22px;align-items:center;padding:36px 32px;border-radius:26px;background:#fff;color:#0E1D36;box-shadow:0 16px 34px rgba(0,0,0,.28);opacity:0}
+.bn .ic{flex:none;width:88px;height:88px;border-radius:24px;background:#E6EEFB;display:grid;place-items:center}
+.bn .ic img{width:48px;height:48px}
+.bn b{display:block;font-size:33px;color:#13305E}
+.bn span{display:block;font-size:24px;color:#3C4A66;line-height:1.28;margin-top:4px}
+.chispa{position:absolute;left:370px;top:870px;width:20px;height:20px;background:#FFC93C;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0}
+</style></head><body><div id="esc">
+<div id="halo"></div><div id="parts"></div>
+<div class="onda"></div><div class="onda"></div><div class="onda"></div>
+<div id="kick">MATERIAL EXTRA · CON LA INVERSIÓN</div>
+<div id="tit" class="t"><span>Con la inversión,&nbsp;</span><span><mark>HandIA te habla</mark></span></div>
+<div id="sub">Una voz natural que te guía para conseguir un mejor servicio.</div>
+<div class="chip" id="chip1">Visión · con la inversión</div>
+<div class="chip" id="chip2">Voz con ElevenLabs · a integrar</div>
+<div id="tel"><div class="pant"><div class="isla"></div>
+  <div class="pantalla" id="voz">
+    <div class="cab"><img src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp"><b>HandIA · voz</b></div>
+    <div id="orbe">
+      <img data-p="a" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/bombilla-a.webp">
+      <img data-p="b" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/bombilla-b.webp">
+      <img data-p="c" src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/bombilla-c.webp">
+    </div>
+    <div id="barras"></div>
+    <div id="estado">HandIA te escucha</div>
+    <div id="vivo"></div>
+    <div id="mic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 17v4"/></svg></div>
+  </div>
+  <div class="pantalla" id="camara">
+    <div class="cab" style="color:#fff"><img src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp" style="filter:brightness(0) invert(1)"><b style="color:#FFC93C">Foto del problema</b></div>
+    <div id="visor"><div id="calefon"><i style="left:40px"></i><i style="left:96px"></i></div>
+      <div class="esq" style="left:16px;top:16px;border-right:0;border-bottom:0;border-radius:10px 0 0 0"></div><div class="esq" style="right:16px;top:16px;border-left:0;border-bottom:0;border-radius:0 10px 0 0"></div>
+      <div class="esq" style="left:16px;bottom:16px;border-right:0;border-top:0;border-radius:0 0 0 10px"></div><div class="esq" style="right:16px;bottom:16px;border-left:0;border-top:0;border-radius:0 0 10px 0"></div></div>
+    <div id="disparo"></div><div id="flash"></div>
+  </div>
+  <div class="pantalla" id="pedido">
+    <div class="cab"><img src="file:///home/user/presentations-studio/brands/handyx/assets/logo-handyx.webp"><b>Tu pedido</b></div>
+    <div class="card"><div class="mini"></div><div><small>ARMADO CON HANDIA</small><b>Gas · Calefón sin agua caliente</b><span>Con foto · descripción lista</span></div></div>
+    <h5>Especialistas cerca</h5>
+    <div class="esp"><div class="av" style="background:#1F57A8">MG</div><div><b>Especialista de gas</b><span>Reseñas de vecinos</span></div><em>★★★★★</em></div>
+    <div class="esp"><div class="av" style="background:#F6A623">LP</div><div><b>Especialista de gas</b><span>Reseñas de vecinos</span></div><em>★★★★★</em></div>
+    <div class="esp"><div class="av" style="background:#1E9E57">RA</div><div><b>Especialista de gas</b><span>Reseñas de vecinos</span></div><em>★★★★☆</em></div>
+    <div id="enviar">Enviar pedido<div class="ok">Pedido enviado ✓</div></div>
+  </div>
+</div></div>
+<div id="rotTel">Diseño propuesto · datos ficticios</div>
+<div id="vista"><div id="chat"></div></div>
+<div id="ben">
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/chat.svg"></div><div><b>Hablás, no escribís</b><span>más fácil para todos, también para los más grandes</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/camara.svg"></div><div><b>Pedidos más claros</b><span>con foto y descripción: el especialista llega preparado</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/ia.svg"></div><div><b>Te guía en cada paso</b><span>antes, durante y después del trabajo</span></div></div>
+  <div class="bn"><div class="ic"><img src="file:///home/user/presentations-studio/brands/handyx/assets/iconos/sparkles.svg"></div><div><b>Voz natural</b><span>con ElevenLabs, financiada con la inversión</span></div></div>
+</div>
+<div id="chispas"></div>
+</div>
+<script src="file:///home/user/presentations-studio/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const $=(s)=>document.querySelector(s), $$=(s)=>[...document.querySelectorAll(s)];
+const DUR=18.5; window.DUR=DUR;
+let semilla=11; const azar=()=>{semilla=(semilla*16807)%2147483647;return (semilla-1)/2147483646};
+// partículas
+const PT=[];for(let i=0;i<46;i++){const d=document.createElement('div');d.className='pt';$('#parts').appendChild(d);PT.push({d,x:azar()*1920,y:azar()*1080,v:10+azar()*26,a:.15+azar()*.4,s:.5+azar()*1.4})}
+// barras de la voz
+const BAR=[];for(let i=0;i<24;i++){const b=document.createElement('i');$('#barras').appendChild(b);BAR.push({b,f:5+azar()*7,p:azar()*6.28})}
+// conversación (quién, desde, hasta, texto)
+const DIALOGO=[
+ ['HandIA',1.9,4.1,'¡Hola! Soy HandIA. Contame qué pasó en tu casa.'],
+ ['Vos',4.3,6.4,'Se rompió el calefón y no tengo agua caliente.'],
+ ['HandIA',6.6,8.9,'Tranqui, te ayudo. ¿Me mostrás una foto del calefón?'],
+ ['HandIA',9.4,11.7,'Es un trabajo de gas: te armé el pedido con la foto y te muestro especialistas cerca.'],
+ ['Vos',11.9,12.9,'¡Dale, mandalo!'],
+ ['HandIA',13.5,15.0,'Listo. Te aviso cuando respondan.'],
+];
+window.DIALOGO=DIALOGO;
+const MSG=DIALOGO.map(([q,a,b,txt])=>{const m=document.createElement('div');m.className='msg'+(q==='Vos'?' vos':'');
+ m.innerHTML=(q==='Vos'?'<div class="av">Vos</div>':'<div class="av"><img src="file:///home/user/presentations-studio/brands/handyx/assets/personajes/bombilla-b.webp"></div>')+
+ `<div class="burb"><div class="quien">${q==='Vos'?'Vos':'HandIA'} <span class="ond">${'<i></i>'.repeat(5)}</span></div><span class="tx">${txt.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ')}</span></div>`;
+ $('#chat').appendChild(m);return {m,q,a,b}});
+const CH=[];for(let i=0;i<14;i++){const c=document.createElement('div');c.className='chispa';$('#chispas').appendChild(c);CH.push(c)}
+
+const tl=gsap.timeline({paused:true});
+const E=(sel,a,b,t)=>tl.fromTo(sel,a,b,t);
+E('#esc',{opacity:0},{opacity:1,duration:.6},0);
+E('#kick',{opacity:0,y:-14},{opacity:1,y:0,duration:.45,ease:'power2.out'},.1);
+E('#tit span',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power4.out',stagger:.18},.2);
+E('#sub',{opacity:0,y:16},{opacity:1,y:0,duration:.5,ease:'power2.out'},.6);
+E('.chip',{opacity:0,scale:.85},{opacity:1,scale:1,duration:.45,ease:'back.out(2)',stagger:.12},.8);
+E('#tel',{y:140,opacity:0},{y:0,opacity:1,duration:.8,ease:'back.out(1.3)'},.6);
+E('#rotTel',{opacity:0},{opacity:1,duration:.5},1.4);
+E('#orbe',{scale:0},{scale:1,duration:.6,ease:'back.out(2)'},1.1);
+// pantallas del teléfono
+E('#camara',{opacity:0},{opacity:0,duration:.01},0);E('#pedido',{opacity:0},{opacity:0,duration:.01},0);
+tl.to('#voz',{opacity:0,duration:.3},8.2);tl.fromTo('#camara',{opacity:0,scale:1.05},{opacity:1,scale:1,duration:.35,immediateRender:false},8.2);
+tl.fromTo('#flash',{opacity:.95},{opacity:0,duration:.4,immediateRender:false},8.75);
+tl.to('#camara',{opacity:0,duration:.3},9.25);tl.fromTo('#pedido',{opacity:0,y:30},{opacity:1,y:0,duration:.45,ease:'power2.out',immediateRender:false},9.3);
+E('#pedido .esp',{opacity:0,x:40},{opacity:1,x:0,duration:.4,ease:'power2.out',stagger:.18},10.2);
+tl.fromTo('#enviar',{scale:1},{scale:.94,duration:.12,yoyo:true,repeat:1,ease:'power1.inOut',immediateRender:false},12.95);
+E('#enviar .ok',{opacity:0},{opacity:1,duration:.25},13.15);
+CH.forEach((c,i)=>{const a=i/CH.length*Math.PI*2,r=90+(i%3)*30;tl.fromTo(c,{x:0,y:0,scale:.3,opacity:1,rotate:0},{x:Math.cos(a)*r,y:Math.sin(a)*r,scale:1.2,opacity:0,rotate:200,duration:.9,ease:'power2.out',immediateRender:false},13.2+(i%2)*.06);tl.set(c,{opacity:0},0)});
+// mensajes: aparecen, las palabras se encienden mientras se dicen
+MSG.forEach(({m,a,b})=>{E(m,{opacity:0,y:30,scale:.96},{opacity:1,y:0,scale:1,duration:.4,ease:'back.out(1.7)'},a-.25);
+ const ws=m.querySelectorAll('.w');ws.forEach((w,k)=>E(w,{opacity:.12},{opacity:1,duration:.18},a+(b-a)*k/ws.length))});
+// los primeros mensajes suben para dejar lugar
+tl.to('#chat',{y:-130,duration:.5,ease:'power2.inOut'},11.6);
+tl.to('#chat',{y:-260,duration:.5,ease:'power2.inOut'},13.25);
+// beneficios
+tl.to('#vista',{opacity:0,duration:.45},15.3);
+E('.bn',{opacity:0,y:36},{opacity:1,y:0,duration:.55,ease:'back.out(1.6)',stagger:.15},15.5);
+tl.set({},{},DUR);
+
+function quienHabla(t){const d=DIALOGO.find(([,a,b])=>t>=a&&t<=b);return d?d[0]:null}
+function pose(cont,p){for(const im of cont.querySelectorAll('img[data-p]'))im.style.display=im.dataset.p===p?'block':'none'}
+function ambiente(t){
+ PT.forEach(o=>{const y=((o.y-t*o.v)%1180+1180)%1180-50;o.d.style.transform=`translate(${o.x+Math.sin(t*.6+o.y)*14}px,${y}px) scale(${o.s})`;o.d.style.opacity=o.a});
+ const q=quienHabla(t), habla=q==='HandIA', escucha=q==='Vos';
+ // voz: las barras se mueven con una envolvente de sílabas (determinista)
+ const sil=habla||escucha?(.55+.45*Math.abs(Math.sin(t*7.3))*Math.abs(Math.sin(t*2.9+1))):0;
+ BAR.forEach((o,i)=>{const h=8+(habla?62:escucha?34:0)*sil*Math.abs(Math.sin(t*o.f+o.p))*(1-Math.abs(i-11.5)/14);o.b.style.height=h+'px';o.b.style.background=escucha?'#F6A623':'#1F57A8'});
+ $('#estado').textContent=habla?'HandIA está hablando…':escucha?'Te escucho…':t>13.2?'Pedido enviado':'HandIA te escucha';
+ const ult=[...DIALOGO].reverse().find(([,a])=>t>=a);$('#vivo').textContent=ult&&t<8.2?'«'+ult[3]+'»':'';
+ pose($('#orbe'),t>=13.2?'c':habla?'b':'a');
+ const orb=$('#orbe');orb.style.transform=`scale(${1+(habla?.06*sil:0)})`;
+ const mic=$('#mic');mic.style.setProperty('--o',escucha?(.4+.6*sil):0);mic.style.setProperty('--s',escucha?1+.25*sil:1);
+ $$('.onda').forEach((o,i)=>{if(!habla){o.style.opacity=0;return}const f=((t*.9+i/3)%1);o.style.opacity=(1-f)*.8;o.style.transform=`scale(${.8+f*2.6})`});
+ $('#halo').style.transform=`scale(${1+(habla?.08*sil:0)})`;$('#halo').style.opacity=habla?1:.6;
+ MSG.forEach(({m,q,a,b})=>{const on=t>=a&&t<=b;m.querySelectorAll('.ond i').forEach((i,k)=>{i.style.height=(on?6+12*Math.abs(Math.sin(t*9+k*1.3)):4)+'px'});m.querySelector('.ond').style.opacity=on?1:.25});
+}
+const imagenes=Promise.all([...document.images].map(i=>i.decode().catch(()=>null)));
+window.listo=Promise.all([imagenes,document.fonts.ready]);
+window.ir=(t)=>{tl.seek(Math.min(t,DUR),false);ambiente(t);return window.listo};
+window.ir(0);
+</script></body></html>

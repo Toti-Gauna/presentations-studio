@@ -202,4 +202,8 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
 - 05/11 (6) · **Video con música y cierre sin cámara** (pedido de Ignacio): canción original corporativa y alegre en todo el video
   (`scripts/video-pitch/montaje/musica.py`), siempre por debajo de la voz (baja sola cuando habla) y loudness parejo; en el final la
   cámara se funde y el mundo queda centrado. El pitch en vivo no lleva música (solo los efectos del clip del cierre).
+- 05/11 (7) · **HandIA te habla** (pedido de Ignacio): material extra animado de 18,5 s (`video/handia-voz.mp4` + póster) con música propia,
+  en el respaldo y como pregunta 19. La voz real con ElevenLabs queda lista para sumar (`scripts/video-pitch/handia-voz/`): falta la clave
+  (`ELEVENLABS_API_KEY` en las variables del entorno, nunca en el repo) y permitir `api.elevenlabs.io` en el acceso de red del entorno.
+  30 láminas de respaldo y 20 preguntas; machete de 26.
 

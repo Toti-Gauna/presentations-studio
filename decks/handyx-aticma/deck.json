@@ -6,7 +6,7 @@
  "tema": "handyx-premium",
  "hub": {
   "grupo": "Handyx · ATICMA 2026 (final)",
-  "descripcion": "Siete diapositivas para 180 segundos con el guion de Ignacio y cierre con el clip del mundo; modo de ensayo, 29 láminas de respaldo y 19 posibles preguntas del jurado. Modelo 0 % / 15 %.",
+  "descripcion": "Siete diapositivas para 180 segundos con el guion de Ignacio y cierre con el clip del mundo; modo de ensayo, 30 láminas de respaldo y 20 posibles preguntas del jurado. Modelo 0 % / 15 %.",
   "orden": 0,
   "estilo": "comercial"
  },
@@ -59,6 +59,7 @@
     "x-multiplicar-2",
     "x-circulo",
     "x-ferreterias",
+    "x-handia-voz",
     "x-ipo",
     "q-01",
     "q-02",
@@ -78,7 +79,8 @@
     "q-16",
     "q-17",
     "q-18",
-    "q-19"
+    "q-19",
+    "q-20"
    ]
   },
   {
@@ -126,6 +128,7 @@
     "x-multiplicar-2",
     "x-circulo",
     "x-ferreterias",
+    "x-handia-voz",
     "x-ipo",
     "q-01",
     "q-02",
@@ -145,7 +148,8 @@
     "q-16",
     "q-17",
     "q-18",
-    "q-19"
+    "q-19",
+    "q-20"
    ]
   }
  ],
@@ -355,6 +359,22 @@
    "tipo": "imagen",
    "archivo": "video/ferreterias-poster.jpg",
    "procedencia": "Último cuadro de la animación de ferreterías conectadas",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-handia-voz",
+   "tipo": "video",
+   "archivo": "video/handia-voz.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026) con los personajes de Handyx y los íconos Lucide; música y efectos sintetizados; la voz real se generará con ElevenLabs",
+   "licencia": "Propia (Handyx); íconos Lucide (ISC)",
+   "estado": "final"
+  },
+  {
+   "id": "video-handia-voz-poster",
+   "tipo": "imagen",
+   "archivo": "video/handia-voz-poster.jpg",
+   "procedencia": "Último cuadro de la animación «HandIA te habla»",
    "licencia": "Propia (Handyx)",
    "estado": "final"
   },
@@ -4759,6 +4779,37 @@
    ]
   },
   {
+   "id": "x-handia-voz",
+   "titulo": "HandIA te habla: un mejor servicio, con tu voz",
+   "disposicion": "izquierda",
+   "paleta": "oceano",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué suma la inversión en IA: HandIA con voz natural para ayudarte a conseguir un mejor servicio.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión de Ignacio (05/11): con la inversión (partida de tecnología · IA, propuesta), HandIA te habla con una voz natural generada con ElevenLabs (proveedor previsto; sin contrato). Animación de 18,5 s que arranca sola (música y efectos suaves; sin sonido: ?sonido=no): HandIA saluda, el vecino cuenta el problema, HandIA pide una foto, arma el pedido y muestra especialistas cerca; el pedido se envía. La voz todavía no está en el video: se ve el texto y la onda de la voz. Para sumar la voz real: scripts/video-pitch/handia-voz/voz-elevenlabs.mjs con ELEVENLABS_API_KEY. Celular: diseño propuesto con datos ficticios. Beneficios: hablás en vez de escribir (más fácil para todos), pedidos más claros con foto y descripción, te guía antes, durante y después del trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Con la inversión, HandIA te habla: una voz natural que te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir, el pedido llega más claro y el especialista llega preparado. La voz se genera con ElevenLabs.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "clip",
+     "tipo": "video",
+     "recurso": "video-handia-voz",
+     "poster": "video-handia-voz-poster",
+     "alt": "Animación: HandIA habla con el vecino desde el celular, le pide una foto del calefón, arma el pedido y muestra especialistas cerca",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
    "id": "x-profesiones",
    "titulo": "De 6 a 72 profesiones",
    "disposicion": "izquierda",
@@ -4890,7 +4941,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 1 de 19",
+     "texto": "Posible pregunta del jurado · 1 de 20",
      "tono": "kicker"
     },
     {
@@ -5007,7 +5058,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 2 de 19",
+     "texto": "Posible pregunta del jurado · 2 de 20",
      "tono": "kicker"
     },
     {
@@ -5126,7 +5177,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 3 de 19",
+     "texto": "Posible pregunta del jurado · 3 de 20",
      "tono": "kicker"
     },
     {
@@ -5243,7 +5294,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 4 de 19",
+     "texto": "Posible pregunta del jurado · 4 de 20",
      "tono": "kicker"
     },
     {
@@ -5357,7 +5408,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 5 de 19",
+     "texto": "Posible pregunta del jurado · 5 de 20",
      "tono": "kicker"
     },
     {
@@ -5473,7 +5524,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 6 de 19",
+     "texto": "Posible pregunta del jurado · 6 de 20",
      "tono": "kicker"
     },
     {
@@ -5587,7 +5638,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 7 de 19",
+     "texto": "Posible pregunta del jurado · 7 de 20",
      "tono": "kicker"
     },
     {
@@ -5701,7 +5752,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 8 de 19",
+     "texto": "Posible pregunta del jurado · 8 de 20",
      "tono": "kicker"
     },
     {
@@ -5820,7 +5871,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 9 de 19",
+     "texto": "Posible pregunta del jurado · 9 de 20",
      "tono": "kicker"
     },
     {
@@ -5934,7 +5985,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 10 de 19",
+     "texto": "Posible pregunta del jurado · 10 de 20",
      "tono": "kicker"
     },
     {
@@ -6053,7 +6104,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 11 de 19",
+     "texto": "Posible pregunta del jurado · 11 de 20",
      "tono": "kicker"
     },
     {
@@ -6167,7 +6218,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 12 de 19",
+     "texto": "Posible pregunta del jurado · 12 de 20",
      "tono": "kicker"
     },
     {
@@ -6281,7 +6332,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 13 de 19",
+     "texto": "Posible pregunta del jurado · 13 de 20",
      "tono": "kicker"
     },
     {
@@ -6399,7 +6450,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 14 de 19",
+     "texto": "Posible pregunta del jurado · 14 de 20",
      "tono": "kicker"
     },
     {
@@ -6513,7 +6564,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 15 de 19",
+     "texto": "Posible pregunta del jurado · 15 de 20",
      "tono": "kicker"
     },
     {
@@ -6630,7 +6681,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 16 de 19",
+     "texto": "Posible pregunta del jurado · 16 de 20",
      "tono": "kicker"
     },
     {
@@ -6744,7 +6795,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 17 de 19",
+     "texto": "Posible pregunta del jurado · 17 de 20",
      "tono": "kicker"
     },
     {
@@ -6858,7 +6909,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 18 de 19",
+     "texto": "Posible pregunta del jurado · 18 de 20",
      "tono": "kicker"
     },
     {
@@ -6948,9 +6999,123 @@
   },
   {
    "id": "q-19",
-   "titulo": "Posible pregunta 19: ¿Qué logran en los próximos 3 meses?",
+   "titulo": "Posible pregunta 19: ¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
    "disposicion": "izquierda",
    "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo te ayuda HandIA a conseguir un mejor servicio? Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 5
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Posible pregunta del jurado · 19 de 20",
+     "tono": "kicker"
+    },
+    {
+     "id": "t",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 10,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "tipo": "titulo",
+     "texto": "¿Cómo te ayuda HandIA a conseguir un mejor servicio?",
+     "nivel": 2
+    },
+    {
+     "id": "kr",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 27
+     },
+     "paso": 0,
+     "entrada": "fundido",
+     "tipo": "etiqueta",
+     "texto": "Nuestra respuesta",
+     "tono": "meta"
+    },
+    {
+     "id": "r",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 32,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "texto",
+     "texto": "Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
+     "tamano": "l"
+    },
+    {
+     "id": "m",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 66,
+      "w": 74
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "items": [
+      {
+       "texto": "**Hablás**, no escribís",
+       "icono": "chat"
+      },
+      {
+       "texto": "**Pedido claro** con foto",
+       "icono": "camara"
+      },
+      {
+       "texto": "**Te guía** en cada paso",
+       "icono": "ia"
+      }
+     ],
+     "columnas": 3
+    },
+    {
+     "id": "pj",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 58
+     },
+     "paso": 0,
+     "entrada": "ninguna",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "tamano": 26,
+     "acciones": []
+    }
+   ]
+  },
+  {
+   "id": "q-20",
+   "titulo": "Posible pregunta 20: ¿Qué logran en los próximos 3 meses?",
+   "disposicion": "izquierda",
+   "paleta": "gris",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "mixto",
@@ -6972,7 +7137,7 @@
      "paso": 0,
      "entrada": "fundido",
      "tipo": "etiqueta",
-     "texto": "Posible pregunta del jurado · 19 de 19",
+     "texto": "Posible pregunta del jurado · 20 de 20",
      "tono": "kicker"
     },
     {
@@ -7054,7 +7219,7 @@
      "paso": 0,
      "entrada": "ninguna",
      "tipo": "personaje",
-     "personaje": "grifo",
+     "personaje": "engranaje",
      "tamano": 26,
      "acciones": []
     }

@@ -136,6 +136,12 @@ if modo == 'pitch':
         if c < 93: return {'colchon': 1.2, 'pulsada': 1, 'octava': 1, 'piano': 1, 'bajo': 1, 'bombo': 'cuatro', 'palmas': 1, 'hats': 1, 'campana': 'siempre', 'platillo': c == 91}
         return {}
     guardar(componer(T, plan, prog, golpe_final=(198.55, 'C')), salida)
+elif modo == 'handia':   # animación «HandIA te habla»: cálida, liviana, resuelve cuando aparecen los beneficios
+    T = float(sys.argv[3]) - 2.5; PROG = ['C', 'G', 'Am', 'F']
+    def plan(c):
+        if c < 1: return {'colchon': 1.4, 'pulsada': 1}
+        return {'colchon': .9, 'pulsada': 1, 'piano': 'largo', 'bajo': .7, 'bombo': 'medio', 'hats': .6, 'campana': 1}
+    guardar(componer(T, plan, lambda c: PROG[c % 4], golpe_final=(15.45, 'C')), salida)
 else:
     T = float(sys.argv[3]); PROG = ['C', 'G', 'Am', 'F']
     def plan(c):
