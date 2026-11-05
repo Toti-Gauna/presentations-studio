@@ -53,8 +53,8 @@ const PRODUCTOS = ['martillo2', 'llave-inglesa', 'herramienta', 'capas', 'martil
 const BENEFICIOS: Array<{ pj?: Personaje; ic?: string; titulo: string; txt: string }> = [
   { pj: 'llave', titulo: 'Profesional', txt: 'llega con todo lo que necesita' },
   { pj: 'engranaje', titulo: 'Ferretería', txt: 'más ventas en su barrio' },
-  { pj: 'bombilla', titulo: 'Vecino', txt: 'menos idas y vueltas, todo a la vista' },
-  { ic: 'crecimiento', titulo: 'Handyx', txt: 'otra fuente de ingresos · a explorar' },
+  { pj: 'bombilla', titulo: 'Vecino', txt: 'menos idas y vueltas,<br>todo a la vista' },
+  { ic: 'crecimiento', titulo: 'Handyx', txt: 'otra fuente de ingresos<br>(a explorar)' },
 ];
 
 /** Skyline del fondo (azar determinista del kit). */
@@ -121,6 +121,7 @@ function celEspecialista(c: Kit): string {
         <span class="te-stock">✓ En stock</span>
         <ul class="te-lista">${MATERIALES.map((m) => `<li>${m.nom}</li>`).join('')}</ul>
       </div>
+      <div class="te-pista">${c.icono('ruta')}<span>Lo retirás camino al trabajo</span></div>
       <div class="te-res">Reservar y retirar<span class="ok">Reservado ✓</span><i class="toque"></i></div>
     </div>`,
     'cel-e',
@@ -140,6 +141,7 @@ function celVecino(c: Kit): string {
         <div class="tu-paso p2 ahora"><i class="pt"><i class="pulso"></i></i><div><b>El especialista retira y va en camino</b></div></div>
       </div>
       <div class="tu-trans"><div class="cab2">${c.icono('lista')}<b>Transparencia:</b></div><p>ves qué materiales se usan</p><ul>${MATERIALES.map((m) => `<li>${m.nom}</li>`).join('')}</ul></div>
+      <div class="tu-esp"><span class="ava">${c.img('personajes/llave-a.webp')}</span><div><b>Tu especialista</b><span>Plomería</span></div></div>
     </div>`,
     'cel-u',
   );
@@ -203,6 +205,7 @@ export default escena({
   marcas: [0, 2.8, 5.4, 8.6, 11.8, 14.8, 18.2],
   // Cielo arriba a la derecha, sobre el edificio: solo nubes por debajo en todos los pasos.
   cara: [0, 1, 2, 3, 4, 5].map((desde) => ({ desde, x: 1690, y: 170, d: 250 })),
+  leyendas: ['El barrio: **la ferretería** y un edificio', 'Se rompió un caño: **el vecino pide el arreglo**', 'El profesional **agrega los materiales**', 'Handyx encuentra **stock cerca** y lo reserva', 'El vecino **lo sigue en su app**', 'Llega con todo: **arreglo listo**'],
   css: `
     .cielo-f { position: absolute; left: 0; top: 0; width: 1920px; height: 850px; background: linear-gradient(#C9DCF8 0%, #E3EDFB 55%, ${COLOR.hueso} 100%); z-index: 0; }
     .sol { position: absolute; left: 1405px; top: 255px; width: 110px; height: 110px; z-index: 1; }
@@ -256,7 +259,7 @@ export default escena({
     .caja b { position: absolute; right: -10px; top: -10px; width: 26px; height: 26px; border-radius: 50%; background: ${COLOR.verde}; color: #fff; font-size: 16px; font-weight: 900; display: grid; place-items: center; }
     .f-badge { position: absolute; left: 330px; top: 402px; transform: translateX(-50%); z-index: 11; }
     .f-badge .chip { font-size: 26px; padding: 10px 22px; }
-    .ping { position: absolute; left: 270px; top: 587px; width: 120px; height: 120px; border-radius: 50%; border: 5px solid ${COLOR.verde}; opacity: 0; z-index: 7; }
+    .ping { position: absolute; left: 270px; top: 367px; width: 120px; height: 120px; border-radius: 50%; border: 5px solid ${COLOR.verde}; opacity: 0; z-index: 7; }
 
     /* edificio con el balcón de la pérdida */
     .edif { position: absolute; left: 1520px; top: 330px; width: 360px; height: 510px; transform-origin: 50% 100%; z-index: 6; }
@@ -296,7 +299,7 @@ export default escena({
     /* ruta punteada sobre la vereda */
     .ruta { position: absolute; top: 858px; height: 12px; z-index: 8; }
     .ruta .puntos { position: absolute; inset: 0; background: radial-gradient(circle, ${COLOR.azul} 4px, transparent 4.6px) 0 50% / 20px 12px repeat-x; }
-    .ra { left: 496px; width: 184px; } .rb { left: 560px; width: 1130px; }
+    .ra { left: 496px; width: 184px; } .rb { left: 496px; width: 1194px; }
     .marca { position: absolute; top: 852px; width: 24px; height: 24px; margin-left: -12px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px ${COLOR.azul}, 0 4px 10px rgba(14,29,54,.3); z-index: 9; }
     .marca::after { content: ''; position: absolute; left: 7px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: ${COLOR.azul}; }
     .mf { left: 496px; } .me { left: 1690px; }
@@ -345,6 +348,9 @@ export default escena({
     .te-tienda .fila { display: flex; align-items: center; gap: 10px; }
     .te-tienda .fila b { font-size: 22px; line-height: 1.15; }
     .te-stock { display: inline-block; margin-top: 8px; padding: 3px 12px; border-radius: 999px; background: #E3F5EA; color: ${COLOR.verde}; font-size: 20px; font-weight: 800; }
+    .te-pista { flex: none; display: flex; align-items: center; gap: 10px; padding: 0 4px; font-size: 20px; font-weight: 700; color: ${COLOR.suave}; }
+    .te-pista .icono { width: 28px; height: 28px; flex: none; }
+    .te-pista span { text-wrap: balance; }
     .te-lista, .tu-trans ul { list-style: none; padding: 0; margin-top: 6px; }
     .te-lista li { font-size: 20px; line-height: 1.3; font-weight: 600; color: ${COLOR.texto}; }
     .te-lista li::before { content: '✓ '; color: ${COLOR.verde}; font-weight: 900; }
@@ -366,8 +372,11 @@ export default escena({
     .tu-trans .cab2 { display: flex; align-items: center; gap: 10px; }
     .tu-trans .icono { width: 30px; height: 30px; }
     .tu-trans b { font-size: 21px; }
-    .tu-trans p { margin-top: 2px; font-size: 20px; font-weight: 700; line-height: 1.25; }
+    .tu-trans p { margin-top: 2px; font-size: 20px; font-weight: 700; line-height: 1.25; text-wrap: balance; }
     .tu-trans li { font-size: 20px; line-height: 1.3; font-weight: 600; color: ${COLOR.texto}; }
+    .tu-esp { flex: none; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 18px; background: #fff; box-shadow: 0 2px 0 ${COLOR.borde}; }
+    .tu-esp b { display: block; font-size: 21px; }
+    .tu-esp span:not(.ava) { display: block; font-size: 20px; font-weight: 600; color: ${COLOR.suave}; }
     .tu-trans li::before { content: '• '; color: ${COLOR.naranja}; font-weight: 900; }
 
     /* título y rótulo de visión */
@@ -479,6 +488,7 @@ export default escena({
     tl.fromTo([$('.m-yo'), $('.m-pin')], { scale: 0 }, { scale: 1, duration: 0.35, ease: 'back.out(3)', stagger: 0.12 }, 9.3);
     tl.fromTo($('.m-ruta'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 9.5);
     tl.fromTo($('.te-tienda'), { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'back.out(1.6)' }, 9.4);
+    tl.fromTo($('.te-pista'), { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }, STOCK + 0.25);
     tl.fromTo($('.te-stock'), { scale: 0 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' }, STOCK);
     tl.fromTo($('.f-brillo'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 }, STOCK);
     tl.fromTo($('.f-badge .chip'), { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.45, ease: 'back.out(2.4)' }, STOCK + 0.05);
@@ -491,12 +501,14 @@ export default escena({
 
     // 4 · el vecino lo ve en su app
     tl.to($('.b-fuga'), { autoAlpha: 0, scale: 0.6, duration: 0.3, ease: 'power2.in' }, 11.85);
+    tl.to($('.sol'), { autoAlpha: 0, y: 40, duration: 0.5, ease: 'power2.in' }, 11.95);
     tl.fromTo($('.tel-u'), { autoAlpha: 0, scale: 0.12, transformOrigin: '200% 100%' }, { autoAlpha: 1, scale: 1, duration: 0.65, ease: 'back.out(1.3)' }, 11.95);
     tl.fromTo($('.tu-tit'), { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: 'power2.out' }, 12.45);
     tl.fromTo($('.tu-linea'), { scaleY: 0 }, { scaleY: 1, duration: 0.8, ease: 'power2.inOut' }, 12.6);
     tl.fromTo($.all('.tu-paso'), { autoAlpha: 0, x: 26 }, { autoAlpha: 1, x: 0, duration: 0.3, ease: 'back.out(1.8)', stagger: 0.25 }, 12.6);
     tl.fromTo($('.tu-paso .realce'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 }, 13.0);
     tl.fromTo($('.tu-trans'), { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'back.out(1.6)' }, 13.55);
+    tl.fromTo($('.tu-esp'), { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.35, ease: 'power2.out' }, 13.85);
 
     // 5 · llega con todo: retira la caja, va al edificio y el arreglo queda listo
     tl.to($('.tel-e'), { autoAlpha: 0, scale: 0.12, duration: 0.45, ease: 'power2.in' }, 14.8);
@@ -506,6 +518,7 @@ export default escena({
     tl.fromTo($('.llave .caja'), { autoAlpha: 0, scale: 0, transformOrigin: '50% 100%' }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.6)' }, RETIRA);
     tl.to($('.f-brillo'), { autoAlpha: 0, duration: 0.4 }, RETIRA);
     tl.to($('.llave'), { x: X_LLAVE.edif, duration: 1.3, ease: 'power2.inOut' }, 15.7);
+    tl.to($('.ra'), { autoAlpha: 0, duration: 0.3 }, 15.7);
     tl.fromTo($('.rb'), { clipPath: 'inset(0px 100% 0px 0px)' }, { clipPath: 'inset(0px 0% 0px 0px)', duration: 1.15, ease: 'power2.inOut' }, 15.75);
     tl.fromTo($('.me'), { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(3)' }, 16.85);
     tl.to($('.llave .caja'), { autoAlpha: 0, scale: 0, duration: 0.3, ease: 'back.in(2)' }, ARREGLO - 0.05);
@@ -518,8 +531,7 @@ export default escena({
       tl.fromTo(ch, { autoAlpha: 0, x: 0, y: 0, scale: 0.3, rotation: 0 }, { autoAlpha: 1, x: 0, y: 0, scale: 0.3, rotation: 0, duration: 0.05 }, t0);
       tl.to(ch, { x: Math.cos(a) * r, y: Math.sin(a) * r, scale: 1.2, rotation: 180, autoAlpha: 0, duration: 0.9, ease: 'power2.out' }, t0 + 0.05);
     });
-    tl.to($('.sol'), { autoAlpha: 0, duration: 0.4 }, ARREGLO + 0.05);
-    tl.fromTo($.all('.bn'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)', stagger: 0.12 }, ARREGLO + 0.2);
+        tl.fromTo($.all('.bn'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)', stagger: 0.12 }, ARREGLO + 0.2);
 
     // Poses, ventanal y estado de la ferretería: dependen del momento (valen también en los saltos)
     const pj = (s: string) => $(`${s} .pj`);
@@ -565,7 +577,7 @@ export default escena({
     } else if (tl >= ARREGLO) r.llave.style.transform = salto(0);
     else r.llave.style.transform = `translateY(${Math.sin(t * 3) * 3}px) scaleX(${tl >= 15.4 && tl < 15.7 ? -1 : 1})`;
     r.ferretero.style.transform = tl >= RETIRA + 0.2 ? salto(1.2) : respira(1);
-    r.grifo.style.transform = tl >= ARREGLO ? salto(2.1) : tl >= FUGA ? `translateX(${Math.sin(t * 34) * 1.4}px)` : 'none';
+    r.grifo.style.transform = tl >= ARREGLO ? salto(2.1) : tl >= FUGA ? `translateX(${Math.round(Math.sin(t * 34) * 1.5)}px)` : 'none';
     r.gota.style.transform = tl >= ARREGLO ? salto(0.6) : respira(2);
     r.foco.style.transform = tl >= ARREGLO ? salto(1.7) : respira(3);
     // La pérdida: el ventanal late, caen gotas sobre el balcón; con el arreglo, luz verde fija

@@ -55,7 +55,7 @@ const comoHandyx = (c: Kit) => [
 
 // Llave en su balsa (pies sobre la cubierta) y las monedas que se le van a los botes que cobran.
 const X0 = 150;
-const CUB0 = 856;
+const CUB0 = 842;
 const MANO = { x: X0 + 46, y: CUB0 - 92 };
 const MONEDAS = FILAS.flatMap((f, r) => Array.from({ length: f.monedas }, (_, j) => ({ r, j }))).map((m, i) => ({
   ...m,
@@ -99,7 +99,7 @@ function camino(a: Pt, b: Pt, c: Pt, d: Pt): (s: number) => Pt & { ang: number }
   };
 }
 const PUERTA = { x: 1738, y: 775 };
-const CAMINO = camino({ x: 215, y: 655 }, { x: 500, y: 180 }, { x: 1480, y: 820 }, PUERTA);
+const CAMINO = camino({ x: 215, y: 640 }, { x: 500, y: 180 }, { x: 1480, y: 820 }, PUERTA);
 const PUNTOS = 34;
 
 // Cierre: las cuatro acciones del océano azul y la tripulación de Handys que sube al barco.
@@ -121,6 +121,13 @@ const vaiven = (k: number) => (k < 0.5 ? 4 * k * k * k : 1 - (-2 * k + 2) ** 3 /
 
 export default escena({
   marcas: [0, T1, T2, T3, T4, FIN],
+  leyendas: [
+    'Algunas plataformas **le cobran al profesional**',
+    'Para cada modelo, **cómo lo resuelve Handyx**',
+    'El presupuesto **llega completo a su casa**',
+    'El modelo: **tarifa visible** y **sin comisión** al profesional',
+    'Nuestro **océano azul**: lo que suma Handyx',
+  ],
   cara: [
     { desde: 0, x: 1700, y: 180, d: 250 },
     { desde: 1, x: 1700, y: 180, d: 250 },
@@ -181,7 +188,8 @@ export default escena({
     .vela-h { position: absolute; left: 62px; top: -498px; width: 340px; height: 366px; transform-origin: 50% 0; }
     .vela-h svg { position: absolute; inset: 0; }
     .vela-h .logo-vela { position: absolute; left: 50px; top: 152px; width: 240px; }
-    .ban-h { position: absolute; left: 236px; top: -520px; width: 76px; height: 34px; background: ${COLOR.amarillo}; clip-path: polygon(0 0, 100% 50%, 0 100%); transform-origin: 0 50%; }
+    .ban-h { position: absolute; left: 236px; top: -520px; width: 76px; height: 34px; transform-origin: 0 50%; }
+    .ban-h .ondea { position: absolute; inset: 0; background: ${COLOR.amarillo}; clip-path: polygon(0 0, 100% 50%, 0 100%); transform-origin: 0 50%; }
     /* costa y casa de Llave */
     .costa { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; z-index: 12; }
     .costa svg { position: absolute; left: 0; top: 0; }
@@ -241,7 +249,8 @@ export default escena({
       const o = OLAS[i];
       if (!o) return '';
       const d = ola(o.nivel, o.amp, o.largo);
-      const svg = (cl: string, fill: string) => `<svg class="capa ${cl}" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="${d}" fill="${fill}"/></svg>`;
+      const cresta = i === OLAS.length - 1 ? `<path d="${ola(990, 18, o.largo).split(' L3840')[0]}" fill="none" style="stroke: rgba(255,255,255,.08)"/>` : '';
+      const svg = (cl: string, fill: string) => `<svg class="capa ${cl}" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="${d}" fill="${fill}"/>${cresta}</svg>`;
       return `<div class="capa-w w${i}" style="z-index:${3 + i * 2}">${svg('r', o.rojo)}${svg('a', o.azul)}</div>`;
     };
     const que = queHace(c);
@@ -260,7 +269,7 @@ export default escena({
     const vela = `<svg viewBox="0 0 340 366" width="340" height="366"><path d="M12 0 L328 0 Q 356 183 328 366 L 12 366 Q 36 183 12 0 Z" fill="#fff" stroke="#D3DCEA" stroke-width="4"/>
       <path d="M22 122 Q 46 122 330 122 M22 244 Q 46 244 330 244" stroke="#E6ECF5" stroke-width="3" fill="none"/></svg>`;
     const casco = `<svg class="casco-h" viewBox="0 0 650 132"><path d="M0 24 L650 0 C 622 62 596 108 548 122 L 84 126 C 40 122 12 84 0 24 Z" fill="#fff"/>
-      <path d="M10 82 L626 60 C 606 94 584 116 548 122 L 84 126 C 48 123 24 106 10 82 Z" fill="${COLOR.azul}"/>
+      <path d="M10 82 L626 60 C 606 94 584 116 548 122 L 84 126 C 48 123 24 106 10 82 Z" fill="${COLOR.noche}"/>
       <path d="M6 64 L634 42" stroke="${COLOR.amarillo}" stroke-width="7"/><path d="M0 24 L650 0" stroke="${COLOR.azulOscuro}" stroke-width="9" stroke-linecap="round"/></svg>`;
     return `
     <div class="cielo r"></div><div class="cielo a"></div>
@@ -276,7 +285,7 @@ export default escena({
     </div>
     <div class="nave"><div class="flota-n">
       <div class="balsa"><i></i><i></i></div>
-      <div class="mastil-h"></div><i class="ban-h ondea"></i>
+      <div class="mastil-h"></div><i class="ban-h"><i class="ondea"></i></i>
       <div class="vela-h">${vela}${c.logo('logo-vela')}</div><i class="verga v1"></i><i class="verga v2"></i>
       ${TRIPULACION.map((h, i) => `<div class="trip h${i}" style="left:${h.x - h.alto / 2}px;top:${h.pie - h.alto}px;width:${h.alto}px;height:${h.alto}px">${c.pj(h.pj, '', h.alto)}</div>`).join('')}
       <div class="mov-llave">${c.pj('llave', '', 140)}</div>
@@ -354,7 +363,7 @@ export default escena({
     tl.to($('.costa'), { autoAlpha: 0, y: 160, duration: 0.6, ease: 'power2.in' }, T4 + 0.1);
     tl.to($('.balsa'), { autoAlpha: 0, y: 30, duration: 0.3, ease: 'power2.in' }, T4 + 0.05);
     tl.fromTo($('.casco-h'), { autoAlpha: 1, y: 120 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power3.out', immediateRender: false }, T4 + 0.1);
-    tl.to(nave, { y: -56, duration: 0.5, ease: 'power3.out' }, T4 + 0.1);
+    tl.to(nave, { y: -44, duration: 0.5, ease: 'power3.out' }, T4 + 0.1);
     tl.fromTo($('.mastil-h'), { autoAlpha: 1, scaleY: 0 }, { autoAlpha: 1, scaleY: 1, duration: 0.4, ease: 'power2.out', immediateRender: false }, T4 + 0.35);
     tl.fromTo($.all('.verga'), { autoAlpha: 0, scaleX: 0.2 }, { autoAlpha: 1, scaleX: 1, duration: 0.3, ease: 'back.out(2)', immediateRender: false }, T4 + 0.6);
     tl.fromTo($('.vela-h'), { autoAlpha: 1, scaleY: 0 }, { autoAlpha: 1, scaleY: 1, duration: 0.45, ease: 'back.out(1.4)', immediateRender: false }, T4 + 0.65);

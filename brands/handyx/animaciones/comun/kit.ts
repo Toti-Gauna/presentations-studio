@@ -160,16 +160,15 @@ export function escena(def: DefEscena): CrearAnimacion {
     const tl = ctx.gsap.timeline({ paused: true });
     def.armar(tl, $, c);
     const n = def.marcas.length - 1;
-    // Leyendas: cada una entra apenas empieza su paso y sale cuando empieza el siguiente que tenga leyenda.
+    // Leyendas: cada una entra apenas empieza su paso y sale cuando empieza el paso siguiente (tenga o no leyenda).
     const pastillas = $.all('.leyenda-paso');
-    pastillas.forEach((el, i) => {
+    pastillas.forEach((el) => {
       const k = Number(el.dataset['k']);
       const x = Number(el.dataset['x']);
       const y = Number(el.dataset['y']);
       ctx.gsap.set(el, { x, y, xPercent: -50, yPercent: -50 });
       tl.fromTo(el, { autoAlpha: 0, y: y + 22, scale: 0.9 }, { autoAlpha: 1, y, scale: 1, duration: 0.45, ease: 'back.out(1.8)' }, (def.marcas[k] ?? 0) + 0.15);
-      const sig = pastillas[i + 1];
-      if (sig) tl.to(el, { autoAlpha: 0, y: y - 16, duration: 0.25, ease: 'power1.in' }, def.marcas[Number(sig.dataset['k'])] ?? 0);
+      if (k + 1 < n) tl.to(el, { autoAlpha: 0, y: y - 16, duration: 0.25, ease: 'power1.in' }, def.marcas[k + 1] ?? 0);
     });
     const fin = def.marcas[n] ?? tl.duration();
     tl.set({}, {}, fin);

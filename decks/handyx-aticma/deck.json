@@ -631,12 +631,12 @@
    "disposicion": "dividido",
    "paleta": "neutro",
    "duracion": 26,
-   "pasos": 1,
+   "pasos": 5,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Comparar con honestidad y dejar claro el modelo: 0 % al profesional, 15 % al usuario, presupuesto completo.",
    "guion": "Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional. Nosotros creemos que ese no es el camino. El dinero que gana trabajando tiene que llegar completo a su casa.\n\nNuestro modelo es simple: el usuario paga una tarifa del 15%, visible antes de contratar. El profesional fija su presupuesto y Handyx no le cobra comisión.",
-   "notas": "2:04–2:30. Pedido de Luigi (mentor ATICMA): mostrar que hay Clickie y 3 o 4 más en Argentina, y varios en Colombia, Uruguay, Chile, México, Europa y EE. UU., y encontrar el diferencial. El mapa agrupa por cómo le cobran al profesional; el diferencial buscado: el profesional no paga comisión por su trabajo. Modelos de Taskrabbit, Angi, Thumbtack y Checkatrade: búsqueda web del 04/11/2026 (fuentes de comparación, a revalidar). IguanaFix, según Cronista, se enfocó en clientes corporativos.\nCompetidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "2:04–2:30. Cinco golpes (→ al decir…): 1 «Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional» (entra solo: océano rojo, plataformas A a D sin nombres) · 2 «Nosotros creemos que ese no es el camino» (cómo lo resuelve Handyx en cada modelo) · 3 «El dinero que gana trabajando tiene que llegar completo a su casa» · 4 «Nuestro modelo es simple: el usuario paga una tarifa del 15 %, visible antes de contratar» · 5 «El profesional fija su presupuesto y Handyx no le cobra comisión» (océano azul: eliminamos, reducimos, aumentamos, creamos).\nEn pantalla no hay nombres ni logos de la competencia: se muestra por modelo de cobro. Los nombres quedan solo en estas notas y en las fuentes.\n2:04–2:30. Pedido de Luigi (mentor ATICMA): mostrar que hay Clickie y 3 o 4 más en Argentina, y varios en Colombia, Uruguay, Chile, México, Europa y EE. UU., y encontrar el diferencial. El mapa agrupa por cómo le cobran al profesional; el diferencial buscado: el profesional no paga comisión por su trabajo. Modelos de Taskrabbit, Angi, Thumbtack y Checkatrade: búsqueda web del 04/11/2026 (fuentes de comparación, a revalidar). IguanaFix, según Cronista, se enfocó en clientes corporativos.\nCompetidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Competencia, por modelo (sin nombres): algunas plataformas cobran comisión al profesional, otras le cobran por contacto u oportunidad, otras una suscripción y otras anuncian comisión cero por tiempo limitado. Handyx: 0 % de comisión al profesional y 15 % de tarifa de servicio al usuario, visible antes de contratar. Ejemplo: presupuesto de $ 100.000; el usuario paga $ 115.000; el profesional recibe $ 100.000 y Handyx $ 15.000 brutos, antes de costos.",
    "referencias": [
     "FEE-ESPECIALISTA",
@@ -648,141 +648,29 @@
    "preguntas": "¿Qué no pueden copiar? → Las funciones se copian; apostamos a la combinación de herramientas útiles por oficio, confianza e historial con clientes que vuelven a elegir al profesional. Es una hipótesis que el uso recurrente tiene que demostrar.",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Competencia y modelo",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Conocemos la competencia. ==Elegimos otro camino.==",
-     "nivel": 2
-    },
-    {
-     "id": "tab",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 54
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "tabla",
-     "columnas": [
-      "Otras plataformas",
-      "Cómo le gana Handyx"
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "competencia",
+     "alt": "Animación: océano rojo con cuatro plataformas anónimas que le cobran al profesional de distintas formas y, al lado de cada una, cómo lo resuelve Handyx; el presupuesto llega completo a la casa de Llave, el recibo del ejemplo muestra la tarifa visible que paga el usuario, y el mar se vuelve azul mientras Llave navega en el barco de Handyx, entran las cuatro acciones, el contador de desarrollos del plan y los Handys de cada oficio que se suben.",
+     "tiempos": [
+      3.6,
+      2.6,
+      3.2,
+      3.6,
+      4.8
      ],
-     "filas": [
-      [
-       "**A** · comisión al profesional ({{COMP-CLICKIE-PRO}})",
-       "{{FEE-ESPECIALISTA}} al profesional: cobra su presupuesto completo"
-      ],
-      [
-       "**B** · pago por contacto u oportunidad",
-       "El profesional no paga por contactos"
-      ],
-      [
-       "**C** · suscripción mensual",
-       "La tarifa la paga el usuario, visible"
-      ],
-      [
-       "**D** · comisión cero por tiempo limitado",
-       "{{FEE-ESPECIALISTA}} es nuestro modelo, no una promoción"
-      ],
-      [
-       "**Handyx** · {{TARIFA-USUARIO}} al usuario",
-       "Visible antes de contratar"
-      ]
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "EJ-P",
+      "EJ-F",
+      "EJ-T",
+      "TARIFA-USUARIO",
+      "FEE-ESPECIALISTA",
+      "DESARROLLOS-PLAN"
      ],
-     "destacar": 4,
-     "pasoDestacada": 0
-    },
-    {
-     "id": "otros",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 79,
-      "w": 54
-     },
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Hay plataformas así en Argentina, la región, EE. UU. y Europa. Comparamos modelos y funcionalidades, no marcas.",
-     "tamano": "s"
-    },
-    {
-     "id": "rep",
-     "area": "libre",
-     "pos": {
-      "x": 62,
-      "y": 25,
-      "w": 33
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "reparto",
-     "total": "EJ-T",
-     "leyendaTotal": "**paga el usuario** (ejemplo)",
-     "partes": [
-      {
-       "afirmacion": "EJ-P",
-       "etiqueta": "recibe el profesional: su presupuesto completo",
-       "tono": "azul"
-      },
-      {
-       "afirmacion": "EJ-F",
-       "etiqueta": "tarifa de servicio Handyx",
-       "tono": "amarilla"
-      }
-     ],
-     "pasoPartes": 0
-    },
-    {
-     "id": "cons",
-     "area": "libre",
-     "pos": {
-      "x": 62,
-      "y": 55,
-      "w": 33
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**El profesional conserva todo su presupuesto.** Handyx no le cobra comisión.",
-     "tamano": "m",
-     "caja": "amarilla"
-    },
-    {
-     "id": "pie",
-     "area": "libre",
-     "pos": {
-      "x": 62,
-      "y": 86,
-      "w": 33
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "Ejemplo ilustrativo, sin descontar costos de cobro, fiscales y operativos. Modelos de cobro según fuentes públicas consultadas el 04/11/2026; a revalidar.",
-     "tamano": "xs"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -792,12 +680,12 @@
    "disposicion": "dividido",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 5,
+   "pasos": 6,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Mostrar un equipo chico con sueños grandes, el pedido de inversión y cerrar con una imagen memorable.",
    "guion": "Somos un equipo chico, pero nuestros sueños no lo son. Desarrollé agentes de inteligencia artificial que superviso para potenciar distintas áreas del negocio.\n\nBuscamos cien mil dólares de inversión inicial para tecnología, operaciones y marketing. Queremos llegar a Silicon Valley para aprender y conectar con mentores e inversores.\n\nHoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo.\n\nNo queremos solamente conectar personas. Queremos ayudar a los profesionales a trabajar cada vez mejor.\n\nY con ellos, construir un mundo con más soluciones y menos problemas.\n\nMuchísimas gracias.",
-   "notas": "2:30–3:00. Cinco golpes (→ al decir…): 1 «Somos un equipo chico» (entra solo) · 2 «Desarrollé agentes de inteligencia artificial» · 3 «Buscamos cien mil dólares» · 4 «Queremos llegar a Silicon Valley» · 5 «Hoy empezamos en Mar del Plata»: arranca el clip del mundo (≈ 19 s: Mar del Plata → el mundo con grietas → los Handys lo arreglan → «Un mundo con más soluciones y menos problemas» → ¡Muchas gracias!). Tiene efectos de sonido suaves; sin sonido: ?sonido=no.\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto propuesto el 05/11 a pedido de Ignacio, a aprobar: marketing 45 %, operaciones 30 %, tecnología 15 % (se baja desarrollo: con IA es más barato que nunca) y legal/reserva 10 % (no entra en la barra; detalle en «Cada dólar de la inversión»).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "2:30–3:00. Cinco golpes (→ al decir…): 1 «Somos un equipo chico» (entra solo) · 2 «Desarrollé agentes de inteligencia artificial» · 3 «Buscamos cien mil dólares» · 4 «Queremos llegar a Silicon Valley» · 5 «Hoy empezamos en Mar del Plata»: arranca el clip del mundo (≈ 19 s: Mar del Plata → el mundo con grietas → los Handys lo arreglan → «Un mundo con más soluciones y menos problemas» → ¡Muchas gracias!). Tiene efectos de sonido suaves; sin sonido: ?sonido=no · 6 al terminar el clip («Muchísimas gracias»): cierre con los dos QR, la landing (landing.handyc.com) y el portafolio de Ignacio (portafolio.eclipse-business.com); queda en pantalla durante las preguntas.\nIgnacio: fundador, desarrollo, producto y coordinación. Su pareja: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto propuesto el 05/11 a pedido de Ignacio, a aprobar: marketing 45 %, operaciones 30 %, tecnología 15 % (se baja desarrollo: con IA es más barato que nunca) y legal/reserva 10 % (no entra en la barra; detalle en «Cada dólar de la inversión»).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Equipo: Ignacio (fundador, desarrollo, producto y coordinación) con el apoyo de su pareja en diseño y marketing, y agentes de inteligencia artificial que él desarrolló y supervisa. Handyx busca USD 100.000 de inversión inicial para tecnología, operaciones y marketing, y quiere llegar a Silicon Valley para aprender y conectar con mentores e inversores. Hoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo: un mundo con más soluciones y menos problemas.",
    "referencias": [
     "INV-TOTAL",
@@ -817,7 +705,8 @@
       3.6,
       4.0,
       3.2,
-      0.8
+      0.8,
+      3.0
      ],
      "afirmaciones": [
       "INV-TOTAL",
@@ -843,7 +732,34 @@
      "cubrir": true,
      "area": "fondo",
      "paso": 4,
+     "sale": 5,
      "entrada": "ninguna"
+    },
+    {
+     "id": "qa",
+     "area": "libre",
+     "pos": {
+      "x": 19.375,
+      "y": 30,
+      "w": 30
+     },
+     "paso": 5,
+     "entrada": "escala",
+     "tipo": "qr",
+     "qr": "landing"
+    },
+    {
+     "id": "qb",
+     "area": "libre",
+     "pos": {
+      "x": 50.625,
+      "y": 30,
+      "w": 30
+     },
+     "paso": 5,
+     "entrada": "escala",
+     "tipo": "qr",
+     "qr": "portafolio"
     }
    ]
   },
@@ -3486,58 +3402,41 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Visión (05/11): Handyx for People (oficios y profesiones para particulares) y Handyx for Business (personal por turnos, mantenimiento y apps a medida integradas para comercios). Sin socios ni integraciones acordadas. «Con IA, crear y mantener apps para cada comercio es más barato que nunca» es una opinión del equipo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Handyx crece en dos ramas sobre un mismo núcleo (verificación, valoraciones, pagos y HandIA). Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio y clientes que vuelven. Handyx for Business: personal por turnos (mozos, bartenders, cocina) por días o semanas, mantenimiento del local con técnicos verificados, apps a medida para cada comercio integradas a Handyx y meritocracia. Hoy Mar del Plata; en 2027, Argentina.",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 un mismo núcleo (verificación, valoraciones, pagos y HandIA) · 2 primera rama, Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio, clientes que vuelven y ferreterías conectadas · 3 segunda rama, Handyx for Business: personal por turnos, mantenimiento del local, apps a medida y meritocracia · 4 todo se potencia a través del núcleo; de Mar del Plata a toda Buenos Aires y a la Argentina en 2027.\nVisión (05/11): sin socios ni integraciones acordadas. «Con IA, crear y mantener apps para cada comercio es más barato que nunca» es una opinión del equipo. Las ferreterías conectadas son una idea a explorar.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Handyx crece en dos ramas sobre un mismo núcleo (verificación, valoraciones, pagos y HandIA). Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio, clientes que vuelven y ferreterías conectadas. Handyx for Business: personal por turnos (mozos, bartenders, cocina) por días o semanas, mantenimiento del local con técnicos verificados, apps a medida para cada comercio integradas a Handyx y meritocracia. Hoy Mar del Plata; en 2027, Argentina.",
    "referencias": [
-    "META-PROFESIONES"
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES",
+    "PROF-POR-MES",
+    "META-BA-MESES"
    ],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "crece",
+     "alt": "Animación: del núcleo de Handyx (verificación, valoraciones, pagos y HandIA) crecen Handyx for People, con los Handys de cada oficio en sus nodos y Foco al final, y Handyx for Business, con un local que atiende Llave; los pulsos que cruzan el núcleo muestran cómo se potencian, con la expansión de Mar del Plata a toda Buenos Aires y a la Argentina en 2027.",
+     "tiempos": [
+      2.8,
+      3.6,
+      3.6,
+      3.2
+     ],
+     "afirmaciones": [
+      "PROFESIONES-INICIALES",
+      "META-PROFESIONES",
+      "PROF-POR-MES",
+      "META-BA-MESES"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · visión",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Cómo crece ==Handyx==",
-     "nivel": 2
-    },
-    {
-     "id": "mapa",
-     "area": "libre",
-     "pos": {
-      "x": 12.5,
-      "y": 21,
-      "w": 75
-     },
-     "paso": 0,
-     "entrada": "escala",
-     "tipo": "imagen",
-     "recurso": "mapa-crecimiento",
-     "alt": "Mapa: Handyx for People (B2C) y Handyx for Business (B2B) alrededor del núcleo de Handyx"
+     "entrada": "ninguna"
     }
    ]
   },
@@ -4181,25 +4080,30 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 6,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Visión de Ignacio (05/11): conectarnos con los ferreteros para conseguir stock para los profesionales. A explorar: no hay alianzas firmadas, acuerdos comerciales, comisiones ni precios definidos. Animación de 16 s que arranca sola al abrir la lámina (sonido suave; sin sonido: ?sonido=no): el vecino pide el arreglo → el profesional ve qué materiales necesita → Handyx le muestra stock en ferreterías cercanas → lo reserva y lo retira camino al trabajo → llega con todo. La pantalla del celular es un diseño propuesto con datos ficticios. Si preguntan cómo gana Handyx: otra fuente de ingresos a explorar con las ferreterías, sin modelo definido todavía.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Ferreterías conectadas: el profesional ve qué materiales necesita para el trabajo, Handyx le muestra qué ferreterías del barrio los tienen en stock, los reserva y los retira camino al trabajo, y llega con todo. El profesional llega con lo que necesita, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de ingresos. Es una visión a explorar, sin alianzas firmadas.",
+   "notas": "Seis golpes (avanzar con cada frase): 1 el barrio, la ferretería y un edificio · 2 «se rompió un caño»: el vecino pide el arreglo · 3 el profesional acepta el trabajo y agrega los materiales en su app · 4 Handyx le muestra stock en una ferretería cercana y lo reserva · 5 el vecino sigue el pedido en su app y ve qué materiales se usan · 6 el profesional retira la caja camino al trabajo y llega con todo: arreglo listo; ganan el profesional, la ferretería, el vecino y Handyx.\nVisión de Ignacio (05/11): conectarnos con los ferreteros para conseguir stock para los profesionales. A explorar: no hay alianzas firmadas, acuerdos comerciales, comisiones ni precios definidos. Las pantallas son un diseño propuesto con datos ficticios. Si preguntan cómo gana Handyx: otra fuente de ingresos a explorar con las ferreterías, sin modelo definido todavía.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Ferreterías conectadas: el profesional agrega en su app los materiales del trabajo, Handyx le muestra qué ferretería del barrio los tiene en stock y los reserva, el vecino lo sigue en su app y el profesional los retira camino al trabajo y llega con todo. El profesional llega con lo que necesita, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de ingresos. Es una visión a explorar, sin alianzas firmadas.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "clip",
-     "tipo": "video",
-     "recurso": "video-ferreterias",
-     "poster": "video-ferreterias-poster",
-     "alt": "Animación: una ciudad con una ferretería y un edificio; el profesional ve en Handyx los materiales y el stock cercano, los retira camino al trabajo y el arreglo queda listo",
-     "sonido": true,
-     "auto": true,
-     "cubrir": true,
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "ferreterias",
+     "alt": "Animación: en una ciudad con una ferretería y un edificio con una pérdida, el profesional agrega los materiales al trabajo en su celular, Handyx le muestra stock en una ferretería cercana y lo reserva, el vecino lo sigue en su app y el profesional llega con todo: arreglo listo (visión a explorar, sin alianzas firmadas).",
+     "tiempos": [
+      2.8,
+      2.6,
+      3.2,
+      3.2,
+      3.0,
+      3.4
+     ],
+     "afirmaciones": [],
      "area": "fondo",
      "paso": 0,
      "entrada": "ninguna"

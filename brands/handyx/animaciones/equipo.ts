@@ -3,7 +3,8 @@
 // 1 «Desarrollé agentes de IA que superviso…» → constelación de agentes alrededor de Ignacio ·
 // 2 «Buscamos cien mil dólares de inversión inicial…» → el monto, la barra del reparto y qué mejora cada parte ·
 // 3 «Queremos llegar a Silicon Valley…» → el vuelo de Mar del Plata a Silicon Valley ·
-// 4 «Hoy empezamos en Mar del Plata…» → fundido a noche (lo toma el video del mundo).
+// 4 «Hoy empezamos en Mar del Plata…» → fundido a noche (lo toma el video del mundo) ·
+// 5 cierre: amanece, «¡Muchas gracias!» y los dos QR del deck (landing y portafolio) entre Foco y Llave, que saludan.
 import { COLOR, entraTitulo, escena, pose, tramo } from './comun/kit.ts';
 
 // Constelación (paso 1): la tarjeta de Ignacio en el centro y los agentes sobre una elipse. Ángulos simétricos con un
@@ -25,7 +26,7 @@ const TARJ = { w: 480, h: 190, top: 475, ig: 440, pa: 1000, pa1: 1344 };
 
 // Reparto de la inversión (paso 2): qué mejora cada parte de la app.
 const PARTES = [
-  { id: 'INV-MARKETING', ic: 'megafono', txt: 'Marketing', que: 'Más vecinos y profesionales', color: COLOR.azul, clase: 'blanco' },
+  { id: 'INV-MARKETING', ic: 'megafono', txt: 'Marketing', que: 'Publicidades con IA (Seedance 2.5), redes y marketing en la calle', color: COLOR.azul, clase: 'blanco' },
   { id: 'INV-OPERACIONES', ic: 'escuela', txt: 'Operaciones', que: 'Formar y acompañar a los profesionales', color: COLOR.verde, clase: 'blanco' },
   { id: 'INV-TECNOLOGIA', ic: 'cerebro', txt: 'Tecnología', que: 'HandIA premium, HandIA para profesionales y herramientas', color: COLOR.amarillo, clase: '' },
   { id: 'INV-LEGAL', ic: 'balanza', txt: 'Legal y reserva', que: 'Incluye lo contable', color: '#CBD5E6', clase: '' },
@@ -50,8 +51,8 @@ const salida = (k: number) => 1 - (1 - k) ** 3;
 const vaiven = (k: number) => (k < 0.5 ? 2 * k ** 2 : 1 - (-2 * k + 2) ** 2 / 2);
 
 export default escena({
-  marcas: [0, 3.0, 6.6, 10.6, 13.8, 14.6],
-  leyendas: ['Un equipo chico, con **sueños grandes**', 'Agentes de IA **supervisados por Ignacio**', 'La inversión: **qué mejora cada dólar**', 'Próximo destino: **Silicon Valley**', ''],
+  marcas: [0, 3.0, 6.6, 10.6, 13.8, 14.6, 17.6],
+  leyendas: ['Un equipo chico, con **sueños grandes**', 'Agentes de IA **supervisados por Ignacio**', 'La inversión: **qué mejora cada dólar**', 'Próximo destino: **Silicon Valley**', '', ''],
   cara: [
     { desde: 0, x: 1740, y: 170, d: 250 },
     { desde: 1, x: 1740, y: 170, d: 250 },
@@ -131,6 +132,19 @@ export default escena({
     .destino .redondo .icono { width: 30px; height: 30px; }
     .avion { position: absolute; left: 0; top: 0; width: 68px; height: 68px; overflow: visible; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
     .telon { position: absolute; inset: 0; background: ${COLOR.noche}; }
+    /* 5 · cierre: los QR son elementos del deck (tarjetas del motor) centrados en x 660 y 1260, de y 324 a ≈ 830 */
+    .cierre { position: absolute; inset: 0; background: ${COLOR.hueso}; overflow: hidden; }
+    .cierre .sol2 { position: absolute; left: 960px; top: 590px; width: 1800px; height: 1800px; margin: -900px 0 0 -900px; border-radius: 50%; background: repeating-conic-gradient(rgba(255,201,60,.2) 0 8deg, transparent 8deg 20deg); -webkit-mask-image: radial-gradient(circle, #000 14%, transparent 58%); mask-image: radial-gradient(circle, #000 14%, transparent 58%); }
+    .cierre .cab2 { position: absolute; left: 0; right: 0; top: 64px; text-align: center; }
+    .cierre .cab2 .titulo { margin-top: 12px; font-size: 84px; }
+    .cierre .marco { position: absolute; top: 314px; height: 530px; border-radius: 40px; background: rgba(31,87,168,.06); box-shadow: inset 0 0 0 3px rgba(31,87,168,.12); }
+    .cierre .marco.m1 { left: 420px; width: 480px; } .cierre .marco.m2 { left: 966px; width: 588px; }
+    .cierre .firma { position: absolute; left: 0; right: 0; top: 872px; text-align: center; font-size: 30px; font-weight: 600; color: ${COLOR.azulOscuro}; }
+    .cierre .firma b { font-weight: 900; }
+    .cierre .hola { position: absolute; top: 520px; }
+    .cierre .hola.h1 { left: 150px; } .cierre .hola.h2 { left: 1610px; }
+    .cierre .chica { position: absolute; top: 742px; }
+    .cierre .chica.c1 { left: 300px; } .cierre .chica.c2 { left: 1530px; }
   `,
   html: (c) => {
     const superficie = (x: number) => GLOBO.y - Math.sqrt(Math.max(0, GLOBO.r ** 2 - (x - GLOBO.x) ** 2));
@@ -177,6 +191,16 @@ export default escena({
       <div class="kicker">Visión</div>
     </div>
     <div class="telon"></div>
+    <div class="cierre">
+      <div class="sol2"></div>
+      <i class="marco m1"></i><i class="marco m2"></i>
+      <div class="cab2"><div class="kicker">Handyx · ATICMA 2026</div><div class="titulo t"><span class="l"><span>¡Muchas <mark>gracias!</mark></span></span></div></div>
+      <div class="mov hola h1">${c.pj('bombilla', '', 230)}</div>
+      <div class="mov hola h2">${c.pj('llave', '', 230)}</div>
+      <div class="mov chica c1">${c.pj('gota', '', 120)}</div>
+      <div class="mov chica c2">${c.pj('engranaje', '', 120)}</div>
+      <div class="firma"><b>Ignacio Gauna</b> · fundador y CEO de Handyx</div>
+    </div>
   `;
   },
   armar(tl, $, c) {
@@ -238,6 +262,15 @@ export default escena({
     tl.fromTo($('.avion'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25 }, VUELO[0]);
     // 4 · fundido a noche: lo toma el video del mundo
     tl.fromTo($('.telon'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.8, ease: 'power1.inOut' }, 13.8);
+    // 5 · cierre: amanece y quedan los QR (los dibuja el motor encima, en los marcos)
+    tl.fromTo($('.cierre'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.7, ease: 'power1.inOut' }, 14.6);
+    tl.fromTo($('.cierre .sol2'), { scale: 0.5 }, { scale: 1, duration: 1.6, ease: 'power2.out' }, 14.6);
+    tl.fromTo($('.cierre .kicker'), { autoAlpha: 0, y: -14 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 14.8);
+    entraTitulo(tl, $.all('.cierre .cab2 .l > span'), 14.9);
+    tl.fromTo($.all('.cierre .marco'), { autoAlpha: 0, scale: 0.92 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power3.out', stagger: 0.1 }, 15.0);
+    tl.fromTo($.all('.cierre .hola'), { autoAlpha: 0, y: 140 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'back.out(1.7)', stagger: 0.12 }, 15.3);
+    tl.fromTo($.all('.cierre .chica'), { autoAlpha: 0, y: 80 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'back.out(1.9)', stagger: 0.1 }, 15.6);
+    tl.fromTo($('.cierre .firma'), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.45 }, 15.9);
 
     // Vuelo: el avión sigue la ruta y deja una estela de puntos (pintor: vale también en los saltos)
     const ruta = $('.ruta') as unknown as SVGPathElement;
@@ -268,6 +301,10 @@ export default escena({
       pose($('.lado.l1 .pj'), t >= 1.6 ? 'c' : 'a');
       pose($('.lado.l2 .pj'), t >= 1.7 ? 'c' : 'a');
       for (const el of $.all('.despide .pj')) pose(el, t >= 12.7 ? 'c' : 'b');
+      // Cierre: Foco y Llave saludan y festejan; los chicos festejan
+      pose($('.hola.h1 .pj'), t >= 16.6 ? 'c' : 'b');
+      pose($('.hola.h2 .pj'), t >= 16.75 ? 'c' : 'b');
+      for (const el of $.all('.chica .pj')) pose(el, t >= 16.2 ? 'c' : 'a');
     });
   },
   ambiente(t, $, tl) {

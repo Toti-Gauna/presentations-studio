@@ -137,6 +137,7 @@
 .t-s { font-size: 32px; }
 .el > .rotulo + .rotulo { margin-left: 12px; }
 .el-qr { justify-self: center; }
+.escena > .el.area-libre.el-qr { text-align: center; }
 
 /* Teléfono con capturas reales (proporción 9:19,5 como los celulares actuales) */
 .tel-caja { margin: 0; display: inline-flex; flex-direction: column; align-items: center; gap: 16px; }

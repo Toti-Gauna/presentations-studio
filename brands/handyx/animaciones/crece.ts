@@ -11,9 +11,9 @@ const R_DISCO = 100;
 const R_ORB = 195; // órbita de las fichas
 const Y_ARCO = 240; // tramo horizontal de las dos ramas
 const XP = 86; // columna de nodos de People
-const XB = 1815; // columna de nodos de Business
+const XB = 1808; // columna de nodos de Business
 const FIN_P = 745; // fin de la rama de People (Foco)
-const FIN_B = 708; // fin de la rama de Business (el local)
+const FIN_B = 704; // fin de la rama de Business (el local)
 const rama = (s: 1 | -1, x: number, fin: number) =>
   `M ${CX} ${CY} C ${CX} ${CY - 170}, ${CX + s * 60} ${Y_ARCO}, ${CX + s * 160} ${Y_ARCO} L ${x - s * 80} ${Y_ARCO} Q ${x} ${Y_ARCO} ${x} ${Y_ARCO + 80} L ${x} ${fin}`;
 
@@ -24,19 +24,20 @@ const FICHAS = [
   { ic: 'ia', txt: 'HandIA' },
 ];
 // La primera tarjeta de People se arma con cifras (mosaico + contador); las demás, ícono + texto.
-const PEOPLE: Array<{ pj: Personaje; ic: string; h: string; s: string }> = [
-  { pj: 'brocha', ic: '', h: '', s: '' },
-  { pj: 'grifo', ic: 'camara', h: 'HandIA', s: 'de la foto al profesional indicado' },
-  { pj: 'engranaje', ic: 'herramienta', h: 'Herramientas por oficio', s: 'y feedback con IA' },
-  { pj: 'gota', ic: 'repetir', h: 'Clientes que vuelven', s: 'historial y valoraciones' },
-  { pj: 'medidor_gas', ic: 'martillo', h: 'Ferreterías conectadas', s: 'materiales · a explorar' },
+// pose: cómo queda cada Handy en su nodo (festeja las profesiones nuevas, trabaja con las herramientas, saluda a los que vuelven…)
+const PEOPLE: Array<{ pj: Personaje; pose: Pose; ic: string; h: string; s: string }> = [
+  { pj: 'brocha', pose: 'c', ic: '', h: '', s: '' },
+  { pj: 'grifo', pose: 'b', ic: 'camara', h: 'HandIA', s: 'de la foto al profesional indicado' },
+  { pj: 'engranaje', pose: 'd', ic: 'herramienta', h: 'Herramientas por oficio', s: 'y feedback con IA' },
+  { pj: 'gota', pose: 'b', ic: 'repetir', h: 'Clientes que vuelven', s: 'historial y valoraciones' },
+  { pj: 'medidor_gas', pose: 'a', ic: 'martillo', h: 'Ferreterías conectadas', s: 'materiales · a explorar' },
 ];
 const P_TOP = 292;
 const P_ALTO = 80;
 const P_PASO = 90;
 const yP = (i: number) => P_TOP + i * P_PASO + P_ALTO / 2;
 const BUSINESS = [
-  { ic: 'calendario', h: 'Personal por turnos', s: 'mozos, bartenders, cocina, por días o semanas', top: 292, alto: 110 },
+  { ic: 'calendario', h: 'Personal por turnos', s: 'mozos, bartenders, cocina,<br>por días o semanas', top: 292, alto: 110 },
   { ic: 'llave-inglesa', h: 'Mantenimiento del local', s: 'con técnicos verificados', top: 418, alto: 80 },
   { ic: 'celular', h: 'Apps a medida', s: 'para cada comercio, integradas a Handyx', top: 514, alto: 80 },
   { ic: 'balanza', h: 'Meritocracia', s: 'los mejor valorados, primero', top: 610, alto: 80 },
@@ -133,28 +134,28 @@ export default escena({
     .cuenta { color: ${COLOR.azul}; }
     .h, .foco { position: absolute; z-index: 30; transform-origin: 50% 100%; }
     .foco { left: ${XP - 65}px; top: ${FIN_P}px; width: 130px; height: 130px; }
-    .l-cartel { position: absolute; left: ${XB - 45}px; top: ${FIN_B - 2}px; width: 90px; height: 34px; border-radius: 10px; background: ${COLOR.noche}; display: grid; place-items: center; z-index: 26; }
+    .l-cartel { position: absolute; left: ${XB - 48}px; top: ${FIN_B - 2}px; width: 96px; height: 36px; border-radius: 10px; background: ${COLOR.noche}; display: grid; place-items: center; z-index: 26; }
     .l-cartel .icono { width: 24px; height: 24px; }
-    .l-toldo { position: absolute; left: ${XB - 93}px; top: ${FIN_B + 28}px; width: 186px; height: 44px; border-radius: 10px 10px 4px 4px; background: repeating-linear-gradient(90deg, ${COLOR.azul} 0 23px, #fff 23px 46px); box-shadow: 0 8px 0 rgba(14,29,54,.10), inset 0 0 0 3px rgba(14,29,54,.08); z-index: 25; transform-origin: 50% 0; }
-    .l-frente { position: absolute; left: ${XB - 83}px; top: ${FIN_B + 60}px; width: 166px; height: 105px; border-radius: 0 0 12px 12px; background: #fff; box-shadow: inset 0 0 0 3px ${COLOR.borde}, 0 12px 26px rgba(14,29,54,.14); z-index: 23; transform-origin: 50% 100%; }
-    .l-ventana { position: absolute; left: ${XB - 70}px; top: ${FIN_B + 78}px; width: 104px; height: 62px; border-radius: 10px; background: ${COLOR.celeste}; z-index: 24; }
-    .l-puerta { position: absolute; left: ${XB + 43}px; top: ${FIN_B + 84}px; width: 32px; height: 81px; border-radius: 8px 8px 0 0; background: ${COLOR.azulOscuro}; z-index: 24; }
-    .l-mostrador { position: absolute; left: ${XB - 75}px; top: ${FIN_B + 132}px; width: 114px; height: 33px; border-radius: 8px 8px 0 0; background: #D9DEE8; box-shadow: inset 0 6px 0 ${COLOR.amarillo}; z-index: 31; }
+    .l-toldo { position: absolute; left: ${XB - 100}px; top: ${FIN_B + 30}px; width: 200px; height: 46px; border-radius: 10px 10px 4px 4px; background: repeating-linear-gradient(90deg, ${COLOR.azul} 0 25px, #fff 25px 50px); box-shadow: 0 8px 0 rgba(14,29,54,.10), inset 0 0 0 3px rgba(14,29,54,.08); z-index: 25; transform-origin: 50% 0; }
+    .l-frente { position: absolute; left: ${XB - 90}px; top: ${FIN_B + 64}px; width: 180px; height: 108px; border-radius: 0 0 12px 12px; background: #fff; box-shadow: inset 0 0 0 3px ${COLOR.borde}, 0 12px 26px rgba(14,29,54,.14); z-index: 23; transform-origin: 50% 100%; }
+    .l-ventana { position: absolute; left: ${XB - 78}px; top: ${FIN_B + 80}px; width: 122px; height: 66px; border-radius: 10px; background: ${COLOR.celeste}; z-index: 24; }
+    .l-puerta { position: absolute; left: ${XB + 52}px; top: ${FIN_B + 88}px; width: 34px; height: 84px; border-radius: 8px 8px 0 0; background: ${COLOR.azulOscuro}; z-index: 24; }
+    .l-mostrador { position: absolute; left: ${XB - 82}px; top: ${FIN_B + 136}px; width: 132px; height: 36px; border-radius: 8px 8px 0 0; background: #D9DEE8; box-shadow: inset 0 6px 0 ${COLOR.amarillo}; z-index: 31; }
     .encabezado { position: absolute; left: 96px; top: 52px; z-index: 50; }
     .fila-k { display: flex; align-items: center; gap: 16px; }
     .rotulo { font-weight: 800; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; color: ${COLOR.azulOscuro}; border: 3px solid ${COLOR.azulOscuro}; border-radius: 999px; padding: 3px 14px; }
-    .encabezado .titulo { margin-top: 12px; }
+    .encabezado .titulo { margin-top: 12px; font-size: 64px; }
     .lema { position: absolute; left: 1010px; top: 66px; width: 570px; z-index: 50; font-size: 28px; font-weight: 600; line-height: 1.28; color: ${COLOR.texto}; }
     .lema .l { display: block; overflow: hidden; padding-bottom: 4px; margin-bottom: -4px; }
     .lema .l > span { display: inline-block; }
     .lema b { color: ${COLOR.azul}; font-weight: 800; }
-    .expansion { position: absolute; left: 196px; top: 796px; height: 68px; display: flex; align-items: center; gap: 14px; padding: 0 26px; z-index: 40; border-radius: 22px; font-size: 22px; font-weight: 600; white-space: nowrap; }
+    .expansion { position: absolute; left: 178px; top: 798px; height: 68px; display: flex; align-items: center; gap: 12px; padding: 0 22px; z-index: 40; border-radius: 22px; font-size: 22px; font-weight: 600; white-space: nowrap; }
     .expansion b { font-weight: 800; color: ${COLOR.azulOscuro}; }
     .parada { display: flex; align-items: center; gap: 10px; }
     .parada .icono { width: 30px; height: 30px; }
     .flecha { display: block; position: relative; width: 40px; height: 6px; border-radius: 3px; background: ${COLOR.amarillo}; transform-origin: 0 50%; }
     .flecha::after { content: ''; position: absolute; right: -10px; top: -7px; border: 10px solid transparent; border-left: 13px solid ${COLOR.amarillo}; border-right: 0; }
-    .nota { position: absolute; left: 1218px; top: 794px; width: 480px; display: flex; align-items: center; gap: 14px; padding: 12px 20px; border-radius: 20px; background: ${COLOR.noche}; color: #fff; font-size: 20px; font-weight: 600; line-height: 1.3; z-index: 40; box-shadow: 0 14px 30px rgba(14,29,54,.25); }
+    .nota { position: absolute; left: 1196px; top: 794px; width: 494px; display: flex; align-items: center; gap: 14px; padding: 12px 20px; border-radius: 20px; background: ${COLOR.noche}; color: #fff; font-size: 20px; font-weight: 600; line-height: 1.3; z-index: 40; box-shadow: 0 14px 30px rgba(14,29,54,.25); }
     .nota .icono { width: 32px; height: 32px; flex: none; }
   `,
   html: (c) => {
@@ -276,7 +277,7 @@ export default escena({
       const t = T_P[i] ?? 0;
       const h = $(`.h${i}`);
       tl.to(h, { x: XP - filaX(i), duration: VUELO, ease: 'power2.out' }, salida(i));
-      tl.to(h, { y: yP(i) + 26 - FILA_PIE, scale: 68 / H, duration: VUELO, ease: 'power2.in' }, salida(i));
+      tl.to(h, { y: yP(i) + 26 - FILA_PIE, scale: 74 / H, duration: VUELO, ease: 'power2.in' }, salida(i));
       tl.fromTo($(`.in${i}`), { autoAlpha: 0, scale: 0 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(3)' }, t - 0.06);
       tl.fromTo($(`.p${i}`), { autoAlpha: 0, x: -26 }, { autoAlpha: 1, x: 0, duration: 0.45, ease: 'back.out(1.6)' }, t + 0.04);
     });
@@ -304,14 +305,14 @@ export default escena({
     tl.fromTo($('.l-cartel'), { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'back.out(2.4)' }, T_LOCAL);
     tl.fromTo($('.l-mostrador'), { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }, T_LOCAL + 0.2);
     const llave = $('.h5');
-    tl.to(llave, { x: XB - filaX(5), duration: VUELO, ease: 'power1.inOut' }, T_ATIENDE);
-    tl.to(llave, { y: 5, scale: 90 / H, duration: VUELO, ease: 'power1.inOut' }, T_ATIENDE);
+    tl.to(llave, { x: XB - 17 - filaX(5), duration: VUELO, ease: 'power1.inOut' }, T_ATIENDE);
+    tl.to(llave, { y: 10, scale: 100 / H, duration: VUELO, ease: 'power1.inOut' }, T_ATIENDE);
 
     // 3 · todo se potencia
     entraTitulo(tl, $.all('.lema .l > span'), 10.15, 0.1);
-    tl.fromTo($('.expansion'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' }, 10.6);
-    tl.fromTo($.all('.expansion .parada'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.4)', stagger: 0.3 }, 10.75);
-    tl.fromTo($.all('.expansion .flecha'), { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: 'power2.out', stagger: 0.3 }, 10.95);
+    tl.fromTo($('.expansion'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' }, 10.55);
+    tl.fromTo($.all('.expansion .parada'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'back.out(2.4)', stagger: 0.28 }, 10.62);
+    tl.fromTo($.all('.expansion .flecha'), { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: 'power2.out', stagger: 0.28 }, 10.8);
     tl.fromTo($('.nota'), { autoAlpha: 0, y: 30, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.5, ease: 'back.out(1.8)' }, 11.7);
 
     // Poses (pintor: valen también en los saltos)
@@ -324,8 +325,9 @@ export default escena({
         let q: Pose = 'a';
         if (t >= 10.05) q = 'c';
         else if (t >= sal && t < llega) q = 'd';
-        else if (t >= llega && t < llega + (i === 5 ? 2 : 0.7)) q = 'b';
-        else if (t >= 0.9 && t < 2.8) q = 'b';
+        else if (t >= llega) q = i === 5 || t < llega + 0.7 ? 'b' : (PEOPLE[i]?.pose ?? 'a');
+        else if (t >= 0.9 && t <= 2.8) q = 'b';
+        else if (i === 5 && t >= 5.9 && t < 6.4) q = 'b'; // Llave saluda a Foco cuando llega
         pose(p, q);
       });
       pose(foco, t >= 10.05 ? 'c' : 'b');
