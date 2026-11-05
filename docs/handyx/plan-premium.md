@@ -1,118 +1,128 @@
 # Plan súper premium · Pitch ATICMA final (05/11/2026)
 
-Pedido de Ignacio (05/11, noche): que cada diapositiva deje de ser texto con imágenes y sea una **escena animada premium**, como
-«HandIA te habla» y «Ferreterías conectadas», con una animación por cada frase importante; datos coherentes en todo; tu cara dentro de la
-escena; subtítulos integrados; sin silencios; y lo mismo para las respuestas y el material extra.
+Pedido de Ignacio (05/11, noche): que cada diapositiva deje de ser «texto con imágenes» y sea una **escena animada premium**, al nivel
+de «HandIA te habla» y «Ferreterías conectadas». Debe tener un golpe de animación por cada frase importante, explicarse sola y usar datos
+coherentes en todo. En el video, la cara va dentro de la escena, los subtítulos integrados y sin silencios. Lo mismo para las respuestas y el
+material extra.
 
-## Principios
+## Reglas para todo el material
 
-1. **Cada diapositiva es una escena animada** (personajes, celulares, ciudad, cuentas que se arman), con un golpe de animación por frase
-   importante. Sin zoom, sin «tostadas» (las pastillas amarillas). Calidad de referencia: «HandIA te habla» y «Ferreterías conectadas».
-2. **Una sola fuente por escena** (módulo HTML/CSS/GSAP con pasos dentro de la diapositiva): la misma escena se usa **en vivo** (clicker
-   o ritmo automático), en el **video** (sincronizada con tu voz palabra por palabra) y en el **PDF/PPT** (cada paso como imagen).
-3. **Datos coherentes**: una sola tabla de cifras (afirmaciones) para pitch, respuestas, material extra, machete y video.
-4. **Video**: tu cara en un círculo **dentro de la escena**, en un lugar reservado que cambia con la animación; luz y color corregidos;
-   subtítulos integrados (palabra por palabra) en una franja que nunca tapa la animación; silencios recortados.
+1. **Una escena animada por diapositiva**, con un golpe por frase del guion. Sin zoom ni pastillas flotantes encima de la lámina.
+2. **Se explica sola**:
+   - Cada paso lleva una leyenda numerada que dice qué está pasando («2 · Conseguir a alguien y coordinar: una odisea»).
+   - Las notas del presentador dicen qué decir en cada golpe.
+3. **Datos coherentes**: todo número sale de una sola tabla (`afirmaciones.json`), con su rótulo (dato informado, supuesto, proyección, objetivo).
+4. **Competencia sin nombres ni logos** (pedido del 05/11):
+   - Se muestra por **modelo y funcionalidad**: Plataforma A cobra comisión al profesional, B cobra por contacto, C cobra suscripción y D ofrece comisión cero por tiempo limitado.
+   - Por cada una, cómo le gana Handyx.
+   - Cierre con el **océano azul** en cuatro acciones: eliminamos la comisión al profesional, reducimos las idas y vueltas, aumentamos la transparencia del precio y creamos HandIA, herramientas por oficio, ferreterías conectadas y Handyx for Business.
+   - Nunca se dice que la competencia no tiene algo: se muestra lo que suma Handyx.
+   - Los nombres quedan solo en las notas privadas y en las fuentes.
+5. **Rótulos honestos**: «Demo · datos ficticios», «Diseño propuesto», «En desarrollo», «Visión · con la inversión», «Plan propuesto · a validar».
+   Los 56 son especialistas **registrados**, nunca «activos» ni «verificados».
+6. **Un solo archivo por escena** sirve para todo:
+   - En vivo: el clicker avanza los golpes.
+   - En el video: los golpes se sincronizan con la voz.
+   - En el PDF y el PPT: cada golpe es una página.
 
-## Fase 0 · Base y coherencia
+## Método (igual para cada diapositiva, respuesta o lámina)
 
-- Motor: elemento genérico «escena animada» (módulo con pasos, póster por paso para PDF/PPT, reloj reproducible para el video).
-- Auditoría de cifras (una tabla, con fuente y fórmula):
-  - Prueba con porteros: 5 trabajos · $ 350.000 en trabajos · ticket $ 70.000 → con el **plan original (10 % usuario + 10 % profesional)**
-    Handyx cobró **$ 70.000 de ingresos brutos** (≈ USD 45). Desde el lanzamiento: 0 % al profesional y 15 % al usuario.
-  - **25 % (guion y deck) vs. 20 % (grabación)**: con 20 % el trimestre da ≈ 13.000 trabajos y no llega a USD 100.000. Decisión abajo.
-  - USD 100.000 de **ingresos brutos** (aspiración del trimestre) ≠ USD 100.000 de **inversión**: siempre con su etiqueta y otro color.
-  - Ticket USD 40 (supuesto del mentor) vs. USD 45 (real de la prueba): en el pitch, el real; el del mentor, solo en el respaldo.
-  - Herramientas: una lista única (existen / en desarrollo / visión) y su conteo, que es el que se usa en el océano azul.
-- Mapa **frase → animación** de las 7 diapositivas, desde el guion y la transcripción.
+1. **Guion → golpes**: de la frase que se dice salen 3 a 6 momentos, y cada uno tiene una animación y una leyenda.
+2. **Escena con el kit de la marca**: Handys con poses, celulares con capturas reales de la demo, ciudad, mapa de Argentina, cuentas que se
+   arman, conteos y sellos (`brands/handyx/animaciones/`).
+3. **Revisión visual** de cada paso (al final y a mitad de cada golpe), hasta que nada se superponga, todo se lea a ≥ 20 px y haya un solo
+   foco por paso. Va con una revisión automática de superposiciones.
+4. **Validación automática**: cifras declaradas, tramos = pasos y compilación.
+5. **Prueba real** en el presentador y la pantalla pública, y en la exportación (PDF/PPT).
+6. **Lugar para la cara** en cada paso: una zona solo decorativa donde va tu círculo en el video.
 
-## Fase 1 · Las 7 diapositivas del pitch (prioridad máxima)
+## Fase 0 · Base (lista)
 
-| # | Frase | Animación |
-|---|---|---|
-| 1 | «se nos rompió algo en casa» | Casa en corte con el grifo que gotea y el charco que crece; el vecino con el celular. |
-|   | «la odisea de conseguir un profesional» | Chats que se amontonan («¿alguien conoce un plomero?», «no contesta», «¿viene el jueves?») y un reloj que gira. |
-|   | «del otro lado, profesionales buscando clientes» | La escena se parte: el profesional con la agenda vacía y apps dispersas (cuaderno, calculadora, WhatsApp) girando. |
-|   | «por esa doble necesidad creamos Handyx» | Las mitades se unen; Handyx aparece como puente; festejan los Handys. |
-|   | «fluida, cómoda y con control» | Tres sellos que caen: Fluida · Cómoda · Con control. |
-| 2 | «mandar una foto / describir el problema» | Celular: la cámara saca la foto, el texto se escribe solo. |
-|   | «qué especialista necesitan y costo aproximado» | HandIA detecta «Plomería» y muestra un rango; llegan 3 presupuestos y se comparan. |
-|   | «el presupuesto final lo fija el profesional» | El profesional pone su precio con un sello. |
-|   | «si ya saben, eligen el oficio» | Camino 2: grilla de rubros → Gas → presupuestos. |
-| 3 | «trabajos, ingresos, gastos» | Capturas de la demo que se arman (agenda, mensajes, cobros) + tablero de ingresos/gastos animado. |
-|   | «herramientas por oficio» | Carrusel de herramientas **en desarrollo** en uso: electricista (calculadora de cable), plomería (detector paso a paso), gas (checklist). |
-|   | «potenciarlas con IA» | **HandIA para profesionales**: arma presupuesto y lista de materiales, recuerda turnos, da feedback; enlaza con ferreterías. |
-| 4 | «ambas aplicaciones desarrolladas» | Las dos apps entran con su check. |
-|   | «porteros de distintos edificios» | La ciudad: porteros que conectan vecinos con especialistas. |
-|   | «primeros trabajos y comisiones» | Contador: 5 trabajos → $ 350.000 → 10 % + 10 % → **$ 70.000 de ingresos brutos**; 56 especialistas registrados (preregistro). |
-|   | «más allá de los edificios» | La ciudad se expande: casas y comercios. |
-| 5 | «seis profesiones, casi 260 mil hogares» | Mapa del partido con hogares que se encienden y los 6 oficios. |
-|   | «25 % del primer trimestre · USD 100.000» | La cuenta se arma: hogares × 1 arreglo × ticket → trimestre → trabajos → **≈ USD 109.000**. |
-|   | «72 profesiones · 4 de cada 10» | Los oficios se multiplican de 6 a 72; Argentina con 10 casas, 4 con Handyx. |
-| 6 | «cobran comisión al profesional» | **Océano rojo**: competidores con su modelo (comisión, pago por contacto, suscripción). |
-|   | «el dinero tiene que llegar completo» | El presupuesto llega entero a la casa del profesional. |
-|   | «15 % visible antes de contratar» | Recibo $ 100.000 + $ 15.000 = $ 115.000. |
-|   | (cierre) | **Océano azul**: Handyx navega al azul sumando sus herramientas y desarrollos (contador con la lista de la Fase 0). |
-| 7 | «equipo chico, sueños grandes» | Ignacio, su pareja y la constelación de agentes de IA (marketing, soporte, desarrollo). |
-|   | «USD 100.000 para tecnología, operaciones y marketing» | Barra que se llena por partidas (45 / 30 / 15 / 10). |
-|   | «Silicon Valley» | Ruta animada Mar del Plata → Silicon Valley. |
-|   | «Hoy Mar del Plata, mañana el mundo» | El clip del mundo (ya hecho). |
+- Motor: elemento `animacion` (escenas en código con pasos), vista de trabajo, precarga y exportación por paso.
+- Kit de Handyx:
+  - Elementos visuales: celular, chats, tarjetas, sellos, personajes con poses, conteos y títulos.
+  - Leyendas por paso.
+  - Mapa de Argentina (Natural Earth).
+- Tabla de cifras ampliada:
+  - Ingreso bruto de la prueba: $ 70.000 (10 % + 10 % de $ 350.000).
+  - 6 profesiones por mes y toda Buenos Aires en 3 meses.
+  - Profesiones por trimestre: 24, 42, 60 y 72.
+  - 24 desarrollos en el plan y ejemplos de HandIA.
+- Guía para escribir escenas: `docs/claude/animaciones.md`.
 
-## Fase 2 · Video del pitch súper premium
+## Fase 1 · Las 7 diapositivas del pitch (en curso)
 
-- **Grabación**: lo ideal es regrabar los 3 minutos con el guion oficial (25 %, competencia) y buena luz; si no, se edita la actual.
-- Escenas de la Fase 1 a pantalla completa, sincronizadas con tu voz frase por frase.
-- Tu cara en un círculo **dentro de la escena**, en un lugar reservado por escena que cambia con una animación; luz y color corregidos.
-- Subtítulos integrados, palabra por palabra, en la franja de la escena.
-- **Silencios recortados** (≈ 6 s): 2,7 s antes de «Somos un equipo» (2:14), 1,9 s (1:43), 1,8 s (0:25) y 1,4 s (2:41), en los cambios de escena.
-- Música (ya hecha) y efectos por animación; final del mundo sin cara.
+| # | Golpes (uno por frase) |
+|---|---|
+| 1 La odisea (**lista**) | Presentación → la cocina con la pérdida → los chats que se amontonan y el reloj que vuela → el especialista con la agenda vacía y herramientas dispersas → Handyx une los dos lados: fluida, cómoda y con control. |
+| 2 HandIA te orienta | No sabés a quién llamar (pantalla real de la demo) → foto y descripción en el chat de HandIA → «Rubro: Plomería» y costo aproximado, tres presupuestos que se comparan → el profesional pone su precio (sello) → camino 2: elegís el oficio y llegan presupuestos. |
+| 3 Herramientas para el profesional | Capturas reales (agenda, mensajes, números) → las 6 herramientas en desarrollo, una por oficio (la del electricista al frente) → HandIA para profesionales: presupuesto, materiales en la ferretería, recordatorios y feedback; «cada trabajo, mejor que el anterior». |
+| 4 Ya empezamos | Las dos apps desarrolladas → edificios con porteros y los primeros trabajos (5 · $ 350.000) → la comisión del plan original (10 % + 10 %) suma **$ 70.000 de ingresos para Handyx**; 56 registrados → la ciudad se expande a casas y comercios. |
+| 5 Mercado y visión | 259.623 hogares que se encienden y los 6 oficios → la cuenta se arma (arreglos por trimestre → 25 % → trabajos) → × ticket real × 15 % = ≈ USD 109.000 frente al objetivo de USD 100.000 → de 6 a 72 profesiones (6 por mes) → mapa de Argentina: 4 de cada 10. |
+| 6 Competencia y modelo | Océano rojo con las plataformas A–D **sin nombres**, por su modelo → el presupuesto llega completo a la casa del profesional → el recibo $ 100.000 + $ 15.000 = $ 115.000 → océano azul: cómo le gana Handyx a cada modelo y las 4 acciones, con los 24 desarrollos. |
+| 7 Equipo, inversión y visión | Equipo chico, sueños grandes → constelación de agentes de IA → USD 100.000 en una barra por partida, cada una con la mejora que compra → Mar del Plata → Silicon Valley → el clip del mundo. |
 
-## Fase 3 · Respuestas súper premium (20 preguntas + machete)
+## Fase 2 · Video del pitch
 
-Cada respuesta como mini escena animada (10–20 s): la pregunta entra, la respuesta en una frase y el dato se arma (contador, flujo o
-comparación), con su respaldo animado. Primero las 6 más probables: CAC, cuánto cuesta, de dónde sale el número, trabajos cobrados
-(con los $ 70.000), qué los diferencia y en qué usan los USD 100.000.
+- Grabación de base: la nueva si regrabás (recomendado) o la actual.
+- **Recorte de silencios** (≈ 7,9 s; el más largo, 2,7 s antes de «Somos un equipo»).
+- **Escenas sincronizadas con tu voz**: cada golpe arranca cuando decís su frase (transcripción palabra por palabra).
+- **Tu cara en un círculo dentro de la escena**:
+  - Va en el lugar que cada escena deja libre y, cuando cambia, viaja con una animación suave.
+  - Luz y color corregidos.
+  - Se va en el final del mundo.
+- **Subtítulos integrados**: la palabra que decís se resalta, en una franja propia que no tapa la animación.
+- Música original por debajo de tu voz (baja sola cuando hablás) y efectos por golpe.
+- Después del pitch, la sección de preguntas con las respuestas animadas (Fase 3).
+- Salida en 1080p y 720p.
 
-## Fase 4 · Material extra súper premium (30 láminas)
+## Fase 3 · Respuestas súper premium (primera versión lista)
 
-Todas a escenas animadas, por familias de componentes reutilizables:
-- **Números**: proyección, costos, CAC/LTV, cada dólar, USD 1 M, USD 5 M, multiplicar ingresos (cuentas que se arman).
-- **Producto**: UX + IA (tres recorridos en paralelo), herramientas por oficio (cada una en uso), negocios, marca, publicidades en movimiento.
-- **Mercado**: competidores de Argentina y del mundo (mapa), tres experiencias, océano rojo/azul.
-- **Planes**: roadmap y plan de 3 meses (línea de tiempo con hitos).
-- **Visión**: cómo crece Handyx (árbol People/Business que crece), Business (local con turnos), círculo que gira, IPO (escalera que se sube), tesorería.
-- **Ferreterías**: sumar al profesional que agrega el material, lo reserva y **el usuario lo ve en su app**.
-- **HandIA te habla**: voz real con ElevenLabs cuando haya clave.
+- Las 20 respuestas animadas, en tres golpes:
+  1. La pregunta.
+  2. La respuesta con su dato armándose (contador, cuenta, barras o flujo).
+  3. Los puntos clave.
+- La 6 ya está sin nombres («¿Qué los diferencia de la competencia?»), la 4 suma los $ 70.000 y la 20 el plan nuevo.
+- **Segunda pasada**: respuestas a medida donde una lista no alcanza.
+  - La 15, multiplicar: el círculo gira.
+  - La 16, cripto: el escudo de la tesorería.
+  - La 17, IPO: la escalera.
+  - La 18, materiales: la mini ferretería.
+  - La 19, voz: la onda de HandIA.
+- Cada respuesta abre su lámina de respaldo animada.
+- Machete actualizado y sección de preguntas del video rehecha.
+
+## Fase 4 · Material extra súper premium (30 láminas + 2 nuevas)
+
+| Familia | Lámina → animación |
+|---|---|
+| Números | **De dónde sale el número**: bloques que se encadenan hasta USD 109.000. **Mantener Handyx cuesta poco**: tres monedas en la alcancía = USD 400 y el contador hasta ≈ 67 trabajos. **CAC y LTV**: una balanza, USD 2 contra USD 18 (× 9). **Cada dólar**: la barra se llena y cada partida «compra» su mejora. **USD 1 millón**: embudo marketing + IA → personas → trabajos → profesionales. **USD 5 millones**: People y Business crecen como barras. |
+| Finanzas | **Maneras de multiplicar ingresos**: 6 palancas, cada una con su mini animación. **Las ganancias trabajan dos veces**: el dinero se divide en «reinvertir» (crece la planta) y «tesorería» (un escudo que se llena: 12 meses, diversificada, cripto ≤ 10 %, directorio). **El círculo que multiplica**: el ciclo gira y los excedentes caen a la tesorería. **Camino a la IPO**: los Handys suben la escalera y cada escalón se enciende con su requisito. |
+| Producto | **UX + IA**: tres recorridos en paralelo con su reloj (WhatsApp, apps con comisión, Handyx). **Herramientas por oficio 1/2**: cada herramienta en uso (la calculadora calcula, el detector avanza, el checklist se tilda). **Crecer con herramientas**: limpieza, mecánica, jardinería y negocios. **Marca**: los Handys y la app. **Publicidades** en movimiento. **HandIA te habla**: lista, falta la voz real. **Ferreterías**: el profesional agrega el material, lo reserva y **el vecino lo ve en su app** (en curso). |
+| Mercado y competencia | **La competencia, por modelo** (sin nombres): plataformas A–D, qué hacen → cómo les gana Handyx, el mapa del mundo con dónde existe cada modelo y las 4 acciones del océano azul. **Validación**: la prueba con porteros y la próxima. **De 6 a 72 profesiones**: la grilla se llena mes a mes por familia, con cuidado de adultos mayores. **Tracción en los dos lados**: dos embudos con sus canales. |
+| Planes | **Roadmap**: carriles hoy / próximo / visión. **Lo que logramos en 3 meses** y **mes 1/2/3**: HandIA premium → HandIA para profesionales → toda Buenos Aires, +6 profesiones por mes. **Cómo crece, trimestre a trimestre** (nueva, en curso): el mapa de Argentina se enciende región por región. |
+| Visión | **Cómo crece Handyx**: el árbol People / Business sobre un mismo núcleo (en curso). **Un local, su equipo y su app**: el local publica turnos, llegan los mejor valorados y se arma su app. |
 
 ## Fase 5 · Integración y ensayo
 
-En vivo con pasos por frase (clicker o ritmo automático), notas con «→ al decir…», ensayo cronometrado (180 s), pruebas e2e, grabación en
-vivo, video final, PPT/PDF con cada paso y machete actualizado.
-
-## Pedido del 05/11 (noche, 2): plan de crecimiento y diferenciación
-
-- **Primeros 3 meses**: HandIA llevada a nivel premium (foto, voz, referencia de costo) y aplicada al especialista (**HandIA para
-  profesionales**: presupuesto, materiales, recordatorios y feedback); todos los desarrollos que muestran las diapositivas; **6 profesiones
-  nuevas por mes, cada una con sus herramientas** (6 → 12 → 18 → 24); expansión hasta **toda Buenos Aires** en 3 meses.
-- **Por trimestre** (plan propuesto, a validar): T1 nov–ene Buenos Aires (24 profesiones) · T2 feb–abr Centro: Córdoba, Rosario, Santa Fe
-  (42) · T3 may–jul Cuyo y Litoral (60) · T4 ago–oct Norte (72, la meta) · nov–dic 2027 Patagonia → toda Argentina; en cada trimestre
-  mejora Handyx for People (HandIA premium, ferreterías conectadas, IA por oficio, clientes que vuelven) y Handyx for Business (piloto de
-  locales, turnos fijos, apps a medida, mantenimiento). Animación: respaldo «Cómo crece Handyx, trimestre a trimestre».
-- **Inversión ↔ diferenciación**: cada partida dice qué mejora del producto compra (tecnología: HandIA premium, HandIA para
-  profesionales y herramientas; operaciones: formar y acompañar a los profesionales; marketing: más vecinos y profesionales), y el océano
-  azul cuenta los desarrollos del plan (24).
-- Cifras nuevas (afirmaciones): ingreso bruto de la prueba $ 70.000 (10 % + 10 % de $ 350.000), 6 profesiones por mes, Buenos Aires
-  en 3 meses, profesiones por trimestre (24 / 42 / 60 / 72), 24 desarrollos del plan, ejemplos de HandIA y presupuestos.
+- En vivo avanzás con el clicker en cada golpe; si lo preferís, hay un modo automático al ritmo del guion.
+- El presentador muestra el paso actual y la frase que dispara el próximo («→ al decir…»).
+- Ensayo cronometrado de 180 s.
+- Pruebas automáticas de punta a punta.
+- Grabación en vivo nueva y video final.
+- PDF y PPT con cada golpe, zip de imágenes y machete.
 
 ## Orden y tiempos estimados
 
-Fase 0 (1–2 h) → Fase 1 (6–8 h) → Fase 2 (3–4 h + render) → Fase 3 (3–4 h) → Fase 4 (8–10 h) → Fase 5 (2 h).
-Si la final es en menos de 48 h: 0 → 1 → 2 → las 6 respuestas más probables → el resto.
+Fase 1 (resto: 3–4 h) → Fase 2 (2–3 h + render) → Fase 3, segunda pasada (2 h) → Fase 4 (8–10 h; por familias, empezando por las
+que se muestran en las preguntas más probables) → Fase 5 (2 h). Si la final es en menos de 48 h: 1 → 2 → 3 → números y competencia de la 4 → el resto.
 
-## Decisiones de Ignacio
+## Decisiones de Ignacio (con lo que hago si no hay respuesta)
 
-1. **20 % o 25 %**: regrabar esa frase (recomendado) o que el video muestre lo que decís.
-2. **Regrabar el pitch** con buena luz (recomendado) o editar la grabación actual.
-3. **En vivo**: avanzás con el clicker en cada frase marcada o las animaciones corren solas al ritmo del guion.
-4. **Fecha de la final**, para priorizar.
-5. Confirmar el **ingreso bruto de la prueba**: $ 70.000 (10 % + 10 % de $ 350.000).
+1. **20 % o 25 %**: en la grabación decís 20 % y en pantalla dice 25 %, y con 20 % el trimestre no llega a USD 100.000. Lo mejor es regrabar
+   esa frase. Si no se regraba, queda el 25 % en pantalla y en el guion.
+2. **Regrabar el pitch** (3 min, guion oficial, buena luz, cámara a la altura de los ojos). Lo recomiendo: así el video incluye la
+   competencia, que en la grabación actual no está. Si no, edito la actual.
+3. **En vivo**: si no decís otra cosa, clicker en cada golpe.
+4. **Fecha de la final**: si no la sé, trabajo como si fuera en menos de 48 h.
+5. **$ 70.000 de ingreso bruto de la prueba**: queda rotulado como «Dato informado por el fundador · conciliación pendiente».

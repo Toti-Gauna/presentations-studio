@@ -84,7 +84,7 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 10 | Mayús + C · 10 + Enter | CAC y LTV | Responder cuánto cuesta conseguir un cliente y cuánto deja. |
 | 11 | Mayús + D · 11 + Enter | Validación | Mostrar la evidencia y la próxima prueba. |
 | 12 | Mayús + E · 12 + Enter | Roadmap | Separar lo que existe, lo próximo y la visión, sin fechas inventadas. |
-| 13 | Mayús + F · 13 + Enter | Competidores en Argentina | Mostrar a los competidores directos con datos y el diferencial. |
+| 13 | Mayús + F · 13 + Enter | La competencia en Argentina, por modelo | Mostrar a la competencia directa por su modelo y funcionalidades (sin nombres) y cómo le gana Handyx. |
 | 14 | Mayús + G · 14 + Enter | Competidores en la región y el mundo | Mostrar que el modelo existe afuera y cómo cobran. |
 | 15 | Mayús + H · 15 + Enter | UX + IA: el diferencial | Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx. |
 | 16 | Mayús + I · 16 + Enter | Marca y UX/UI | Mostrar la identidad de Handyx y su interfaz. |
@@ -95,9 +95,9 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 21 | Mayús + O · 21 + Enter | Más profesiones, herramientas y negocios | Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados. |
 | 22 | Mayús + P · 22 + Enter | De 6 a 72 profesiones | Mostrar con ejemplos concretos cómo se llega a 72 profesiones. |
 | 23 | Mayús + Q · 23 + Enter | Lo que logramos en 3 meses | Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires. |
-| 24 | Mayús + S · 24 + Enter | Plan · mes 1: Lanzamos y cobramos | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
-| 25 | Mayús + T · 25 + Enter | Plan · mes 2: El profesional se queda | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
-| 26 | Mayús + U · 26 + Enter | Plan · mes 3: Crecemos a dos lados | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |
+| 24 | Mayús + S · 24 + Enter | Plan · mes 1: HandIA premium y lanzamiento | Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide. |
+| 25 | Mayús + T · 25 + Enter | Plan · mes 2: HandIA para profesionales | Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide. |
+| 26 | Mayús + U · 26 + Enter | Plan · mes 3: Toda Buenos Aires | Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide. |
 | 27 | Mayús + V · 27 + Enter | Cada dólar de la inversión | Mostrar para qué se gasta cada dólar de los USD 100.000. |
 | 28 | Mayús + W · 28 + Enter | Hacia USD 1 millón | Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA. |
 | 29 | Mayús + X · 29 + Enter | Cómo crece Handyx | Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo. |
@@ -114,7 +114,7 @@ Guion oficial de Ignacio (prompt maestro del 04/11/2026), literal. Versión `eve
 | 40 | 40 + Enter | Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |
 | 41 | 41 + Enter | Posible pregunta 4: ¿Cuántos trabajos tienen cobrados? | Respuesta breve, con números y supuestos rotulados. |
 | 42 | 42 + Enter | Posible pregunta 5: ¿HandIA funciona hoy? | Respuesta breve, con números y supuestos rotulados. |
-| 43 | 43 + Enter | Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto? | Respuesta breve, con números y supuestos rotulados. |
+| 43 | 43 + Enter | Posible pregunta 6: ¿Qué los diferencia de la competencia? | Respuesta breve, con números y supuestos rotulados. |
 | 44 | 44 + Enter | Posible pregunta 7: ¿Cómo cobran el 15 %? | Respuesta breve, con números y supuestos rotulados. |
 | 45 | 45 + Enter | Posible pregunta 8: ¿Cómo captan y retienen profesionales? | Respuesta breve, con números y supuestos rotulados. |
 | 46 | 46 + Enter | Posible pregunta 9: ¿En qué usarían los USD 100.000? | Respuesta breve, con números y supuestos rotulados. |

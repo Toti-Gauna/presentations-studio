@@ -214,7 +214,7 @@ try {
   ok('ATICMA: N oculta notas y guion para ensayar sin ayuda', !(await presA.locator('.col-notas .guion').isVisible()));
   await presA.keyboard.press('n');
   await presA.keyboard.press('Shift+F'); await presA.waitForTimeout(500);
-  ok('ATICMA: Mayús + F abre el respaldo F (competidores en Argentina)', (await actualA()).includes('Competidores en Argentina'), await actualA());
+  ok('ATICMA: Mayús + F abre el respaldo F (la competencia en Argentina, sin nombres)', (await actualA()).includes('La competencia en Argentina'), await actualA());
   const item35 = ((await presA.locator('.indice li:not(.separador-anexos) .item').nth(34).textContent()) ?? '').replace(/^35\. /, '').trim();
   await presA.keyboard.press('3'); await presA.keyboard.press('5'); await presA.waitForTimeout(200);
   ok('ATICMA: al escribir un número se ve a qué lámina va', ((await presA.locator('.ir-numero.activo').textContent()) ?? '').includes(item35), item35);

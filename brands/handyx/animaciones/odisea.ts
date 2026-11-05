@@ -30,8 +30,11 @@ export default escena({
   marcas: [0, 2.6, 5.8, 9.6, 12.8, 16.6],
   cara: [
     { desde: 0, x: 1690, y: 200, d: 250 },
-    { desde: 3, x: 230, y: 200, d: 250 },
+    { desde: 1, x: 1700, y: 190, d: 240 },
+    { desde: 3, x: 1760, y: 150, d: 210 },
   ],
+  leyendas: ['', 'En casa: **algo se rompió**', 'Conseguir a alguien y coordinar: **una odisea**', 'Del otro lado: **profesionales que buscan clientes**', 'Handyx **une las dos necesidades**'],
+  lugarLeyenda: { x: 1420, y: 915 },
   css: `
     .fondo { position: absolute; inset: 0; background: ${COLOR.hueso}; }
     .sol { position: absolute; left: 960px; top: 400px; width: 1500px; height: 1500px; margin: -750px 0 0 -750px; border-radius: 50%; background: repeating-conic-gradient(rgba(255,201,60,.22) 0 8deg, transparent 8deg 20deg); -webkit-mask-image: radial-gradient(circle, #000 20%, transparent 68%); mask-image: radial-gradient(circle, #000 20%, transparent 68%); }
@@ -149,7 +152,7 @@ export default escena({
     tl.fromTo([$('.pro .kicker'), $('.pro .txt')], { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power3.out', stagger: 0.12 }, 10.2);
     tl.fromTo($('.agenda'), { autoAlpha: 0, y: 60, rotation: -4 }, { autoAlpha: 1, y: 0, rotation: -2, duration: 0.6, ease: 'back.out(1.6)' }, 10.5);
     tl.to([$('.pro .kicker'), $('.pro .txt')], { autoAlpha: 0, x: -30, duration: 0.35, ease: 'power2.in' }, 12.85);
-    tl.to($('.agenda'), { y: 130, rotation: 0, duration: 0.6, ease: 'power3.inOut' }, 13.1);
+    tl.to($('.agenda'), { y: 60, rotation: 0, duration: 0.6, ease: 'power3.inOut' }, 13.1);
     tl.to($('.llave'), { y: 130, duration: 0.6, ease: 'power3.inOut' }, 13.1);
     tl.fromTo($('.llave'), { autoAlpha: 0, y: 80 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'back.out(1.8)' }, 10.4);
     tl.fromTo($.all('.herr'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35, stagger: 0.1 }, 10.9);

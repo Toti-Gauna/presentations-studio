@@ -1056,7 +1056,7 @@
    "objetivo": "Comparar con honestidad y dejar claro el modelo: 0 % al profesional, 15 % al usuario, presupuesto completo.",
    "guion": "Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional. Nosotros creemos que ese no es el camino. El dinero que gana trabajando tiene que llegar completo a su casa.\n\nNuestro modelo es simple: el usuario paga una tarifa del 15%, visible antes de contratar. El profesional fija su presupuesto y Handyx no le cobra comisión.",
    "notas": "2:04–2:30. Pedido de Luigi (mentor ATICMA): mostrar que hay Clickie y 3 o 4 más en Argentina, y varios en Colombia, Uruguay, Chile, México, Europa y EE. UU., y encontrar el diferencial. El mapa agrupa por cómo le cobran al profesional; el diferencial buscado: el profesional no paga comisión por su trabajo. Modelos de Taskrabbit, Angi, Thumbtack y Checkatrade: búsqueda web del 04/11/2026 (fuentes de comparación, a revalidar). IguanaFix, según Cronista, se enfocó en clientes corporativos.\nCompetidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Competencia: Clickie cobra comisión al profesional según sus términos del 14/10/2026 y ofrece orientación con IA; Muovi anuncia comisión cero temporal y herramientas para profesionales; Home Solution cobra al prestador por acceso a oportunidades. Handyx: 0 % de comisión al profesional y 15 % de tarifa de servicio al usuario, visible antes de contratar. Ejemplo: presupuesto de $ 100.000; el usuario paga $ 115.000; el profesional recibe $ 100.000 y Handyx $ 15.000 brutos, antes de costos.",
+   "lectura": "Competencia, por modelo (sin nombres): algunas plataformas cobran comisión al profesional, otras le cobran por contacto u oportunidad, otras una suscripción y otras anuncian comisión cero por tiempo limitado. Handyx: 0 % de comisión al profesional y 15 % de tarifa de servicio al usuario, visible antes de contratar. Ejemplo: presupuesto de $ 100.000; el usuario paga $ 115.000; el profesional recibe $ 100.000 y Handyx $ 15.000 brutos, antes de costos.",
    "referencias": [
     "FEE-ESPECIALISTA",
     "TARIFA-USUARIO",
@@ -1105,29 +1105,29 @@
      "entrada": "subir",
      "tipo": "tabla",
      "columnas": [
-      "Cómo le cobran al profesional",
-      "Ejemplos"
+      "Otras plataformas",
+      "Cómo le gana Handyx"
      ],
      "filas": [
       [
-       "Comisión por trabajo",
-       "Clickie: {{COMP-CLICKIE-PRO}} al profesional · Taskrabbit (EE. UU.)"
+       "**A** · comisión al profesional ({{COMP-CLICKIE-PRO}})",
+       "{{FEE-ESPECIALISTA}} al profesional: cobra su presupuesto completo"
       ],
       [
-       "Pago por contacto u oportunidad",
-       "Home Solution · Angi y Thumbtack (EE. UU.)"
+       "**B** · pago por contacto u oportunidad",
+       "El profesional no paga por contactos"
       ],
       [
-       "Suscripción o membresía",
-       "Checkatrade (Reino Unido) · Thumbtack Pro"
+       "**C** · suscripción mensual",
+       "La tarifa la paga el usuario, visible"
       ],
       [
-       "Comisión cero, temporal",
-       "Muovi (anunciada)"
+       "**D** · comisión cero por tiempo limitado",
+       "{{FEE-ESPECIALISTA}} es nuestro modelo, no una promoción"
       ],
       [
-       "Handyx: {{FEE-ESPECIALISTA}} de comisión",
-       "El usuario paga {{TARIFA-USUARIO}}, visible antes de contratar"
+       "**Handyx** · {{TARIFA-USUARIO}} al usuario",
+       "Visible antes de contratar"
       ]
      ],
      "destacar": 4,
@@ -1144,7 +1144,7 @@
      "paso": 0,
      "entrada": "subir",
      "tipo": "texto",
-     "texto": "También en Argentina: IguanaFix, Servidos, Yo te lo arreglo, Zolvers · Región: Ay Fix (México), GoFixii (Colombia), Zolvers (Chile, México, Colombia). Detalle en los anexos E y F.",
+     "texto": "Hay plataformas así en Argentina, la región, EE. UU. y Europa. Comparamos modelos y funcionalidades, no marcas.",
      "tamano": "s"
     },
     {
@@ -1956,17 +1956,17 @@
   },
   {
    "id": "x-competidores",
-   "titulo": "Competidores en Argentina",
+   "titulo": "La competencia en Argentina, por modelo",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
    "pasos": 1,
    "clasificacion": "informado",
    "transicion": "fundido",
-   "objetivo": "Mostrar a los competidores directos con datos y el diferencial.",
+   "objetivo": "Mostrar a la competencia directa por su modelo y funcionalidades (sin nombres) y cómo le gana Handyx.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Clickie: iProfesional, Forbes Argentina, La Gaceta, Mercado (2026): 15 % al profesional (12 % con Pro de USD 15/mes), 5 % o 10 % al usuario según la nota; ronda ángel de USD 150.000; ya opera en Mar del Plata. Muovi y Home Solution: datos de Ignacio (sitios bloqueados aquí). IguanaFix: Cronista (foco corporativo). Zolvers: servicio doméstico, fee al cliente (Cronista). Servidos y Yo te lo arreglo: modelo sin dato confirmado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Clickie cobra 15 % al profesional (12 % con plan Pro) y 5 % o 10 % al usuario, levantó USD 150.000 y ya está en Mar del Plata. Muovi anuncia comisión cero temporal. Home Solution cobra al profesional por acceso a oportunidades. IguanaFix se enfocó en empresas. Zolvers se centra en servicio doméstico. Servidos y Yo te lo arreglo: modelo sin dato confirmado. Handyx: 0 % al profesional y 15 % al usuario, visible.",
+   "lectura": "Plataforma A: cobra comisión al profesional y al usuario, ofrece orientación con IA y ya opera en Mar del Plata. Plataforma B: el profesional paga por acceso a oportunidades. Plataforma D: anuncia comisión cero por tiempo limitado. Plataforma E: se enfocó en empresas. Plataforma F: servicio doméstico. Plataformas G y H: oficios, modelo sin dato confirmado. Handyx: 0 % al profesional y 15 % al usuario, visible, más herramientas por oficio, HandIA y clientes que vuelven.",
    "referencias": [
     "COMP-CLICKIE-PRO",
     "COMP-CLICKIE-RONDA",
@@ -1999,7 +1999,7 @@
      "paso": 0,
      "entrada": "mascara",
      "tipo": "titulo",
-     "texto": "Competidores en ==Argentina==",
+     "texto": "La competencia en ==Argentina==",
      "nivel": 2
     },
     {
@@ -2016,19 +2016,19 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**Clickie** · {{COMP-CLICKIE-PRO}} al profesional, IA, ya en Mar del Plata · ronda de {{COMP-CLICKIE-RONDA}}",
+       "texto": "**Plataforma A** · {{COMP-CLICKIE-PRO}} de comisión al profesional, orientación con IA, ya en Mar del Plata",
        "icono": "porcentaje"
       },
       {
-       "texto": "**Muovi** · comisión cero temporal, herramientas",
+       "texto": "**Plataforma D** · comisión cero por tiempo limitado",
        "icono": "monedas"
       },
       {
-       "texto": "**Home Solution** · paga por oportunidades",
+       "texto": "**Plataforma B** · el profesional paga por oportunidades",
        "icono": "billete"
       },
       {
-       "texto": "**IguanaFix** · giró a empresas",
+       "texto": "**Plataforma E** · giró a empresas",
        "icono": "edificio"
       }
      ],
@@ -2048,19 +2048,15 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**Zolvers** · servicio doméstico",
+       "texto": "**Plataforma F** · servicio doméstico",
        "icono": "usuarios"
       },
       {
-       "texto": "**Servidos** · oficios, modelo sin dato",
+       "texto": "**Plataformas G y H** · oficios, modelo sin dato",
        "icono": "llave-inglesa"
       },
       {
-       "texto": "**Yo te lo arreglo** · modelo sin dato",
-       "icono": "martillo2"
-      },
-      {
-       "texto": "**Handyx** · {{FEE-ESPECIALISTA}} al profesional, {{TARIFA-USUARIO}} visible al usuario",
+       "texto": "**Handyx** · {{FEE-ESPECIALISTA}} al profesional, {{TARIFA-USUARIO}} visible al usuario, herramientas por oficio y HandIA",
        "icono": "escudo-ok"
       }
      ],
@@ -2080,7 +2076,7 @@
    "objetivo": "Mostrar que el modelo existe afuera y cómo cobran.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Búsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix), Housecall Pro, Jobber y comparadores (Thumbtack USD 15–80+ por contacto; Angi USD 50–200 por contacto compartido; Taskrabbit 15–30 % según fuentes en conflicto; Checkatrade suscripción). Revalidar en las páginas oficiales.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "México: Ay Fix, Zolvers, IguanaFix. Colombia: GoFixii (pagos protegidos), Zolvers. Chile: Zolvers. Uruguay: IguanaFix. EE. UU.: Thumbtack y Angi cobran al profesional por contacto; Taskrabbit, comisión. Reino Unido: Checkatrade, suscripción. Diferencial de Handyx: el profesional no paga por su trabajo.",
+   "lectura": "El modelo existe en todo el mundo. En México, Colombia, Chile y Uruguay hay apps de oficios y de servicio doméstico. En EE. UU. hay plataformas que le cobran al profesional por contacto y otras con comisión; en el Reino Unido, con suscripción. Diferencial de Handyx: el profesional no paga por su trabajo y suma herramientas para trabajar mejor.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -2125,15 +2121,15 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**México** · Ay Fix, Zolvers, IguanaFix",
+       "texto": "**México** · apps de oficios y de servicio doméstico",
        "icono": "ubicacion"
       },
       {
-       "texto": "**Colombia** · GoFixii, Zolvers",
+       "texto": "**Colombia** · apps de oficios con pagos protegidos",
        "icono": "ubicacion"
       },
       {
-       "texto": "**Chile y Uruguay** · Zolvers, IguanaFix",
+       "texto": "**Chile y Uruguay** · apps de servicio doméstico y de oficios",
        "icono": "ubicacion"
       }
      ],
@@ -2153,15 +2149,15 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**EE. UU.** · Thumbtack y Angi: pago por contacto",
+       "texto": "**EE. UU.** · el profesional paga por contacto",
        "icono": "mundo"
       },
       {
-       "texto": "**EE. UU. y Europa** · Taskrabbit: comisión",
+       "texto": "**EE. UU. y Europa** · comisión por trabajo",
        "icono": "mundo"
       },
       {
-       "texto": "**Reino Unido** · Checkatrade: suscripción",
+       "texto": "**Reino Unido** · suscripción mensual",
        "icono": "mundo"
       }
      ],
@@ -2186,7 +2182,7 @@
   },
   {
    "id": "x-mes-1",
-   "titulo": "Plan · mes 1: Lanzamos y cobramos",
+   "titulo": "Plan · mes 1: HandIA premium y lanzamiento",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -2195,8 +2191,8 @@
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Mes 1: Lanzamos y cobramos. HandIA con referencia de costo Tarifa del {{TARIFA-USUARIO}} visible y cobro en la app Lanzamiento de la PWA ({{LANZAMIENTO}}) Valor: Ingresos reales desde el primer trabajo Ticket medio medido, no supuesto Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre).",
+   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 1: HandIA premium y lanzamiento. HandIA premium: foto, voz y referencia de costo Tarifa del {{TARIFA-USUARIO}} visible y cobro en la app Lanzamiento ({{LANZAMIENTO}}) y {{PROF-POR-MES}} profesiones nuevas con sus herramientas Valor: Ingresos reales desde el primer trabajo Pedidos más claros para el especialista Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre).",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -2224,7 +2220,7 @@
      "paso": 0,
      "entrada": "mascara",
      "tipo": "titulo",
-     "texto": "Mes 1: ==Lanzamos y cobramos==",
+     "texto": "Mes 1: ==HandIA premium y lanzamiento==",
      "nivel": 2
     },
     {
@@ -2254,7 +2250,7 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**HandIA** con referencia de costo",
+       "texto": "**HandIA premium:** foto, voz y referencia de costo",
        "icono": "chispas"
       },
       {
@@ -2262,7 +2258,7 @@
        "icono": "recibo"
       },
       {
-       "texto": "**Lanzamiento** de la PWA ({{LANZAMIENTO}})",
+       "texto": "**Lanzamiento** ({{LANZAMIENTO}}) y **{{PROF-POR-MES}} profesiones nuevas** con sus herramientas",
        "icono": "cohete"
       }
      ],
@@ -2299,8 +2295,8 @@
        "icono": "dolar"
       },
       {
-       "texto": "**Ticket medio** medido, no supuesto",
-       "icono": "calculadora"
+       "texto": "**Pedidos más claros** para el especialista",
+       "icono": "camara"
       }
      ],
      "columnas": 1
@@ -2343,7 +2339,7 @@
   },
   {
    "id": "x-mes-2",
-   "titulo": "Plan · mes 2: El profesional se queda",
+   "titulo": "Plan · mes 2: HandIA para profesionales",
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
@@ -2352,8 +2348,8 @@
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Mes 2: El profesional se queda. Herramientas de las {{PROFESIONES-INICIALES}} profesiones Ingresos y gastos del profesional Feedback con IA desde las valoraciones Valor: Retención: el profesional usa Handyx todos los días Mejor servicio: más clientes que vuelven Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}}).",
+   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 2: HandIA para profesionales. HandIA para profesionales: presupuesto, materiales y recordatorios Herramientas de cada oficio y {{PROF-POR-MES}} profesiones nuevas Ingresos y gastos con feedback de IA Valor: Retención: el profesional usa Handyx todos los días Mejor servicio: más clientes que vuelven Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}}).",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -2381,7 +2377,7 @@
      "paso": 0,
      "entrada": "mascara",
      "tipo": "titulo",
-     "texto": "Mes 2: ==El profesional se queda==",
+     "texto": "Mes 2: ==HandIA para profesionales==",
      "nivel": 2
     },
     {
@@ -2411,16 +2407,16 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**Herramientas** de las {{PROFESIONES-INICIALES}} profesiones",
+       "texto": "**HandIA para profesionales:** presupuesto, materiales y recordatorios",
+       "icono": "ia"
+      },
+      {
+       "texto": "**Herramientas de cada oficio** y **{{PROF-POR-MES}} profesiones nuevas**",
        "icono": "herramienta"
       },
       {
-       "texto": "**Ingresos y gastos** del profesional",
+       "texto": "**Ingresos y gastos** con feedback de IA",
        "icono": "billetera"
-      },
-      {
-       "texto": "**Feedback con IA** desde las valoraciones",
-       "icono": "chispas"
       }
      ],
      "columnas": 1
@@ -2500,7 +2496,7 @@
   },
   {
    "id": "x-mes-3",
-   "titulo": "Plan · mes 3: Crecemos a dos lados",
+   "titulo": "Plan · mes 3: Toda Buenos Aires",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
@@ -2509,8 +2505,8 @@
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11), a validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Mes 3: Crecemos a dos lados. Piloto de Handyx for Business con un local 2 profesiones nuevas Campaña con porteros en toda la ciudad Valor: Primer ingreso B2B y más demanda Más trabajo para más profesionales Mide: CAC por canal, turnos B2B y trabajos por mes.",
+   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 3: Toda Buenos Aires. Toda Buenos Aires en {{META-BA-MESES}} meses {{PROF-Q1}} profesiones, cada una con sus herramientas Piloto de Handyx for Business y ferreterías conectadas Valor: Primer ingreso B2B y más demanda Más trabajo para más profesionales Mide: CAC por canal, turnos B2B y trabajos por mes.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
@@ -2538,7 +2534,7 @@
      "paso": 0,
      "entrada": "mascara",
      "tipo": "titulo",
-     "texto": "Mes 3: ==Crecemos a dos lados==",
+     "texto": "Mes 3: ==Toda Buenos Aires==",
      "nivel": 2
     },
     {
@@ -2568,16 +2564,16 @@
      "estilo": "mosaicos",
      "items": [
       {
-       "texto": "**Piloto** de Handyx for Business con un local",
-       "icono": "tienda"
+       "texto": "**Toda Buenos Aires** en {{META-BA-MESES}} meses",
+       "icono": "ubicacion"
       },
       {
-       "texto": "**2 profesiones nuevas**",
+       "texto": "**{{PROF-Q1}} profesiones**, cada una con sus herramientas",
        "icono": "sparkles"
       },
       {
-       "texto": "**Campaña con porteros** en toda la ciudad",
-       "icono": "edificio"
+       "texto": "**Piloto de Handyx for Business** y ferreterías conectadas",
+       "icono": "tienda"
       }
      ],
      "columnas": 1
@@ -2997,7 +2993,7 @@
    "objetivo": "Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
    "notas": "Comparación de recorridos, no de pantallas: las capturas de la competencia se suman cuando Ignacio las mande desde sus apps (no se pudieron obtener desde esta sesión). Clickie: comisión al profesional y orientación con IA (fuentes de prensa 2026).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "Hoy, por WhatsApp: preguntás en grupos, esperás respuestas y el precio llega al final. Apps con comisión: pedido y propuestas, algunas con IA (Clickie), y el profesional paga 15 %. Handyx: foto y descripción, HandIA arma el pedido, propuestas con precio visible antes de contratar, 0 % al profesional y herramientas para su oficio.",
+   "lectura": "Hoy, por WhatsApp: preguntás en grupos, esperás respuestas y el precio llega al final. Apps con comisión: pedido y propuestas, algunas con IA, y el profesional paga una comisión. Handyx: foto y descripción, HandIA arma el pedido, propuestas con precio visible antes de contratar, 0 % al profesional y herramientas para su oficio.",
    "referencias": [
     "COMP-CLICKIE-PRO",
     "FEE-ESPECIALISTA",
@@ -5059,7 +5055,7 @@
   },
   {
    "id": "q-06",
-   "titulo": "Posible pregunta 6: ¿Qué los diferencia de Clickie y el resto?",
+   "titulo": "Posible pregunta 6: ¿Qué los diferencia de la competencia?",
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 20,
@@ -5068,10 +5064,11 @@
    "transicion": "fundido",
    "objetivo": "Respuesta breve, con números y supuestos rotulados.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Competidores.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
-   "lectura": "¿Qué los diferencia de Clickie y el resto? El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: La competencia, por modelo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué los diferencia de la competencia? El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y **{{FEE-ESPECIALISTA}} al profesional**. Otras plataformas le cobran al profesional una comisión (hasta {{COMP-CLICKIE-PRO}}), por contacto o una suscripción.",
    "referencias": [
     "COMP-CLICKIE-PRO",
+    "DESARROLLOS-PLAN",
     "FEE-ESPECIALISTA"
    ],
    "preguntas": "",
@@ -5080,7 +5077,7 @@
      "id": "anim",
      "tipo": "animacion",
      "modulo": "pregunta-06",
-     "alt": "Animación de la respuesta: ¿Qué los diferencia de Clickie y el resto?",
+     "alt": "Animación de la respuesta: ¿Qué los diferencia de la competencia?",
      "tiempos": [
       2.6,
       3.8,
@@ -5088,6 +5085,7 @@
      ],
      "afirmaciones": [
       "COMP-CLICKIE-PRO",
+      "DESARROLLOS-PLAN",
       "FEE-ESPECIALISTA"
      ],
      "area": "fondo",

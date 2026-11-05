@@ -43,6 +43,10 @@ export interface DefEscena {
   ambiente?: (t: number, $: Sel, tLinea: number) => void;
   /** Lugar libre para la cara del presentador en el video: vale desde el punto p indicado. */
   cara?: Array<{ desde: number; x: number; y: number; d: number }>;
+  /** Explicación de cada paso (una por tramo; '' = sin leyenda): pastilla numerada que dice qué está pasando. Admite **negrita**. */
+  leyendas?: Array<string | { t: string; x?: number; y?: number }>;
+  /** Centro de las leyendas (por defecto abajo al centro, encima de la franja de subtítulos: x 960, y 915). */
+  lugarLeyenda?: { x: number; y: number };
 }
 
 export const COLOR = {
@@ -82,6 +86,9 @@ mark { background: ${COLOR.amarillo}; color: ${COLOR.noche}; padding: 0 .14em; b
 .burbuja.mia { border-radius: 24px 24px 8px 24px; background: #DCF3D8; }
 .burbuja .hora { display: block; margin-top: 4px; font-size: 14px; font-weight: 600; color: ${COLOR.suave}; text-align: right; }
 .cielo { position: absolute; inset: 0; }
+.leyenda-paso { position: absolute; left: 0; top: 0; z-index: 60; display: flex; align-items: center; gap: 14px; padding: 9px 26px 9px 10px; border-radius: 999px; background: #fff; box-shadow: 0 10px 26px rgba(14,29,54,.22), 0 2px 0 ${COLOR.borde}; white-space: nowrap; font-size: 27px; font-weight: 700; color: ${COLOR.noche}; visibility: hidden; }
+.leyenda-paso .n { flex: none; width: 42px; height: 42px; border-radius: 50%; background: ${COLOR.azul}; color: #fff; display: grid; place-items: center; font-family: var(--fuente-titulos, 'Archivo Variable', sans-serif); font-weight: 900; font-size: 22px; }
+.leyenda-paso b { font-weight: 800; color: ${COLOR.azul}; }
 `;
 
 function hacerSel(raiz: ShadowRoot): Sel {
@@ -137,12 +144,33 @@ export function escena(def: DefEscena): CrearAnimacion {
         return (semilla - 1) / 2147483646;
       },
     };
-    raiz.innerHTML = `<style>${BASE}${def.css}</style><div class="lienzo">${def.html(c)}</div>`;
+    const lugar = def.lugarLeyenda ?? { x: 960, y: 915 };
+    let numero = 0; // se numeran solo las leyendas visibles (1, 2, 3…), aunque algún paso no tenga
+    const leyendas = (def.leyendas ?? [])
+      .map((l, k) => {
+        const d = typeof l === 'string' ? { t: l } : l;
+        if (!d.t) return '';
+        const txt = d.t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+        return `<div class="leyenda-paso" data-k="${k}" data-x="${d.x ?? lugar.x}" data-y="${d.y ?? lugar.y}"><span class="n">${++numero}</span><span>${txt}</span></div>`;
+      })
+      .join('');
+    raiz.innerHTML = `<style>${BASE}${def.css}</style><div class="lienzo">${def.html(c)}${leyendas}</div>`;
     const $ = hacerSel(raiz);
     await Promise.all([...raiz.querySelectorAll('img')].map((i) => i.decode().catch(() => null)));
     const tl = ctx.gsap.timeline({ paused: true });
     def.armar(tl, $, c);
     const n = def.marcas.length - 1;
+    // Leyendas: cada una entra apenas empieza su paso y sale cuando empieza el siguiente que tenga leyenda.
+    const pastillas = $.all('.leyenda-paso');
+    pastillas.forEach((el, i) => {
+      const k = Number(el.dataset['k']);
+      const x = Number(el.dataset['x']);
+      const y = Number(el.dataset['y']);
+      ctx.gsap.set(el, { x, y, xPercent: -50, yPercent: -50 });
+      tl.fromTo(el, { autoAlpha: 0, y: y + 22, scale: 0.9 }, { autoAlpha: 1, y, scale: 1, duration: 0.45, ease: 'back.out(1.8)' }, (def.marcas[k] ?? 0) + 0.15);
+      const sig = pastillas[i + 1];
+      if (sig) tl.to(el, { autoAlpha: 0, y: y - 16, duration: 0.25, ease: 'power1.in' }, def.marcas[Number(sig.dataset['k'])] ?? 0);
+    });
     const fin = def.marcas[n] ?? tl.duration();
     tl.set({}, {}, fin);
     const tiempo = (p: number) => {

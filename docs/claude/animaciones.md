@@ -35,10 +35,13 @@ export default escena({
 3. **Un solo dueño por propiedad**: lo que mueve la línea de tiempo no lo mueve el ambiente (usar un contenedor `.mov` para entrar y el
    `.pj` de adentro para respirar). Textos que cambian y poses: con `c.pintor` (valen también en los saltos).
 4. **Determinista**: nada de `Math.random` (usar `c.azar`), nada que dependa de la hora.
-5. **Legible y limpio**: texto ≥ 20 px, títulos con `.kicker` + `.titulo` (marcador amarillo con `<mark>`), sin superposiciones, un foco
+5. **Se explica sola**: cada paso lleva su leyenda (`leyendas: ['', 'En casa: **algo se rompió**', …]`, una por tramo, `''` = sin
+   leyenda): una pastilla numerada que dice qué está pasando. Va abajo al centro por defecto (`lugarLeyenda` la mueve) y nunca en la
+   franja de subtítulos.
+6. **Legible y limpio**: texto ≥ 20 px, títulos con `.kicker` + `.titulo` (marcador amarillo con `<mark>`), sin superposiciones, un foco
    claro por paso. La franja de abajo (y > 960) queda libre de texto importante (subtítulos del video y rótulos al pie).
-6. **Español rioplatense con voseo**; pesos con `$ 45.000`; «verificados» solo con dato real; sin «inmediato» ni «al instante».
-7. Personajes de la marca: Foco (`bombilla`) es el vecino/usuario, Llave (`llave`) el especialista; poses a reposo, b saludo,
+7. **Español rioplatense con voseo**; pesos con `$ 45.000`; «verificados» solo con dato real; sin «inmediato» ni «al instante».
+8. Personajes de la marca: Foco (`bombilla`) es el vecino/usuario, Llave (`llave`) el especialista; poses a reposo, b saludo,
    c festejo, d acción. Sin fotos de personas reales ni logos de terceros.
 
 ## Ver una escena

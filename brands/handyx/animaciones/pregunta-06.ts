@@ -4,24 +4,36 @@ import { respuesta } from './comun/respuesta.ts';
 export default respuesta({
   "n": 6,
   "total": 20,
-  "pregunta": "¿Qué los diferencia de Clickie y el resto?",
-  "respuesta": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y {{FEE-ESPECIALISTA}} al profesional. Clickie cobra {{COMP-CLICKIE-PRO}} al profesional; otros, por contacto o suscripción.",
-  "puntos": [],
+  "pregunta": "¿Qué los diferencia de la competencia?",
+  "respuesta": "El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y **{{FEE-ESPECIALISTA}} al profesional**. Otras plataformas le cobran al profesional una comisión (hasta {{COMP-CLICKIE-PRO}}), por contacto o una suscripción.",
+  "puntos": [
+    {
+      "ic": "cohete",
+      "txt": "**Nuestro océano azul:** {{DESARROLLOS-PLAN}} desarrollos en el plan"
+    },
+    {
+      "ic": "escudo-ok",
+      "txt": "Comparamos **modelos**, no marcas"
+    }
+  ],
   "quien": "medidor_gas",
   "viz": {
-    "tipo": "lista",
+    "tipo": "flujo",
     "items": [
       {
         "ic": "porcentaje",
-        "txt": "**{{FEE-ESPECIALISTA}}** al profesional"
+        "titulo": "{{FEE-ESPECIALISTA}}",
+        "txt": "de comisión: el profesional cobra su presupuesto completo"
       },
       {
-        "ic": "herramienta",
-        "txt": "**Herramientas** por oficio"
+        "ic": "recibo",
+        "titulo": "Precio visible",
+        "txt": "la tarifa la paga el usuario, antes de contratar"
       },
       {
-        "ic": "repetir",
-        "txt": "**Clientes** que vuelven"
+        "ic": "ia",
+        "titulo": "Lo que suma",
+        "txt": "HandIA, herramientas por oficio y clientes que vuelven"
       }
     ]
   }

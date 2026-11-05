@@ -50,13 +50,18 @@ falta, la lámina de respaldo.
 
 ## Competencia
 
-10. **¿Qué los diferencia de Clickie y el resto?**
-    El recorrido completo: foto → HandIA arma el pedido → precio visible antes de contratar → el profesional cobra todo. Clickie cobra 15 % al
-    profesional (12 % con su plan Pro); otros cobran por contacto (Home Solution, Angi, Thumbtack) o por suscripción (Checkatrade). Las
-    funciones se copian; la combinación, el 0 % al profesional y el uso diario son la apuesta. *Respaldo: UX + IA y competidores.*
-11. **¿Qué pasa si Clickie baja su comisión a 0 %?** *(extra)*
+10. **¿Qué los diferencia de la competencia?**
+    El recorrido completo: foto → HandIA arma el pedido → precio visible antes de contratar → el profesional cobra todo. Otras plataformas le
+    cobran al profesional una comisión (hasta 15 %), por contacto u oportunidad, o una suscripción; alguna anuncia comisión cero por un
+    tiempo. Nosotros: 0 % al profesional como modelo y, además, HandIA, herramientas por oficio, ferreterías conectadas y Handyx for Business
+    (24 desarrollos en el plan). Las funciones se copian; la combinación, el 0 % y el uso diario son la apuesta. *Respaldo: la competencia,
+    por modelo.*
+11. **¿Qué pasa si la competencia baja su comisión a 0 %?** *(extra)*
     Bienvenido: confirma que el profesional valora quedarse con todo. Nuestra diferencia no es solo el porcentaje: son las herramientas por
     oficio, el historial y que el cliente vuelva a elegir al mismo profesional.
+
+*Para vos:* en pantalla y en lo que decís, la competencia va **sin nombres** (pedido del 05/11): se habla de modelos y funcionalidades. Las
+fuentes con los nombres están en `aticma-validacion.md`, por si un jurado pregunta por una en particular.
 
 ## Crecimiento e inversión
 
