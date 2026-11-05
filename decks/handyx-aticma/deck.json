@@ -1044,12 +1044,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "mixto",
    "transicion": "fundido",
    "objetivo": "Separar lo que existe, lo próximo y la visión, sin fechas inventadas.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "HandIA, gastos, herramientas por oficio e IA para el profesional: visión sin fecha. Circuito de cobro del 15 % en implementación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 lanzamos el 10/11/2026 con 6 profesiones y la tarifa del 15 % visible antes de contratar · 2 en el primer trimestre, HandIA premium y para profesionales, y toda Buenos Aires con 24 profesiones · 3 en 2027, una región por trimestre (Centro, Cuyo y Litoral, Norte) hasta 72 profesiones en septiembre · 4 la visión: toda Argentina, con el 40 % de los servicios contratados por particulares. Plan propuesto, a validar; los hitos están equiespaciados (el eje no es proporcional al tiempo).\nHandIA, gastos, herramientas por oficio e IA para el profesional: visión sin fecha. Circuito de cobro del 15 % en implementación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Hoy: pedir por oficio con descripción y fotos, propuestas con precio del profesional, chat, agenda, trabajos y cobros. Próximo: lanzamiento de la PWA (10/11/2026) y tarifa del 15 % visible antes de contratar. Visión: HandIA con referencia de costo, gastos, herramientas por oficio, IA para el profesional, historial y más profesiones.",
    "referencias": [
     "LANZAMIENTO"
@@ -1057,109 +1057,27 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-roadmap",
+     "alt": "Animación: roadmap de Handyx en una línea de tiempo. El lanzamiento de la app con las profesiones de arranque y la tarifa visible; el primer trimestre con HandIA premium y para profesionales y toda Buenos Aires; después, una región por trimestre hasta la meta de profesiones; y la visión de Handyx en toda Argentina. Los Handys se suman al equipo en cada hito.",
+     "tiempos": [
+      3.0,
+      3.3,
+      3.3,
+      3.3
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "META-CUOTA-NACIONAL",
+      "PROF-Q1",
+      "PROF-Q4",
+      "PROFESIONES-INICIALES",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · producto",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Hoy, próximo y ==visión==",
-     "nivel": 2
-    },
-    {
-     "id": "hoy",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "blanca",
-     "encabezado": "Hoy",
-     "items": [
-      {
-       "texto": "Pedido por oficio con fotos"
-      },
-      {
-       "texto": "Propuestas con el precio del profesional"
-      },
-      {
-       "texto": "Chat, agenda, trabajos y cobros"
-      }
-     ]
-    },
-    {
-     "id": "prox",
-     "area": "libre",
-     "pos": {
-      "x": 36,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "gris",
-     "encabezado": "Próximo",
-     "items": [
-      {
-       "texto": "Lanzamiento de la PWA · {{LANZAMIENTO}}"
-      },
-      {
-       "texto": "Tarifa del {{TARIFA-USUARIO}} visible antes de contratar"
-      }
-     ]
-    },
-    {
-     "id": "vis",
-     "area": "libre",
-     "pos": {
-      "x": 67,
-      "y": 25,
-      "w": 28
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "vinetas",
-     "caja": "azul",
-     "encabezado": "Visión",
-     "items": [
-      {
-       "texto": "HandIA con referencia de costo"
-      },
-      {
-       "texto": "Gastos y herramientas por oficio"
-      },
-      {
-       "texto": "IA para la mejora continua"
-      },
-      {
-       "texto": "De {{PROFESIONES-INICIALES}} a {{META-PROFESIONES}} profesiones"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1395,154 +1313,32 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Tres golpes (avanzar con cada frase): 1 el vecino estrena HandIA premium, con la tarifa del 15 % visible y cobrada en la app · 2 el profesional recibe pedidos más claros y se suman 6 profesiones con sus herramientas · 3 lo medimos en trabajos con tarifa cobrada: objetivo 50 en diciembre. Ojo: las apps hoy prevén 0 % de fee hasta el 10/12 (confirmar con Ignacio cuál vale para el pitch).\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mes 1: HandIA premium y lanzamiento. HandIA premium: foto, voz y referencia de costo Tarifa del {{TARIFA-USUARIO}} visible y cobro en la app Lanzamiento ({{LANZAMIENTO}}) y {{PROF-POR-MES}} profesiones nuevas con sus herramientas Valor: Ingresos reales desde el primer trabajo Pedidos más claros para el especialista Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre).",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · plan de 3 meses · 1 de 3",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 72
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Mes 1: ==HandIA premium y lanzamiento==",
-     "nivel": 2
-    },
-    {
-     "id": "kh",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que hacemos",
-     "tono": "neutro"
-    },
-    {
-     "id": "h",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 29,
-      "w": 40
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**HandIA premium:** foto, voz y referencia de costo",
-       "icono": "chispas"
-      },
-      {
-       "texto": "**Tarifa del {{TARIFA-USUARIO}}** visible y cobro en la app",
-       "icono": "recibo"
-      },
-      {
-       "texto": "**Lanzamiento** ({{LANZAMIENTO}}) y **{{PROF-POR-MES}} profesiones nuevas** con sus herramientas",
-       "icono": "cohete"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-1",
+     "alt": "Animación: plan del primer mes. El vecino estrena HandIA premium con foto, voz y referencia de costo y ve la tarifa en la app; el profesional recibe pedidos más claros y se suman profesiones con sus herramientas; se mide en trabajos con tarifa cobrada. HandIA en el celular de la demo, con datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "kv",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 24
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que se valora",
-     "tono": "meta"
-    },
-    {
-     "id": "v",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 29,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Ingresos reales** desde el primer trabajo",
-       "icono": "dolar"
-      },
-      {
-       "texto": "**Pedidos más claros** para el especialista",
-       "icono": "camara"
-      }
+     "afirmaciones": [
+      "META-TRABAJOS"
      ],
-     "columnas": 1
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 84,
-      "w": 69
-     },
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre)**",
-     "tamano": "s",
-     "caja": "amarilla"
-    },
-    {
-     "id": "tel",
-     "area": "libre",
-     "pos": {
-      "x": 78,
-      "y": 14
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 72,
-     "leyenda": "HandIA en la demo",
-     "pantallas": [
-      {
-       "recurso": "demo-handia",
-       "alt": "HandIA en la demo"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1552,154 +1348,32 @@
    "disposicion": "izquierda",
    "paleta": "gris",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Tres golpes (avanzar con cada frase): 1 el profesional suma HandIA (presupuesto, materiales y recordatorios), las herramientas de su oficio y sus números con feedback de IA · 2 el vecino tiene 6 profesiones nuevas para pedir y mejor servicio · 3 lo medimos en profesionales activos por semana y clientes que repiten: objetivo 5 en diciembre.\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mes 2: HandIA para profesionales. HandIA para profesionales: presupuesto, materiales y recordatorios Herramientas de cada oficio y {{PROF-POR-MES}} profesiones nuevas Ingresos y gastos con feedback de IA Valor: Retención: el profesional usa Handyx todos los días Mejor servicio: más clientes que vuelven Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}}).",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · plan de 3 meses · 2 de 3",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 72
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Mes 2: ==HandIA para profesionales==",
-     "nivel": 2
-    },
-    {
-     "id": "kh",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que hacemos",
-     "tono": "neutro"
-    },
-    {
-     "id": "h",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 29,
-      "w": 40
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**HandIA para profesionales:** presupuesto, materiales y recordatorios",
-       "icono": "ia"
-      },
-      {
-       "texto": "**Herramientas de cada oficio** y **{{PROF-POR-MES}} profesiones nuevas**",
-       "icono": "herramienta"
-      },
-      {
-       "texto": "**Ingresos y gastos** con feedback de IA",
-       "icono": "billetera"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-2",
+     "alt": "Animación: plan del segundo mes. El profesional suma HandIA para presupuesto, materiales y recordatorios, herramientas de su oficio e ingresos y gastos con IA; el vecino tiene más profesiones y mejor servicio; se mide en profesionales activos y clientes que vuelven. Celular con un diseño propuesto de herramientas, datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "kv",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 24
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que se valora",
-     "tono": "meta"
-    },
-    {
-     "id": "v",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 29,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Retención:** el profesional usa Handyx todos los días",
-       "icono": "repetir"
-      },
-      {
-       "texto": "**Mejor servicio:** más clientes que vuelven",
-       "icono": "estrella"
-      }
+     "afirmaciones": [
+      "META-REPETIDORES"
      ],
-     "columnas": 1
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 84,
-      "w": 69
-     },
+     "area": "fondo",
      "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}})**",
-     "tamano": "s",
-     "caja": "amarilla"
-    },
-    {
-     "id": "tel",
-     "area": "libre",
-     "pos": {
-      "x": 78,
-      "y": 14
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 72,
-     "leyenda": "Herramientas · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-electricidad",
-       "alt": "Herramientas · diseño propuesto"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -1709,154 +1383,30 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 3,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Tres golpes (avanzar con cada frase): 1 toda Buenos Aires en 3 meses, con 24 profesiones con sus herramientas · 2 más trabajo para más profesionales y el primer piloto de Handyx for Business · 3 lo medimos en CAC por canal, turnos B2B y trabajos por mes. Las ferreterías conectadas van en el segundo trimestre (ver «Cómo crece Handyx, trimestre a trimestre»).\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mes 3: Toda Buenos Aires. Toda Buenos Aires en {{META-BA-MESES}} meses {{PROF-Q1}} profesiones, cada una con sus herramientas Piloto de Handyx for Business y ferreterías conectadas Valor: Primer ingreso B2B y más demanda Más trabajo para más profesionales Mide: CAC por canal, turnos B2B y trabajos por mes.",
    "referencias": [],
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · plan de 3 meses · 3 de 3",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 72
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Mes 3: ==Toda Buenos Aires==",
-     "nivel": 2
-    },
-    {
-     "id": "kh",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 24
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que hacemos",
-     "tono": "neutro"
-    },
-    {
-     "id": "h",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 29,
-      "w": 40
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Toda Buenos Aires** en {{META-BA-MESES}} meses",
-       "icono": "ubicacion"
-      },
-      {
-       "texto": "**{{PROF-Q1}} profesiones**, cada una con sus herramientas",
-       "icono": "sparkles"
-      },
-      {
-       "texto": "**Piloto de Handyx for Business** y ferreterías conectadas",
-       "icono": "tienda"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-3",
+     "alt": "Animación: plan del tercer mes. Handyx llega a toda Buenos Aires con más profesiones; el profesional tiene más trabajo y turnos en comercios con el primer piloto de Handyx for Business; se mide en CAC por canal, turnos y trabajos por mes. Celular con un diseño propuesto de Business, datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
      ],
-     "columnas": 1
-    },
-    {
-     "id": "kv",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 24
-     },
+     "afirmaciones": [],
+     "area": "fondo",
      "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Lo que se valora",
-     "tono": "meta"
-    },
-    {
-     "id": "v",
-     "area": "libre",
-     "pos": {
-      "x": 48,
-      "y": 29,
-      "w": 26
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Primer ingreso B2B** y más demanda",
-       "icono": "crecimiento"
-      },
-      {
-       "texto": "**Más trabajo** para más profesionales",
-       "icono": "usuarios"
-      }
-     ],
-     "columnas": 1
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 84,
-      "w": 69
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "texto",
-     "texto": "**Mide: CAC por canal, turnos B2B y trabajos por mes**",
-     "tamano": "s",
-     "caja": "amarilla"
-    },
-    {
-     "id": "tel",
-     "area": "libre",
-     "pos": {
-      "x": 78,
-      "y": 14
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "telefono",
-     "alto": 72,
-     "leyenda": "Handyx for Business · diseño propuesto",
-     "pantallas": [
-      {
-       "recurso": "herr-turnos",
-       "alt": "Handyx for Business · diseño propuesto"
-      }
-     ]
+     "entrada": "ninguna"
     }
    ]
   },
@@ -2832,12 +2382,12 @@
    "disposicion": "izquierda",
    "paleta": "neutro",
    "duracion": 30,
-   "pasos": 1,
+   "pasos": 4,
    "clasificacion": "plan",
    "transicion": "fundido",
    "objetivo": "Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires.",
    "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
-   "notas": "Plan de Ignacio (05/11), a validar: en los primeros 3 meses, HandIA a nivel premium y aplicada al especialista; los desarrollos de las diapositivas; 6 profesiones nuevas por mes, cada una con sus herramientas (6 → 24); y toda Buenos Aires. Desarrollo potenciado con IA: más rápido y más barato que nunca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 partimos del lanzamiento (10/11/2026) con 6 profesiones y desarrollo potenciado con IA · 2 mes 1: HandIA premium (foto, voz y referencia de costo), lanzamiento y tarifa visible, más 6 profesiones · 3 mes 2: HandIA para profesionales y herramientas de cada oficio · 4 mes 3: toda Buenos Aires, 24 profesiones y el primer piloto de Handyx for Business. Los 12 y 18 intermedios se calculan como 6 + 6 por mes (plan de Ignacio del 05/11).\nPlan de Ignacio (05/11), a validar: en los primeros 3 meses, HandIA a nivel premium y aplicada al especialista; los desarrollos de las diapositivas; 6 profesiones nuevas por mes, cada una con sus herramientas (6 → 24); y toda Buenos Aires. Desarrollo potenciado con IA: más rápido y más barato que nunca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
    "lectura": "Mes 1: HandIA premium (foto, voz y referencia de costo), tarifa del 15 % y lanzamiento con 6 profesiones nuevas. Mes 2: HandIA para profesionales y herramientas de cada oficio, con 6 profesiones nuevas. Mes 3: toda Buenos Aires con 24 profesiones, piloto de Handyx for Business y ferreterías conectadas.",
    "referencias": [
     "PROF-POR-MES",
@@ -2849,85 +2399,26 @@
    "preguntas": "",
    "elementos": [
     {
-     "id": "k",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 5
-     },
-     "paso": 0,
-     "entrada": "fundido",
-     "tipo": "etiqueta",
-     "texto": "Respaldo · producto",
-     "tono": "kicker"
-    },
-    {
-     "id": "t",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 9,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "mascara",
-     "tipo": "titulo",
-     "texto": "Lo que logramos en ==3 meses==",
-     "nivel": 2
-    },
-    {
-     "id": "fl",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 25,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "flujo",
-     "nodos": [
-      {
-       "texto": "Mes 1",
-       "detalle": "HandIA premium · tarifa del 15 % · lanzamiento · +{{PROF-POR-MES}} profesiones"
-      },
-      {
-       "texto": "Mes 2",
-       "detalle": "HandIA para profesionales · herramientas de cada oficio · +{{PROF-POR-MES}} profesiones"
-      },
-      {
-       "texto": "Mes 3",
-       "detalle": "Toda Buenos Aires · {{PROF-Q1}} profesiones · Handyx for Business"
-      }
-     ]
-    },
-    {
-     "id": "m",
-     "area": "libre",
-     "pos": {
-      "x": 5,
-      "y": 66,
-      "w": 90
-     },
-     "paso": 0,
-     "entrada": "subir",
-     "tipo": "lista",
-     "estilo": "mosaicos",
-     "items": [
-      {
-       "texto": "**Desarrollo con IA:** más rápido y barato",
-       "icono": "ia"
-      },
-      {
-       "texto": "**Hito:** {{META-TRABAJOS}} trabajos y {{META-REPETIDORES}} que vuelven",
-       "icono": "objetivo"
-      },
-      {
-       "texto": "**Después:** una región por trimestre",
-       "icono": "crecimiento"
-      }
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-plan-3m",
+     "alt": "Animación: plan del primer trimestre de Handyx, mes a mes. El primer mes, HandIA premium y el lanzamiento; el segundo, HandIA para profesionales y herramientas de cada oficio; el tercero, toda Buenos Aires y el primer piloto de Handyx for Business. Una torre de profesiones suma una fila por mes y el contador sube.",
+     "tiempos": [
+      2.8,
+      3.2,
+      3.2,
+      3.4
      ],
-     "columnas": 3
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "META-BA-MESES",
+      "PROF-POR-MES",
+      "PROF-Q1",
+      "PROFESIONES-INICIALES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
     }
    ]
   },
