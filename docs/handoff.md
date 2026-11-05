@@ -206,4 +206,7 @@ el workflow compila con `SERVIDOR_CONTROL` y verifica que Render responda. Todo-
   en el respaldo y como pregunta 19. La voz real con ElevenLabs queda lista para sumar (`scripts/video-pitch/handia-voz/`): falta la clave
   (`ELEVENLABS_API_KEY` en las variables del entorno, nunca en el repo) y permitir `api.elevenlabs.io` en el acceso de red del entorno.
   30 láminas de respaldo y 20 preguntas; machete de 26.
+- 05/11 (8) · Colores de «El círculo que multiplica» (anillo de cuatro arcos con flechas: el ciclo trabajos → tarifas → ganancias →
+  reinversión; íconos en cajas claras) y de «Camino a la IPO» (progresión blanco → celeste → azul → azul de marca → noche con oro para la
+  IPO). Colores planos de la marca, sin manchas de gradiente. Generador: `scripts/video-pitch/graficos-finanzas.cjs`.
 
