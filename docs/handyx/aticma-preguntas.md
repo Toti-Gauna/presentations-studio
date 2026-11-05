@@ -69,12 +69,14 @@ fuentes con los nombres están en `aticma-validacion.md`, por si un jurado pregu
     Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a
     día y clientes que vuelven. Lo medimos con actividad y repetición, no con registros.
 13. **¿Cómo van a conseguir tracción?**
-    En los dos lados. Usuarios: porteros y administradores, ads por barrio y urgencia, referidos y los Handys (los chicos reconocen a los
-    personajes y lo cuentan en casa; es una estrategia de recordación que vamos a medir). Profesionales: 0 % de comisión, ferreterías y
-    corralones, formación y referidos entre oficios. *Respaldo: tracción, publicidades, marca.*
+    En los dos lados. Usuarios: publicidades hechas con IA (Seedance 2.5) y marketing digital en todas las redes, por barrio y urgencia;
+    porteros y administradores; marketing en la calle (carteles en postes y volantes en los locales del barrio); referidos y los Handys
+    (los chicos reconocen a los personajes y lo cuentan en casa; es una estrategia de recordación que vamos a medir). Profesionales: 0 % de
+    comisión, remeras con el Handy de su oficio, ferreterías y corralones, formación y referidos entre oficios. *Respaldo: tracción, publicidades, marca.*
 14. **¿En qué usarían los USD 100.000?**
-    Sobre todo en que más gente adopte Handyx: **USD 45.000 marketing** (ads 20.000, porteros 10.000, contenido con los Handys 8.000, locales
-    7.000), **USD 30.000 operaciones** (formar y comunicarnos con los profesionales 10.000, soporte 10.000, verificación 6.000, cobros 4.000),
+    Sobre todo en que más gente adopte Handyx: **USD 45.000 marketing** (publicidades hechas con IA con Seedance 2.5 y marketing digital en
+    todas las redes 20.000, porteros y administradores 10.000, remeras para los profesionales con el Handy de su oficio y contenido con los
+    Handys 8.000, marketing en la calle: carteles en postes y volantes en los locales 7.000), **USD 30.000 operaciones** (formar y comunicarnos con los profesionales 10.000, soporte 10.000, verificación 6.000, cobros 4.000),
     **USD 15.000 tecnología** (con IA, construir es más barato que nunca) y **USD 10.000 legal y reserva**. Propuesta a aprobar.
     *Respaldo: cada dólar.*
 15. **¿Por qué invertirían USD 100.000 en Handyx?**

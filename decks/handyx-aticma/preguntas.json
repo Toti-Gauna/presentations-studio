@@ -314,11 +314,11 @@
  {
   "n": 9,
   "pregunta": "¿En qué usarían los USD 100.000?",
-  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
+  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, marketing digital en todas las redes y marketing en la calle: carteles en postes, volantes en locales y remeras para los profesionales con el Handy de su oficio), {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología (HandIA premium y herramientas por oficio) y {{INV-LEGAL}} en legal y reserva.",
   "puntos": [
    {
     "ic": "megafono",
-    "txt": "**Marketing** · {{INV-MARKETING}}"
+    "txt": "**Marketing** · {{INV-MARKETING}}: IA, redes y calle"
    },
    {
     "ic": "escuela",
@@ -336,7 +336,7 @@
    "items": [
     {
      "id": "INV-MARKETING",
-     "txt": "marketing: más vecinos y profesionales"
+     "txt": "marketing: publicidades con IA, redes y calle"
     },
     {
      "id": "INV-OPERACIONES",
@@ -445,23 +445,23 @@
  {
   "n": 13,
   "pregunta": "¿Cómo van a conseguir tracción?",
-  "respuesta": "En los dos lados: porteros, ads por barrio y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, ferreterías y formación.",
+  "respuesta": "En los dos lados: publicidades hechas con IA (Seedance 2.5) en todas las redes, porteros, carteles en postes y volantes en los locales del barrio, y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, remeras con el Handy de su oficio, ferreterías y formación.",
   "puntos": [],
   "quien": "llave",
   "viz": {
    "tipo": "lista",
    "items": [
     {
+     "ic": "megafono",
+     "txt": "**Publicidades con IA** en todas las redes"
+    },
+    {
      "ic": "edificio",
-     "txt": "**Porteros** y administradores"
+     "txt": "**Porteros**, postes y volantes en locales"
     },
     {
      "ic": "usuarios",
-     "txt": "**Handys** que se recuerdan"
-    },
-    {
-     "ic": "tienda",
-     "txt": "**Ferreterías** y corralones"
+     "txt": "**Remeras** con el Handy de cada oficio"
     }
    ]
   },

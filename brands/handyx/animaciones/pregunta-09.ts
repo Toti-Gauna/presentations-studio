@@ -5,11 +5,11 @@ export default respuesta({
   "n": 9,
   "total": 20,
   "pregunta": "¿En qué usarían los USD 100.000?",
-  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing, {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología y {{INV-LEGAL}} en legal y reserva.",
+  "respuesta": "Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, marketing digital en todas las redes y marketing en la calle: carteles en postes, volantes en locales y remeras para los profesionales con el Handy de su oficio), {{INV-OPERACIONES}} en operaciones (formar y acompañar a los profesionales), {{INV-TECNOLOGIA}} en tecnología (HandIA premium y herramientas por oficio) y {{INV-LEGAL}} en legal y reserva.",
   "puntos": [
     {
       "ic": "megafono",
-      "txt": "**Marketing** · {{INV-MARKETING}}"
+      "txt": "**Marketing** · {{INV-MARKETING}}: IA, redes y calle"
     },
     {
       "ic": "escuela",
@@ -27,7 +27,7 @@ export default respuesta({
     "items": [
       {
         "id": "INV-MARKETING",
-        "txt": "marketing: más vecinos y profesionales"
+        "txt": "marketing: publicidades con IA, redes y calle"
       },
       {
         "id": "INV-OPERACIONES",

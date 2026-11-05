@@ -203,7 +203,8 @@ try {
   await presA.waitForTimeout(600);
   ok('ATICMA: avanzar se detiene en la 7.ª diapositiva (no entra a anexos)', (await actualA()).startsWith('7.'), await actualA());
   ok('ATICMA: la pantalla pública usa el movimiento completo', ((await pubA.locator('.escenario').getAttribute('class')) ?? '').includes('modo-completo'));
-  ok('ATICMA: el cierre (7.ª, último golpe) es el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);
+  ok('ATICMA: la 7.ª tiene el clip del mundo con su póster', (await pubA.locator('section.escena[data-escena="a-equipo"] video[data-medio="video-mundo"][poster]').count()) === 1);
+  ok('ATICMA: el último golpe es el cierre con los QR de la landing y del portafolio', (await pubA.locator('section.escena[data-escena="a-equipo"] .qr').count()) === 2);
   ok('ATICMA: los rótulos de las cifras van en un pie discreto', (await pubA.locator('.rotulos-pie').count()) >= 1 && (await pubA.locator('section.escena .rotulo:not(figcaption .rotulo)').count()) === 0);
   await presA.getByRole('button', { name: '■ Finalizar' }).click(); await presA.waitForTimeout(400);
   const intento = (await presA.locator('.intentos li').first().textContent()) ?? '';
@@ -223,8 +224,8 @@ try {
   const nFerr = (await presA.locator('.indice li:not(.separador-anexos) .item').allTextContents()).findIndex((t: string) => t.includes('Ferreterías conectadas')) + 1;
   for (const d of String(nFerr)) await presA.keyboard.press(d);
   await presA.keyboard.press('Enter'); await pubA.waitForTimeout(2000);
-  const animFerr = await pubA.locator('video[data-medio="video-ferreterias"]').evaluate((v: HTMLVideoElement) => ({ t: v.currentTime, pausado: v.paused })).catch(() => null);
-  ok('ATICMA: la animación de ferreterías arranca sola en la pantalla pública', nFerr > 0 && !!animFerr && animFerr.t > 0.3 && !animFerr.pausado, JSON.stringify({ nFerr, animFerr }));
+  const animFerr = await pubA.waitForFunction(() => Boolean(document.querySelector('section.escena[data-escena="x-ferreterias"] .animacion')?.shadowRoot?.querySelector('.lienzo')), null, { timeout: 8000 }).then(() => true, () => false);
+  ok('ATICMA: «Ferreterías conectadas» es una escena animada en la pantalla pública', nFerr > 0 && animFerr, JSON.stringify({ nFerr, animFerr }));
   const nVoz = (await presA.locator('.indice li:not(.separador-anexos) .item').allTextContents()).findIndex((t: string) => t.includes('HandIA te habla')) + 1;
   for (const d of String(nVoz)) await presA.keyboard.press(d);
   await presA.keyboard.press('Enter'); await pubA.waitForTimeout(2000);
