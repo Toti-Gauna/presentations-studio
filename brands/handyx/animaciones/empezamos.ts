@@ -63,7 +63,7 @@ export default escena({
     .cordon { position: absolute; left: 0; top: ${SUELO + 24}px; width: 1920px; height: 8px; background: #0E2347; }
     .calle { position: absolute; left: 0; top: ${SUELO + 32}px; width: 1920px; height: ${ABAJO - 32}px; background: #13305E; }
     .calle .lineas { position: absolute; left: 0; top: 104px; width: 1920px; height: 6px; background: repeating-linear-gradient(90deg, rgba(255,201,60,.75) 0 60px, transparent 60px 130px); }
-    .onda { position: absolute; left: 995px; top: ${SUELO - 8}px; width: 560px; height: 130px; margin: -65px 0 0 -280px; border-radius: 50%; border: 5px solid rgba(255,233,168,.75); }
+    .onda { position: absolute; left: 995px; top: ${SUELO - 8}px; width: 560px; height: 130px; margin: -65px 0 0 -280px; border-radius: 50%; border: 7px solid ${COLOR.amarillo}; background: rgba(255,201,60,.07); }
     .ed { position: absolute; bottom: ${ABAJO}px; transform-origin: 50% 100%; }
     .ed .cornisa { position: absolute; left: -8px; right: -8px; top: 0; height: 18px; background: #0E2347; border-radius: 8px 8px 3px 3px; }
     .ed .frente { position: absolute; left: 0; right: 0; top: 18px; bottom: 0; background: #13305E; }
@@ -95,11 +95,11 @@ export default escena({
     .pin .cabeza { position: absolute; left: 0; top: 0; width: 60px; height: 60px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 8px 18px rgba(14,29,54,.3); }
     .pin .cabeza::after { content: ''; position: absolute; left: 50%; bottom: -13px; margin-left: -11px; border: 11px solid transparent; border-top: 15px solid #fff; border-bottom: 0; }
     .pin .icono { width: 32px; height: 32px; }
-    .tel { width: 300px; height: 650px; border-radius: 46px; padding: 11px; }
+    .tel { width: 290px; height: 628px; border-radius: 44px; padding: 11px; }
     .tel .pantalla { border-radius: 36px; }
     .tel .isla { width: 84px; height: 24px; margin-left: -42px; top: 10px; }
-    .telU, .telE { top: 140px; width: 300px; height: 650px; }
-    .telU { left: 900px; } .telE { left: 1300px; }
+    .telU, .telE { top: 178px; width: 290px; height: 628px; }
+    .telU { left: 920px; } .telE { left: 1290px; }
     .toque { position: absolute; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; border: 5px solid rgba(31,87,168,.8); background: rgba(31,87,168,.16); opacity: 0; z-index: 7; }
     .telU .toque { left: 50%; top: 31%; } .telE .toque { left: 28%; top: 80%; }
     .rot-app { color: #fff; font-weight: 800; font-size: 26px; white-space: nowrap; }
@@ -182,11 +182,11 @@ export default escena({
     ${pines}
     <div class="mov telU">${c.celular(`${c.img('demo-landing/usuario-inicio.webp', 'captura', 'Demo: inicio de la app de usuario')}<i class="toque"></i>`, 'tel')}</div>
     <div class="mov telE">${c.celular(`${c.img('demo-landing/especialista-pedido.webp', 'captura', 'Demo: pedido nuevo en la app del profesional')}<i class="toque"></i>`, 'tel')}</div>
-    <div class="centrar rU" style="left:1050px;top:86px"><span class="rot-app">App de usuario</span></div>
-    <div class="centrar rE" style="left:1450px;top:86px"><span class="rot-app">App del profesional</span></div>
-    <div class="centrar okU" style="left:1050px;top:760px"><span class="chip verde ok">${c.icono('tilde-circulo', 'blanco')}Desarrollada · en pruebas</span></div>
-    <div class="centrar okE" style="left:1450px;top:760px"><span class="chip verde ok">${c.icono('tilde-circulo', 'blanco')}Desarrollada · en pruebas</span></div>
-    <div class="centrar dem" style="left:1250px;top:824px"><span class="demo">Demo · datos ficticios</span></div>
+    <div class="centrar rU" style="left:1065px;top:124px"><span class="rot-app">App de usuario</span></div>
+    <div class="centrar rE" style="left:1435px;top:124px"><span class="rot-app">App del profesional</span></div>
+    <div class="centrar okU" style="left:1065px;top:770px"><span class="chip verde ok">${c.icono('tilde-circulo', 'blanco')}Desarrollada · en pruebas</span></div>
+    <div class="centrar okE" style="left:1435px;top:770px"><span class="chip verde ok">${c.icono('tilde-circulo', 'blanco')}Desarrollada · en pruebas</span></div>
+    <div class="centrar dem" style="left:1250px;top:826px"><span class="demo">Demo · datos ficticios</span></div>
     ${monedas}
     <div class="encabezado"><div class="kicker">Ya empezamos</div><div class="titulo t"><span class="l"><span>No nos quedamos</span></span><span class="l"><span>en <mark>una idea.</mark></span></span></div></div>
     <div class="tarjeta cA"><div class="k">Prueba con porteros</div>

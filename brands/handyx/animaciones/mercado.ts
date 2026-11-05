@@ -101,7 +101,7 @@ const OP = {
 const VIAS = [
   via([[426, F1], [840, F1]], 3.85, 0.6),
   via([[1190, F1], [1474, F1]], 5.22, 0.34),
-  via([[1649, 490], [1649, 556], [152, 556], [152, F2], [860, F2]], 7.2, 1.0),
+  via([[1643, 490], [1643, 556], [152, 556], [152, F2], [860, F2]], 7.2, 1.0),
 ];
 
 // Mapa: caja de 560 × 1000 escalada (termina antes de y 860)
@@ -109,7 +109,7 @@ const MAPA = { x: 150, y: 238, s: 0.62 };
 const MDP = ARGENTINA.ciudades['Mar del Plata'] ?? [378.6, 492.9];
 const PIN: P = [MAPA.x + MDP[0] * MAPA.s, MAPA.y + MDP[1] * MAPA.s];
 // Casas de «4 de cada 10»: 86 × 82 con un hueco de 16
-const CASA = { x: 760, y: 312, w: 86, h: 82, gap: 16 };
+const CASA = { x: 760, y: 340, w: 86, h: 82, gap: 16 };
 
 /** Campo de casitas (General Pueyrredon): se encienden en ola desde la costa, al ritmo del contador. */
 function campo(c: Kit): string {
@@ -133,16 +133,17 @@ function campo(c: Kit): string {
       casas.push({ x, y, k: d * 1.5 + az * 0.55 });
     }
   }
+  const juntas = casas.filter((h) => casas.filter((o) => o !== h && Math.hypot(o.x - h.x, o.y - h.y) < 32).length >= 3);
   const casita = (x: number, y: number) =>
     `M${(x - 7).toFixed(1)} ${(y + 6).toFixed(1)}V${(y - 1).toFixed(1)}L${x.toFixed(1)} ${(y - 7.5).toFixed(1)}L${(x + 7).toFixed(1)} ${(y - 1).toFixed(1)}V${(y + 6).toFixed(1)}Z`;
-  const orden = [...casas].sort((p, q) => p.k - q.k);
+  const orden = [...juntas].sort((p, q) => p.k - q.k);
   // La casa i se enciende cuando el contador (ease cúbico) pasa la fracción i/n: luces y número van juntos.
   const luces = orden.map((h, i) => {
     const q = (i + 1) / orden.length;
     const t = T_HOG + D_HOG * (1 - (1 - q) ** (1 / 3));
     return `<path class="lz" data-t="${t.toFixed(3)}" d="${casita(h.x, h.y)}"/>`;
   });
-  return `<svg viewBox="0 0 ${W} ${H}"><path class="apagadas" d="${casas.map((h) => casita(h.x, h.y)).join('')}"/>${luces.join('')}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}"><path class="apagadas" d="${juntas.map((h) => casita(h.x, h.y)).join('')}"/>${luces.join('')}</svg>`;
 }
 
 const tilde = `<svg class="tilde" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="${COLOR.verde}"/><path d="M6.8 12.4l3.3 3.3 7-7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -183,7 +184,7 @@ export default escena({
     /* 1-2 · la cuenta */
     .calc, .fila { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
     .flujo { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
-    .via { fill: none; stroke: #C3CEE1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+    .via { fill: none; stroke: #C3CEE1; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1000 1000; stroke-dashoffset: 1000; }
     .gotas circle { fill: ${COLOR.azul}; opacity: 0; }
     .bloque { position: absolute; display: flex; flex-direction: column; justify-content: center; height: 180px; padding: 0 26px; border-radius: 26px; background: #fff; box-shadow: 0 16px 34px rgba(14,29,54,.12), 0 4px 0 #DCE2EC; }
     .b-cab { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: ${COLOR.azul}; }
@@ -192,13 +193,13 @@ export default escena({
     .b-pie { margin-top: 6px; font-size: 22px; font-weight: 600; color: ${COLOR.suave}; white-space: nowrap; }
     .bA { left: 96px; top: 310px; width: 330px; }
     .bB { left: 840px; top: 310px; width: 350px; }
-    .bC { left: 1474px; top: 310px; width: 350px; }
-    .bD { left: 860px; top: 600px; width: 964px; height: 240px; padding: 0 44px; box-shadow: 0 22px 44px rgba(14,29,54,.16), 0 5px 0 #DCE2EC; }
+    .bC { left: 1474px; top: 310px; width: 338px; }
+    .bD { left: 860px; top: 600px; width: 950px; height: 240px; padding: 0 44px; box-shadow: 0 22px 44px rgba(14,29,54,.16), 0 5px 0 #DCE2EC; }
     .bD .b-num { margin-top: 0; font-size: 96px; color: ${COLOR.azulOscuro}; }
     .bD .b-pie { margin-top: 2px; font-size: 28px; font-weight: 700; color: ${COLOR.noche}; }
     .foco { position: absolute; border-radius: 34px; border: 6px solid ${COLOR.amarillo}; box-shadow: 0 0 0 6px rgba(255,201,60,.28), 0 0 34px rgba(255,201,60,.55); }
-    .foco.fC { left: 1462px; top: 298px; width: 374px; height: 204px; }
-    .foco.fD { left: 848px; top: 588px; width: 988px; height: 264px; border-radius: 36px; }
+    .foco.fC { left: 1463px; top: 299px; width: 360px; height: 202px; }
+    .foco.fD { left: 849px; top: 589px; width: 972px; height: 262px; border-radius: 36px; }
     .ok { display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; margin-top: 14px; padding: 8px 20px 8px 10px; border-radius: 999px; background: #E2F4EA; color: #136B3A; font-weight: 800; font-size: 26px; }
     .tilde { width: 36px; height: 36px; display: block; }
     .op { position: absolute; width: 0; height: 0; }
@@ -239,7 +240,7 @@ export default escena({
     .disco { position: absolute; left: ${MAPA.x + 280 * MAPA.s - 330}px; top: ${MAPA.y + 470 * MAPA.s - 330}px; width: 660px; height: 660px; border-radius: 50%; background: radial-gradient(circle, rgba(31,87,168,.10), rgba(31,87,168,0) 68%); }
     .mapa { position: absolute; left: ${MAPA.x}px; top: ${MAPA.y}px; width: ${560 * MAPA.s}px; height: ${1000 * MAPA.s}px; }
     .mapa svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-    .pais { fill: #D9E4F6; fill-opacity: 0; stroke: ${COLOR.azul}; stroke-width: 5.5; stroke-linejoin: round; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+    .pais { fill: #D9E4F6; fill-opacity: 0; stroke: ${COLOR.azul}; stroke-width: 5.5; stroke-linejoin: round; stroke-dasharray: 1000 1000; stroke-dashoffset: 1000; }
     .ba { position: absolute; inset: 0; }
     .ba path { fill: ${COLOR.amarillo}; }
     .pin { position: absolute; left: ${PIN[0]}px; top: ${PIN[1]}px; width: 0; height: 0; }
@@ -255,7 +256,7 @@ export default escena({
     .llave4 { position: absolute; left: ${CASA.x}px; top: ${CASA.y + CASA.h + 16}px; height: 20px; border: 5px solid ${COLOR.amarillo}; border-top: 0; border-radius: 0 0 14px 14px; }
     .cap4 { position: absolute; left: ${CASA.x}px; top: ${CASA.y + CASA.h + 48}px; display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 800; color: ${COLOR.noche}; white-space: nowrap; }
     .cap4 img { height: 34px; display: block; }
-    .cuota { position: absolute; left: ${CASA.x}px; top: 566px; display: flex; align-items: center; gap: 36px; }
+    .cuota { position: absolute; left: ${CASA.x}px; top: 594px; display: flex; align-items: center; gap: 36px; }
     .n40 { font-size: 176px; line-height: .9; color: ${COLOR.azul}; white-space: nowrap; }
     .l40 { width: 520px; font-size: 34px; font-weight: 800; line-height: 1.22; color: ${COLOR.noche}; }
     .l40 .chip { margin-top: 16px; }
@@ -267,7 +268,7 @@ export default escena({
     const bloque = (cls: string, ic: string, cab: string, num: string, pie: string) =>
       `<div class="bloque ${cls}"><div class="b-cab">${c.icono(ic)}<span>${cab}</span></div><div class="b-num t">${num}</div><div class="b-pie">${pie}</div></div>`;
     const gotas = (v: Via, i: number) =>
-      `<path class="via v${i}" d="${v.d}" pathLength="1"/><g class="gotas g${i}">${'<circle r="6"/>'.repeat(Math.max(3, Math.round(v.largo / 64)))}</g>`;
+      `<path class="via v${i}" d="${v.d}" pathLength="1000"/><g class="gotas g${i}">${'<circle r="6"/>'.repeat(Math.max(3, Math.round(v.largo / 64)))}</g>`;
     let fichas = '';
     MESES.forEach((_, j) => {
       for (let i = 0; i < FILAS; i++) {
@@ -317,7 +318,7 @@ export default escena({
     <div class="vision">
       <div class="disco"></div>
       <div class="mapa">
-        <svg viewBox="0 0 560 1000"><path class="pais" d="${ARGENTINA.contorno}" pathLength="1"/><path class="pais malv" d="${ARGENTINA.malvinas}" pathLength="1"/></svg>
+        <svg viewBox="0 0 560 1000"><path class="pais" d="${ARGENTINA.contorno}" pathLength="1000"/><path class="pais malv" d="${ARGENTINA.malvinas}" pathLength="1000"/></svg>
         <div class="ba"><svg viewBox="0 0 560 1000"><defs><clipPath id="mercado-arg"><path d="${ARGENTINA.contorno}"/></clipPath></defs><path d="${ARGENTINA.buenosAires}" clip-path="url(#mercado-arg)"/></svg></div>
       </div>
       <div class="pin"><i class="onda"></i><i class="cabeza"></i></div>
@@ -366,7 +367,7 @@ export default escena({
     tl.to($('.cuenta0'), { x: 261 - 1457, y: F1 + BAJA - 420, scale: 0.25, autoAlpha: 0, duration: 0.55, ease: 'power3.in' }, 3.25);
     tl.to($('.halo'), { x: 400, y: 0, duration: 1, ease: 'power2.inOut' }, 3.2);
     entra($('.bA'), 3.62);
-    VIAS.forEach((v, i) => tl.fromTo($(`.v${i}`), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: v.dur, ease: 'none' }, v.t0));
+    VIAS.forEach((v, i) => tl.fromTo($(`.v${i}`), { strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration: v.dur, ease: 'none' }, v.t0));
     const [v0, v1, v2] = VIAS as [Via, Via, Via];
     entra($('.o1'), v0.llega(OP.o1) - 0.08);
     entra($('.o2'), v0.llega(OP.o2) - 0.08);
@@ -433,8 +434,8 @@ export default escena({
     tl.fromTo($('.llave4'), { autoAlpha: 0, scaleX: 0, transformOrigin: '0 50%' }, { autoAlpha: 1, scaleX: 1, duration: 0.4, ease: 'power3.out' }, 15.0);
     tl.fromTo($('.cap4'), { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out' }, 15.1);
     tl.fromTo($('.disco'), { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.9, ease: 'power2.out' }, 13.7);
-    tl.fromTo($('.mapa .pais'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.3, ease: 'power1.inOut' }, 13.8);
-    tl.fromTo($('.mapa .malv'), { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.4, ease: 'power1.inOut' }, 14.9);
+    tl.fromTo($('.mapa .pais'), { strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration: 1.3, ease: 'power1.inOut' }, 13.8);
+    tl.fromTo($('.mapa .malv'), { strokeDashoffset: 1000 }, { strokeDashoffset: 0, duration: 0.4, ease: 'power1.inOut' }, 14.9);
     tl.fromTo($.all('.mapa .pais'), { fillOpacity: 0 }, { fillOpacity: 1, duration: 0.5 }, 14.8);
     tl.fromTo($('.ba svg'), { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, ease: 'power2.out' }, 15.35);
     tl.fromTo($('.pin'), { autoAlpha: 0, y: -90 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'bounce.out' }, 15.55);

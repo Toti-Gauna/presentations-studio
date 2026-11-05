@@ -5,7 +5,8 @@
 //   (en desarrollo); Electricidad pasa al frente ·
 // 2 «A futuro queremos potenciarlas con inteligencia artificial…» → HandIA para profesionales: Llave con Foco-HandIA,
 //   sugerencias que aparecen de a una y la escalera de estrellas «Cada trabajo, mejor que el anterior» (visión).
-// Sin cifras en pantalla: las capturas son de la demo (datos ficticios) o diseños propuestos, rotulados como tales.
+// Ninguna cifra escrita a mano (sin afirmaciones). Los montos de ejemplo que se ven dentro de las capturas son de la
+// demo (datos ficticios) o de diseños propuestos, y en pantalla se rotulan como tales.
 import { COLOR, entraTitulo, escena, pose } from './comun/kit.ts';
 
 // Celular del kit: 340 × 730; cada grupo lo escala con CSS y la línea de tiempo mueve el contenedor.
@@ -99,8 +100,8 @@ export default escena({
     .col.top .tel1 { width: ${W * SF}px; height: ${H * SF}px; top: ${PISO - H * SF}px; }
     .col.top .tel1 .cel { transform: scale(${SF}); }
     .aro { position: absolute; inset: -12px; border-radius: 49px; box-shadow: 0 0 0 7px ${COLOR.amarillo}, 0 0 50px 16px rgba(255,201,60,.55); }
-    .rayos { position: absolute; left: -210px; top: ${PISO - (H * SF) / 2 - 380}px; width: 760px; height: 760px; }
-    .giro { position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(rgba(255,201,60,.30) 0 8deg, transparent 8deg 20deg); -webkit-mask-image: radial-gradient(circle, #000 22%, transparent 66%); mask-image: radial-gradient(circle, #000 22%, transparent 66%); }
+    .rayos { position: absolute; left: -160px; top: ${PISO - (H * SF) / 2 - 330}px; width: 660px; height: 660px; }
+    .giro { position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(from var(--giro, 0deg), rgba(255,201,60,.30) 0 8deg, transparent 8deg 20deg); -webkit-mask-image: radial-gradient(circle closest-side, #000 36%, transparent 100%); mask-image: radial-gradient(circle closest-side, #000 36%, transparent 100%); }
     .fc { position: absolute; left: 0; right: 0; top: ${PISO - 25}px; text-align: center; }
     .fc .chip { font-size: 22px; }
     .col.top .fc .chip { font-size: 24px; }
@@ -256,7 +257,7 @@ export default escena({
     // Respiración de los personajes
     $.all('.mov .pj').forEach((p, i) => (p.style.transform = `scaleY(${1 + Math.sin(t * 2.4 + i) * 0.02})`));
     // Rayos detrás de Electricidad, Foco-HandIA flotando con su aura, chispas y estrellas que titilan
-    $('.giro').style.transform = `rotate(${t * 7}deg)`;
+    $('.giro').style.setProperty('--giro', `${(t * 7) % 360}deg`);
     $('.foco2 .flota').style.transform = `translateY(${Math.sin(t * 1.6) * 10}px)`;
     $('.halo').style.transform = `scale(${1 + Math.sin(t * 2.2) * 0.07})`;
     $.all('.chispa i').forEach((s, i) => {
