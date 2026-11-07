@@ -17,7 +17,6 @@
   .tapa-ops .caja { left: 66mm; }
   .tapa-ops .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; color: var(--azul); }
   .tapa-ops .pantalla { position: absolute; left: 66mm; right: -26mm; top: 174mm; }
-  .tapa-ops .pantalla .rotulo { margin-bottom: 2.4mm; }
   .tapa-ops .tapa-pie { position: absolute; left: 66mm; right: 16mm; bottom: 14mm; }
 
   /* contratapa: arena, como la tapa */
@@ -43,9 +42,11 @@
   .preguntas td:nth-child(1) { width: 41mm; }
   .preguntas td:nth-child(3) { width: 34mm; }
   .preguntas td:nth-child(4) { width: 24mm; text-align: right; }
+  figure.con-rotulo > .rotulos, .tapa-ops .pantalla .rotulos { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-bottom: 2.6mm; }
   .nota { padding: 3.4mm 4mm; border-radius: 2.2mm; background: var(--arena); font-size: 8.2pt; line-height: 1.45; }
   .nota b { color: var(--navy); }
   .titulo-flujo { color: var(--gris); }
+  .como-leer .def .rotulo { white-space: normal; line-height: 1.25; max-width: 27mm; }
 
   /* sub-sección dentro de una página que reúne dos secciones del pedido */
   .tramo { display: flex; align-items: baseline; gap: 2.4mm; padding-top: 2.4mm; border-top: 0.45mm solid var(--navy); }
@@ -135,7 +136,7 @@
     <div class="lateral">
       <img class="logo" style="--h:7.6mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
       <span class="sub">Portal interno</span>
-      <div class="modulos"><span>Inicio</span><span>Pre-registros</span><span>Especialistas</span><span>Reclamos</span><span>Campañas</span><span>Cohortes</span><span>Mapa</span><span>Tareas</span><span>Docs</span><span>Legal</span></div>
+      <div class="modulos"><span>Inicio</span><span>Preregistros</span><span>Especialistas</span><span>Reclamos</span><span>Campañas</span><span>Cohortes</span><span>Mapa</span><span>Tareas</span><span>Docs</span><span>Legal</span></div>
       <img class="personaje" src="../../marca/personajes/engranaje-a.svg" alt="Engranaje, personaje de Handyx">
     </div>
     <div class="caja">
@@ -150,7 +151,7 @@
       </div>
     </div>
     <figure class="pantalla permite-salir">
-      <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+      <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
       <div class="escritorio"><img src="img/inicio-para-hoy.webp" alt="Inicio del portal: lo que hay que hacer hoy"></div>
     </figure>
     <div class="tapa-pie"><span>Mar del Plata · Edición 1<br>Noviembre de 2026</span><span style="text-align:right">Estado al 07/11/2026</span></div>
@@ -166,22 +167,19 @@
       <h1 class="esp-1">En este <mark>dossier</mark></h1>
       <div class="grilla esp-4">
         <nav class="c-7 indice">
-          <a data-ir="importancia"><span class="n">02</span><span class="t">La importancia de la infraestructura operativa</span><span class="p">00</span></a>
-          <a data-ir="arquitectura"><span class="n">03</span><span class="t">Arquitectura general del ecosistema</span><span class="p">00</span></a>
-          <a data-ir="clientes"><span class="n">04</span><span class="t">Gestión de clientes</span><span class="p">00</span></a>
-          <a data-ir="profesionales"><span class="n">05</span><span class="t">Gestión de profesionales</span><span class="p">00</span></a>
-          <a data-ir="supervision"><span class="n">06</span><span class="t">Supervisión de operaciones</span><span class="p">00</span></a>
-          <a data-ir="seguimiento"><span class="n">07</span><span class="t">Seguimiento de trabajos</span><span class="p">00</span></a>
-          <a data-ir="comercial"><span class="n">08</span><span class="t">Administración comercial</span><span class="p">00</span></a>
-          <a data-ir="transacciones"><span class="n">09</span><span class="t">Gestión de transacciones y comisiones</span><span class="p">00</span></a>
-          <a data-ir="incidencias"><span class="n">10</span><span class="t">Incidencias y soporte</span><span class="p">00</span></a>
-          <a data-ir="analitica"><span class="n">11</span><span class="t">Analítica y métricas</span><span class="p">00</span></a>
-          <a data-ir="cohortes"><span class="n">12</span><span class="t">Cohortes y retención</span><span class="p">00</span></a>
-          <a data-ir="mapa"><span class="n">13</span><span class="t">Mapas y actividad territorial</span><span class="p">00</span></a>
-          <a data-ir="herramientas"><span class="n">14</span><span class="t">Herramientas de supervisión</span><span class="p">00</span></a>
-          <a data-ir="escalabilidad"><span class="n">15</span><span class="t">Escalabilidad</span><span class="p">00</span></a>
-          <a data-ir="roadmap"><span class="n">16</span><span class="t">Roadmap operativo</span><span class="p">00</span></a>
-          <a data-ir="cierre"><span class="n">17</span><span class="t">Cierre</span><span class="p">00</span></a>
+          <a data-ir="importancia"><span class="n">01</span><span class="t">La importancia de la infraestructura operativa</span><span class="p">00</span></a>
+          <a data-ir="arquitectura"><span class="n">02</span><span class="t">Arquitectura general del ecosistema</span><span class="p">00</span></a>
+          <a data-ir="clientes"><span class="n">03</span><span class="t">Gestión de clientes</span><span class="p">00</span></a>
+          <a data-ir="profesionales"><span class="n">04</span><span class="t">Gestión de profesionales</span><span class="p">00</span></a>
+          <a data-ir="supervision"><span class="n">05</span><span class="t">Supervisión de operaciones y seguimiento de trabajos</span><span class="p">00</span></a>
+          <a data-ir="comercial"><span class="n">06</span><span class="t">Administración comercial, transacciones y tarifa de servicio</span><span class="p">00</span></a>
+          <a data-ir="incidencias"><span class="n">07</span><span class="t">Incidencias y soporte</span><span class="p">00</span></a>
+          <a data-ir="analitica"><span class="n">08</span><span class="t">Analítica y métricas</span><span class="p">00</span></a>
+          <a data-ir="cohortes"><span class="n">09</span><span class="t">Cohortes y retención</span><span class="p">00</span></a>
+          <a data-ir="mapa"><span class="n">10</span><span class="t">Mapas y actividad territorial</span><span class="p">00</span></a>
+          <a data-ir="herramientas"><span class="n">11</span><span class="t">Herramientas de supervisión</span><span class="p">00</span></a>
+          <a data-ir="escalabilidad"><span class="n">12</span><span class="t">Escalabilidad y roadmap operativo</span><span class="p">00</span></a>
+          <a data-ir="cierre"><span class="n">13</span><span class="t">Cierre</span><span class="p">00</span></a>
         </nav>
         <div class="c-5">
           <div class="como-leer">
@@ -192,7 +190,7 @@
             <div>
               <h4>Estado de cada función</h4>
               <div class="def">
-                <span class="estado construido">Construido</span><span>En la rama principal y funcionando con el servidor real.</span>
+                <span class="estado construido">Construido</span><span>En la rama principal, probado contra el servidor real (en local, si todavía no está desplegado).</span>
                 <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de prueba o en una rama.</span>
                 <span class="estado disenado">Diseñado</span><span>Dibujado en los lienzos de diseño, todavía sin código.</span>
                 <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
@@ -202,8 +200,8 @@
               <h4>Rótulo de cada imagen</h4>
               <div class="def">
                 <span class="rotulo diseno">Diseño propuesto</span><span>Pantalla del lienzo de diseño.</span>
-                <span class="rotulo prueba">Portal v2</span><span>Pantalla real del portal en código, con datos de muestra.</span>
-                <span class="rotulo muestra">Muestra</span><span>Nombres y cifras ficticios.</span>
+                <span class="rotulo prueba">Datos de prueba</span><span>Pantalla real de la app o del portal, con datos de prueba.</span>
+                <span class="rotulo muestra">Muestra · datos ficticios</span><span>Nombres y cifras inventados para mostrar la pantalla.</span>
                 <span class="rotulo">Geografía real</span><span>Límites de OpenStreetMap; lo que se pinta encima es muestra.</span>
                 <span class="rotulo concepto">Concepto</span><span>Algo que todavía no existe.</span>
               </div>
@@ -215,6 +213,7 @@
                 <span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span>
                 <span class="tipo-dato">Supuesto · proyección</span><span>Un supuesto a validar y lo que se calcula con él.</span>
                 <span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span>
+                <span class="tipo-dato">Decisión del fundador</span><span>Una regla ya decidida, con su fecha.</span>
               </div>
             </div>
           </div>
@@ -232,9 +231,9 @@
 <!-- ============ 3 · LA IMPORTANCIA DE LA INFRAESTRUCTURA OPERATIVA ============ -->
 <section class="pagina" id="importancia">
   <div class="lamina">
-    <div class="cabecera"><span>02 · La importancia de la infraestructura operativa</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>01 · La importancia de la infraestructura operativa</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">02</span>La importancia de la infraestructura operativa</span>
+      <span class="ceja"><span class="n">01</span>La importancia de la infraestructura operativa</span>
       <h1 class="esp-1">Operar con <mark>criterio</mark> desde el primer día</h1>
       <p class="bajada esp-3">Detrás de cada arreglo hay trabajo que no se ve: a quién llamar primero, qué reclamo vence hoy, qué campaña trae gente, qué papeles están al día. El portal ordena ese trabajo para decidir con datos y no de memoria.</p>
       <figure class="con-rotulo esp-4">
@@ -268,9 +267,9 @@
 <!-- ============ 4 · ARQUITECTURA ============ -->
 <section class="pagina" id="arquitectura">
   <div class="lamina">
-    <div class="cabecera"><span>03 · Arquitectura general del ecosistema</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>02 · Arquitectura general del ecosistema</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">03</span>Arquitectura general del ecosistema</span>
+      <span class="ceja"><span class="n">02</span>Arquitectura general del ecosistema</span>
       <h1 class="esp-1">Tres superficies, <mark>un</mark> circuito</h1>
       <div class="grilla esp-3">
         <div class="c-7 capas">
@@ -287,7 +286,7 @@
             <div class="nodo pendiente"><h4>App del especialista</h4><p>Alta y documentos, agenda, propuestas, trabajo y cobro directo.</p><span class="estado en-pruebas">En pruebas</span></div>
           </div>
           <p class="base-comun">Las dos apps comparten un mismo contrato de datos</p>
-          <div class="dinero-directo">El usuario paga directo al especialista, en efectivo o, cuando se valide, por Mercado Pago. El dinero no pasa por Handyx ni por el portal.</div>
+          <div class="dinero-directo">El usuario paga directo al especialista: en efectivo; con Mercado Pago cuando se valide la integración. El dinero no pasa por Handyx ni por el portal.</div>
         </div>
         <div class="c-5">
           <p class="bajada">El portal es donde el equipo ve y ordena todo lo que pasa en Handyx.</p>
@@ -296,6 +295,13 @@
           <div class="leyenda-estados esp-3"><span class="estado construido">Construido</span><span class="estado en-pruebas">En pruebas</span><span class="estado concepto">Concepto</span></div>
           <p class="fuente esp-2">Línea punteada: lo que todavía no está conectado. Ningún backend está desplegado en producción.</p>
         </div>
+      </div>
+      <h4 class="esp-4 titulo-flujo">El camino de un preregistro</h4>
+      <div class="flujo esp-2">
+        <div><h4>Se anota</h4><p>En la landing, con su consentimiento. Hoy la captura sigue cerrada hasta el aviso de privacidad definitivo.</p></div>
+        <div><h4>Llega cifrado</h4><p>Los datos personales se guardan cifrados y un duplicado nunca pisa lo que ya estaba.</p></div>
+        <div><h4>Queda en su ficha</h4><p>Con su etapa, su historial y el próximo paso, separada por audiencia.</p></div>
+        <div><h4>Contacto a mano</h4><p>WhatsApp se abre sin mensaje escrito y el resultado queda registrado.</p></div>
       </div>
       <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Fuentes: repos del portal interno (v2, rama principal del 07/11/2026), del backend de captación y CRM y de las dos apps; lienzo «Portal interno v3». Descripción por capacidades: sin mecanismos, proveedores ni direcciones internas.</p>
     </div>
@@ -306,13 +312,13 @@
 <!-- ============ 5 · GESTIÓN DE CLIENTES ============ -->
 <section class="pagina" id="clientes">
   <div class="lamina">
-    <div class="cabecera"><span>04 · Gestión de clientes</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>03 · Gestión de clientes</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">04</span>Gestión de clientes</span>
+      <span class="ceja"><span class="n">03</span>Gestión de clientes</span>
       <h1 class="esp-1">Cada persona anotada, <mark>atendida</mark> a tiempo</h1>
       <p class="bajada esp-3">El CRM de preregistros ya está construido: separa especialistas y lista de espera, muestra quién lleva más tiempo esperando y guía cada contacto sin enviar nada de forma automática.</p>
       <figure class="con-rotulo esp-3">
-        <span class="rotulo prueba">Pantalla del portal v2 · datos de muestra</span>
+        <span class="rotulo prueba">Pantalla del portal v2 · datos de prueba</span>
         <div class="escritorio" style="width:150mm"><img src="img/preregistros-v2.webp" alt="Lista de preregistros de especialistas en el portal"></div>
         <figcaption><b>Preregistros.</b> Especialistas y lista de espera por separado, con filtros por rubro, ciudad y estado.</figcaption>
       </figure>
@@ -337,14 +343,14 @@
 <!-- ============ 6 · GESTIÓN DE PROFESIONALES ============ -->
 <section class="pagina" id="profesionales">
   <div class="lamina">
-    <div class="cabecera"><span>05 · Gestión de profesionales</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>04 · Gestión de profesionales</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">05</span>Gestión de profesionales</span>
+      <span class="ceja"><span class="n">04</span>Gestión de profesionales</span>
       <h1 class="esp-1">Cada especialista, con su próximo <mark>paso</mark></h1>
       <p class="bajada esp-3">Quien se anota como especialista entra a una lista propia, separada de la lista de espera. Su ficha dice qué pasó en cada contacto, qué sigue y quién se ocupa.</p>
       <div class="grilla esp-4">
         <figure class="c-6 con-rotulo">
-          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="escritorio" style="width:100%"><img src="img/ficha-v3.webp" alt="Ficha de un especialista anotado con su siguiente paso, historial y responsable"></div>
           <figcaption><b>Ficha de un especialista anotado.</b> Siguiente paso, historial del contacto y responsable según la carga de cada persona del equipo.</figcaption>
         </figure>
@@ -381,12 +387,12 @@
 <!-- ============ 7 · SUPERVISIÓN Y SEGUIMIENTO ============ -->
 <section class="pagina" id="supervision">
   <div class="lamina">
-    <div class="cabecera"><span>06–07 · Supervisión de operaciones y seguimiento de trabajos</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>05 · Supervisión de operaciones y seguimiento de trabajos</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">06–07</span>Supervisión de operaciones · Seguimiento de trabajos</span>
+      <span class="ceja"><span class="n">05</span>Supervisión de operaciones · Seguimiento de trabajos</span>
       <h1 class="esp-1">Lo <mark>urgente</mark>, primero</h1>
       <p class="bajada esp-3">El Inicio junta lo que no puede esperar —seguimientos vencidos, especialistas sin contactar, reclamos abiertos— y lleva a cada lista ya filtrada. Los trabajos que se hacen en las apps, en cambio, todavía no llegan al portal.</p>
-      <div class="tramo esp-4"><span class="n">06</span><h2>Supervisión de operaciones</h2></div>
+      <div class="tramo esp-4"><h2>Supervisión de operaciones</h2></div>
       <div class="grilla esp-3">
         <div class="c-5">
           <table class="tabla funciones-2">
@@ -395,20 +401,20 @@
               <tr><td><b>Bloques independientes</b><span class="que">Si uno falla, lo dice y ofrece reintentar; el resto sigue andando</span></td><td><span class="estado construido">Construido</span></td></tr>
               <tr><td><b>Buscar o ir a…</b><span class="que">Personas, pantallas y acciones desde cualquier lugar</span></td><td><span class="estado construido">Construido</span></td></tr>
               <tr><td><b>«Para hoy» en tres números</b><span class="que">Cada número lleva a la lista ya filtrada</span></td><td><span class="estado disenado">Diseñado</span></td></tr>
-              <tr><td><b>Sprint y vencimientos en el Inicio</b><span class="que">Tickets del equipo y papeles que vencen</span></td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+              <tr><td><b>Ciclo de trabajo y vencimientos en el Inicio</b><span class="que">Tickets del equipo y papeles que vencen</span></td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
             </tbody>
           </table>
         </div>
         <figure class="c-7 con-rotulo">
-          <span class="rotulo prueba">Pantalla del portal v2 · datos de muestra</span>
+          <span class="rotulo prueba">Pantalla del portal v2 · datos de prueba</span>
           <div class="escritorio" style="width:94mm"><img src="img/inicio-v2.webp" alt="Inicio del portal v2 con las cosas para hacer hoy"></div>
           <figcaption><b>Inicio del portal v2.</b> Lo que vence hoy, con su acción a un toque.</figcaption>
         </figure>
       </div>
-      <div class="tramo esp-4" id="seguimiento"><span class="n">07</span><h2>Seguimiento de trabajos</h2></div>
+      <div class="tramo esp-4" id="seguimiento"><h2>Seguimiento de trabajos</h2></div>
       <div class="grilla esp-3">
         <figure class="c-7 con-rotulo">
-          <span class="rotulo prueba">Pantalla del portal v2 · datos de muestra</span>
+          <span class="rotulo prueba">Pantalla del portal v2 · datos de prueba</span>
           <div class="escritorio" style="width:100%"><img src="img/solicitudes-v2.webp" alt="Pantalla de solicitudes del portal: todavía no hay de dónde leer los pedidos"></div>
           <figcaption><b>Solicitudes.</b> Mientras no haya fuente, la pantalla lo dice y no muestra ningún número ni ejemplo.</figcaption>
         </figure>
@@ -433,16 +439,16 @@
 <!-- ============ 8 · COMERCIAL Y TRANSACCIONES ============ -->
 <section class="pagina" id="comercial">
   <div class="lamina">
-    <div class="cabecera"><span>08–09 · Administración comercial, transacciones y comisiones</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>06 · Administración comercial, transacciones y tarifa de servicio</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">08–09</span>Administración comercial · Transacciones y comisiones</span>
+      <span class="ceja"><span class="n">06</span>Administración comercial · Transacciones y tarifa de servicio</span>
       <h1 class="esp-1">Medir sin tocar el <mark>dinero</mark></h1>
       <p class="bajada esp-3">El portal registra cada campaña con su presupuesto, su gasto, sus enlaces y sus QR. No cobra ni paga nada: el usuario le paga directo al especialista.</p>
-      <div class="tramo esp-4"><span class="n">08</span><h2>Administración comercial</h2></div>
+      <div class="tramo esp-4"><h2>Administración comercial</h2></div>
       <div class="grilla esp-3">
         <div class="c-7">
           <figure class="con-rotulo">
-            <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="escritorio" style="width:100%"><img src="img/campana-embudo.webp" alt="Embudo de una campaña: dónde se pierde la gente"></div>
             <figcaption><b>Panel de una campaña.</b> Dónde se pierde la gente, paso a paso. Las cifras son de muestra.</figcaption>
           </figure>
@@ -460,12 +466,12 @@
           </table>
         </div>
       </div>
-      <div class="tramo esp-4" id="transacciones"><span class="n">09</span><h2>Transacciones y comisiones</h2></div>
+      <div class="tramo esp-4" id="transacciones"><h2>Transacciones y tarifa de servicio</h2></div>
       <div class="grilla esp-3">
         <div class="c-7">
           <div class="pago">
             <div class="actor">Usuario<small>paga el trabajo</small></div>
-            <div class="via">Pago directo: efectivo o Mercado Pago, cuando se valide</div>
+            <div class="via">Pago directo: en efectivo; con Mercado Pago cuando se valide la integración</div>
             <div class="actor">Especialista<small>cobra en su cuenta</small></div>
           </div>
           <div class="baja">El usuario informa que pagó</div>
@@ -478,14 +484,14 @@
         <div class="c-5">
           <div class="tarifa tarjeta blanca">
             <h4>Tarifa de Handyx</h4>
-            <div class="fila-t"><span class="quien">Al especialista</span><span class="valor texto">Sin comisión</span><span class="tipo-dato">Vigente · decisión del 07/11/2026</span></div>
-            <div class="fila-t"><span class="quien">Al usuario, hasta el 10/12/2026</span><span class="valor">0 %</span><span class="tipo-dato">Vigente · decisión del 07/11/2026</span></div>
+            <div class="fila-t"><span class="quien">Al especialista</span><span class="valor texto">Sin comisión</span><span class="tipo-dato">Decisión del fundador · 07/11/2026</span></div>
+            <div class="fila-t"><span class="quien">Al usuario, hasta el 10/12/2026</span><span class="valor">0 %</span><span class="tipo-dato">Decisión del fundador · 07/11/2026</span></div>
             <div class="fila-t"><span class="quien">Al usuario, después, sobre el precio del especialista</span><span class="valor">15 %</span><span class="tipo-dato">En evaluación</span></div>
             <div class="fila-t"><span class="quien">Cómo se cobrará</span><span class="valor texto">[a definir]</span></div>
           </div>
         </div>
       </div>
-      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> El portal no procesa pagos, no liquida ni factura comisiones. Tarifa: decisión del 07/11/2026; el 15 % está en evaluación, sin política aprobada ni mecanismo de cobro. Campañas: portal v2 y backend de captación (construido); panel del lienzo v3 con datos ficticios.</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> El portal no procesa pagos ni liquida ni factura la tarifa. Tarifa: decisión del fundador del 07/11/2026; el 15 % está en evaluación, sin política aprobada ni mecanismo de cobro. Campañas: portal v2 y backend de captación (construido); panel del lienzo v3 con datos ficticios.</p>
     </div>
     <div class="folio"><span>Handyx · Operations Portal</span><span class="folio-n">00</span></div>
   </div>
@@ -494,13 +500,13 @@
 <!-- ============ 9 · INCIDENCIAS Y SOPORTE ============ -->
 <section class="pagina" id="incidencias">
   <div class="lamina">
-    <div class="cabecera"><span>10 · Incidencias y soporte</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>07 · Incidencias y soporte</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">10</span>Incidencias y soporte</span>
+      <span class="ceja"><span class="n">07</span>Incidencias y soporte</span>
       <h1 class="esp-1">Lo grave se responde <mark>hoy</mark></h1>
       <p class="bajada esp-3">El plazo sale de la gravedad: crítica y alta, en el día; media, en dos días; baja, en tres. Lo vencido va primero y ningún caso se cierra sin escribir cómo se resolvió.</p>
       <figure class="con-rotulo esp-4">
-        <span class="rotulo diseno">Diseño propuesto · Muestra · datos ficticios</span>
+        <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
         <div class="escritorio" style="width:166mm"><img src="img/reclamos-v3.webp" alt="Reclamos ordenados en columnas según el plazo de respuesta"></div>
         <figcaption><b>Reclamos por plazo.</b> Tres columnas según cuándo vence cada caso; los ejemplos de la muestra son ficticios.</figcaption>
       </figure>
@@ -531,14 +537,14 @@
 <!-- ============ 10 · ANALÍTICA Y MÉTRICAS ============ -->
 <section class="pagina" id="analitica">
   <div class="lamina">
-    <div class="cabecera"><span>11 · Analítica y métricas</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>08 · Analítica y métricas</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">11</span>Analítica y métricas</span>
+      <span class="ceja"><span class="n">08</span>Analítica y métricas</span>
       <h1 class="esp-1">Medir con <mark>método</mark></h1>
       <p class="bajada esp-3">Cada número responde una pregunta y dice sobre cuántas personas se calcula, de dónde sale y en qué ventana. Si la fuente todavía no existe, dice «Sin dato».</p>
       <div class="grilla esp-4">
         <figure class="c-7 con-rotulo">
-          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="escritorio" style="width:100%"><img src="img/sistema-estructura.webp" alt="Anatomía de un panel: pregunta, fuente, ventana y base"></div>
           <figcaption><b>Sistema visual del portal.</b> Cada panel lleva su pregunta, su fuente, su ventana y su base (n).</figcaption>
         </figure>
@@ -553,7 +559,7 @@
         </div>
       </div>
       <figure class="con-rotulo esp-4">
-        <span class="rotulo diseno">Diseño propuesto · Muestra · datos ficticios</span>
+        <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
         <div class="escritorio" style="width:174mm"><img src="img/inicio-semana.webp" alt="Cuatro preguntas de la semana en el Inicio, cada una con su número y su fuente"></div>
         <figcaption><b>«¿Cómo viene la semana?»</b> Cuatro preguntas con su número, la comparación y la fuente; la cuarta todavía no tiene dato.</figcaption>
       </figure>
@@ -576,9 +582,9 @@
 <!-- ============ 11 · COHORTES Y RETENCIÓN ============ -->
 <section class="pagina" id="cohortes">
   <div class="lamina">
-    <div class="cabecera"><span>12 · Cohortes y retención</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>09 · Cohortes y retención</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">12</span>Cohortes y retención</span>
+      <span class="ceja"><span class="n">09</span>Cohortes y retención</span>
       <h1 class="esp-1">¿Atendemos mejor a los que llegan <mark>ahora</mark>?</h1>
       <p class="bajada esp-3">Una cohorte junta a quienes se anotaron la misma semana o el mismo mes y sigue qué pasa con ellos. Hoy mide el contacto; la retención de clientes de la app es un concepto.</p>
       <figure class="con-rotulo esp-4">
@@ -632,9 +638,9 @@
 <!-- ============ 12 · MAPAS Y ACTIVIDAD TERRITORIAL ============ -->
 <section class="pagina" id="mapa">
   <div class="lamina">
-    <div class="cabecera"><span>13 · Mapas y actividad territorial</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>10 · Mapas y actividad territorial</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">13</span>Mapas y actividad territorial</span>
+      <span class="ceja"><span class="n">10</span>Mapas y actividad territorial</span>
       <h1 class="esp-1">El <mark>territorio</mark>, barrio por barrio</h1>
       <p class="bajada esp-3">El portal ya tiene la geografía real del Partido. Lo que se pinte encima —especialistas, pedidos, reclamos— depende de que cada alta diga su barrio.</p>
       <div class="grilla esp-4">
@@ -676,29 +682,29 @@
 <!-- ============ 13 · HERRAMIENTAS DE SUPERVISIÓN ============ -->
 <section class="pagina" id="herramientas">
   <div class="lamina">
-    <div class="cabecera"><span>14 · Herramientas de supervisión</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>11 · Herramientas de supervisión</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">14</span>Herramientas de supervisión</span>
+      <span class="ceja"><span class="n">11</span>Herramientas de supervisión</span>
       <h1 class="esp-1">Quién hace qué, y <mark>cuándo</mark></h1>
       <p class="bajada esp-3">El equipo se organiza donde atiende: tickets con responsable y fecha, guías para hacer las cosas siempre igual y los papeles de la empresa al día.</p>
       <div class="grilla esp-4">
         <figure class="c-6 con-rotulo">
-          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="escritorio" style="width:100%"><img src="img/docs-v3.webp" alt="Guía del equipo para contactar a un preregistro, abierta en un modal"></div>
           <figcaption><b>Docs.</b> Una guía del equipo, con índice, pasos y lista de control.</figcaption>
         </figure>
         <figure class="c-6 con-rotulo">
-          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="escritorio" style="width:100%"><img src="img/tareas-v3.webp" alt="Tablero de tareas del equipo por columnas"></div>
-          <figcaption><b>Tareas.</b> Tickets del equipo por estado, con responsable y avance del sprint.</figcaption>
+          <figcaption><b>Tareas.</b> Tickets del equipo por estado, con responsable y avance del ciclo de trabajo.</figcaption>
         </figure>
       </div>
       <table class="tabla funciones esp-4">
         <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
         <tbody>
-          <tr><td class="fuerte">Tickets del equipo</td><td>Tablero, backlog, sprints y reportes; hoy solo con muestra</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Tickets del equipo</td><td>Tablero, pendientes, ciclos de trabajo y reportes; hoy solo con muestra</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Mis tareas y menciones</td><td>Ver solo lo propio y avisar a alguien con @</td><td><span class="estado disenado">Diseñado</span></td></tr>
-          <tr><td class="fuerte">Guías y procesos</td><td>Con versiones; el editor frena teléfonos reales y claves</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Guías y procesos</td><td>Con versiones y controles para no publicar datos personales</td><td><span class="estado construido">Construido</span></td></tr>
           <tr><td class="fuerte">Papeles de la empresa</td><td>Documentos con vencimientos y versiones; hoy solo con muestra</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Permisos y registro</td><td>Lo que cada tarea permite; todo cambio queda registrado</td><td><span class="estado construido">Construido</span></td></tr>
           <tr><td class="fuerte">Consultar el registro</td><td>Ver la actividad del equipo desde el portal</td><td><span class="estado concepto">Concepto</span></td></tr>
@@ -720,15 +726,15 @@
 <!-- ============ 14 · ESCALABILIDAD Y ROADMAP ============ -->
 <section class="pagina" id="escalabilidad">
   <div class="lamina">
-    <div class="cabecera"><span>15–16 · Escalabilidad y roadmap operativo</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>12 · Escalabilidad y roadmap operativo</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">15–16</span>Escalabilidad · Roadmap operativo</span>
+      <span class="ceja"><span class="n">12</span>Escalabilidad · Roadmap operativo</span>
       <h1 class="esp-1">Crecer en <mark>orden</mark></h1>
       <p class="bajada esp-3">El portal está pensado para que alguien nuevo en el equipo aprenda solo y para sumar fuentes de datos de a una, sin inventar las que faltan.</p>
-      <div class="tramo esp-3"><span class="n">15</span><h2>Escalabilidad</h2></div>
+      <div class="tramo esp-3"><h2>Escalabilidad</h2></div>
       <div class="grilla esp-3">
         <figure class="c-6 con-rotulo">
-          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="escritorio" style="width:100%"><img src="img/tour-v3.webp" alt="Recorrido guiado que ilumina el menú del portal"></div>
           <figcaption><b>Recorrido guiado.</b> Ilumina cada parte de la pantalla y explica para qué sirve.</figcaption>
         </figure>
@@ -745,7 +751,7 @@
           <div class="nota esp-2"><b>Límite actual:</b> el mapa cubre el Partido y la importación acepta solo especialistas de Mar del Plata; otras ciudades, sin diseñar.</div>
         </div>
       </div>
-      <div class="tramo esp-3" id="roadmap"><span class="n">16</span><h2>Roadmap operativo, por condiciones y sin fechas</h2></div>
+      <div class="tramo esp-3" id="roadmap"><h2>Roadmap operativo, por condiciones y sin fechas</h2></div>
       <div class="ruta esp-3">
         <span class="cabeza">Qué tiene que pasar</span><span></span><span class="cabeza">Qué se habilita en el portal</span>
         <div class="cond"><b>Abrir la captura real</b>Aviso de privacidad definitivo y backend de captación desplegado.</div><div class="flecha"></div>
@@ -759,7 +765,7 @@
         <div class="cond"><b>Rediseño v3</b>Plan propuesto en cuatro olas, a aprobar.</div><div class="flecha"></div>
         <div class="hab">«Para hoy», guía y recorridos, mapa con preguntas y la ficha nueva.<span class="estado disenado">Diseñado</span></div>
       </div>
-      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Ninguna condición tiene fecha comprometida: fechas [a definir]. Fuentes: auditoría del portal (dependencias de cada módulo), plan del rediseño v3 (propuesta que espera aprobación) y lienzo «Portal interno v3».</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Noviembre de 2026: demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar. Ninguna condición del roadmap tiene fecha comprometida. Fuentes: auditoría del portal (dependencias de cada módulo), plan del rediseño v3 (propuesta que espera aprobación) y lienzo «Portal interno v3».</p>
     </div>
     <div class="folio"><span>Handyx · Operations Portal</span><span class="folio-n">00</span></div>
   </div>
@@ -769,11 +775,11 @@
 <section class="pagina oscuro cierre" id="cierre">
   <div class="lamina">
     <div class="a-sangre"><img class="mapa-lineas" src="../../marca/mapa-mdp-blanco.svg" alt=""></div>
-    <div class="cabecera"><span>17 · Cierre</span><span>Handyx · Operations Portal</span></div>
+    <div class="cabecera"><span>13 · Cierre</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">17</span>Cierre</span>
-      <h1 class="esp-1">No mostramos ningún número <mark>inventado</mark></h1>
-      <p class="bajada esp-3">Es una regla del portal y también de este dossier. Cada cifra dice de dónde sale; si todavía no existe, la pantalla lo dice y explica qué falta para verla.</p>
+      <span class="ceja"><span class="n">13</span>Cierre</span>
+      <h1 class="esp-1">No mostramos números sin <mark>fuente</mark></h1>
+      <p class="bajada esp-3">Es una regla del portal y también de este dossier: cada cifra dice de dónde sale y ningún número de muestra se presenta como real. Si un dato todavía no existe, la pantalla lo dice y explica qué falta.</p>
       <div class="grilla esp-4">
         <figure class="c-5 con-rotulo">
           <span class="rotulo diseno">Diseño propuesto</span>
@@ -813,15 +819,15 @@
           <div class="qr"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
           <div>
             <p class="texto-grande">La landing con la demo interactiva, los cuatro dossiers y el portafolio del fundador, en un solo lugar.</p>
-            <p class="esp-1"><b>landing.handyc.com/handyx</b></p>
+            <p class="esp-1"><b><a href="https://landing.handyc.com/handyx/">landing.handyc.com/handyx</a></b></p>
             <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
           </div>
         </div>
         <div class="contacto esp-5">
           <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
-          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
-          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
-          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+          <div class="dato"><span>Email</span><span><a href="mailto:ignaciogauna.developer@gmail.com">ignaciogauna.developer@gmail.com</a></span></div>
+          <div class="dato"><span>Teléfono</span><span><a href="tel:+5492236674044">223 667-4044</a></span></div>
+          <div class="dato"><span>Web</span><span><a href="https://landing.handyc.com/">landing.handyc.com</a></span></div>
         </div>
       </div>
       <div>
