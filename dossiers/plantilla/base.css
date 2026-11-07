@@ -343,3 +343,5 @@ h1, h2, .t1, .t2, .t-display, .tapa-titulo, .idea { text-wrap: balance; }
 .bajada, .tapa-bajada, h3, .t3, .texto-grande, .cifra-rotulo, figcaption { text-wrap: pretty; }
 /* enlaces en el PDF digital: se ven igual que el texto */
 .contacto a, .contratapa a, .p-contacto a { color: inherit; text-decoration: none; }
+/* «Cómo leer»: los rótulos largos («Muestra · datos ficticios») pasan a dos líneas en vez de pisar la descripción */
+.como-leer .def .rotulo, .como-leer .def .tipo-dato { white-space: normal; line-height: 1.25; max-width: 27mm; }

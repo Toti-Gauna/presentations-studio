@@ -24,7 +24,7 @@
 | 15 | 17 Cierre | No mostramos ningún número inventado | Estado «Fuente pendiente» (Engranaje) + mapa de líneas de la colección |
 | 16 | Contratapa | — | Copia de `paginas-comunes.html` en arena (`tapa-clara`), Engranaje, `.actual` en 04 |
 
-Los números del índice y de las cejas son los del pedido (§8), para que coincidan entre sí.
+Numeración (revisión integral): secciones 01–13 en orden de lectura, una por página, iguales en el índice y en las cejas; la tabla de arriba conserva la referencia al pedido.
 
 ## Fuentes
 
@@ -76,3 +76,21 @@ descripción), `.principios`, `.barra-estados`, `.pago` + `.baja` (flujo del din
 `.leyenda-cohorte` (esquema sin datos), `.cifra-mapa` + `.desglose`, `.ruta` (roadmap por condiciones), `.cierre`
 (página navy con el mapa de líneas) y `.contra-ops` (contratapa arena con el Engranaje). Rótulo nuevo: «Geografía real ·
 OpenStreetMap» (clase `.rotulo` sin variante).
+
+## Revisión integral (aplicada el 07/11/2026)
+
+- R-012: secciones 01–13 en orden de lectura, sin rangos; las páginas dobles llevan subtítulos sin número.
+- R-030 y R-032: leyenda común sincronizada con `paginas-comunes.html` («Construido» probado en local; «Muestra · datos
+  ficticios»; «Decisión del fundador»). Las capturas del lienzo llevan dos rótulos: «Diseño propuesto» + «Muestra · datos
+  ficticios»; las del portal v2, «Pantalla del portal v2 · datos de prueba». Se mantiene «Geografía real» en la leyenda.
+- R-031: «sprint» y «backlog» → «ciclo de trabajo» y «pendientes» (p. 7 y p. 13).
+- R-033: «Decisión del fundador · 07/11/2026» para «sin comisión» y para el 0 %; «En evaluación» para el 15 %.
+- R-040: p. 4 suma «El camino de un preregistro» (se anota → llega cifrado → ficha → contacto).
+- R-041: «Transacciones y tarifa de servicio» (índice, ceja y subtítulo de la p. 8).
+- R-042: cierre «No mostramos números sin fuente» y bajada ajustada («ningún número de muestra se presenta como real»).
+- R-043: «Guías y procesos · Con versiones y controles para no publicar datos personales».
+- R-044: grafía «preregistro» en el texto propio (también en el menú de la tapa); las capturas conservan «Pre-registros».
+- Decisiones de Ignacio: Mercado Pago «en efectivo; con Mercado Pago cuando se valide la integración» (p. 4 y p. 8);
+  lanzamiento «Noviembre de 2026: demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar» (p. 14).
+- Contratapa con los enlaces de `paginas-comunes.html` (https, mailto, tel). En «Cómo leer», el rótulo largo de muestra
+  ahora puede partirse en dos líneas para no pisar su descripción.
