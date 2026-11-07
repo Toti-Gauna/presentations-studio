@@ -1,5 +1,20 @@
-[{"de":"usuario/I-Inicio.png","a":"i-inicio.webp","recorte":[0,0,1170,2532]},
- {"de":"usuario/P-Revisar.png","a":"p-revisar.webp"},
- {"de":"usuario/recortes/C-Propuestas-recorte.png","a":"c-propuestas.webp"},
- {"de":"especialista/F-InicioDia.png","a":"f-inicio-dia.webp"},
- {"de":"portal/recortes/Inicio-para-hoy.png","a":"portal-inicio.webp"}]
+[
+ {
+  "de": "usuario/I-Inicio.png",
+  "a": "i-inicio.webp",
+  "recorte": [
+   0,
+   0,
+   1170,
+   2532
+  ]
+ },
+ {
+  "de": "usuario/P-Revisar.png",
+  "a": "p-revisar.webp"
+ },
+ {
+  "de": "usuario/recortes/C-Propuestas-recorte.png",
+  "a": "c-propuestas.webp"
+ }
+]

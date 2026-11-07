@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-AR" class="apaisado" data-pieza="triptico">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Tríptico · guía de plegado para la imprenta</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  .cara { position: relative; width: 110mm; height: 77.8mm; box-shadow: 0 0 0 0.3mm var(--navy); background: #FFFFFF; overflow: hidden; }
+  .cara img { width: 100%; height: 100%; display: block; opacity: 0.55; }
+  .cara .pliegue { position: absolute; top: -2mm; bottom: -2mm; border-left: 0.45mm dashed var(--rojo); }
+  .cara .ancho { position: absolute; bottom: 2mm; transform: translateX(-50%); font: 800 7pt/1 var(--f-texto); color: var(--navy); background: #FFFFFF; padding: 0.8mm 1.4mm; border-radius: 0.6mm; }
+  .cara .panel-n { position: absolute; top: 2.4mm; transform: translateX(-50%); font: 800 6.6pt/1 var(--f-texto); color: #FFFFFF; background: var(--navy); padding: 0.9mm 1.6mm; border-radius: 99px; white-space: nowrap; }
+  .pasos-pliegue { display: grid; gap: 2.6mm; }
+  .esquema { display: flex; align-items: flex-end; gap: 8mm; }
+  .esquema svg { width: 54mm; height: 30mm; }
+  .esquema svg .papel { fill: none; stroke: var(--navy); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .esquema svg .solapa { stroke: var(--rojo); }
+  .esquema p { font-size: 7.6pt; }
+</style>
+</head>
+<body>
+<section class="pagina">
+  <div class="lamina">
+    <div class="caja" style="top:14mm;bottom:12mm;left:14mm;right:14mm">
+      <span class="ceja">Guía para la imprenta</span>
+      <h1 class="esp-1" style="font-size:20pt">Tríptico Handyx · <mark>plegado</mark> envolvente</h1>
+      <p class="esp-2" style="max-width:240mm">A4 apaisado (297 × 210 mm), doble faz, con 3 mm de sangrado por lado en el PDF de imprenta. Dos pliegues verticales; el panel de 97 mm es la solapa que se pliega hacia adentro primero. Las líneas rojas punteadas marcan los pliegues: no se imprimen.</p>
+      <div class="fila esp-3" style="gap:10mm;align-items:flex-start">
+        <div>
+          <h4>Cara exterior</h4>
+          <div class="cara esp-1">
+            <img src="img/cara-exterior.webp" alt="">
+            <span class="pliegue" style="left:32.65%"></span><span class="pliegue" style="left:66.33%"></span>
+            <span class="panel-n" style="left:16.3%">3 · Solapa (cierre)</span><span class="panel-n" style="left:49.5%">2 · Contratapa</span><span class="panel-n" style="left:83.2%">1 · Portada</span>
+            <span class="ancho" style="left:16.3%">97 mm</span><span class="ancho" style="left:49.5%">100 mm</span><span class="ancho" style="left:83.2%">100 mm</span>
+          </div>
+        </div>
+        <div>
+          <h4>Cara interior</h4>
+          <div class="cara esp-1">
+            <img src="img/cara-interior.webp" alt="">
+            <span class="pliegue" style="left:33.67%"></span><span class="pliegue" style="left:67.34%"></span>
+            <span class="panel-n" style="left:16.8%">4 · El problema</span><span class="panel-n" style="left:50.5%">5 · La solución</span><span class="panel-n" style="left:83.7%">6 · El ecosistema</span>
+            <span class="ancho" style="left:16.8%">100 mm</span><span class="ancho" style="left:50.5%">100 mm</span><span class="ancho" style="left:83.7%">97 mm</span>
+          </div>
+        </div>
+      </div>
+      <div class="grilla esp-4">
+        <div class="c-6 pasos-pliegue">
+          <h4>Cómo se pliega</h4>
+          <div class="paso"><span class="paso-n">1</span><p>Con la cara interior hacia arriba, plegá el panel 6 (el de 97 mm, a la derecha) sobre el panel 5.</p></div>
+          <div class="paso"><span class="paso-n">2</span><p>Plegá el panel 4 (izquierda) encima: queda arriba la portada (panel 1) y atrás la contratapa (panel 2).</p></div>
+          <div class="paso"><span class="paso-n">3</span><p>Al abrir la portada se ve la solapa (panel 3) junto al problema; abierto del todo, el interior completo.</p></div>
+        </div>
+        <div class="c-6">
+          <h4>Especificaciones</h4>
+          <table class="tabla esp-1">
+            <tbody>
+              <tr><td class="fuerte">Formato final</td><td>297 × 210 mm, plegado a 100 × 210 mm</td></tr>
+              <tr><td class="fuerte">Archivo</td><td>Handyx-Triptico-imprenta.pdf · 2 páginas (exterior, interior) · 303 × 216 mm con sangrado · TrimBox y BleedBox</td></tr>
+              <tr><td class="fuerte">Papel sugerido</td><td>Ilustración mate 170 g, doble faz; con hendido en los pliegues</td></tr>
+              <tr><td class="fuerte">Color</td><td>RGB; pedir prueba de color antes de una tirada grande</td></tr>
+              <tr><td class="fuerte">Volteo</td><td>Por el lado largo (las dos caras quedan derechas)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>
