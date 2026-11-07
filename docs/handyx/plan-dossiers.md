@@ -50,9 +50,10 @@ Como máximo 4–5 agentes a la vez (con 7 en paralelo llegamos al límite de us
 - **03 Professional App** (~18 p.): el profesional como centro; herramientas por oficio solo las diseñadas, el resto como evolución.
 - **04 Operations Portal** (~14 p.): arquitectura, operación, métricas, mapa, cohortes; sin credenciales ni datos sensibles.
 
-## Decisiones que necesito (van impresas)
+## Decisiones de Ignacio (07/11)
 
-1. Dirección fija del QR (propuesta: `landing.handyc.com/handyx/`, publicada con el método de la landing; deploy con tu OK).
-2. Botones del hub: landing, tríptico, 4 dossiers y portafolio (7), o sin el tríptico (6).
-3. Contacto impreso: mail, teléfono o WhatsApp y web.
-4. Cifras de Business: las del pitch con su rótulo; CAC presentado como techo de USD 6 y «a medir».
+1. QR único fijo: `landing.handyc.com/handyx/`, publicado con el método de la landing; el deploy lo autoriza Ignacio.
+2. Página del QR con 6 botones: landing, los 4 dossiers y el portafolio (sin el tríptico, que ya lo tienen en la mano).
+3. Contacto impreso: ignaciogauna.developer@gmail.com · +54 9 223 667-4044 · landing.handyc.com.
+4. Business usa las cifras del pitch con su rótulo y el CAC como techo de USD 6 «a medir». Se ajusta después: lo
+   importante es que exista toda la estructura.
