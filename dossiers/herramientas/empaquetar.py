@@ -31,7 +31,8 @@ IMPRESION_TRIPTICO = """- Formato final: A4 apaisado (297 × 210 mm), doble faz,
 - Archivo de imprenta: {nombre}-imprenta.pdf, 2 páginas (exterior, interior) de 303 × 216 mm con 3 mm de sangrado,
   TrimBox y BleedBox. Paneles de 97 / 100 / 100 mm (exterior) y 100 / 100 / 97 mm (interior): el de 97 mm es la solapa
   que se pliega hacia adentro. Ver guia-de-plegado.pdf.
-- Papel sugerido: ilustración mate 170 g, con hendido en los pliegues; volteo por el lado largo. Color RGB: pedir
+- Papel sugerido: ilustración mate 170 g, con hendido en los pliegues; volteo por el lado corto (al girar la hoja de izquierda a derecha, las dos caras
+  quedan derechas): pedir una prueba impresa y plegada antes de la tirada. Color RGB: pedir
   prueba de color antes de una tirada grande."""
 
 LEEME = """Handyx · {titulo}

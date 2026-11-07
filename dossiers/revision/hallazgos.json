@@ -1,0 +1,680 @@
+{
+  "puntaje_inversor": {
+    "00-triptico": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "La portada lo dice en una frase («Conectamos a quien necesita un arreglo en su casa con especialistas de su zona…»), con Mar del Plata y seis rubros."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "Cuatro dolores concretos (a quién llamo, presupuestos que no se comparan, desorden, especialista sin herramientas), rotulados como hipótesis; sin nada que los dimensione."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 4,
+        "porque": "Circuito en cuatro pasos con dos pantallas; la de propuestas muestra un chip «Mejor promedio» que el producto todavía no tiene (R-018)."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 2,
+        "porque": "No hay ninguna señal de oportunidad (tamaño, momento, ventaja); «Crecemos de a una ciudad» es método. Es coherente con «sin cifras», pero el inversor no se lleva nada."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 1,
+        "porque": "No dice cómo gana dinero Handyx, ni siquiera «sin comisión al especialista; tarifa de servicio a quien pide» (R-020)."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 3,
+        "porque": "Hay un chip por superficie (En pruebas, En pruebas, Construido), pero nada de lo que falta: backends sin desplegar, lanzamiento, captura cerrada."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 1,
+        "porque": "No menciona que se busca inversión ni para qué; todo queda librado al QR."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 3,
+        "porque": "Invitación, QR y contacto directo; falta un gancho (estado real o pedido concreto) y hoy el QR lleva a una página que no existe (R-001)."
+      }
+    },
+    "01-business": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "Resumen ejecutivo y «Handyx en una línea» claros: marketplace de servicios del hogar en Mar del Plata, seis rubros, el especialista pone su precio y cobra directo."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "Odisea en dos carriles, seis dolores con la señal que va a medir el piloto. Honesto (hipótesis), pero sin un solo dato propio que dimensione el problema."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 5,
+        "porque": "Ecosistema (p. 6), arreglo de punta a punta (p. 7) y modelo del dinero (p. 9), cada paso con su estado."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 3,
+        "porque": "Una sola cuenta abajo-arriba (≈ USD 10,4 M con dos supuestos), total y accesible «[a investigar]»; la competencia está bien planteada, pero la Visión (40 % nacional) contradice la p. 8 (R-006)."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 4,
+        "porque": "Modelo claro (sin comisión, 15 % al usuario, flujo del dinero, ejemplo, bruto ≠ ganancia), pero el único ingreso está «en evaluación», sin forma de cobro, y el hito de diciembre depende de él (R-005)."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 4,
+        "porque": "Lo mejor del dossier: estados, verificado vs informado, roadmap y validación. Restan Mercado Pago como «confirmado» (R-007), el origen de los 56 (R-009) y el calendario de lanzamiento (R-004)."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 3,
+        "porque": "USD 100.000 con reparto y «qué destraba», pero instrumento, plazo y valuación [a definir], la tabla «categorías del pedido» confunde (R-023) y atar todo a diciembre de 2026 no cierra (R-005)."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 4,
+        "porque": "Pide una reunión concreta, muestra capacidad de ejecución verificable (7 repos, pruebas, publicaciones) y reconoce sus riesgos; lo que falta es justo lo que se conversa en esa reunión."
+      }
+    },
+    "02-customer": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "La app del usuario queda clara desde la tapa y «Handyx en una línea»."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "Cinco preguntas reales («¿Le abro la puerta?», «¿Es un precio razonable?») rotuladas como hipótesis; sin medición propia (lo dice)."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 5,
+        "porque": "Doce recorridos con pantallas, tabla de funciones con estado y flujo necesidad → resultado: el dossier de producto más completo."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 2,
+        "porque": "No es su rol: no hay frecuencia de uso ni tamaño; remite al 01."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 2,
+        "porque": "Explica la tarifa de servicio aparte y el 0 % hasta el 10/12, pero omite el 15 % que imprimen las otras piezas (R-010): no queda claro qué pagará el usuario."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 5,
+        "porque": "Dos estados por recorrido, barra de 85 funciones y «Para trabajar con datos reales» dicen con precisión qué corre y qué falta."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 2,
+        "porque": "No conecta lo que falta (servidor, Mercado Pago, pasar el lienzo a código) con la inversión del 01."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 3,
+        "porque": "Convence de que la experiencia está pensada de punta a punta, pero cierra sin una invitación explícita a ver la demo; solo la contratapa."
+      }
+    },
+    "03-professional": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "«Tu trabajo, tus precios»: la herramienta del especialista, sin comisión, queda clara desde la tapa."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "Seis hipótesis del oficio bien elegidas, cada una con su respuesta en la app, su estado y su página; sin estudio que las mida (lo dice)."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 5,
+        "porque": "Mapa de cinco pestañas, circuito de una propuesta y doce recorridos con pantallas y estados."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 3,
+        "porque": "La tesis «herramienta, no solo canal» es una diferenciación legible, pero no se dimensiona ni se conecta con el negocio."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 2,
+        "porque": "Explica que al especialista no se le cobra y la tarifa al cliente; no dice si las herramientas (presupuestador, ferretería, Camino) generan ingresos o solo retienen."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 4,
+        "porque": "Barra de 102 funciones y plan por olas muy claros; restan la frase falsa sobre reseñas (R-002) y el despliegue «al final», sin fechas, frente al «Nov. 2026» del 01 (R-004)."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 2,
+        "porque": "No dice qué parte de la inversión financia las olas o los oficios H2–H6 (el 01 asigna USD 5.000 a herramientas por oficio)."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 3,
+        "porque": "Muy sólido como producto; para un inversor falta el puente con la oferta real (56 registrados sin canal ni auditoría)."
+      }
+    },
+    "04-operations": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "Deja claro qué es el portal interno y que hoy opera solo lo que llega de la landing."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "«Detrás de cada arreglo hay trabajo que no se ve»: el problema operativo está bien contado con cuatro principios."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 5,
+        "porque": "Arquitectura con lo conectado y lo pendiente, y módulo por módulo con estado: el mejor diagrama de la colección."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 2,
+        "porque": "No es su rol; la operación con método insinúa una ventaja (escalar con proceso) sin dimensionarla."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 3,
+        "porque": "Tabla de tarifa consistente (sin comisión, 0 %, 15 % en evaluación, cobro [a definir]) y «el portal no toca el dinero»."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 5,
+        "porque": "Cada página dice que no hay datos reales, qué es v2 construido y qué es v3 o concepto; roadmap por condiciones."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 2,
+        "porque": "No vincula el backend propio del portal ni la conexión con las apps con el uso de la inversión."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 4,
+        "porque": "Ofrece mostrar el portal en una reunión y transmite una madurez operativa poco común en esta etapa."
+      }
+    },
+    "conjunto": {
+      "¿Entiendo qué es Handyx?": {
+        "puntaje": 5,
+        "porque": "Las cinco piezas usan la misma definición; no hay forma de no entenderlo."
+      },
+      "¿Entiendo qué problema resuelve?": {
+        "puntaje": 4,
+        "porque": "El problema se cuenta de los dos lados con las mismas hipótesis en todas las piezas; falta un dato propio que lo dimensione."
+      },
+      "¿Comprendo cómo funciona?": {
+        "puntaje": 5,
+        "porque": "Tríptico → 01 → 02/03/04 arma un recorrido completo, con pantallas reales y estados."
+      },
+      "¿Veo una oportunidad de negocio?": {
+        "puntaje": 3,
+        "porque": "Solo el 01 habla de oportunidad, con una cuenta de supuestos; las cifras de Visión la debilitan en lugar de reforzarla."
+      },
+      "¿Entiendo cómo pretende generar ingresos?": {
+        "puntaje": 4,
+        "porque": "Un modelo único y consistente (salvo el 02 y la landing), pero su ingreso principal está en evaluación."
+      },
+      "¿Sé qué está desarrollado y qué falta?": {
+        "puntaje": 4,
+        "porque": "La honestidad sobre estados es el gran activo de la colección; la empañan cuatro contradicciones entre piezas (reseñas, Mercado Pago, verificación de pagos, calendario)."
+      },
+      "¿Comprendo para qué necesita inversión?": {
+        "puntaje": 3,
+        "porque": "El para qué está en el 01, partida por partida; faltan plazo, instrumento y un hito alcanzable."
+      },
+      "¿Tengo razones suficientes para solicitar una reunión?": {
+        "puntaje": 4,
+        "porque": "Hay razones para pedir la reunión (ejecución demostrable, pedido acotado, transparencia); antes hay que publicar el QR y corregir la landing, que hoy contradicen el material."
+      }
+    }
+  },
+  "hallazgos": [
+    {
+      "id": "R-001",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "bloqueante",
+      "tipo": "imprenta",
+      "que": "El QR decodifica bien en las cinco piezas (https://landing.handyc.com/handyx/, versión 3, 27–29 mm, módulo ≈ 1 mm, probado con jsqr), pero el destino no está publicado: /handyx/ existe solo en la rama claude/modest-gauss-jin0gy de Handy-landing-page-fe (06d3db1, 63ec496), sin merge a main (ac3b245, que es lo que publica el deploy), y public/handyx/ tiene solo LEEME.md, sin los cuatro PDF. Hoy el escaneo termina en el 404 del sitio.",
+      "donde": "QR y «landing.handyc.com/handyx» del tríptico (p. 1, contratapa) y de las contratapas 01 p. 20, 02 p. 20, 03 p. 20 y 04 p. 16.",
+      "arreglo": "Antes de la tirada: con el OK de Ignacio, mergear /handyx/ a main, copiar salida/entregables/dossiers/pdf-para-landing/*.pdf a public/handyx/ con esos nombres, esperar el deploy y escanear una prueba impresa con un iPhone y un Android hasta ver los seis botones y abrir los cuatro PDF."
+    },
+    {
+      "id": "R-002",
+      "pieza": "03-professional",
+      "pagina": 17,
+      "severidad": "bloqueante",
+      "tipo": "verdad",
+      "que": "Afirma algo falso y contradice al 02: la reseña opcional existe en código (U-S-11, En pruebas en la vista de prueba de una rama) y las opiniones están en el diseño (U-C-08 y E-CU-02 «…certificados y opiniones», Diseñado). El 02 lo imprime en p. 11, 16 y 18. Además, la fila «Perfil con presentación» le saca «opiniones» a E-CU-02.",
+      "donde": "«Todavía no hay calificaciones. No existe un sistema de calificaciones ni de opiniones de clientes, ni en el código ni en el plan.»",
+      "arreglo": "Reemplazar por: «Todavía no hay calificaciones reales. La reseña opcional del cliente corre solo en la vista de prueba de una rama, sin servidor ni política de moderación, y el perfil con opiniones está en el diseño. Hoy la reputación es el perfil: rubros habilitados, certificados revisados y el sello que pone el equipo.» En la tabla: «Foto, presentación, trabajos verificados, certificados y opiniones (diseño)»."
+    },
+    {
+      "id": "R-003",
+      "pieza": "01-business",
+      "pagina": 19,
+      "severidad": "bloqueante",
+      "tipo": "seguridad",
+      "que": "Se imprime el nombre de una persona real sin consentimiento registrado: la auditoría lo deja pendiente («¿Abigail acepta figurar con nombre?», negocio.json, faltantes; negocio.md: «Imprimir el nombre de Abigail requiere su OK») y las NOTAS lo reconocen («conviene su OK»).",
+      "donde": "Bloque «Equipo»: «Abigail · Diseño y marketing, con dedicación parcial.»",
+      "arreglo": "Conseguir y registrar el OK de Abigail antes de imprimir. Si no llega, dejar el rol sin nombre: «Diseño y marketing · dedicación parcial»."
+    },
+    {
+      "id": "R-004",
+      "pieza": "01-business",
+      "pagina": 3,
+      "severidad": "importante",
+      "tipo": "coherencia",
+      "que": "El calendario no cierra entre piezas: al 07/11 ningún backend está desplegado (la misma p. 3) y la API del especialista no está en main; el 03 (p. 18) dice que el despliegue va al final de un plan por olas sin fechas y el 02 (p. 18) deja las fechas «[a definir]». «Nov. 2026» vence a las pocas semanas de repartir la pieza y el inversor lee dos calendarios incompatibles.",
+      "donde": "Cifra clave: «Nov. 2026 · lanzamiento previsto de las apps, en noviembre de 2026 · OBJETIVO».",
+      "arreglo": "Reemplazar por «Lanzamiento: fecha a confirmar · primero, desplegar los backends (p. 14)» rotulado OBJETIVO, o decir qué sale en noviembre si Ignacio lo confirma (p. ej. «demo cerrada con invitación»). Usar la misma frase en 02 p. 18 y 03 p. 18."
+    },
+    {
+      "id": "R-005",
+      "pieza": "01-business",
+      "pagina": 16,
+      "severidad": "importante",
+      "tipo": "coherencia",
+      "que": "El hito que justifica la inversión depende de una tarifa que no está decidida ni implementada (p. 9: «Cómo se cobra: en evaluación. Todavía no está implementado»; el 15 % rige recién desde el 10/12) y de tres semanas de diciembre. Además «cada partida se rinde contra el objetivo de diciembre» choca con «Plazo: [a definir]» de la misma página: parece que los USD 100.000 se gastan en siete semanas.",
+      "donde": "«Hito común: 50 trabajos con tarifa y 5 clientes que repiten en diciembre de 2026» (p. 16; también p. 13 y p. 17) y «Cada partida se rinde contra el objetivo de diciembre de 2026».",
+      "arreglo": "Escribir el hito como «50 trabajos completados y 5 clientes que repiten en diciembre de 2026 (objetivo); con tarifa, si se aprueba el 15 %» y presentar diciembre como primer punto de control: «Primer control: diciembre de 2026 · plazo de uso: [a definir]»."
+    },
+    {
+      "id": "R-006",
+      "pieza": "01-business",
+      "pagina": 18,
+      "severidad": "importante",
+      "tipo": "coherencia",
+      "que": "La Visión contradice al propio dossier: la p. 8 dice que «el plan de crecimiento no fija cuotas de mercado» y la p. 13 deja las etapas «sin sus fechas ni sus metas de cuota» y promete no abrir otra ciudad antes de consolidar Mar del Plata. Además, USD 5 M de ingreso bruto al 15 % suponen ≈ USD 33 M en trabajos por año: tres veces el mercado inicial estimado (USD 10,4 M, p. 8). Son las cifras más grandes del dossier (40 pt) y las menos fundadas.",
+      "donde": "«40 % de los servicios del hogar que contratan los particulares en la Argentina, a fines de 2027 · OBJETIVO · SIN METODOLOGÍA» y «USD 5 M de ingresos brutos anuales a fines de 2027».",
+      "arreglo": "Mantenerlas en Visión (decisión 8), pero bajarles el peso: una línea de texto «Aspiración del fundador a fines de 2027: USD 5 M de ingresos brutos y 40 % del mercado nacional (sin metodología)», sin cifras grandes. En p. 8: «El plan por etapas no fija cuotas de mercado; la aspiración de largo plazo está en la p. 18». Si Ignacio acepta, sacar el 40 %."
+    },
+    {
+      "id": "R-007",
+      "pieza": "01-business",
+      "pagina": 9,
+      "severidad": "importante",
+      "tipo": "verdad",
+      "que": "Mercado Pago figura como canal confirmado desde el lanzamiento, pero está En pruebas con la integración cerrada hasta validarla (U-S-09; lo dicen 01 p. 14, 02 p. 13 y 04 p. 4). Hoy solo el efectivo funciona.",
+      "donde": "p. 9, columna «CONFIRMADA · Desde el lanzamiento»: «El pago del trabajo va directo al especialista: efectivo o Mercado Pago.»; también p. 5 («en efectivo o con Mercado Pago») y p. 6 («Pago directo del trabajo, en efectivo o con Mercado Pago»).",
+      "arreglo": "En p. 5, 6 y 9: «en efectivo; con Mercado Pago cuando se valide la integración» (el mismo texto que 02 p. 13 y 04 p. 4)."
+    },
+    {
+      "id": "R-008",
+      "pieza": "01-business",
+      "pagina": 7,
+      "severidad": "importante",
+      "tipo": "verdad",
+      "que": "Imprime una versión de una contradicción abierta: quién verifica un pago (usuario.json: «cuando el especialista lo confirma» frente a «verificado por el proveedor u Operations»). El 02 evitó S-PagoInformado por eso y el 03 (p. 11) describe otro circuito: informa el especialista y queda «informado hasta que se confirma».",
+      "donde": "Pie: «Informado no es verificado: el pago queda verificado cuando el especialista lo confirma.» y 5.ª pantalla de la tira (S-PagoInformado: «Julián confirma que lo recibió»).",
+      "arreglo": "Pie: «Informado no es verificado: un pago informado queda así hasta que se verifica.» Reemplazar la 5.ª pantalla por la forma de pago de la PWA (02 p. 13) o recortar la línea de quién confirma."
+    },
+    {
+      "id": "R-009",
+      "pieza": "01-business",
+      "pagina": 17,
+      "severidad": "importante",
+      "tipo": "verdad",
+      "que": "La misma página dice que el registro de la landing sigue cerrado y la auditoría marca que los 56 no pueden salir del CRM («Origen de los 56…», negocio.json: «¿Cómo se registraron… y con qué consentimiento?»). El rótulo «sin auditar» está, pero el inversor va a preguntar «¿registrados dónde?».",
+      "donde": "«56 · especialistas registrados» (también 03 p. 19) junto a «landing.handyc.com · registro todavía cerrado».",
+      "arreglo": "Sumar el canal en una línea, según confirme Ignacio (p. ej. «anotados por el fundador fuera de la landing, en una planilla propia, con su consentimiento»). Si no se puede decir: «canal y consentimiento a documentar»."
+    },
+    {
+      "id": "R-010",
+      "pieza": "02-customer",
+      "pagina": 6,
+      "severidad": "importante",
+      "tipo": "coherencia",
+      "que": "La decisión 5 manda imprimir «después, 15 %, en evaluación» y lo hacen 01 p. 9, 03 p. 4 y 04 p. 8. El dossier que explica qué paga el usuario es el único que no dice el porcentaje: parece que se oculta el costo.",
+      "donde": "p. 6: «Tarifa de servicio hasta el 10/12/2026. Después, en evaluación: la app avisa antes de cualquier cambio.»; p. 19, «A definir»: «la tarifa de servicio después del 10/12/2026 (en evaluación)».",
+      "arreglo": "«0 % hasta el 10/12/2026; después, 15 % sobre el precio del especialista, en evaluación (sin política aprobada ni forma de cobro)», en p. 6 y en la caja «A definir» de p. 19."
+    },
+    {
+      "id": "R-011",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "importante",
+      "tipo": "coherencia",
+      "que": "El primer botón del QR lleva a la landing y a su demo, que todavía dicen 10 % al cliente + 10 % al especialista, «primer mes sin tarifa» y camada fundadora al 5 % (src/content/tarifas.json en main). Contradice la tarifa impresa en las cinco piezas.",
+      "donde": "Botón «Landing» del hub (tríptico p. 1 y contratapas) → landing.handyc.com y /demo/.",
+      "arreglo": "Corregir la landing y la demo antes de repartir el material (lo recomienda la decisión 5). Mientras tanto, en /handyx/, junto al botón «Landing»: «La tarifa vigente es la de los dossiers»."
+    },
+    {
+      "id": "R-012",
+      "pieza": "03-professional",
+      "pagina": 2,
+      "severidad": "importante",
+      "tipo": "editorial",
+      "que": "Los números de sección son los del pedido interno (§7), no el orden de lectura: en el 03 el índice va 10 → 13 → 11–12 → 13 → 13 → 13; en el 02 el «12» aparece dos veces; en el 04 hay rangos (06–07, 08–09, 15–16) y dos entradas por página. El lector ve dos columnas de números que no coinciden ni avanzan, y lo toma por un error.",
+      "donde": "Índice del 03: «10 Agenda y organización · 13 Modo trabajo · 11–12 Gestión de clientes… · 13 Herramientas administrativas · 13 Obras y equipo · 13 Ferretería» (y las cejas); índices de 02 y 04.",
+      "arreglo": "Numerar las secciones en orden de lectura (02, 03, 04…), o sacar el número de sección del índice y de las cejas y dejar solo el folio. Aplicar la misma regla en 01–04."
+    },
+    {
+      "id": "R-013",
+      "pieza": "00-triptico",
+      "pagina": 2,
+      "severidad": "importante",
+      "tipo": "imprenta",
+      "que": "La ceja del panel navy no se lee: contraste medido 2,4:1 en texto de 6,8 pt en mayúsculas. En el resto de la colección, las cejas sobre navy van en amarillo (regla .oscuro .ceja).",
+      "donde": "Panel 6 (interior), ceja «EL ECOSISTEMA»: azul #1F57A8 sobre navy #0E1D36.",
+      "arreglo": "En .p-ecosistema: .ceja { color: var(--amarillo) } (o blanco al 70 %), y volver a exportar."
+    },
+    {
+      "id": "R-014",
+      "pieza": "00-triptico",
+      "pagina": null,
+      "severidad": "importante",
+      "tipo": "imprenta",
+      "que": "Instrucción de volteo probablemente invertida. Las dos caras están en apaisado y el tríptico se da vuelta de izquierda a derecha. Para que el panel 4 quede detrás de la portada y el 6 detrás de la solapa, las dos caras derechas, la hoja se voltea sobre el lado corto («cabeza con cabeza»). Con «lado largo», en la convención habitual de los drivers y de la imposición, el interior sale invertido.",
+      "donde": "guia-de-plegado.pdf (y en el zip del tríptico), Especificaciones: «Volteo: Por el lado largo (las dos caras quedan derechas)».",
+      "arreglo": "Cambiar a «Volteo: por el lado corto (cabeza con cabeza): al girar la hoja de izquierda a derecha, las dos caras quedan derechas» y pedir una prueba impresa y plegada antes de la tirada."
+    },
+    {
+      "id": "R-015",
+      "pieza": "00-triptico",
+      "pagina": 1,
+      "severidad": "importante",
+      "tipo": "verdad",
+      "que": "Afirma una cobertura que no está respaldada: hay 56 especialistas registrados, sin auditar, y sin barrio, porque el alta todavía no lo guarda (04 p. 12). Es la primera pieza que lee el inversor.",
+      "donde": "Panel 3, «Nuestra visión»: «Empezamos en Mar del Plata, con seis rubros y especialistas de cada barrio.»",
+      "arreglo": "«Empezamos en Mar del Plata, con seis rubros, y sumamos especialistas barrio por barrio.»"
+    },
+    {
+      "id": "R-016",
+      "pieza": "00-triptico",
+      "pagina": 1,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "Títulos con una palabra sola en la última línea.",
+      "donde": "Panel 3: «…para quien lo pide y para quien lo / hace.»; panel 2: «Te invitamos a recorrer / Handyx».",
+      "arreglo": "text-wrap: balance en los títulos del tríptico (como los h1 de los dossiers) o reescribir: «Recorré Handyx» y «…simple, claro y justo para quien lo pide y para quien lo hace»."
+    },
+    {
+      "id": "R-017",
+      "pieza": "00-triptico",
+      "pagina": 2,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "Un solo chip «En pruebas» cubre funciones que son diseño o concepto: el presupuestador con lista de precios está Diseñado; las herramientas del oficio son H0 Diseñado, H1 en una rama y H2–H6 Concepto.",
+      "donde": "Professional App: «…pedidos, presupuestos, agenda, cobro y herramientas del oficio.» + chip «En pruebas».",
+      "arreglo": "«Pedidos, propuestas, agenda y cobro (en pruebas); presupuestador y herramientas del oficio, en diseño», o sacar «y herramientas del oficio»."
+    },
+    {
+      "id": "R-018",
+      "pieza": "00-triptico",
+      "pagina": 2,
+      "severidad": "menor",
+      "tipo": "seguridad",
+      "que": "Las tres pantallas del tríptico tienen nombres y montos (Julián Ortiz, Diego Herrera, $ 45.000, «4,9 · 23 trabajos») con el rótulo «Diseño propuesto» a secas; en los dossiers el rótulo suma «datos ficticios». La de propuestas además muestra el chip «Mejor promedio», un ranking que el producto no tiene («sin rankings», U-C-04 en evaluación).",
+      "donde": "Portada (I-Inicio) y panel 5 (Revisar y publicar, Propuestas): rótulo «DISEÑO PROPUESTO».",
+      "arreglo": "Rótulo «Diseño propuesto · datos ficticios» en las tres. En el panel 5, usar la lista por llegada (C-Propuestas sin el chip, o la captura de la PWA «no es una recomendación ni un ranking»)."
+    },
+    {
+      "id": "R-019",
+      "pieza": "00-triptico",
+      "pagina": 1,
+      "severidad": "menor",
+      "tipo": "imprenta",
+      "que": "Crédito del mapa en gris de 5,8 pt sobre amarillo: contraste ≈ 3,7:1.",
+      "donde": "Panel 3, pie: «Mapa: © colaboradores de OpenStreetMap».",
+      "arreglo": "Navy al 75 % (o #4A5468) para ese pie."
+    },
+    {
+      "id": "R-020",
+      "pieza": "00-triptico",
+      "pagina": 2,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "El tríptico no dice cómo gana dinero Handyx, que es de las primeras preguntas de un inversor. La auditoría pide no poner porcentajes, pero una frase cualitativa entra.",
+      "donde": "Panel 5 o panel 6 (interior).",
+      "arreglo": "Sumar una línea: «El especialista cobra su precio completo, sin comisión; Handyx cobra una tarifa de servicio a quien pide (en evaluación).»"
+    },
+    {
+      "id": "R-021",
+      "pieza": "00-triptico",
+      "pagina": 1,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "La portada del tríptico y la del 02 son casi la misma composición: fondo azul, I-Inicio con «Julián Ortiz · Jue 19/11» y el Foco saludando. La misma pantalla vuelve en 02 p. 7. La carta de presentación pierde identidad propia.",
+      "donde": "Tríptico p. 1, panel 1, frente a la tapa del 02.",
+      "arreglo": "En el tríptico, otra pantalla (p. ej. propuestas por llegada) o una composición de las tres superficies, coherente con «Tres superficies, una misma empresa»."
+    },
+    {
+      "id": "R-022",
+      "pieza": "01-business",
+      "pagina": 3,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Los pies citan identificadores internos que el inversor no entiende y que parecen claves de base de datos. Lo mismo pasa con los códigos U-R-01…12 en el mapa de la experiencia del 02.",
+      "donde": "01, pies de p. 3 a 18: «PROFESIONES-INICIALES», «INV-M-*, INV-O-*…», «EJ-P, EJ-F, EJ-T», «META-5M», etc.; 02 p. 3: «U-R-01 Crear la cuenta»…",
+      "arreglo": "En el impreso, fuente legible y fecha («Presentación de ATICMA, corte 04/11»; «Propuesta de reparto del 05/11»); los identificadores, en un anexo o solo en la versión digital. En 02 p. 3, numerar 1–12 o sacar los códigos."
+    },
+    {
+      "id": "R-023",
+      "pieza": "01-business",
+      "pagina": 16,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Se filtra el pedido interno: «las categorías del pedido» son las del brief de Ignacio, que el inversor no conoce. Tres filas «sin asignación en la propuesta» se leen como huecos.",
+      "donde": "«LAS CATEGORÍAS DEL PEDIDO, EN LA PROPUESTA» con «Producto y experiencia de usuario / Equipo / Expansión · sin asignación en la propuesta».",
+      "arreglo": "Titular «El reparto, por categoría», dejar solo las categorías con monto y resumir el resto en una línea: «Equipo, producto y expansión no tienen asignación en esta propuesta»."
+    },
+    {
+      "id": "R-024",
+      "pieza": "01-business",
+      "pagina": 12,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "El título promete umbrales que la tabla no muestra (están en growth.md como «propuestos», pero no en afirmaciones.json).",
+      "donde": "«SEIS EXPERIMENTOS, CON EL UMBRAL PARA SEGUIR O CORTAR DEFINIDO ANTES DE VER DATOS».",
+      "arreglo": "«Seis experimentos previstos; cada uno fija su umbral para seguir o cortar antes de ver datos», o registrar los umbrales como supuestos en afirmaciones.json y sumar la columna."
+    },
+    {
+      "id": "R-025",
+      "pieza": "01-business",
+      "pagina": 12,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "El CAC estimado se rotula «Supuesto», pero se calcula con un supuesto (USD 100 ÷ 50 clientes): según la propia leyenda y CAC-ESTIMADO, es «Proyección». El techo de USD 6 usa el ingreso bruto del primer trabajo como si estuviera disponible para pagar la captación.",
+      "donde": "p. 12: «≈ USD 2 … SUPUESTO»; p. 15: «Costo de adquisición · SUPUESTO · ≈ USD 2»; p. 12: «TECHO DE CAC USD 6 · Lo máximo que puede costar traer a un cliente para que su primer trabajo lo pague…».",
+      "arreglo": "Chip «PROYECCIÓN» en el USD 2 (p. 12 y p. 15). En el techo: «…lo pague con su ingreso bruto (antes de costos de cobro y soporte)»."
+    },
+    {
+      "id": "R-026",
+      "pieza": "01-business",
+      "pagina": 15,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Los huecos se ven como una plantilla sin completar: tres cajas «Pendiente de datos medidos» y quince «[a definir]» o «[a investigar]» repartidos (p. 3, 8, 11, 13 ×6, 15, 16 ×3).",
+      "donde": "p. 15: «Conservador · Base · Ambicioso — Pendiente de datos medidos».",
+      "arreglo": "En p. 15, una sola línea («Los escenarios se arman con los datos del piloto: captación, aceptación, ticket y repetición»). En p. 19, una caja «Lo que todavía decidimos», con los 5–6 pendientes clave (tarifa y cobro, instrumento, plazo, valuación, fecha de lanzamiento, mercado total): convierte los huecos en agenda de la reunión."
+    },
+    {
+      "id": "R-027",
+      "pieza": "01-business",
+      "pagina": 6,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "«Ya está conectado» incluye algo que solo existe en ramas: la API del especialista no está en main y las dos API se probaron contra una base local.",
+      "donde": "«QUÉ YA ESTÁ CONECTADO … Las dos apps comparten su base de datos y su contrato.»",
+      "arreglo": "«…Las dos apps comparten su base de datos y su contrato (en ramas, probado en local).»"
+    },
+    {
+      "id": "R-028",
+      "pieza": "01-business",
+      "pagina": 19,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "El titular se adelanta a lo que dice el cuerpo, que en buena parte describe diseño («tres superficies diseñadas»), y la p. 3 aclara que nadie puede pedir ni cobrar un trabajo real.",
+      "donde": "«Por qué ahora · 1 El producto existe.»",
+      "arreglo": "«1 El producto se puede ver.» o «1 Buena parte del producto ya está construida.»"
+    },
+    {
+      "id": "R-029",
+      "pieza": "01-business",
+      "pagina": 7,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "La tira se presenta como un mismo trabajo, pero los montos cambian de pantalla a pantalla ($ 47.000 propuesto, $ 45.000 aceptado, $ 54.500 pagado, sin explicar el adicional). Un lector atento lo nota.",
+      "donde": "«Cinco momentos de un mismo trabajo, en las dos apps.»",
+      "arreglo": "«Cinco momentos de un arreglo, en las dos apps (pantallas de muestra de distintos ejemplos)», o recortar los montos."
+    },
+    {
+      "id": "R-030",
+      "pieza": "conjunto",
+      "pagina": 2,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "La leyenda común puede leerse como «en producción», pero lo único publicado con servidor es la landing; el portal se probó contra el backend en local. El 04 p. 3 ya lo dice mejor.",
+      "donde": "«Cómo leer» (p. 2 de 01–04): «Construido · En la rama principal y funcionando con el servidor real.»",
+      "arreglo": "«Construido · En la rama principal, probado contra el servidor real (en local, si todavía no está desplegado).»"
+    },
+    {
+      "id": "R-031",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "Jerga y anglicismos innecesarios para un inversor o un aliado.",
+      "donde": "01 p. 10 «EJEMPLOS QUE USA EL PITCH»; 01 p. 13 «plan del pitch»; 01 p. 12 «estrategia de growth»; 01 p. 11 y 04 p. 13 «backlog»; 04 p. 7 y p. 13 «sprint»; 01 p. 17 «CI en verde»; rótulos «PANTALLA DE LA PWA» (02, 03); 03 p. 11 «checklist» (el 04 dice «lista de control»).",
+      "arreglo": "«Ejemplos» y «presentación de ATICMA»; «crecimiento»; «lista de experimentos»; «ciclo de trabajo»; «Controles automáticos en verde»; «Pantalla de la app · datos de prueba»; «lista de control»."
+    },
+    {
+      "id": "R-032",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "El mismo rótulo de muestra dice cosas distintas según la pieza y no coincide con la leyenda, que define solo «Muestra».",
+      "donde": "Clase rotulo.muestra: «Datos ficticios» (02, 19 veces), «Muestra» (03, 18), «muestra» (01), «Muestra · datos ficticios» (04).",
+      "arreglo": "Un solo texto en todas las piezas: «Muestra · datos ficticios» (o «Datos ficticios», y actualizar la leyenda)."
+    },
+    {
+      "id": "R-033",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "La misma decisión de tarifa lleva cuatro rótulos de tipo distintos y ninguno está en la leyenda «Tipo de cada cifra».",
+      "donde": "01 p. 3 «DATO INFORMADO · DECISIÓN»; 01 p. 9 «CONFIRMADA»; 02 p. 6 «CONDICIÓN CONFIRMADA · 07/11/2026»; 04 p. 8 «VIGENTE · DECISIÓN DEL 07/11/2026».",
+      "arreglo": "Un rótulo único: «DECISIÓN DEL FUNDADOR · 07/11/2026» para el 0 % y «EN EVALUACIÓN» para el 15 %. Sumar «Decisión» a la leyenda."
+    },
+    {
+      "id": "R-034",
+      "pieza": "02-customer",
+      "pagina": 9,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "Las capturas de la PWA se leen en papel y dicen «Handy» y «Comisión de Handy», justo donde la colección habla de «tarifa de servicio» y «sin comisión». La arquitectura las aceptó rotuladas; queda el riesgo.",
+      "donde": "p. 9: «Comisión de Handy: $ 0 (0 %)», «12 trabajos realizados en Handy»; p. 13: «Pagás directo, sin pasar por Handy»; p. 14: «Comisión de Handy $ 0 (0 %)».",
+      "arreglo": "Corregir los textos en handyx-client-fe (Handyx, «Tarifa de servicio») y volver a capturar; si no llega, recortar esas líneas."
+    },
+    {
+      "id": "R-035",
+      "pieza": "02-customer",
+      "pagina": 17,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "La misma función aparece como Concepto en el rótulo y como Diseñado en el chip.",
+      "donde": "Ver en AR: rótulo «CONCEPTO · DATOS FICTICIOS» y chip «Ver en AR un equipo propuesto · Diseñado».",
+      "arreglo": "Rótulo «Diseño propuesto · datos ficticios» y conservar la nota «decisión técnica abierta»."
+    },
+    {
+      "id": "R-036",
+      "pieza": "02-customer",
+      "pagina": 6,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "Dos promesas de privacidad distintas sobre el teléfono del cliente: en el 02 lo ve el especialista elegido; en el 03 la llamada va por número puente, «sin ver ni mostrar teléfonos» (E-D-07, En pruebas). Así lo dice también la auditoría (U-A-04 frente a E-D-07).",
+      "donde": "02 p. 6: «Tu teléfono lo ve únicamente el especialista que elijas, cuando se acuerda el turno»; 03 p. 12: «Llamar sin mostrar teléfonos · Llamada por un número puente…».",
+      "arreglo": "Alinear con una sola regla. Por ejemplo, en 02 p. 6: «Tu teléfono se comparte solo con el especialista que elegiste, para ese turno; la llamada por número puente está en pruebas, sin proveedor»."
+    },
+    {
+      "id": "R-037",
+      "pieza": "03-professional",
+      "pagina": 19,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "La palabra «recorridos» cuenta cosas distintas en cada dossier: 12 recorridos auditados en el 02 y 16 tableros de recorrido del lienzo en el 03, cuyas páginas muestran 12.",
+      "donde": "03 p. 19: «16 · recorridos dibujados de punta a punta»; 02 p. 3: «Doce recorridos de punta a punta».",
+      "arreglo": "03 p. 19: «16 recorridos del lienzo», o «12 recorridos de punta a punta», como el 02."
+    },
+    {
+      "id": "R-038",
+      "pieza": "03-professional",
+      "pagina": 6,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "Se mezcla la voz: unos títulos le hablan al especialista con voseo y otros hablan de él en tercera persona, igual que el cuerpo.",
+      "donde": "«Vos elegís qué trabajos tomar» (p. 7), «Tu día, en orden» (p. 10), «Handyx quiere ser tu herramienta de trabajo» (p. 19) frente a «Sus rubros, sus zonas, sus tarifas» (p. 6) y «Presupuestos con su lista de precios» (p. 8).",
+      "arreglo": "Elegir una sola voz: tercera persona en los títulos («El especialista elige qué trabajos tomar», «Su día, en orden») y el voseo solo en la tapa y el cierre, o al revés."
+    },
+    {
+      "id": "R-039",
+      "pieza": "03-professional",
+      "pagina": 7,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Capturas de la PWA de 20–36 mm: como prueba de «en código hoy» no se leen.",
+      "donde": "p. 7, p. 9 y p. 13: «PANTALLA DE LA PWA · DATOS DE PRUEBA» con «En código hoy…».",
+      "arreglo": "Llevarlas a 45 mm o más, o reemplazarlas por la frase sola con el rótulo."
+    },
+    {
+      "id": "R-040",
+      "pieza": "04-operations",
+      "pagina": 4,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Página desbalanceada: el contenido termina a 188 mm y el pie empieza a 270 mm, 80 mm vacíos en el tercio inferior. Es la única página interior así.",
+      "donde": "p. 4, «Tres superficies, un circuito».",
+      "arreglo": "Ampliar el diagrama o mover ahí la leyenda y la nota «Ningún backend…», o sumar el camino de un preregistro (se anota → llega cifrado → ficha → contacto)."
+    },
+    {
+      "id": "R-041",
+      "pieza": "04-operations",
+      "pagina": 8,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "«Comisiones» en un modelo que se presenta «sin comisión»; la colección dice «tarifa de servicio».",
+      "donde": "Índice y p. 8: «09 Transacciones y comisiones» / «Gestión de transacciones y comisiones».",
+      "arreglo": "«Transacciones y tarifa de servicio»."
+    },
+    {
+      "id": "R-042",
+      "pieza": "04-operations",
+      "pagina": 15,
+      "severidad": "menor",
+      "tipo": "verdad",
+      "que": "El titular de cierre choca con las capturas de muestra que el dossier sí muestra, rotuladas pero inventadas.",
+      "donde": "«No mostramos ningún número inventado» frente a p. 10 («38», «64 %», «11 de 14») y p. 8 («3.200 · 410 · 41 · 28 · 9»).",
+      "arreglo": "«Ningún número de muestra se presenta como real» o «No mostramos números sin fuente»."
+    },
+    {
+      "id": "R-043",
+      "pieza": "04-operations",
+      "pagina": 13,
+      "severidad": "menor",
+      "tipo": "seguridad",
+      "que": "Detalle de un control interno de seguridad, innecesario para el lector.",
+      "donde": "«Guías y procesos · Con versiones; el editor frena teléfonos reales y claves».",
+      "arreglo": "«Guías y procesos · Con versiones y controles para no publicar datos personales»."
+    },
+    {
+      "id": "R-044",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "Grafía inconsistente: «preregistro» en el texto, «Pre-registros» en el esquema del portal. La RAE pide «prerregistro» (pre- + r → rr).",
+      "donde": "01 p. 5 (esquema) y 04 p. 1 (menú de la tapa): «Pre-registros»; resto: «preregistro(s)».",
+      "arreglo": "Elegir una grafía para el texto editorial («prerregistro», RAE; o «preregistro», como nombre del producto) y usarla también en el esquema y el menú."
+    },
+    {
+      "id": "R-045",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "editorial",
+      "que": "Los PDF digitales, que se bajan del hub y se leen en el teléfono, solo tienen los enlaces internos del índice: la dirección, el email y el teléfono no se pueden tocar, y el tríptico digital no tiene ningún enlace. La dirección de arte pide «PDF digital con enlaces».",
+      "donde": "Contratapas (01 p. 20, 02 p. 20, 03 p. 20, 04 p. 16), 01 p. 19 y tríptico p. 1: «landing.handyc.com/handyx», email y teléfono (0 anotaciones URI en los cinco PDF).",
+      "arreglo": "En la exportación digital: https://landing.handyc.com/handyx/, mailto:ignaciogauna.developer@gmail.com y tel:+542236674044 como enlaces."
+    },
+    {
+      "id": "R-046",
+      "pieza": "conjunto",
+      "pagina": null,
+      "severidad": "menor",
+      "tipo": "lenguaje",
+      "que": "Bajadas, destacados y subtítulos terminan con una palabra sola.",
+      "donde": "02 p. 5 «…directo al / especialista.»», 02 p. 6 «…Sin DNI ni / CUIT.», 02 p. 15 «…del equipo de / Handyx.», 02 p. 17 «Camino del / hogar», 04 p. 1 «…crecer sin / improvisar.», 04 p. 4 «…lo que pasa en / Handyx.», 04 p. 14 «…las que / faltan.»",
+      "arreglo": "text-wrap: pretty en .bajada, .cita, h2 y h3, y en la bajada de tapa; volver a exportar."
+    },
+    {
+      "id": "R-047",
+      "pieza": "01-business",
+      "pagina": 17,
+      "severidad": "menor",
+      "tipo": "coherencia",
+      "que": "La fuente de las cifras de tracción todavía dice que no se muestren. La decisión 7 autorizó imprimirlas rotuladas, pero el registro no lo refleja, y cualquier control posterior las va a marcar.",
+      "donde": "decks/handyx-aticma/afirmaciones.json: TRABAJOS-INFORMADOS y ESP-REGISTRADOS, «No mostrar hasta conciliar».",
+      "arreglo": "Actualizar la fuente y el uso de las dos afirmaciones con la decisión 7 (07/11): «se muestran rotuladas «dato informado por el fundador · sin auditar»»."
+    }
+  ]
+}

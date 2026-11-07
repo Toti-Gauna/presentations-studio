@@ -14,8 +14,8 @@
   .p-vision .lema { font: 900 10.5pt/1.2 var(--f-titulos); font-stretch: 112.5%; color: var(--azul); }
   .p-vision .personajes { display: flex; align-items: flex-end; gap: 3mm; margin-top: auto; }
   .p-vision .fondo { overflow: hidden; }
-  .p-vision .mapa { position: absolute; right: -16mm; bottom: -6mm; width: 92mm; opacity: 0.13; }
-  .p-vision .credito { font: 500 5.8pt/1.3 var(--f-texto); color: var(--navy); opacity: 0.55; margin-top: 2mm; }
+  .p-vision .mapa { position: absolute; right: -14mm; bottom: -4mm; width: 100mm; opacity: 0.16; }
+  .p-vision .credito { font: 500 6pt/1.3 var(--f-texto); color: #4A5468; margin-top: 2mm; }
   .p-contacto { --fondo-panel: #FFFFFF; justify-content: space-between; }
   .p-contacto .bloque-qr { padding: 5mm 4mm 4.2mm; border-radius: 2.6mm; background: var(--cielo); }
   .p-contacto .qr { --w: 38mm; margin: 0 auto; box-shadow: none; }
@@ -27,10 +27,16 @@
   .p-portada { --fondo-panel: var(--azul); color: #FFFFFF; }
   .p-portada .lema { font: 900 15pt/1.05 var(--f-titulos); font-stretch: 125%; color: var(--amarillo); }
   .p-portada p { color: rgba(255, 255, 255, 0.88); }
-  .p-portada .escena { position: relative; height: 96mm; margin-top: auto; }
-  .p-portada .celular { position: absolute; right: -2mm; bottom: -26mm; --w: 50mm; box-shadow: 0 3mm 10mm rgba(8, 20, 42, 0.45); }
-  .p-portada .personaje { position: absolute; left: 0; bottom: 4mm; --w: 25mm; }
-  .p-portada .rotulo { position: absolute; right: -2mm; top: 0; }
+  .p-portada .fondo { overflow: hidden; }
+  .p-portada .mapa { position: absolute; right: -4mm; top: 70mm; width: 112mm; opacity: 0.26; }
+  .p-portada .ciudad { font: 800 7pt/1.2 var(--f-texto); letter-spacing: 0.16em; text-transform: uppercase; color: var(--amarillo); }
+  .p-portada .escena { position: relative; height: 40mm; margin-top: auto; display: flex; align-items: flex-end; gap: 1.5mm; }
+  .p-portada .personaje { position: static; }
+  .p-portada .foco { --w: 17mm; }
+  .p-portada .engranaje { --w: 19mm; }
+  .p-portada .llave { --w: 22mm; }
+  .p-portada .brocha { --w: 15mm; }
+  .p-portada .credito-mapa { font: 500 5.8pt/1.3 var(--f-texto); color: rgba(255, 255, 255, 0.72); margin-top: 1mm; position: relative; z-index: 2; }
   .p-portada .pie { font: 650 6.2pt/1.5 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); position: relative; z-index: 2; }
   /* interior */
   .p-problema { --fondo-panel: var(--hueso); }
@@ -43,10 +49,14 @@
   .pasos { display: grid; gap: 2.2mm; }
   .pasos .paso p { font-size: 8.2pt; line-height: 1.4; }
   .pasos .paso b { color: var(--navy); }
-  .p-solucion .par { display: flex; gap: 4mm; justify-content: center; margin-top: auto; }
+  .p-solucion .par-figura { margin-top: auto; }
+  .p-solucion .par { display: flex; gap: 4mm; justify-content: center; }
   .p-solucion .celular { --w: 35mm; }
+  .p-solucion .modelo { padding: 2.6mm 3mm; border-radius: 2mm; background: var(--cielo); font-size: 7.8pt !important; line-height: 1.42 !important; color: var(--azul-profundo); }
+  .p-solucion .modelo b { color: var(--navy); }
   .p-ecosistema { --fondo-panel: var(--navy); color: rgba(233, 239, 249, 0.86); }
   .p-ecosistema h2 { color: #FFFFFF; }
+  .p-ecosistema .ceja { color: var(--amarillo); }
   .superficie { padding: 3.2mm 3.4mm; border-radius: 2.2mm; background: rgba(255, 255, 255, 0.07); box-shadow: inset 0 0 0 0.25mm rgba(255, 255, 255, 0.14); }
   .superficie h3 { color: #FFFFFF; font-size: 9.4pt; }
   .superficie p { font-size: 7.6pt !important; line-height: 1.4 !important; margin-top: 0.8mm; }
@@ -65,13 +75,9 @@
         <div class="fondo"><img class="mapa" src="../../marca/mapa-mdp-navy.svg" alt=""></div>
         <span class="ceja" style="color:var(--azul)">Nuestra visión</span>
         <p class="idea esp-3">Que resolver un arreglo en casa sea simple, claro y justo, para quien lo pide y para quien lo hace.</p>
-        <p class="esp-3">Empezamos en Mar del Plata, con seis rubros y especialistas de cada barrio. Crecemos de a una ciudad, cuando la anterior funciona.</p>
+        <p class="esp-3">Empezamos en Mar del Plata, con seis rubros, y sumamos especialistas barrio por barrio. Crecemos de a una ciudad, cuando la anterior funciona.</p>
         <p class="lema esp-3">Handyx. Soluciones,<br>no problemas.</p>
-        <div class="personajes">
-          <img class="personaje" style="--w:22mm" src="../../marca/personajes/bombilla-c.svg" alt="Foco">
-          <img class="personaje" style="--w:27mm" src="../../marca/personajes/llave-c.svg" alt="Llave">
-        </div>
-        <p class="credito">Mapa: © colaboradores de OpenStreetMap</p>
+        <p class="credito" style="margin-top:auto">Mapa: © colaboradores de OpenStreetMap</p>
       </div>
       <div class="panel p-contacto">
         <div class="fondo"></div>
@@ -82,30 +88,33 @@
         </div>
         <div class="bloque-qr">
           <div class="qr"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
-          <p class="url">landing.handyc.com/handyx</p>
+          <p class="url"><a href="https://landing.handyc.com/handyx/">landing.handyc.com/handyx</a></p>
           <div class="destinos esp-2"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
         </div>
         <div>
           <div class="contacto">
             <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
-            <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
-            <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
-            <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+            <div class="dato"><span>Email</span><span><a href="mailto:ignaciogauna.developer@gmail.com">ignaciogauna.developer@gmail.com</a></span></div>
+            <div class="dato"><span>Teléfono</span><span><a href="tel:+5492236674044">223 667-4044</a></span></div>
+            <div class="dato"><span>Web</span><span><a href="https://landing.handyc.com/">landing.handyc.com</a></span></div>
           </div>
           <p class="legal esp-3">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Las pantallas son diseños propuestos con datos ficticios.</p>
         </div>
       </div>
       <div class="panel p-portada">
-        <div class="fondo"></div>
+        <div class="fondo"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""></div>
         <img class="logo" style="--h:9.5mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
         <p class="lema esp-4">Soluciones,<br>no problemas.</p>
         <p class="esp-3">Conectamos a quien necesita un arreglo en su casa con especialistas de su zona, con propuestas claras para elegir por calidad y por precio.</p>
-        <div class="escena permite-salir">
-          <span class="rotulo diseno">Diseño propuesto</span>
-          <img class="personaje" src="../../marca/personajes/bombilla-b.svg" alt="Foco, personaje de Handyx">
-          <div class="celular"><img src="img/i-inicio.webp" alt="Inicio de la app del usuario"></div>
+        <p class="ciudad esp-4">Empieza en Mar del Plata</p>
+        <div class="escena">
+          <img class="personaje foco" src="../../marca/personajes/bombilla-b.svg" alt="Foco">
+          <img class="personaje engranaje" src="../../marca/personajes/engranaje-a.svg" alt="Engranaje">
+          <img class="personaje llave" src="../../marca/personajes/llave-b.svg" alt="Llave">
+          <img class="personaje brocha" src="../../marca/personajes/brocha-b.svg" alt="Brocha">
         </div>
         <p class="pie">Mar del Plata · 2026</p>
+        <p class="credito-mapa">Mapa: © colaboradores de OpenStreetMap</p>
       </div>
     </div>
   </div>
@@ -137,10 +146,14 @@
           <div class="paso"><span class="paso-n">3</span><p><b>Elegís por calidad y precio,</b> con todo a la vista para comparar.</p></div>
           <div class="paso"><span class="paso-n">4</span><p><b>Seguís el trabajo</b> y le pagás directo al especialista.</p></div>
         </div>
-        <div class="par">
-          <figure class="con-rotulo centrada"><span class="rotulo diseno">Diseño propuesto</span><div class="celular"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido"></div></figure>
-          <figure class="con-rotulo centrada"><span class="rotulo diseno">Diseño propuesto</span><div class="celular"><img src="img/c-propuestas.webp" alt="Propuestas recibidas"></div></figure>
-        </div>
+        <p class="modelo esp-3"><b>Cómo gana Handyx.</b> El especialista cobra su precio completo, sin comisión; Handyx cobra una tarifa de servicio a quien pide: 0 % hasta el 10/12/2026 y después, en evaluación.</p>
+        <figure class="con-rotulo centrada par-figura">
+          <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+          <div class="par">
+            <div class="celular"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido"></div>
+            <div class="celular"><img src="img/c-propuestas.webp" alt="Propuestas recibidas"></div>
+          </div>
+        </figure>
       </div>
       <div class="panel p-ecosistema">
         <div class="fondo"></div>
@@ -148,7 +161,7 @@
         <h2 class="esp-1">Tres superficies, una misma empresa</h2>
         <div class="dolores esp-3" style="gap:2.6mm">
           <div class="superficie"><h3>Customer App</h3><p>Para pedir, comparar propuestas, seguir el trabajo y pagar directo.</p><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="superficie"><h3>Professional App</h3><p>La herramienta de trabajo del especialista: pedidos, presupuestos, agenda, cobro y herramientas del oficio.</p><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="superficie"><h3>Professional App</h3><p>La herramienta de trabajo del especialista: pedidos, propuestas, agenda y cobro; presupuestador y herramientas del oficio.</p><span class="estado en-pruebas">En pruebas</span> <span class="estado disenado">Diseñado</span></div>
           <div class="superficie"><h3>Operations Portal</h3><p>Donde el equipo ordena preregistros, reclamos, campañas y métricas.</p><span class="estado construido">Construido</span></div>
         </div>
         <div class="invitacion esp-3">Conocé la demo y los cuatro dossiers: escaneá el código de la contratapa.</div>
