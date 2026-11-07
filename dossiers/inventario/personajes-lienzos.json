@@ -1,0 +1,540 @@
+{
+ "permitidos": [
+  "brocha",
+  "engranaje",
+  "engranaje-roto",
+  "foco",
+  "foco-roto",
+  "llave",
+  "llave-rota"
+ ],
+ "nota": "Solo detecta imágenes subidas; un personaje dibujado en SVG o CSS dentro del tablero no aparece acá: mirá la captura.",
+ "lienzos": {
+  "usuario": {
+   "tableros_con_personajes": 25,
+   "tableros_con_personajes_no_permitidos": [
+    "C-Buscando.dc.html",
+    "G-Hito.dc.html",
+    "M-Soporte.dc.html",
+    "RC-Actividad.dc.html",
+    "RC-Camino.dc.html",
+    "RC-Cuenta.dc.html",
+    "RC-Mensajes.dc.html",
+    "RC-Pedir.dc.html",
+    "RC-Propuestas.dc.html",
+    "X-Actividad.dc.html"
+   ],
+   "tableros": {
+    "C-Buscando.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "G-Camino.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "G-Hito.dc.html": {
+     "personajes": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "H-Hogar.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "I-HandIA.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "I-HandIAChat.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "I-HandIAFicha.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "I-HandIAPiensa.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "I-Inicio.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "M-Mensajes.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "M-Soporte.dc.html": {
+     "personajes": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "RC-Actividad.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Alta.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-Camino.dc.html": {
+     "personajes": [
+      "foco",
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "RC-Cuenta.dc.html": {
+     "personajes": [
+      "foco",
+      "foco-roto",
+      "grupo (canilla, gota, engranaje, foco, llave)",
+      "llave-rota"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "RC-Entrar.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-HandIA.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-Hogar.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-Mensajes.dc.html": {
+     "personajes": [
+      "foco",
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "RC-Pedir.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Propuestas.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "X-Actividad.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "X-Error.dc.html": {
+     "personajes": [
+      "foco-roto"
+     ],
+     "fuera_de_lista": []
+    },
+    "X-NoEncontrado.dc.html": {
+     "personajes": [
+      "llave-rota"
+     ],
+     "fuera_de_lista": []
+    },
+    "X-Privacidad.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    }
+   }
+  },
+  "portal": {
+   "tableros_con_personajes": 8,
+   "tableros_con_personajes_no_permitidos": [
+    "Bienvenida.dc.html",
+    "Guia.dc.html",
+    "Login.dc.html",
+    "Main.dc.html",
+    "MapaInicio.dc.html"
+   ],
+   "tableros": {
+    "Bienvenida.dc.html": {
+     "personajes": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "Ficha.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "Guia.dc.html": {
+     "personajes": [
+      "canilla",
+      "engranaje",
+      "foco",
+      "gota",
+      "llave",
+      "llave-rota"
+     ],
+     "fuera_de_lista": [
+      "canilla",
+      "gota"
+     ]
+    },
+    "Inicio.dc.html": {
+     "personajes": [
+      "llave",
+      "llave-rota"
+     ],
+     "fuera_de_lista": []
+    },
+    "Login.dc.html": {
+     "personajes": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "Main.dc.html": {
+     "personajes": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ],
+     "fuera_de_lista": [
+      "grupo (canilla, gota, engranaje, foco, llave)"
+     ]
+    },
+    "MapaInicio.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "Sistema.dc.html": {
+     "personajes": [
+      "engranaje",
+      "foco",
+      "llave-rota"
+     ],
+     "fuera_de_lista": []
+    }
+   }
+  },
+  "especialista": {
+   "tableros_con_personajes": 30,
+   "tableros_con_personajes_no_permitidos": [
+    "A-Precio.dc.html",
+    "D6-Bienvenida.dc.html",
+    "F-Enviada.dc.html",
+    "F-Inicio.dc.html",
+    "F-Pedido.dc.html",
+    "F-Precio.dc.html",
+    "F-PrecioTeclado.dc.html",
+    "F-Trabajo.dc.html",
+    "G-Vitrina.dc.html",
+    "H0-MaterialNuevo.dc.html",
+    "RC-Camino.dc.html",
+    "RC-Login.dc.html",
+    "RC-Onboarding.dc.html",
+    "RC-Pedido.dc.html",
+    "RC-Presupuesto.dc.html",
+    "X-Escritorio.dc.html"
+   ],
+   "tableros": {
+    "A-Precio.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "A-Regalo.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "B-Inicio.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "B-Regalo.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "C-Regalo.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "D6-Ayuda.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "D6-Bienvenida.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "D6-Error.dc.html": {
+     "personajes": [
+      "engranaje"
+     ],
+     "fuera_de_lista": []
+    },
+    "F-Enviada.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "F-Inicio.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "F-Pedido.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "F-Precio.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "F-PrecioTeclado.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "F-Regalo.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "F-Trabajo.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "G-Camino.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "G-Canje.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "G-Vitrina.dc.html": {
+     "personajes": [
+      "canilla",
+      "engranaje",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "H0-MaterialNuevo.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "Main.dc.html": {
+     "personajes": [
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-Camino.dc.html": {
+     "personajes": [
+      "canilla",
+      "engranaje",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Login.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Mensajes.dc.html": {
+     "personajes": [
+      "engranaje",
+      "foco"
+     ],
+     "fuera_de_lista": []
+    },
+    "RC-Onboarding.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Pedido.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Presupuesto.dc.html": {
+     "personajes": [
+      "canilla"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    },
+    "RC-Taller.dc.html": {
+     "personajes": [
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "RG-5.dc.html": {
+     "personajes": [
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "T-Taller.dc.html": {
+     "personajes": [
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": []
+    },
+    "X-Escritorio.dc.html": {
+     "personajes": [
+      "canilla",
+      "foco",
+      "llave"
+     ],
+     "fuera_de_lista": [
+      "canilla"
+     ]
+    }
+   }
+  }
+ }
+}

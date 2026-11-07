@@ -6,16 +6,26 @@ Professional App y Operations Portal). Plan por olas: `docs/handyx/plan-dossiers
 ## Carpetas
 
 - `herramientas/` · scripts de producción.
-  - `capturar-lienzo.cjs`: renderiza en PNG (a 2x) los tableros de un lienzo de diseño bajado a disco, con el motor del
-    propio lienzo. `node dossiers/herramientas/capturar-lienzo.cjs <lienzo> <salida> [filtro] [escala] [paralelo]`.
+  - `capturar-lienzo.cjs`: renderiza en PNG los tableros de un lienzo de diseño bajado a disco, con el motor del propio
+    lienzo, y guarda el texto visible de cada uno (`<tablero>.txt` + `textos.md`).
+    `node dossiers/herramientas/capturar-lienzo.cjs <lienzo> <salida> [filtro] [escala|auto] [paralelo]` (`auto`: 3x
+    celulares, 2x el resto).
+  - `hoja-de-contactos.py`: grillas JPEG rotuladas de una carpeta de capturas (`indice.json`), para revisar de un vistazo.
+  - `personajes-lienzos.py`: qué personajes usa cada tablero → `inventario/personajes-lienzos.json` (marca los que no
+    están en la lista permitida: Canilla, Gota y el grupo).
   - `inventariar-material.py`: inventario del material del pitch (escenas, capturas, conceptos, personajes, cifras).
-- `inventario/` · `material.md` y `material.json` (generados).
+- `inventario/` · `material.md`, `material.json` y `personajes-lienzos.json` (generados).
+- `auditoria/` · ola 1: consigna común y un informe por superficie (`usuario`, `especialista`, `portal`, `negocio`), en
+  `.md` y `.json`.
 - `marca/` · logo vectorial trazado del original de la landing (`logo-handyx.svg` azul #1F57A8 y `logo-handyx-blanco.svg`).
 
 ## Fuentes que no van al repo
 
 Las copias de los tres lienzos (app del usuario, app del especialista y portal interno) y su motor se bajan a la carpeta de
-trabajo de la sesión con el Artifact tool (`list` + `read`); las capturas se regeneran con `capturar-lienzo.cjs`.
+trabajo de la sesión con el Artifact tool (`list` + `read`; las imágenes subidas, una por una con `read` y su id) en
+`<lienzo>/project/`, `<lienzo>/artifact-type/dc-runtime.js` y `<lienzo>/blobs/` (+ `blobs/indice.json`). Las capturas
+(360 tableros, unos 125 MB) se regeneran con `capturar-lienzo.cjs … '' auto 4` y `hoja-de-contactos.py`. El pedido textual
+de Ignacio está en `docs/handyx/pedido-dossiers.md`.
 
 ## Herramientas del sistema
 
