@@ -1,5 +1,21 @@
 # Handoff · presentations-studio
 
+## En curso (07/11/2026): tríptico + 4 dossiers de Handyx
+
+Pedido textual: `docs/handyx/pedido-dossiers.md` · plan por olas y decisiones de Ignacio: `docs/handyx/plan-dossiers.md`.
+
+- **Ola 0 ✓** · lienzos de los 3 Artifacts bajados a la carpeta de trabajo (no van al repo), renderizador
+  `dossiers/herramientas/capturar-lienzo.cjs` (360 tableros con texto), inventario del pitch, logo vectorial.
+- **Ola 1 ✓** · auditorías en `dossiers/auditoria/{usuario,especialista,portal,negocio}.{md,json}` (284 funciones con
+  estado y evidencia, recorridos, contradicciones, capturas recomendadas, riesgos).
+- **Ola 2 ✓ (a aprobar por Ignacio)** · `dossiers/diagnostico.md`, `dossiers/arquitectura.md` (página por página),
+  `dossiers/direccion-de-arte.md`, plantilla de imprenta `dossiers/plantilla/` y muestra visual en `dossiers/piezas/*`
+  (tapas, una doble página por dossier, tríptico completo). Exportar: `node dossiers/herramientas/exportar-pieza.cjs`.
+- **Siguen:** ola 3 (producir las 5 piezas, 5 agentes), ola 4 (página `/handyx/` + QR + PDF de imprenta y digital + 5 zips;
+  el deploy de `/handyx/` lo autoriza Ignacio), ola 5 (revisión integral).
+- Para regenerar capturas en una sesión nueva: bajar los 3 lienzos con el Artifact tool (ver `dossiers/README.md`) y
+  correr `capturar-lienzo.cjs … '' auto 4` + `hoja-de-contactos.py`.
+
 Fecha: 31/10/2026 · Rama: `claude/modest-gauss-jin0gy` · Sesión con modelo configurado Claude Opus 5.5.
 Estado: **fases 0–8 implementadas y verificadas en local; Fase 9 (deploy) preparada, no ejecutada.** Nada desplegado,
 ningún gasto, ningún dato personal, Notion no modificado.

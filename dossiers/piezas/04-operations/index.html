@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="portal">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Dossier 04 · Operations Portal</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* tapa: arena del portal con su barra lateral azul */
+  .tapa-ops { --tapa-texto: var(--navy); }
+  .tapa-ops .fondo-tapa { background: var(--arena); }
+  .tapa-ops .barra { position: absolute; left: 0; top: 0; bottom: 0; width: calc(54mm + var(--sangrado)); background: var(--azul); }
+  .tapa-ops .lateral { position: absolute; left: 12mm; top: 15mm; bottom: 14mm; width: 36mm; display: flex; flex-direction: column; color: #FFFFFF; }
+  .tapa-ops .lateral .sub { margin-top: 1.6mm; font: 800 6.2pt/1 var(--f-texto); letter-spacing: 0.16em; text-transform: uppercase; color: var(--amarillo); }
+  .tapa-ops .modulos { margin-top: 14mm; display: grid; gap: 3.2mm; font: 650 8.4pt/1 var(--f-texto); color: rgba(255, 255, 255, 0.62); }
+  .tapa-ops .modulos span:first-child { color: #FFFFFF; }
+  .tapa-ops .lateral .personaje { margin-top: auto; --w: 30mm; }
+  .tapa-ops .caja { left: 66mm; }
+  .tapa-ops .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; color: var(--azul); }
+  .tapa-ops .pantalla { position: absolute; left: 66mm; right: -26mm; top: 174mm; }
+  .tapa-ops .pantalla .rotulo { margin-bottom: 2.4mm; }
+  .tapa-ops .tapa-pie { position: absolute; left: 66mm; right: 16mm; bottom: 14mm; }
+
+  /* p. 4 · arquitectura */
+  .capas { display: grid; gap: 0; }
+  .capas > .nodo { display: grid; grid-template-columns: 1fr auto; column-gap: 3mm; align-items: start; }
+  .capas > .nodo .estado { margin-top: 0; }
+  .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+  .base-comun { text-align: center; font: 600 6.8pt/1.3 var(--f-texto); color: var(--gris); margin-top: 1.6mm; }
+  .personas { text-align: center; font: 800 7pt/1.2 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); padding: 2.6mm; border-radius: 99px; background: var(--hueso); }
+  .dinero-directo { margin-top: 3mm; padding: 3mm 3.4mm; border-radius: 2.2mm; background: var(--navy); color: #FFFFFF; font: 650 7.8pt/1.4 var(--f-texto); }
+
+  /* p. 5 · CRM */
+  .funciones td:nth-child(1) { width: 47mm; }
+  .funciones td:nth-child(3) { width: 26mm; text-align: right; }
+  .nota { padding: 3.4mm 4mm; border-radius: 2.2mm; background: var(--arena); font-size: 8.2pt; line-height: 1.45; }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · TAPA ============ -->
+<section class="pagina tapa tapa-clara tapa-ops" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"><div class="barra"></div></div>
+    <div class="lateral">
+      <img class="logo" style="--h:7.6mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+      <span class="sub">Portal interno</span>
+      <div class="modulos"><span>Inicio</span><span>Pre-registros</span><span>Especialistas</span><span>Reclamos</span><span>Campañas</span><span>Cohortes</span><span>Mapa</span><span>Tareas</span><span>Docs</span><span>Legal</span></div>
+      <img class="personaje" src="../../marca/personajes/engranaje-a.svg" alt="Engranaje, personaje de Handyx">
+    </div>
+    <div class="caja">
+      <div class="tapa-cabeza" style="justify-content:flex-end">
+        <div class="tapa-serie"><b>Colección Handyx</b>Dossier 04 de 04</div>
+      </div>
+      <div class="esp-5">
+        <div class="tapa-filete"></div>
+        <p class="numeral esp-3">04</p>
+        <h1 class="tapa-titulo esp-1" style="font-size:40pt">Operations<br><mark>Portal</mark></h1>
+        <p class="tapa-bajada esp-3" style="max-width:118mm">La infraestructura interna para administrar el marketplace, cuidar a cada persona y crecer sin improvisar.</p>
+      </div>
+    </div>
+    <figure class="pantalla permite-salir">
+      <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+      <div class="escritorio"><img src="img/inicio-para-hoy.webp" alt="Inicio del portal: lo que hay que hacer hoy"></div>
+    </figure>
+    <div class="tapa-pie"><span>Mar del Plata · Edición 1<br>Noviembre de 2026</span><span style="text-align:right">Estado al 07/11/2026</span></div>
+  </div>
+</section>
+
+<!-- ============ 4 · ARQUITECTURA ============ -->
+<section class="pagina" data-folio="4" id="arquitectura">
+  <div class="lamina">
+    <div class="cabecera"><span>03 · Arquitectura general del ecosistema</span><span>Handyx · Operations Portal</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">03</span>Arquitectura general del ecosistema</span>
+      <h1 class="esp-1">Tres superficies, <mark>un</mark> circuito</h1>
+      <div class="grilla esp-3">
+        <div class="c-7 capas">
+          <div class="personas">Vecinos y especialistas</div>
+          <div class="conector">Se anotan con su consentimiento: nombre, WhatsApp, ciudad y rubro</div>
+          <div class="nodo"><div><h4>Landing pública</h4><p>Lista de espera y preregistro de especialistas; contador público como cota inferior.</p></div><span class="estado construido">Construido</span></div>
+          <div class="conector">Cada preregistro llega cifrado</div>
+          <div class="nodo"><div><h4>Captación y CRM</h4><p>Preregistros, seguimiento, campañas y gasto, reclamos, docs, métricas agregadas y registro de actividad.</p></div><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="conector">Lo lee y lo escribe solo el equipo, con permisos por tarea</div>
+          <div class="nodo navy"><div><h4>Portal interno</h4><p>Inicio, preregistros, reclamos, campañas, cohortes, mapa y docs. Tareas, legal y legajos, todavía con datos de muestra.</p></div><span class="estado construido">Construido</span></div>
+          <div class="conector pendiente">Pendiente: pedidos, propuestas, pagos reportados, verificación, reclamos de la app e invitaciones</div>
+          <div class="apps">
+            <div class="nodo pendiente"><h4>App del usuario</h4><p>Pedidos, propuestas, trabajos, chat, pagos reportados y reclamos.</p><span class="estado en-pruebas">En pruebas</span></div>
+            <div class="nodo pendiente"><h4>App del especialista</h4><p>Alta y documentos, agenda, propuestas, trabajo y cobro directo.</p><span class="estado en-pruebas">En pruebas</span></div>
+          </div>
+          <p class="base-comun">Las dos apps comparten un mismo contrato de datos</p>
+          <div class="dinero-directo">El usuario paga directo al especialista (efectivo o Mercado Pago). El dinero no pasa por Handyx ni por el portal.</div>
+        </div>
+        <div class="c-5">
+          <p class="bajada">El portal es donde el equipo ve y ordena todo lo que pasa en Handyx.</p>
+          <p class="esp-2">Hoy trabaja con lo que llega desde la landing: personas anotadas, campañas y reclamos. La operación de los trabajos —pedidos, propuestas, pagos informados y verificación de especialistas— vive en las apps y todavía no está conectada al portal.</p>
+          <p>Esa conexión es el próximo tramo del roadmap operativo: un contrato común para que lo que pase en las apps se vea, se mida y se atienda desde un solo lugar.</p>
+          <div class="leyenda-estados esp-3"><span class="estado construido">Construido</span><span class="estado en-pruebas">En pruebas</span><span class="estado concepto">Concepto</span></div>
+          <p class="fuente esp-2">Línea punteada: lo que todavía no está conectado. Estado al 07/11/2026; ningún backend está desplegado en producción.</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Fuentes:</b> repos del portal interno (v2, rama principal del 07/11/2026), del backend de captación y CRM y de las dos apps; lienzo «Portal interno v3». Descripción por capacidades: sin mecanismos, proveedores ni direcciones internas.</p>
+    </div>
+    <div class="folio"><span>Handyx · Operations Portal</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 5 · GESTIÓN DE CLIENTES ============ -->
+<section class="pagina" data-folio="5" id="clientes">
+  <div class="lamina">
+    <div class="cabecera"><span>04 · Gestión de clientes</span><span>Handyx · Operations Portal</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">04</span>Gestión de clientes</span>
+      <h1 class="esp-1">Cada persona anotada, <mark>atendida</mark> a tiempo</h1>
+      <p class="bajada esp-3">El CRM de preregistros ya está construido: separa especialistas y lista de espera, muestra quién lleva más tiempo esperando y guía cada contacto sin enviar nada de forma automática.</p>
+      <figure class="con-rotulo esp-3">
+        <span class="rotulo prueba">Pantalla del portal v2 · datos de muestra</span>
+        <div class="escritorio" style="width:150mm"><img src="img/preregistros-v2.webp" alt="Lista de preregistros de especialistas en el portal"></div>
+        <figcaption><b>Preregistros.</b> Especialistas y lista de espera por separado, con filtros por rubro, ciudad y estado.</figcaption>
+      </figure>
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Dos listas separadas</td><td>Especialistas y lista de espera, con conteos por estado</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Contactar al siguiente</td><td>Abre la ficha de quien más tiempo lleva esperando</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Ficha con etapa e historial</td><td>Una acción principal según el estado y todo lo que pasó con la persona</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Contacto guiado por WhatsApp</td><td>Abre la conversación sin texto escrito y registra qué pasó; nada se manda solo</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Datos protegidos</td><td>Cifrados; se ven solo en la ficha y cada apertura queda registrada</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Importar y exportar</td><td>Planillas validadas fila por fila; exportación sin datos personales</td><td><span class="estado construido">Construido</span></td></tr>
+          <tr><td class="fuerte">Clientes con cuenta en la app</td><td>Ver y atender a los usuarios activos de las apps desde el portal</td><td><span class="estado concepto">Concepto</span></td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Construido: funciona contra el backend real en local; el portal está publicado y el backend de captación todavía no está desplegado, así que no hay datos reales. La pantalla usa datos de muestra.</p>
+    </div>
+    <div class="folio"><span>Handyx · Operations Portal</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

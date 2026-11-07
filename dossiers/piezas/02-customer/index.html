@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="usuario">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Dossier 02 · Customer App</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* tapa: azul Handyx, el Inicio de la app y el Foco */
+  .tapa-cliente .fondo-tapa { background: var(--azul); }
+  .tapa-cliente .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; color: var(--amarillo); }
+  .tapa-cliente .escena { position: absolute; right: 16mm; top: 126mm; width: 150mm; height: 190mm; }
+  .tapa-cliente .escena .celular { position: absolute; right: 0; top: 8mm; --w: 84mm; box-shadow: 0 4mm 14mm rgba(8, 20, 42, 0.45); }
+  .tapa-cliente .escena .rotulo { position: absolute; right: 0; top: 0; }
+  .tapa-cliente .escena .personaje { position: absolute; left: 6mm; top: 74mm; --w: 40mm; }
+  .tapa-cliente .tapa-pie { position: absolute; left: 16mm; bottom: 14mm; flex-direction: column; align-items: flex-start; gap: 3mm; }
+
+  /* doble página: dos celulares con rótulo */
+  .par { display: flex; gap: 5mm; justify-content: center; }
+  .par figure { display: flex; flex-direction: column; align-items: center; }
+  .par .celular { --w: 39mm; }
+  .par figcaption { width: 39mm; text-align: center; }
+  .funciones td:nth-child(1) { width: 46mm; }
+  .funciones td:nth-child(3) { width: 26mm; text-align: right; }
+  .criterios td:nth-child(1) { width: 34mm; }
+  .criterios td:nth-child(3) { width: 27mm; text-align: right; }
+  .nota { padding: 3.6mm 4mm; border-radius: 2.2mm; background: var(--cielo); font-size: 8.2pt; line-height: 1.45; color: var(--azul-profundo); }
+  .nota b { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · TAPA ============ -->
+<section class="pagina tapa tapa-cliente" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"></div>
+    <div class="caja">
+      <div class="tapa-cabeza">
+        <img class="logo" style="--h:9mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <div class="tapa-serie"><b>Colección Handyx</b>Dossier 02 de 04</div>
+      </div>
+      <div class="esp-5">
+        <div class="tapa-filete"></div>
+        <p class="numeral esp-3">02</p>
+        <h1 class="tapa-titulo esp-1">Customer<br><mark>App</mark></h1>
+        <p class="tapa-bajada esp-3">Pedir un arreglo, recibir propuestas claras y elegir con tranquilidad, por calidad y por precio.</p>
+      </div>
+    </div>
+    <div class="escena permite-salir">
+      <span class="rotulo diseno">Diseño propuesto</span>
+      <div class="celular"><img src="img/i-inicio.webp" alt="Inicio de la app del usuario: rubros, próximo turno y HandIA"></div>
+      <img class="personaje" src="../../marca/personajes/bombilla-b.svg" alt="Foco, personaje de Handyx">
+    </div>
+    <div class="tapa-pie"><span>Mar del Plata · Edición 1<br>Noviembre de 2026</span><span>Estado al 07/11/2026</span></div>
+  </div>
+</section>
+
+<!-- ============ 10 · COMPARACIÓN DE ALTERNATIVAS ============ -->
+<section class="pagina" data-folio="10" id="comparacion">
+  <div class="lamina">
+    <div class="cabecera"><span>09 · Comparación de alternativas</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">09</span>Comparación de alternativas</span>
+      <h1 class="esp-1">Todas las propuestas, <mark>lado a lado</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Cada propuesta llega con el precio del especialista, la tarifa de Handyx, el horario, la vigencia y lo que incluye.</p>
+          <p class="esp-2">La app las muestra en el orden en que llegaron y permite ponerlas en una tabla, una al lado de la otra, sin destacar ninguna. Quien pide el arreglo compara precio, fecha, materiales, garantía y verificaciones en una sola pantalla, y decide.</p>
+          <p>El diseño suma una tarjeta más completa por propuesta y un promedio de perfil y precio que explica por qué una propuesta conviene. Ese promedio está en evaluación: la regla del producto es no armar rankings ni usar superlativos.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/c-propuestas.webp" alt="Lista de propuestas con precio orientativo"></div>
+            <figcaption><b>Propuestas.</b> En el orden en que llegaron, con el precio orientativo de la zona.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/c-comparar.webp" alt="Tabla para comparar tres propuestas"></div>
+            <figcaption><b>Comparar.</b> Precio, fecha, materiales, garantía y reseñas en una tabla.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Propuestas por orden de llegada</td><td>Precio del especialista, tarifa de Handyx, horario, vigencia y verificaciones, sin ranking</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Comparar en tabla</td><td>Las propuestas lado a lado: total, precio, horario, vigencia, verificaciones y qué incluye</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Tarjeta de propuesta extendida</td><td>Especialista y reseñas, duración, garantía, equipo y verificaciones en una tarjeta</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Promedio de perfil y precio</td><td>Una nota de 0 a 10 con los mismos pesos para todas y una frase que explica por qué; elige la persona</td><td><span class="estado disenado">Diseñado</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3" style="color:var(--gris)">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Elegir bien entre varios presupuestos, sin saber de precios ni conocer a nadie.</p></div>
+        <div><h4>Acción</h4><p>Ve las propuestas, las compara lado a lado y abre el detalle y el perfil que le interesan.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Ordena por llegada, muestra un rango orientativo que no obliga y marca como verificado solo lo que revisó el equipo.</p></div>
+        <div><h4>Resultado</h4><p>Una decisión informada: precio, condiciones, garantía y verificaciones en una pantalla.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código en la app del usuario con el servidor simulado (vista de prueba publicada). Diseñado: lienzo «App del usuario», tableros C. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 11 · CRITERIOS DE CALIDAD Y PRECIO ============ -->
+<section class="pagina" data-folio="11" id="criterios">
+  <div class="lamina">
+    <div class="cabecera"><span>10 · Criterios de calidad y precio</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">10</span>Criterios de calidad y precio</span>
+      <h1 class="esp-1">Elegir por <mark>calidad</mark> y por precio</h1>
+      <p class="bajada esp-3">Un precio solo no alcanza para decidir. Handyx pone a la vista lo que hace a un buen trabajo y separa lo que el equipo revisó de lo que cada especialista declara.</p>
+      <div class="grilla esp-4">
+        <div class="c-7">
+          <table class="tabla criterios">
+            <thead><tr><th>Criterio</th><th>Qué ve quien pide</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td class="fuerte">Precio</td><td>El precio del especialista y la tarifa de Handyx, por separado</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+              <tr><td class="fuerte">Precio orientativo</td><td>Un rango de trabajos parecidos en la zona: sugiere, no impone</td><td><span class="estado disenado">Diseñado</span></td></tr>
+              <tr><td class="fuerte">Qué incluye</td><td>Materiales, equipo, duración, garantía y si hace falta una visita</td><td><span class="estado disenado">Diseñado</span></td></tr>
+              <tr><td class="fuerte">Identidad y antecedentes</td><td>Se muestran solo si el equipo de Handyx los revisó</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+              <tr><td class="fuerte">Trabajos en Handyx</td><td>Cuántos trabajos hizo el especialista en la plataforma</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+              <tr><td class="fuerte">Certificados</td><td>«Cargado no es verificado»: lo declarado se distingue de lo revisado</td><td><span class="estado disenado">Diseñado</span></td></tr>
+              <tr><td class="fuerte">Reseñas</td><td>De trabajos terminados en Handyx</td><td><span class="estado disenado">Diseñado</span></td></tr>
+            </tbody>
+          </table>
+          <div class="nota esp-3"><b>Sin rankings ni superlativos.</b> La lista no ordena por conveniencia. El promedio de perfil y precio del diseño usa los mismos pesos para todas las propuestas y explica su nota; la decisión es siempre de quien pide.</div>
+        </div>
+        <div class="c-5 par" style="flex-direction:column;align-items:center;gap:5mm">
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular" style="--w:46mm"><img src="img/c-detalle.webp" alt="Detalle de una propuesta"></div>
+            <figcaption style="width:46mm"><b>Propuesta.</b> Precio, cómo lo hace, garantía y verificaciones.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Todavía no hay reseñas ni especialistas verificados con trabajos reales: los nombres y cifras de las pantallas son de muestra. Fuentes: lienzo «App del usuario» (tableros C) y app del usuario en vista de prueba.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="especialista">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Dossier 03 · Professional App</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* identidad: el amarillo que en la app marca lo importante, con navy */
+  [data-pieza='especialista'] { --acento: var(--navy); --acento-fuerte: #08142A; --acento-suave: #FBF9D6; }
+  .tapa-pro { --tapa-texto: var(--navy); }
+  .tapa-pro .fondo-tapa { background: var(--amarillo); }
+  .tapa-pro .tapa-filete { background: var(--navy); }
+  .tapa-pro mark { background: none; color: var(--azul); }
+  .tapa-pro .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; color: var(--azul); }
+  .tapa-pro .escena { position: absolute; right: 16mm; top: 122mm; width: 170mm; height: 190mm; }
+  .tapa-pro .escena .celular { position: absolute; right: 0; top: 8mm; --w: 84mm; box-shadow: 0 4mm 14mm rgba(14, 29, 54, 0.3); }
+  .tapa-pro .escena .rotulo { position: absolute; right: 0; top: 0; background: var(--navy); color: #FFFFFF; }
+  .tapa-pro .escena .llave { position: absolute; left: 0; top: 70mm; --w: 44mm; }
+  .tapa-pro .escena .brocha { position: absolute; left: 44mm; top: 98mm; --w: 30mm; }
+  .tapa-pro .tapa-pie { position: absolute; left: 16mm; bottom: 14mm; flex-direction: column; align-items: flex-start; gap: 3mm; }
+
+  .par { display: flex; gap: 5mm; justify-content: center; }
+  .par .celular { --w: 39mm; }
+  .par figcaption { width: 39mm; text-align: center; }
+  .funciones td:nth-child(1) { width: 44mm; }
+  .funciones td:nth-child(3) { width: 26mm; text-align: right; }
+  .destacado { padding: 4mm; border-radius: 2.4mm; background: var(--amarillo); color: var(--navy); font-size: 8.4pt; line-height: 1.45; }
+  .destacado b { font-weight: 800; }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · TAPA ============ -->
+<section class="pagina tapa tapa-clara tapa-pro" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"></div>
+    <div class="caja">
+      <div class="tapa-cabeza">
+        <img class="logo" style="--h:9mm" src="../../marca/logo-handyx.svg" alt="Handyx">
+        <div class="tapa-serie"><b>Colección Handyx</b>Dossier 03 de 04</div>
+      </div>
+      <div class="esp-5">
+        <div class="tapa-filete"></div>
+        <p class="numeral esp-3">03</p>
+        <h1 class="tapa-titulo esp-1">Professional<br><mark>App</mark></h1>
+        <p class="tapa-bajada esp-3">Tu trabajo, tus precios. Una herramienta para trabajar mejor y crecer, no solo un canal para recibir clientes.</p>
+      </div>
+    </div>
+    <div class="escena permite-salir">
+      <span class="rotulo">Diseño propuesto</span>
+      <div class="celular"><img src="img/f-inicio-dia.webp" alt="Inicio del especialista: disponible, tu día en tres paradas"></div>
+      <img class="personaje llave" src="../../marca/personajes/llave-b.svg" alt="Llave, personaje de Handyx">
+      <img class="personaje brocha" src="../../marca/personajes/brocha-b.svg" alt="Brocha, personaje de Handyx">
+    </div>
+    <div class="tapa-pie"><span>Mar del Plata · Edición 1<br>Noviembre de 2026</span><span>Estado al 07/11/2026</span></div>
+  </div>
+</section>
+
+<!-- ============ 10 · AGENDA Y ORGANIZACIÓN ============ -->
+<section class="pagina" data-folio="10" id="agenda">
+  <div class="lamina">
+    <div class="cabecera"><span>10 · Agenda y organización</span><span>Handyx · Professional App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">10</span>Agenda y organización</span>
+      <h1 class="esp-1">Tu día, <mark>en orden</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Cuando un cliente acepta, el trabajo entra a la agenda con la dirección exacta, lo acordado y el chat.</p>
+          <p class="esp-2">El especialista ve su mes y su día. Con varios trabajos en la misma jornada, el Inicio propone la próxima parada y el recorrido; al salir, el cliente sabe que va en camino, y la ubicación se comparte solo en ese tramo.</p>
+          <p>Si algo cambia, propone otra fecha o cancela con un motivo, sin penalizaciones automáticas. Nada se mueve hasta que el cliente acepta.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/f-inicio-dia.webp" alt="Tu día con tres paradas"></div>
+            <figcaption><b>Tu día.</b> Próxima parada, recorrido y «Salir ahora».</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/f-agenda-mes.webp" alt="Agenda del mes con trabajos y obras"></div>
+            <figcaption><b>Agenda.</b> El mes completo, con obras jornada por jornada.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Agenda del mes y del día</td><td>Turnos del mes y del día; una obra aparece jornada por jornada y se marcan superposiciones</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Trabajo agendado</td><td>Dirección exacta, acuerdo, chat y «Salir para allá» cuando el cliente acepta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Viaje en camino</td><td>La ubicación se comparte solo en camino; la llegada se marca en la puerta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Tu día y el recorrido</td><td>Próxima parada, recorrido ordenado y aviso de demora</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Cambiar fecha o cancelar</td><td>Con un motivo y sin penalización automática</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-4" style="color:var(--gris)">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Ordenar el día, llegar a tiempo, trabajar cómodo y cobrar sin vueltas.</p></div>
+        <div><h4>Acción</h4><p>Sigue su recorrido, sale para la parada, trabaja en modo trabajo e informa el cobro.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Comparte la ubicación solo durante el viaje, arma el informe y deja el cobro como informado hasta verificarlo.</p></div>
+        <div><h4>Resultado</h4><p>Trabajo cerrado con informe, garantía activa y el ingreso anotado en sus cuentas.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código de la app del especialista con el servidor simulado (vista de prueba publicada) y en una rama en desarrollo. Diseñado: lienzo «App del especialista». Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Professional App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 11 · MODO TRABAJO ============ -->
+<section class="pagina" data-folio="11" id="modo-trabajo">
+  <div class="lamina">
+    <div class="cabecera"><span>13 · Herramientas de trabajo</span><span>Handyx · Professional App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">13</span>Modo trabajo</span>
+      <h1 class="esp-1">Del primer paso al <mark>informe</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/h0-modo.webp" alt="Modo trabajo con tareas y cronómetro"></div>
+            <figcaption><b>Modo trabajo.</b> Tareas que empiezan por la seguridad.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="celular"><img src="img/h0-informe-enviado.webp" alt="Informe enviado con conformidad y garantía"></div>
+            <figcaption><b>Informe.</b> Conformidad, garantía y cobro.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
+          <p class="bajada">Mientras trabaja, el especialista tiene todo a mano: tareas, fotos, repuestos y herramientas del teléfono, sin salir de la pantalla.</p>
+          <p class="esp-2">Si aparece un repuesto o una tarea extra, la suma con su precio y el cliente la acepta o la rechaza; mientras tanto rige lo acordado. Al terminar, el informe se arma solo con lo que hizo, el cliente da su conformidad con un toque y arranca la garantía.</p>
+          <div class="destacado esp-3"><b>Informado no es verificado.</b> Cuando el especialista informa cómo le pagaron, el cobro queda como informado hasta que se confirma. El pago va directo a él: Handyx no guarda saldos.</div>
+        </div>
+      </div>
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Modo trabajo</td><td>Cronómetro, tareas que arrancan por la seguridad y un toque para foto, repuestos, ayuda y agenda</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Herramientas a mano</td><td>Nivel, linterna, lupa, medir, calculadoras, nota de voz y checklist</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Adicionales</td><td>Repuestos o mano de obra con su precio; el cliente acepta o rechaza</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Antes y después</td><td>Comparar fotos y contar qué se cambió</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Informe con garantía</td><td>Se completa solo; conformidad con un toque, garantía y PDF</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Terminé e informar el cobro</td><td>Mercado Pago o efectivo; queda informado hasta que se verifica</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Fuentes: lienzo «App del especialista» (tableros H0 y F) y app del especialista en vista de prueba. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Professional App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

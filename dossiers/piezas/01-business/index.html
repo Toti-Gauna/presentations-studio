@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="negocio">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Dossier 01 · Business &amp; Investment</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* tapa: navy con el mapa de líneas de Mar del Plata */
+  .tapa-negocio .mapa { position: absolute; right: -22mm; top: 4mm; height: 300mm; opacity: 0.2; }
+  .tapa-negocio .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; letter-spacing: 0.02em; color: var(--amarillo); }
+  .tapa-negocio .regla-tapa { border: 0; border-top: 0.25mm solid rgba(233, 239, 249, 0.22); margin: 6mm 0 0; }
+
+  /* p. 8 · cuenta abajo-arriba */
+  .cuenta { display: grid; grid-template-columns: 1.12fr 6mm 1fr 6mm 0.95fr 6mm 1.28fr; align-items: stretch; }
+  .cuenta .tarjeta { padding: 4.2mm 4mm; display: flex; flex-direction: column; }
+  .cuenta .tarjeta .cifra { font-size: 17pt; white-space: nowrap; }
+  .cuenta .tarjeta.acento .cifra { font-size: 17pt; }
+  .cuenta .tipo-dato { align-self: flex-start; margin-top: auto; }
+  .cuenta .tarjeta.acento .tipo-dato { color: #FFFFFF; box-shadow: inset 0 0 0 0.22mm rgba(255, 255, 255, 0.5); }
+  .mapa-mdp { width: 92%; height: auto; margin-left: auto; }
+  .niveles td:first-child { width: 33mm; }
+  .niveles .tam { font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 10pt; color: var(--navy); white-space: nowrap; }
+  .niveles .tam.sin { color: var(--gris); font-family: var(--f-texto); font-weight: 700; font-size: 8pt; }
+
+  /* p. 9 · modelo */
+  .modelo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+  .modelo .tarjeta { padding: 4.4mm; }
+  .modelo h3 { margin: 1.6mm 0 2.4mm; }
+  .modelo ul.lista > li { font-size: 8.4pt; line-height: 1.42; }
+  .marca-col { display: inline-block; font: 800 6.2pt/1 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; padding: 1.2mm 2mm; border-radius: 0.8mm; }
+  .marca-col.confirmada { background: var(--navy); color: #FFFFFF; }
+  .marca-col.evaluacion { background: var(--amarillo); color: var(--navy); }
+  .marca-col.futura { color: var(--gris); box-shadow: inset 0 0 0 0.25mm var(--gris-claro); }
+  .tarjeta.borde { background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
+  .dinero { display: grid; grid-template-columns: 34mm 1fr 34mm; align-items: center; row-gap: 3mm; }
+  .dinero .actor { text-align: center; padding: 3.4mm 2mm; border-radius: 2.4mm; background: var(--navy); color: #FFFFFF; font: 800 8.6pt/1.2 var(--f-texto); }
+  .dinero .actor small { display: block; font: 500 6.6pt/1.3 var(--f-texto); opacity: 0.75; margin-top: 0.6mm; }
+  .dinero .actor.handyx { background: var(--azul); }
+  .dinero .via { position: relative; text-align: center; padding: 0 4mm; font: 600 7.2pt/1.35 var(--f-texto); color: var(--tinta-2); }
+  .dinero .via::before { content: ''; display: block; height: 0; border-top: 0.45mm solid var(--navy); margin: 0 1mm 1.6mm; }
+  .dinero .via::after { content: ''; position: absolute; right: 4mm; top: -1.15mm; border: 1.25mm solid transparent; border-left: 1.8mm solid var(--navy); border-right: 0; }
+  .dinero .via.pendiente::before { border-top-style: dashed; border-color: var(--gris-claro); }
+  .dinero .via.pendiente::after { border-left-color: var(--gris-claro); }
+  .ejemplo { display: grid; grid-template-columns: 1fr auto; row-gap: 1.6mm; column-gap: 6mm; font-size: 8.4pt; }
+  .ejemplo .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--navy); }
+  .ejemplo .total { padding-top: 1.6mm; border-top: 0.3mm solid var(--navy); font-weight: 750; color: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · TAPA ============ -->
+<section class="pagina tapa tapa-negocio" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""></div>
+    <div class="caja">
+      <div class="tapa-cabeza">
+        <img class="logo" style="--h:9mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <div class="tapa-serie"><b>Colección Handyx</b>Dossier 01 de 04</div>
+      </div>
+      <hr class="regla-tapa">
+      <div class="empuja">
+        <div class="tapa-filete"></div>
+        <p class="numeral esp-3">01</p>
+        <h1 class="tapa-titulo esp-1">Business &amp;<br><mark>Investment</mark></h1>
+        <p class="tapa-bajada esp-3">Por qué existe Handyx, qué oportunidad busca, cómo piensa construir un negocio sostenible y para qué busca financiación.</p>
+      </div>
+      <div class="tapa-pie esp-5">
+        <span>Mar del Plata · Edición 1<br>Noviembre de 2026</span>
+        <span style="text-align:right">Estado al 07/11/2026<br><span class="credito">Mapa: © colaboradores de OpenStreetMap</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8 · MERCADO Y OPORTUNIDAD ============ -->
+<section class="pagina" data-folio="8" id="mercado">
+  <div class="lamina">
+    <div class="cabecera"><span>06 · Mercado y oportunidad</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">06</span>Mercado y oportunidad</span>
+      <h1 class="esp-1">Empezamos por un mercado que podemos <mark>medir</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-7">
+          <p class="bajada">Mar del Plata es el mercado inicial: una ciudad grande, con barrios bien definidos y seis rubros de arreglos que toda casa necesita alguna vez.</p>
+          <p class="esp-2">Hoy el tamaño del mercado es una estimación abajo-arriba con supuestos. El primer trabajo de Handyx es reemplazar cada supuesto por un dato propio: cuántos arreglos pide un hogar por año, cuánto cuesta cada uno y por qué canal se contrata.</p>
+          <p>Por eso el plan de crecimiento no fija cuotas de mercado: consolida Mar del Plata, mide, y recién después replica el modelo en otras ciudades.</p>
+        </div>
+        <figure class="c-5"><img class="mapa-mdp" src="../../marca/mapa-mdp-navy.svg" alt="Mapa de líneas de Mar del Plata con los límites de sus barrios"><figcaption><b>Mar del Plata.</b> Límites de barrios y costa. © colaboradores de OpenStreetMap.</figcaption></figure>
+      </div>
+
+      <h2 class="esp-4">El mercado inicial, en una cuenta</h2>
+      <div class="cuenta esp-2">
+        <div class="tarjeta"><div class="cifra">259.623</div><p class="cifra-rotulo">hogares en el Partido de General Pueyrredon</p><span class="tipo-dato esp-1">Dato observado · unidad a confirmar</span></div>
+        <div class="operador">×</div>
+        <div class="tarjeta"><div class="cifra">1</div><p class="cifra-rotulo">arreglo por hogar al año</p><span class="tipo-dato esp-1">Supuesto a validar</span></div>
+        <div class="operador">×</div>
+        <div class="tarjeta"><div class="cifra">USD 40</div><p class="cifra-rotulo">por arreglo</p><span class="tipo-dato esp-1">Supuesto a validar</span></div>
+        <div class="operador">=</div>
+        <div class="tarjeta acento"><div class="cifra">≈ USD 10,4 M</div><p class="cifra-rotulo" style="color:inherit">por año en arreglos</p><span class="tipo-dato esp-1">Proyección</span></div>
+      </div>
+
+      <table class="tabla niveles esp-4">
+        <thead><tr><th>Nivel</th><th>Alcance</th><th>Tamaño</th><th>Cómo lo vamos a medir</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Mercado total potencial</td><td>Hogares de la Argentina</td><td><span class="tam sin">[a investigar]</span></td><td>INDEC: hogares por partido (Censo 2022) y gasto en mantenimiento de la vivienda (ENGHo)</td></tr>
+          <tr><td class="fuerte">Mercado accesible</td><td>Ciudades medianas con un perfil parecido al de Mar del Plata</td><td><span class="tam sin">[a investigar]</span></td><td>Las mismas fuentes por ciudad y el volumen de búsquedas locales por rubro</td></tr>
+          <tr><td class="fuerte">Mercado objetivo inicial</td><td>Mar del Plata, seis rubros</td><td><span class="tam">≈ USD 10,4 M/año</span></td><td>Frecuencia y ticket medidos en la app y una encuesta corta por barrio</td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Fuentes:</b> 259.623 · Censo 2022 (INDEC), aportado por el fundador; La Capital lo publica como viviendas particulares ocupadas, así que la unidad está a confirmar. Arreglos por hogar y ticket · supuestos a validar con datos propios. Proyección = 259.623 × 1 × USD 40. Corte 04/11/2026.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 9 · MODELO DE NEGOCIO ============ -->
+<section class="pagina" data-folio="9" id="modelo">
+  <div class="lamina">
+    <div class="cabecera"><span>07 · Modelo de negocio</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">07</span>Modelo de negocio</span>
+      <h1 class="esp-1">Sin comisión al especialista, una <mark>tarifa de servicio</mark> para quien pide</h1>
+      <p class="bajada esp-3">El especialista pone su precio y lo cobra completo, directo del cliente. Handyx se financia con una tarifa de servicio que paga quien pide el arreglo.</p>
+
+      <div class="modelo esp-4">
+        <div class="tarjeta">
+          <span class="marca-col confirmada">Confirmada</span>
+          <h3>Desde el lanzamiento</h3>
+          <ul class="lista">
+            <li><b>Al especialista: sin comisión.</b> Cobra el 100 % de su precio.</li>
+            <li><b>Al usuario: 0 %</b> de tarifa de servicio hasta el 10/12/2026.</li>
+            <li>El pago del trabajo va directo al especialista: efectivo o Mercado Pago.</li>
+          </ul>
+        </div>
+        <div class="tarjeta">
+          <span class="marca-col evaluacion">En evaluación</span>
+          <h3>Desde el 10/12/2026</h3>
+          <ul class="lista">
+            <li><b>Tarifa de servicio del 15 %</b> para el usuario, sobre el precio del especialista.</li>
+            <li>Cómo se cobra: rendición del especialista o cobro dividido. Todavía no está implementado.</li>
+          </ul>
+        </div>
+        <div class="tarjeta borde">
+          <span class="marca-col futura">Futuras · concepto</span>
+          <h3>Oportunidades</h3>
+          <ul class="lista">
+            <li><b>Handyx Business:</b> empresas, consorcios y administraciones.</li>
+            <li><b>Ferreterías adheridas:</b> materiales para el especialista.</li>
+            <li>Más rubros y herramientas para profesionales.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="esp-4">Cómo circula el dinero</h2>
+      <div class="dinero esp-3">
+        <div class="actor">Usuario<small>pide el arreglo</small></div>
+        <div class="via">Precio del especialista, directo<br><span class="suave">efectivo o Mercado Pago · no pasa por Handyx</span></div>
+        <div class="actor">Especialista<small>cobra su precio completo</small></div>
+        <div class="actor" style="background:var(--hueso);color:var(--navy)">Usuario</div>
+        <div class="via pendiente">Tarifa de servicio (desde el 10/12)<br><span class="suave">mecanismo de cobro en evaluación</span></div>
+        <div class="actor handyx">Handyx<small>ingreso bruto</small></div>
+      </div>
+
+      <div class="grilla esp-4">
+        <div class="c-7 tarjeta">
+          <h4>Ejemplo ilustrativo · desde el 10/12/2026</h4>
+          <div class="ejemplo esp-2">
+            <span>Precio del especialista</span><span class="num">$ 100.000</span>
+            <span>Tarifa de servicio (15 %, en evaluación)</span><span class="num">$ 15.000</span>
+            <span class="total">Paga el usuario</span><span class="num total">$ 115.000</span>
+            <span>Recibe el especialista</span><span class="num">$ 100.000</span>
+            <span>Ingreso bruto de Handyx, antes de costos</span><span class="num">$ 15.000</span>
+          </div>
+        </div>
+        <div class="c-5">
+          <p class="idea" style="font-size:13pt">El especialista nunca resigna parte de su precio. El valor de Handyx se cobra como servicio.</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Fuentes:</b> decisión del fundador (07/11/2026); apps publicadas el 07/11/2026 con tarifa 0 % hasta el 10/12/2026. <b>Tipo:</b> confirmada · en evaluación · concepto. El ejemplo es ilustrativo, no un trabajo real; montos en pesos argentinos; ingreso bruto, antes de costos.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es-AR" class="apaisado" data-pieza="triptico">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Tríptico institucional</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  .panel { padding: 12mm 10.5mm 11mm; }
+  .panel h2 { font-size: 17pt; line-height: 1.08; }
+  .panel p { font-size: 8.8pt; line-height: 1.46; }
+  /* exterior */
+  .p-vision { --fondo-panel: var(--amarillo); color: var(--navy); }
+  .p-vision .idea { font-size: 15.5pt; line-height: 1.16; color: var(--navy); }
+  .p-vision .lema { font: 900 10.5pt/1.2 var(--f-titulos); font-stretch: 112.5%; color: var(--azul); }
+  .p-vision .personajes { display: flex; align-items: flex-end; gap: 3mm; margin-top: auto; }
+  .p-contacto { --fondo-panel: #FFFFFF; }
+  .p-contacto .qr { --w: 36mm; margin: 0 auto; }
+  .p-contacto .destinos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2mm 4mm; font: 600 7.6pt/1.35 var(--f-texto); color: var(--navy); }
+  .p-contacto .destinos span::before { content: ''; display: inline-block; width: 1.4mm; height: 1.4mm; border-radius: 0.3mm; background: var(--azul); margin-right: 1.6mm; vertical-align: 0.25em; }
+  .p-contacto .contacto { font-size: 8.4pt; }
+  .p-portada { --fondo-panel: var(--azul); color: #FFFFFF; }
+  .p-portada .lema { font: 900 15pt/1.05 var(--f-titulos); font-stretch: 125%; color: var(--amarillo); }
+  .p-portada p { color: rgba(255, 255, 255, 0.88); }
+  .p-portada .escena { position: relative; height: 96mm; margin-top: auto; }
+  .p-portada .celular { position: absolute; right: -2mm; bottom: -26mm; --w: 50mm; box-shadow: 0 3mm 10mm rgba(8, 20, 42, 0.45); }
+  .p-portada .personaje { position: absolute; left: 0; bottom: 4mm; --w: 25mm; }
+  .p-portada .rotulo { position: absolute; right: -2mm; top: 0; }
+  .p-portada .pie { font: 650 6.2pt/1.5 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); position: relative; z-index: 2; }
+  /* interior */
+  .p-problema { --fondo-panel: var(--hueso); }
+  .dolores { display: grid; gap: 3.6mm; }
+  .dolor { display: grid; grid-template-columns: 10mm 1fr; gap: 3mm; align-items: start; }
+  .dolor svg { width: 10mm; height: 10mm; padding: 2mm; border-radius: 2.2mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.25mm var(--borde); stroke: var(--azul); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .dolor h3 { font-size: 9.2pt; }
+  .dolor p { font-size: 8pt; line-height: 1.42; margin-top: 0.6mm; }
+  .p-solucion { --fondo-panel: #FFFFFF; }
+  .pasos { display: grid; gap: 2.2mm; }
+  .pasos .paso p { font-size: 8.2pt; line-height: 1.4; }
+  .pasos .paso b { color: var(--navy); }
+  .p-solucion .par { display: flex; gap: 4mm; justify-content: center; margin-top: auto; }
+  .p-solucion .celular { --w: 33mm; }
+  .p-ecosistema { --fondo-panel: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .p-ecosistema h2 { color: #FFFFFF; }
+  .superficie { padding: 3.2mm 3.4mm; border-radius: 2.2mm; background: rgba(255, 255, 255, 0.07); box-shadow: inset 0 0 0 0.25mm rgba(255, 255, 255, 0.14); }
+  .superficie h3 { color: #FFFFFF; font-size: 9.4pt; }
+  .superficie p { font-size: 7.6pt !important; line-height: 1.4 !important; margin-top: 0.8mm; }
+  .superficie .estado { margin-top: 1.8mm; }
+  .p-ecosistema .personajes { display: flex; align-items: flex-end; justify-content: flex-end; gap: 2mm; margin-top: auto; }
+  .p-ecosistema .invitacion { padding: 3mm 3.4mm; border-radius: 2.2mm; background: var(--amarillo); color: var(--navy); font: 650 7.8pt/1.4 var(--f-texto); }
+</style>
+</head>
+<body>
+
+<!-- ============ EXTERIOR: solapa (cierre) · contratapa (contacto) · portada ============ -->
+<section class="pagina">
+  <div class="lamina">
+    <div class="paneles exterior">
+      <div class="panel p-vision">
+        <div class="fondo"></div>
+        <span class="ceja" style="color:var(--azul)">Nuestra visión</span>
+        <p class="idea esp-3">Que resolver un arreglo en casa sea simple, claro y justo, para quien lo pide y para quien lo hace.</p>
+        <p class="esp-3">Empezamos en Mar del Plata, con seis rubros y especialistas de cada barrio. Crecemos de a una ciudad, cuando la anterior funciona.</p>
+        <p class="lema esp-3">Handyx. Soluciones,<br>no problemas.</p>
+        <div class="personajes">
+          <img class="personaje" style="--w:22mm" src="../../marca/personajes/bombilla-c.svg" alt="Foco">
+          <img class="personaje" style="--w:27mm" src="../../marca/personajes/llave-c.svg" alt="Llave">
+        </div>
+      </div>
+      <div class="panel p-contacto">
+        <div class="fondo"></div>
+        <span class="ceja">Conocé el proyecto</span>
+        <h2 class="esp-1">Te invitamos a recorrer <mark>Handyx</mark></h2>
+        <p class="esp-2">La landing, los cuatro dossiers y las demos de las aplicaciones, en un solo lugar.</p>
+        <div class="qr esp-3"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
+        <p class="chico suave esp-1" style="text-align:center">landing.handyc.com/handyx</p>
+        <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
+        <hr class="regla esp-3">
+        <div class="contacto esp-2">
+          <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
+          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
+          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
+          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+        </div>
+      </div>
+      <div class="panel p-portada">
+        <div class="fondo"></div>
+        <img class="logo" style="--h:9.5mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <p class="lema esp-4">Soluciones,<br>no problemas.</p>
+        <p class="esp-3">Conectamos a quien necesita un arreglo en su casa con especialistas de su zona, con propuestas claras para elegir por calidad y por precio.</p>
+        <div class="escena permite-salir">
+          <span class="rotulo diseno">Diseño propuesto</span>
+          <img class="personaje" src="../../marca/personajes/bombilla-b.svg" alt="Foco, personaje de Handyx">
+          <div class="celular"><img src="img/i-inicio.webp" alt="Inicio de la app del usuario"></div>
+        </div>
+        <p class="pie">Mar del Plata · 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERIOR: el problema · la solución · el ecosistema ============ -->
+<section class="pagina">
+  <div class="lamina">
+    <div class="paneles interior">
+      <div class="panel p-problema">
+        <div class="fondo"></div>
+        <span class="ceja">El problema</span>
+        <h2 class="esp-1">Arreglar algo en casa todavía es una <mark>odisea</mark></h2>
+        <div class="dolores esp-4">
+          <div class="dolor"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/><path d="M9 9.2a1.6 1.6 0 1 1 2.2 1.5c-.5.2-.7.6-.7 1.1v.4"/><path d="M10.5 14h.01"/></svg><div><h3>¿A quién llamo?</h3><p>Encontrar a alguien confiable depende de un contacto o de la suerte.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7.5" height="16" rx="1.5"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.5"/><path d="M5.5 8h2.5M5.5 11h2.5M16 8h2.5M16 11h2.5"/></svg><div><h3>Presupuestos que no se comparan</h3><p>Cada uno llega distinto, sin saber qué incluye ni cuánto es razonable.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><div><h3>Todo disperso</h3><p>Fechas, precios y fotos se pierden entre mensajes y llamadas.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16l4 4 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg><div><h3>El especialista, sin herramientas</h3><p>Presupuesta a mano, organiza su agenda de memoria y cobra como puede.</p></div></div>
+        </div>
+        <p class="fuente" style="margin-top:auto">Hipótesis del producto, a partir de entrevistas con vecinos y especialistas.</p>
+      </div>
+      <div class="panel p-solucion">
+        <div class="fondo"></div>
+        <span class="ceja">La solución</span>
+        <h2 class="esp-1">Un circuito simple, de <mark>punta a punta</mark></h2>
+        <div class="pasos esp-3">
+          <div class="paso"><span class="paso-n">1</span><p><b>Contás qué pasa.</b> Elegís el rubro, sumás fotos si querés y publicás.</p></div>
+          <div class="paso"><span class="paso-n">2</span><p><b>Recibís propuestas</b> de especialistas de tu zona, con precio y fecha.</p></div>
+          <div class="paso"><span class="paso-n">3</span><p><b>Elegís por calidad y precio,</b> con todo a la vista para comparar.</p></div>
+          <div class="paso"><span class="paso-n">4</span><p><b>Seguís el trabajo</b> y le pagás directo al especialista.</p></div>
+        </div>
+        <div class="par">
+          <figure class="con-rotulo centrada"><span class="rotulo diseno">Diseño propuesto</span><div class="celular"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido"></div></figure>
+          <figure class="con-rotulo centrada"><span class="rotulo diseno">Diseño propuesto</span><div class="celular"><img src="img/c-propuestas.webp" alt="Propuestas recibidas"></div></figure>
+        </div>
+      </div>
+      <div class="panel p-ecosistema">
+        <div class="fondo"></div>
+        <span class="ceja">El ecosistema</span>
+        <h2 class="esp-1">Tres superficies, una misma empresa</h2>
+        <div class="dolores esp-3" style="gap:2.6mm">
+          <div class="superficie"><h3>Customer App</h3><p>Para pedir, comparar propuestas, seguir el trabajo y pagar directo.</p><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="superficie"><h3>Professional App</h3><p>La herramienta de trabajo del especialista: pedidos, presupuestos, agenda, cobro y herramientas del oficio.</p><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="superficie"><h3>Operations Portal</h3><p>Donde el equipo ordena preregistros, reclamos, campañas y métricas.</p><span class="estado construido">Construido</span></div>
+        </div>
+        <div class="invitacion esp-3">Conocé las demos y los cuatro dossiers: escaneá el código de la contratapa.</div>
+        <div class="personajes">
+          <img class="personaje" style="--w:20mm" src="../../marca/personajes/engranaje-b.svg" alt="Engranaje">
+          <img class="personaje" style="--w:17mm" src="../../marca/personajes/brocha-c.svg" alt="Brocha">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

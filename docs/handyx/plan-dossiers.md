@@ -57,3 +57,15 @@ Como máximo 4–5 agentes a la vez (con 7 en paralelo llegamos al límite de us
 3. Contacto impreso: ignaciogauna.developer@gmail.com · 223 667-4044 · landing.handyc.com.
 4. Business usa las cifras del pitch con su rótulo y el CAC como techo de USD 6 «a medir». Se ajusta después: lo
    importante es que exista toda la estructura.
+
+Después de la auditoría (ola 1, 07/11 a la noche):
+
+5. **Tarifa impresa:** al especialista 0 % (sin comisión); al usuario 0 % hasta el 10/12/2026 y después 15 %, rotulado
+   «en evaluación». Las otras versiones (10 % + 10 %, primer mes sin tarifa, camada fundadora al 5 %) no se imprimen; la
+   landing queda desactualizada en ese punto y se recomienda corregirla.
+6. **QR:** se mantiene `landing.handyc.com/handyx/` (se publica desde el repo de la landing, con el OK de Ignacio).
+7. **Tracción:** las tres cifras del pitch (5 trabajos, $ 350.000, 56 especialistas registrados) van rotuladas «dato
+   informado por el fundador · sin auditar»; los 56 nunca como «verificados» ni «activos».
+8. **Tono del Business:** las cifras de ambición (USD 1 M, USD 5 M, 40 % de Argentina, Buenos Aires en 3 meses) van solo
+   en Visión, rotuladas «objetivo». IPO, tesorería con cripto, Silicon Valley y «arreglar el mundo» quedan fuera del
+   Business.

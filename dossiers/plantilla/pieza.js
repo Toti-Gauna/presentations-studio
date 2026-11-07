@@ -6,8 +6,9 @@
   function numerar() {
     const paginas = [...document.querySelectorAll('.pagina')];
     paginas.forEach((p, i) => {
-      p.dataset.n = String(i + 1);
-      p.querySelectorAll('.folio-n').forEach((e) => { e.textContent = dos(i + 1); });
+      // data-folio fija el número a mano (muestras con páginas sueltas); si no, el orden del documento
+      p.dataset.n = p.dataset.folio || String(i + 1);
+      p.querySelectorAll('.folio-n').forEach((e) => { e.textContent = dos(p.dataset.n); });
     });
     // <a data-ir="ancla"> muestra la página donde está el elemento con id="ancla"
     document.querySelectorAll('[data-ir]').forEach((a) => {
@@ -30,12 +31,30 @@
       const lam = pag.querySelector('.lamina');
       if (!lam) { errores.push(`p${n}: falta .lamina`); return; }
       const rl = lam.getBoundingClientRect();
-      pag.querySelectorAll('.caja').forEach((c) => {
-        if (c.scrollHeight > c.clientHeight + 2) errores.push(`p${n}: el contenido se sale de la caja por ${Math.round(((c.scrollHeight - c.clientHeight) * 25.4) / 96)} mm`);
-        if (c.scrollWidth > c.clientWidth + 2) errores.push(`p${n}: el contenido se sale de la caja a lo ancho`);
+      // desborde: el contenido (sin fondos ni lo que sale a propósito) tiene que entrar en la caja o el panel, sin sus márgenes
+      pag.querySelectorAll('.caja, .panel').forEach((c) => {
+        const rc = c.getBoundingClientRect();
+        const cs = getComputedStyle(c);
+        const abajo = rc.bottom - parseFloat(cs.paddingBottom), derecha = rc.right - parseFloat(cs.paddingRight);
+        let maxAbajo = 0, maxDerecha = 0;
+        c.querySelectorAll(':scope > *').forEach((h) => {
+          if (h.matches('.fondo, .a-sangre, .a-sangre-arriba, .a-sangre-abajo, .permite-salir, script')) return;
+          const r = h.getBoundingClientRect();
+          if (!r.width && !r.height) return;
+          maxAbajo = Math.max(maxAbajo, r.bottom - abajo);
+          h.querySelectorAll('*').forEach((d) => {
+            if (d.closest('.permite-salir, .recorte')) return;
+            const rd = d.getBoundingClientRect();
+            if (rd.width) maxDerecha = Math.max(maxDerecha, rd.right - derecha);
+          });
+          maxDerecha = Math.max(maxDerecha, r.right - derecha);
+        });
+        const mm = (px) => Math.round((px * 25.4) / 96);
+        if (maxAbajo > 1.5) errores.push(`p${n}: el contenido se sale ${mm(maxAbajo)} mm por abajo (${c.className})`);
+        if (maxDerecha > 1.5) errores.push(`p${n}: el contenido se sale ${mm(maxDerecha)} mm a lo ancho (${c.className})`);
       });
       pag.querySelectorAll('.lamina *').forEach((e) => {
-        if (e.closest('.a-sangre, .a-sangre-arriba, .a-sangre-abajo, .fondo, .recorte, .permite-salir')) return;
+        if (e.closest('.a-sangre, .a-sangre-arriba, .a-sangre-abajo, .fondo, .fondo-tapa, .recorte, .permite-salir')) return;
         const r = e.getBoundingClientRect();
         if (!r.width || !r.height) return;
         const fuera = r.left < rl.left - 1 || r.right > rl.right + 1 || r.top < rl.top - 1 || r.bottom > rl.bottom + 1;
@@ -51,7 +70,7 @@
         vistos.add(el);
         const tam = pt(parseFloat(getComputedStyle(el).fontSize));
         if (tam < 5.5) errores.push(`p${n}: texto de ${tam.toFixed(1)} pt («${t.textContent.trim().slice(0, 30)}»)`);
-        if (/\b(TODO|lorem|ipsum|XXX)\b/i.test(t.textContent)) errores.push(`p${n}: texto provisorio «${t.textContent.trim().slice(0, 40)}»`);
+        if (/\b(TODO|XXX)\b/.test(t.textContent) || /\b(lorem|ipsum)\b/i.test(t.textContent)) errores.push(`p${n}: texto provisorio «${t.textContent.trim().slice(0, 40)}»`);
       }
       pag.querySelectorAll('img').forEach((im) => {
         const nombre = (im.getAttribute('src') || '').split('/').pop();
