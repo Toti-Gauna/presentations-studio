@@ -54,6 +54,6 @@ Como máximo 4–5 agentes a la vez (con 7 en paralelo llegamos al límite de us
 
 1. QR único fijo: `landing.handyc.com/handyx/`, publicado con el método de la landing; el deploy lo autoriza Ignacio.
 2. Página del QR con 6 botones: landing, los 4 dossiers y el portafolio (sin el tríptico, que ya lo tienen en la mano).
-3. Contacto impreso: ignaciogauna.developer@gmail.com · +54 9 223 667-4044 · landing.handyc.com.
+3. Contacto impreso: ignaciogauna.developer@gmail.com · 223 667-4044 · landing.handyc.com.
 4. Business usa las cifras del pitch con su rótulo y el CAC como techo de USD 6 «a medir». Se ajusta después: lo
    importante es que exista toda la estructura.
