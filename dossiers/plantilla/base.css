@@ -257,7 +257,7 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 8pt; line-heigh
 .regla.fuerte { border-top: 0.45mm solid var(--navy); }
 .oscuro .regla { border-color: rgba(233, 239, 249, 0.2); }
 /* índice */
-.indice { display: grid; row-gap: 0; }
+.indice { display: grid; row-gap: 0; align-content: start; }
 .indice a { display: grid; grid-template-columns: 9mm 1fr auto; align-items: baseline; gap: 2mm; padding: 2.3mm 0; border-bottom: 0.2mm solid var(--borde); }
 .indice .n { font: 800 8pt/1 var(--f-titulos); color: var(--acento); font-variant-numeric: tabular-nums; }
 .indice .t { font: 650 10pt/1.3 var(--f-texto); color: var(--navy); }
@@ -317,3 +317,23 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 8pt; line-heigh
 .conector::after { content: ''; position: absolute; left: 2.05mm; bottom: -0.2mm; border: 1mm solid transparent; border-top: 1.4mm solid var(--navy); border-bottom: 0; }
 .conector.pendiente::after { border-top-color: var(--gris-claro); }
 .operador { display: grid; place-items: center; font: 800 16pt/1 var(--f-titulos); color: var(--gris-claro); }
+
+/* ---------- páginas comunes: índice + cómo leer (p. 2) y contratapa (última) ---------- */
+.como-leer { display: grid; gap: 4.2mm; padding: 5mm; border-radius: 2.6mm; background: var(--hueso); }
+.como-leer h4 { margin-bottom: 1.8mm; }
+.como-leer .def { display: grid; grid-template-columns: 27mm 1fr; gap: 1.2mm 3mm; align-items: center; font-size: 7.6pt; line-height: 1.36; }
+.como-leer .def .rotulo, .como-leer .def .estado, .como-leer .def .tipo-dato { justify-self: start; }
+.en-una-linea { padding: 4.4mm 5mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); font-size: 8.8pt; line-height: 1.5; }
+.en-una-linea b { color: #FFFFFF; }
+.coleccion { display: flex; flex-wrap: wrap; gap: 1.4mm 2.4mm; font: 650 7pt/1.3 var(--f-texto); }
+.coleccion span { padding: 1mm 2mm; border-radius: 99px; box-shadow: inset 0 0 0 0.25mm currentColor; opacity: 0.75; }
+.coleccion span.actual { opacity: 1; background: var(--amarillo); color: var(--navy); box-shadow: none; }
+.contratapa .caja { justify-content: space-between; }
+.contratapa .lema { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 24pt; line-height: 1; }
+.contratapa .bloque-qr { display: grid; grid-template-columns: 40mm 1fr; gap: 7mm; align-items: center; }
+.contratapa .bloque-qr .qr { --w: 40mm; }
+.contratapa .destinos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 5mm; font: 600 8pt/1.35 var(--f-texto); }
+.contratapa .destinos span::before { content: ''; display: inline-block; width: 1.5mm; height: 1.5mm; border-radius: 0.3mm; background: currentColor; opacity: 0.6; margin-right: 1.8mm; vertical-align: 0.25em; }
+.contratapa .contacto { font-size: 9pt; }
+.contratapa .contacto .dato span:first-child { color: inherit; opacity: 0.66; }
+.contratapa .legal { font: 400 6.4pt/1.45 var(--f-texto); opacity: 0.72; max-width: 150mm; }

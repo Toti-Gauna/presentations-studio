@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="usuario">
+<head>
+<meta charset="utf-8">
+<title>Páginas comunes de la colección · referencia</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  /* en cada pieza, la contratapa usa el color de su tapa:
+     01 navy · 02 azul · 03 amarillo (tapa-clara) · 04 arena (tapa-clara) */
+  .contratapa .fondo-tapa { background: var(--azul); }
+</style>
+</head>
+<body>
+<!--
+  REFERENCIA (no es una pieza). Cada dossier copia estas dos páginas tal cual y cambia solo:
+  · el índice (sus secciones, con <a data-ir="id-de-la-sección">: el número de página se completa solo),
+  · «Handyx en una línea» queda igual en los cuatro,
+  · en la contratapa: color de fondo (el de su tapa), el personaje de la pieza y la marca .actual en la colección.
+-->
+
+<!-- ============ p. 2 · ÍNDICE Y CÓMO LEER ============ -->
+<section class="pagina" id="indice">
+  <div class="lamina">
+    <div class="cabecera"><span>Contenido</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja">Contenido</span>
+      <h1 class="esp-1">En este <mark>dossier</mark></h1>
+      <div class="grilla esp-4">
+        <nav class="c-7 indice">
+          <a><span class="n">01</span><span class="t">La experiencia del cliente</span><span class="p">03</span></a>
+          <a><span class="n">02</span><span class="t">Problemas actuales al contratar servicios</span><span class="p">04</span></a>
+          <a><span class="n">03</span><span class="t">Cómo Handyx simplifica el proceso</span><span class="p">05</span></a>
+          <a><span class="n">…</span><span class="t">(una línea por sección, con data-ir)</span><span class="p">…</span></a>
+        </nav>
+        <div class="c-5">
+          <div class="como-leer">
+            <div>
+              <h4>Cómo leer este dossier</h4>
+              <p class="chico">Cada función dice en qué estado está al 07/11/2026, cada imagen de dónde sale y cada cifra qué tipo de dato es.</p>
+            </div>
+            <div>
+              <h4>Estado de cada función</h4>
+              <div class="def">
+                <span class="estado construido">Construido</span><span>En la rama principal y funcionando con el servidor real.</span>
+                <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de prueba o en una rama.</span>
+                <span class="estado disenado">Diseñado</span><span>Dibujado en los lienzos de diseño, todavía sin código.</span>
+                <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Rótulo de cada imagen</h4>
+              <div class="def">
+                <span class="rotulo diseno">Diseño propuesto</span><span>Pantalla del lienzo de diseño.</span>
+                <span class="rotulo prueba">Datos de prueba</span><span>Pantalla real de la app o del portal, con datos de prueba.</span>
+                <span class="rotulo muestra">Muestra</span><span>Nombres y cifras ficticios.</span>
+                <span class="rotulo concepto">Concepto</span><span>Algo que todavía no existe.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Tipo de cada cifra</h4>
+              <div class="def">
+                <span class="tipo-dato">Dato verificado</span><span>Comprobado contra la fuente.</span>
+                <span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span>
+                <span class="tipo-dato">Supuesto · proyección</span><span>Un supuesto a validar y lo que se calcula con él.</span>
+                <span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="en-una-linea empuja">
+        <b>Handyx en una línea.</b> Un marketplace de servicios del hogar que nace en Mar del Plata: conecta a quien necesita un
+        arreglo con especialistas de su zona, con propuestas claras para elegir por calidad y por precio. Soluciones, no problemas.
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ ÚLTIMA · CONTRATAPA ============ -->
+<section class="pagina tapa contratapa" id="contratapa">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"></div>
+    <div class="caja">
+      <div>
+        <img class="logo" style="--h:9mm" src="../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <p class="lema esp-4">Soluciones,<br><mark>no problemas.</mark></p>
+      </div>
+      <div>
+        <span class="ceja" style="color:inherit;opacity:.8">Conocé el proyecto completo</span>
+        <div class="bloque-qr esp-3">
+          <div class="qr"><img src="../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
+          <div>
+            <p class="texto-grande">La landing, los cuatro dossiers y las demos de las aplicaciones, en un solo lugar.</p>
+            <p class="esp-1"><b>landing.handyc.com/handyx</b></p>
+            <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
+          </div>
+        </div>
+        <div class="contacto esp-5">
+          <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
+          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
+          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
+          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="coleccion"><span>Tríptico</span><span>01 Business &amp; Investment</span><span class="actual">02 Customer App</span><span>03 Professional App</span><span>04 Operations Portal</span></div>
+        <p class="legal esp-3">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Estado al 07/11/2026. Las pantallas usan datos de prueba o de muestra; las cifras llevan su tipo, su fuente y su fecha de corte. Ninguna cifra es un resultado si no lo dice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="pieza.js"></script>
+</body>
+</html>
