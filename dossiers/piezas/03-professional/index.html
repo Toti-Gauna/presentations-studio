@@ -32,7 +32,9 @@
   .ref { white-space: nowrap; font: 800 7pt/1 var(--f-titulos); font-stretch: 112.5%; color: var(--navy); }
 
   /* figuras: rótulo arriba; con nombres o cifras de muestra, un segundo rótulo «Muestra» */
-  .rotulos { display: flex; gap: 0.8mm; margin-bottom: 2.6mm; }
+  .rotulos { display: flex; flex-direction: column; align-items: center; gap: 0.8mm; margin-bottom: 2.6mm; }
+  .rotulos.en-linea { flex-direction: row; align-items: flex-start; }
+  .par:has(.rotulo.muestra) .rotulos { min-height: 8.6mm; justify-content: flex-end; }
   .rotulos .rotulo { letter-spacing: 0.05em; padding: 0.95mm 1.2mm; }
   .par { display: flex; gap: 5mm; justify-content: center; }
   .par .celular { --w: 39mm; }
@@ -49,6 +51,9 @@
   figure.lateral > .rotulo { grid-column: 1 / -1; justify-self: start; margin: 0; background: #FFFFFF; }
   figure.lateral .celular { --w: var(--wf, 26mm); box-shadow: 0 1.2mm 3.6mm rgba(14, 29, 54, 0.22); }
   figure.lateral figcaption { margin: 0; font-size: 7.8pt; line-height: 1.42; color: var(--tinta-2); }
+
+  .en-codigo { display: grid; grid-template-columns: auto 1fr; column-gap: 3mm; align-items: baseline; padding: 3.4mm 4mm; border-radius: 2.6mm; background: var(--cielo); font-size: 8.2pt; line-height: 1.45; color: var(--tinta-2); }
+  .en-codigo b { color: var(--navy); }
 
   /* tablas de funciones */
   .funciones td:nth-child(1) { width: 44mm; }
@@ -254,7 +259,7 @@
       </div>
     </div>
     <div class="escena permite-salir">
-      <span class="rotulo">Diseño propuesto · datos ficticios</span>
+      <span class="rotulo">Diseño propuesto · Muestra · datos ficticios</span>
       <div class="celular"><img src="img/f-inicio-dia.webp" alt="Inicio del especialista: disponible, tu día en tres paradas"></div>
       <img class="personaje llave" src="../../marca/personajes/llave-b.svg" alt="Llave, personaje de Handyx">
       <img class="personaje brocha" src="../../marca/personajes/brocha-b.svg" alt="Brocha, personaje de Handyx">
@@ -272,18 +277,18 @@
       <h1 class="esp-1">En este <mark>dossier</mark></h1>
       <div class="grilla esp-4">
         <nav class="c-7 indice">
-          <a data-ir="problema"><span class="n">02</span><span class="t">El problema del profesional independiente</span><span class="p">03</span></a>
-          <a data-ir="propuesta"><span class="n">03</span><span class="t">La propuesta de Handyx</span><span class="p">04</span></a>
-          <a data-ir="registro"><span class="n">04</span><span class="t">Registro y perfil profesional</span><span class="p">05</span></a>
-          <a data-ir="especialidades"><span class="n">05</span><span class="t">Especialidades y servicios</span><span class="p">06</span></a>
-          <a data-ir="oportunidades"><span class="n">06–07</span><span class="t">Oportunidades y gestión de solicitudes</span><span class="p">07</span></a>
-          <a data-ir="presupuestos"><span class="n">08</span><span class="t">Elaboración y envío de presupuestos</span><span class="p">08</span></a>
-          <a data-ir="aceptacion"><span class="n">09</span><span class="t">Comparación y aceptación de trabajos</span><span class="p">09</span></a>
-          <a data-ir="agenda"><span class="n">10</span><span class="t">Agenda y organización</span><span class="p">10</span></a>
-          <a data-ir="modo-trabajo"><span class="n">13</span><span class="t">Modo trabajo</span><span class="p">11</span></a>
-          <a data-ir="clientes"><span class="n">11–12</span><span class="t">Gestión de clientes e historial de trabajos</span><span class="p">12</span></a>
-          <a data-ir="administracion"><span class="n">13</span><span class="t">Herramientas administrativas</span><span class="p">13</span></a>
-          <a data-ir="obras"><span class="n">13</span><span class="t">Obras y equipo</span><span class="p">14</span></a>
+          <a data-ir="problema"><span class="n">01</span><span class="t">El problema del profesional independiente</span><span class="p">03</span></a>
+          <a data-ir="propuesta"><span class="n">02</span><span class="t">La propuesta de Handyx</span><span class="p">04</span></a>
+          <a data-ir="registro"><span class="n">03</span><span class="t">Registro y perfil profesional</span><span class="p">05</span></a>
+          <a data-ir="especialidades"><span class="n">04</span><span class="t">Especialidades y servicios</span><span class="p">06</span></a>
+          <a data-ir="oportunidades"><span class="n">05</span><span class="t">Oportunidades y gestión de solicitudes</span><span class="p">07</span></a>
+          <a data-ir="presupuestos"><span class="n">06</span><span class="t">Elaboración y envío de presupuestos</span><span class="p">08</span></a>
+          <a data-ir="aceptacion"><span class="n">07</span><span class="t">Comparación y aceptación de trabajos</span><span class="p">09</span></a>
+          <a data-ir="agenda"><span class="n">08</span><span class="t">Agenda y organización</span><span class="p">10</span></a>
+          <a data-ir="modo-trabajo"><span class="n">09</span><span class="t">Modo trabajo</span><span class="p">11</span></a>
+          <a data-ir="clientes"><span class="n">10</span><span class="t">Gestión de clientes e historial de trabajos</span><span class="p">12</span></a>
+          <a data-ir="administracion"><span class="n">11</span><span class="t">Herramientas administrativas</span><span class="p">13</span></a>
+          <a data-ir="obras"><span class="n">12</span><span class="t">Obras y equipo</span><span class="p">14</span></a>
           <a data-ir="ferreteria"><span class="n">13</span><span class="t">Ferretería</span><span class="p">15</span></a>
           <a data-ir="oficios"><span class="n">14</span><span class="t">Herramientas específicas por oficio</span><span class="p">16</span></a>
           <a data-ir="reputacion"><span class="n">15</span><span class="t">Reputación y crecimiento</span><span class="p">17</span></a>
@@ -299,7 +304,7 @@
             <div>
               <h4>Estado de cada función</h4>
               <div class="def">
-                <span class="estado construido">Construido</span><span>En la rama principal y funcionando con el servidor real.</span>
+                <span class="estado construido">Construido</span><span>En la rama principal, probado contra el servidor real (en local, si todavía no está desplegado).</span>
                 <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de prueba o en una rama.</span>
                 <span class="estado disenado">Diseñado</span><span>Dibujado en los lienzos de diseño, todavía sin código.</span>
                 <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
@@ -310,7 +315,7 @@
               <div class="def">
                 <span class="rotulo diseno">Diseño propuesto</span><span>Pantalla del lienzo de diseño.</span>
                 <span class="rotulo prueba">Datos de prueba</span><span>Pantalla real de la app o del portal, con datos de prueba.</span>
-                <span class="rotulo muestra">Muestra</span><span>Nombres y cifras ficticios.</span>
+                <span class="rotulo muestra">Muestra · datos ficticios</span><span>Nombres y cifras inventados para mostrar la pantalla.</span>
                 <span class="rotulo concepto">Concepto</span><span>Algo que todavía no existe.</span>
               </div>
             </div>
@@ -321,6 +326,7 @@
                 <span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span>
                 <span class="tipo-dato">Supuesto · proyección</span><span>Un supuesto a validar y lo que se calcula con él.</span>
                 <span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span>
+                <span class="tipo-dato">Decisión del fundador</span><span>Una regla ya decidida, con su fecha.</span>
               </div>
             </div>
           </div>
@@ -338,10 +344,10 @@
 <!-- ============ 3 · EL PROBLEMA DEL PROFESIONAL ============ -->
 <section class="pagina" id="problema">
   <div class="lamina">
-    <div class="cabecera"><span>02 · El problema del profesional</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>01 · El problema del profesional</span><span>Handyx · Professional App</span></div>
     <div class="caja">
       <div style="position:relative">
-        <span class="ceja"><span class="n">02</span>El problema del profesional independiente</span>
+        <span class="ceja"><span class="n">01</span>El problema del profesional independiente</span>
         <h1 class="esp-1" style="max-width:128mm">Mucho oficio,<br>pocas <mark>herramientas</mark></h1>
         <p class="bajada esp-3" style="max-width:128mm">El especialista independiente sabe hacer su trabajo. Lo que le falta es una forma ordenada de conseguir clientes, presupuestar, organizarse y cobrar. Son hipótesis cualitativas del producto, todavía sin un estudio que las mida.</p>
         <img class="personaje llave-problema" src="../../marca/personajes/llave-d.svg" alt="Llave, personaje de Handyx">
@@ -400,9 +406,9 @@
 <!-- ============ 4 · LA PROPUESTA ============ -->
 <section class="pagina" id="propuesta">
   <div class="lamina">
-    <div class="cabecera"><span>03 · La propuesta</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>02 · La propuesta</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">03</span>La propuesta de Handyx</span>
+      <span class="ceja"><span class="n">02</span>La propuesta de Handyx</span>
       <h1 class="esp-1">Más que pedidos: un <mark>taller</mark> en el celular</h1>
       <div class="grilla esp-3">
         <div class="c-8">
@@ -410,7 +416,7 @@
           <p class="esp-2">La app no reemplaza el oficio: ordena todo lo que lo rodea. Cada pantalla parte de lo que el especialista ya hace, con su precio, sus tiempos y sus clientes. Tres reglas la sostienen.</p>
         </div>
         <figure class="c-4 con-rotulo">
-          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></span>
+          <span class="rotulos en-linea"><span class="rotulo diseno">Diseño propuesto</span></span>
           <div class="marco"><img src="img/d6-bienvenida-texto.webp" alt="Bienvenida de la app del especialista: Tu trabajo, tus precios"></div>
           <figcaption><b>Bienvenida.</b> La promesa de la app, en sus palabras.</figcaption>
         </figure>
@@ -419,7 +425,8 @@
         <div class="principio clave">
           <h2>Sin comisión</h2>
           <p>«Handyx no te cobra comisión»: el especialista cobra su precio completo, directo del cliente. Handyx no recibe ni guarda la plata del trabajo.</p>
-          <p class="aparte">Al cliente, Handyx le cobra aparte una tarifa de servicio sobre ese precio: 0&nbsp;% hasta el 10/12/2026; después, 15&nbsp;%, en evaluación.</p>
+          <span class="tipo-dato esp-1">Decisión del fundador · 07/11/2026</span>
+          <p class="aparte">Al cliente, Handyx le cobra aparte una tarifa de servicio sobre ese precio: 0&nbsp;% hasta el 10/12/2026 <span class="tipo-dato">Decisión del fundador · 07/11/2026</span> y después 15&nbsp;% <span class="tipo-dato">En evaluación</span>.</p>
         </div>
         <div class="principio">
           <h2>El precio es suyo</h2>
@@ -478,9 +485,9 @@
 <!-- ============ 5 · REGISTRO Y PERFIL ============ -->
 <section class="pagina" id="registro">
   <div class="lamina">
-    <div class="cabecera"><span>04 · Registro y perfil</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>03 · Registro y perfil</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">04</span>Registro y perfil profesional</span>
+      <span class="ceja"><span class="n">03</span>Registro y perfil profesional</span>
       <h1 class="esp-1">Cargar no es estar <mark>verificado</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6 par">
@@ -490,7 +497,7 @@
             <figcaption><b>Certificados.</b> Lo cargado queda «en revisión» hasta que el equipo lo mira.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/ob-aprobado.webp" alt="Alta aprobada: el equipo de verificación habilitó los rubros"></div>
             <figcaption><b>Habilitado.</b> El equipo revisó el alta y activó los rubros.</figcaption>
           </figure>
@@ -528,9 +535,9 @@
 <!-- ============ 6 · ESPECIALIDADES Y SERVICIOS ============ -->
 <section class="pagina" id="especialidades">
   <div class="lamina">
-    <div class="cabecera"><span>05 · Especialidades y servicios</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>04 · Especialidades y servicios</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">05</span>Especialidades y servicios</span>
+      <span class="ceja"><span class="n">04</span>Especialidades y servicios</span>
       <h1 class="esp-1">Sus rubros, sus zonas, sus <mark>tarifas</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6">
@@ -553,7 +560,7 @@
             <figcaption><b>Zonas.</b> Los barrios donde trabaja; se cambian cuando quiere.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/h0-mano-obra.webp" alt="Mano de obra: tarifas por hora, visita, urgencia y tarea"></div>
             <figcaption><b>Tarifas.</b> Hora, visita, urgencia y precio por tarea.</figcaption>
           </figure>
@@ -585,10 +592,10 @@
 <!-- ============ 7 · OPORTUNIDADES Y SOLICITUDES ============ -->
 <section class="pagina" id="oportunidades">
   <div class="lamina">
-    <div class="cabecera"><span>06–07 · Oportunidades y solicitudes</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>05 · Oportunidades y solicitudes</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">06–07</span>Recepción de oportunidades y gestión de solicitudes</span>
-      <h1 class="esp-1">Vos elegís qué <mark>trabajos</mark> tomar</h1>
+      <span class="ceja"><span class="n">05</span>Recepción de oportunidades y gestión de solicitudes</span>
+      <h1 class="esp-1">El especialista elige qué <mark>trabajos</mark> tomar</h1>
       <div class="grilla esp-3">
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
@@ -597,7 +604,7 @@
             <figcaption><b>Inicio.</b> «Disponible» arriba y el mapa de sus zonas detrás.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="marco" style="width:39mm"><img src="img/f-pedido.webp" alt="Detalle del pedido: zona aproximada, franja y precio sugerido"></div>
             <figcaption><b>El pedido.</b> Zona aproximada, franja y «Ahora no» sin consecuencias.</figcaption>
           </figure>
@@ -605,11 +612,7 @@
         <div class="c-6">
           <p class="bajada">Con «Disponible» encendido llegan pedidos de sus rubros y zonas, con lo que necesita el cliente, la zona aproximada y la franja. La dirección exacta llega cuando lo eligen.</p>
           <p class="esp-2">Ningún pedido es obligatorio y no hay asignaciones. Los avisos llevan al detalle y nunca aceptan nada solos.</p>
-          <figure class="con-rotulo lateral esp-3" style="--wf:20mm">
-            <span class="rotulo prueba">Pantalla de la PWA · datos de prueba</span>
-            <div class="celular"><img src="img/pwa-disponibilidad.webp" alt="Inicio de la vista de prueba con los interruptores de disponibilidad"></div>
-            <figcaption><b>En código hoy.</b> En la vista de prueba, urgentes y programados se prenden y se apagan por separado.</figcaption>
-          </figure>
+          <div class="en-codigo esp-3"><span class="estado en-pruebas">En pruebas</span><p><b>En código hoy.</b> En la vista de prueba de la app, urgentes y programados se prenden y se apagan por separado: no aceptar no tiene consecuencias.</p></div>
         </div>
       </div>
       <table class="tabla funciones esp-3">
@@ -638,9 +641,9 @@
 <!-- ============ 8 · PRESUPUESTOS ============ -->
 <section class="pagina" id="presupuestos">
   <div class="lamina">
-    <div class="cabecera"><span>08 · Presupuestos</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>06 · Presupuestos</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">08</span>Elaboración y envío de presupuestos</span>
+      <span class="ceja"><span class="n">06</span>Elaboración y envío de presupuestos</span>
       <h1 class="esp-1">Presupuestos con su <mark>lista</mark> de precios</h1>
       <div class="grilla esp-3">
         <div class="c-6">
@@ -650,12 +653,12 @@
         </div>
         <div class="c-6 par chico">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="marco" style="width:43mm"><img src="img/f-precio.webp" alt="Tu precio con la cinta y la sugerencia de Handyx"></div>
             <figcaption style="width:43mm"><b>Su precio.</b> Cinta o teclado; recibe el 100&nbsp;%.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/h0-presupuesto.webp" alt="Presupuestador con mano de obra y materiales"></div>
             <figcaption><b>Presupuestador.</b> Mano de obra y materiales, con su total.</figcaption>
           </figure>
@@ -687,9 +690,9 @@
 <!-- ============ 9 · COMPARACIÓN Y ACEPTACIÓN ============ -->
 <section class="pagina" id="aceptacion">
   <div class="lamina">
-    <div class="cabecera"><span>09 · Comparación y aceptación</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>07 · Comparación y aceptación</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">09</span>Comparación y aceptación de trabajos</span>
+      <span class="ceja"><span class="n">07</span>Comparación y aceptación de trabajos</span>
       <h1 class="esp-1">Cada pedido, una <mark>decisión</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6 par chico">
@@ -699,7 +702,7 @@
             <figcaption><b>Cuándo va.</b> El horario que pidió el cliente u otro.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-revisar.webp" alt="Revisar la propuesta antes de enviarla"></div>
             <figcaption><b>Revisar.</b> Precio, día y lugar antes de enviar.</figcaption>
           </figure>
@@ -707,11 +710,7 @@
         <div class="c-6">
           <p class="bajada">El especialista no compara pedidos en una pantalla aparte: decide uno por uno, sin consecuencias si deja pasar.</p>
           <p class="esp-2">Antes de enviar revisa precio, día y lugar. Hasta que el cliente acepta, la propuesta no es un trabajo agendado.</p>
-          <figure class="con-rotulo lateral esp-3" style="--wf:22mm">
-            <span class="rotulo prueba">Pantalla de la PWA · datos de prueba</span>
-            <div class="celular"><img src="img/pwa-propuesta.webp" alt="Enviar una propuesta en la vista de prueba"></div>
-            <figcaption><b>En código hoy.</b> Enviar una propuesta con precio, día y qué incluye, sin obligación de contratar.</figcaption>
-          </figure>
+          <div class="en-codigo esp-3"><span class="estado en-pruebas">En pruebas</span><p><b>En código hoy.</b> En la vista de prueba de la app, el especialista manda su propuesta con precio, día y qué incluye, sin obligación de contratar.</p></div>
         </div>
       </div>
       <h4 class="esp-3 et">El circuito de una propuesta · <span>todo con código</span> <span class="estado en-pruebas" style="margin-left:1.4mm">En pruebas</span></h4>
@@ -747,7 +746,7 @@
           <tr><td class="fuerte">Proponer una obra</td><td>Etapas, jornadas y montos en una propuesta que llega al chat</td><td><span class="estado disenado">Diseñado</span></td></tr>
         </tbody>
       </table>
-      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: propuestas, contraoferta y vencimiento (app del especialista, servidor simulado y API en una rama). Diseñado: lienzo, tableros F. La pantalla de la PWA es de la vista de prueba, con datos ficticios.</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: propuestas, contraoferta y vencimiento (app del especialista, servidor simulado y API en una rama). Diseñado: lienzo, tableros F. Las pantallas usan datos ficticios.</p>
     </div>
     <div class="folio"><span>Handyx · Professional App</span><span class="folio-n">00</span></div>
   </div>
@@ -756,10 +755,10 @@
 <!-- ============ 10 · AGENDA Y ORGANIZACIÓN ============ -->
 <section class="pagina" id="agenda">
   <div class="lamina">
-    <div class="cabecera"><span>10 · Agenda y organización</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>08 · Agenda y organización</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">10</span>Agenda y organización</span>
-      <h1 class="esp-1">Tu día, <mark>en orden</mark></h1>
+      <span class="ceja"><span class="n">08</span>Agenda y organización</span>
+      <h1 class="esp-1">Su día, <mark>en orden</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6">
           <p class="bajada">Cuando un cliente acepta, el trabajo entra a la agenda con la dirección exacta, lo acordado y el chat.</p>
@@ -768,12 +767,12 @@
         </div>
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
-            <div class="celular"><img src="img/f-inicio-dia.webp" alt="Tu día con tres paradas"></div>
-            <figcaption><b>Tu día.</b> Próxima parada, recorrido y «Salir ahora».</figcaption>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
+            <div class="celular"><img src="img/f-inicio-dia.webp" alt="El día con tres paradas"></div>
+            <figcaption><b>Su día.</b> Próxima parada, recorrido y «Salir ahora».</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-agenda-mes.webp" alt="Agenda del mes con trabajos y obras"></div>
             <figcaption><b>Agenda.</b> El mes completo, con obras jornada por jornada.</figcaption>
           </figure>
@@ -785,7 +784,7 @@
           <tr><td class="fuerte">Agenda del mes y del día</td><td>Turnos del mes y del día; una obra aparece jornada por jornada y se marcan superposiciones</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Trabajo agendado</td><td>Dirección exacta, acuerdo, chat y «Salir para allá» cuando el cliente acepta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Viaje en camino</td><td>La ubicación se comparte solo en camino; la llegada se marca en la puerta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
-          <tr><td class="fuerte">Tu día y el recorrido</td><td>Próxima parada, recorrido ordenado y aviso de demora</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Su día y el recorrido</td><td>Próxima parada, recorrido ordenado y aviso de demora</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Cambiar fecha o cancelar</td><td>Con un motivo y sin penalización automática</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
         </tbody>
       </table>
@@ -805,19 +804,19 @@
 <!-- ============ 11 · MODO TRABAJO ============ -->
 <section class="pagina" id="modo-trabajo">
   <div class="lamina">
-    <div class="cabecera"><span>13 · Herramientas de trabajo</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>09 · Modo trabajo</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">13</span>Modo trabajo</span>
+      <span class="ceja"><span class="n">09</span>Modo trabajo</span>
       <h1 class="esp-1">Del primer paso al <mark>informe</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/h0-modo.webp" alt="Modo trabajo con tareas y cronómetro"></div>
             <figcaption><b>Modo trabajo.</b> Tareas que empiezan por la seguridad.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/h0-informe-enviado.webp" alt="Informe enviado con conformidad y garantía"></div>
             <figcaption><b>Informe.</b> Conformidad, garantía y cobro.</figcaption>
           </figure>
@@ -832,7 +831,7 @@
         <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
         <tbody>
           <tr><td class="fuerte">Modo trabajo</td><td>Cronómetro, tareas que arrancan por la seguridad y un toque para foto, repuestos, ayuda y agenda</td><td><span class="estado disenado">Diseñado</span></td></tr>
-          <tr><td class="fuerte">Herramientas a mano</td><td>Nivel, linterna, lupa, medir, calculadoras, nota de voz y checklist</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Herramientas a mano</td><td>Nivel, linterna, lupa, medir, calculadoras, nota de voz y lista de control</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Adicionales</td><td>Repuestos o mano de obra con su precio; el cliente acepta o rechaza</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Antes y después</td><td>Comparar fotos y contar qué se cambió</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Informe con garantía</td><td>Se completa solo; conformidad con un toque, garantía y PDF</td><td><span class="estado disenado">Diseñado</span></td></tr>
@@ -854,9 +853,9 @@
 <!-- ============ 12 · CLIENTES E HISTORIAL ============ -->
 <section class="pagina" id="clientes">
   <div class="lamina">
-    <div class="cabecera"><span>11–12 · Clientes e historial</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>10 · Clientes e historial</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">11–12</span>Gestión de clientes e historial de trabajos</span>
+      <span class="ceja"><span class="n">10</span>Gestión de clientes e historial de trabajos</span>
       <h1 class="esp-1">La relación vive en el <mark>chat</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6">
@@ -867,12 +866,12 @@
         </div>
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-chat-adjuntar.webp" alt="Mandar en el chat: presupuesto, propuesta de obra, repuestos, fecha, fotos e informe"></div>
             <figcaption><b>Tarjetas.</b> Presupuesto, obra, repuestos, fecha, fotos e informe.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-agenda-pasadas.webp" alt="Agenda pasada con lo cobrado del mes"></div>
             <figcaption><b>Historial.</b> El mes, con lo cobrado y lo informado.</figcaption>
           </figure>
@@ -904,19 +903,19 @@
 <!-- ============ 13 · HERRAMIENTAS ADMINISTRATIVAS ============ -->
 <section class="pagina" id="administracion">
   <div class="lamina">
-    <div class="cabecera"><span>13 · Herramientas administrativas</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>11 · Herramientas administrativas</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">13</span>Herramientas administrativas</span>
+      <span class="ceja"><span class="n">11</span>Herramientas administrativas</span>
       <h1 class="esp-1">Cuánto entra, cuánto sale y cuánto <mark>queda</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-herramientas.webp" alt="Pestaña Taller: agenda, plata y herramientas"></div>
             <figcaption><b>Taller.</b> Agenda, plata, presupuestos y equipamiento.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-ingresos.webp" alt="Tus ingresos: bruto, gastos y neto del mes"></div>
             <figcaption><b>Ingresos.</b> Bruto, gastos y lo que de verdad queda.</figcaption>
           </figure>
@@ -924,11 +923,7 @@
         <div class="c-6">
           <p class="bajada">La pestaña Taller junta agenda, plata, presupuestos, equipamiento y herramientas. Ingresos y gastos separa lo cobrado de lo que de verdad queda.</p>
           <p class="esp-2">Un gasto se carga con la foto del ticket y se decide si se le cobra al cliente. El equipamiento dice dónde está cada herramienta, cuándo toca el mantenimiento y a quién se prestó.</p>
-          <figure class="con-rotulo lateral esp-3" style="--wf:20mm">
-            <span class="rotulo prueba">Pantalla de la PWA · datos de prueba</span>
-            <div class="celular"><img src="img/pwa-caja.webp" alt="Caja de la vista de prueba: verificado e informado por separado"></div>
-            <figcaption><b>En código hoy.</b> La caja: el pago va directo al especialista, con lo verificado aparte de lo informado.</figcaption>
-          </figure>
+          <div class="en-codigo esp-3"><span class="estado en-pruebas">En pruebas</span><p><b>En código hoy.</b> En la vista de prueba de la app, la caja muestra que el pago va directo al especialista, con lo verificado aparte de lo informado.</p></div>
         </div>
       </div>
       <table class="tabla funciones esp-3">
@@ -957,9 +952,9 @@
 <!-- ============ 14 · OBRAS Y EQUIPO ============ -->
 <section class="pagina" id="obras">
   <div class="lamina">
-    <div class="cabecera"><span>13 · Obras y equipo</span><span>Handyx · Professional App</span></div>
+    <div class="cabecera"><span>12 · Obras y equipo</span><span>Handyx · Professional App</span></div>
     <div class="caja">
-      <span class="ceja"><span class="n">13</span>Obras y equipo</span>
+      <span class="ceja"><span class="n">12</span>Obras y equipo</span>
       <h1 class="esp-1">Obras de varios días, en <mark>equipo</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6">
@@ -969,12 +964,12 @@
         </div>
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-obra.webp" alt="La obra: etapas, jornadas, gastado y lo que falta cobrar"></div>
             <figcaption><b>La obra.</b> Jornadas, gastado y lo que falta cobrar.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/f-reparto.webp" alt="Reparto del pago entre el equipo de la obra"></div>
             <figcaption><b>Reparto.</b> Cuánto le toca a cada uno y cómo cobra.</figcaption>
           </figure>
@@ -1011,7 +1006,7 @@
       <h1 class="esp-1">Los materiales, listos para <mark>retirar</mark></h1>
       <div class="grilla esp-3">
         <figure class="c-7 con-rotulo">
-          <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
+          <span class="rotulos en-linea"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
           <div class="compuesta">
             <div class="escritorio"><img src="img/fe-pedido.webp" alt="Panel web del ferretero: un pedido con stock y reemplazos"></div>
             <div class="celular"><img src="img/r-retiro.webp" alt="Retiro con QR en una ferretería de simulación"></div>
@@ -1114,7 +1109,7 @@
             <figcaption><b>Camino Handyx.</b> Estaciones por trabajos verificados; premios en borrador.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra</span></span>
+            <span class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Muestra · datos ficticios</span></span>
             <div class="celular"><img src="img/cu-perfil.webp" alt="Tu perfil: así te ven los clientes"></div>
             <figcaption><b>Perfil.</b> Lo que ven los clientes; el sello, solo si el equipo verificó.</figcaption>
           </figure>
@@ -1122,14 +1117,14 @@
         <div class="c-6">
           <p class="bajada">El Camino Handyx propone premios por hitos que se ven de antemano, por trabajos y cobros verificados, sin azar ni rankings.</p>
           <p class="esp-2">Al quedar habilitado, el especialista recibe un kit de bienvenida y un manual; después avanza por estaciones y mini caminos, y cada premio se revisa antes de entregarlo. Nada se resta y nada cambia los pedidos que recibe. Los montos y los premios están en borrador.</p>
-          <div class="nota esp-3"><b>Todavía no hay calificaciones.</b> No existe un sistema de calificaciones ni de opiniones de clientes, ni en el código ni en el plan. Hoy la reputación es el perfil: rubros habilitados, certificados revisados y el sello que pone el equipo cuando verifica el alta.</div>
+          <div class="nota esp-3"><b>Todavía no hay calificaciones reales.</b> La reseña opcional del cliente corre solo en la vista de prueba de una rama, sin servidor ni política de moderación, y el perfil con opiniones está en el diseño. Hoy la reputación es el perfil: rubros habilitados, certificados revisados y el sello que pone el equipo.</div>
         </div>
       </div>
       <table class="tabla funciones esp-3">
         <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
         <tbody>
           <tr><td class="fuerte">Perfil público con sello</td><td>El sello aparece solo si el servidor verificó el alta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
-          <tr><td class="fuerte">Perfil con presentación</td><td>Foto, presentación, trabajos verificados y certificados</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Perfil con presentación</td><td>Foto, presentación, trabajos verificados, certificados y opiniones (diseño)</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Camino y mini caminos</td><td>Por trabajos y cobros verificados u oficio; premios en borrador</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Kit, regalo e insignias</td><td>Bienvenida, canje revisado y reconocimientos que no cambian los pedidos</td><td><span class="estado disenado">Diseñado</span></td></tr>
           <tr><td class="fuerte">Áreas del camino</td><td>Taller, obra y ciudad, con premios mayores</td><td><span class="estado concepto">Concepto</span></td></tr>
@@ -1142,7 +1137,7 @@
         <div><h4>Qué hace Handyx</h4><p>Cuenta solo lo verificado, revisa cada premio y no usa azar, rankings ni la aceptación de pedidos.</p></div>
         <div><h4>Resultado</h4><p>Premios por hitos visibles de antemano e insignias por usar la app.</p></div>
       </div>
-      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: perfil público con sello del servidor (app del especialista). Diseñado: Camino Handyx y perfil completo (lienzo, tableros G y CU); montos y premios en borrador, a definir con Legal. Concepto: áreas del camino. Nombres y cifras de las pantallas: muestra.</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: perfil público con sello del servidor (app del especialista) y reseña opcional del cliente (app del usuario, vista de prueba de una rama; ver Dossier 02). Diseñado: Camino Handyx y perfil completo (lienzo, tableros G y CU); montos y premios en borrador, a definir con Legal. Concepto: áreas del camino. Nombres y cifras de las pantallas: muestra.</p>
     </div>
     <div class="folio"><span>Handyx · Professional App</span><span class="folio-n">00</span></div>
   </div>
@@ -1174,10 +1169,11 @@
           <p class="chico suave esp-2">Lo construido es la demo pública del especialista en la landing: un recorrido de muestra, sin servidor. Ninguna función de la app está todavía en manos de especialistas reales.</p>
         </div>
       </div>
+      <div class="destacado esp-3"><b>Noviembre de 2026:</b> demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar. <span class="tipo-dato">Decisión del fundador · 07/11/2026</span></div>
       <h4 class="esp-3 et">El plan por olas · <span>propuesto, sin fechas, a la espera de aprobación</span></h4>
       <div class="olas esp-2">
         <div class="ola hoy"><span class="nombre"><small>Hoy</small>Punto de partida</span><p>Alta guiada, pedidos y propuestas, agenda, viaje, trabajo y cobro informado, obras por etapas, chat, caja, cuenta y Electricidad en una rama.</p><span class="lado"><span class="estado en-pruebas">En pruebas</span></span></div>
-        <div class="ola"><span class="nombre"><small>Ola 0</small>Cimientos</span><p>Un contrato común para todo el bloque, el kit visual nuevo y la base 3D.</p><span class="lado marca-plan">Base técnica</span></div>
+        <div class="ola"><span class="nombre"><small>Ola 0</small>Cimientos</span><p>Bases comunes: un mismo formato de datos para todo, el sistema visual nuevo y el visor 3D.</p><span class="lado marca-plan">Base técnica</span></div>
         <div class="ola"><span class="nombre"><small>Ola 1</small>Entrar y trabajar</span><p>Registro por pasos y bienvenida, el Inicio y el circuito completo del pedido, cuenta, avisos y ayuda.</p><span class="lado"><span class="estado disenado">Diseñado</span></span></div>
         <div class="ola"><span class="nombre"><small>Ola 2</small>El taller del día a día</span><p>Pestaña Taller, agenda, ingresos y gastos, presupuestos y lista de precios, modo trabajo, equipamiento y herramientas del teléfono.</p><span class="lado"><span class="estado disenado">Diseñado</span></span></div>
         <div class="ola"><span class="nombre"><small>Ola 3</small>Obras, equipo y Camino</span><p>Obras completas, equipo y búsquedas, el chat con tarjetas y el Camino Handyx.</p><span class="lado"><span class="estado disenado">Diseñado</span></span></div>
@@ -1203,8 +1199,8 @@
       <p class="bajada esp-3" style="max-width:150mm">No solo el lugar donde aparecen clientes: el lugar donde el especialista presupuesta con sus precios, ordena su día, trabaja con respaldo, cobra directo y crece. Cada página de este dossier dice qué está en pruebas, qué está diseñado y qué falta definir.</p>
       <div class="cifras-cierre esp-5">
         <div><div class="cifra">141</div><p class="cifra-rotulo">pantallas de celular diseñadas para el especialista</p><span class="tipo-dato esp-2">Dato verificado</span></div>
-        <div><div class="cifra">16</div><p class="cifra-rotulo">recorridos dibujados de punta a punta</p><span class="tipo-dato esp-2">Dato verificado</span></div>
-        <div><div class="cifra">56</div><p class="cifra-rotulo">especialistas registrados; no son activos ni verificados</p><span class="tipo-dato esp-2">Dato informado · sin auditar</span></div>
+        <div><div class="cifra">12</div><p class="cifra-rotulo">recorridos de punta a punta, los de este dossier</p><span class="tipo-dato esp-2">Dato verificado</span></div>
+        <div><div class="cifra">56</div><p class="cifra-rotulo">especialistas anotados por el fundador fuera de la landing, en una planilla propia, con su consentimiento</p><span class="tipo-dato esp-2">Dato informado · sin auditar</span></div>
       </div>
       <div class="tesis esp-4"><b>Lo que viene.</b> Construir por olas lo que ya está diseñado, con revisión técnica y pruebas en teléfonos reales antes del despliegue. Una función cambia de estado en este dossier recién cuando cambia en el producto.</div>
       <h4 class="esp-5" style="color:var(--amarillo)">Seguí leyendo la colección</h4>
@@ -1213,7 +1209,7 @@
         <div><b>02 · Customer App</b><p>La experiencia de quien pide el arreglo: pedir, comparar propuestas y elegir.</p></div>
         <div><b>04 · Operations Portal</b><p>Cómo el equipo de Handyx opera, acompaña a cada persona y mide.</p></div>
       </div>
-      <p class="fuente empuja" style="max-width:130mm"><b>Estado al 07/11/2026.</b> 141 pantallas y 16 recorridos: conteo del lienzo «App del especialista» en la auditoría del 07/11/2026. 56 especialistas registrados: dato informado por el fundador, sin auditar (corte 04/11/2026); no son especialistas activos ni verificados.</p>
+      <p class="fuente empuja" style="max-width:130mm"><b>Estado al 07/11/2026.</b> 141 pantallas: conteo del lienzo «App del especialista» en la auditoría del 07/11/2026; 12 recorridos: los de esa auditoría, armados con los 16 tableros de recorrido del lienzo. 56 especialistas: anotados por el fundador fuera de la landing, en una planilla propia, con su consentimiento; dato informado, sin auditar (corte 04/11/2026); no son especialistas activos ni verificados.</p>
     </div>
     <img class="personaje brocha-cierre" src="../../marca/personajes/brocha-c.svg" alt="Brocha, personaje de Handyx">
     <div class="folio"><span>Handyx · Professional App</span><span class="folio-n">00</span></div>
@@ -1235,15 +1231,15 @@
           <div class="qr"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
           <div>
             <p class="texto-grande">La landing con la demo interactiva, los cuatro dossiers y el portafolio del fundador, en un solo lugar.</p>
-            <p class="esp-1"><b>landing.handyc.com/handyx</b></p>
+            <p class="esp-1"><b><a href="https://landing.handyc.com/handyx/">landing.handyc.com/handyx</a></b></p>
             <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
           </div>
         </div>
         <div class="contacto esp-5">
           <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
-          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
-          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
-          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+          <div class="dato"><span>Email</span><span><a href="mailto:ignaciogauna.developer@gmail.com">ignaciogauna.developer@gmail.com</a></span></div>
+          <div class="dato"><span>Teléfono</span><span><a href="tel:+5492236674044">223 667-4044</a></span></div>
+          <div class="dato"><span>Web</span><span><a href="https://landing.handyc.com/">landing.handyc.com</a></span></div>
         </div>
       </div>
       <div>
