@@ -5,10 +5,121 @@
 <title>Handyx · Dossier 01 · Business &amp; Investment</title>
 <link rel="stylesheet" href="../../plantilla/base.css">
 <style>
+  /* ===== Dossier 01 · componentes propios (anotados en NOTAS.md) ===== */
+  h1 { text-wrap: balance; }
+  .caja > .fuente.empuja { padding-top: 2.6mm; }
+  .principios p + p, .riesgo p + p, .regla-avance p + p { margin-top: 0; }
+  h2, .bajada, .idea { text-wrap: pretty; }
+  .oscuro .tipo-dato, .sobre-navy .tipo-dato { color: rgba(233, 239, 249, 0.88); box-shadow: inset 0 0 0 0.22mm rgba(233, 239, 249, 0.42); }
+  .sobre-navy .estado.concepto { color: rgba(233, 239, 249, 0.78); box-shadow: inset 0 0 0 0.25mm rgba(233, 239, 249, 0.45); }
+  .sin-dato { font: 700 7.4pt/1.3 var(--f-texto); color: var(--gris); }
+  .a-definir { font-weight: 700; color: var(--gris); }
+  .ref { font-weight: 700; color: var(--acento); white-space: nowrap; }
+
   /* tapa: navy con el mapa de líneas de Mar del Plata */
   .tapa-negocio .mapa { position: absolute; right: -22mm; top: 4mm; height: 300mm; opacity: 0.2; }
   .tapa-negocio .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; letter-spacing: 0.02em; color: var(--amarillo); }
   .tapa-negocio .regla-tapa { border: 0; border-top: 0.25mm solid rgba(233, 239, 249, 0.22); margin: 6mm 0 0; }
+
+  /* p. 2 · índice con subsecciones */
+  .indice a { padding: 2.05mm 0; }
+  .indice a.sub .t { padding-left: 4mm; font-weight: 500; color: var(--tinta-2); }
+
+  /* p. 3 · cifras clave en navy + cuatro bloques */
+  .cifras-clave { display: grid; grid-template-columns: 1fr 1fr; padding: 0 5mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.84); }
+  .cifras-clave > div { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5mm; padding: 4.6mm 0; }
+  .cifras-clave > div:nth-child(odd) { padding-right: 5mm; border-right: 0.25mm solid rgba(233, 239, 249, 0.16); }
+  .cifras-clave > div:nth-child(even) { padding-left: 5mm; }
+  .cifras-clave > div:nth-child(-n+2) { border-bottom: 0.25mm solid rgba(233, 239, 249, 0.16); }
+  .cifras-clave .cifra { color: #FFFFFF; font-size: 25pt; font-variant-numeric: normal; }
+  .cifras-clave .cifra-rotulo { margin-top: 0; color: rgba(233, 239, 249, 0.86); }
+  .cifras-clave .tipo-dato { margin-top: auto; }
+  .barra-estados { display: flex; gap: 0.5mm; width: 100%; height: 2.2mm; }
+  .barra-estados span { border-radius: 0.5mm; }
+  .e-con { background: #62C38E; } .e-pru { background: #93B6F0; } .e-dis { background: var(--amarillo); }
+  .e-cpt { background: transparent; box-shadow: inset 0 0 0 0.25mm rgba(233, 239, 249, 0.6); }
+  .leyenda-barra { display: flex; flex-wrap: wrap; gap: 0.6mm 3mm; font: 600 6.6pt/1.25 var(--f-texto); color: rgba(233, 239, 249, 0.86); }
+  .leyenda-barra i { display: inline-block; width: 2.2mm; height: 2.2mm; margin-right: 1mm; border-radius: 0.5mm; vertical-align: -0.25mm; }
+  .bloques-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 7mm; }
+  .bloques-2 h4 { margin-bottom: 1.6mm; }
+  .bloques-2 p { font-size: 8.8pt; line-height: 1.46; }
+  .estados-lista { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 1.3mm 2mm; align-items: center; margin-top: 2.6mm; font: 600 7.4pt/1.2 var(--f-texto); color: var(--navy); }
+  .estados-lista .estado { justify-self: start; }
+  .ficha-modelo { list-style: none; padding: 0; margin: 0; font-size: 8.4pt; line-height: 1.4; }
+  .ficha-modelo li { padding: 1.5mm 0; border-bottom: 0.2mm solid var(--borde); }
+  .ficha-modelo li:first-child { padding-top: 0; }
+  .ficha-modelo b { color: var(--navy); }
+
+  /* p. 4 · la odisea en dos carriles + dolores */
+  .carril + .carril { margin-top: 4mm; }
+  .dolores-tabla td { padding-top: 1.55mm; padding-bottom: 1.55mm; }
+  .carril-tit { margin-bottom: 2.2mm; color: var(--gris); }
+  .pasos-carril { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 4.6mm; }
+  .pasos-carril li { position: relative; min-height: 24mm; padding: 2.5mm 2.6mm 7mm; border-radius: 2.2mm; background: var(--hueso); }
+  .pasos-carril li + li::before { content: ''; position: absolute; left: -3.5mm; top: 50%; margin-top: -1.2mm; border: 1.2mm solid transparent; border-left: 1.8mm solid var(--navy); border-right: 0; }
+  .pasos-carril b { display: block; font: 700 7.9pt/1.25 var(--f-texto); color: var(--navy); }
+  .pasos-carril span { display: block; margin-top: 1mm; font-size: 7pt; line-height: 1.36; color: var(--tinta-2); }
+  .pasos-carril .dolores { position: absolute; left: 2.6mm; bottom: 2.4mm; display: flex; gap: 1mm; }
+  .dolor { display: inline-grid; place-items: center; width: 3.9mm; height: 3.9mm; border-radius: 50%; background: var(--amarillo); color: var(--navy); font: 800 6.4pt/1 var(--f-titulos); font-stretch: 112.5%; }
+  .dolores-tabla td:first-child { width: 62mm; }
+  .dolores-tabla td:nth-child(2) { width: 27mm; }
+  .dolores-tabla .dolor { margin-right: 2.2mm; vertical-align: 0.1mm; }
+  .preguntas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm; }
+  .preguntas > div { padding: 3.6mm 4mm; border-radius: 2.4mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .preguntas b { display: block; font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 9.6pt; line-height: 1.22; color: #FFFFFF; }
+  .preguntas span { display: block; margin-top: 1.4mm; font-size: 7.6pt; line-height: 1.4; }
+
+  /* p. 5 · valor para cada lado */
+  .valor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6mm; }
+  .valor-col { display: flex; flex-direction: column; }
+  .valor-quien { font: 800 6.4pt/1.2 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); }
+  .valor-col h3 { margin: 0.8mm 0 3.2mm; font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 12.5pt; line-height: 1.1; }
+  .valor-col figure { align-self: stretch; }
+  .valor .celular { --w: 35mm; }
+  .esquema-portal { position: relative; width: 100%; height: calc(35mm * 844 / 390); display: flex; flex-direction: column; padding: 5mm 4.6mm; border-radius: 3mm; background: var(--azul); color: #FFFFFF; }
+  .esquema-portal .sub { margin-top: 1.4mm; font: 800 6pt/1 var(--f-texto); letter-spacing: 0.16em; text-transform: uppercase; color: var(--amarillo); }
+  .esquema-portal ul { list-style: none; padding: 0; margin: 6mm 0 0; display: grid; gap: 2.5mm; font: 600 8pt/1 var(--f-texto); color: rgba(255, 255, 255, 0.72); }
+  .esquema-portal li:first-child { color: #FFFFFF; }
+  .etiqueta-esquema { display: inline-flex; align-items: center; padding: 0.95mm 1.8mm; border-radius: 0.8mm; margin-bottom: 2.6mm; font: 800 5.9pt/1 var(--f-texto); letter-spacing: 0.11em; text-transform: uppercase; color: var(--gris); box-shadow: inset 0 0 0 0.25mm var(--borde-frio); align-self: center; }
+  .lista-estados { list-style: none; padding: 0; margin: 4mm 0 0; border-top: 0.4mm solid var(--navy); }
+  .lista-estados li { display: flex; justify-content: space-between; align-items: center; gap: 2mm; padding: 1.45mm 0; border-bottom: 0.2mm solid var(--borde); font-size: 7.8pt; line-height: 1.3; color: var(--navy); }
+  .lista-estados li .estado { flex: none; }
+  .principios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6mm; padding: 3.2mm 5mm; border-radius: 2.6mm; background: var(--hueso); }
+  .principios p { font-size: 8pt; line-height: 1.4; }
+  .principios b { display: block; color: var(--navy); font-size: 8.6pt; }
+
+  /* p. 6 · diagrama del ecosistema (cajas en mm + líneas en SVG) */
+  .eco { position: relative; height: 124mm; }
+  .eco > svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+  .eco > .nodo, .eco > .persona, .eco > .etq { position: absolute; }
+  .eco .nodo { padding: 3.2mm 3.4mm; }
+  .eco .nodo h4 { margin-bottom: 1.2mm; padding-right: 15mm; }
+  .eco .nodo p { font-size: 7.4pt; line-height: 1.36; }
+  .eco .pie-nodo { display: flex; flex-wrap: wrap; align-items: center; gap: 1mm 1.8mm; margin-top: 2.2mm; }
+  .eco .pie-nodo .estado { margin-top: 0; }
+  .eco .dom { font: 650 6.6pt/1.2 var(--f-texto); color: var(--gris); }
+  .eco .nodo.navy .dom { color: rgba(233, 239, 249, 0.72); }
+  .eco .dossier { position: absolute; right: 3.2mm; top: 3.3mm; font: 800 5.9pt/1 var(--f-texto); letter-spacing: 0.1em; text-transform: uppercase; color: var(--azul); }
+  .eco .persona { display: grid; place-items: center; height: 9mm; border-radius: 99px; background: var(--hueso); font: 800 6.8pt/1.2 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); }
+  .eco .etq { font: 600 6.8pt/1.35 var(--f-texto); color: var(--tinta-2); text-align: center; }
+  .eco .etq.pendiente { display: flex; flex-direction: column; align-items: flex-end; gap: 1.2mm; text-align: right; color: var(--gris); }
+
+  /* p. 7 · tira de cinco pantallas */
+  .tira-fig { align-items: stretch; }
+  .tira { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4.5mm; }
+  .tira li { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .tira-cab { display: flex; align-items: center; gap: 1.8mm; align-self: flex-start; margin-bottom: 2.6mm; text-align: left; }
+  .tira-cab h4 { margin: 0; }
+  .tira-cab small { display: block; margin-top: 0.6mm; font: 600 6.5pt/1.1 var(--f-texto); color: var(--gris); }
+  .tira .celular { --w: 31mm; }
+  .tira p { margin-top: 2.6mm; font-size: 7.3pt; line-height: 1.36; color: var(--tinta-2); }
+  .tira .funcs { display: grid; gap: 1.2mm; justify-items: center; margin-top: 2.2mm; font: 600 6.6pt/1.25 var(--f-texto); color: var(--navy); }
+  .tira .funcs span:not(.estado) { display: block; }
+  .acompana { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4mm; padding: 3.2mm 4mm; border-radius: 2.4mm; background: var(--hueso); }
+  .acompana h4 { margin: 0; }
+  .acompana p { font-size: 7.8pt; line-height: 1.4; }
+  .acompana .chips { display: grid; grid-template-columns: auto auto; gap: 1.2mm 2mm; align-items: center; font: 600 6.8pt/1.2 var(--f-texto); color: var(--navy); }
+  .acompana .chips .estado { justify-self: start; }
 
   /* p. 8 · cuenta abajo-arriba */
   .cuenta { display: grid; grid-template-columns: 1.12fr 6mm 1fr 6mm 0.95fr 6mm 1.28fr; align-items: stretch; }
@@ -31,6 +142,7 @@
   .marca-col.confirmada { background: var(--navy); color: #FFFFFF; }
   .marca-col.evaluacion { background: var(--amarillo); color: var(--navy); }
   .marca-col.futura { color: var(--gris); box-shadow: inset 0 0 0 0.25mm var(--gris-claro); }
+  .marca-col.chica { padding: 0.8mm 1.5mm; font-size: 5.9pt; vertical-align: 0.2mm; }
   .tarjeta.borde { background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
   .dinero { display: grid; grid-template-columns: 34mm 1fr 34mm; align-items: center; row-gap: 3mm; }
   .dinero .actor { text-align: center; padding: 3.4mm 2mm; border-radius: 2.4mm; background: var(--navy); color: #FFFFFF; font: 800 8.6pt/1.2 var(--f-texto); }
@@ -44,12 +156,215 @@
   .ejemplo { display: grid; grid-template-columns: 1fr auto; row-gap: 1.6mm; column-gap: 6mm; font-size: 8.4pt; }
   .ejemplo .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--navy); }
   .ejemplo .total { padding-top: 1.6mm; border-top: 0.3mm solid var(--navy); font-weight: 750; color: var(--navy); }
+
+  /* p. 10 · competencia por modelo de cobro */
+  .comp td:first-child { width: 37mm; }
+  .comp td:nth-child(2) { width: 52mm; }
+  .comp td:nth-child(4) { width: 25mm; }
+  .comp td { padding-top: 1.6mm; padding-bottom: 1.6mm; }
+  .tipo-dato.largo { white-space: nowrap; }
+  .comp tr.handyx td { background: var(--acento-suave); }
+  .comp tr.handyx td:first-child { padding-left: 2.4mm; }
+  .comp .nombres { color: var(--navy); font-weight: 600; }
+  .dif { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+  .dif .tarjeta { padding: 3.6mm 4mm; }
+  .dif h3 { margin-bottom: 1.6mm; font-size: 9.4pt; }
+  .dif p { font-size: 7.9pt; line-height: 1.42; }
+  .riesgo { display: grid; grid-template-columns: 30mm 1fr 1fr; gap: 6mm; align-items: start; padding: 3.6mm 4.4mm; border-radius: 2.4mm; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
+  .riesgo p { font-size: 7.9pt; line-height: 1.42; }
+  .riesgo b { color: var(--navy); }
+
+  /* p. 11 · dos ejes con el avance de cada acción */
+  .ejes { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .eje-cab { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 2mm; border-bottom: 0.45mm solid var(--navy); }
+  .eje-cab h2 { font-size: 13pt; }
+  .eje-cab .leyenda-avance { font: 700 6pt/1.2 var(--f-texto); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); }
+  .accion { display: grid; grid-template-columns: 1fr auto; column-gap: 3mm; padding: 1.8mm 0; border-bottom: 0.2mm solid var(--borde); }
+  .accion b { font: 700 8.2pt/1.3 var(--f-texto); color: var(--navy); }
+  .accion p { grid-column: 1; margin-top: 0.6mm; font-size: 7.6pt; line-height: 1.38; color: var(--tinta-2); }
+  .accion .avance { grid-column: 2; grid-row: 1 / span 2; align-self: start; margin-top: 0.4mm; }
+  .avance { display: inline-flex; align-items: center; gap: 0.6mm; white-space: nowrap; }
+  .avance i { width: 3.4mm; height: 1.7mm; border-radius: 0.4mm; background: var(--borde); }
+  .avance i.si { background: var(--navy); }
+  .avance b { margin-left: 1.4mm; font: 700 6.6pt/1 var(--f-texto); color: var(--navy); }
+  .medicion-portal { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; padding: 3.4mm 4.4mm; border-radius: 2.4mm; background: var(--hueso); }
+  .medicion-portal p { font-size: 8pt; line-height: 1.42; }
+  .bucles { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .bucle h4 { margin-bottom: 2.4mm; color: var(--gris); }
+  .bucle ol { position: relative; list-style: none; margin: 0; padding: 0 0 6.4mm; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3.6mm; }
+  .bucle li { position: relative; display: grid; place-items: center; min-height: 13mm; padding: 1.8mm 2.2mm; border-radius: 2mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); text-align: center; font: 650 7.2pt/1.3 var(--f-texto); color: var(--navy); }
+  .bucle li + li::before { content: ''; position: absolute; left: -2.9mm; top: 50%; margin-top: -1.1mm; border: 1.1mm solid transparent; border-left: 1.6mm solid var(--navy); border-right: 0; }
+  .bucle ol::after { content: ''; position: absolute; left: 10%; right: 10%; bottom: 0.6mm; height: 4.4mm; border: 0.35mm solid var(--navy); border-top: 0; border-radius: 0 0 2mm 2mm; }
+  .bucle ol::before { content: ''; position: absolute; left: calc(10% - 1.05mm); bottom: 4.4mm; border: 1.05mm solid transparent; border-bottom: 1.6mm solid var(--navy); border-top: 0; }
+  .bucle li:first-child { background: var(--amarillo); box-shadow: none; }
+
+  /* p. 12 · embudo de etapas y métricas */
+  .embudo { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 1.2mm; }
+  .etapa { padding: 2.6mm 4.4mm 2.6mm 5.4mm; background: var(--azul); color: #FFFFFF; font: 750 7.8pt/1.2 var(--f-texto);
+    clip-path: polygon(0 0, calc(100% - 3mm) 0, 100% 50%, calc(100% - 3mm) 100%, 0 100%, 3mm 50%); }
+  .etapa:first-child { padding-left: 3.2mm; clip-path: polygon(0 0, calc(100% - 3mm) 0, 100% 50%, calc(100% - 3mm) 100%, 0 100%); }
+  .etapa small { display: block; margin-top: 0.6mm; font: 500 6.6pt/1.2 var(--f-texto); color: rgba(255, 255, 255, 0.8); }
+  .bajo-embudo { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 1.2mm; row-gap: 1.4mm; margin-top: 2mm; }
+  .bajo-embudo .m { padding: 1.4mm 2mm; border-radius: 1.2mm; background: var(--hueso); font: 650 6.8pt/1.3 var(--f-texto); color: var(--navy); }
+  .bajo-embudo .m.span { grid-column: 1 / -1; text-align: center; background: transparent; box-shadow: inset 0 0 0 0.25mm var(--borde-frio); }
+  .metricas { font-size: 7.6pt; }
+  .metricas td { padding-top: 1.5mm; padding-bottom: 1.5mm; }
+  .metricas td:first-child { width: 31mm; }
+  .metricas td:last-child { width: 29mm; }
+  .tarjeta-cac { display: flex; flex-direction: column; gap: 1.6mm; height: 100%; padding: 4.6mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .tarjeta-cac h4 { color: #FFFFFF; }
+  .tarjeta-cac .cifra { color: #FFFFFF; font-size: 30pt; }
+  .tarjeta-cac p { font-size: 7.8pt; line-height: 1.42; }
+  .tarjeta-cac .linea { margin-top: 1.4mm; padding-top: 2.4mm; border-top: 0.25mm solid rgba(233, 239, 249, 0.18); }
+  .tarjeta-cac .cifra.chica { font-size: 15pt; }
+  .tarjeta-cac .tipo-dato { align-self: flex-start; }
+  .experimentos { font-size: 7.6pt; }
+  .experimentos td:first-child { width: 9mm; font-weight: 800; color: var(--navy); }
+  .experimentos td:nth-child(2) { width: 58mm; }
+  .experimentos td:nth-child(3) { width: 21mm; }
+  .experimentos td:last-child { width: 26mm; }
+  .experimentos td { padding-top: 1.3mm; padding-bottom: 1.3mm; }
+
+  /* p. 13 · escalera de etapas */
+  .etapas { display: grid; grid-template-columns: 22mm repeat(4, minmax(0, 1fr)); column-gap: 3mm; }
+  .escalon { align-self: end; display: flex; flex-direction: column; justify-content: flex-end; padding: 2.6mm 3mm; border-radius: 2.2mm 2.2mm 0 0; background: var(--navy); color: #FFFFFF; }
+  .escalon small { font: 800 6pt/1.2 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; color: var(--amarillo); }
+  .escalon b { display: block; margin-top: 0.8mm; font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 9.6pt; line-height: 1.12; }
+  .escalon.e1 { height: 24mm; background: var(--azul); } .escalon.e2 { height: 29mm; } .escalon.e3 { height: 34mm; } .escalon.e4 { height: 39mm; }
+  .escalon .hoy { align-self: flex-start; margin-bottom: auto; padding: 0.8mm 1.6mm; border-radius: 0.8mm; background: var(--amarillo); color: var(--navy); font: 800 5.9pt/1 var(--f-texto); letter-spacing: 0.1em; text-transform: uppercase; }
+  .etapas .campo, .etapas .celda { padding: 2.2mm 0; border-top: 0.2mm solid var(--borde); }
+  .etapas .campo { font: 800 6.3pt/1.3 var(--f-texto); letter-spacing: 0.09em; text-transform: uppercase; color: var(--gris); }
+  .etapas .celda { font-size: 7.6pt; line-height: 1.38; color: var(--tinta-2); }
+  .etapas .fila-1 { border-top: 0.45mm solid var(--navy); }
+  .etapas .cond { padding: 2.2mm 2mm; margin-top: 1.4mm; border-top: 0; border-radius: 1.4mm; background: #FAF6C9; color: var(--navy); font-weight: 600; }
+  .etapas .campo.cond-campo { margin-top: 1.4mm; border-top: 0; }
+  .regla-avance { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; padding: 3.6mm 4.4mm; border-radius: 2.4mm; background: var(--hueso); }
+  .regla-avance p { font-size: 8pt; line-height: 1.42; }
+  .regla-avance b { color: var(--navy); }
+
+  /* p. 14 · matriz del roadmap */
+  .matriz { display: grid; grid-template-columns: 25mm repeat(3, minmax(0, 1fr)); column-gap: 4mm; }
+  .matriz .col-cab { padding-bottom: 2mm; border-bottom: 0.45mm solid var(--navy); }
+  .matriz .col-cab.vacia { border-bottom-color: var(--navy); }
+  .matriz .area, .matriz .celda { padding: 2.3mm 0; border-bottom: 0.2mm solid var(--borde); }
+  .matriz .area { font: 800 6.6pt/1.3 var(--f-texto); letter-spacing: 0.09em; text-transform: uppercase; color: var(--navy); }
+  .matriz ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1mm; font-size: 7.6pt; line-height: 1.34; color: var(--tinta-2); }
+  .matriz .area, .matriz .celda { padding: 2.1mm 0; }
+  .col-planificado { display: inline-flex; align-items: center; padding: 0.9mm 2.1mm; border-radius: 99px; font: 750 6.6pt/1 var(--f-texto); letter-spacing: 0.02em; color: var(--navy); box-shadow: inset 0 0 0 0.25mm var(--navy); }
+  .orden { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4mm; padding: 3.4mm 4.4mm; border-radius: 2.6mm; background: var(--hueso); }
+  .orden .paso { flex-direction: column; gap: 1.8mm; }
+  .orden .paso p { font-size: 7.8pt; line-height: 1.38; color: var(--navy); }
+  .orden .paso small { display: block; margin-top: 0.6mm; font-size: 7pt; color: var(--gris); }
+  .matriz li { position: relative; padding-left: 2.6mm; }
+  .matriz li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 1.2mm; height: 1.2mm; border-radius: 0.3mm; background: var(--gris-claro); }
+  .matriz .estado { margin-left: 0.6mm; padding: 0.6mm 1.6mm 0.6mm 1.2mm; font-size: 6.2pt; }
+  .matriz .nada { font: 600 7.2pt/1.3 var(--f-texto); color: var(--gris-claro); }
+
+  /* p. 15 · proyecciones */
+  .cuenta.tres { grid-template-columns: 1fr 6mm 1fr 6mm 1.1fr; }
+  .cuenta.tres .tarjeta .cifra { font-size: 19pt; }
+  .variables { font-size: 7.6pt; }
+  .variables td { padding-top: 1.2mm; padding-bottom: 1.2mm; }
+  .variables td:first-child { width: 33mm; }
+  .variables td:nth-child(2) { width: 25mm; }
+  .variables td:nth-child(3) { width: 64mm; }
+  .variables .tipo-dato { white-space: nowrap; }
+  .escenarios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 1.4fr; gap: 4mm; align-items: stretch; }
+  .escenario { display: flex; flex-direction: column; justify-content: center; padding: 2.6mm; border-radius: 2.4mm; border: 0.3mm dashed var(--gris-claro); text-align: center; }
+  .escenario b { font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 10pt; color: var(--navy); }
+  .escenario span { margin-top: 1mm; font: 600 6.8pt/1.3 var(--f-texto); color: var(--gris); }
+  .bruto { padding: 3mm 4mm; border-radius: 2.4mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); font-size: 7.6pt; line-height: 1.4; }
+  .bruto b { display: block; color: #FFFFFF; font-size: 8.6pt; margin-bottom: 0.6mm; }
+
+  /* p. 16 · inversión */
+  .monto { display: flex; flex-direction: column; align-items: flex-start; gap: 1.6mm; padding: 4.4mm 5mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .monto .cifra { color: #FFFFFF; font-size: 25pt; font-variant-numeric: normal; white-space: nowrap; }
+  .monto p { font-size: 7.8pt; line-height: 1.4; }
+  .barra-seg { display: flex; gap: 0.6mm; height: 7.6mm; }
+  .barra-seg span { display: flex; align-items: center; padding-left: 1.8mm; border-radius: 1mm; font: 800 6.8pt/1 var(--f-texto); white-space: nowrap; }
+  .s-mkt { background: #1F57A8; color: #FFFFFF; } .s-ops { background: #C2820E; color: var(--navy); }
+  .s-tec { background: #5B8FE0; color: var(--navy); } .s-leg { background: #0E8C7E; color: #FFFFFF; }
+  .leyenda-seg { display: flex; flex-wrap: wrap; gap: 1mm 5mm; margin-top: 2.2mm; font: 600 7.4pt/1.2 var(--f-texto); color: var(--navy); }
+  .leyenda-seg i { display: inline-block; width: 3mm; height: 3mm; margin-right: 1.4mm; border-radius: 0.6mm; vertical-align: -0.4mm; }
+  .reparto { font-size: 7.7pt; }
+  .reparto td { padding-top: 1.6mm; padding-bottom: 1.6mm; }
+  .reparto td:first-child { width: 30mm; }
+  .reparto td:nth-child(2) { width: 15mm; }
+  .reparto td:nth-child(4) { width: 58mm; }
+  .reparto tfoot td { padding-top: 1.8mm; border-bottom: 0; font-weight: 700; color: var(--navy); }
+  .reparto .sw { display: inline-block; width: 2.4mm; height: 2.4mm; margin-right: 1.6mm; border-radius: 0.5mm; vertical-align: -0.2mm; }
+  .categorias { display: grid; grid-template-columns: 1fr auto; column-gap: 4mm; font-size: 7.8pt; line-height: 1.35; }
+  .categorias span { padding: 1.3mm 0; border-bottom: 0.2mm solid var(--borde); }
+  .categorias .num { text-align: right; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .categorias .no { text-align: right; font-weight: 600; color: var(--gris); }
+  .condiciones { display: grid; gap: 2.2mm; padding: 4mm; border-radius: 2.6mm; background: var(--hueso); }
+  .condiciones .dato { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 2mm; border-bottom: 0.2mm solid var(--borde); font-size: 8.4pt; color: var(--navy); }
+  .condiciones .dato:last-of-type { border-bottom: 0; padding-bottom: 0; }
+
+  /* p. 17 · validación */
+  .val-bloques { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .val { display: flex; flex-direction: column; align-items: flex-start; gap: 1.8mm; padding: 4.4mm 4.6mm; border-radius: 2.6mm; background: var(--hueso); }
+  .val.borde { background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
+  .val .cab { display: flex; flex-wrap: wrap; gap: 1.2mm 1.6mm; align-items: center; }
+  .val h3 { margin-top: 0.6mm; }
+  .val p { font-size: 7.9pt; line-height: 1.42; }
+  .val .cifras { display: flex; gap: 6mm; align-items: flex-end; }
+  .val .cifras .cifra { font-size: 26pt; font-variant-numeric: normal; }
+  .val .cifras .cifra-rotulo { margin-top: 0.8mm; white-space: nowrap; }
+  .tiempo { list-style: none; padding: 0; margin: 0; width: 100%; display: grid; gap: 0; }
+  .tiempo li { display: grid; grid-template-columns: 19mm 1fr; gap: 2.4mm; padding: 1.5mm 0; border-bottom: 0.2mm solid var(--borde); font-size: 7.9pt; line-height: 1.32; color: var(--navy); }
+  .tiempo li:last-child { border-bottom: 0; }
+  .tiempo time { font: 800 7.4pt/1.32 var(--f-titulos); font-stretch: 112.5%; font-variant-numeric: tabular-nums; color: var(--azul); }
+  .tiempo small { display: block; font-size: 7pt; color: var(--gris); }
+  .capacidad { display: grid; grid-template-columns: 30mm 1fr 44mm; gap: 6mm; align-items: center; padding: 4.4mm 5mm; border-radius: 2.6mm; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
+  .capacidad .cifra { font-size: 30pt; }
+  .barras { display: grid; grid-template-columns: 34mm 1fr; gap: 1.9mm 3mm; align-items: center; font: 600 7.2pt/1.25 var(--f-texto); color: var(--navy); }
+  .barras .pista { position: relative; height: 3.2mm; }
+  .barras .pista span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 0.9mm 0.9mm 0; background: var(--azul); }
+  .barras .pista b { position: absolute; top: 50%; transform: translateY(-50%); font: 800 7.4pt/1 var(--f-titulos); font-stretch: 112.5%; color: var(--navy); }
+  .capacidad .ci { display: grid; gap: 1.8mm; justify-items: start; font-size: 7.6pt; line-height: 1.38; }
+
+  /* p. 18 · visión en navy */
+  .vision .mapa { position: absolute; right: -34mm; top: 6mm; height: 292mm; opacity: 0.1; }
+  .ambicion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6mm; }
+  .ambicion > div { display: flex; flex-direction: column; align-items: flex-start; gap: 1.6mm; padding-top: 3.4mm; border-top: 0.5mm solid var(--amarillo); }
+  .ambicion .cifra { color: #FFFFFF; font-size: 26pt; font-variant-numeric: normal; white-space: nowrap; }
+  .ambicion .cifra-rotulo { margin-top: 0; color: rgba(233, 239, 249, 0.86); }
+  .conceptos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm; }
+  .conceptos > div { display: flex; flex-direction: column; align-items: flex-start; gap: 1.6mm; padding: 4mm; border-radius: 2.4mm; box-shadow: inset 0 0 0 0.3mm rgba(233, 239, 249, 0.26); }
+  .conceptos h3 { font-size: 9.8pt; }
+  .conceptos p { font-size: 7.8pt; line-height: 1.42; }
+  .aticma { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7mm; padding: 5mm; border-radius: 2.6mm; background: var(--navy-2); }
+  .aticma .linea { font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 11.4pt; line-height: 1.3; color: #FFFFFF; }
+  .aticma p { font-size: 8.4pt; line-height: 1.48; }
+  .aticma .invitacion { padding-left: 6mm; border-left: 0.3mm solid rgba(233, 239, 249, 0.2); }
+
+  /* p. 19 · cierre */
+  .por-que { display: grid; gap: 3.4mm; }
+  .por-que .paso p { font-size: 8.6pt; line-height: 1.46; }
+  .por-que .paso b { display: block; color: var(--navy); font-size: 9.2pt; margin-bottom: 0.4mm; }
+  .equipo { display: grid; gap: 3mm; }
+  .equipo > div { padding: 3.6mm 4mm; border-radius: 2.4mm; background: var(--hueso); }
+  .equipo b { display: block; font: 800 9.6pt/1.2 var(--f-texto); color: var(--navy); }
+  .equipo span { display: block; margin-top: 0.8mm; font-size: 7.8pt; line-height: 1.38; }
+  .riesgo-equipo { font-size: 7.6pt; line-height: 1.42; color: var(--gris); }
+  .pedido { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: center; padding: 5mm 5.4mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .pedido .idea { font-size: 13pt; color: #FFFFFF; }
+  .pedido .contacto { font-size: 8.6pt; color: #FFFFFF; }
+  .pedido .contacto .dato span:first-child { color: rgba(233, 239, 249, 0.6); }
+  .seguir { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4mm; }
+  .seguir > div { padding-top: 2.4mm; border-top: 0.45mm solid var(--navy); }
+  .seguir b { display: block; font: 800 8.4pt/1.25 var(--f-texto); color: var(--navy); }
+  .seguir span { display: block; margin-top: 0.8mm; font-size: 7.4pt; line-height: 1.38; color: var(--tinta-2); }
+
+  /* p. 20 · contratapa navy con el Engranaje */
+  .contratapa .personaje { position: absolute; right: 0; top: 0; --w: 25mm; }
 </style>
 </head>
 <body>
 
 <!-- ============ 1 · TAPA ============ -->
-<section class="pagina tapa tapa-negocio" data-folio="1">
+<section class="pagina tapa tapa-negocio">
   <div class="lamina">
     <div class="a-sangre fondo-tapa"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""></div>
     <div class="caja">
@@ -72,8 +387,421 @@
   </div>
 </section>
 
+<!-- ============ 2 · ÍNDICE Y CÓMO LEER ============ -->
+<section class="pagina" id="indice">
+  <div class="lamina">
+    <div class="cabecera"><span>Contenido</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja">Contenido</span>
+      <h1 class="esp-1">En este <mark>dossier</mark></h1>
+      <div class="grilla esp-4">
+        <nav class="c-7 indice">
+          <a data-ir="resumen"><span class="n">02</span><span class="t">Resumen ejecutivo</span><span class="p"></span></a>
+          <a data-ir="problema"><span class="n">03</span><span class="t">El problema</span><span class="p"></span></a>
+          <a data-ir="solucion"><span class="n">04</span><span class="t">Nuestra solución</span><span class="p"></span></a>
+          <a data-ir="ecosistema"><span class="n">05</span><span class="t">El ecosistema Handyx</span><span class="p"></span></a>
+          <a data-ir="circuito" class="sub"><span class="n"></span><span class="t">Un arreglo de punta a punta</span><span class="p"></span></a>
+          <a data-ir="mercado"><span class="n">06</span><span class="t">Mercado y oportunidad</span><span class="p"></span></a>
+          <a data-ir="modelo"><span class="n">07</span><span class="t">Modelo de negocio</span><span class="p"></span></a>
+          <a data-ir="competencia"><span class="n">08</span><span class="t">Competencia y diferenciación</span><span class="p"></span></a>
+          <a data-ir="adquisicion"><span class="n">09</span><span class="t">Adquisición y marketing</span><span class="p"></span></a>
+          <a data-ir="medicion" class="sub"><span class="n"></span><span class="t">Cómo lo medimos</span><span class="p"></span></a>
+          <a data-ir="crecimiento"><span class="n">10</span><span class="t">Crecimiento por etapas</span><span class="p"></span></a>
+          <a data-ir="roadmap"><span class="n">11</span><span class="t">Roadmap</span><span class="p"></span></a>
+          <a data-ir="proyecciones"><span class="n">12</span><span class="t">Proyecciones financieras</span><span class="p"></span></a>
+          <a data-ir="inversion"><span class="n">13</span><span class="t">Inversión y uso del capital</span><span class="p"></span></a>
+          <a data-ir="validacion"><span class="n">14</span><span class="t">Avance y validación</span><span class="p"></span></a>
+          <a data-ir="vision"><span class="n">15</span><span class="t">Visión a futuro</span><span class="p"></span></a>
+          <a data-ir="cierre"><span class="n">16</span><span class="t">Equipo y contacto</span><span class="p"></span></a>
+        </nav>
+        <div class="c-5">
+          <div class="como-leer">
+            <div>
+              <h4>Cómo leer este dossier</h4>
+              <p class="chico">Cada función dice en qué estado está al 07/11/2026, cada imagen de dónde sale y cada cifra qué tipo de dato es. Todo ingreso de Handyx es bruto, antes de costos: nunca una ganancia.</p>
+            </div>
+            <div>
+              <h4>Estado de cada función</h4>
+              <div class="def">
+                <span class="estado construido">Construido</span><span>En la rama principal y funcionando con el servidor real.</span>
+                <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de prueba o en una rama.</span>
+                <span class="estado disenado">Diseñado</span><span>Dibujado en los lienzos de diseño, todavía sin código.</span>
+                <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Rótulo de cada imagen</h4>
+              <div class="def">
+                <span class="rotulo diseno">Diseño propuesto</span><span>Pantalla del lienzo de diseño.</span>
+                <span class="rotulo prueba">Datos de prueba</span><span>Pantalla real de la app o del portal, con datos de prueba.</span>
+                <span class="rotulo muestra">Muestra</span><span>Nombres y cifras ficticios.</span>
+                <span class="rotulo concepto">Concepto</span><span>Algo que todavía no existe.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Tipo de cada cifra</h4>
+              <div class="def">
+                <span class="tipo-dato">Dato verificado</span><span>Comprobado contra la fuente.</span>
+                <span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span>
+                <span class="tipo-dato">Supuesto</span><span>Un valor de trabajo, a validar con datos propios.</span>
+                <span class="tipo-dato">Proyección</span><span>Lo que se calcula con supuestos; no es un resultado.</span>
+                <span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span>
+                <span class="tipo-dato">Ejemplo ilustrativo</span><span>Una cuenta para explicar; no es un caso real.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="en-una-linea empuja">
+        <b>Handyx en una línea.</b> Un marketplace de servicios del hogar que nace en Mar del Plata: conecta a quien necesita un
+        arreglo con especialistas de su zona, con propuestas claras para elegir por calidad y por precio. Soluciones, no problemas.
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 3 · RESUMEN EJECUTIVO ============ -->
+<section class="pagina" id="resumen">
+  <div class="lamina">
+    <div class="cabecera"><span>02 · Resumen ejecutivo</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">02</span>Resumen ejecutivo</span>
+      <h1 class="esp-1">Un producto en pruebas y un pedido <mark>concreto</mark></h1>
+      <p class="bajada esp-3">Handyx es un marketplace de servicios del hogar que nace en Mar del Plata. Conecta a quien necesita un arreglo con especialistas independientes de su zona: quien pide recibe propuestas con precio y elige; el especialista pone su precio y cobra directo.</p>
+
+      <div class="cifras-clave sobre-navy esp-4">
+        <div>
+          <div class="cifra">6</div>
+          <p class="cifra-rotulo">rubros para empezar: electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado</p>
+          <span class="tipo-dato">Dato verificado</span>
+        </div>
+        <div>
+          <div class="cifra">284</div>
+          <p class="cifra-rotulo">funciones relevadas en las tres superficies, cada una con su estado</p>
+          <div class="barra-estados" role="img" aria-label="45 construidas, 94 en pruebas, 116 diseñadas y 29 en concepto"><span class="e-con" style="flex:45"></span><span class="e-pru" style="flex:94"></span><span class="e-dis" style="flex:116"></span><span class="e-cpt" style="flex:29"></span></div>
+          <div class="leyenda-barra"><span><i class="e-con"></i>45 construidas</span><span><i class="e-pru"></i>94 en pruebas</span><span><i class="e-dis"></i>116 diseñadas</span><span><i class="e-cpt"></i>29 en concepto</span></div>
+          <span class="tipo-dato">Dato verificado</span>
+        </div>
+        <div>
+          <div class="cifra">Nov. 2026</div>
+          <p class="cifra-rotulo">lanzamiento previsto de las apps, en noviembre de 2026</p>
+          <span class="tipo-dato">Objetivo</span>
+        </div>
+        <div>
+          <div class="cifra">USD&nbsp;100.000</div>
+          <p class="cifra-rotulo">de inversión buscada, con un reparto propuesto a aprobar (p.&nbsp;16)</p>
+          <span class="tipo-dato">Objetivo</span>
+        </div>
+      </div>
+
+      <div class="bloques-2 esp-4">
+        <div>
+          <h4>La oportunidad</h4>
+          <p>Contratar un arreglo todavía pasa por conocidos, grupos de mensajería y presupuestos difíciles de comparar; del otro lado, los especialistas trabajan con herramientas sueltas. Empezamos por Mar del Plata y seis rubros: un mercado que podemos medir barrio por barrio antes de pensar en otra ciudad.</p>
+        </div>
+        <div>
+          <h4>Dónde estamos</h4>
+          <p>La landing está publicada desde el 29/10/2026. El 07/11 publicamos el portal interno y las dos apps, en vista de prueba con datos ficticios. Ningún backend está desplegado: hoy nadie puede pedir ni cobrar un trabajo real a través de Handyx.</p>
+          <div class="estados-lista">
+            <span>Landing</span><span class="estado construido">Construido</span>
+            <span>Portal interno</span><span class="estado construido">Construido</span>
+            <span>Las dos apps</span><span class="estado en-pruebas">En pruebas</span>
+            <span>Backends</span><span class="estado en-pruebas">En pruebas</span>
+          </div>
+        </div>
+        <div>
+          <h4>El modelo</h4>
+          <ul class="ficha-modelo">
+            <li><b>Especialista: sin comisión.</b> Cobra su precio completo, directo de quien lo contrata. <span class="tipo-dato">Dato informado · decisión</span></li>
+            <li><b>Quien pide: 0&nbsp;%</b> de tarifa de servicio hasta el 10/12/2026. <span class="tipo-dato">Dato informado · decisión</span></li>
+            <li><b>Desde el 10/12/2026: 15&nbsp;%</b> sobre el precio del especialista. <span class="tipo-dato">Dato informado · en evaluación</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Qué buscamos</h4>
+          <p>Financiar la etapa de validación en Mar del Plata —marketing, operación, tecnología y legal— con un reparto propuesto a aprobar y atado al objetivo de diciembre de 2026 (p.&nbsp;16). Instrumento, plazo y valuación: <span class="a-definir">[a definir]</span>.</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> 6 rubros: rubros de la landing y de las apps (PROFESIONES-INICIALES, corte 04/11). 284 funciones: auditoría de las tres superficies del 07/11/2026, sobre los lienzos de diseño y los repos de producto. Lanzamiento e inversión: objetivos del fundador (LANZAMIENTO e INVERSION-BUSCADA, corte 04/11); la inversión no está recibida. Tarifa: decisión del fundador del 07/11/2026.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 4 · EL PROBLEMA ============ -->
+<section class="pagina" id="problema">
+  <div class="lamina">
+    <div class="cabecera"><span>03 · El problema</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">03</span>El problema</span>
+      <h1 class="esp-1">Arreglar algo en casa todavía es una <mark>odisea</mark></h1>
+      <p class="bajada esp-3">Seis dolores, de los dos lados del arreglo. Son hipótesis de producto, armadas en conversaciones con vecinos y especialistas: el piloto las confirma o las descarta.</p>
+
+      <div class="esp-4">
+        <div class="carril">
+          <h4 class="carril-tit">Quien necesita un arreglo</h4>
+          <ol class="pasos-carril" style="--n:6">
+            <li><b>Se rompe algo</b><span>Una pérdida, un enchufe, una cerradura.</span></li>
+            <li><b>Pregunta a conocidos</b><span>Y en los grupos del barrio o del edificio.</span><span class="dolores"><span class="dolor">1</span><span class="dolor">6</span></span></li>
+            <li><b>Espera</b><span>Las respuestas llegan de a una; el precio, al final.</span><span class="dolores"><span class="dolor">2</span></span></li>
+            <li><b>Compara a ojo</b><span>Presupuestos con formatos y alcances distintos.</span><span class="dolores"><span class="dolor">3</span></span></li>
+            <li><b>Coordina por mensajes</b><span>Día, llegada, materiales y pago, sueltos.</span><span class="dolores"><span class="dolor">4</span></span></li>
+            <li><b>No queda registro</b><span>Ni de lo hecho ni de la garantía.</span><span class="dolores"><span class="dolor">2</span><span class="dolor">4</span></span></li>
+          </ol>
+        </div>
+        <div class="carril">
+          <h4 class="carril-tit">Quien hace el arreglo</h4>
+          <ol class="pasos-carril" style="--n:5">
+            <li><b>Espera que lo recomienden</b><span>El trabajo llega por conocidos y grupos.</span><span class="dolores"><span class="dolor">6</span></span></li>
+            <li><b>Presupuesta a mano</b><span>Cada vez desde cero, con precios de memoria.</span><span class="dolores"><span class="dolor">5</span></span></li>
+            <li><b>Agenda en la cabeza</b><span>Turnos, viajes y materiales, en el teléfono o en papel.</span><span class="dolores"><span class="dolor">4</span><span class="dolor">5</span></span></li>
+            <li><b>Cobra sin historial</b><span>Lo cobrado no queda ordenado en ningún lado.</span><span class="dolores"><span class="dolor">4</span></span></li>
+            <li><b>No tiene cómo mostrarse</b><span>Un trabajo bien hecho no queda a la vista de nuevos clientes.</span><span class="dolores"><span class="dolor">1</span></span></li>
+          </ol>
+        </div>
+      </div>
+
+      <table class="tabla dolores-tabla esp-4">
+        <thead><tr><th>Dolor (hipótesis)</th><th>Quién lo vive</th><th>Señal que vamos a medir en el piloto</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte"><span class="dolor">1</span>Encontrar a alguien confiable</td><td>Quien pide</td><td>Pedidos con propuestas de especialistas revisados por el equipo</td></tr>
+          <tr><td class="fuerte"><span class="dolor">2</span>Falta de transparencia</td><td>Quien pide</td><td>Trabajos cerrados al precio aceptado o con adicionales aprobados en la app</td></tr>
+          <tr><td class="fuerte"><span class="dolor">3</span>Presupuestos difíciles de comparar</td><td>Quien pide</td><td>Pedidos en los que se comparan dos o más propuestas</td></tr>
+          <tr><td class="fuerte"><span class="dolor">4</span>Desorganización</td><td>Los dos</td><td>Trabajos coordinados de punta a punta dentro de la app</td></tr>
+          <tr><td class="fuerte"><span class="dolor">5</span>Falta de herramientas profesionales</td><td>Especialista</td><td>Especialistas que presupuestan y agendan con la app</td></tr>
+          <tr><td class="fuerte"><span class="dolor">6</span>Oferta fragmentada</td><td>Los dos</td><td>Especialistas disponibles por rubro y por barrio</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="esp-4">Tres preguntas que el piloto tiene que responder</h4>
+      <div class="preguntas esp-2">
+        <div><b>¿Cuántas propuestas recibe un pedido, y en cuánto tiempo?</b><span>Sin ese dato no prometemos plazos: el horario lo declara cada especialista.</span></div>
+        <div><b>¿Quien pide elige por precio, por perfil o por las dos cosas?</b><span>Define qué mostrar primero en cada propuesta y qué conviene medir.</span></div>
+        <div><b>¿Quien contrató una vez vuelve a contratar dentro de Handyx?</b><span>Es la prueba de que el valor queda adentro y no se arregla por fuera.</span></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Hipótesis cualitativas del equipo, a partir de conversaciones con vecinos y especialistas informadas por el fundador: sin número auditado ni muestra estadística. No citamos estadísticas de mercado porque todavía no hay fuentes propias para Mar del Plata; la investigación propuesta está en la p.&nbsp;8.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 5 · NUESTRA SOLUCIÓN ============ -->
+<section class="pagina" id="solucion">
+  <div class="lamina">
+    <div class="cabecera"><span>04 · Nuestra solución</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">04</span>Nuestra solución</span>
+      <h1 class="esp-1">Más claro para quien pide y para quien <mark>trabaja</mark></h1>
+      <p class="bajada esp-3">Handyx ordena el arreglo de punta a punta. Quien pide cuenta qué pasa y elige entre propuestas con precio; el especialista recibe pedidos de su zona y trabaja con herramientas para su oficio; el equipo acompaña desde el portal.</p>
+
+      <div class="valor esp-4">
+        <div class="valor-col">
+          <span class="valor-quien">Para quien pide</span>
+          <h3>Customer App</h3>
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto · muestra</span>
+            <div class="celular"><img src="img/p-revisar.webp" alt="Revisar y publicar un pedido de plomería, con el precio orientativo de la zona"></div>
+          </figure>
+          <ul class="lista-estados">
+            <li><span>Contar qué pasa, en pocos pasos</span><span class="estado en-pruebas">En pruebas</span></li>
+            <li><span>Pedido en 3 toques, con precio orientativo</span><span class="estado disenado">Diseñado</span></li>
+            <li><span>Propuestas lado a lado, sin ranking</span><span class="estado en-pruebas">En pruebas</span></li>
+            <li><span>Pago directo al especialista</span><span class="estado en-pruebas">En pruebas</span></li>
+          </ul>
+        </div>
+        <div class="valor-col">
+          <span class="valor-quien">Para el especialista</span>
+          <h3>Professional App</h3>
+          <figure class="con-rotulo centrada">
+            <span class="rotulo diseno">Diseño propuesto · muestra</span>
+            <div class="celular"><img src="img/h0-presupuesto.webp" alt="Presupuesto con mano de obra y materiales de la lista de precios propia"></div>
+          </figure>
+          <ul class="lista-estados">
+            <li><span>Pedidos de su zona, sin obligación de aceptar</span><span class="estado en-pruebas">En pruebas</span></li>
+            <li><span>Su precio, con una sugerencia que no impone</span><span class="estado en-pruebas">En pruebas</span></li>
+            <li><span>Presupuestador con lista de precios propia</span><span class="estado disenado">Diseñado</span></li>
+            <li><span>Modo trabajo e informe con garantía</span><span class="estado disenado">Diseñado</span></li>
+          </ul>
+        </div>
+        <div class="valor-col">
+          <span class="valor-quien">Para el equipo de Handyx</span>
+          <h3>Operations Portal</h3>
+          <span class="etiqueta-esquema">Esquema · módulos del portal v2</span>
+          <div class="esquema-portal">
+            <img class="logo" style="--h:6.4mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+            <span class="sub">Portal interno</span>
+            <ul><li>Inicio</li><li>Pre-registros</li><li>Especialistas</li><li>Reclamos</li><li>Campañas</li><li>Cohortes</li><li>Mapa</li><li>Tareas</li><li>Docs</li><li>Legal</li></ul>
+          </div>
+          <ul class="lista-estados">
+            <li><span>Preregistros con etapas y contacto guiado</span><span class="estado construido">Construido</span></li>
+            <li><span>Reclamos con plazos por gravedad</span><span class="estado construido">Construido</span></li>
+            <li><span>Campañas con QR, cohortes y mapa</span><span class="estado construido">Construido</span></li>
+            <li><span>Lo que pasa en las apps, en el portal</span><span class="estado concepto">Concepto</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="principios esp-4">
+        <p><b>Sin comisión al especialista</b>Cobra su precio completo; Handyx cobra una tarifa de servicio a quien pide.</p>
+        <p><b>Handyx sugiere, nunca impone</b>El precio lo pone cada especialista; la app muestra un rango de referencia.</p>
+        <p><b>La plata del trabajo no pasa por Handyx</b>Quien pide paga directo al especialista, en efectivo o con Mercado Pago.</p>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código en las apps con el servidor simulado (vista de prueba publicada el 07/11) o en ramas. Diseñado: lienzos «App del usuario» y «App del especialista». Construido: portal interno v2, publicado y sin datos reales. Detalle de cada superficie: Dossiers 02, 03 y 04.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 6 · EL ECOSISTEMA ============ -->
+<section class="pagina" id="ecosistema">
+  <div class="lamina">
+    <div class="cabecera"><span>05 · El ecosistema Handyx</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">05</span>El ecosistema Handyx</span>
+      <h1 class="esp-1">Tres superficies para un mismo <mark>arreglo</mark></h1>
+      <p class="bajada esp-3">Dos apps, una para cada lado del arreglo, y un portal para el equipo. Las apps comparten una misma base de datos; el portal hoy trabaja con lo que llega desde la landing.</p>
+
+      <div class="eco esp-4" role="img" aria-label="Diagrama del ecosistema Handyx: apps, base común, landing, captación y portal">
+        <svg viewBox="0 0 174 124" aria-hidden="true">
+          <defs>
+            <marker id="f6" viewBox="0 0 6 6" refX="5.4" refY="3" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 z" fill="#0E1D36"/></marker>
+            <marker id="f6g" viewBox="0 0 6 6" refX="5.4" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8F99AD"/></marker>
+          </defs>
+          <g fill="none" stroke="#0E1D36" stroke-width="0.42" stroke-linecap="round">
+            <line x1="57" y1="4.5" x2="117" y2="4.5" marker-end="url(#f6)"/>
+            <line x1="27" y1="9.6" x2="27" y2="18.2" marker-end="url(#f6)"/>
+            <line x1="147" y1="9.6" x2="147" y2="18.2" marker-end="url(#f6)"/>
+            <line x1="55" y1="39.5" x2="61" y2="39.5" marker-start="url(#f6)" marker-end="url(#f6)"/>
+            <line x1="113" y1="39.5" x2="119" y2="39.5" marker-start="url(#f6)" marker-end="url(#f6)"/>
+            <line x1="51" y1="103.5" x2="61" y2="103.5" marker-end="url(#f6)"/>
+            <line x1="113" y1="103.5" x2="119" y2="103.5" marker-start="url(#f6)" marker-end="url(#f6)"/>
+          </g>
+          <polyline points="87,60.6 87,72 147,72 147,82.2" fill="none" stroke="#8F99AD" stroke-width="0.42" stroke-dasharray="1.6 1.2" marker-end="url(#f6g)"/>
+        </svg>
+        <div class="persona" style="left:0;top:0;width:54mm">Quien necesita un arreglo</div>
+        <div class="persona" style="left:120mm;top:0;width:54mm">Especialista</div>
+        <div class="etq" style="left:58mm;top:6.4mm;width:58mm">Pago directo del trabajo, en efectivo o con Mercado Pago: el dinero no pasa por Handyx</div>
+
+        <div class="nodo" style="left:0;top:19mm;width:54mm;height:41mm">
+          <span class="dossier">Dossier 02</span>
+          <h4>Customer App</h4>
+          <p>Para quien necesita un arreglo: pide, compara propuestas, sigue el trabajo y paga directo.</p>
+          <div class="pie-nodo"><span class="estado en-pruebas">En pruebas</span><span class="dom">handyx.pro · vista de prueba</span></div>
+        </div>
+        <div class="nodo navy" style="left:62mm;top:19mm;width:50mm;height:41mm">
+          <h4>Base común de las apps</h4>
+          <p>Las API del usuario y del especialista comparten un contrato de datos: pedidos, propuestas, turnos, chat y pagos informados.</p>
+          <div class="pie-nodo"><span class="estado en-pruebas">En pruebas</span><span class="dom">en ramas, sin desplegar</span></div>
+        </div>
+        <div class="nodo" style="left:120mm;top:19mm;width:54mm;height:41mm">
+          <span class="dossier">Dossier 03</span>
+          <h4>Professional App</h4>
+          <p>Para el especialista: pedidos de su zona, su precio, su agenda y su trabajo, con cobro directo.</p>
+          <div class="pie-nodo"><span class="estado en-pruebas">En pruebas</span><span class="dom">workers.handyx.pro · vista de prueba</span></div>
+        </div>
+
+        <div class="etq pendiente" style="left:0;top:63mm;width:83mm"><span>Pendiente de conectar con el portal: pedidos, pagos informados, verificación y reclamos de las apps</span><span class="estado concepto">Concepto</span></div>
+
+        <div class="nodo" style="left:0;top:83mm;width:51mm;height:41mm">
+          <h4>Landing pública</h4>
+          <p>Presenta Handyx y su demo; lista de espera y preregistro de especialistas, con el formulario cerrado hasta el aviso de privacidad definitivo.</p>
+          <div class="pie-nodo"><span class="estado construido">Construido</span><span class="dom">landing.handyc.com</span></div>
+        </div>
+        <div class="nodo" style="left:62mm;top:83mm;width:51mm;height:41mm">
+          <h4>Captación y CRM</h4>
+          <p>Guarda los preregistros cifrados, las campañas, los reclamos y las métricas agregadas.</p>
+          <div class="pie-nodo"><span class="estado en-pruebas">En pruebas</span><span class="dom">completo, sin desplegar</span></div>
+        </div>
+        <div class="nodo navy" style="left:120mm;top:83mm;width:54mm;height:41mm">
+          <span class="dossier" style="color:var(--amarillo)">Dossier 04</span>
+          <h4>Operations Portal</h4>
+          <p>El equipo ordena preregistros, reclamos, campañas, cohortes y el mapa por barrio.</p>
+          <div class="pie-nodo"><span class="estado construido">Construido</span><span class="dom">solo para el equipo</span></div>
+        </div>
+      </div>
+
+      <div class="grilla esp-4">
+        <div class="c-6">
+          <h4>Qué ya está conectado</h4>
+          <p class="esp-1">Lo que alguien deja en la landing llega cifrado al backend de captación y el equipo lo trabaja desde el portal, probado en local. Las dos apps comparten su base de datos y su contrato.</p>
+        </div>
+        <div class="c-6">
+          <h4>Qué falta conectar</h4>
+          <p class="esp-1">Lo que pasa en las apps —pedidos, propuestas, pagos informados, verificación y reclamos— todavía no llega al portal. Esa conexión es el próximo tramo del roadmap operativo (Dossier 04).</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Repos de producto (rama principal y ramas activas) y publicaciones del 29/10 y del 07/11/2026; ningún backend está desplegado. Línea punteada: lo que todavía no está conectado. Dominios actuales de cada superficie; el portal es de uso interno. Descripción por capacidades, sin mecanismos ni proveedores.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 7 · UN ARREGLO DE PUNTA A PUNTA ============ -->
+<section class="pagina" id="circuito">
+  <div class="lamina">
+    <div class="cabecera"><span>05 · El ecosistema, de punta a punta</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">05</span>El ecosistema, de punta a punta</span>
+      <h1 class="esp-1">Así se resuelve un <mark>arreglo</mark> de punta a punta</h1>
+      <p class="bajada esp-3">Cinco momentos de un mismo trabajo, en las dos apps. Cada paso dice qué parte ya tiene código y qué parte es todavía diseño.</p>
+
+      <figure class="con-rotulo tira-fig esp-4">
+        <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
+        <ol class="tira">
+          <li>
+            <div class="tira-cab"><span class="paso-n">1</span><div><h4>Pide</h4><small>Customer App</small></div></div>
+            <div class="celular"><img src="img/p-que.webp" alt="Pedido de plomería: elegir qué pasa"></div>
+            <p>Elige el rubro, cuenta qué pasa y publica el pedido.</p>
+            <div class="funcs"><span>Pedido en pasos</span><span class="estado en-pruebas">En pruebas</span><span>En 3 toques</span><span class="estado disenado">Diseñado</span></div>
+          </li>
+          <li>
+            <div class="tira-cab"><span class="paso-n">2</span><div><h4>Propone</h4><small>Professional App</small></div></div>
+            <div class="celular"><img src="img/f-revisar.webp" alt="Propuesta del especialista con precio, día y horario"></div>
+            <p>Pone su precio, el día y el horario; Handyx sugiere un rango.</p>
+            <div class="funcs"><span>Precio, día y horario</span><span class="estado en-pruebas">En pruebas</span></div>
+          </li>
+          <li>
+            <div class="tira-cab"><span class="paso-n">3</span><div><h4>Elige</h4><small>Customer App</small></div></div>
+            <div class="celular"><img src="img/c-aceptar.webp" alt="Aceptar la propuesta de un especialista"></div>
+            <p>Compara las propuestas y acepta exactamente la que vio.</p>
+            <div class="funcs"><span>Comparar y aceptar</span><span class="estado en-pruebas">En pruebas</span></div>
+          </li>
+          <li>
+            <div class="tira-cab"><span class="paso-n">4</span><div><h4>Trabaja</h4><small>Professional App</small></div></div>
+            <div class="celular"><img src="img/h0-modo.webp" alt="Modo trabajo con la lista de tareas"></div>
+            <p>Llega, trabaja con su lista de tareas y cierra el trabajo.</p>
+            <div class="funcs"><span>Turno, viaje y cierre</span><span class="estado en-pruebas">En pruebas</span><span>Modo trabajo</span><span class="estado disenado">Diseñado</span></div>
+          </li>
+          <li>
+            <div class="tira-cab"><span class="paso-n">5</span><div><h4>Paga directo</h4><small>Customer App</small></div></div>
+            <div class="celular"><img src="img/s-pago-informado.webp" alt="Pago informado: informado no es verificado"></div>
+            <p>Paga al especialista; la app registra el pago informado.</p>
+            <div class="funcs"><span>Pago directo informado</span><span class="estado en-pruebas">En pruebas</span></div>
+          </li>
+        </ol>
+      </figure>
+
+      <div class="acompana esp-3">
+        <span class="paso-n">6</span>
+        <div><h4>Handyx acompaña · Operations Portal</h4><p class="esp-1">Hoy el portal trabaja con preregistros, reclamos y campañas. Lo que pasa en las apps todavía no llega: esa conexión está planificada.</p></div>
+        <div class="chips"><span>Preregistros y reclamos</span><span class="estado construido">Construido</span><span>Datos de las apps</span><span class="estado concepto">Concepto</span></div>
+      </div>
+
+      <div class="flujo esp-4">
+        <div><h4>Necesidad</h4><p>Se rompió algo en casa y no sabe a quién llamar ni cuánto debería costar.</p></div>
+        <div><h4>Acción</h4><p>Cuenta qué pasa, compara propuestas con precio, elige y sigue el trabajo desde la app.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Avisa a especialistas del rubro y la zona, muestra las propuestas por orden de llegada y registra el pago informado, sin tocar la plata.</p></div>
+        <div><h4>Resultado</h4><p>Un trabajo hecho y pagado directo al especialista, con lo acordado por escrito en la app.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Pantallas de los lienzos de diseño, con nombres y montos ficticios. En pruebas: código de las apps con el servidor simulado o en ramas. Diseñado: solo en los lienzos. Concepto: la conexión de las apps con el portal. Informado no es verificado: el pago queda verificado cuando el especialista lo confirma.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
 <!-- ============ 8 · MERCADO Y OPORTUNIDAD ============ -->
-<section class="pagina" data-folio="8" id="mercado">
+<section class="pagina" id="mercado">
   <div class="lamina">
     <div class="cabecera"><span>06 · Mercado y oportunidad</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
@@ -90,7 +818,7 @@
 
       <h2 class="esp-4">El mercado inicial, en una cuenta</h2>
       <div class="cuenta esp-2">
-        <div class="tarjeta"><div class="cifra">259.623</div><p class="cifra-rotulo">hogares en el Partido de General Pueyrredon</p><span class="tipo-dato esp-1">Dato observado · unidad a confirmar</span></div>
+        <div class="tarjeta"><div class="cifra">259.623</div><p class="cifra-rotulo">hogares en el Partido de General Pueyrredon</p><span class="tipo-dato esp-1">Dato informado · unidad a confirmar</span></div>
         <div class="operador">×</div>
         <div class="tarjeta"><div class="cifra">1</div><p class="cifra-rotulo">arreglo por hogar al año</p><span class="tipo-dato esp-1">Supuesto a validar</span></div>
         <div class="operador">×</div>
@@ -107,19 +835,19 @@
           <tr><td class="fuerte">Mercado objetivo inicial</td><td>Mar del Plata, seis rubros</td><td><span class="tam">≈ USD 10,4 M/año</span></td><td>Frecuencia y ticket medidos en la app y una encuesta corta por barrio</td></tr>
         </tbody>
       </table>
-      <p class="fuente empuja"><b>Fuentes:</b> 259.623 · Censo 2022 (INDEC), aportado por el fundador; La Capital lo publica como viviendas particulares ocupadas, así que la unidad está a confirmar. Arreglos por hogar y ticket · supuestos a validar con datos propios. Proyección = 259.623 × 1 × USD 40. Corte 04/11/2026.</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026. Fuentes:</b> 259.623 · Censo 2022 (INDEC), aportado por el fundador; La Capital lo publica como viviendas particulares ocupadas, así que la unidad está a confirmar. Arreglos por hogar y ticket · supuestos a validar con datos propios. Proyección = 259.623 × 1 × USD 40 (MERCADO-USD). Corte 04/11/2026.</p>
     </div>
     <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
   </div>
 </section>
 
 <!-- ============ 9 · MODELO DE NEGOCIO ============ -->
-<section class="pagina" data-folio="9" id="modelo">
+<section class="pagina" id="modelo">
   <div class="lamina">
     <div class="cabecera"><span>07 · Modelo de negocio</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="ceja"><span class="n">07</span>Modelo de negocio</span>
-      <h1 class="esp-1">Sin comisión al especialista, una <mark>tarifa de servicio</mark> para quien pide</h1>
+      <h1 class="esp-1" style="text-wrap:wrap">Sin comisión al especialista, una <mark>tarifa de servicio</mark> para quien pide</h1>
       <p class="bajada esp-3">El especialista pone su precio y lo cobra completo, directo del cliente. Handyx se financia con una tarifa de servicio que paga quien pide el arreglo.</p>
 
       <div class="modelo esp-4">
@@ -137,7 +865,7 @@
           <h3>Desde el 10/12/2026</h3>
           <ul class="lista">
             <li><b>Tarifa de servicio del 15 %</b> para el usuario, sobre el precio del especialista.</li>
-            <li>Cómo se cobra: rendición del especialista o cobro dividido. Todavía no está implementado.</li>
+            <li>Cómo se cobra: en evaluación. Todavía no está implementado.</li>
           </ul>
         </div>
         <div class="tarjeta borde">
@@ -176,9 +904,596 @@
           <p class="idea" style="font-size:13pt">El especialista nunca resigna parte de su precio. El valor de Handyx se cobra como servicio.</p>
         </div>
       </div>
-      <p class="fuente empuja"><b>Fuentes:</b> decisión del fundador (07/11/2026); apps publicadas el 07/11/2026 con tarifa 0 % hasta el 10/12/2026. <b>Tipo:</b> confirmada · en evaluación · concepto. El ejemplo es ilustrativo, no un trabajo real; montos en pesos argentinos; ingreso bruto, antes de costos.</p>
+      <p class="fuente empuja"><b>Estado al 07/11/2026. Fuentes:</b> decisión del fundador (07/11/2026); apps publicadas el 07/11/2026 con tarifa 0 % hasta el 10/12/2026. <b>Tipo:</b> confirmada · en evaluación · concepto. El ejemplo es ilustrativo (EJ-P, EJ-F, EJ-T), no un trabajo real; montos en pesos argentinos; ingreso bruto, antes de costos.</p>
     </div>
     <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 10 · COMPETENCIA ============ -->
+<section class="pagina" id="competencia">
+  <div class="lamina">
+    <div class="cabecera"><span>08 · Competencia y diferenciación</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">08</span>Competencia y diferenciación</span>
+      <h1 class="esp-1">Cada alternativa cobra de una forma <mark>distinta</mark></h1>
+      <p class="bajada esp-3">La competencia más común no es una app: son los conocidos y los grupos del barrio. Entre las plataformas, la diferencia más visible es quién paga y cómo.</p>
+
+      <div class="fila entre centro esp-4"><h2>Por modelo de cobro</h2><span class="tipo-dato largo">Datos públicos consultados el 02–04/11 · a revalidar</span></div>
+      <table class="tabla comp esp-2">
+        <thead><tr><th>Modelo de cobro</th><th>Qué paga el especialista</th><th>Ejemplos que usa el pitch</th><th>Dónde</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Sin plataforma</td><td>Nada a terceros: depende de que lo recomienden</td><td class="nombres">Conocidos, grupos de mensajería y redes del barrio</td><td>En todas partes</td></tr>
+          <tr><td class="fuerte">Comisión sobre el trabajo</td><td>Un porcentaje de cada trabajo; a veces, también un cargo al usuario</td><td class="nombres">Clickie (hasta 15&nbsp;% al profesional) · Taskrabbit</td><td>Argentina · EE.&nbsp;UU.</td></tr>
+          <tr><td class="fuerte">Pago por contacto u oportunidad</td><td>Paga por acceder a cada pedido, lo gane o no</td><td class="nombres">Home Solution · Thumbtack · Angi</td><td>Argentina · EE.&nbsp;UU.</td></tr>
+          <tr><td class="fuerte">Suscripción</td><td>Una cuota periódica para aparecer</td><td class="nombres">Checkatrade</td><td>Reino Unido</td></tr>
+          <tr><td class="fuerte">Comisión cero por un tiempo</td><td>Nada mientras dure la promoción anunciada</td><td class="nombres">Muovi</td><td>Argentina</td></tr>
+          <tr><td class="fuerte">Otros enfoques</td><td>Foco en empresas o en servicio doméstico, o modelo sin confirmar</td><td class="nombres">IguanaFix · Zolvers · Servidos · Yo te lo arreglo · Ay Fix · GoFixii</td><td>Argentina · México · Colombia</td></tr>
+          <tr class="handyx"><td class="fuerte">Handyx</td><td>Nada: cobra su precio completo. Quien pide paga una tarifa de servicio</td><td>0&nbsp;% hasta el 10/12/2026; después, 15&nbsp;% en evaluación (p.&nbsp;9)</td><td>Mar del Plata</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="esp-4">Lo que buscamos que nos diferencie</h2>
+      <div class="dif esp-2">
+        <div class="tarjeta"><h3>Sin comisión al especialista</h3><p>Cobra su precio completo y Handyx se financia con una tarifa de servicio. Es fácil de copiar: no lo presentamos como barrera.</p></div>
+        <div class="tarjeta"><h3>Una herramienta de trabajo, no solo un canal</h3><p>Presupuestador, agenda, modo trabajo y herramientas por oficio: diseñados, con Electricidad en pruebas.</p></div>
+        <div class="tarjeta"><h3>Densidad local y confianza acumulada</h3><p>Especialistas revisados por el equipo, historial y garantías dentro de la app, barrio por barrio. Es una hipótesis: la mide el piloto.</p></div>
+      </div>
+      <div class="riesgo esp-3">
+        <h4>Lo que puede salir mal</h4>
+        <p><b>Que el siguiente arreglo se cierre por fuera.</b> Nada lo impide del todo; lo medimos como repetición dentro de Handyx.</p>
+        <p><b>Que el modelo se copie.</b> La ventaja que buscamos es local y se acumula con el uso; hoy no es una barrera probada.</p>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Datos públicos (prensa, sitios propios y comparadores) consultados por el equipo entre el 02 y el 04/11/2026, sin revalidar en los sitios oficiales: pueden haber cambiado. Clickie: COMP-CLICKIE-PRO (dato público sin verificar). Nombres sin logos. Diferenciación y riesgos: hipótesis del equipo, sin «mejor que».</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 11 · ADQUISICIÓN Y MARKETING ============ -->
+<section class="pagina" id="adquisicion">
+  <div class="lamina">
+    <div class="cabecera"><span>09 · Adquisición y marketing</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">09</span>Adquisición y marketing</span>
+      <h1 class="esp-1">Dos ejes de captación, medidos por <mark>barrio</mark></h1>
+      <p class="bajada esp-3">Lo digital trae volumen; lo físico, confianza y pedidos de la misma zona. Hoy todo es estrategia prevista: nada está en ejecución ni medido todavía.</p>
+
+      <div class="ejes esp-4">
+        <div>
+          <div class="eje-cab"><h2>Digital</h2><span class="leyenda-avance">Previsto · En ejecución · Medido</span></div>
+          <div class="accion"><b>Anuncios por barrio y por urgencia</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Instagram y Facebook, con un enlace por pieza y por barrio.</p></div>
+          <div class="accion"><b>Búsqueda local</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Google: ficha local y una landing por rubro para pedidos con intención.</p></div>
+          <div class="accion"><b>Contenido audiovisual corto</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Problemas concretos —una pérdida, un enchufe— con los personajes de la marca.</p></div>
+          <div class="accion"><b>Captación por oficio</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Mensajes separados para quien pide y para el especialista, por rubro.</p></div>
+          <div class="accion"><b>Referidos</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Una propuesta con costo, reglas y control de abuso; nada prometido.</p></div>
+          <div class="accion"><b>Remarketing, posicionamiento orgánico y TikTok</b><span class="avance"><i></i><i></i><i></i><b>Sin plan</b></span><p>Todavía sin plan documentado: <span class="a-definir">[a definir]</span>.</p></div>
+        </div>
+        <div>
+          <div class="eje-cab"><h2>Físico</h2><span class="leyenda-avance">Previsto · En ejecución · Medido</span></div>
+          <div class="accion"><b>Porteros y administradores de edificios</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Canal usado en la prueba de octubre (dato informado, p.&nbsp;17); falta llevarlo a escala.</p></div>
+          <div class="accion"><b>Volante por barrio con su QR</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Un QR por barrio y por pieza, para saber qué funciona y dónde.</p></div>
+          <div class="accion"><b>Comercios del barrio y ferreterías</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Cartel con QR propio. Solo llamamos aliado a quien acepta por escrito.</p></div>
+          <div class="accion"><b>Carteles y volantes en la calle</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Postes y locales de los barrios donde ya hay oferta de especialistas.</p></div>
+          <div class="accion"><b>Acciones con especialistas</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Remeras con el personaje de su oficio y contacto uno a uno desde el CRM.</p></div>
+          <div class="accion"><b>Materiales impresos con QR</b><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span><p>Como este dossier: cada pieza con un enlace propio y medible.</p></div>
+        </div>
+      </div>
+
+      <div class="fila entre centro esp-4"><h2>Dos bucles que buscamos activar</h2><span class="tipo-dato largo">Hipótesis · sin medir</span></div>
+      <div class="bucles esp-3">
+        <div class="bucle">
+          <h4>Vecinos</h4>
+          <ol><li>Trabajo bien hecho</li><li>Reseña o consejo</li><li>Otro pedido en la zona</li><li>Más trabajo en el barrio</li></ol>
+        </div>
+        <div class="bucle">
+          <h4>Comercios del barrio</h4>
+          <ol><li>Comercio que colabora</li><li>Pedido con su QR</li><li>Arreglo resuelto</li><li>Vuelve a recomendar</li></ol>
+        </div>
+      </div>
+
+      <div class="medicion-portal esp-4">
+        <span class="estado construido">Construido</span>
+        <p><b>La medición ya tiene dónde vivir.</b> El portal registra campañas con enlaces y QR, cohortes y el mapa por barrio; falta que la landing guarde el origen de cada registro. La pauta decidida es de USD&nbsp;100 por mes <span class="tipo-dato">Dato informado</span>, y cada acción se mide con las métricas de la p.&nbsp;12.</p>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Estrategia de marketing, bucles de crecimiento y backlog de experimentos del equipo (31/10); pauta mensual informada por el fundador (COSTO-MARKETING, 04/11; confirmada el 07/11). Ninguna alianza firmada. Prueba con porteros: dato informado por el fundador, sin auditar. Herramienta de campañas: portal interno v2.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 12 · CÓMO LO MEDIMOS ============ -->
+<section class="pagina" id="medicion">
+  <div class="lamina">
+    <div class="cabecera"><span>09 · Cómo lo medimos</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">09</span>Cómo lo medimos</span>
+      <h1 class="esp-1">El costo se mide contra trabajos <mark>completados</mark></h1>
+      <p class="bajada esp-3">Un registro no es un cliente. Cada métrica se calcula sobre lo que importa —trabajos completados y clientes que vuelven— y dice de dónde sale el dato.</p>
+
+      <div class="embudo esp-4">
+        <div class="etapa">Registro<small>landing</small></div>
+        <div class="etapa">Primer pedido<small>app del usuario</small></div>
+        <div class="etapa">Propuesta aceptada<small>las dos apps</small></div>
+        <div class="etapa">Trabajo completado<small>las dos apps</small></div>
+        <div class="etapa">Repetición<small>apps y portal</small></div>
+      </div>
+      <div class="bajo-embudo">
+        <span class="m">Costo por registro</span><span></span><span></span><span class="m">CAC · costo por trabajo completado</span><span class="m">Frecuencia y retención</span>
+        <span class="m span">Conversión por etapa: cuántos pasan de cada etapa a la siguiente · hoy, sin dato en ninguna</span>
+      </div>
+
+      <div class="grilla esp-4">
+        <div class="c-8">
+          <table class="tabla metricas">
+            <thead><tr><th>Métrica</th><th>Cómo se calcula</th><th>Hoy</th></tr></thead>
+            <tbody>
+              <tr><td class="fuerte">Costo por registro</td><td>Gasto de una pieza o campaña ÷ registros que trae, por público</td><td><span class="sin-dato">Sin dato</span></td></tr>
+              <tr><td class="fuerte">Conversión por etapa</td><td>Quienes llegan a una etapa ÷ quienes llegaron a la anterior</td><td><span class="sin-dato">Sin dato</span></td></tr>
+              <tr><td class="fuerte">CAC</td><td>Gasto de captación ÷ clientes nuevos con su primer trabajo completado</td><td>Techo USD&nbsp;6 · a medir</td></tr>
+              <tr><td class="fuerte">Costo por trabajo completado</td><td>Gasto de captación ÷ trabajos completados en el período</td><td><span class="sin-dato">Sin dato</span></td></tr>
+              <tr><td class="fuerte">Frecuencia de contratación</td><td>Trabajos por cliente por año</td><td>1 por año <span class="tipo-dato">Supuesto</span></td></tr>
+              <tr><td class="fuerte">Retención</td><td>Clientes que vuelven a contratar dentro de Handyx, por cohorte</td><td>5 en diciembre <span class="tipo-dato">Objetivo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="c-4">
+          <div class="tarjeta-cac sobre-navy">
+            <h4>Techo de CAC</h4>
+            <div class="cifra">USD&nbsp;6</div>
+            <p>Lo máximo que puede costar traer a un cliente para que su primer trabajo lo pague: la tarifa del 15&nbsp;% sobre un ticket supuesto de USD&nbsp;40.</p>
+            <span class="tipo-dato">Proyección · a medir</span>
+            <div class="linea">
+              <div class="cifra chica">≈ USD&nbsp;2</div>
+              <p>Estimación con la pauta de USD&nbsp;100 por mes y 50 clientes nuevos por mes, que todavía no se midieron.</p>
+            </div>
+            <span class="tipo-dato">Supuesto</span>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="esp-4">Seis experimentos, con el umbral para seguir o cortar definido antes de ver datos</h4>
+      <table class="tabla experimentos esp-2">
+        <thead><tr><th>Id</th><th>Experimento</th><th>Eje</th><th>Métrica principal</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>F1</td><td>Volante por barrio con su QR</td><td>Físico</td><td>Registros por cada tanda de volantes</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+          <tr><td>F2</td><td>Comercio del barrio con cartel y QR</td><td>Físico</td><td>Pedidos trazables por comercio</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+          <tr><td>D1</td><td>Videos cortos con los personajes</td><td>Digital</td><td>Costo por registro</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+          <tr><td>D2</td><td>Búsqueda local por rubro</td><td>Digital</td><td>Pedidos por semana</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+          <tr><td>A1</td><td>Bienvenida con un pedido de ejemplo</td><td>Activación</td><td>Registrados que hacen su primer pedido</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+          <tr><td>R1</td><td>Pedir la reseña al cerrar el trabajo</td><td>Recomendación</td><td>Trabajos con reseña o recomendación</td><td><span class="avance"><i class="si"></i><i></i><i></i><b>Previsto</b></span></td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Definiciones: modelo económico y estrategia de growth del equipo (31/10). CAC-MAXIMO: 15&nbsp;% × USD&nbsp;40 (proyección; la tarifa del 15&nbsp;% está en evaluación). CAC-ESTIMADO: USD&nbsp;100 ÷ 50 clientes por mes (supuesto). META-REPETIDORES: objetivo. Ninguna métrica está medida: todavía no hay operación real.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 13 · CRECIMIENTO POR ETAPAS ============ -->
+<section class="pagina" id="crecimiento">
+  <div class="lamina">
+    <div class="cabecera"><span>10 · Crecimiento por etapas</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">10</span>Crecimiento por etapas</span>
+      <h1 class="esp-1">Consolidar Mar&nbsp;del&nbsp;Plata antes de <mark>replicar</mark></h1>
+      <p class="bajada esp-3">Cuatro etapas, sin fechas comprometidas. Se pasa a la siguiente solo cuando se cumple la condición de la anterior, y cada trimestre se revisa en qué etapa estamos.</p>
+
+      <div class="etapas esp-4">
+        <span></span>
+        <div class="escalon e1"><span class="hoy">Próxima</span><small>Etapa 1</small><b>Lanzar y validar</b></div>
+        <div class="escalon e2"><small>Etapa 2</small><b>Consolidar Mar del Plata</b></div>
+        <div class="escalon e3"><small>Etapa 3</small><b>Replicar en una ciudad parecida</b></div>
+        <div class="escalon e4"><small>Etapa 4</small><b>Ampliar la oferta</b></div>
+
+        <span class="campo fila-1">Objetivo</span>
+        <span class="celda fila-1">Que los primeros pedidos reales se completen dentro de Handyx.</span>
+        <span class="celda fila-1">Densidad por barrio y por rubro, con clientes que vuelven.</span>
+        <span class="celda fila-1">Probar que el método funciona fuera de Mar del Plata.</span>
+        <span class="celda fila-1">Más rubros y nuevas líneas de negocio.</span>
+
+        <span class="campo">Acciones</span>
+        <span class="celda">Desplegar los backends, abrir el registro con el aviso de privacidad definitivo y sumar especialistas por rubro y barrio.</span>
+        <span class="celda">Porteros y administradores, comercios con QR, verificación y soporte a cargo del equipo.</span>
+        <span class="celda">Llevar la captación por barrio, la verificación y el soporte a una ciudad de perfil parecido.</span>
+        <span class="celda">Herramientas por oficio, Handyx Business y ferreterías adheridas, hoy conceptos.</span>
+
+        <span class="campo">Recursos</span>
+        <span class="celda">El equipo actual y la pauta de USD&nbsp;100 por mes <span class="tipo-dato">Dato informado</span></span>
+        <span class="celda">La inversión buscada: marketing y operaciones (p.&nbsp;16).</span>
+        <span class="celda">Operación local: <span class="a-definir">[a definir]</span></span>
+        <span class="celda"><span class="a-definir">[a definir]</span></span>
+
+        <span class="campo">Indicadores</span>
+        <span class="celda">Trabajos completados, propuestas por pedido y costo por registro.</span>
+        <span class="celda">Repetición, cobertura por barrio y rubro, contribución por trabajo.</span>
+        <span class="celda">Los de las etapas 1 y 2, en la ciudad nueva.</span>
+        <span class="celda"><span class="a-definir">[a definir]</span></span>
+
+        <span class="campo">Hito</span>
+        <span class="celda">50 trabajos con tarifa y 5 clientes que repiten en diciembre de 2026 <span class="tipo-dato">Objetivo</span></span>
+        <span class="celda"><span class="a-definir">[a definir]</span></span>
+        <span class="celda"><span class="a-definir">[a definir]</span></span>
+        <span class="celda"><span class="a-definir">[a definir]</span></span>
+
+        <span class="campo cond-campo">Condición para pasar</span>
+        <span class="celda cond">Hito cumplido y CAC medido por debajo del techo de USD&nbsp;6.</span>
+        <span class="celda cond">Densidad, repetición y contribución positiva en Mar del Plata.</span>
+        <span class="celda cond">La ciudad nueva alcanza los indicadores de Mar del Plata.</span>
+        <span class="celda cond">Se define con los datos de las etapas anteriores.</span>
+      </div>
+
+      <div class="regla-avance esp-4">
+        <p><b>Revisión trimestral.</b> Al cierre de cada trimestre se revisa la condición de la etapa en curso. Si no se cumple, se sigue en la misma etapa: se avanza por resultados, no por calendario.</p>
+        <p><b>Lo que no vamos a hacer.</b> Abrir otra ciudad antes de que Mar del Plata cumpla su condición: sin densidad ni repetición, una ciudad nueva multiplica el problema.</p>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Etapas y condiciones: propuesta del equipo a partir del plan del pitch, sin sus fechas ni sus metas de cuota. Hito de la etapa 1: META-TRABAJOS y META-REPETIDORES (objetivo). Pauta: COSTO-MARKETING (dato informado). Techo de CAC: CAC-MAXIMO (proyección).</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 14 · ROADMAP ============ -->
+<section class="pagina" id="roadmap">
+  <div class="lamina">
+    <div class="cabecera"><span>11 · Roadmap</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">11</span>Roadmap</span>
+      <h1 class="esp-1">Separamos lo construido de lo <mark>planificado</mark></h1>
+      <p class="bajada esp-3">Seis frentes, tres columnas y ninguna fecha comprometida. En pruebas hay código que todavía no usa gente real; lo planificado dice si está diseñado o si es un concepto.</p>
+
+      <div class="matriz esp-4">
+        <span class="col-cab vacia"></span>
+        <div class="col-cab"><span class="estado construido">Construido</span></div>
+        <div class="col-cab"><span class="estado en-pruebas">En pruebas</span></div>
+        <div class="col-cab"><span class="col-planificado">Planificado</span></div>
+
+        <span class="area">Producto</span>
+        <div class="celda"><ul><li>Landing con demo interactiva, publicada el 29/10</li><li>Portal interno v2, publicado el 07/11</li></ul></div>
+        <div class="celda"><ul><li>App del usuario y app del especialista, en vista de prueba desde el 07/11</li><li>Backend de captación y CRM, completo y sin desplegar</li><li>API de las apps, Taller de Electricidad y HandIA, en ramas</li></ul></div>
+        <div class="celda"><ul><li>Pedido en 3 toques, presupuestador, modo trabajo, Mi hogar y portal v3 <span class="estado disenado">Diseñado</span></li><li>Herramientas de plomería, gas, aire, albañilería y cerrajería <span class="estado concepto">Concepto</span></li></ul></div>
+
+        <span class="area">Operaciones</span>
+        <div class="celda"><ul><li>CRM de preregistros y reclamos con plazos por gravedad</li><li>Registro de actividad del equipo</li></ul></div>
+        <div class="celda"><ul><li>Alta de especialistas con revisión del equipo</li><li>Legajos, tareas y legal, con datos de muestra</li><li>Soporte atendido por personas</li></ul></div>
+        <div class="celda"><ul><li>Pedidos, pagos informados y reclamos de las apps en el portal <span class="estado concepto">Concepto</span></li></ul></div>
+
+        <span class="area">Comercial</span>
+        <div class="celda"><span class="nada">Nada todavía</span></div>
+        <div class="celda"><ul><li>Tarifa 0&nbsp;% hasta el 10/12 en las apps</li><li>Pago directo en efectivo, informado</li><li>Pago con Mercado Pago al especialista</li></ul></div>
+        <div class="celda"><ul><li>Tarifa de servicio del 15&nbsp;% desde el 10/12 <span class="marca-col evaluacion chica">En evaluación</span></li><li>Handyx Business <span class="estado concepto">Concepto</span></li></ul></div>
+
+        <span class="area">Marketing</span>
+        <div class="celda"><ul><li>Campañas con enlaces y QR, cohortes y mapa por barrio, en el portal</li></ul></div>
+        <div class="celda"><ul><li>Registro de la landing, cerrado hasta el aviso de privacidad definitivo</li></ul></div>
+        <div class="celda"><ul><li>Anuncios por barrio, búsqueda local, volantes y comercios con QR (p.&nbsp;11)</li></ul></div>
+
+        <span class="area">Expansión</span>
+        <div class="celda"><span class="nada">Nada todavía</span></div>
+        <div class="celda"><span class="nada">Nada todavía</span></div>
+        <div class="celda"><ul><li>Consolidar Mar del Plata, después una ciudad de perfil parecido y más rubros (p.&nbsp;13)</li></ul></div>
+
+        <span class="area">Alianzas</span>
+        <div class="celda"><span class="nada">Ninguna firmada</span></div>
+        <div class="celda"><ul><li>Porteros y administradores de edificios: prueba informada en octubre</li></ul></div>
+        <div class="celda"><ul><li>Ferreterías adheridas: app y panel del ferretero <span class="estado disenado">Diseñado</span></li></ul></div>
+      </div>
+
+      <h4 class="esp-4">El orden de lo que sigue, sin fechas</h4>
+      <div class="orden esp-2">
+        <div class="paso"><span class="paso-n">1</span><p>Desplegar los backends<small>Captación y las API de las dos apps.</small></p></div>
+        <div class="paso"><span class="paso-n">2</span><p>Abrir el registro<small>Con el aviso de privacidad definitivo.</small></p></div>
+        <div class="paso"><span class="paso-n">3</span><p>Primeros trabajos reales<small>En Mar del Plata, con la tarifa decidida.</small></p></div>
+        <div class="paso"><span class="paso-n">4</span><p>Conectar apps y portal<small>Pedidos, pagos y reclamos a la vista.</small></p></div>
+        <div class="paso"><span class="paso-n">5</span><p>Herramientas por oficio<small>Después del lanzamiento.</small></p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Auditoría de las tres superficies y de los siete repos de producto (rama principal y ramas activas), con las publicaciones del 29/10 y del 07/11/2026. Prueba con porteros: dato informado por el fundador, sin auditar. Tarifa del 15&nbsp;%: en evaluación, sin política aprobada ni implementación.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 15 · PROYECCIONES ============ -->
+<section class="pagina" id="proyecciones">
+  <div class="lamina">
+    <div class="cabecera"><span>12 · Proyecciones financieras</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">12</span>Proyecciones financieras</span>
+      <h1 class="esp-1">Proyectamos con variables, no con <mark>promesas</mark></h1>
+      <p class="bajada esp-3">Ninguna variable del modelo está medida todavía. Mostramos los supuestos con su valor y una sola proyección, con su fórmula; los escenarios esperan los datos del piloto.</p>
+
+      <h4 class="esp-4">El punto de equilibrio, en una cuenta</h4>
+      <div class="cuenta tres esp-2">
+        <div class="tarjeta"><div class="cifra">USD&nbsp;400</div><p class="cifra-rotulo">por mes de costos actuales estimados, sin sueldos</p><span class="tipo-dato esp-1">Dato informado</span></div>
+        <div class="operador">÷</div>
+        <div class="tarjeta"><div class="cifra">USD&nbsp;6</div><p class="cifra-rotulo">de ingreso bruto por trabajo: 15&nbsp;% de un ticket supuesto de USD&nbsp;40</p><span class="tipo-dato esp-1">Proyección</span></div>
+        <div class="operador">=</div>
+        <div class="tarjeta acento"><div class="cifra">≈ 67</div><p class="cifra-rotulo" style="color:inherit">trabajos por mes para cubrir los costos actuales</p><span class="tipo-dato esp-1">Proyección</span></div>
+      </div>
+      <p class="chico suave esp-2">Con los costos de cobro, soporte e impuestos el número sube: el equilibrio real se calcula con la contribución por trabajo, todavía sin medir.</p>
+
+      <table class="tabla variables esp-3">
+        <thead><tr><th>Variable</th><th>Estado del dato</th><th>Valor de trabajo</th><th>Cómo se va a medir</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Profesionales activos</td><td><span class="sin-dato">Sin medir</span></td><td>Sin dato: registrados no son activos</td><td>Revisados y disponibles, por rubro y barrio</td></tr>
+          <tr><td class="fuerte">Clientes activos</td><td><span class="sin-dato">Sin medir</span></td><td>Sin dato</td><td>Con un trabajo completado en el período</td></tr>
+          <tr><td class="fuerte">Trabajos completados</td><td><span class="sin-dato">Sin medir</span></td><td>Sin dato</td><td>Con la conformidad de quien pidió</td></tr>
+          <tr><td class="fuerte">Ticket promedio</td><td><span class="tipo-dato">Supuesto</span></td><td>USD&nbsp;40 por arreglo</td><td>Precio del especialista, por trabajo</td></tr>
+          <tr><td class="fuerte">Ingreso por operación</td><td><span class="tipo-dato">Proyección</span></td><td>USD&nbsp;6 por trabajo, bruto, antes de costos</td><td>Tarifa cobrada en cada trabajo</td></tr>
+          <tr><td class="fuerte">Costo de adquisición</td><td><span class="tipo-dato">Supuesto</span></td><td>≈ USD&nbsp;2; techo de USD&nbsp;6, a medir (p.&nbsp;12)</td><td>Captación ÷ primeros trabajos completados</td></tr>
+          <tr><td class="fuerte">Costos operativos</td><td><span class="tipo-dato">Dato informado</span></td><td>USD&nbsp;400 por mes, sin sueldos</td><td>Gastos reales de cada mes</td></tr>
+          <tr><td class="fuerte">Costos tecnológicos</td><td><span class="tipo-dato">Dato informado</span></td><td>Servidores USD&nbsp;100 y desarrollo USD&nbsp;200 por mes</td><td>Facturas de cada servicio</td></tr>
+          <tr><td class="fuerte">Margen</td><td><span class="sin-dato">Sin medir</span></td><td><span class="a-definir">[a definir]</span>: faltan cobro, soporte e impuestos</td><td>Ingreso bruto menos costos variables</td></tr>
+          <tr><td class="fuerte">Flujo de caja</td><td><span class="sin-dato">Sin medir</span></td><td><span class="a-definir">[a definir]</span>: sin caja propia informada</td><td>Ingresos menos egresos del mes</td></tr>
+        </tbody>
+      </table>
+
+      <div class="escenarios esp-4">
+        <div class="escenario"><b>Conservador</b><span>Pendiente de datos medidos</span></div>
+        <div class="escenario"><b>Base</b><span>Pendiente de datos medidos</span></div>
+        <div class="escenario"><b>Ambicioso</b><span>Pendiente de datos medidos</span></div>
+        <div class="bruto"><b>Ingreso bruto no es ganancia.</b>La tarifa de servicio es ingreso bruto de Handyx, antes de costos de cobro, impuestos, soporte y sueldos.</div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> COSTOS-MES (servidores 100, desarrollo 200 y marketing 100; dato informado por el fundador, 04/11). INGRESO-POR-TRABAJO y EQUILIBRIO-TRABAJOS: proyección, 400 ÷ 6 = 66,7. SUP-TICKET-USD y CAC-ESTIMADO: supuestos. Tarifa del 15&nbsp;%: en evaluación. Los escenarios se arman con captación, aceptación, ticket, repetición y cobertura medidos en el piloto.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 16 · INVERSIÓN ============ -->
+<section class="pagina" id="inversion">
+  <div class="lamina">
+    <div class="cabecera"><span>13 · Inversión y uso del capital</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">13</span>Inversión y uso del capital</span>
+      <h1 class="esp-1">Una inversión atada a <mark>hitos</mark> medibles</h1>
+      <div class="grilla esp-3">
+        <div class="c-6 monto sobre-navy">
+          <div class="cifra">USD&nbsp;100.000</div>
+          <p>Inversión buscada para la etapa de validación en Mar del Plata. No está recibida.</p>
+          <span class="tipo-dato">Objetivo</span>
+        </div>
+        <div class="c-6">
+          <p class="bajada">El monto es un objetivo y el reparto, una propuesta del 05/11 que todavía hay que aprobar. Cada partida se rinde contra el objetivo de diciembre de 2026.</p>
+        </div>
+      </div>
+
+      <div class="fila entre centro esp-4"><h2>Reparto propuesto</h2><span class="tipo-dato">Supuesto · propuesta a aprobar (05/11)</span></div>
+      <div class="barra-seg esp-2" role="img" aria-label="Marketing 45.000, Operaciones 30.000, Tecnología 15.000, Legal y reserva 10.000 dólares">
+        <span class="s-mkt" style="flex:45">USD 45.000</span><span class="s-ops" style="flex:30">USD 30.000</span><span class="s-tec" style="flex:15">USD 15.000</span><span class="s-leg" style="flex:10">USD 10.000</span>
+      </div>
+      <div class="leyenda-seg"><span><i class="s-mkt"></i>Marketing</span><span><i class="s-ops"></i>Operaciones</span><span><i class="s-tec"></i>Tecnología</span><span><i class="s-leg"></i>Legal y reserva</span></div>
+
+      <table class="tabla reparto esp-3">
+        <thead><tr><th>Partida</th><th class="num">USD</th><th>Detalle</th><th>Qué destraba</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte"><i class="sw s-mkt"></i>Marketing</td><td class="num">45.000</td><td>Anuncios 20.000 · porteros y administradores 10.000 · remeras y contenido con los personajes 8.000 · calle 7.000</td><td>Pedidos en barrios con oferta, con el CAC bajo el techo</td></tr>
+          <tr><td class="fuerte"><i class="sw s-ops"></i>Operaciones</td><td class="num">30.000</td><td>Formación 10.000 · soporte 10.000 · verificación 6.000 · cobros 4.000</td><td>Especialista revisado, soporte y cobro en cada trabajo</td></tr>
+          <tr><td class="fuerte"><i class="sw s-tec"></i>Tecnología</td><td class="num">15.000</td><td>IA 6.000 · herramientas por oficio 5.000 · servidores 4.000</td><td>Apps en producción y herramientas que hacen volver</td></tr>
+          <tr><td class="fuerte"><i class="sw s-leg"></i>Legal y reserva</td><td class="num">10.000</td><td>Legal y contable 6.000 · reserva 4.000</td><td>Una política aprobada para cobrar la tarifa</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">100.000</td><td colspan="2">Hito común: 50 trabajos con tarifa y 5 clientes que repiten en diciembre de 2026 <span class="tipo-dato">Objetivo</span></td></tr></tfoot>
+      </table>
+
+      <div class="grilla esp-4">
+        <div class="c-7">
+          <h4>Las categorías del pedido, en la propuesta</h4>
+          <div class="categorias esp-2">
+            <span>Desarrollo tecnológico (IA y herramientas)</span><span class="num">USD 11.000</span>
+            <span>Producto y experiencia de usuario</span><span class="no">sin asignación en la propuesta</span>
+            <span>Marketing y adquisición</span><span class="num">USD 45.000</span>
+            <span>Operaciones</span><span class="num">USD 30.000</span>
+            <span>Equipo</span><span class="no">sin asignación en la propuesta</span>
+            <span>Infraestructura (servidores)</span><span class="num">USD 4.000</span>
+            <span>Expansión</span><span class="no">sin asignación en la propuesta</span>
+            <span>Legal y reserva (fuera de las categorías)</span><span class="num">USD 10.000</span>
+          </div>
+        </div>
+        <div class="c-5">
+          <div class="condiciones">
+            <h4>Condiciones</h4>
+            <div class="dato"><span>Instrumento</span><span class="a-definir">[a definir]</span></div>
+            <div class="dato"><span>Plazo</span><span class="a-definir">[a definir]</span></div>
+            <div class="dato"><span>Valuación</span><span class="a-definir">[a definir]</span></div>
+            <p class="chico suave">No fijamos valuación ni porcentaje: el instrumento se conversa, idealmente con los datos del piloto.</p>
+          </div>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> INVERSION-BUSCADA e INV-TOTAL: objetivo del fundador (04/11), no recibido. Reparto: INV-MARKETING, INV-OPERACIONES, INV-TECNOLOGIA e INV-LEGAL, con su detalle INV-M-*, INV-O-*, INV-T-* e INV-L-* (supuestos; propuesta a aprobar del 05/11). Hito: META-TRABAJOS y META-REPETIDORES. Montos en dólares estadounidenses.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 17 · VALIDACIÓN ============ -->
+<section class="pagina" id="validacion">
+  <div class="lamina">
+    <div class="cabecera"><span>14 · Avance y validación</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">14</span>Avance y validación</span>
+      <h1 class="esp-1">Avances reales, cada uno con su <mark>respaldo</mark></h1>
+      <p class="bajada esp-3">Separamos lo que se puede comprobar en los repos y en las publicaciones de lo que informa el fundador y todavía no está auditado.</p>
+
+      <div class="val-bloques esp-4">
+        <div class="val">
+          <div class="cab"><span class="tipo-dato">Dato verificado</span></div>
+          <h3>Publicado, con fecha</h3>
+          <ol class="tiempo">
+            <li><time>29/10/2026</time><span>Landing con demo interactiva<small>landing.handyc.com · registro todavía cerrado</small></span></li>
+            <li><time>07/11/2026</time><span>Portal interno<small>de uso del equipo, sin datos reales</small></span></li>
+            <li><time>07/11/2026</time><span>App del usuario<small>vista de prueba con datos ficticios</small></span></li>
+            <li><time>07/11/2026</time><span>App del especialista<small>vista de prueba con datos ficticios</small></span></li>
+          </ol>
+        </div>
+        <div class="val">
+          <div class="cab"><span class="tipo-dato">Dato informado por el fundador · sin auditar</span></div>
+          <h3>Probado a mano</h3>
+          <div class="cifras">
+            <div><div class="cifra">5</div><p class="cifra-rotulo">trabajos de prueba</p></div>
+            <div><div class="cifra">$&nbsp;350.000</div><p class="cifra-rotulo">en total</p></div>
+          </div>
+          <p>Prueba con porteros de edificios en octubre de 2026, coordinada a mano y sin la app. El monto es el precio de los especialistas; los comprobantes están en conciliación.</p>
+        </div>
+        <div class="val">
+          <div class="cab"><span class="tipo-dato">Dato informado por el fundador · sin auditar</span></div>
+          <h3>Especialistas registrados</h3>
+          <div class="cifras"><div><div class="cifra">56</div><p class="cifra-rotulo">especialistas registrados</p></div></div>
+          <p>Registrados no quiere decir verificados ni activos: la verificación de identidad y antecedentes está a cargo del equipo y se hace antes de que un especialista reciba pedidos.</p>
+        </div>
+        <div class="val borde">
+          <div class="cab"><span class="tipo-dato">Objetivo</span></div>
+          <h3>Próximo hito · diciembre de 2026</h3>
+          <div class="cifras">
+            <div><div class="cifra">50</div><p class="cifra-rotulo">trabajos con tarifa</p></div>
+            <div><div class="cifra">5</div><p class="cifra-rotulo">clientes que repiten</p></div>
+          </div>
+          <p>Antes: desplegar los backends y abrir el registro de la landing con el aviso de privacidad definitivo.</p>
+        </div>
+      </div>
+
+      <div class="capacidad esp-4">
+        <div><span class="tipo-dato">Dato verificado</span><div class="cifra esp-1">7</div><p class="cifra-rotulo">repos de producto, uno por pieza del ecosistema</p></div>
+        <div>
+          <h4>Pruebas automáticas por repo</h4>
+          <div class="barras esp-2" role="img" aria-label="Pruebas automáticas: captación 291 y 86 de base de datos, app del usuario 59, app del especialista 61">
+            <span>Captación y CRM</span><span class="pista"><span style="width:86%"></span><b style="left:88%">291</b></span>
+            <span>Captación, con base de datos</span><span class="pista"><span style="width:25.4%"></span><b style="left:27.4%">86</b></span>
+            <span>App del usuario</span><span class="pista"><span style="width:17.4%"></span><b style="left:19.4%">59</b></span>
+            <span>App del especialista</span><span class="pista"><span style="width:18%"></span><b style="left:20%">61</b></span>
+          </div>
+        </div>
+        <div class="ci">
+          <span class="estado construido">CI en verde</span>
+          <span>Formato, tipos, pruebas y compilación corren en cada cambio. Las API de las apps se prueban en sus ramas, contra una base local.</span>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Publicaciones: ejecuciones de despliegue del 29/10 y del 07/11/2026. Pruebas y CI: último estado de cada repo. TRABAJOS-INFORMADOS, PRUEBA-MONTO y ESP-REGISTRADOS: datos informados por el fundador (corte 04/11), sin auditar. META-TRABAJOS y META-REPETIDORES: objetivo de diciembre de 2026.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 18 · VISIÓN ============ -->
+<section class="pagina oscuro vision" id="vision">
+  <div class="lamina">
+    <div class="a-sangre"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""></div>
+    <div class="cabecera"><span>15 · Visión a futuro</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">15</span>Visión a futuro</span>
+      <h1 class="esp-1">La forma más simple de resolver los arreglos de una <mark>casa</mark></h1>
+      <p class="bajada esp-3">Queremos que pedir un arreglo sea tan simple como contar qué pasa, y que trabajar con Handyx haga crecer a cada especialista. Soluciones, no problemas.</p>
+
+      <h2 class="esp-4">La escala a la que apuntamos</h2>
+      <div class="ambicion esp-3">
+        <div><div class="cifra">USD&nbsp;1&nbsp;M</div><p class="cifra-rotulo">en trabajos hechos a través de Handyx, con un horizonte supuesto de 12 meses</p><span class="tipo-dato">Objetivo</span></div>
+        <div><div class="cifra">USD&nbsp;5&nbsp;M</div><p class="cifra-rotulo">de ingresos brutos anuales a fines de 2027, antes de costos, con particulares y empresas</p><span class="tipo-dato">Objetivo</span></div>
+        <div><div class="cifra">40&nbsp;%</div><p class="cifra-rotulo">de los servicios del hogar que contratan los particulares en la Argentina, a fines de 2027</p><span class="tipo-dato">Objetivo · sin metodología</span></div>
+      </div>
+      <p class="chico esp-2" style="color:rgba(233,239,249,.72)">Son objetivos, no pronósticos ni retornos prometidos: se revisan con los datos del piloto.</p>
+
+      <h2 class="esp-4">Hacia dónde puede crecer</h2>
+      <div class="conceptos esp-3">
+        <div><span class="estado concepto">Concepto</span><h3>Handyx Business</h3><p>Turnos y mantenimiento para empresas, comercios, consorcios y administraciones.</p></div>
+        <div><span class="estado concepto">Concepto</span><h3>Ferreterías adheridas</h3><p>Materiales para el especialista, con retiro en el mostrador. Pantallas diseñadas; sin alianzas firmadas.</p></div>
+        <div><span class="estado concepto">Concepto</span><h3>Más rubros</h3><p>Los seis rubros iniciales son el punto de partida; los siguientes se eligen según la demanda medida.</p></div>
+      </div>
+
+      <div class="aticma esp-4">
+        <p class="linea">Handyx se presentó en la semifinal de ATICMA Emprende 2026. No llegamos a la final; usamos lo aprendido para ordenar el producto, los números y esta documentación.</p>
+        <div class="invitacion">
+          <h4 style="color:var(--amarillo)">Una invitación</h4>
+          <p class="esp-1">A los proyectos finalistas les ofrecemos, sin costo, ayuda para preparar materiales de presentación como este. Lo que aprendimos armándolos puede servirles; la invitación es abierta y sin compromiso.</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> META-1M, META-5M y META-CUOTA-NACIONAL: objetivos del fundador (04–05/11), sin metodología de mercado; no son pronósticos ni retornos. Conceptos: lienzos de diseño y material del proyecto. ATICMA Emprende 2026: semifinal del 05/11. Mapa: © colaboradores de OpenStreetMap.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 19 · EQUIPO Y CONTACTO ============ -->
+<section class="pagina" id="cierre">
+  <div class="lamina">
+    <div class="cabecera"><span>16 · Equipo y contacto</span><span>Handyx · Business &amp; Investment</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">16</span>Equipo y contacto</span>
+      <h1 class="esp-1">Lo que pedimos hoy es una <mark>reunión</mark></h1>
+      <p class="bajada esp-3">Para recorrer el producto en vivo, revisar juntos los números de este dossier y conversar cómo encaja una inversión en la etapa que viene.</p>
+
+      <div class="grilla esp-4">
+        <div class="c-7">
+          <h2>Por qué ahora</h2>
+          <div class="por-que esp-3">
+            <div class="paso"><span class="paso-n">1</span><p><b>El producto existe.</b> Tres superficies diseñadas de punta a punta, un portal construido y dos apps publicadas en vista de prueba, con cada función relevada y su estado a la vista.</p></div>
+            <div class="paso"><span class="paso-n">2</span><p><b>La tarifa de lanzamiento está decidida.</b> Sin comisión al especialista y una tarifa de servicio para quien pide, que arranca en cero.</p></div>
+            <div class="paso"><span class="paso-n">3</span><p><b>Lo que falta es medir.</b> El piloto en Mar del Plata convierte cada supuesto de este dossier en un dato propio. Para eso hace falta capital de captación y de operación.</p></div>
+          </div>
+        </div>
+        <div class="c-5">
+          <h2>Equipo</h2>
+          <div class="equipo esp-3">
+            <div><b>Ignacio Gauna</b><span>Fundador. Desarrollo, producto y coordinación.</span></div>
+            <div><b>Abigail</b><span>Diseño y marketing, con dedicación parcial.</span></div>
+            <div><b>Agentes de IA</b><span>Desarrollo asistido, supervisado por el fundador.</span></div>
+          </div>
+          <p class="riesgo-equipo esp-2">Un riesgo que reconocemos: hoy Handyx depende mucho del fundador. Por eso cada módulo está documentado y la operación se apoya en procesos escritos.</p>
+        </div>
+      </div>
+
+      <div class="pedido esp-4">
+        <p class="idea">Coordinemos una reunión para ver Handyx funcionando.</p>
+        <div class="contacto">
+          <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
+          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
+          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
+        </div>
+      </div>
+
+      <h4 class="esp-4">Para profundizar, la colección</h4>
+      <div class="seguir esp-2">
+        <div><b>Tríptico</b><span>Handyx en una mirada: el problema, la solución y el ecosistema.</span></div>
+        <div><b>02 Customer App</b><span>Cómo pide, compara y elige quien necesita un arreglo.</span></div>
+        <div><b>03 Professional App</b><span>La herramienta de trabajo del especialista.</span></div>
+        <div><b>04 Operations Portal</b><span>Cómo el equipo opera el marketplace.</span></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Equipo según el material del proyecto. Contacto institucional decidido por el fundador el 07/11/2026. Las cifras de este dossier llevan su tipo, su fuente y su fecha de corte; ninguna es un resultado si no lo dice.</p>
+    </div>
+    <div class="folio"><span>Handyx · Business &amp; Investment</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 20 · CONTRATAPA ============ -->
+<section class="pagina tapa contratapa" id="contratapa">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"></div>
+    <div class="caja">
+      <div>
+        <img class="logo" style="--h:9mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <p class="lema esp-4">Soluciones,<br><mark>no problemas.</mark></p>
+        <img class="personaje" src="../../marca/personajes/engranaje-b.svg" alt="Engranaje, personaje de Handyx">
+      </div>
+      <div>
+        <span class="ceja" style="color:inherit;opacity:.8">Conocé el proyecto completo</span>
+        <div class="bloque-qr esp-3">
+          <div class="qr"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
+          <div>
+            <p class="texto-grande">La landing con la demo interactiva, los cuatro dossiers y el portafolio del fundador, en un solo lugar.</p>
+            <p class="esp-1"><b>landing.handyc.com/handyx</b></p>
+            <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
+          </div>
+        </div>
+        <div class="contacto esp-5">
+          <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
+          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
+          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
+          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="coleccion"><span>Tríptico</span><span class="actual">01 Business &amp; Investment</span><span>02 Customer App</span><span>03 Professional App</span><span>04 Operations Portal</span></div>
+        <p class="legal esp-3">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Estado al 07/11/2026. Las pantallas usan datos de prueba o de muestra; las cifras llevan su tipo, su fuente y su fecha de corte. Ninguna cifra es un resultado si no lo dice.</p>
+      </div>
+    </div>
   </div>
 </section>
 
