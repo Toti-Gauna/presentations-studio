@@ -5,7 +5,7 @@
 <title>Handyx · Dossier 02 · Customer App</title>
 <link rel="stylesheet" href="../../plantilla/base.css">
 <style>
-  /* tapa: azul Handyx, el Inicio de la app y el Foco */
+  /* ---------- tapa: azul Handyx, el Inicio de la app y el Foco ---------- */
   .tapa-cliente .fondo-tapa { background: var(--azul); }
   .tapa-cliente .numeral { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 13pt; color: var(--amarillo); }
   .tapa-cliente .escena { position: absolute; right: 16mm; top: 126mm; width: 150mm; height: 190mm; }
@@ -13,24 +13,170 @@
   .tapa-cliente .escena .rotulo { position: absolute; right: 0; top: 0; }
   .tapa-cliente .escena .personaje { position: absolute; left: 6mm; top: 74mm; --w: 40mm; }
   .tapa-cliente .tapa-pie { position: absolute; left: 16mm; bottom: 14mm; flex-direction: column; align-items: flex-start; gap: 3mm; }
+  /* contratapa: el azul de la tapa y el Foco */
+  .contratapa .fondo-tapa { background: var(--azul); }
+  .contratapa .foco-fin { position: absolute; right: 16mm; top: 15mm; --w: 30mm; }
 
-  /* doble página: dos celulares con rótulo */
+  /* ---------- rótulos de dos partes (origen + datos): se apilan si la figura es angosta ---------- */
+  .rotulos { display: flex; flex-wrap: wrap; gap: 0.8mm 1mm; margin-bottom: 2.6mm; }
+  figure.con-rotulo.centrada > .rotulos { justify-content: center; }
+  .par .rotulos { min-height: 8.8mm; align-content: flex-end; }
+
+  /* ---------- pares de celulares ---------- */
   .par { display: flex; gap: 5mm; justify-content: center; }
   .par figure { display: flex; flex-direction: column; align-items: center; }
   .par .celular { --w: 39mm; }
   .par figcaption { width: 39mm; text-align: center; }
+
+  /* ---------- tablas de funciones con estado ---------- */
   .funciones td:nth-child(1) { width: 46mm; }
   .funciones td:nth-child(3) { width: 26mm; text-align: right; }
-  .criterios td:nth-child(1) { width: 34mm; }
-  .criterios td:nth-child(3) { width: 27mm; text-align: right; }
+  .dos-estados { display: inline-flex; flex-direction: column; align-items: flex-end; gap: 1mm; }
+  .criterios td:nth-child(1) { width: 25mm; }
+  .criterios td:nth-child(3) { width: 23mm; text-align: right; }
   .nota { padding: 3.6mm 4mm; border-radius: 2.2mm; background: var(--cielo); font-size: 8.2pt; line-height: 1.45; color: var(--azul-profundo); }
   .nota b { color: var(--navy); }
+  .titulo-flujo { color: var(--gris); }
+  .pag { font: 800 7pt/1 var(--f-titulos); color: var(--azul); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pag::before { content: 'p. '; font: 600 6.4pt/1 var(--f-texto); color: var(--gris); }
+
+  /* ---------- p. 3 · mapa de la experiencia ---------- */
+  .apertura { display: grid; grid-template-columns: minmax(0, 1fr) 34mm; column-gap: 8mm; align-items: center; }
+  .apertura .personaje { --w: 29mm; justify-self: center; }
+  .mapa-exp { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 5mm; align-items: start; }
+  .momento { position: relative; display: grid; gap: 2.2mm; }
+  .momento + .momento::before {
+    content: ''; position: absolute; left: -3.9mm; top: 10.5mm; width: 2.2mm; height: 2.2mm;
+    border-top: 0.45mm solid var(--navy); border-right: 0.45mm solid var(--navy); transform: rotate(45deg);
+  }
+  .momento-cab { padding: 3.2mm 3.4mm 3.4mm; border-radius: 2.4mm; background: var(--azul); color: rgba(255, 255, 255, 0.86); min-height: 30mm; }
+  .momento-cab svg { width: 6.4mm; height: 6.4mm; fill: none; stroke: var(--amarillo); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .momento-cab .m-n { float: right; font: 800 6.4pt/1 var(--f-texto); letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.62); }
+  .momento-cab h3 { margin-top: 1.8mm; color: #FFFFFF; font: 900 12pt/1.05 var(--f-titulos); font-stretch: 125%; }
+  .momento-cab p { margin-top: 1mm; font-size: 7.4pt; line-height: 1.35; }
+  .recorrido { padding: 2.6mm 2.8mm 2.4mm; border-radius: 2mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde-frio); }
+  .recorrido h4 { font: 750 8.1pt/1.28 var(--f-texto); letter-spacing: 0; text-transform: none; color: var(--navy); }
+  .recorrido .r-n { display: block; margin-bottom: 0.6mm; font: 800 6pt/1 var(--f-texto); letter-spacing: 0.12em; color: var(--gris); }
+  .recorrido .pie { display: flex; flex-wrap: wrap; align-items: center; gap: 1mm; margin-top: 1.6mm; }
+  .recorrido .estado, .transversal .estado { font-size: 6pt; padding: 0.7mm 1.7mm 0.7mm 1.2mm; }
+  .recorrido .estado::before, .transversal .estado::before { width: 2.3mm; height: 2.3mm; }
+  .recorrido .pag { margin-left: auto; }
+  .transversal { display: grid; grid-template-columns: 9mm minmax(0, 1fr) auto auto; column-gap: 4mm; align-items: center; padding: 3.4mm 4mm; border-radius: 2.4mm; background: var(--hueso); }
+  .transversal svg { width: 9mm; height: 9mm; fill: none; stroke: var(--azul); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .transversal h4 { font: 750 8.6pt/1.3 var(--f-texto); letter-spacing: 0; text-transform: none; color: var(--navy); }
+  .transversal p { font-size: 7.6pt; line-height: 1.38; margin-top: 0.4mm; }
+  .transversal .chips { display: flex; gap: 1mm; }
+  .cifras-lienzo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 5mm; }
+  .cifras-lienzo .cifra { font-size: 22pt; }
+  .cifras-lienzo .tipo-dato { margin-top: 1.4mm; }
+
+  /* ---------- p. 4 · las preguntas de siempre ---------- */
+  .dudas { position: relative; display: grid; }
+  .dudas::before { content: ''; position: absolute; left: 6.5mm; top: 12mm; bottom: 12mm; border-left: 0.4mm dashed var(--gris-claro); }
+  .duda-cab { display: grid; grid-template-columns: 13mm minmax(0, 1fr) 64mm; column-gap: 5mm; padding-bottom: 1.6mm; border-bottom: 0.4mm solid var(--navy); }
+  .duda-cab span { font: 800 6.3pt/1.25 var(--f-texto); letter-spacing: 0.09em; text-transform: uppercase; color: var(--gris); }
+  .duda { position: relative; display: grid; grid-template-columns: 13mm minmax(0, 1fr) 64mm; column-gap: 5mm; align-items: start; padding: 4.4mm 0; border-bottom: 0.2mm solid var(--borde); }
+  .duda:last-child { border-bottom: 0.3mm solid var(--navy); }
+  .duda svg { position: relative; z-index: 1; width: 13mm; height: 13mm; padding: 2.8mm; border-radius: 3mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.3mm var(--borde); fill: none; stroke: var(--azul); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .duda .pregunta { font: 900 13.5pt/1.1 var(--f-titulos); font-stretch: 125%; color: var(--navy); }
+  .duda .pregunta + p { margin-top: 1.4mm; font-size: 8.9pt; line-height: 1.46; }
+  .duda .app { padding: 2.8mm 3.2mm; border-radius: 2mm; background: var(--cielo); font-size: 7.9pt; line-height: 1.4; color: var(--azul-profundo); }
+  .duda .app .pie { display: flex; align-items: center; gap: 1.2mm; margin-top: 1.6mm; }
+  .duda .app .pag { margin-left: auto; }
+
+  /* ---------- p. 5 · la promesa ---------- */
+  .promesa { display: grid; grid-template-columns: 52mm minmax(0, 1fr); column-gap: 7mm; align-items: start; }
+  .promesa .cuadro { width: 52mm; }
+  .cita { font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; font-size: 13.4pt; line-height: 1.2; color: var(--navy); }
+  .cita::before { content: '«'; } .cita::after { content: '»'; }
+  .carriles { display: grid; grid-template-columns: 14mm repeat(4, minmax(0, 1fr)); column-gap: 3.6mm; }
+  .carriles .eje { align-self: center; font: 800 6.4pt/1.2 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); }
+  .carriles .vos { position: relative; display: flex; gap: 2mm; align-items: center; padding: 2.6mm 2.8mm; border-radius: 2.2mm; background: var(--azul); color: #FFFFFF; font: 750 8.4pt/1.25 var(--f-texto); }
+  .carriles .vos .paso-n { width: 5.2mm; height: 5.2mm; background: var(--amarillo); color: var(--navy); font-size: 7pt; }
+  .carriles .vos + .vos::before {
+    content: ''; position: absolute; left: -3.1mm; top: 50%; margin-top: -1.2mm; border: 1.2mm solid transparent; border-left: 1.7mm solid var(--navy); border-right: 0;
+  }
+  .carriles .baja { position: relative; height: 6mm; }
+  .carriles .baja::before { content: ''; position: absolute; left: 50%; top: 0.8mm; bottom: 1.4mm; border-left: 0.35mm solid var(--navy); }
+  .carriles .baja::after { content: ''; position: absolute; left: 50%; margin-left: -0.95mm; bottom: 0.4mm; border: 0.95mm solid transparent; border-top: 1.3mm solid var(--navy); border-bottom: 0; }
+  .carriles .hx { padding: 2.8mm 3mm; border-radius: 2.2mm; background: var(--hueso); font-size: 7.7pt; line-height: 1.42; color: var(--tinta-2); }
+
+  /* ---------- p. 6 · tarifa ---------- */
+  .tarifa { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 4mm; align-items: center; padding: 4mm 4.4mm; border-radius: 2.6mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); }
+  .tarifa .cifra { color: #FFFFFF; font-size: 30pt; }
+  .tarifa p { font-size: 8pt; line-height: 1.42; }
+  .tarifa b { color: #FFFFFF; }
+  .tarifa .tipo-dato { color: #FFFFFF; box-shadow: inset 0 0 0 0.22mm rgba(255, 255, 255, 0.5); margin-top: 1.4mm; }
+
+  /* ---------- p. 7 · cómo llega el pedido ---------- */
+  .cadena { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; }
+  .cadena .nodo { padding: 2.8mm 3.2mm; }
+  .cadena .nodo + .nodo::before {
+    content: ''; position: absolute; left: -4.4mm; top: 50%; margin-top: -1.2mm; border: 1.2mm solid transparent; border-left: 1.7mm solid var(--navy); border-right: 0;
+  }
+  .cadena .nodo h4 { font-size: 6.8pt; }
+
+  /* ---------- p. 12 · decidir: cuatro salidas ---------- */
+  .horquilla .origen { width: 70mm; margin: 0 auto; text-align: center; padding: 2.6mm 3mm; border-radius: 2.2mm; background: var(--navy); color: #FFFFFF; font: 750 8.4pt/1.25 var(--f-texto); position: relative; }
+  .horquilla .origen::after { content: ''; position: absolute; left: 50%; bottom: -4mm; height: 4mm; border-left: 0.4mm solid var(--navy); }
+  .salidas { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 4mm; margin-top: 8mm; }
+  .salidas::before { content: ''; position: absolute; left: calc((100% - 12mm) / 8); right: calc((100% - 12mm) / 8); top: -4mm; border-top: 0.4mm solid var(--navy); }
+  .salidas .nodo { padding: 2.8mm 3.2mm 3mm; }
+  .salidas .nodo::before { content: ''; position: absolute; left: 50%; top: -4mm; height: 4mm; border-left: 0.4mm solid var(--navy); }
+  .salidas .nodo h4 { font-size: 7pt; }
+  .salidas .nodo .estado { font-size: 6.1pt; padding: 0.7mm 1.7mm 0.7mm 1.2mm; }
+  .salidas .nodo .estado + .estado { margin-left: 0.8mm; }
+
+  /* ---------- p. 17 · cuatro funciones en cuadrícula ---------- */
+  .cuadricula { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 7mm; row-gap: 5mm; }
+  .celda { display: grid; grid-template-columns: 36mm minmax(0, 1fr); column-gap: 4.6mm; align-items: start; }
+  .celda .celular { --w: 36mm; }
+  .celda .rotulos { min-height: 8.8mm; align-content: flex-end; }
+  .celda .texto { padding-top: 11.4mm; }
+  .celda h3 { font: 900 12.5pt/1.08 var(--f-titulos); font-stretch: 125%; color: var(--navy); }
+  .celda p { margin-top: 1.8mm; font-size: 8.4pt; line-height: 1.46; }
+  .celda .chips { display: grid; gap: 1.6mm; margin-top: 3mm; padding-top: 2.6mm; border-top: 0.2mm solid var(--borde); }
+  .celda .chips div { display: grid; gap: 0.8mm; justify-items: start; font: 650 7.3pt/1.3 var(--f-texto); color: var(--navy); }
+
+  /* ---------- p. 18 · barra segmentada y matriz ---------- */
+  .barra-seg { display: flex; gap: 0.55mm; height: 7.4mm; }
+  .barra-seg span { display: flex; align-items: center; padding-left: 1.8mm; border-radius: 1mm; font: 800 8.4pt/1 var(--f-texto); font-variant-numeric: lining-nums; }
+  .barra-seg .s-c { flex: 2 1 0; background: #137140; }
+  .barra-seg .s-p { flex: 39 1 0; background: #1F57A8; color: #FFFFFF; }
+  .barra-seg .s-d { flex: 41 1 0; background: #E3C84B; color: #0E1D36; }
+  .barra-seg .s-x { flex: 3 1 0; background: repeating-linear-gradient(135deg, #FFFFFF 0 0.45mm, #C3CAD6 0.45mm 0.75mm); box-shadow: inset 0 0 0 0.25mm #8F99AD; }
+  .leyenda-barra { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 5mm; }
+  .leyenda-barra > div { padding-top: 2.4mm; border-top: 0.2mm solid var(--borde); }
+  .leyenda-barra .cifra { font-size: 19pt; margin-top: 1.6mm; }
+  .leyenda-barra p { margin-top: 1mm; font-size: 7.4pt; line-height: 1.36; }
+  .matriz th:first-child, .matriz td:first-child { width: 22mm; }
+  .matriz th .estado { font-size: 6.2pt; }
+  .matriz td { font-size: 7.6pt; line-height: 1.42; }
+  .matriz td.vacio { color: var(--gris-claro); }
+  .falta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5mm; }
+  .falta .tarjeta { padding: 4mm 4.4mm; }
+  .falta h4 { margin-bottom: 1.4mm; }
+  .falta p { font-size: 8.2pt; line-height: 1.45; }
+
+  /* ---------- p. 19 · cierre ---------- */
+  .cierre-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 5mm; }
+  .cierre-cols > div { padding: 4.2mm 4.4mm; border-radius: 2.6mm; background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 0.25mm rgba(233, 239, 249, 0.16); }
+  .cierre-cols h4 { color: var(--amarillo); margin-bottom: 1.6mm; }
+  .cierre-cols p { font-size: 8.6pt; line-height: 1.48; }
+  .cierre-cols .estado { margin-top: 2.6mm; }
+  .seguir-leyendo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5mm; row-gap: 0; }
+  .seguir-leyendo > div { display: grid; grid-template-columns: 11mm minmax(0, 1fr); column-gap: 2.4mm; padding: 3mm 0; border-top: 0.2mm solid rgba(233, 239, 249, 0.2); }
+  .seguir-leyendo .n { font: 900 13pt/1 var(--f-titulos); font-stretch: 125%; color: var(--amarillo); }
+  .seguir-leyendo h3 { font-size: 9.4pt; }
+  .seguir-leyendo p { font-size: 8pt; line-height: 1.4; margin-top: 0.4mm; }
+  .lema-cierre { font: 900 20pt/1 var(--f-titulos); font-stretch: 125%; color: #FFFFFF; }
+  .lema-cierre mark { color: var(--amarillo); }
 </style>
 </head>
 <body>
 
 <!-- ============ 1 · TAPA ============ -->
-<section class="pagina tapa tapa-cliente" data-folio="1">
+<section class="pagina tapa tapa-cliente">
   <div class="lamina">
     <div class="a-sangre fondo-tapa"></div>
     <div class="caja">
@@ -46,7 +192,7 @@
       </div>
     </div>
     <div class="escena permite-salir">
-      <span class="rotulo diseno">Diseño propuesto</span>
+      <span class="rotulo diseno">Diseño propuesto · datos ficticios</span>
       <div class="celular"><img src="img/i-inicio.webp" alt="Inicio de la app del usuario: rubros, próximo turno y HandIA"></div>
       <img class="personaje" src="../../marca/personajes/bombilla-b.svg" alt="Foco, personaje de Handyx">
     </div>
@@ -54,27 +200,468 @@
   </div>
 </section>
 
+<!-- ============ 2 · ÍNDICE Y CÓMO LEER ============ -->
+<section class="pagina" id="indice">
+  <div class="lamina">
+    <div class="cabecera"><span>Contenido</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja">Contenido</span>
+      <h1 class="esp-1">En este <mark>dossier</mark></h1>
+      <div class="grilla esp-4">
+        <nav class="c-7 indice">
+          <a data-ir="experiencia"><span class="n">02</span><span class="t">La experiencia del cliente</span><span class="p">00</span></a>
+          <a data-ir="problemas"><span class="n">03</span><span class="t">Problemas actuales al contratar servicios</span><span class="p">00</span></a>
+          <a data-ir="simplifica"><span class="n">04</span><span class="t">Cómo Handyx simplifica el proceso</span><span class="p">00</span></a>
+          <a data-ir="registro"><span class="n">05</span><span class="t">Registro y onboarding</span><span class="p">00</span></a>
+          <a data-ir="exploracion"><span class="n">06</span><span class="t">Exploración y búsqueda de especialistas</span><span class="p">00</span></a>
+          <a data-ir="solicitud"><span class="n">07</span><span class="t">Solicitud de servicios</span><span class="p">00</span></a>
+          <a data-ir="presupuestos"><span class="n">08</span><span class="t">Recepción de presupuestos</span><span class="p">00</span></a>
+          <a data-ir="comparacion"><span class="n">09</span><span class="t">Comparación de alternativas</span><span class="p">00</span></a>
+          <a data-ir="criterios"><span class="n">10</span><span class="t">Criterios de calidad y precio</span><span class="p">00</span></a>
+          <a data-ir="contratacion"><span class="n">11</span><span class="t">Selección y contratación</span><span class="p">00</span></a>
+          <a data-ir="seguimiento"><span class="n">12</span><span class="t">Seguimiento del trabajo y pago</span><span class="p">00</span></a>
+          <a data-ir="obras"><span class="n">12</span><span class="t">Obras de varios días</span><span class="p">00</span></a>
+          <a data-ir="comunicacion"><span class="n">13</span><span class="t">Comunicación y organización</span><span class="p">00</span></a>
+          <a data-ir="confianza"><span class="n">14</span><span class="t">Confianza y reputación</span><span class="p">00</span></a>
+          <a data-ir="adicionales"><span class="n">15</span><span class="t">Funcionalidades adicionales</span><span class="p">00</span></a>
+          <a data-ir="roadmap"><span class="n">16</span><span class="t">Roadmap de experiencia</span><span class="p">00</span></a>
+          <a data-ir="cierre"><span class="n">17</span><span class="t">Cierre</span><span class="p">00</span></a>
+        </nav>
+        <div class="c-5">
+          <div class="como-leer">
+            <div>
+              <h4>Cómo leer este dossier</h4>
+              <p class="chico">Cada función dice en qué estado está al 07/11/2026, cada imagen de dónde sale y cada cifra qué tipo de dato es.</p>
+            </div>
+            <div>
+              <h4>Estado de cada función</h4>
+              <div class="def">
+                <span class="estado construido">Construido</span><span>En la rama principal y funcionando con el servidor real.</span>
+                <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de prueba o en una rama.</span>
+                <span class="estado disenado">Diseñado</span><span>Dibujado en los lienzos de diseño, todavía sin código.</span>
+                <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Rótulo de cada imagen</h4>
+              <div class="def">
+                <span class="rotulo diseno">Diseño propuesto</span><span>Pantalla del lienzo de diseño.</span>
+                <span class="rotulo prueba">Datos de prueba</span><span>Pantalla real de la app o del portal, con datos de prueba.</span>
+                <span class="rotulo muestra">Muestra</span><span>Nombres y cifras ficticios.</span>
+                <span class="rotulo concepto">Concepto</span><span>Algo que todavía no existe.</span>
+              </div>
+            </div>
+            <div>
+              <h4>Tipo de cada cifra</h4>
+              <div class="def">
+                <span class="tipo-dato">Dato verificado</span><span>Comprobado contra la fuente.</span>
+                <span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span>
+                <span class="tipo-dato">Supuesto · proyección</span><span>Un supuesto a validar y lo que se calcula con él.</span>
+                <span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="en-una-linea empuja">
+        <b>Handyx en una línea.</b> Un marketplace de servicios del hogar que nace en Mar del Plata: conecta a quien necesita un
+        arreglo con especialistas de su zona, con propuestas claras para elegir por calidad y por precio. Soluciones, no problemas.
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 3 · LA EXPERIENCIA DEL CLIENTE ============ -->
+<section class="pagina" id="experiencia">
+  <div class="lamina">
+    <div class="cabecera"><span>02 · La experiencia del cliente</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">02</span>La experiencia del cliente</span>
+      <h1 class="esp-1">Del problema al arreglo, en cuatro&nbsp;<mark>momentos</mark></h1>
+      <div class="apertura esp-3">
+        <div>
+          <p class="bajada">Doce recorridos de punta a punta, agrupados como los vive quien pide: contás qué pasa, elegís, seguís el trabajo y cuidás tu casa.</p>
+          <p class="esp-2">Cada página toma un tramo y lo cuenta completo: qué necesitás, qué hacés, qué hace Handyx y qué resultado obtenés. Casi todos los recorridos combinan una parte que ya corre en la vista de prueba y otra que está dibujada en el lienzo: por eso muchos llevan dos estados.</p>
+        </div>
+        <img class="personaje" src="../../marca/personajes/bombilla-d.svg" alt="Foco, personaje de Handyx">
+      </div>
+
+      <div class="mapa-exp esp-3">
+        <div class="momento">
+          <div class="momento-cab">
+            <span class="m-n">1</span>
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></svg>
+            <h3>Pedir</h3>
+            <p>Contás qué pasa, con tus palabras o con HandIA.</p>
+          </div>
+          <div class="recorrido"><span class="r-n">U-R-01</span><h4>Crear la cuenta</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="registro"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-02</span><h4>Pedir un arreglo</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="solicitud"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-03</span><h4>Pedir con HandIA, por chat o por voz</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="solicitud"></a></div></div>
+        </div>
+        <div class="momento">
+          <div class="momento-cab">
+            <span class="m-n">2</span>
+            <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="7.5" height="11" rx="1.4"/><rect x="13.5" y="4.5" width="7.5" height="11" rx="1.4"/><path d="M8.6 18.6l2.4 2.2 4.4-4.6"/></svg>
+            <h3>Elegir</h3>
+            <p>Recibís propuestas, las comparás y decidís vos.</p>
+          </div>
+          <div class="recorrido"><span class="r-n">U-R-04</span><h4>Recibir y comparar propuestas por calidad y precio</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="comparacion"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-05</span><h4>Contratar: aceptar, pedir cambios o rechazar</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="contratacion"></a></div></div>
+        </div>
+        <div class="momento">
+          <div class="momento-cab">
+            <span class="m-n">3</span>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            <h3>Seguir</h3>
+            <p>Seguís el trabajo y le pagás directo al especialista.</p>
+          </div>
+          <div class="recorrido"><span class="r-n">U-R-06</span><h4>Del turno al pago</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="seguimiento"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-07</span><h4>Una obra de varios días</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="obras"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-08</span><h4>Mensajes, tarjetas y Soporte</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="comunicacion"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-09</span><h4>Actividad y avisos</h4><div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="comunicacion"></a></div></div>
+        </div>
+        <div class="momento">
+          <div class="momento-cab">
+            <span class="m-n">4</span>
+            <svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.4V20h12V9.4"/><path d="M10 20v-5h4v5"/></svg>
+            <h3>Cuidar tu casa</h3>
+            <p>Lo que se hizo queda guardado para la próxima vez.</p>
+          </div>
+          <div class="recorrido"><span class="r-n">U-R-10</span><h4>Algo se rompió: el pedido sale de Mi hogar</h4><div class="pie"><span class="estado disenado">Diseñado</span><a class="pag" data-ir="adicionales"></a></div></div>
+          <div class="recorrido"><span class="r-n">U-R-11</span><h4>Medir, escanear y ver en AR antes de decidir</h4><div class="pie"><span class="estado disenado">Diseñado</span><span class="estado concepto">Concepto</span><a class="pag" data-ir="adicionales"></a></div></div>
+        </div>
+      </div>
+
+      <div class="transversal esp-3">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+        <div><h4><span class="r-n" style="display:inline;margin-right:1.6mm;font:800 6pt/1 var(--f-texto);letter-spacing:.12em;color:var(--gris)">U-R-12</span>Confianza de punta a punta</h4><p>Atraviesa los cuatro momentos: verificaciones que hace el equipo, dirección protegida hasta aceptar, informe del trabajo y pagos que no se dan por hechos.</p></div>
+        <div class="chips"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span></div>
+        <a class="pag" data-ir="confianza"></a>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Recorridos U-R-01 a U-R-12: auditoría de la app del usuario (dato verificado) sobre el lienzo «App del usuario» (102 pantallas), el código de la app con el servidor simulado (vista de prueba publicada) y las ramas de desarrollo. Dos estados en un recorrido: una parte corre en la vista de prueba y la otra está dibujada.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 4 · PROBLEMAS ACTUALES ============ -->
+<section class="pagina" id="problemas">
+  <div class="lamina">
+    <div class="cabecera"><span>03 · Problemas actuales al contratar servicios</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">03</span>Problemas actuales al contratar servicios</span>
+      <h1 class="esp-1">Las preguntas de siempre, sin buena&nbsp;<mark>respuesta</mark></h1>
+      <p class="bajada esp-3">Cuando algo se rompe en casa, el problema no termina en la canilla o la térmica: empieza una serie de dudas que hoy se resuelven a pulmón, con un contacto, un audio o un volante.</p>
+
+      <div class="dudas esp-4">
+        <div class="duda-cab"><span></span><span>Hipótesis del producto</span><span>Qué propone la app</span></div>
+        <div class="duda">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><path d="M16.4 7.4a2 2 0 1 1 2.7 1.9c-.6.2-.9.7-.9 1.2v.5M18.2 13.6h.01"/></svg>
+          <div><p class="pregunta">«¿Quién me lo arregla?»</p><p>Sin saber qué rubro es ni a quién recurrir, la búsqueda depende de un conocido, un grupo de vecinos o un número en un volante.</p></div>
+          <div class="app">Contás qué pasa y el pedido llega a especialistas del rubro cerca de tu zona.<div class="pie"><span class="estado en-pruebas">En pruebas</span><a class="pag" data-ir="exploracion"></a></div></div>
+        </div>
+        <div class="duda">
+          <svg viewBox="0 0 24 24"><path d="M6 20.5V4.6a.8.8 0 0 1 .8-.8h10.4a.8.8 0 0 1 .8.8v15.9"/><path d="M3.8 20.5h16.4"/><circle cx="14.7" cy="12.3" r=".7"/></svg>
+          <div><p class="pregunta">«¿Le abro la puerta?»</p><p>No hay una forma simple de saber quién va a entrar a tu casa, qué trabajos hizo antes ni si alguien lo revisó.</p></div>
+          <div class="app">Antes de elegir ves lo que revisó el equipo de Handyx, separado de lo que el especialista solo declara.<div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="confianza"></a></div></div>
+        </div>
+        <div class="duda">
+          <svg viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4 0z"/><circle cx="8" cy="8" r="1.4"/></svg>
+          <div><p class="pregunta">«¿Es un precio razonable?»</p><p>Los presupuestos llegan de palabra, por audio o en un papel, cada uno a su manera: cuesta saber qué incluyen y ponerlos uno al lado del otro.</p></div>
+          <div class="app">Las propuestas llegan con el mismo formato y se comparan lado a lado, sin ranking.<div class="pie"><span class="estado en-pruebas">En pruebas</span><a class="pag" data-ir="comparacion"></a></div></div>
+        </div>
+        <div class="duda">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+          <div><p class="pregunta">«¿Cuándo viene?»</p><p>El horario se arregla por mensaje, las fotos quedan en otro chat y lo acordado, en la memoria de cada uno; si algo cambia, te enterás tarde.</p></div>
+          <div class="app">Turno, avisos y chat quedan atados al pedido, y nada cambia sin que lo aceptes.<div class="pie"><span class="estado en-pruebas">En pruebas</span><a class="pag" data-ir="seguimiento"></a></div></div>
+        </div>
+        <div class="duda">
+          <svg viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3L19.5 9"/><path d="M19.5 4.5V9H15"/><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3L4.5 15"/><path d="M4.5 19.5V15H9"/></svg>
+          <div><p class="pregunta">«¿Y si vuelve a fallar?»</p><p>Se paga en mano, sin un registro de qué se hizo ni hasta cuándo responde quien lo hizo; la próxima vez, todo empieza de cero.</p></div>
+          <div class="app">El pago queda registrado y el diseño suma un informe con garantía y el historial de tu casa.<div class="pie"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span><a class="pag" data-ir="confianza"></a></div></div>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Hipótesis cualitativas del producto, a partir de entrevistas con vecinos y especialistas de Mar del Plata (dato informado por el fundador, sin auditar y sin número publicado). No son estadísticas: la medición propia del problema está [a&nbsp;definir]. El problema del mercado, en el Dossier 01.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 5 · CÓMO HANDYX SIMPLIFICA ============ -->
+<section class="pagina" id="simplifica">
+  <div class="lamina">
+    <div class="cabecera"><span>04 · Cómo Handyx simplifica el proceso</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">04</span>Cómo Handyx simplifica el proceso</span>
+      <h1 class="esp-1">Contás qué pasa y elegís&nbsp;<mark>vos</mark></h1>
+      <div class="promesa esp-4">
+        <figure class="con-rotulo">
+          <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></div>
+          <div class="cuadro"><img src="img/a-bienvenida.webp" alt="Bienvenida de la app: Mar del Plata de noche, con el faro y el lema"></div>
+          <figcaption><b>Bienvenida.</b> Mar del Plata dibujada en la primera pantalla de la app.</figcaption>
+        </figure>
+        <div>
+          <p class="cita">Contás qué pasa, recibís propuestas con precio y elegís vos. Pagás directo al especialista.</p>
+          <p class="bajada esp-3">Así resume la app su promesa en la primera pantalla. Todo lo demás está al servicio de esa frase.</p>
+          <p class="esp-2">Handyx ordena: arma el pedido, lo lleva a quienes pueden tomarlo, pone las propuestas en el mismo formato y registra cada paso. Lo que no hace también es diseño: no elige por vos, no promete tiempos y no toca la plata del trabajo.</p>
+        </div>
+      </div>
+
+      <h4 class="esp-3 titulo-flujo">Quién hace qué, en cada paso</h4>
+      <div class="carriles esp-2">
+        <span class="eje">Vos</span>
+        <div class="vos"><span class="paso-n">1</span>Contás qué pasa</div>
+        <div class="vos"><span class="paso-n">2</span>Recibís propuestas</div>
+        <div class="vos"><span class="paso-n">3</span>Elegís vos</div>
+        <div class="vos"><span class="paso-n">4</span>Seguís el trabajo y pagás</div>
+        <span></span><div class="baja"></div><div class="baja"></div><div class="baja"></div><div class="baja"></div>
+        <span class="eje">Handyx</span>
+        <div class="hx">Arma el pedido con lo justo y lo muestra a especialistas del rubro cerca de tu zona, sin tu dirección exacta.</div>
+        <div class="hx">Te avisa cada propuesta, con el precio del especialista y la tarifa de servicio por separado.</div>
+        <div class="hx">Las pone lado a lado, en el orden en que llegaron, y muestra como verificado solo lo que revisó el equipo.</div>
+        <div class="hx">Te avisa cada paso y registra el pago como informado. La plata va directo al especialista.</div>
+      </div>
+
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Regla de la app</th><th>Qué significa para vos</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Tu dirección, solo para quien elegís</td><td>Los especialistas ven la zona aproximada; la dirección exacta se comparte al aceptar</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Propuestas sin ranking</td><td>Se listan en el orden en que llegaron y ninguna se destaca</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Nada se suma sin tu OK</td><td>Un adicional o un cambio de turno queda pendiente hasta que lo aceptás</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Avisos que no deciden</td><td>Te llevan al detalle; nunca aceptan ni pagan por vos</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Sin tiempos prometidos</td><td>Los especialistas responden cuando pueden: no hay un tiempo fijo</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Pago directo</td><td>Handyx no recibe ni reparte la plata; un pago informado no se da por verificado</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Reglas: código de la app del usuario con el servidor simulado (vista de prueba publicada) y contrato de datos en una rama de desarrollo. Promesa: lienzo «App del usuario», pantalla de bienvenida (recortada arriba del titular).</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 6 · REGISTRO Y ONBOARDING ============ -->
+<section class="pagina" id="registro">
+  <div class="lamina">
+    <div class="cabecera"><span>05 · Registro y onboarding</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">05</span>Registro y onboarding</span>
+      <h1 class="esp-1">Tu cuenta, en pocos pasos y con lo&nbsp;<mark>justo</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Para pedir un arreglo alcanza con tu nombre, un celular y tu zona. Sin DNI ni CUIT.</p>
+          <p class="esp-2">El alta pide solo lo necesario para coordinar un turno. Tu teléfono lo ve únicamente el especialista que elijas, cuando se acuerda el turno, y la zona es aproximada: la dirección exacta se comparte recién cuando aceptás una propuesta.</p>
+          <p>Elegís qué avisos te llegan, sin publicidad, y si querés cargás tu casa para que el próximo pedido salga armado.</p>
+          <div class="tarifa esp-3">
+            <div class="cifra">0 %</div>
+            <div>
+              <p><b>Tarifa de servicio hasta el 10/12/2026.</b> Después, en evaluación: la app avisa antes de cualquier cambio. El trabajo se paga directo al especialista.</p>
+              <span class="tipo-dato">Condición confirmada · 07/11/2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/a-datos.webp" alt="Tus datos: nombre, apellido y celular, sin DNI ni CUIT"></div>
+            <figcaption><b>Tus datos.</b> Nombre y celular; sin DNI ni CUIT.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/a-listo.webp" alt="Cuenta lista con la tarifa de servicio 0 % hasta el 10/12/2026"></div>
+            <figcaption><b>Listo.</b> La tarifa de servicio, antes del primer pedido.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Alta de la cuenta</td><td>Crear la cuenta y entrar; hoy funciona en la vista de prueba</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Alta rediseñada</td><td>Menos pasos y «Armá tu casa», opcional, al final</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Datos mínimos y zona</td><td>Nombre, apellido y celular; los especialistas ven el barrio, no la calle</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Avisos a elección</td><td>Propuestas, turno y recordatorios, sin publicidad</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Aviso de tarifa</td><td>0 % hasta el 10/12/2026: después del alta, al primer ingreso y en Cuenta</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Empezar a usar Handyx sin trámites.</p></div>
+        <div><h4>Acción</h4><p>Creás la cuenta, dejás nombre, celular y zona, elegís los avisos y, si querés, armás tu casa.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Pide solo lo justo, guarda la zona aproximada y te avisa la tarifa de servicio antes del primer pedido.</p></div>
+        <div><h4>Resultado</h4><p>Tu cuenta lista y el Inicio con los seis rubros.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código de la app del usuario con el servidor simulado (vista de prueba publicada). Diseñado: lienzo «App del usuario», tableros A. Tarifa: decisión del fundador del 07/11/2026; así la muestra la app. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 7 · EXPLORACIÓN ============ -->
+<section class="pagina" id="exploracion">
+  <div class="lamina">
+    <div class="cabecera"><span>06 · Exploración y búsqueda de especialistas</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">06</span>Exploración y búsqueda de especialistas</span>
+      <h1 class="esp-1">Empezás por lo que pasa, no por a quién&nbsp;<mark>llamar</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/i-inicio-abajo.webp" alt="Inicio: próximo turno, tarjeta de HandIA y tareas frecuentes"></div>
+            <figcaption><b>Inicio.</b> Tu próximo turno, HandIA y «Quiero…».</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></div>
+            <div class="celular"><img src="img/i-handia.webp" alt="HandIA: saludo y ejemplos para empezar"></div>
+            <figcaption><b>HandIA.</b> Para cuando no sabés qué rubro es.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
+          <p class="bajada">En el Inicio elegís uno de los seis rubros o una tarea frecuente. Si no sabés cómo se llama lo que pasa, se lo contás a HandIA.</p>
+          <p class="esp-2">Handyx no es una guía de especialistas para recorrer. Tu pedido se muestra a quienes trabajan en ese rubro cerca de tu zona, y ellos deciden si mandan una propuesta. Quién es cada especialista lo ves con su propuesta, cuando ya tenés algo concreto para elegir.</p>
+          <p>La app empieza en Mar del Plata con electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado. «Quiero…» suma tareas frecuentes, como cambiar un flexible o revisar el calefón: no son rubros nuevos, las toma un especialista del rubro que corresponde.</p>
+        </div>
+      </div>
+      <h4 class="esp-4 titulo-flujo">Cómo llega tu pedido, sin directorio</h4>
+      <div class="cadena esp-2">
+        <div class="nodo lleno"><h4>Vos</h4><p>Contás qué pasa y elegís el rubro, o lo arma HandIA.</p></div>
+        <div class="nodo navy"><h4>Handyx</h4><p>Toma el rubro y tu zona aproximada, sin la dirección exacta.</p></div>
+        <div class="nodo"><h4>Especialistas</h4><p>Los del rubro, cerca de tu zona, ven el pedido y deciden.</p></div>
+        <div class="nodo"><h4>Vos</h4><p>Recibís propuestas y ves quién manda cada una.</p></div>
+      </div>
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Inicio con rubros y «Quiero…»</td><td>Elegís un rubro o una tarea frecuente y ves tu próximo turno</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Seis rubros con cobertura</td><td>La app dice si tu ciudad tiene cobertura; hoy, Mar del Plata</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Pedido a especialistas de la zona</td><td>Lo ven quienes trabajan en el rubro cerca tuyo, sin tiempos prometidos</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Barra con HandIA en el medio</td><td>Inicio, Actividad, HandIA, Mensajes y Mi hogar</td><td><span class="estado disenado">Diseñado</span></td></tr>
+        </tbody>
+      </table>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código de la app del usuario y contrato de datos (rubros y cobertura) en una rama de desarrollo. Diseñado: lienzo «App del usuario», tableros I y P. No hay directorio ni favoritos de especialistas: el pedido llega a ellos. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 8 · SOLICITUD DE SERVICIOS ============ -->
+<section class="pagina" id="solicitud">
+  <div class="lamina">
+    <div class="cabecera"><span>07 · Solicitud de servicios</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">07</span>Solicitud de servicios</span>
+      <h1 class="esp-1">Un pedido claro, contado con tus&nbsp;<mark>palabras</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Elegís el rubro, contás qué pasa y revisás el pedido antes de publicarlo. Fotos, medidas y día son opcionales.</p>
+          <p class="esp-2">En la vista de prueba, el pedido se arma por pasos: rubro, si es urgente, programado u obra, qué pasa, fotos privadas, ubicación, fecha y hora. El diseño lo acorta a tres toques —rubro, qué pasa, revisar y publicar— y suma anotar la foto y medir con la cámara.</p>
+          <p>Si preferís contarlo como te sale, HandIA te hace unas preguntas, te avisa primero si hay un riesgo y arma la ficha para que la revises, por chat o por voz. Funciona en tu celular, sin IA externa: el motor está en una rama de desarrollo y las pantallas, en el diseño.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido, con un precio orientativo"></div>
+            <figcaption><b>Revisar y publicar.</b> El pedido en una tarjeta, con un precio orientativo.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></div>
+            <div class="celular"><img src="img/i-handia-ficha.webp" alt="HandIA arma la ficha del pedido para revisar"></div>
+            <figcaption><b>HandIA.</b> La ficha que armó, lista para revisar.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Pedido en pasos</td><td>Urgente, programado u obra; fotos privadas, ubicación, fecha y hora</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Precio propuesto y autoaceptación</td><td>Sugerís un monto; la autoaceptación viene apagada</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Pedir en tres toques</td><td>Rubro, qué pasa, revisar y publicar; lo demás es opcional</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Anotar la foto y medir</td><td>Marcás dónde está el problema; la medida es aproximada</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">HandIA por chat y por voz</td><td>Arma el pedido en tu celular: el motor, en una rama; las pantallas nuevas, en el lienzo</td><td><span class="dos-estados"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span></span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Resolver un problema concreto de la casa, aunque no sepas cómo se llama.</p></div>
+        <div><h4>Acción</h4><p>Elegís el rubro y qué pasa, o se lo contás a HandIA; revisás el pedido y lo publicás.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Si no elegís día, va como «lo antes posible», y avisa a especialistas del rubro cerca de tu zona.</p></div>
+        <div><h4>Resultado</h4><p>Un pedido claro, tal como lo leen los especialistas, listo para recibir propuestas.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: código de la app del usuario con el servidor simulado; HandIA, en una rama de desarrollo, sin IA externa. Diseñado: lienzo «App del usuario», tableros P e I. El precio orientativo es diseño: todavía no hay trabajos para calcularlo. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 9 · RECEPCIÓN DE PRESUPUESTOS ============ -->
+<section class="pagina" id="presupuestos">
+  <div class="lamina">
+    <div class="cabecera"><span>08 · Recepción de presupuestos</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">08</span>Recepción de presupuestos</span>
+      <h1 class="esp-1">Precio y condiciones, en cada&nbsp;<mark>propuesta</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo prueba">Pantalla de la PWA</span><span class="rotulo prueba">Datos de prueba</span></div>
+            <div class="celular"><img src="img/pwa-propuestas.webp" alt="Vista de prueba: propuestas ordenadas por llegada, sin ranking"></div>
+            <figcaption><b>Propuestas.</b> Por orden de llegada: «no es una recomendación ni un ranking».</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/m-presupuesto.webp" alt="Presupuesto por ítem dentro del chat"></div>
+            <figcaption><b>Presupuesto en el chat.</b> Ítem por ítem, con el rango que sugiere Handyx.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
+          <p class="bajada">Los especialistas que pueden tomar el trabajo mandan su propuesta. La app te avisa cuando llega cada una; no hay un tiempo fijo.</p>
+          <p class="esp-2">Cada propuesta trae el precio del especialista y, aparte, la tarifa de servicio de Handyx, el horario, hasta cuándo vale y qué incluye. Se listan en el orden en que llegaron, sin destacar ninguna. Si nadie responde, podés relanzar el pedido.</p>
+          <p>En el diseño, el presupuesto también puede llegar dentro del chat, ítem por ítem, junto al rango que sugiere Handyx para ese trabajo. El precio lo pone siempre el especialista: Handyx sugiere, nunca impone.</p>
+        </div>
+      </div>
+      <table class="tabla funciones esp-4">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Pedido publicado</td><td>Lo ven especialistas del rubro cerca de tu zona; si nadie responde, se relanza</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Detalle de una propuesta</td><td>Precio del especialista, tarifa de Handyx, horario, vigencia, qué incluye y quién la mandó</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Tarifa de servicio aparte</td><td>0 % hasta el 10/12/2026, separada del precio del especialista</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Presupuesto por ítem en el chat</td><td>Ítems, total y vigencia, con el rango sugerido; se acepta en el mismo hilo</td><td><span class="estado disenado">Diseñado</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Saber cuánto cuesta y quién puede hacerlo, sin salir a buscar a nadie.</p></div>
+        <div><h4>Acción</h4><p>Recibís los avisos y abrís cada propuesta: precio, fecha, qué incluye y quién la manda.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Avisa cada propuesta, las lista por orden de llegada y separa el precio del especialista de la tarifa de servicio.</p></div>
+        <div><h4>Resultado</h4><p>Propuestas comparables en un solo lugar, sin compromiso hasta que aceptás.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: app del usuario en vista de prueba (captura del 31/10/2026, con el nombre anterior de la marca) y contrato de datos en una rama. Diseñado: lienzo «App del usuario», tableros M y C. Sin datos todavía de cuántas propuestas llegan ni en cuánto tiempo. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
 <!-- ============ 10 · COMPARACIÓN DE ALTERNATIVAS ============ -->
-<section class="pagina" data-folio="10" id="comparacion">
+<section class="pagina" id="comparacion">
   <div class="lamina">
     <div class="cabecera"><span>09 · Comparación de alternativas</span><span>Handyx · Customer App</span></div>
     <div class="caja">
       <span class="ceja"><span class="n">09</span>Comparación de alternativas</span>
-      <h1 class="esp-1">Todas las propuestas, <mark>lado a lado</mark></h1>
+      <h1 class="esp-1">Todas las propuestas, <mark>lado&nbsp;a&nbsp;lado</mark></h1>
       <div class="grilla esp-3">
         <div class="c-6">
           <p class="bajada">Cada propuesta llega con el precio del especialista, la tarifa de Handyx, el horario, la vigencia y lo que incluye.</p>
-          <p class="esp-2">La app las muestra en el orden en que llegaron y permite ponerlas en una tabla, una al lado de la otra, sin destacar ninguna. Quien pide el arreglo compara precio, fecha, materiales, garantía y verificaciones en una sola pantalla, y decide.</p>
+          <p class="esp-2">La app las muestra en el orden en que llegaron y te deja ponerlas en una tabla, una al lado de la otra, sin destacar ninguna. Comparás precio, fecha, materiales, garantía y verificaciones en una sola pantalla, y decidís vos.</p>
           <p>El diseño suma una tarjeta más completa por propuesta y un promedio de perfil y precio que explica por qué una propuesta conviene. Ese promedio está en evaluación: la regla del producto es no armar rankings ni usar superlativos.</p>
         </div>
         <div class="c-6 par">
           <figure class="con-rotulo centrada">
-            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
             <div class="celular"><img src="img/c-propuestas.webp" alt="Lista de propuestas con precio orientativo"></div>
             <figcaption><b>Propuestas.</b> En el orden en que llegaron, con el precio orientativo de la zona.</figcaption>
           </figure>
           <figure class="con-rotulo centrada">
-            <span class="rotulo diseno">Diseño propuesto</span>
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
             <div class="celular"><img src="img/c-comparar.webp" alt="Tabla para comparar tres propuestas"></div>
             <figcaption><b>Comparar.</b> Precio, fecha, materiales, garantía y reseñas en una tabla.</figcaption>
           </figure>
@@ -86,13 +673,13 @@
           <tr><td class="fuerte">Propuestas por orden de llegada</td><td>Precio del especialista, tarifa de Handyx, horario, vigencia y verificaciones, sin ranking</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Comparar en tabla</td><td>Las propuestas lado a lado: total, precio, horario, vigencia, verificaciones y qué incluye</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
           <tr><td class="fuerte">Tarjeta de propuesta extendida</td><td>Especialista y reseñas, duración, garantía, equipo y verificaciones en una tarjeta</td><td><span class="estado disenado">Diseñado</span></td></tr>
-          <tr><td class="fuerte">Promedio de perfil y precio</td><td>Una nota de 0 a 10 con los mismos pesos para todas y una frase que explica por qué; elige la persona</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Promedio de perfil y precio</td><td>Una nota de 0 a 10 con los mismos pesos para todas y una frase que explica por qué; elegís vos</td><td><span class="estado disenado">Diseñado</span></td></tr>
         </tbody>
       </table>
-      <h4 class="esp-3" style="color:var(--gris)">El recorrido, de punta a punta</h4>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
       <div class="flujo esp-2">
         <div><h4>Necesidad</h4><p>Elegir bien entre varios presupuestos, sin saber de precios ni conocer a nadie.</p></div>
-        <div><h4>Acción</h4><p>Ve las propuestas, las compara lado a lado y abre el detalle y el perfil que le interesan.</p></div>
+        <div><h4>Acción</h4><p>Ves las propuestas, las comparás lado a lado y abrís el detalle y el perfil que te interesan.</p></div>
         <div><h4>Qué hace Handyx</h4><p>Ordena por llegada, muestra un rango orientativo que no obliga y marca como verificado solo lo que revisó el equipo.</p></div>
         <div><h4>Resultado</h4><p>Una decisión informada: precio, condiciones, garantía y verificaciones en una pantalla.</p></div>
       </div>
@@ -103,17 +690,29 @@
 </section>
 
 <!-- ============ 11 · CRITERIOS DE CALIDAD Y PRECIO ============ -->
-<section class="pagina" data-folio="11" id="criterios">
+<section class="pagina" id="criterios">
   <div class="lamina">
     <div class="cabecera"><span>10 · Criterios de calidad y precio</span><span>Handyx · Customer App</span></div>
     <div class="caja">
       <span class="ceja"><span class="n">10</span>Criterios de calidad y precio</span>
-      <h1 class="esp-1">Elegir por <mark>calidad</mark> y por precio</h1>
+      <h1 class="esp-1">Elegir por <mark>calidad</mark> y&nbsp;por&nbsp;precio</h1>
       <p class="bajada esp-3">Un precio solo no alcanza para decidir. Handyx pone a la vista lo que hace a un buen trabajo y separa lo que el equipo revisó de lo que cada especialista declara.</p>
       <div class="grilla esp-4">
-        <div class="c-7">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/c-detalle.webp" alt="Detalle de una propuesta"></div>
+            <figcaption><b>Propuesta.</b> Precio, cómo lo hace, garantía y verificaciones.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/c-certificados.webp" alt="Perfil del especialista: verificado por el equipo y cargado sin revisar"></div>
+            <figcaption><b>Perfil.</b> Lo que revisó el equipo, separado de lo cargado.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
           <table class="tabla criterios">
-            <thead><tr><th>Criterio</th><th>Qué ve quien pide</th><th>Estado</th></tr></thead>
+            <thead><tr><th>Criterio</th><th>Qué ves</th><th>Estado</th></tr></thead>
             <tbody>
               <tr><td class="fuerte">Precio</td><td>El precio del especialista y la tarifa de Handyx, por separado</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
               <tr><td class="fuerte">Precio orientativo</td><td>Un rango de trabajos parecidos en la zona: sugiere, no impone</td><td><span class="estado disenado">Diseñado</span></td></tr>
@@ -124,19 +723,464 @@
               <tr><td class="fuerte">Reseñas</td><td>De trabajos terminados en Handyx</td><td><span class="estado disenado">Diseñado</span></td></tr>
             </tbody>
           </table>
-          <div class="nota esp-3"><b>Sin rankings ni superlativos.</b> La lista no ordena por conveniencia. El promedio de perfil y precio del diseño usa los mismos pesos para todas las propuestas y explica su nota; la decisión es siempre de quien pide.</div>
         </div>
-        <div class="c-5 par" style="flex-direction:column;align-items:center;gap:5mm">
-          <figure class="con-rotulo centrada">
-            <span class="rotulo diseno">Diseño propuesto</span>
-            <div class="celular" style="--w:46mm"><img src="img/c-detalle.webp" alt="Detalle de una propuesta"></div>
-            <figcaption style="width:46mm"><b>Propuesta.</b> Precio, cómo lo hace, garantía y verificaciones.</figcaption>
-          </figure>
+      </div>
+      <div class="nota esp-3"><b>Sin rankings ni superlativos.</b> La lista no ordena por conveniencia. El promedio de perfil y precio del diseño usa los mismos pesos para todas las propuestas y explica su nota; la decisión es siempre tuya. Qué pesa cada criterio y si se muestra en pantalla: [a&nbsp;definir].</div>
+      <div class="grilla esp-2">
+        <div class="c-6 tarjeta blanca">
+          <span class="estado en-pruebas">En pruebas</span>
+          <h3 class="esp-1">Lo que ya ayuda a decidir</h3>
+          <p class="esp-1">En la vista de prueba: el precio y la tarifa por separado, las verificaciones que hizo el equipo, los trabajos hechos en Handyx y una comparación en tabla que no destaca ninguna.</p>
+        </div>
+        <div class="c-6 tarjeta blanca">
+          <span class="estado disenado">Diseñado</span>
+          <h3 class="esp-1">Lo que suma el diseño</h3>
+          <p class="esp-1">El precio orientativo de la zona, qué incluye y qué no, los certificados cargados, las reseñas de trabajos terminados y el promedio de perfil y precio.</p>
         </div>
       </div>
       <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Todavía no hay reseñas ni especialistas verificados con trabajos reales: los nombres y cifras de las pantallas son de muestra. Fuentes: lienzo «App del usuario» (tableros C) y app del usuario en vista de prueba.</p>
     </div>
     <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 12 · SELECCIÓN Y CONTRATACIÓN ============ -->
+<section class="pagina" id="contratacion">
+  <div class="lamina">
+    <div class="cabecera"><span>11 · Selección y contratación</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">11</span>Selección y contratación</span>
+      <h1 class="esp-1">Aceptar, negociar o decir que no, sin&nbsp;<mark>presión</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Antes de aceptar, la app te muestra qué va a pasar: quién ve tu dirección, qué se cierra y cómo se paga.</p>
+          <p class="esp-2">Aceptás en una hoja de confirmación con el precio, el día y la franja. Handyx acepta exactamente la versión que viste: si cambió, no se acepta sin que la veas. Tu dirección y tu teléfono llegan solo a quien elegiste, y las demás propuestas se cierran sin dar motivos.</p>
+          <p>Si algo no te cierra, pedís otro día, otro precio o que incluya los materiales: nada cambia hasta que aceptes la nueva propuesta. También podés rechazar, con un motivo opcional que el especialista no ve.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/c-aceptar.webp" alt="Hoja de confirmación para aceptar una propuesta"></div>
+            <figcaption><b>Aceptar.</b> Qué pasa con tu dirección, las otras propuestas y el pago.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/c-cambios.webp" alt="Pedir un cambio: otro día, materiales u otro precio"></div>
+            <figcaption><b>Pedir un cambio.</b> Otro día, materiales u otro precio.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="horquilla esp-4">
+        <div class="origen">Una propuesta que te interesa</div>
+        <div class="salidas">
+          <div class="nodo"><h4>Aceptar</h4><p>Se confirma el turno y se cierran las demás propuestas.</p><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="nodo"><h4>Pedir cambios</h4><p>Llega una propuesta nueva; vale la anterior hasta que aceptes.</p><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="nodo"><h4>Rechazar</h4><p>Se cierra sin compromiso; en el diseño, con un motivo opcional que el especialista no ve.</p><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span></div>
+          <div class="nodo pendiente"><h4>Visita para presupuestar</h4><p>Si hay que ver antes: cuánto cuesta la visita y qué se define en ella.</p><span class="estado disenado">Diseñado</span></div>
+        </div>
+      </div>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Cerrar el acuerdo o negociar, sin presión.</p></div>
+        <div><h4>Acción</h4><p>Aceptás, pedís otro día o precio, rechazás o aceptás una visita previa.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Acepta la versión que viste, comparte tu dirección solo con quien elegiste y cierra las demás.</p></div>
+        <div><h4>Resultado</h4><p>Turno confirmado, con lo que sigue: coordinar, ver venir al especialista y pagar directo.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: aceptar, rechazar y pedir cambios en el código de la app del usuario y en el contrato de datos (rama de desarrollo). Diseñado: visita para presupuestar, motivo del rechazo y pantallas del lienzo «App del usuario» (tableros C). Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 13 · SEGUIMIENTO DEL TRABAJO Y PAGO ============ -->
+<section class="pagina" id="seguimiento">
+  <div class="lamina">
+    <div class="cabecera"><span>12 · Seguimiento del trabajo</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">12</span>Seguimiento del trabajo y pago</span>
+      <h1 class="esp-1">Del turno al pago, sin&nbsp;<mark>sorpresas</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/s-en-camino.webp" alt="El especialista en camino, en el mapa"></div>
+            <figcaption><b>En camino.</b> Lo ves venir solo mientras comparte el viaje.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo prueba">Pantalla de la PWA</span><span class="rotulo prueba">Datos de prueba</span></div>
+            <div class="celular"><img src="img/pwa-pago-metodo.webp" alt="Vista de prueba: elegir cómo pagar al especialista"></div>
+            <figcaption><b>Cómo pagás.</b> Efectivo o Mercado Pago, directo al especialista.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
+          <p class="bajada">Sabés quién viene y cuándo, aprobás cualquier cambio antes de que se sume y pagás directo al especialista.</p>
+          <p class="esp-2">El trabajo pasa por estados que ves en la app: agendado, en camino, llegó, trabajando y terminado. El día del turno ves venir al especialista solo mientras comparte el viaje. Si aparece un repuesto o una tarea extra, llega con su precio y su motivo, y vale lo acordado hasta que lo aprobás.</p>
+          <p>Al terminar, das la conformidad o avisás que hay un problema. El pago va directo al especialista: hoy en efectivo, que informás en la app, y con Mercado Pago cuando se valide la integración. Handyx no recibe la plata y un pago informado no se da por verificado.</p>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Estados del trabajo</td><td>De agendado a finalizado, con historial; cambiar el turno o cancelar</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Viaje en vivo</td><td>Mapa solo mientras el especialista comparte (en una rama)</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Adicionales para aprobar</td><td>Repuesto o tarea extra con precio y motivo; nada se suma sin tu OK</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Conformidad y efectivo</td><td>Confirmás que terminó y lo informás; queda informado hasta verificarse</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Mercado Pago</td><td>Integración en código, cerrada hasta validarla</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Saber quién viene, que el trabajo quede bien y pagar sin intermediarios.</p></div>
+        <div><h4>Acción</h4><p>Seguís el viaje, aprobás un adicional si hace falta, das la conformidad y pagás.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Muestra el viaje solo mientras se comparte, no suma nada sin tu OK y deja el pago informado hasta verificarlo.</p></div>
+        <div><h4>Resultado</h4><p>Trabajo terminado y pagado directo al especialista, con cada paso registrado.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: app del usuario en vista de prueba (captura del 31/10/2026, con el nombre anterior de la marca); viaje en vivo, en una rama; Mercado Pago, con la integración cerrada hasta validarla. Diseñado: lienzo «App del usuario», tableros S. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 14 · OBRAS DE VARIOS DÍAS ============ -->
+<section class="pagina" id="obras">
+  <div class="lamina">
+    <div class="cabecera"><span>12 · Obras de varios días</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">12</span>Obras de varios días</span>
+      <h1 class="esp-1">Una obra grande, etapa por&nbsp;<mark>etapa</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">Un baño completo o una ampliación se divide en etapas, con días, responsables y montos. Confirmás cada etapa y la pagás directo a quien la hizo.</p>
+          <p class="esp-2">En la vista de prueba, la obra ya funciona por etapas: cada una tiene su monto, la confirmás cuando termina y la pagás directo. El diseño suma la propuesta de obra con los días y quién hace cada etapa, el avance jornada por jornada con fotos, los repuestos con la foto del ticket para aprobar y un chat con todo el equipo, sin que nadie vea tu celular.</p>
+          <p>Siempre ves lo pagado, lo que falta y qué pagos están informados o verificados. El reparto lo acuerda el equipo y cada especialista cobra lo suyo: Handyx no toca la plata.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/o-obra.webp" alt="Tu obra: etapas, jornadas, lo pagado y lo que falta"></div>
+            <figcaption><b>Tu obra.</b> Etapas, jornadas, lo pagado y lo que falta.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo prueba">Pantalla de la PWA</span><span class="rotulo prueba">Datos de prueba</span></div>
+            <div class="celular"><img src="img/pwa-seguimiento.webp" alt="Vista de prueba: obra en curso con etapas y montos"></div>
+            <figcaption><b>Obra por etapas.</b> Lo acordado y la etapa que falta confirmar.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Obra por etapas</td><td>Cada etapa con su monto; la confirmás terminada y la pagás directo</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Propuesta de obra</td><td>Días, etapas, quién hace cada una y cuánto; la aprobás o pedís cambios</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Tu obra día a día</td><td>Jornadas con quién viene, avance con fotos y materiales del día</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Repuestos y cambios de fecha</td><td>Llegan para aprobar; nada se suma ni se mueve sin tu OK</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Equipo, chat y pagos de la obra</td><td>Varios oficios en un grupo sin tu celular; lo pagado, lo que falta y lo verificado</td><td><span class="estado disenado">Diseñado</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Hacer un baño completo con varios oficios sin perder el control del gasto.</p></div>
+        <div><h4>Acción</h4><p>Aprobás la propuesta por etapas, seguís cada jornada, aprobás repuestos o cambios de fecha y pagás cada etapa.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Ordena etapas, días y responsables, no suma nada sin tu OK y separa lo informado de lo verificado.</p></div>
+        <div><h4>Resultado</h4><p>La obra terminada, con pagos directos a cada especialista y el resumen guardado.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: obra por etapas en la app del usuario con el servidor simulado (captura del 31/10/2026, con el nombre anterior de la marca). Diseñado: lienzo «App del usuario», tableros O. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 15 · COMUNICACIÓN Y ORGANIZACIÓN ============ -->
+<section class="pagina" id="comunicacion">
+  <div class="lamina">
+    <div class="cabecera"><span>13 · Comunicación y organización</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">13</span>Comunicación y organización</span>
+      <h1 class="esp-1">Todo lo acordado, por&nbsp;<mark>escrito</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/m-chat.webp" alt="Chat del pedido con tarjetas para aceptar"></div>
+            <figcaption><b>Chat del pedido.</b> Las tarjetas se aceptan ahí mismo.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/i-avisos.webp" alt="Avisos que llevan al detalle"></div>
+            <figcaption><b>Avisos.</b> Te llevan al detalle; nunca aceptan ni pagan por vos.</figcaption>
+          </figure>
+        </div>
+        <div class="c-6">
+          <p class="bajada">Cada pedido tiene su chat, cada pendiente su aviso y, si algo se complica, te responde una persona del equipo de Handyx.</p>
+          <p class="esp-2">Los chats se abren cuando hay un pedido o una obra: nadie te puede escribir por fuera de eso. Ahí van los mensajes y las fotos, y en el diseño también las tarjetas —un presupuesto por ítem, otro horario, un repuesto, un cambio de fecha— que aceptás o respondés en el mismo hilo y quedan en el pedido.</p>
+          <p>Los avisos te llevan al detalle de cada cosa y nunca aceptan ni pagan nada por vos. Tus pedidos, la agenda y el historial están a mano, y Soporte y la Ayuda responden lo que la app no resuelve.</p>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Chats por pedido u obra</td><td>Texto y fotos, con la propuesta dentro del hilo</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Tarjetas en el chat</td><td>Presupuesto por ítem, otro horario, repuestos y fechas, para aceptar o responder</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Avisos que llevan al detalle</td><td>Propuestas, mensajes, turnos y recordatorios</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Pedidos, agenda e historial</td><td>Hoy por separado; el diseño los junta en una pestaña, Actividad</td><td><span class="dos-estados"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Diseñado</span></span></td></tr>
+          <tr><td class="fuerte">Soporte y Ayuda</td><td>Una persona del equipo responde; temas y preguntas frecuentes</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Coordinar con el especialista y resolver una duda sin salir de la app.</p></div>
+        <div><h4>Acción</h4><p>Escribís en el chat del pedido, respondés una tarjeta, revisás los avisos y, si hace falta, escribís a Soporte.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Ata cada chat a un pedido u obra y hace que los avisos lleven al detalle, sin decidir nada por vos.</p></div>
+        <div><h4>Resultado</h4><p>Todo acordado por escrito dentro del pedido y cada pendiente resuelto desde su pantalla.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> En pruebas: chats, avisos, pedidos, agenda y Ayuda en la app del usuario con el servidor simulado; Soporte, en una rama de desarrollo. Diseñado: lienzo «App del usuario», tableros M, I y X. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 16 · CONFIANZA Y REPUTACIÓN ============ -->
+<section class="pagina" id="confianza">
+  <div class="lamina">
+    <div class="cabecera"><span>14 · Confianza y reputación</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">14</span>Confianza y reputación</span>
+      <h1 class="esp-1">Verificar es un trabajo del&nbsp;<mark>equipo</mark></h1>
+      <div class="grilla esp-3">
+        <div class="c-6">
+          <p class="bajada">La app separa lo que el equipo de Handyx revisó de lo que cada especialista declara. Todavía no hay especialistas verificados ni reseñas reales.</p>
+          <p class="esp-2">La verificación de identidad y antecedentes está a cargo del equipo. En cada propuesta ves solo lo que el equipo verificó y cuántos trabajos hizo el especialista en Handyx; lo que solo se cargó queda marcado como tal (p. <a data-ir="criterios">00</a>). Tu dirección exacta queda protegida hasta que aceptás.</p>
+          <p>El diseño suma un código para la puerta: el especialista te lo dice antes de entrar y, si no coincide, avisás a Soporte. Al terminar, el informe guarda qué se hizo, con qué materiales y hasta cuándo cubre la garantía. Ningún pago se da por hecho, y la reseña de un trabajo terminado es opcional.</p>
+        </div>
+        <div class="c-6 par">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/s-llego.webp" alt="Llegó el especialista: código para abrir la puerta"></div>
+            <figcaption><b>Llegó.</b> Un código para saber que es él antes de abrir.</figcaption>
+          </figure>
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/s-informe.webp" alt="Informe del trabajo con garantía"></div>
+            <figcaption><b>Informe.</b> Qué se hizo, pruebas, materiales y garantía.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <table class="tabla funciones esp-3">
+        <thead><tr><th>Función</th><th>Qué hace</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Verificaciones en la propuesta</td><td>Solo lo que el equipo verificó, con fecha, y los trabajos hechos en Handyx</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Código para la puerta</td><td>El especialista lo dice antes de entrar; si no coincide, avisás a Soporte</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Informe con garantía</td><td>Qué encontró, pruebas, materiales y hasta cuándo cubre; queda guardado</td><td><span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td class="fuerte">Reseña opcional</td><td>Estrellas y un comentario sin datos personales (vista de prueba de una rama)</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+          <tr><td class="fuerte">Reclamos</td><td>Abrir un reclamo de un pedido o un trabajo y seguir su estado</td><td><span class="estado en-pruebas">En pruebas</span></td></tr>
+        </tbody>
+      </table>
+      <h4 class="esp-3 titulo-flujo">El recorrido, de punta a punta</h4>
+      <div class="flujo esp-2">
+        <div><h4>Necesidad</h4><p>Saber que quien entra a tu casa es quien dice ser y que lo acordado se cumple.</p></div>
+        <div><h4>Acción</h4><p>Mirás las verificaciones antes de elegir, pedís el código al abrir, guardás el informe y revisás tus pagos.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Separa lo cargado de lo verificado (solo verifica el equipo), protege tu dirección hasta que aceptás y no da por hecho ningún pago.</p></div>
+        <div><h4>Resultado</h4><p>Un historial confiable de tu casa y de cada especialista.</p></div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Quién da la garantía y su texto: [a&nbsp;definir] con Legal. En pruebas: app del usuario y contrato de datos (rama de desarrollo). Diseñado: lienzo «App del usuario», tableros S. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 17 · FUNCIONALIDADES ADICIONALES ============ -->
+<section class="pagina" id="adicionales">
+  <div class="lamina">
+    <div class="cabecera"><span>15 · Funcionalidades adicionales</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">15</span>Funcionalidades adicionales</span>
+      <h1 class="esp-1">Más allá del arreglo, tu casa en&nbsp;<mark>orden</mark></h1>
+      <p class="bajada esp-3">Mi hogar, las herramientas del teléfono y el Camino del hogar están diseñados, todavía sin código. Marcan hacia dónde crece la experiencia.</p>
+      <div class="cuadricula esp-4">
+        <div class="celda">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular" style="--r: calc(2700 / 1170)"><img src="img/h-hogar.webp" alt="Mi hogar: ficha de la casa y sus cuatro accesos"></div>
+          </figure>
+          <div class="texto">
+            <h3>Mi hogar</h3>
+            <p>La ficha privada de tu casa: ambientes, equipos, garantías y recordatorios. Cuando algo se rompe, el pedido sale armado con esos datos y compartís solo lo que elegís, solo para ese pedido.</p>
+            <div class="chips">
+              <div>Ficha, pedido armado y recordatorios<span class="estado disenado">Diseñado</span></div>
+              <div>Modelo 3D de un ambiente<span class="estado concepto">Concepto</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="celda">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></div>
+            <div class="celular"><img src="img/t-medir.webp" alt="Medir con la cámara una ventana"></div>
+          </figure>
+          <div class="texto">
+            <h3>Herramientas del teléfono</h3>
+            <p>Medir con la cámara, nivel, linterna y foto anotada: las mismas que usan los especialistas. Las medidas son aproximadas y nada se manda hasta que elegís a dónde: el chat, un pedido o Mi hogar.</p>
+            <div class="chips">
+              <div>Herramientas y escaneo en 3D<span class="estado disenado">Diseñado</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="celda">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo concepto">Concepto</span><span class="rotulo muestra">Datos ficticios</span></div>
+            <div class="celular"><img src="img/h-ar.webp" alt="Ver en la pared, en tamaño real, un equipo propuesto"></div>
+          </figure>
+          <div class="texto">
+            <h3>Ver en AR</h3>
+            <p>Antes de aceptar un equipo que te proponen, lo ves en tu pared en tamaño real, con sus medidas. Está dibujado en el lienzo, pero la decisión técnica sigue abierta.</p>
+            <div class="chips">
+              <div>Ver en AR un equipo propuesto<span class="estado disenado">Diseñado</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="celda">
+          <figure class="con-rotulo centrada">
+            <div class="rotulos"><span class="rotulo diseno">Diseño propuesto</span></div>
+            <div class="celular"><img src="img/g-camino.webp" alt="Camino del hogar: hitos para cuidar la casa"></div>
+          </figure>
+          <div class="texto">
+            <h3>Camino del hogar</h3>
+            <p>Hitos que se avanzan cuidando la casa, no gastando más: sin sorteos, sin azar y sin rankings. Los beneficios, sus montos y los premios están en borrador hasta que los apruebe Legal.</p>
+            <div class="chips">
+              <div>Camino e insignias<span class="estado disenado">Diseñado</span></div>
+              <div>Beneficios y premios<span class="estado concepto">Concepto</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Diseñado: lienzo «App del usuario», tableros H, T y G; piden un contrato de datos nuevo. Concepto: modelo 3D y beneficios del Camino (montos, premios y condiciones en borrador para Legal). Ver en AR: decisión técnica abierta. Las pantallas usan datos ficticios.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 18 · ROADMAP DE EXPERIENCIA ============ -->
+<section class="pagina" id="roadmap">
+  <div class="lamina">
+    <div class="cabecera"><span>16 · Roadmap de experiencia</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">16</span>Roadmap de experiencia</span>
+      <h1 class="esp-1">Primero lo que ya corre, después el&nbsp;<mark>diseño</mark></h1>
+      <p class="bajada esp-3">El roadmap ordena la experiencia por estado y no por fecha: lo que hoy corre en la vista de prueba, lo que está dibujado y lo que todavía es una idea.</p>
+
+      <div class="fila entre esp-4" style="align-items:baseline">
+        <h2>85 funciones de la app, por estado</h2>
+        <span class="tipo-dato">Dato verificado · auditoría del 07/11/2026</span>
+      </div>
+      <div class="barra-seg esp-2" role="img" aria-label="85 funciones: 2 construidas, 39 en pruebas, 41 diseñadas y 3 en concepto">
+        <span class="s-c"></span><span class="s-p">39</span><span class="s-d">41</span><span class="s-x"></span>
+      </div>
+      <div class="leyenda-barra esp-2">
+        <div><span class="estado construido">Construido</span><div class="cifra">2</div><p>La demo interactiva de la landing y su versión instalable, con datos ficticios.</p></div>
+        <div><span class="estado en-pruebas">En pruebas</span><div class="cifra">39</div><p>Código con el servidor simulado de la vista de prueba o en ramas de desarrollo.</p></div>
+        <div><span class="estado disenado">Diseñado</span><div class="cifra">41</div><p>Dibujado en el lienzo de diseño, todavía sin código.</p></div>
+        <div><span class="estado concepto">Concepto</span><div class="cifra">3</div><p>Ideas a futuro, sujetas a decisiones técnicas o legales.</p></div>
+      </div>
+
+      <table class="tabla matriz esp-4">
+        <thead><tr><th>Momento</th><th><span class="estado en-pruebas">En pruebas</span></th><th><span class="estado disenado">Diseñado</span></th><th><span class="estado concepto">Concepto</span></th></tr></thead>
+        <tbody>
+          <tr><td class="fuerte">Pedir</td><td>Alta y datos mínimos · aviso de tarifa · pedido en pasos · seis rubros · HandIA, con el motor en una rama</td><td>Alta rediseñada y «Armá tu casa» · pedir en tres toques · anotar y medir · precio orientativo · pantallas nuevas de HandIA</td><td>Ampliaciones de HandIA, solo con autorización y revisión legal</td></tr>
+          <tr><td class="fuerte">Elegir</td><td>Propuestas por llegada · comparar en tabla · detalle · verificaciones y trabajos · aceptar, rechazar y pedir cambios</td><td>Tarjeta extendida · promedio de perfil y precio · perfil con reseñas · visita para presupuestar</td><td class="vacio">—</td></tr>
+          <tr><td class="fuerte">Seguir</td><td>Estados del trabajo · viaje en vivo · adicionales · conformidad · pago en efectivo · Mercado Pago, cerrado hasta validar · obra por etapas · chat y avisos · Soporte y reclamos</td><td>Código para la puerta · antes y después · informe con garantía · obras en equipo · tarjetas en el chat · Actividad</td><td class="vacio">—</td></tr>
+          <tr><td class="fuerte">Cuidar tu casa</td><td>Privacidad y baja de la cuenta</td><td>Mi hogar · herramientas y escaneo en 3D · ver en AR · Camino del hogar e insignias</td><td>Modelo 3D · beneficios del Camino</td></tr>
+        </tbody>
+      </table>
+
+      <div class="falta esp-4">
+        <div class="tarjeta">
+          <h4>Para pasar del diseño al código</h4>
+          <p>La aprobación del lienzo, un contrato de datos nuevo (reseñas, visita, obras en equipo y Mi hogar) y el desarrollo por etapas, en el orden de esta página.</p>
+        </div>
+        <div class="tarjeta">
+          <h4>Para trabajar con datos reales</h4>
+          <p>Desplegar el servidor de la app del usuario, conectarla y validar Mercado Pago. Las fechas de cada etapa: [a&nbsp;definir].</p>
+        </div>
+      </div>
+      <p class="fuente empuja"><b>Estado al 07/11/2026.</b> Conteo: auditoría de la app del usuario (85 funciones, cada una con evidencia en el lienzo, el código o los documentos). Sin fechas: el plan por etapas espera aprobación. Ver el roadmap de la empresa en el Dossier 01.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 19 · CIERRE ============ -->
+<section class="pagina oscuro" id="cierre">
+  <div class="lamina">
+    <div class="cabecera"><span>17 · Cierre</span><span>Handyx · Customer App</span></div>
+    <div class="caja">
+      <span class="ceja"><span class="n">17</span>Cierre</span>
+      <h1 class="esp-1">Pedir un arreglo, con todo a&nbsp;la&nbsp;<mark>vista</mark></h1>
+      <p class="bajada esp-3">La Customer App existe para que quien necesita un arreglo decida con información: qué incluye cada propuesta, quién la manda, qué revisó el equipo y cuánto cuesta, con el pago directo al especialista.</p>
+      <p class="idea esp-4">Handyx no elige por vos ni promete lo que todavía no está: ordena la información para que elijas mejor, por calidad y por precio.</p>
+
+      <div class="cierre-cols esp-5">
+        <div>
+          <h4>Hoy</h4>
+          <p>La app corre en una vista de prueba publicada, con datos ficticios: pedir, recibir propuestas, compararlas lado a lado, aceptar, seguir el trabajo y pagar en efectivo.</p>
+          <span class="estado en-pruebas">En pruebas</span>
+        </div>
+        <div>
+          <h4>Lo que sigue</h4>
+          <p>Construir por etapas el diseño del lienzo, desplegar el servidor de la app para trabajar con datos reales y validar Mercado Pago.</p>
+        </div>
+        <div>
+          <h4>A definir</h4>
+          <p>Las fechas del plan, la tarifa de servicio después del 10/12/2026 (en evaluación), quién da la garantía y cómo se publican las reseñas.</p>
+        </div>
+      </div>
+
+      <h4 class="esp-5" style="color:rgba(233,239,249,.6)">Dónde seguir leyendo</h4>
+      <div class="seguir-leyendo esp-2">
+        <div><span class="n">01</span><div><h3>Business &amp; Investment</h3><p>El modelo de negocio, el mercado y el plan para crecer.</p></div></div>
+        <div><span class="n">03</span><div><h3>Professional App</h3><p>La herramienta de trabajo del especialista, del pedido al cobro.</p></div></div>
+        <div><span class="n">04</span><div><h3>Operations Portal</h3><p>Cómo el equipo opera, atiende reclamos y mide.</p></div></div>
+        <div><span class="n">T</span><div><h3>Tríptico</h3><p>La carta de presentación de Handyx, para leer en un minuto.</p></div></div>
+      </div>
+      <div class="empuja">
+        <p class="lema-cierre">Handyx. Soluciones, <mark>no problemas.</mark></p>
+        <p class="fuente esp-3"><b>Estado al 07/11/2026.</b> Fuentes: auditoría de la app del usuario (lienzo «App del usuario», código de la app y documentos del proyecto). Las pantallas de este dossier usan datos de prueba o ficticios.</p>
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ============ 20 · CONTRATAPA ============ -->
+<section class="pagina tapa contratapa" id="contratapa">
+  <div class="lamina">
+    <div class="a-sangre fondo-tapa"></div>
+    <img class="personaje foco-fin" src="../../marca/personajes/bombilla-c.svg" alt="Foco, personaje de Handyx">
+    <div class="caja">
+      <div>
+        <img class="logo" style="--h:9mm" src="../../marca/logo-handyx-blanco.svg" alt="Handyx">
+        <p class="lema esp-4">Soluciones,<br><mark>no problemas.</mark></p>
+      </div>
+      <div>
+        <span class="ceja" style="color:inherit;opacity:.8">Conocé el proyecto completo</span>
+        <div class="bloque-qr esp-3">
+          <div class="qr"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
+          <div>
+            <p class="texto-grande">La landing con la demo interactiva, los cuatro dossiers y el portafolio del fundador, en un solo lugar.</p>
+            <p class="esp-1"><b>landing.handyc.com/handyx</b></p>
+            <div class="destinos esp-3"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio del fundador</span></div>
+          </div>
+        </div>
+        <div class="contacto esp-5">
+          <div class="dato"><span>Contacto</span><span>Ignacio Gauna, fundador</span></div>
+          <div class="dato"><span>Email</span><span>ignaciogauna.developer@gmail.com</span></div>
+          <div class="dato"><span>Teléfono</span><span>223 667-4044</span></div>
+          <div class="dato"><span>Web</span><span>landing.handyc.com</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="coleccion"><span>Tríptico</span><span>01 Business &amp; Investment</span><span class="actual">02 Customer App</span><span>03 Professional App</span><span>04 Operations Portal</span></div>
+        <p class="legal esp-3">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Estado al 07/11/2026. Las pantallas usan datos de prueba o de muestra; las cifras llevan su tipo, su fuente y su fecha de corte. Ninguna cifra es un resultado si no lo dice.</p>
+      </div>
+    </div>
   </div>
 </section>
 
