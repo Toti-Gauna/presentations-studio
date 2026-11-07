@@ -11,8 +11,13 @@ Pedido textual: `docs/handyx/pedido-dossiers.md` · plan por olas y decisiones d
 - **Ola 2 ✓ (a aprobar por Ignacio)** · `dossiers/diagnostico.md`, `dossiers/arquitectura.md` (página por página),
   `dossiers/direccion-de-arte.md`, plantilla de imprenta `dossiers/plantilla/` y muestra visual en `dossiers/piezas/*`
   (tapas, una doble página por dossier, tríptico completo). Exportar: `node dossiers/herramientas/exportar-pieza.cjs`.
-- **Siguen:** ola 3 (producir las 5 piezas, 5 agentes), ola 4 (página `/handyx/` + QR + PDF de imprenta y digital + 5 zips;
-  el deploy de `/handyx/` lo autoriza Ignacio), ola 5 (revisión integral).
+- **Ola 3 ✓** · las cinco piezas producidas en `dossiers/piezas/` (tríptico 2 p., Business 20, Customer 20, Professional
+  20, Operations 16), cada una con `NOTAS.md`; control de exportación sin errores.
+- **Ola 4 (en curso)** · `python3 -I dossiers/herramientas/empaquetar.py` arma los 5 zips en `salida/entregables/dossiers/`
+  (imprenta, digital, PNG, fuente editable, LEEME) y los PDF de `/handyx/` en `pdf-para-landing/`. La página `/handyx/`
+  está en la rama `claude/modest-gauss-jin0gy` de Handy-landing-page-fe (sin merge: publicar lo autoriza Ignacio);
+  faltan los PDF en su `public/handyx/`.
+- **Ola 5 (en curso)** · revisión independiente según `dossiers/consigna-ola-5.md` → `dossiers/revision/`.
 - Para regenerar capturas en una sesión nueva: bajar los 3 lienzos con el Artifact tool (ver `dossiers/README.md`) y
   correr `capturar-lienzo.cjs … '' auto 4` + `hoja-de-contactos.py`.
 
