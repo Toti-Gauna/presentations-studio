@@ -1,0 +1,16 @@
+[
+ {"tablero":"Reclamos.dc.html","a":"reclamos-v3.png","escala":2,"recorte":[288,92,1136,451],
+  "reemplazos":[["Pérdida de gas sin resolver después del arreglo","El trabajo quedó sin terminar"],["Seguridad","Servicio"],
+                ["El especialista no se presentó","Cambió el horario sin avisar"],
+                ["Cobro duplicado en el pago","Pidió el informe del trabajo"],
+                ["11 de 14 resueltos a tiempo esta semana",""]]},
+ {"tablero":"Tareas.dc.html","a":"tareas-v3.png","escala":2,"recorte":[288,92,1136,790],
+  "reemplazos":[["=IG","SV"],["Renovar seguro de responsabilidad civil","Ordenar la carpeta de documentos"]]},
+ {"tablero":"Docs.dc.html","a":"docs-v3.png","escala":2,"recorte":[164,24,1112,712],
+  "reemplazos":[["Contale los requisitos: monotributo con CUIT y antecedentes penales en 7 días.","Contale cuáles son los próximos pasos para el alta."]],
+  "js":"(() => { const a = document.querySelector('aside'); let e = a; while (e && !(e.getAttribute('style')||'').includes('flex: 0 0 auto')) e = e.parentElement; if (e) e.style.display = 'none'; })()"},
+ {"tablero":"Campana.dc.html","a":"campana-embudo.png","escala":2,"recorte":[280,420,1150,530],
+  "reemplazos":[["Matrícula verificada","Requisitos al día"],["Revisá por qué no completan la matrícula.","Revisá qué les falta para el alta."]]},
+ {"tablero":"Ficha.dc.html","a":"ficha-v3.png","escala":2,"recorte":[288,25,1152,845],
+  "reemplazos":[["Gasista matriculada","Gasista"]]}
+]
