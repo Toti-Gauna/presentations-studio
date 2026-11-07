@@ -1,14 +1,8 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="7120.000000pt" height="1568.000000pt" viewBox="0 0 7120.000000 1568.000000"
+<svg version="1.1" role="img" aria-label="Handyx" xmlns="http://www.w3.org/2000/svg"
+ width="712" height="156.8" viewBox="0 0 7120.000000 1568.000000"
  preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by potrace 1.16, written by Peter Selinger 2001-2019
-</metadata>
 <g transform="translate(0.000000,1568.000000) scale(0.100000,-0.100000)"
-fill="#1f57a8" stroke="none">
+fill="#1F57A8" stroke="none">
 <path d="M47015 15508 c-100 -17 -548 -55 -795 -68 -307 -16 -500 -30 -600
 -45 -52 -8 -113 -14 -135 -14 -22 0 -56 -3 -75 -6 -19 -3 -138 -10 -265 -15
 -238 -11 -551 -36 -567 -46 -5 -3 -41 -7 -81 -9 -71 -3 -248 -14 -597 -36 -96
