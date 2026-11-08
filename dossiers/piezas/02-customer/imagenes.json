@@ -572,5 +572,324 @@
 {
 "de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
 "a": "cap-05.webp"
+},
+{
+"de": "usuario/I-Inicio.png",
+"a": "dz-rubros.webp",
+"recorte": [
+10,
+455,
+1160,
+1145
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Que.png",
+"a": "dz-quepasa.webp",
+"recorte": [
+30,
+170,
+1150,
+1000
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Fotos.png",
+"a": "dz-fotos.webp",
+"recorte": [
+30,
+385,
+1150,
+885
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Revisar.png",
+"a": "dz-pedido.webp",
+"recorte": [
+30,
+195,
+1150,
+605
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Revisar.png",
+"a": "dz-orientativo2.webp",
+"recorte": [
+30,
+1465,
+1150,
+1930
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-orientativo.webp",
+"recorte": [
+30,
+200,
+1140,
+478
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-precio.webp",
+"recorte": [
+70,
+845,
+1100,
+1140
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-sellos.webp",
+"recorte": [
+60,
+1352,
+800,
+1468
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-botones.webp",
+"recorte": [
+60,
+1478,
+1110,
+1655
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Comparar.png",
+"a": "dz-mejor.webp",
+"recorte": [
+30,
+200,
+1140,
+728
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Comparar.png",
+"a": "dz-tabla.webp",
+"recorte": [
+20,
+745,
+1150,
+2045
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Detalle.png",
+"a": "dz-precio-julian.webp",
+"recorte": [
+40,
+640,
+1130,
+1258
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Detalle.png",
+"a": "dz-comolohace.webp",
+"recorte": [
+40,
+1268,
+1130,
+2440
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Agendado.png",
+"a": "dz-turno.webp",
+"recorte": [
+35,
+195,
+1135,
+805
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-EnCamino.png",
+"a": "dz-llegada.webp",
+"recorte": [
+40,
+1375,
+1130,
+1800
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Llego.png",
+"a": "dz-codigo.webp",
+"recorte": [
+40,
+815,
+1130,
+1250
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Trabajando.png",
+"a": "dz-estados.webp",
+"recorte": [
+40,
+495,
+1150,
+1205
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-PagoInformado.png",
+"a": "dz-pago-informado.webp",
+"recorte": [
+40,
+690,
+1130,
+1250
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/X-Pagos.png",
+"a": "dz-pagos-reg.webp",
+"recorte": [
+40,
+180,
+1150,
+1090
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Propuesta.png",
+"a": "dz-obra-etapas.webp",
+"recorte": [
+30,
+190,
+1140,
+1405
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Dia.png",
+"a": "dz-obra-dia.webp",
+"recorte": [
+40,
+370,
+1130,
+1255
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Repuesto.png",
+"a": "dz-obra-repuesto.webp",
+"recorte": [
+40,
+555,
+1150,
+1125
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Gastado.png",
+"a": "dz-obra-gastado.webp",
+"recorte": [
+30,
+185,
+1150,
+645
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Certificados.png",
+"a": "dz-verif-lista.webp",
+"recorte": [
+40,
+1000,
+1130,
+2110
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/H-Compartir.png",
+"a": "dz-compartir.webp",
+"recorte": [
+25,
+795,
+1165,
+2045
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-propuestas.webp",
+"a": "dz-pwa-orden.webp",
+"recorte": [
+0,
+92,
+690,
+215
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-propuestas.webp",
+"a": "dz-pwa-sinverif.webp",
+"recorte": [
+20,
+868,
+650,
+992
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-seguimiento.webp",
+"a": "dz-pwa-etapas.webp",
+"recorte": [
+20,
+1072,
+660,
+1305
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-pago-metodo.webp",
+"a": "dz-pago-metodo.webp",
+"recorte": [
+15,
+455,
+780,
+1295
+],
+"uso": "despiece (ola 7)"
 }
 ]
