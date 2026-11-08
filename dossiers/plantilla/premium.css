@@ -45,9 +45,9 @@
 .movil .pant::after { content: ''; position: absolute; inset: 0; background: linear-gradient(118deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 38%); }
 
 /* punto de interacción: dónde se toca, numerado como el paso */
-.toque { position: absolute; z-index: 3; width: 6.4mm; height: 6.4mm; margin: -3.2mm 0 0 -3.2mm; border-radius: 50%; display: grid; place-items: center;
-  background: var(--amarillo); color: var(--navy); font: 900 7.6pt/1 var(--f-titulos); font-stretch: 112.5%;
-  box-shadow: 0 0 0 1.3mm rgba(245, 245, 154, 0.42), 0 0 0 2.6mm rgba(245, 245, 154, 0.18), 0 1mm 2.5mm rgba(14, 29, 54, 0.35); }
+.toque { position: absolute; z-index: 3; width: 5.2mm; height: 5.2mm; margin: -2.6mm 0 0 -2.6mm; border-radius: 50%; display: grid; place-items: center;
+  background: var(--navy); color: #FFFFFF; font: 900 6.6pt/1 var(--f-titulos); font-stretch: 112.5%;
+  box-shadow: 0 0 0 .55mm #FFFFFF, 0 .8mm 2mm rgba(14, 29, 54, 0.35); }
 
 /* recorrido en zigzag: pantallas alternadas arriba y abajo, enlaces de prototipo entre ellas */
 .zigzag { position: relative; height: 128mm; }
@@ -150,3 +150,22 @@
 /* banda de color a sangre arriba de la página (aperturas) */
 .banda { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); overflow: hidden; }
 .banda.azul { background: var(--azul); } .banda.navy { background: var(--navy); } .banda.hueso { background: var(--hueso); } .banda.cielo { background: var(--cielo); }
+
+/* ===================== v3 · editorial (08/11) ===================== */
+/* UI despiezada: recortes reales de las pantallas, flotando con sombra suave sobre un fondo de color de la marca */
+.despiece { position: relative; border-radius: 6mm; overflow: hidden; background: var(--cielo); }
+.despiece.azul { background: var(--azul); } .despiece.navy { background: var(--navy); } .despiece.hueso { background: var(--hueso); }
+.flota { position: absolute; border-radius: 3mm; overflow: hidden; background: #FFFFFF; box-shadow: 0 .6mm 1.4mm rgba(14,29,54,.12), 0 6mm 16mm rgba(14,29,54,.22); }
+.flota img { display: block; width: 100%; height: auto; }
+/* escenas ilustradas (plantilla/escenas.js) */
+.escena-box { position: relative; }
+.escena-box .pie-esc { margin-top: 3mm; font: 600 7.2pt/1.4 var(--f-texto); color: var(--gris); }
+/* nota con línea guía: una etiqueta chica unida al punto que explica */
+.guia { position: absolute; z-index: 4; display: flex; align-items: center; gap: 1.6mm; font: 750 7pt/1.2 var(--f-texto); color: var(--navy); white-space: nowrap; }
+.guia::before { content: ''; width: var(--largo, 12mm); border-top: .3mm solid var(--navy); order: var(--orden, 0); }
+.guia::after { content: ''; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: var(--navy); box-shadow: 0 0 0 .5mm #FFFFFF; order: -1; }
+.guia.der { flex-direction: row-reverse; }
+.p-oscuro .guia, .guia.clara { color: #FFFFFF; } .p-oscuro .guia::before, .guia.clara::before { border-color: #FFFFFF; } .p-oscuro .guia::after, .guia.clara::after { background: var(--amarillo); box-shadow: none; }
+/* grano de papel muy suave para fondos llenos (evita el «plano de computadora») */
+.grano::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
