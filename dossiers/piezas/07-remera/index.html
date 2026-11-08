@@ -2,32 +2,43 @@
 <html lang="es-AR">
 <head>
 <meta charset="utf-8">
-<title>Handyx · Remera v2 (maqueta)</title>
+<title>Handyx · Remera v3 (maqueta de edificios)</title>
 <link rel="stylesheet" href="../../plantilla/base.css">
 <style>
-  body { background: #555; padding: 40px; }
+  /* Espalda: la maqueta isométrica de Mar del Plata de noche (remera-espalda-maqueta.svg), igual que en los dossiers.
+     Frente: logo en el pecho (remera-frente.svg). Impresión a todo color (DTF/DTG) sobre tela azul o navy. */
+  body { background: #555; padding: 40px; display: grid; gap: 40px; }
   .post { position: relative; width: 2000px; height: 1250px; background: #F3F0E8; display: flex; justify-content: center; align-items: center; gap: 120px; overflow: hidden; }
   .prenda { position: relative; width: 820px; }
   .prenda svg.tela { width: 100%; display: block; filter: drop-shadow(0 30px 40px rgba(14, 29, 54, 0.25)); }
-  .prenda .estampa { position: absolute; }
-  .rotulo-r { position: absolute; bottom: 40px; left: 0; right: 0; text-align: center; font: 800 22px/1 var(--f-texto); letter-spacing: .24em; text-transform: uppercase; color: var(--navy); }
+  .estampa { position: absolute; }
+  .espalda-arte { position: absolute; left: 160px; top: 140px; width: 500px; display: flex; flex-direction: column; align-items: center; }
+  .espalda-arte .logo { width: 210px; height: auto; align-self: center; object-fit: contain; object-position: center; }
+  .espalda-arte .lema { margin-top: 12px; font: 700 13px/1 var(--f-texto); letter-spacing: .26em; color: var(--amarillo); text-transform: uppercase; }
+  .espalda-arte .maq { width: 500px; margin-top: 22px; }
+  .espalda-arte .pie { margin-top: 10px; font: 800 11px/1 var(--f-texto); letter-spacing: .32em; color: #E9EFF9; text-transform: uppercase; }
+  .rotulo-r { position: absolute; bottom: -60px; left: 0; right: 0; text-align: center; font: 800 22px/1 var(--f-texto); letter-spacing: .24em; text-transform: uppercase; color: var(--gris); }
   .titulo-r { position: absolute; top: 50px; left: 70px; font: 900 44px/1 var(--f-titulos); font-stretch: 125%; color: var(--navy); }
-  .titulo-r small { display: block; margin-top: 14px; font: 500 22px/1.4 var(--f-texto); color: var(--gris); letter-spacing: 0; }
+  .titulo-r small { display: block; margin-top: 14px; font: 500 22px/1.4 var(--f-texto); color: var(--gris); }
 </style>
 </head>
 <body>
-<section class="post" id="remera-maqueta">
-  <p class="titulo-r">Remera Handyx<small>Tela azul de marca · tintas blanco, amarillo y cielo · frente y espalda</small></p>
-  <div class="prenda">
-    <svg class="tela" viewBox="0 0 400 440"><path d="M130 20 Q200 52 270 20 L362 62 L398 152 L338 176 L322 132 L322 430 Q200 442 78 430 L78 132 L62 176 L2 152 L38 62 Z" fill="#1F57A8"/><path d="M130 20 Q200 52 270 20 Q200 70 130 20 Z" fill="#143E7E"/><path d="M78 132 L62 176 M322 132 L338 176" stroke="#143E7E" stroke-width="2"/></svg>
-    <img class="estampa" src="remera-frente.svg" alt="Frente: logo en el pecho" style="left:468px;top:190px;width:200px">
-    <p class="rotulo-r" style="bottom:-60px;color:var(--gris)">Frente</p>
-  </div>
-  <div class="prenda">
-    <svg class="tela" viewBox="0 0 400 440"><path d="M130 20 Q200 34 270 20 L362 62 L398 152 L338 176 L322 132 L322 430 Q200 442 78 430 L78 132 L62 176 L2 152 L38 62 Z" fill="#1F57A8"/><path d="M78 132 L62 176 M322 132 L338 176" stroke="#143E7E" stroke-width="2"/></svg>
-    <img class="estampa" src="remera-espalda.svg" alt="Espalda: Mar del Plata y los Handys" style="left:205px;top:150px;width:410px">
-    <p class="rotulo-r" style="bottom:-60px;color:var(--gris)">Espalda</p>
-  </div>
-</section>
+<template id="frente"><svg class="tela" viewBox="0 0 400 440"><path d="M130 20 Q200 52 270 20 L362 62 L398 152 L338 176 L322 132 L322 430 Q200 442 78 430 L78 132 L62 176 L2 152 L38 62 Z" fill="TELA"/><path d="M130 20 Q200 52 270 20 Q200 70 130 20 Z" fill="SOMBRA"/><path d="M78 132 L62 176 M322 132 L338 176" stroke="SOMBRA" stroke-width="2"/></svg></template>
+<template id="espalda"><svg class="tela" viewBox="0 0 400 440"><path d="M130 20 Q200 34 270 20 L362 62 L398 152 L338 176 L322 132 L322 430 Q200 442 78 430 L78 132 L62 176 L2 152 L38 62 Z" fill="TELA"/><path d="M78 132 L62 176 M322 132 L338 176" stroke="SOMBRA" stroke-width="2"/></svg></template>
+<script>
+  const VARIANTES = [
+    { id: 'remera-azul', tela: '#1F57A8', sombra: '#143E7E', nombre: 'Tela azul de marca' },
+    { id: 'remera-navy', tela: '#0E1D36', sombra: '#060E1C', nombre: 'Tela navy' },
+  ];
+  const t = (id, v) => document.getElementById(id).innerHTML.replaceAll('TELA', v.tela).replaceAll('SOMBRA', v.sombra);
+  document.write(VARIANTES.map((v) => `<section class="post" id="${v.id}">
+    <p class="titulo-r">Remera Handyx<small>${v.nombre} · espalda con la maqueta de Mar del Plata · impresión a todo color</small></p>
+    <div class="prenda">${t('frente', v)}<img class="estampa" src="remera-frente.svg" alt="" style="left:468px;top:190px;width:200px"><p class="rotulo-r">Frente</p></div>
+    <div class="prenda">${t('espalda', v)}
+      <div class="espalda-arte"><img class="logo" src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><p class="lema">Soluciones, no problemas.</p>
+        <img class="maq" src="remera-espalda-maqueta.svg" alt="Maqueta de Mar del Plata"><p class="pie">Hecho en Mar del Plata</p></div>
+      <p class="rotulo-r">Espalda</p></div>
+  </section>`).join(''));
+</script>
 </body>
 </html>

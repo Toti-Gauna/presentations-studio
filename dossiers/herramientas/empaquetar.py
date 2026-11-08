@@ -155,7 +155,7 @@ def empaquetar_redes(pieza: str):
                    f'Contacto: {CONTACTO}\n')
         for png in sorted(out.glob('*.png')):
             z.write(png, f'{nombre}/{png.name}', compress_type=zipfile.ZIP_STORED)
-        for svg in sorted(carpeta.glob('*.svg')):
+        for svg in sorted(list(carpeta.glob('*.svg')) + list(carpeta.glob('*.png'))):
             z.write(svg, f'{nombre}/impresion/{svg.name}')
     print(f'{pieza}: {len(list(out.glob("*.png")))} imágenes → {zipp.relative_to(R)} ({zipp.stat().st_size / 1e6:.1f} MB)')
 
