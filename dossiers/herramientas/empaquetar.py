@@ -15,9 +15,9 @@ CORTE = '07/11/2026'
 CONTACTO = 'Ignacio Gauna, fundador · ignaciogauna.developer@gmail.com · 223 667-4044 · landing.handyc.com'
 PIEZAS = {
     '00-triptico': ('Handyx-Triptico', 'Tríptico institucional', 2),
-    '01-business': ('Handyx-01-Business-Investment', 'Dossier 01 · Business & Investment', 20),
-    '02-customer': ('Handyx-02-Customer-App', 'Dossier 02 · Customer App', 20),
-    '03-professional': ('Handyx-03-Professional-App', 'Dossier 03 · Professional App', 20),
+    '01-business': ('Handyx-01-Business-Investment', 'Dossier 01 · Business & Investment', 24),
+    '02-customer': ('Handyx-02-Customer-App', 'Dossier 02 · Customer App', 24),
+    '03-professional': ('Handyx-03-Professional-App', 'Dossier 03 · Professional App', 28),
     '04-operations': ('Handyx-04-Operations-Portal', 'Dossier 04 · Operations Portal', 20),
     '05-afiches': ('Handyx-Afiches-Barrios', 'Afiches por barrio (A3, con QR al registro)', 10),
 }
