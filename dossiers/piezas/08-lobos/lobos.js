@@ -82,17 +82,58 @@ function herramienta() {
   return s;
 }
 
+
+// 5 · Verano: el lobo de piedra de la Rambla sobre su pedestal de granito, con las torres y el Provincial
+function verano() {
+  const H = 236; // horizonte (nivel de la Rambla)
+  let s = R(-3, -3, 303, ALTO + 3, K.medio);
+  s += C(232, 96, 36, K.amar) + [0, 1, 2].map((k) => C(232, 96, 48 + k * 12, 'none', `stroke="${K.amar}" stroke-width="1" opacity="${.5 - k * .14}"`)).join('');
+  // el mar y la baranda de la Rambla
+  s += R(-3, H - 14, 303, 14, K.azul) + R(-3, H - 3, 303, 3, '#C9C1AA');
+  // torres
+  const r = az(21);
+  let x = 132;
+  while (x < 238) { const w = 10 + r() * 12, h = 46 + r() * 74; s += R(x, H - 14 - h, w, h, '#9DB8E6'); for (let y = H - 10 - h; y < H - 18; y += 5) s += R(x + 2, y, w - 4, .8, '#DCE6F6'); x += w + 2.5; }
+  s += R(176, 70, 24, H - 84, '#B3C5E6');
+  for (let y = 78; y < H - 18; y += 5) s += R(179, y, 18, 1, '#E9EFF9');
+  // el Hotel Provincial: ladrillo en el azul de la marca, mansarda y recova
+  s += P(`M238 ${H} V132 H300 V${H} Z`, K.prof) + P('M232 132 L242 114 H300 V132 Z', K.navy);
+  for (let y = 140; y < H - 30; y += 13) for (let xx = 244; xx < 298; xx += 9) s += R(xx, y, 4.6, 7, '#9DB8E6');
+  for (let xx = 240; xx < 300; xx += 10) s += P(`M${xx} ${H} V${H - 14} A4 4 0 0 1 ${xx + 8} ${H - 14} V${H} Z`, K.navy);
+  // la Rambla en perspectiva
+  s += R(-3, H, 303, ALTO - H + 3, '#EDE7D8');
+  for (let k = -6; k < 16; k++) { const xb = k * 30; s += L(xb, ALTO + 3, 262 + (xb - 262) * 0.02, H, '#D9D0BB', .5); }
+  for (let k = 1; k < 9; k++) { const t = k / 9, y = H + (ALTO - H) * t * t; s += L(-3, y, 300, y, '#D9D0BB', .5); }
+  // el pedestal de granito, ancho y bajo
+  const pt = 250, pb = 304;
+  s += P(`M2 ${pt} L230 ${pt} L240 ${pt - 6} L12 ${pt - 6} Z`, '#E6DFCB') + R(2, pt, 228, pb - pt, '#D9D0BB') + P(`M230 ${pt} L240 ${pt - 6} V${pb - 6} L230 ${pb} Z`, '#C9C1AA');
+  [pt + 18, pt + 36].forEach((y) => { s += L(2, y, 230, y, '#C9C1AA', .6); });
+  [[40, pt, pt + 18], [110, pt, pt + 18], [180, pt, pt + 18], [74, pt + 18, pt + 36], [146, pt + 18, pt + 36], [214, pt + 18, pt + 36], [40, pt + 36, pb], [110, pt + 36, pb], [180, pt + 36, pb]].forEach(([a, y1, y2]) => { s += L(a, y1, a, y2, '#C9C1AA', .6); });
+  // el lobo de piedra: pecho en alto, melena, aletas apoyadas en el granito
+  const cuerpo = 'M34 6 L46 4 C54 2 62 8 64 16 C72 24 80 40 84 56 C90 72 104 84 124 92 C156 104 190 120 206 146 C214 156 212 168 200 168 L180 166 L96 170 L70 170 L66 162 C48 146 36 120 30 90 C24 60 26 30 30 14 L30 12 Z';
+  let g = `<path d="${cuerpo}" fill="#E6DFCB"/>`;
+  g += `<path d="M64 16 C72 24 80 40 84 56 C90 72 104 84 124 92 C156 104 190 120 206 146 C212 156 212 164 206 168 C200 150 184 132 156 118 C128 106 104 98 92 86 C78 70 70 44 64 16 Z" fill="#CFC6AF"/>`;
+  g += `<path d="M30 14 C26 30 24 60 30 90 C34 110 42 130 54 146 C46 124 40 100 40 76 C40 50 38 30 30 14 Z" fill="#FFFFFF" opacity=".45"/>`;
+  for (let k = 0; k < 34; k++) { const t = k / 34, mx = 38 + t * 46 + (k % 3) * 4, my = 22 + t * 84 + (k % 2) * 5; g += `<path d="M${mx} ${my} q 3.4 -3.4 6.8 0" fill="none" stroke="#B8AE94" stroke-width=".9" stroke-linecap="round"/>`; }
+  g += `<path d="M64 156 C50 160 30 164 14 166 C7 167 7 173 14 173 L70 172 Z" fill="#D9D0BB"/><path d="M20 168 L30 172 M28 167 L38 172" stroke="#B8AE94" stroke-width=".7"/>`;
+  g += `<path d="M186 164 L212 160 C220 160 222 170 214 172 L184 172 Z" fill="#D9D0BB"/>`;
+  g += `<circle cx="50" cy="9" r="1.4" fill="#8E846C"/><path d="M36 9 L30 10" stroke="#8E846C" stroke-width=".7"/>`;
+  s += `<g transform="translate(8 ${pt - 6 - 172})">${g}</g>`;
+  return s;
+}
+
 const LAMINAS = [
   { n: 1, arte: rambla, oscura: true, franja: K.navy, titulo: 'Los lobos cuidan la Rambla. <i>Nosotros, tu casa.</i>', color: '#FFFFFF', ac: K.amar, tam: 44, rubro: 'Todos los rubros', estilo: 'Art déco', obra: 'Los lobos de la Rambla', rot: 'rgba(233,239,249,.75)' },
   { n: 2, arte: gotera, franja: '#FFFFFF', titulo: 'La gotera no es un número de <i>circo.</i>', color: K.navy, ac: K.azul, tam: 46, rubro: 'Plomería', estilo: 'Equilibrio', obra: 'Lobo con gota', rot: 'rgba(233,239,249,.8)' },
   { n: 3, arte: lamparita, oscura: true, franja: K.navy, titulo: '¿Se quemó? La cambiamos sin <i>malabares.</i>', color: '#FFFFFF', ac: K.amar, tam: 44, rubro: 'Electricidad', estilo: 'Equilibrio', obra: 'Lobo con lamparita', rot: 'rgba(233,239,249,.75)' },
   { n: 4, arte: herramienta, oscura: true, franja: K.navy, titulo: 'Arreglos de casa, sin hacer <i>equilibrio.</i>', color: K.navy, ac: K.azul, tam: 44, rubro: 'Todos los rubros', estilo: 'Equilibrio', obra: 'Lobo con llave inglesa', rot: 'rgba(233,239,249,.8)' },
+  { n: 5, arte: verano, oscura: true, franja: K.navy, titulo: 'Que no se rompa el <i>verano.</i>', color: '#FFFFFF', ac: K.amar, tam: 48, rubro: 'Aire acondicionado · Electricidad · Plomería', estilo: 'La Rambla en verano', obra: 'El lobo de la Rambla', rot: 'rgba(14,29,54,.7)', bajo: 'Antes de la temporada: el aire, la luz y el agua, en orden. Contás qué pasa, recibís propuestas de especialistas de tu zona y elegís vos.' },
 ];
 
 const franja = (l) => `<div class="franja"><div class="fondo-f" style="background:${l.franja}"></div><div class="corte"></div><div class="in">
     <div class="txt"><span class="ceja-f">${l.rubro} · Mar del Plata</span>
       <h2>¿Se rompió algo en casa? <span>Pedilo en Handyx.</span></h2>
-      <p class="bajo">Contás qué pasa, recibís propuestas de especialistas de tu zona y elegís vos, por calidad y por precio. Le pagás directo al especialista.</p>
+      <p class="bajo">${l.bajo || 'Contás qué pasa, recibís propuestas de especialistas de tu zona y elegís vos, por calidad y por precio. Le pagás directo al especialista.'}</p>
       <div class="pasos-f"><span><i>1</i>Escaneá</span><span><i>2</i>Registrate</span><span><i>3</i>Pedí tu arreglo</span></div>
       <div class="pie-f"><img src="../../marca/${l.oscura ? 'logo-handyx-blanco' : 'logo-handyx'}.svg" alt="Handyx"><span>Electricidad · Plomería · Gas · Cerrajería · Albañilería · Aire acondicionado<br>Tarifa de servicio 0 % hasta el 10/12/2026. Demo con invitación, noviembre de 2026.</span></div>
     </div>
@@ -102,6 +143,6 @@ const franja = (l) => `<div class="franja"><div class="fondo-f" style="backgroun
 document.getElementById('laminas').outerHTML = LAMINAS.map((l, i) => `<section class="pagina lam${l.oscura ? ' oscura' : ''}" data-folio="${i + 1}" style="--acento:${l.oscura ? K.amar : K.azul}"><div class="lamina">
     <svg class="arte permite-salir" viewBox="0 0 297 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${l.obra}">${l.arte()}<pattern id="gr-${i}" width="60" height="60" patternUnits="userSpaceOnUse"><image href="img/grano.png" width="60" height="60"/></pattern><rect x="-3" y="-3" width="303" height="326" fill="url(#gr-${i})" style="mix-blend-mode:multiply" opacity="${l.oscura && l.n !== 4 ? .22 : .16}"/></svg>
     <div class="sobre titular" style="left:18mm;top:20mm;width:${l.n === 1 ? 250 : 200}mm;color:${l.color};--acento:${l.ac}"><p class="serie" style="opacity:.8">Mar del Plata · ${l.rubro}</p><h1 class="grande" style="font-size:${l.tam}pt;margin-top:3mm">${l.titulo}</h1></div>
-    <p class="rotulo-lam" style="--tinta-rot:${l.rot}"><span><b>${l.obra}</b></span><span>Serie «Lobo» · ${l.estilo} · ${String(i + 1).padStart(2, '0')}/04</span></p>
+    <p class="rotulo-lam" style="--tinta-rot:${l.rot}"><span><b>${l.obra}</b></span><span>Serie «Lobo» · ${l.estilo} · ${String(i + 1).padStart(2, '0')}/${String(LAMINAS.length).padStart(2, '0')}</span></p>
     ${franja(l)}
   </div></section>`).join('');
