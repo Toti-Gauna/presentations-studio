@@ -185,6 +185,45 @@
   </div>
 </section>
 
+
+<!-- serie «Se rompió algo en casa»: los mismos dibujos que los afiches (05-afiches/serie.js), en formato 4:5 -->
+<div id="ig-problemas"></div>
+<style>
+  .post.problema .dib { position: absolute; left: 0; top: 0; width: 1080px; height: 1175px; }
+  .post.problema .tit-p { position: absolute; left: 70px; right: 70px; top: 64px; }
+  .post.problema .tit-p p { font: 800 20px/1 var(--f-texto); letter-spacing: .24em; text-transform: uppercase; opacity: .8; }
+  .post.problema .tit-p h2 { margin-top: 14px; font-size: 84px; color: inherit; }
+  .post.problema .tit-p h2 i { font-style: normal; color: var(--ac); }
+  .post.problema .banda-p { position: absolute; left: 0; right: 0; bottom: 0; height: 190px; display: flex; align-items: center; justify-content: space-between; padding: 0 70px; background: var(--navy); color: #FFFFFF; }
+  .post.problema .banda-p b { display: block; font: 900 42px/1.05 var(--f-titulos); font-stretch: 125%; letter-spacing: -.01em; }
+  .post.problema .banda-p b span { color: var(--amarillo); }
+  .post.problema .banda-p small { display: block; margin-top: 10px; font: 600 22px/1.3 var(--f-texto); opacity: .8; }
+  .post.problema .banda-p img { height: 46px; }
+</style>
+<script>
+  const R = (x, y, w, h, f, e = '') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${e}/>`;
+  const P = (d, f, e = '') => `<path d="${d}" fill="${f}" ${e}/>`;
+  const C = (x, y, r, f, e = '') => `<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${e}/>`;
+  const L = (x1, y1, x2, y2, s, w = .5, e = '') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${s}" stroke-width="${w}" ${e}/>`;
+  const fondo = (f, h = 306) => R(-3, -3, 303, h + 3, f);
+  const az = (s) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
+  const K = { azul: '#1F57A8', prof: '#143E7E', medio: '#2C66B8', navy: '#0E1D36', amar: '#F5F59A', cielo: '#E9EFF9', hueso: '#F7F6F1', arena: '#F3F0E8', borde: '#E2DCCD' };
+</script>
+<script src="../05-afiches/serie.js"></script>
+<script>
+  // elegidos para el feed: uno por rubro
+  const ELEGIDOS = ['centro', 'guemes', 'playa-grande', 'plaza-mitre', 'stella-maris', 'varese'];
+  document.getElementById('ig-problemas').outerHTML = ELEGIDOS.map((slug, k) => {
+    const i = LAMINAS.findIndex((l) => l.slug === slug), l = LAMINAS[i];
+    const claro = ['#FFFFFF'].includes(l.color) ;
+    const arte = l.arte().replaceAll('url(#', `url(#ig${k}-`).replace(/id="/g, `id="ig${k}-`);
+    return `<section class="post problema" id="ig-p${k + 1}" style="background:${l.franja};color:${l.color};--ac:${claro ? '#F5F59A' : '#1F57A8'}">
+      <svg class="dib" viewBox="0 0 297 323" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${arte}</svg>
+      <div class="tit-p"><p>${l.rubro} · Mar del Plata</p><h2 class="grande">${l.titulo}</h2></div>
+      <div class="banda-p"><div><b>¿Se rompió algo en casa? <span>Pedilo en Handyx.</span></b><small>handyc.com/registro · Propuestas de especialistas de tu zona</small></div><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"></div>
+    </section>`;
+  }).join('');
+</script>
 <script src="../../plantilla/iso.js"></script>
 </body>
 </html>
