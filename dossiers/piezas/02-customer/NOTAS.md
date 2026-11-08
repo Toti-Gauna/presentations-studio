@@ -1,45 +1,64 @@
-# Dossier 02 · Customer App · notas de producción (ola 6, 08/11/2026)
+# Dossier 02 · Customer App · notas de producción (ola 6 + pasada premium de la ola 7, 08/11/2026)
 
 Manual de la app del vecino en la dirección v2: «Galería» (blanco/hueso, teléfonos plata) con aperturas de capítulo en
-banda azul (foto real de Mar del Plata en duotono + maqueta de día de `iso.js`). **24 páginas · 0 errores** en
-`exportar-pieza.cjs` (los 43 avisos son bandas y maquetas a sangre que pasan el borde a propósito y fotos a 178–218 ppp).
+banda azul (ilustración de Mar del Plata en duotono + maqueta de día de `iso.js`). **24 páginas · 0 errores** en
+`exportar-pieza.cjs`. Ola 7 (`consigna-ola-7.md`): misma estructura y textos revisados; cambia la dirección de arte.
 
-- `index.html` se genera con `gen.py` + `estilo.css` (copias en `S/ola6/02-customer/`; el original está en
-  `S/ola6/c02/`). Los `.toque` se calculan desde coordenadas de pantalla 390 × 844 con `left = (18+x)/426`,
-  `top = (18+y)/880`. Si editás a mano el HTML, no vuelvas a correr el generador sin pasar los cambios.
-- `img/`: 59 archivos, manifiesto en `imagenes.json` (origen y recorte de cada uno). Pantallas a 780 × 1688 WebP q93.
-- **Sin personajes** (cambio de Ignacio del 08/11): no se usa `marca/personajes/` ni `personajes-v2/`. Más peso a las
-  fotos reales y a la maqueta.
-- Lema nuevo en tapa y contratapa: «Un problema viejo con una nueva solución que elegís.»
+- `index.html` se genera con `generador/gen.py` (`python3 -I generador/gen.py`), que lee `generador/estilo.css` y mete
+  `generador/escenas-02.js` en línea. Los recortes de los despieces (`img/dz-*.webp`) salen de
+  `generador/recortes.py <S/capturas> .` (también los suma a `imagenes.json`). Si editás a mano el HTML, pasá los
+  cambios al generador antes de volver a correrlo.
+- `img/`: 69 archivos, manifiesto en `imagenes.json` (origen y recorte de cada uno). Pantallas a 780 × 1688 WebP q93;
+  recortes a 1170 px de ancho (lienzo) o 780 px (PWA), WebP q94. Se borraron las 23 pantallas que ya no se usan.
+- **Sin personajes** (cambio de Ignacio del 08/11). Lema en tapa y contratapa: «Un problema viejo con una nueva solución que elegís.»
+
+## Ola 7 · qué cambió
+
+- **Despieces** (`.dz` + `.flota` de `premium.css`): teléfono plano y recortes reales ampliados ~1,4× con sombra, sobre
+  un plano de color con `.grano` en una capa de fondo (`.dz-fondo`). Cada recorte lleva su nombre como el rótulo de un
+  marco del lienzo (`.etiq`); las partes se explican con `.guia` (sin números). Páginas: 6 (pedir · cielo), 9
+  (propuestas · azul, con dos recortes de la PWA «en código»), 10 (comparar · hueso: tabla + detalle), 13 (seguimiento ·
+  navy), 16 (mensajes y avisos · hueso), 19 (obra · azul), 21 (sellos de verificación · cielo) y una tira de recortes en 15 (pago).
+- **Escenas**: de `plantilla/escenas.js`: `conectar` (p. 3, con los cuatro momentos como guías), `propuestas` (apertura 02),
+  `pago` (p. 15), `obra` (apertura 04), `verificar` (p. 21). **Propias** (en `generador/escenas-02.js`, mismo lenguaje y
+  mismas figuras, copiadas de `escenas.js`, que no se editó): `pedir` (apertura 01), `llega` (apertura 03) y `adentro`
+  (p. 22, «quedarse adentro»). En las aperturas la escena va en una tarjeta blanca que flota sobre la banda (`.esc-tarjeta`).
+- **Menos miniaturas**: se fueron los recorridos de 4 teléfonos de las p. 6, 13, 15 y 19 y las cuatro miniaturas de la
+  p. 3; la p. 20 pasa a 3 teléfonos de 44 mm. Quedan como recorridos las p. 5 y 11, y filas de 3 en 7, 14, 17 y 20.
+- **Un bloque de chips por página**: los estados pasan a texto chico (`.et`, mismo color que el chip) junto al título;
+  quedan chips solo en la tabla de HandIA (p. 7), en la tabla anti-fuga (p. 22) y en la leyenda (p. 2). La leyenda suma el
+  estado en texto chico, el punto de toque navy y el rótulo de recorte.
+- Componentes propios nuevos (en `estilo.css`): `.et`, `.et-l`, `.dz`, `.dz-fondo`, `.etiq`, `.guia .gl` (guía de dos
+  líneas), `.notas-dz`, `.esc-tarjeta`, `.pasos-v`, `.hace2`. Ojo para otras piezas: no se usa `.paso` (choca con base.css).
 
 ## Páginas
 
-| p. | Página | Pantallas (con toques) | Estados |
+| p. | Página | Imagen | Estados |
 |---|---|---|---|
-| 1 | Tapa azul: foto de la Rambla, maqueta, dos teléfonos plata | I-Inicio, C-Propuestas (perspectiva) | — |
-| 2 | Índice por capítulos + «Cómo leer» (estados, rótulos, puntos amarillos, tipo de cifra) | — | — |
-| 3 | La app en una página: 4 momentos, qué hace / qué no, 6 rubros, 0 % usuario, 0 % especialista | I-Inicio, C-Propuestas, S-EnCamino, H-Hogar (38 mm) | P · D |
-| 4 | Apertura 01 · Empezar y pedir (foto aérea del centro + barrio) | — | — |
+| 1 | Tapa azul: Rambla ilustrada, maqueta, dos teléfonos plata | I-Inicio, C-Propuestas (perspectiva) | — |
+| 2 | Índice por capítulos + «Cómo leer» (estados, estado en texto, rótulos, toques y recortes, tipo de cifra) | — | — |
+| 3 | La app en una página: escena `conectar` con los 4 momentos como guías, qué hace / qué no, 3 cifras | escena | P · D |
+| 4 | Apertura 01 · Empezar y pedir | escena propia `pedir` en tarjeta | — |
 | 5 | Alta en zigzag + «dos versiones del alta» | A-Datos, A-Zona, A-Casa, A-Listo | P · D |
-| 6 | Pedir en 3 toques + qué pasa después de publicar | I-Inicio, P-Que, P-Fotos, P-Revisar | P · D |
+| 6 | Pedir: despiece (I-Inicio + rubros, ¿qué pasa?, fotos, revisar) + qué pasa después de publicar | despiece cielo | P · D |
 | 7 | HandIA tal como está hoy (tabla de estado real) | I-HandIAChat, I-HandIAFicha, I-Voz (50 mm) | Desactivada · P · D · K |
-| 8 | Apertura 02 · Elegir (Casino y Hotel Provincial + costa) | — | — |
-| 9 | Propuestas protagonista + lo que corre en código | C-Propuestas (56 mm), PWA propuestas | P · D |
-| 10 | Comparar por calidad y precio + choque «la mejor» vs «sin ranking» | C-Comparar, C-Detalle (52 mm) | P · D |
+| 8 | Apertura 02 · Elegir | escena `propuestas` en tarjeta | — |
+| 9 | Propuestas: despiece (orientativo, propuesta, sellos, aceptar + 2 recortes de la PWA) | despiece azul | P · D |
+| 10 | Comparar: tabla ampliada + C-Detalle con guías, notas, «La mejor» junto al choque de reglas | despiece hueso | P · D |
 | 11 | Aceptar, turno confirmado, pedir cambio, visita | C-Aceptar, C-Aceptada, C-Cambios, C-Visita | P · D |
-| 12 | Apertura 03 · El día del trabajo (Rambla) | — | — |
-| 13 | Del turno a la puerta + 6 estados del servidor + cómo se marca la llegada | S-Agendado, S-EnCamino, S-Llego, S-Trabajando | P · D |
+| 12 | Apertura 03 · El día del trabajo | escena propia `llega` en tarjeta | — |
+| 13 | Del turno a la puerta: despiece (turno, estados, en camino, código) + 6 estados del servidor | despiece navy | P · D |
 | 14 | Adicional, informe con garantía, conformidad | S-Adicional, S-Informe, S-Conformidad (52 mm) | P · D |
-| 15 | Pagar directo, informado ≠ verificado, reseña + quién verifica | PWA pago-metodo, S-PagoInformado, X-Pagos, S-Resena | P |
-| 16 | Mensajes y avisos | M-Mensajes, M-Chat, I-Avisos (52 mm) | P · D |
+| 15 | Pagar directo: escena `pago` + 3 pasos, tira de recortes (PWA cómo pagás, pago informado, tus pagos), choque de fuentes | escena + recortes | P |
+| 16 | Mensajes y avisos: despiece (M-Chat + mensajes, avisos, propuesta y otro horario en el chat) | despiece hueso | P · D |
 | 17 | Mi hogar, historial y garantías | H-Hogar, H-Historial, H-Garantias (52 mm) | D · K |
-| 18 | Apertura 04 · Una obra completa, con las 7 etapas (foto aérea Faro/Mogotes) | — | D · P |
-| 19 | Obra 1/2: propuesta, tu obra, jornada, repuesto + obra por etapas en código | O-Propuesta, O-Obra, O-Dia, O-Repuesto, PWA seguimiento | D · P |
-| 20 | Obra 2/2: cambio de fecha, chat grupal, pagos, lo gastado + flujo FL-Obra | O-Fecha, O-Grupo, O-Pagos, O-Gastado, FL-Obra | D · P |
-| 21 | Capítulo 05 · Confianza: cómo ves que está verificado (banda corta, foto del puerto) | C-Certificados (58 mm) | P · D |
-| 22 | Anti-fuga desde el vecino: respuesta honesta + 11 mecanismos con estado + cómo se mide | H-Compartir (46 mm) | P · D · decisión |
-| 23 | Preguntas difíciles (8 `.duda`) | — | P · D · K |
-| 24 | Contratapa azul: foto Casino/Provincial, lema, QR, contacto, colección | — | — |
+| 18 | Apertura 04 · Una obra completa, con las 7 etapas | escena `obra` en tarjeta | D · P |
+| 19 | Tu obra, en una pantalla: despiece (propuesta, jornada, repuesto, lo gastado + etapas en la PWA) | despiece azul | D · P |
+| 20 | Obra 2/2: cambio de fecha, chat grupal, pagos por etapa + flujo FL-Obra | O-Fecha, O-Grupo, O-Pagos (44 mm) | D · P |
+| 21 | Capítulo 05 · Confianza: escena `verificar` + 4 pasos, despiece de los sellos, notas, 56 registrados | escena + despiece cielo | P · D |
+| 22 | Anti-fuga: respuesta honesta, escena propia `adentro`, recorte «¿Qué compartís?», 11 mecanismos con estado | escena + recorte | P · D · decisión |
+| 23 | Preguntas difíciles (8 `.duda`, «Hoy» en texto chico) | — | P · D · K |
+| 24 | Contratapa azul: lema, QR, contacto, colección | — | — |
 
 ## Fuentes
 
@@ -60,7 +79,7 @@ FEE-ESPECIALISTA 0 %, ESP-REGISTRADOS 56, META-REPETIDORES 5 · objetivo). Texto
   **Aviso para las otras piezas**: 04 usa `.cap-n` como texto y va a chocar con el mismo error.
 - Las fotos aéreas tienen el ala de la avioneta arriba: se recortaron (`f-*.webp`, recortes en `imagenes.json`).
   `rambla-fuego` se recortó por arriba de la persona de espaldas.
-- Componentes propios (en `<style>`): `.ojo` (dos fuentes dicen distinto), `.banda-codigo` (pantalla real + texto),
+- Componentes propios de la ola 6 (en `<style>`): `.ojo` (dos fuentes dicen distinto), `.banda-codigo` (pantalla real + texto),
   `.tabla-est`, `.foto-banda`/`.velo-banda` (apertura con foto), `.cap-img`, `.ind` (índice por capítulos),
   `.leer`, `.hace`, `.dudas-02`, `.chips`, `.estado.apagado` («Desactivada»).
 
