@@ -1,86 +1,95 @@
-# Dossier 01 · Business & Investment · notas de producción (ola 3)
+# Dossier 01 · Business & Investment · notas de producción (ola 6)
 
-Estado al 07/11/2026. 20 páginas A4 en el orden de `dossiers/arquitectura.md`. Exportado con
-`exportar-pieza.cjs` sin errores ni avisos. Sin `data-folio`: la numeración sale del orden.
+Estado al 07/11/2026. **24 páginas A4**, estilo «Nocturno» (navy, teléfonos titanio, amarillo como único acento) con tres
+páginas hueso para tablas densas (11, 12, 15 y 16 del índice: modelo, competencia, roadmap y proyecciones). Exportado con
+`exportar-pieza.cjs`: **0 errores**, 8 avisos (fotos entre 160 y 178 ppp, sobre el mínimo de 150). Sin `data-folio`: la
+numeración sale del orden. **Sin personajes** en ninguna página (pedido de Ignacio del 08/11).
 
 ## Páginas
 
-| p. | Ceja (sección del pedido §5) | Título | Evidencia |
+| p. | Ceja | Título | Qué muestra |
 |---|---|---|---|
-| 1 | Tapa | Business & Investment | Navy con el mapa de líneas de Mar del Plata (sin cambios sobre la muestra aprobada) |
-| 2 | Contenido | En este dossier | Índice con `data-ir`, «Cómo leer» y «Handyx en una línea» |
-| 3 | 02 Resumen ejecutivo | Un producto en pruebas y un pedido concreto | 4 cifras rotuladas (6 rubros, 284 funciones, nov. 2026, USD 100.000), estado honesto, tarifa decidida |
-| 4 | 03 El problema | Arreglar algo en casa todavía es una odisea | Odisea en dos carriles, 6 dolores como hipótesis con la señal a medir, 3 preguntas del piloto |
-| 5 | 04 Nuestra solución | Más claro para quien pide y para quien trabaja | 3 columnas (P-Revisar, H0-Presupuesto, esquema del portal) con estado por función, 3 principios |
-| 6 | 05 El ecosistema Handyx | Tres superficies para un mismo arreglo | Diagrama propio adaptado de Operations p. 4: estado, dominio y dossier en cada caja |
-| 7 | 05 El ecosistema, de punta a punta | Así se resuelve un arreglo de punta a punta | Tira de 5 pantallas con chips, banda del portal, `.flujo` |
-| 8 | 06 Mercado y oportunidad | (muestra aprobada) | Cuenta abajo-arriba y niveles de mercado |
-| 9 | 07 Modelo de negocio | (muestra aprobada) | Confirmada · en evaluación · futuras, flujo del dinero, ejemplo ilustrativo |
-| 10 | 08 Competencia y diferenciación | Cada alternativa cobra de una forma distinta | Tabla por modelo de cobro (nombres del pitch), diferenciación como hipótesis, riesgos |
-| 11 | 09 Adquisición y marketing | Dos ejes de captación, medidos por barrio | Digital y físico con avance (previsto · en ejecución · medido), dos bucles, medición en el portal |
-| 12 | 09 Cómo lo medimos | El costo se mide contra trabajos completados | Embudo de etapas, tabla de métricas, techo de CAC, 6 experimentos |
-| 13 | 10 Crecimiento por etapas | Consolidar Mar del Plata antes de replicar | Escalera de 4 etapas con objetivo, acciones, recursos, indicadores, hito y condición |
-| 14 | 11 Roadmap | Separamos lo construido de lo planificado | Matriz 6 frentes × construido / en pruebas / planificado, orden de lo que sigue |
-| 15 | 12 Proyecciones financieras | Proyectamos con variables, no con promesas | Equilibrio (400 ÷ 6 ≈ 67), tabla de 10 variables, escenarios pendientes |
-| 16 | 13 Inversión y uso del capital | Una inversión atada a hitos medibles | USD 100.000, barra segmentada 45/30/15/10, partidas con detalle, categorías del pedido |
-| 17 | 14 Avance y validación | Avances reales, cada uno con su respaldo | Publicaciones con fecha, 5 trabajos / $ 350.000 y 56 registrados (sin auditar), hito, capacidad |
-| 18 | 15 Visión a futuro | La forma más simple de resolver los arreglos de una casa | Página navy: 3 objetivos META-*, 3 conceptos, línea ATICMA e invitación |
-| 19 | 16 Equipo y contacto | Lo que pedimos hoy es una reunión | Por qué ahora, equipo, pedido de reunión, la colección |
-| 20 | Contratapa | — | Copia de `paginas-comunes.html` en navy, Engranaje (engranaje-b) y `.actual` en 01 |
+| 1 | Tapa | La forma más simple de resolver los arreglos de una casa. | Foto de la Rambla (duotono navy) + maqueta de noche con rótulos + teléfono titanio; lema nuevo |
+| 2 | Contenido | El negocio, la oferta y el pedido, sin vueltas | Índice con `data-ir`, «Cómo leer» (estados, rótulos, tipos de dato), Handyx en una línea |
+| 3 | 01 Resumen | Un producto en pruebas y un pedido concreto | 4 cifras rotuladas (6 rubros · 0 % · 5 trabajos · USD 100.000), dónde estamos, modelo, qué buscamos, lanzamiento |
+| 4 | 02 Problema | Arreglar algo en casa todavía es una odisea | Dos carriles de 5 pasos (hipótesis) + tres preguntas del piloto; foto aérea del faro |
+| 5 | 03 Solución | Un arreglo, dos apps y una sola conversación | Zigzag de 4 pantallas que cruza las apps (P-Revisar → F-Revisar → C-Propuestas → S-Pagar) + 3 principios |
+| 6 | 04 Ecosistema | Tres superficies para un mismo arreglo | Maqueta de la costa de noche, tres superficies, conectado / falta conectar |
+| 7 | 05 Elegir | Cuatro propuestas, una decisión | Héroe C-Propuestas (70 mm) con 4 notas y estados |
+| 8–9 | 06 Obra (doble) | Un baño completo, de la propuesta al último pago · Todo queda a la vista, y Handyx no toca la plata | `.etapas` de 6 pasos + 6 pantallas de 50 mm (F-PropuestaObra, O-Propuesta, F-ObraPostulantes, F-ObraDia, O-Repuesto, O-Pagos) |
+| 10 | 07 Validamos | Registrarse no es estar verificado | Etapas preregistro → contacto → alta → revisión → habilitado, héroe C-Certificados (64 mm) |
+| 11 | 08 Camino | Se sube con trabajos, no con rankings | Héroe G-Inicio (58 mm), escalera de 4 estaciones con estados, reglas |
+| 12 | 09 Fugas | Nada lo impide del todo: hacemos que convenga quedarse | M-Chat + S-Informe, 9 mecanismos con estado, cómo se mide, primera prueba |
+| 13 | 10 Mercado | Empezamos por un mercado que podemos medir | Cuenta 259.623 × 1 × USD 40 ≈ USD 10,4 M, por qué Mar del Plata, niveles; foto aérea del centro |
+| 14 | 11 Modelo | Sin comisión al especialista, una tarifa de servicio para quien pide | Confirmada / en evaluación / futuras, flujo del dinero, ejemplo $ 100.000 → $ 115.000 |
+| 15 | 12 Competencia | Cada alternativa cobra de una forma distinta | Tabla por modelo de cobro, diferenciación como hipótesis |
+| 16 | 13 Adquisición | Dos ejes de captación, medidos por barrio | Digital y físico (todo «Previsto»), embudo, CAC techo USD 6, ≈ USD 2, pauta USD 100; foto aérea Cabo Corrientes |
+| 17 | 14 Crecimiento | Consolidar Mar del Plata antes de replicar | Escalera de 4 etapas con condición para pasar; foto del Provincial y el Casino |
+| 18 | 15 Roadmap | Separamos lo construido de lo planificado | Matriz 6 frentes × 3 columnas + orden de lo que sigue |
+| 19 | 16 Proyecciones | Proyectamos con variables, no con promesas | Equilibrio 400 ÷ 6 ≈ 67, tabla de variables, escenarios pendientes |
+| 20 | 17 Inversión | Una inversión atada a hitos medibles | USD 100.000, barra 45/30/15/10, partidas, condiciones [a definir] |
+| 21 | 18 Validación | Avances reales, cada uno con su respaldo | Publicaciones con fecha, 5 trabajos / $ 350.000, 56 registrados, próximo hito 50 + 5 |
+| 22 | 19 Preguntas | Las preguntas incómodas | 6 `.duda` sobre navy |
+| 23 | 20 Visión | Un problema viejo con una nueva solución que elegís | 3 objetivos rotulados (USD 1 M, USD 5 M, 40 %), equipo, ATICMA, pedido de reunión |
+| 24 | Contratapa | — | Foto del Casino, lema, QR al hub, contacto, colección |
 
 ## Fuentes
 
-- `dossiers/auditoria/negocio.json` y `.md` (ecosistema, repos, pruebas, publicaciones, competencia, ATICMA, tarifas).
-- `decks/handyx-aticma/afirmaciones.json`: PROFESIONES-INICIALES, LANZAMIENTO, INVERSION-BUSCADA, INV-TOTAL, INV-* (detalle),
-  MDP-HOGARES, SUP-ARREGLOS-HOGAR, SUP-TICKET-USD, MERCADO-USD, COSTOS-MES (+ COSTO-*), INGRESO-POR-TRABAJO,
-  EQUILIBRIO-TRABAJOS, CAC-MAXIMO, CAC-ESTIMADO, SUP-CLIENTES-MES, TRABAJOS-INFORMADOS, PRUEBA-MONTO, ESP-REGISTRADOS,
-  META-TRABAJOS, META-REPETIDORES, META-1M, META-5M, META-CUOTA-NACIONAL, COMP-CLICKIE-PRO, EJ-P / EJ-F / EJ-T.
-- `dossiers/diagnostico.md` (conteo 45 · 94 · 116 · 29 = 284, estado de cada superficie, contradicciones).
-- `dossiers/auditoria/usuario.json`, `especialista.json`, `portal.json` (estados de cada función; arquitectura del portal).
-- `docs/handyx/growth.md` y `preguntas.md` solo para contenido cualitativo (experimentos sin umbrales numéricos,
-  bucles de crecimiento, condición de expansión #16, riesgos #4, #17 y #18). Ninguna cifra sale de ahí.
+`consigna-ola-6.md` (y su agregado del 08/11), `arquitectura.md`, texto revisado de la versión anterior (ola 3),
+`auditoria/{negocio,usuario,especialista,portal}.{md,json}` para los estados, `decks/handyx-aticma/afirmaciones.json` para
+todas las cifras, `docs/handyx/preguntas.md` y `aticma-preguntas.md` para las respuestas. Fotos: `marca/fotos/*-navy.webp`
+con capa navy. Pantallas: `S/capturas/{usuario,especialista}/*.png` → `img/*.webp` (calidad 94, ver `imagenes.json`);
+teléfonos en perspectiva copiados de `estilos2/img/`.
 
-## Imágenes (`imagenes.json` → `img/`)
+## Decisiones
 
-Siete pantallas del lienzo, todas «Diseño propuesto» (con «muestra» o «datos ficticios» porque llevan nombres y montos):
-p-revisar y h0-presupuesto (p. 5); p-que, f-revisar, c-aceptar, h0-modo y s-pago-informado (p. 7, una sola figura con un
-rótulo). Ninguna con personajes; ninguna captura de la PWA (dicen «Handy»); ninguna pantalla de acceso. El portal se
-muestra como esquema de módulos (no captura), rotulado «Esquema · módulos del portal v2».
-
-## Pendientes «[a definir]»
-
-Instrumento, plazo y valuación (p. 3 y 16) · margen y flujo de caja (p. 15) · escenarios conservador, base y ambicioso
-(p. 15, «pendiente de datos medidos») · hitos, recursos e indicadores de las etapas 2 a 4 (p. 13) · remarketing,
-posicionamiento orgánico y TikTok (p. 11) · tamaño del mercado total y accesible (p. 8, «[a investigar]»).
-
-## Desvíos y decisiones
-
-- **p. 7** lleva la ceja «05 · El ecosistema, de punta a punta» y **p. 12** «09 · Cómo lo medimos»: son continuación de las
-  secciones 5 y 9 del pedido; en el índice figuran como subentradas. **p. 19** usa la sección 16 («Equipo y contacto»).
-- **Pulidos sobre la muestra aprobada:** p. 8, el tipo «Dato observado» pasa a «Dato informado · unidad a confirmar» (lista
-  cerrada de tipos); p. 9, «Cómo se cobra» ya no nombra mecanismos (rendición o cobro dividido) y dice «en evaluación»,
-  como pide el diagnóstico; las dos suman «Estado al 07/11/2026» a la fuente. La dirección no cambia.
-- **Títulos:** `text-wrap: balance` en los `h1` para que ninguno termine con una palabra sola (p. 9 conserva su corte
-  original con `text-wrap: wrap`; p. 13 usa espacios duros en «Mar del Plata»).
-- **Dominios:** se nombran los públicos (landing.handyc.com, handyx.pro, workers.handyx.pro); el portal figura como «solo
-  para el equipo», sin su dirección, por prudencia.
-- **Clickie «hasta 15 %»** (COMP-CLICKIE-PRO) es la única cifra de competidores; el cargo al usuario, que está en
-  contradicción, no se imprime. La tabla lleva «Datos públicos consultados el 02–04/11 · a revalidar».
-- **Tracción:** 5 trabajos y $ 350.000 en total, y 56 especialistas registrados, con «Dato informado por el fundador ·
-  sin auditar». No se imprimen los $ 70.000 (ni como ingreso ni como ticket) ni el 10 % + 10 % de la prueba.
-- **CAC:** techo USD 6 «a medir» (proyección, sobre el primer trabajo completado) y USD 2 como supuesto.
-- **Equipo:** se imprime «Abigail» por indicación de la consigna; la auditoría de negocio recuerda que conviene su OK.
-- **Inversión:** «remeras y contenido con los Handys» se escribe «con los personajes» para quien no conoce la marca.
-- **Visión:** los tres objetivos META-* van solo en p. 18, rotulados «Objetivo» (el 40 % además «sin metodología»).
+- **Cifras:** solo de afirmaciones.json. Se sacaron de la versión anterior las cifras que no están ahí: «284 funciones» y
+  los conteos de pruebas automáticas por repo (291, 86, 59, 61); se reemplazan por texto.
+- **Tracción:** 5 trabajos, $ 350.000 y 56 registrados siempre con «Dato informado por el fundador · sin auditar»; los 56
+  con el texto de la consigna (planilla propia, con consentimiento). No se imprimen los $ 70.000 ni el 10 % + 10 %.
+- **Tarifa:** solo la versión del 07/11 (0 % al especialista; 0 % a quien pide hasta el 10/12/2026; después 15 % en
+  evaluación). Todas las pantallas usadas muestran «Tarifa de servicio 0 % hasta el 10/12/2026» o ninguna tarifa.
+- **Objetivos** USD 1 M, USD 5 M y 40 % solo en p. 23, rotulados «Objetivo». Sin IPO, cripto, Silicon Valley ni «arreglar el mundo».
+- **Pantallas evitadas:** D6-Alta (muestra antecedentes «PDF cargado», contra la regla «nunca como archivo»), C-Aceptar
+  (dice «y tu teléfono, solo para este turno», choca con «chat sin compartir el teléfono»), G-Camino (tiene un personaje),
+  G-MiniCamino (montos en borrador que se leen como compromiso).
+- **Toques:** coordenadas medidas sobre cada captura a 390 × 844 con la fórmula de la consigna y revisadas en el render.
+- Lema nuevo en tapa, p. 23 y contratapa. Personajes: ninguno.
 
 ## Componentes nuevos (en el `<style>` de la pieza)
 
-`.cifras-clave` y `.barra-estados` (p. 3) · `.pasos-carril`, `.dolor`, `.preguntas` (p. 4) · `.valor`, `.esquema-portal`,
-`.etiqueta-esquema`, `.lista-estados`, `.principios` (p. 5) · `.eco` (cajas en mm + SVG) (p. 6) · `.tira`, `.acompana`
-(p. 7) · `.comp`, `.dif`, `.riesgo` (p. 10) · `.ejes`, `.accion`, `.avance`, `.bucles` (p. 11) · `.embudo`,
-`.bajo-embudo`, `.tarjeta-cac`, `.experimentos` (p. 12) · `.etapas`, `.escalon`, `.regla-avance` (p. 13) · `.matriz`,
-`.col-planificado`, `.orden` (p. 14) · `.cuenta.tres`, `.variables`, `.escenarios`, `.bruto` (p. 15) · `.monto`,
-`.barra-seg` (paleta validada con el validador de dataviz: #1F57A8, #C2820E, #5B8FE0, #0E8C7E), `.reparto`,
-`.categorias`, `.condiciones` (p. 16) · `.val`, `.tiempo`, `.capacidad`, `.barras` (p. 17) · `.ambicion`,
-`.conceptos`, `.aticma` (p. 18) · `.por-que`, `.equipo`, `.pedido`, `.seguir` (p. 19) · `.oscuro .tipo-dato` y
-`.sobre-navy` para chips sobre navy.
+`.foto` (foto a sangre o en recuadro con `--capa` navy), `.cifra-r` (cifra con raya y tipo de dato), `.app` (etiqueta de
+app), `.ind` + `.leer` (índice y cómo leer sobre navy), `.col-r`, `.carril`/`.paso-o`, `.pregunta-piloto`, `.principio`,
+`.obra-col` + `.no-hace`, `.meca` (mecanismo con estado), `.regla-c`, `.cuenta`, `.modelo-col`, `.flujo-din`, `.matriz`,
+`.orden`, `.barra-seg`, `.pub`, `.bloque-t`, `.dudas` (variante compacta de `.duda`), `.meta`; ajustes de `.tipo-dato`,
+`.estado.concepto`, `.tabla` y `.peldano` sobre `.p-oscuro`.
+
+## Preguntas abiertas para Ignacio
+
+1. Instrumento, plazo y valuación de la inversión (p. 3 y 20): [a definir].
+2. Plazo de verificación de un especialista (p. 10): [a definir].
+3. Margen, flujo de caja y escenarios (p. 19): pendientes de datos medidos.
+4. Recursos e indicadores de las etapas 2 a 4 (p. 17) y origen de cada registro en la landing (p. 16): [a definir].
+5. ¿Se puede imprimir «Abigail» (p. 23)? La auditoría pide su OK.
+6. Unidad de los 259.623: ¿hogares o viviendas particulares ocupadas?
+7. ¿El teléfono del cliente se comparte con el especialista elegido o nunca? (ver contradicciones).
+8. ¿Antecedentes solo en persona, o también como archivo cifrado que se borra? (ver contradicciones).
+
+## Contradicciones entre fuentes (señaladas, sin elegir)
+
+- **Teléfono:** `aticma-preguntas.md` #25 dice que el teléfono no se comparte; U-A-04 y la pantalla C-Aceptar dicen que el
+  especialista elegido ve el teléfono «solo para este turno». En el dossier se habla de «chat por pedido» sin afirmar ninguna.
+- **Antecedentes:** la consigna y el CLAUDE.md del especialista dicen «en persona, nunca como archivo»; E-V-03 (Diseñado) y
+  D6-Alta muestran «Antecedentes penales por foto o PDF»; P-E-03 del portal pide «antecedentes en 7 días» en el legajo.
+- **Garantía:** la consigna incluye «garantía registrada» como mecanismo; `aticma-preguntas.md` #24 dice «no prometemos
+  garantías que todavía no tenemos». Se imprime como Diseñado, con el texto pendiente de Legal.
+- **56 especialistas:** la consigna dice «anotados fuera de la landing, en una planilla propia»; `aticma-preguntas.md` #4 y
+  ESP-REGISTRADOS dicen «registrados en el preregistro». Se imprime la versión de la consigna.
+- **Tarifa y ganancia por trabajo:** `preguntas.md` #7 y #9 todavía dicen 10 % + 10 % y ≈ $ 6.200 de contribución; se usa la
+  decisión del 07/11 e INGRESO-POR-TRABAJO (USD 6, proyección).
+- **Uso del capital:** `preguntas.md` #19 dice ≈ 40 % captación y ≈ 60 % operación, con un rango de $ 3–6 M; afirmaciones.json
+  dice USD 100.000 con 45/30/15/10. Se usa afirmaciones.json.
+- **CAC:** `aticma-preguntas.md` #1 lo presenta como «hoy, unos USD 2»; `preguntas.md` #8 dice «todavía no lo medimos». Se
+  imprime «todavía no lo medimos», con USD 2 como proyección con supuesto.
+- **Ritmo de expansión:** «consolidar antes de replicar» (este dossier) frente a «toda Buenos Aires en 3 meses» (pitch,
+  META-BA-MESES); no se imprime el segundo.

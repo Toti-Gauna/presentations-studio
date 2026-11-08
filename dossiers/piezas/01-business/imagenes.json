@@ -1,7 +1,74 @@
-[{"de":"usuario/P-Revisar.png","a":"p-revisar.webp"},
- {"de":"especialista/H0-Presupuesto.png","a":"h0-presupuesto.webp"},
- {"de":"usuario/P-Que.png","a":"p-que.webp"},
- {"de":"especialista/F-Revisar.png","a":"f-revisar.webp"},
- {"de":"usuario/C-Aceptar.png","a":"c-aceptar.webp"},
- {"de":"especialista/H0-Modo.png","a":"h0-modo.webp"},
- {"de":"usuario/S-PagoInformado.png","a":"s-pago-informado.webp"}]
+[
+ {
+  "de": "usuario/P-Revisar.png",
+  "a": "p-revisar.webp"
+ },
+ {
+  "de": "especialista/F-Revisar.png",
+  "a": "f-revisar.webp"
+ },
+ {
+  "de": "usuario/C-Propuestas.png",
+  "a": "c-propuestas.webp"
+ },
+ {
+  "de": "usuario/S-Pagar.png",
+  "a": "s-pagar.webp"
+ },
+ {
+  "de": "usuario/C-Certificados.png",
+  "a": "c-certificados.webp"
+ },
+ {
+  "de": "especialista/G-Inicio.png",
+  "a": "g-inicio.webp"
+ },
+ {
+  "de": "usuario/M-Chat.png",
+  "a": "m-chat.webp"
+ },
+ {
+  "de": "usuario/S-Informe.png",
+  "a": "s-informe.webp"
+ },
+ {
+  "de": "especialista/F-PropuestaObra.png",
+  "a": "f-propuesta-obra.webp"
+ },
+ {
+  "de": "usuario/O-Propuesta.png",
+  "a": "o-propuesta.webp"
+ },
+ {
+  "de": "especialista/F-ObraPostulantes.png",
+  "a": "f-obra-postulantes.webp"
+ },
+ {
+  "de": "especialista/F-ObraDia.png",
+  "a": "f-obra-dia.webp"
+ },
+ {
+  "de": "usuario/O-Repuesto.png",
+  "a": "o-repuesto.webp"
+ },
+ {
+  "de": "usuario/O-Pagos.png",
+  "a": "o-pagos.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-propuestas-titanio-der.webp",
+  "a": "m-propuestas-titanio-der.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-inicio-titanio.webp",
+  "a": "m-inicio-titanio.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-esp-pedido-titanio.webp",
+  "a": "m-esp-pedido-titanio.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-portal-titanio.webp",
+  "a": "m-portal-titanio.webp"
+ }
+]
