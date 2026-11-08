@@ -26,7 +26,7 @@
   .a-gancho { margin-top: 7mm; font: 600 17pt/1.3 var(--f-texto); color: rgba(255, 255, 255, 0.92); max-width: 190mm; text-shadow: 0 0.5mm 3mm rgba(14, 29, 54, 0.5); }
   .a-lema { margin-top: auto; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 33pt; line-height: 0.98; letter-spacing: -0.015em; max-width: 220mm; text-wrap: balance; }
   .a-lema span { color: var(--amarillo); }
-  .tarjeta { position: relative; margin-top: 36mm; display: grid; grid-template-columns: 86mm minmax(0, 1fr); gap: 10mm; padding: 10mm; border-radius: 6mm; background: #FFFFFF; color: var(--navy); box-shadow: 0 6mm 20mm rgba(0, 0, 0, 0.35); }
+  .tarjeta { position: relative; margin-top: 14mm; display: grid; grid-template-columns: 86mm minmax(0, 1fr); gap: 10mm; padding: 10mm; border-radius: 6mm; background: #FFFFFF; color: var(--navy); box-shadow: 0 6mm 20mm rgba(0, 0, 0, 0.35); }
   .tarjeta .qrz { width: 86mm; }
   .tarjeta .qrz img { width: 86mm; height: 86mm; display: block; }
   .tarjeta .url { margin-top: 2.5mm; text-align: center; font: 800 10pt/1 var(--f-texto); letter-spacing: 0.02em; color: var(--azul); }
@@ -52,14 +52,14 @@
   // Un renglón por barrio. fondo: 'foto:<archivo>' (duotono navy en img/) o 'iso:<maqueta|costa|barrio>:<dia|noche>'.
   const ZONAS = [
     { slug: 'centro', nombre: 'Centro', gancho: 'Del Casino a la Peatonal: especialistas de tu zona, con propuestas claras para elegir.', fondo: 'foto:casino-plaza', foto: 'center 55%', handys: ['foco', 'llave'] },
-    { slug: 'guemes', nombre: 'Güemes', gancho: 'Se rompió algo en casa, en Güemes. Contalo y elegí entre propuestas con precio.', fondo: 'iso:barrio:dia', handys: ['brocha', 'foco'] },
+    { slug: 'guemes', nombre: 'Güemes', gancho: 'Se rompió algo en casa, en Güemes. Contalo y elegí entre propuestas con precio.', fondo: 'foto:aerea-centro-playa', foto: 'left 45%', handys: ['brocha', 'foco'] },
     { slug: 'playa-grande', nombre: 'Playa<br>Grande', gancho: 'De Alem al Torreón: el arreglo que necesitás, con especialistas de la zona.', fondo: 'foto:aerea-cabo-puerto', foto: 'center 60%', handys: ['engranaje', 'llave'] },
-    { slug: 'los-troncos', nombre: 'Los<br>Troncos', gancho: 'Tu chalet merece un especialista verificado. Pedilo y compará antes de elegir.', fondo: 'iso:barrio:noche', handys: ['llave', 'brocha'] },
+    { slug: 'los-troncos', nombre: 'Los<br>Troncos', gancho: 'Tu chalet merece un especialista verificado. Pedilo y compará antes de elegir.', fondo: 'foto:aerea-cabo-puerto', foto: 'center 85%', handys: ['llave', 'brocha'] },
     { slug: 'stella-maris', nombre: 'Stella<br>Maris', gancho: 'Frente al mar o a dos cuadras: pedí tu arreglo y elegí por calidad y precio.', fondo: 'foto:aerea-centro-playa', foto: 'center 70%', handys: ['foco', 'engranaje'] },
     { slug: 'plaza-mitre', nombre: 'Plaza<br>Mitre', gancho: 'Del edificio a la casa: especialistas de tu zona para electricidad, plomería, gas y más.', fondo: 'foto:rambla-fuego', foto: 'center 35%', handys: ['brocha', 'llave'] },
-    { slug: 'la-perla', nombre: 'La Perla', gancho: 'Un pedido, varias propuestas con precio y fecha. Vos elegís.', fondo: 'iso:costa:dia', handys: ['foco', 'brocha'] },
-    { slug: 'varese', nombre: 'Varese', gancho: 'Cerca de la playa y cerca de tu casa: especialistas del barrio, a un pedido de distancia.', fondo: 'iso:costa:noche', handys: ['engranaje', 'foco'] },
-    { slug: 'chauvin', nombre: 'Chauvín', gancho: 'Chalets, departamentos y PH: contá qué pasa y recibí propuestas claras.', fondo: 'iso:maqueta:dia', handys: ['llave', 'engranaje'] },
+    { slug: 'la-perla', nombre: 'La Perla', gancho: 'Un pedido, varias propuestas con precio y fecha. Vos elegís.', fondo: 'foto:costa-atardecer', foto: 'center 60%', handys: ['foco', 'brocha'] },
+    { slug: 'varese', nombre: 'Varese', gancho: 'Cerca de la playa y cerca de tu casa: especialistas del barrio, a un pedido de distancia.', fondo: 'foto:aerea-centro-playa', foto: 'right 75%', handys: ['engranaje', 'foco'] },
+    { slug: 'chauvin', nombre: 'Chauvín', gancho: 'Chalets, departamentos y PH: contá qué pasa y recibí propuestas claras.', fondo: 'foto:casino-plaza', foto: 'right 50%', handys: ['llave', 'engranaje'] },
     { slug: 'punta-mogotes', nombre: 'Punta<br>Mogotes', gancho: 'Del faro a tu casa: pedí tu arreglo y pagale directo al especialista.', fondo: 'foto:aerea-faro-mogotes', foto: 'center 60%', handys: ['foco', 'llave'] },
   ];
   const marca = (s) => s.replace('elegís', '<span>elegís</span>');
@@ -74,7 +74,7 @@
         <h1 class="a-zona">${z.nombre}<i>.</i></h1>
         <p class="a-gancho">${z.gancho}</p>
         <p class="a-lema">${marca('Un problema viejo con una nueva solución que elegís.')}</p>
-        <div class="tarjeta"><img class="tel-a permite-salir" src="img/m-inicio-titanio-izq.webp" alt=""><div class="handys permite-salir">${z.handys.map((h) => `<img src="../../marca/personajes-v2/${h}.svg" alt="">`).join('')}</div>
+        <div class="tarjeta"><img class="tel-a permite-salir" src="img/m-inicio-titanio-izq.webp" alt="">
           <div class="qrz"><img src="qr/${z.slug}.svg" alt="Código QR al registro de Handyx"><p class="url">handyc.com/registro</p></div>
           <div class="pasos-a">
             <span class="t">Así de simple</span>

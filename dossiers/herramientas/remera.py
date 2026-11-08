@@ -1,7 +1,6 @@
 """Remera Handyx v2: archivos de impresión (SVG vectorial) para frente y espalda, sobre tela azul de marca.
-Frente: logo chico en el pecho con el lema. Espalda: la línea de Mar del Plata (torres, Casino con techo de mansarda,
-Torreón del Monje y el faro) en blanco, los cuatro Handys con la estética nueva parados sobre la Rambla, el logo y
-«Hecho en Mar del Plata». Tintas: blanco, amarillo #F5F59A y cielo #E9EFF9 (lo azul es la tela, no se imprime).
+Frente: logo chico en el pecho con el lema. Espalda: solo edificios — la línea de Mar del Plata (torres, Casino con
+techo de mansarda, Torreón del Monje y el faro) sobre la Rambla, el logo y «Hecho en Mar del Plata». Tintas: blanco, amarillo #F5F59A y cielo #E9EFF9 (lo azul es la tela, no se imprime).
 Uso: python3 -I dossiers/herramientas/remera.py  → dossiers/piezas/07-remera/"""
 import pathlib, re
 
@@ -85,9 +84,7 @@ espalda = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" widt
 <title>Remera Handyx · espalda (impresión, tela azul #1F57A8)</title>
 {logo}
 <text x="300" y="{120 + lh + 44}" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="22" letter-spacing="7" fill="{AMA}">SOLUCIONES, NO PROBLEMAS.</text>
-<g transform="translate(-58 -150) scale(1.2)">{skyline(70, 500, 460)}</g>
-<rect x="90" y="664" width="420" height="4" rx="2" fill="{CIELO}"/>
-{handys}
+<g transform="translate(-83 -110) scale(1.25)">{skyline(70, 560, 460)}</g>
 <text x="300" y="720" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="800" font-size="17" letter-spacing="8" fill="{CIELO}">HECHO EN MAR DEL PLATA</text>
 </svg>'''
 (OUT / 'remera-espalda.svg').write_text(espalda)
