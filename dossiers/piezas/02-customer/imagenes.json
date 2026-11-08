@@ -22,17 +22,6 @@
 "ancho": 780
 },
 {
-"de": "usuario/A-Avisos.png",
-"a": "a-avisos.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/A-Casa.png",
 "a": "a-casa.webp",
 "recorte": [
@@ -90,17 +79,6 @@
 {
 "de": "usuario/P-Revisar.png",
 "a": "p-revisar.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/I-HandIA.png",
-"a": "i-handia.webp",
 "recorte": [
 0,
 0,
@@ -187,17 +165,6 @@
 "ancho": 780
 },
 {
-"de": "usuario/C-Rechazar.png",
-"a": "c-rechazar.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/C-Visita.png",
 "a": "c-visita.webp",
 "recorte": [
@@ -222,28 +189,6 @@
 {
 "de": "usuario/M-Chat.png",
 "a": "m-chat.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/M-Presupuesto.png",
-"a": "m-presupuesto.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/M-Adjuntar.png",
-"a": "m-adjuntar.webp",
 "recorte": [
 0,
 0,
@@ -299,17 +244,6 @@
 {
 "de": "usuario/S-Adicional.png",
 "a": "s-adicional.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/S-AntesDespues.png",
-"a": "s-antesdespues.webp",
 "recorte": [
 0,
 0,
@@ -473,28 +407,6 @@
 "ancho": 780
 },
 {
-"de": "usuario/H-MiCasa.png",
-"a": "h-micasa.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/H-Rompio.png",
-"a": "h-rompio.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/H-Compartir.png",
 "a": "h-compartir.webp",
 "recorte": [
@@ -530,17 +442,6 @@
 {
 "de": "usuario/I-Avisos.png",
 "a": "i-avisos.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/X-Privacidad.png",
-"a": "x-privacidad.webp",
 "recorte": [
 0,
 0,
@@ -603,5 +504,73 @@
 {
 "de": "usuario/FL-Obra.png",
 "a": "fl-obra.webp"
+},
+{
+"de": "dossiers/estilos2/img/m-inicio-plata.webp",
+"a": "m-inicio-plata.webp"
+},
+{
+"de": "dossiers/estilos2/img/m-propuestas-plata.webp",
+"a": "m-propuestas-plata.webp"
+},
+{
+"de": "marca/fotos/aerea-centro-playa-azul.webp",
+"a": "f-centro-playa.webp",
+"recorte": [
+0,
+400,
+1200,
+1600
+]
+},
+{
+"de": "marca/fotos/aerea-faro-mogotes-azul.webp",
+"a": "f-faro-mogotes.webp",
+"recorte": [
+0,
+450,
+1200,
+1600
+]
+},
+{
+"de": "marca/fotos/rambla-fuego-azul.webp",
+"a": "f-rambla.webp",
+"recorte": [
+0,
+380,
+1512,
+1440
+]
+},
+{
+"de": "marca/fotos/aerea-puerto-sur-azul.webp",
+"a": "f-puerto-sur.webp",
+"recorte": [
+0,
+700,
+900,
+1600
+]
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-01.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-02.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-03.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-04.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-05.webp"
 }
 ]

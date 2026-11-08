@@ -1,89 +1,96 @@
-# Dossier 02 · Customer App · notas de producción (ola 3, 07/11/2026)
+# Dossier 02 · Customer App · notas de producción (ola 6, 08/11/2026)
 
-`index.html` (20 páginas A4, sin `data-folio`), `img/` (28 WebP), `imagenes.json` (manifiesto de recortes).
-Control: `exportar-pieza.cjs` → **20 páginas · 0 errores · 0 avisos**. Hoja de contacto y las nueve dobles páginas
-revisadas a tamaño completo.
+Manual de la app del vecino en la dirección v2: «Galería» (blanco/hueso, teléfonos plata) con aperturas de capítulo en
+banda azul (foto real de Mar del Plata en duotono + maqueta de día de `iso.js`). **24 páginas · 0 errores** en
+`exportar-pieza.cjs` (los 43 avisos son bandas y maquetas a sangre que pasan el borde a propósito y fotos a 178–218 ppp).
+
+- `index.html` se genera con `gen.py` + `estilo.css` (copias en `S/ola6/02-customer/`; el original está en
+  `S/ola6/c02/`). Los `.toque` se calculan desde coordenadas de pantalla 390 × 844 con `left = (18+x)/426`,
+  `top = (18+y)/880`. Si editás a mano el HTML, no vuelvas a correr el generador sin pasar los cambios.
+- `img/`: 59 archivos, manifiesto en `imagenes.json` (origen y recorte de cada uno). Pantallas a 780 × 1688 WebP q93.
+- **Sin personajes** (cambio de Ignacio del 08/11): no se usa `marca/personajes/` ni `personajes-v2/`. Más peso a las
+  fotos reales y a la maqueta.
+- Lema nuevo en tapa y contratapa: «Un problema viejo con una nueva solución que elegís.»
 
 ## Páginas
 
-| p. | Sección del pedido (§6) | Evidencia |
-|---|---|---|
-| 1 | 1 · Portada (aprobada; rótulo «Diseño propuesto · datos ficticios») | I-Inicio + Foco (bombilla-b) |
-| 2 | Índice y cómo leer (copia de `paginas-comunes.html`) | — |
-| 3 | 2 · La experiencia del cliente | Mapa propio: 4 momentos × 12 recorridos U-R con estado y página; Foco (bombilla-d) |
-| 4 | 3 · Problemas actuales | Cinco preguntas (hipótesis cualitativas) con íconos y respuesta de la app con estado |
-| 5 | 4 · Cómo Handyx simplifica | A-Bienvenida recortada arriba del titular, carriles «Vos / Handyx», tabla de reglas |
-| 6 | 5 · Registro y onboarding | A-Datos, A-Listo, cifra 0 %, tabla, flujo U-R-01 |
-| 7 | 6 · Exploración y búsqueda de especialistas | I-Inicio (desplazado), I-HandIA, cadena «cómo llega tu pedido», tabla |
-| 8 | 7 · Solicitud de servicios | P-Revisar, I-HandIAFicha, tabla, flujo U-R-02/03 |
-| 9 | 8 · Recepción de presupuestos | PWA propuestas, M-Presupuesto, tabla, flujo |
-| 10 | 9 · Comparación (aprobada) | C-Propuestas, C-Comparar, tabla, flujo U-R-04 |
-| 11 | 10 · Criterios de calidad y precio (aprobada) | C-Detalle, C-Certificados, tabla de criterios, nota, «hoy / diseño» |
-| 12 | 11 · Selección y contratación | C-Aceptar, C-Cambios, horquilla de cuatro salidas, flujo U-R-05 |
-| 13 | 12 · Seguimiento del trabajo y pago | S-EnCamino, PWA forma de pago, tabla, flujo U-R-06 |
-| 14 | 12 · Obras de varios días | O-Obra, PWA obra por etapas, tabla, flujo U-R-07 |
-| 15 | 13 · Comunicación y organización | M-Chat, I-Avisos, tabla, flujo U-R-08/09 |
-| 16 | 14 · Confianza y reputación | S-Llego, S-Informe, tabla, flujo U-R-12 |
-| 17 | 15 · Funcionalidades adicionales | H-Hogar, T-Medir, H-AR, G-Camino en cuadrícula, cada una con su estado |
-| 18 | 16 · Roadmap de experiencia | Barra de las 85 funciones por estado (dato verificado), matriz momento × estado |
-| 19 | 17 · Cierre (página navy) | Hoy / lo que sigue / a definir, la colección |
-| 20 | Contratapa (azul, Foco bombilla-c, `.actual` en 02) | QR, contacto; texto del QR actualizado según la coordinación |
-
-Dobles páginas en espejo: en 6|7 a 16|17 los celulares quedan contra el lomo (par: a la derecha; impar: a la izquierda).
+| p. | Página | Pantallas (con toques) | Estados |
+|---|---|---|---|
+| 1 | Tapa azul: foto de la Rambla, maqueta, dos teléfonos plata | I-Inicio, C-Propuestas (perspectiva) | — |
+| 2 | Índice por capítulos + «Cómo leer» (estados, rótulos, puntos amarillos, tipo de cifra) | — | — |
+| 3 | La app en una página: 4 momentos, qué hace / qué no, 6 rubros, 0 % usuario, 0 % especialista | I-Inicio, C-Propuestas, S-EnCamino, H-Hogar (38 mm) | P · D |
+| 4 | Apertura 01 · Empezar y pedir (foto aérea del centro + barrio) | — | — |
+| 5 | Alta en zigzag + «dos versiones del alta» | A-Datos, A-Zona, A-Casa, A-Listo | P · D |
+| 6 | Pedir en 3 toques + qué pasa después de publicar | I-Inicio, P-Que, P-Fotos, P-Revisar | P · D |
+| 7 | HandIA tal como está hoy (tabla de estado real) | I-HandIAChat, I-HandIAFicha, I-Voz (50 mm) | Desactivada · P · D · K |
+| 8 | Apertura 02 · Elegir (Casino y Hotel Provincial + costa) | — | — |
+| 9 | Propuestas protagonista + lo que corre en código | C-Propuestas (56 mm), PWA propuestas | P · D |
+| 10 | Comparar por calidad y precio + choque «la mejor» vs «sin ranking» | C-Comparar, C-Detalle (52 mm) | P · D |
+| 11 | Aceptar, turno confirmado, pedir cambio, visita | C-Aceptar, C-Aceptada, C-Cambios, C-Visita | P · D |
+| 12 | Apertura 03 · El día del trabajo (Rambla) | — | — |
+| 13 | Del turno a la puerta + 6 estados del servidor + cómo se marca la llegada | S-Agendado, S-EnCamino, S-Llego, S-Trabajando | P · D |
+| 14 | Adicional, informe con garantía, conformidad | S-Adicional, S-Informe, S-Conformidad (52 mm) | P · D |
+| 15 | Pagar directo, informado ≠ verificado, reseña + quién verifica | PWA pago-metodo, S-PagoInformado, X-Pagos, S-Resena | P |
+| 16 | Mensajes y avisos | M-Mensajes, M-Chat, I-Avisos (52 mm) | P · D |
+| 17 | Mi hogar, historial y garantías | H-Hogar, H-Historial, H-Garantias (52 mm) | D · K |
+| 18 | Apertura 04 · Una obra completa, con las 7 etapas (foto aérea Faro/Mogotes) | — | D · P |
+| 19 | Obra 1/2: propuesta, tu obra, jornada, repuesto + obra por etapas en código | O-Propuesta, O-Obra, O-Dia, O-Repuesto, PWA seguimiento | D · P |
+| 20 | Obra 2/2: cambio de fecha, chat grupal, pagos, lo gastado + flujo FL-Obra | O-Fecha, O-Grupo, O-Pagos, O-Gastado, FL-Obra | D · P |
+| 21 | Capítulo 05 · Confianza: cómo ves que está verificado (banda corta, foto del puerto) | C-Certificados (58 mm) | P · D |
+| 22 | Anti-fuga desde el vecino: respuesta honesta + 11 mecanismos con estado + cómo se mide | H-Compartir (46 mm) | P · D · decisión |
+| 23 | Preguntas difíciles (8 `.duda`) | — | P · D · K |
+| 24 | Contratapa azul: foto Casino/Provincial, lema, QR, contacto, colección | — | — |
 
 ## Fuentes
 
-- `dossiers/auditoria/usuario.json` y `usuario.md`: las 85 funciones con su estado (ninguno subido), los 12 recorridos
-  U-R, las capturas recomendadas con sus riesgos y el `indice_dossier`.
-- Lienzo «App del usuario»: `S/capturas/usuario/*.png` y `recortes/`. PWA en vista de prueba (31/10/2026):
-  `brands/handyx/assets/capturas/usuario-{propuestas,pago-metodo,seguimiento}.webp`.
-- Decisiones de Ignacio (`docs/handyx/plan-dossiers.md`, 5–8): tarifa de servicio 0 % hasta el 10/12/2026; después,
-  «en evaluación», sin porcentaje en este dossier. `diagnostico.md`, `arquitectura.md`, `direccion-de-arte.md`.
-- Cifras impresas: 0 % (condición confirmada, 07/11/2026); 12 recorridos, 102 pantallas y 85 funciones (2 · 39 · 41 · 3),
-  dato verificado de la auditoría del 07/11/2026. Ningún monto de las pantallas se cita en el texto.
+Consigna `dossiers/consigna-ola-6.md` (+ agregado del 08/11), `auditoria/usuario.md` (estados de las 85 funciones,
+recorridos U-R, riesgos y contradicciones), lienzo «App del usuario» (`S/capturas/usuario/`), capturas de la PWA
+(`brands/handyx/assets/capturas/usuario-*.webp`), `docs/handyx/plan-dossiers.md` (decisiones 5–8),
+`docs/handyx/preguntas.md` (respuesta anti-fuga), `decks/handyx-aticma/afirmaciones.json` (TARIFA-USUARIO 15 %,
+FEE-ESPECIALISTA 0 %, ESP-REGISTRADOS 56, META-REPETIDORES 5 · objetivo). Texto revisado de la versión de la ola 3.
 
-## Pendientes «[a definir]»
+## Decisiones
 
-- p. 4: medición propia del problema (hoy, hipótesis de entrevistas informadas por el fundador).
-- p. 11: qué pesa cada criterio del promedio de perfil y precio y si se muestra en pantalla.
-- p. 16: quién da la garantía y su texto (Legal).
-- p. 18: fechas de cada etapa del roadmap. p. 19 repite los abiertos: fechas, tarifa después del 10/12, garantía, reseñas.
+- No se usan: A-Bienvenida (titular «especialistas verificados»), P-Publicado (ídem), C-Buscando y X-Actividad
+  (Canilla), M-Soporte (grupo de Handys e incidente), S-Pagar (Mercado Pago «Se verifica solo», hoy inactivo),
+  X-Cuenta (seguridad), A-Entrar/A-Codigo/A-Segunda (acceso).
+- El paso «pagar» usa la pantalla real de la PWA (efectivo / Mercado Pago, «reportado hasta que se verifique»).
+- Los números de capítulo calados (`.cap-n`) se insertan como imagen (`img/cap-NN.webp`, renderizados con el estilo
+  de `premium.css`): el texto con `-webkit-text-stroke` sale en el PDF como fuente Type 3 y el exportador lo rechaza.
+  **Aviso para las otras piezas**: 04 usa `.cap-n` como texto y va a chocar con el mismo error.
+- Las fotos aéreas tienen el ala de la avioneta arriba: se recortaron (`f-*.webp`, recortes en `imagenes.json`).
+  `rambla-fuego` se recortó por arriba de la persona de espaldas.
+- Componentes propios (en `<style>`): `.ojo` (dos fuentes dicen distinto), `.banda-codigo` (pantalla real + texto),
+  `.tabla-est`, `.foto-banda`/`.velo-banda` (apertura con foto), `.cap-img`, `.ind` (índice por capítulos),
+  `.leer`, `.hace`, `.dudas-02`, `.chips`, `.estado.apagado` («Desactivada»).
 
-## Desvíos de la arquitectura y por qué
+## Preguntas abiertas para Ignacio
 
-- **p. 6 sin `usuario-modal-fee.webp`:** dice «solo con invitación», y la consigna pide describir el registro sin
-  invitación ni contraseña. La tarifa va como cifra rotulada y en A-Listo. Tampoco se usan A-Entrar, A-Codigo ni
-  A-Segunda (mecanismos de acceso).
-- **p. 7:** I-Inicio desplazado (recorte 0,1068) para no repetir la tapa; I-HandIA en lugar de C-Certificados, que pasó a p. 11.
-- **p. 8 sin P-Publicado ni P-Que:** P-Publicado dice «especialistas verificados» (riesgo de la auditoría); el pedido
-  en pasos se cuenta en texto y tabla.
-- **p. 9:** C-Propuestas ya está en p. 10; se usa la captura real de la PWA (lista por llegada, sin ranking).
-- **p. 11 (aprobada, pulida):** se sumó C-Certificados (lo pedía la arquitectura), se compuso en espejo con p. 10 y se
-  agregaron las tarjetas «hoy / diseño» para no dejar un tercio vacío. En 10 y 11: rótulo de dos partes
-  («Diseño propuesto» + «Datos ficticios»), voseo en el flujo y títulos sin una palabra sola en la última línea.
-- **p. 12:** C-Aceptada y C-Visita no van como captura; la visita aparece en la horquilla con su estado.
-- **p. 13 sin RC-Trabajo ni S-Pagar:** el tablero de recorrido no se lee a ancho A4 y S-Pagar dice que Mercado Pago
-  «se verifica solo» (hoy inactivo). La captura de la PWA muestra efectivo y Mercado Pago sin decir quién verifica.
-- **p. 15 sin M-Soporte-recorte:** su mensaje («el código del especialista no coincidía y no le abrí») es un incidente
-  de ejemplo, y el recorte conserva arriba una franja de los pies del grupo de Handys. Soporte va en texto y tabla.
-- **p. 16 sin S-PagoInformado:** imprime una versión de quién verifica un pago en efectivo (contradicción abierta).
-- **p. 17:** G-Camino en lugar de G-Hito-recorte (muestra el camino entero); H-AR con rótulo «Concepto», como
-  recomienda la auditoría, y la función con su estado (Diseñado, decisión técnica abierta).
-- **Índice:** usa el número de sección del pedido (02–17), igual que las cejas; el 12 aparece dos veces.
+1. Alta del lanzamiento: ¿con invitación y contraseña (código) o registro directo con código (lienzo)? (p. 5)
+2. ¿Se aprueba destacar «La mejor en perfil y precio» y se muestran los pesos? (p. 10)
+3. Fuente del precio orientativo si todavía no hay trabajos. (p. 6, 9)
+4. ¿Cómo se marca la llegada: «Llegué», código de 4 números o geocerca? (p. 13)
+5. ¿Quién verifica un pago en efectivo: el especialista, el proveedor u Operations? ¿Habrá Mercado Pago? (p. 15)
+6. Garantía: ¿quién la da y con qué texto? (p. 10, 14, 23)
+7. Antecedentes: ¿en persona o por documento? (p. 21)
+8. ¿HandIA está en la app del lanzamiento? (p. 7)
+9. Qué pasa con un especialista que no se presenta. (p. 23)
+10. Cómo llega una consulta de Soporte al equipo. (p. 16)
+11. Reseñas: ¿existen al lanzar y quién las modera?
 
-## Riesgos que quedan a la vista (para revisar)
+## Contradicciones entre fuentes (señaladas, sin elegir)
 
-- C-Certificados y la PWA de propuestas muestran en letra chica «antecedentes … en persona» (el medio está en
-  discusión); el texto propio no lo nombra.
-- Las capturas de la PWA dicen «Handy» y «Comisión de Handy» (nombre anterior): rotuladas, sin ampliar y aclarado en la fuente.
-- P-Revisar, C-Propuestas y M-Presupuesto muestran rangos de precio orientativo de muestra (diseño sin fuente de datos).
-- A-Listo, C-Aceptar y C-Aceptada mencionan la «demo» y Mercado Pago: el texto aclara efectivo hoy y Mercado Pago
-  cuando se valide la integración.
-
-## Componentes nuevos (en el `<style>` de la pieza)
-
-`.rotulos` (rótulo de dos partes que se apila), `.pag` (página automática con `data-ir`), `.dos-estados`, `.apertura`,
-`.mapa-exp` / `.momento` / `.recorrido` / `.transversal`, `.dudas` / `.duda`, `.promesa` / `.cita`, `.carriles`,
-`.tarifa`, `.cadena`, `.horquilla` / `.salidas`, `.cuadricula` / `.celda`, `.barra-seg` / `.leyenda-barra` /
-`.matriz` / `.falta` (barra segmentada con los colores de los estados, textura en Concepto), `.cierre-cols` /
-`.seguir-leyendo` / `.lema-cierre`, `.foco-fin`.
+- Tarifa al usuario: 0 % hasta el 10/12 + 15 % en evaluación (decisión del 07/11, impresa) vs. 10 % al cliente y
+  «primer mes sin tarifa» (landing) vs. 10 % + 10 % y camada al 5 % (`preguntas.md` n.º 7, desactualizado).
+- Comisión al especialista: 0 % (decisión) vs. 10 % (landing); el commit del 07/11 cita una decisión «del 08/11».
+- Registro con invitación/contraseña (código, contrato) vs. directo sin contraseña (lienzo).
+- Ranking: «La mejor» y «Mejor promedio» (lienzo) vs. «sin rankings ni superlativos» (código y contrato).
+- Quién verifica un pago; Mercado Pago «se verifica solo» (lienzo) vs. función inactiva (servidor).
+- Llegada: «Llegué» (servidor) vs. código (lienzo) vs. geocerca (demo de la landing).
+- Antecedentes «revisados en persona» (lienzo, PWA, app del especialista) vs. foto o PDF (CLAUDE.md del BE).
+- HandIA desactivada (main) vs. incluida sin IA externa (rama) vs. plan con OpenAI/ElevenLabs.
+- Tiempos: «no hay un tiempo fijo» (lienzo) vs. ventanas de 20 min / 12 h (servidor).
+- Reclamos con estados (código) vs. sin pantallas de reclamo en el lienzo.
+- Nombre «Handy» en las capturas de la PWA vs. Handyx.
+- 10/11: «lanzamiento» (afirmaciones) vs. demo cerrada con invitación (app); se imprime la fórmula de la consigna.
+- Dominio de la app: handyc.com vs. handyx.pro (no se imprime ninguno; el QR va a landing.handyc.com/handyx).
