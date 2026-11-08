@@ -1,37 +1,58 @@
-# Dossier 01 · Business & Investment · notas de producción (ola 6)
+# Dossier 01 · Business & Investment · notas de producción (ola 7)
 
-Estado al 07/11/2026. **24 páginas A4**, estilo «Nocturno» (navy, teléfonos titanio, amarillo como único acento) con tres
-páginas hueso para tablas densas (11, 12, 15 y 16 del índice: modelo, competencia, roadmap y proyecciones). Exportado con
-`exportar-pieza.cjs`: **0 errores**, 8 avisos (fotos entre 160 y 178 ppp, sobre el mínimo de 150). Sin `data-folio`: la
-numeración sale del orden. **Sin personajes** en ninguna página (pedido de Ignacio del 08/11).
+Estado al 07/11/2026. **24 páginas A4**, estilo «Nocturno» (navy, teléfonos titanio, amarillo como único acento) con páginas
+hueso para tablas densas (modelo, competencia, roadmap y proyecciones). Ola 7 (08/11): pasada de dirección de arte sobre la
+ola 6 —mismos textos, estados, rótulos y cifras—, con escenas ilustradas en las páginas de concepto, UI despiezada en la
+solución, en «Cuatro propuestas», en la obra y en la verificación, y más aire. Exportado con `exportar-pieza.cjs`:
+**0 errores, 0 avisos**. Sin personajes.
 
 ## Páginas
 
-| p. | Ceja | Título | Qué muestra |
+| p. | Ceja | Título | Qué muestra (ola 7) |
 |---|---|---|---|
-| 1 | Tapa | La forma más simple de resolver los arreglos de una casa. | Foto de la Rambla (duotono navy) + maqueta de noche con rótulos + teléfono titanio; lema nuevo |
-| 2 | Contenido | El negocio, la oferta y el pedido, sin vueltas | Índice con `data-ir`, «Cómo leer» (estados, rótulos, tipos de dato), Handyx en una línea |
-| 3 | 01 Resumen | Un producto en pruebas y un pedido concreto | 4 cifras rotuladas (6 rubros · 0 % · 5 trabajos · USD 100.000), dónde estamos, modelo, qué buscamos, lanzamiento |
-| 4 | 02 Problema | Arreglar algo en casa todavía es una odisea | Dos carriles de 5 pasos (hipótesis) + tres preguntas del piloto; foto aérea del faro |
-| 5 | 03 Solución | Un arreglo, dos apps y una sola conversación | Zigzag de 4 pantallas que cruza las apps (P-Revisar → F-Revisar → C-Propuestas → S-Pagar) + 3 principios |
-| 6 | 04 Ecosistema | Tres superficies para un mismo arreglo | Maqueta de la costa de noche, tres superficies, conectado / falta conectar |
-| 7 | 05 Elegir | Cuatro propuestas, una decisión | Héroe C-Propuestas (70 mm) con 4 notas y estados |
-| 8–9 | 06 Obra (doble) | Un baño completo, de la propuesta al último pago · Todo queda a la vista, y Handyx no toca la plata | `.etapas` de 6 pasos + 6 pantallas de 50 mm (F-PropuestaObra, O-Propuesta, F-ObraPostulantes, F-ObraDia, O-Repuesto, O-Pagos) |
-| 10 | 07 Validamos | Registrarse no es estar verificado | Etapas preregistro → contacto → alta → revisión → habilitado, héroe C-Certificados (64 mm) |
-| 11 | 08 Camino | Se sube con trabajos, no con rankings | Héroe G-Inicio (58 mm), escalera de 4 estaciones con estados, reglas |
-| 12 | 09 Fugas | Nada lo impide del todo: hacemos que convenga quedarse | M-Chat + S-Informe, 9 mecanismos con estado, cómo se mide, primera prueba |
-| 13 | 10 Mercado | Empezamos por un mercado que podemos medir | Cuenta 259.623 × 1 × USD 40 ≈ USD 10,4 M, por qué Mar del Plata, niveles; foto aérea del centro |
-| 14 | 11 Modelo | Sin comisión al especialista, una tarifa de servicio para quien pide | Confirmada / en evaluación / futuras, flujo del dinero, ejemplo $ 100.000 → $ 115.000 |
-| 15 | 12 Competencia | Cada alternativa cobra de una forma distinta | Tabla por modelo de cobro, diferenciación como hipótesis |
-| 16 | 13 Adquisición | Dos ejes de captación, medidos por barrio | Digital y físico (todo «Previsto»), embudo, CAC techo USD 6, ≈ USD 2, pauta USD 100; foto aérea Cabo Corrientes |
-| 17 | 14 Crecimiento | Consolidar Mar del Plata antes de replicar | Escalera de 4 etapas con condición para pasar; foto del Provincial y el Casino |
-| 18 | 15 Roadmap | Separamos lo construido de lo planificado | Matriz 6 frentes × 3 columnas + orden de lo que sigue |
-| 19 | 16 Proyecciones | Proyectamos con variables, no con promesas | Equilibrio 400 ÷ 6 ≈ 67, tabla de variables, escenarios pendientes |
-| 20 | 17 Inversión | Una inversión atada a hitos medibles | USD 100.000, barra 45/30/15/10, partidas, condiciones [a definir] |
-| 21 | 18 Validación | Avances reales, cada uno con su respaldo | Publicaciones con fecha, 5 trabajos / $ 350.000, 56 registrados, próximo hito 50 + 5 |
-| 22 | 19 Preguntas | Las preguntas incómodas | 6 `.duda` sobre navy |
-| 23 | 20 Visión | Un problema viejo con una nueva solución que elegís | 3 objetivos rotulados (USD 1 M, USD 5 M, 40 %), equipo, ATICMA, pedido de reunión |
-| 24 | Contratapa | — | Foto del Casino, lema, QR al hub, contacto, colección |
+| 1 | Tapa | La forma más simple de resolver los arreglos de una casa. | Foto de la Rambla (duotono) + maqueta de noche + teléfono titanio; **nuevo:** tarjeta de propuesta del chat flotando delante del teléfono |
+| 2 | Contenido | El negocio, la oferta y el pedido, sin vueltas | Índice, «Cómo leer» (sin cambios) |
+| 3 | 01 Resumen | Un producto en pruebas y un pedido concreto | Sin cambios (4 cifras rotuladas, un bloque de estados) |
+| 4 | 02 Problema | Arreglar algo en casa todavía es una odisea | Dos carriles más compactos + **escena propia «odisea»** (cada lado con mensajes, notas y esperas; la conexión se corta) en lugar de la foto de fondo |
+| 5 | 03 Solución | Un arreglo, dos apps y una sola conversación | **Despiece** sobre azul: M-Chat grande y, flotando, 01 pedido (P-Revisar), 02 propuesta (F-Revisar), 03 tarjeta del chat (M-Chat), 04 pago (S-Pagar); 3 principios; un bloque de estados |
+| 6 | 04 Ecosistema | Tres superficies para un mismo arreglo | **Escena `conectar`** con dos guías (quien pide / quien trabaja) en lugar de la maqueta de la costa; tres superficies con estado en texto |
+| 7 | 05 Elegir | Cuatro propuestas, una decisión | **Despiece**: C-Propuestas + precio orientativo y la tarjeta de Julián ampliados, 5 guías (orientativo, orden de llegada, precio/fecha/garantía, sellos, aceptar) |
+| 8 | 06 Obra 1/2 | Un baño completo, de la propuesta al último pago | Página de imagen: **escena `obra`** a todo el ancho + 6 etapas con estado en texto |
+| 9 | 06 Obra 2/2 | Todo queda a la vista, y Handyx no toca la plata | **Despiece** sobre azul profundo: O-Pagos + O-Propuesta (2), F-ObraDia (4), O-Repuesto (5), etapas pagadas (6); reparto, dirección por día, para el negocio |
+| 10 | 07 Validamos | Registrarse no es estar verificado | **Escena `verificar`** junto al título; 5 etapas; **despiece** del bloque «Verificado por Operations» (C-Certificados) con 4 guías |
+| 11 | 08 Camino | Se sube con trabajos, no con rankings | **Escena `camino`** a todo el ancho con dos recortes de G-Inicio flotando (anillo 8/10, mini camino); escalera de 4 estaciones |
+| 12 | 09 Fugas | Nada lo impide del todo: hacemos que convenga quedarse | **Escena propia «quedarse»** (los dos lados dentro del mismo pedido; alrededor chat, propuestas, dirección, garantía, reseñas); 9 mecanismos con estado en texto; cómo se mide |
+| 13 | 10 Mercado | Empezamos por un mercado que podemos medir | Sin cambios |
+| 14 | 11 Modelo | Sin comisión al especialista, una tarifa de servicio para quien pide | **Escena `pago`** (tono claro) + tres frases de cómo circula el dinero, en lugar del diagrama de cajas |
+| 15 | 12 Competencia | Cada alternativa cobra de una forma distinta | Sin cambios |
+| 16 | 13 Adquisición | Dos ejes de captación, medidos por barrio | **Escena `barrios`** en lugar de la foto; una sola marca «Previsto» por columna |
+| 17 | 14 Crecimiento | Consolidar Mar del Plata antes de replicar | Sin cambios |
+| 18 | 15 Roadmap | Separamos lo construido de lo planificado | Estados dentro de la matriz como texto (las pastillas quedan en el encabezado) |
+| 19 | 16 Proyecciones | Proyectamos con variables, no con promesas | Sin cambios |
+| 20 | 17 Inversión | Una inversión atada a hitos medibles | Sin cambios |
+| 21 | 18 Validación | Avances reales, cada uno con su respaldo | Sin cambios |
+| 22 | 19 Preguntas | Las preguntas incómodas | Estados de «Hoy» como texto |
+| 23 | 20 Visión | Un problema viejo con una nueva solución que elegís | **Escena `equipo`** junto al equipo; ATICMA en una fila |
+| 24 | Contratapa | — | Sin cambios |
+
+## Ola 7 · escenas, despieces y componentes
+
+- **Escenas de `plantilla/escenas.js`:** `conectar` (p. 6), `obra` (p. 8), `verificar` (p. 10), `camino` (p. 11), `pago`
+  (p. 14, tono claro), `barrios` (p. 16), `equipo` (p. 23). Todas rotuladas como ilustración en la línea de origen.
+- **Escenas nuevas, propias de esta pieza** (en un `<script>` del `index.html`, mismo lenguaje: planos de la marca, personas
+  sin cara, un acento amarillo; `escenas.js` no se tocó): `odisea` (p. 4) y `quedarse` (p. 12). Se usan con
+  `<div data-escena-p="…" data-tono="oscuro">`. Copian la paleta y la función `persona` de `escenas.js`.
+- **Recortes** (`img/r-*.webp`, calidad 94, de `S/capturas/…` a 1170 px; caja exacta en `imagenes.json`): r-pedido,
+  r-propuesta-esp, r-chat-propuesta, r-pagar, r-orientativo, r-julian, r-propuesta-obra, r-jornada, r-repuesto,
+  r-etapa-pagada, r-verificado, r-anillo, r-mini-camino. Se quitaron de `img/` las pantallas que ya no se usan.
+- **Componentes nuevos en el `<style>`:** `.desp` (plano de color para un despiece, con `.capa.grano`, `.aro` y `.aro.linea`),
+  `.etq` (número + paso + app sobre un recorte), `.guia.g` + `.guia .t` (guía centrada en el punto, con título, línea chica y
+  estado), `.est` (estado como texto chico con su ícono: así queda **un solo bloque de pastillas por página**), `.esc`,
+  `.via-d`. Ningún `.toque` en esta versión: las guías y las etiquetas los reemplazan.
+- **Consistencia de datos ficticios:** en la obra se usa O-Propuesta (etapas de $ 180.000 / 220.000 / 260.000 / 190.000) junto
+  a O-Pagos, que coincide; F-PropuestaObra tiene otro reparto ($ 120.000 / 180.000 / 330.000 / 220.000) y quedó afuera para
+  no mostrar dos cifras distintas en el mismo despiece. F-ObraDia dice «jornada 3 de 6, martes 17, revestimiento», que
+  cuadra con F-PropuestaObra y no del todo con O-Propuesta (detalle del lienzo; no se nota en el recorte).
 
 ## Fuentes
 
@@ -53,7 +74,7 @@ teléfonos en perspectiva copiados de `estilos2/img/`.
 - **Pantallas evitadas:** D6-Alta (muestra antecedentes «PDF cargado», contra la regla «nunca como archivo»), C-Aceptar
   (dice «y tu teléfono, solo para este turno», choca con «chat sin compartir el teléfono»), G-Camino (tiene un personaje),
   G-MiniCamino (montos en borrador que se leen como compromiso).
-- **Toques:** coordenadas medidas sobre cada captura a 390 × 844 con la fórmula de la consigna y revisadas en el render.
+- **Toques:** desde la ola 7 no hay `.toque`; las partes se explican con guías y etiquetas sobre recortes ampliados.
 - Lema nuevo en tapa, p. 23 y contratapa. Personajes: ninguno.
 
 ## Componentes nuevos (en el `<style>` de la pieza)

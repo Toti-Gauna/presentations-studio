@@ -68,7 +68,7 @@
 
   /* ---------- odisea en dos carriles ---------- */
   .carril { position: relative; }
-  .carril .paso-o { display: grid; grid-template-columns: 7mm 1fr; column-gap: 3mm; padding: 3.6mm 0; border-top: 0.2mm solid rgba(233, 239, 249, 0.14); }
+  .carril .paso-o { display: grid; grid-template-columns: 7mm 1fr; column-gap: 3mm; padding: 2.8mm 0; border-top: 0.2mm solid rgba(233, 239, 249, 0.14); }
   .carril .paso-o .k { width: 6.4mm; height: 6.4mm; border-radius: 50%; display: grid; place-items: center; box-shadow: inset 0 0 0 0.3mm var(--amarillo); color: var(--amarillo); font: 900 7pt/1 var(--f-titulos); font-stretch: 112.5%; }
   .carril .paso-o .p-h { font-size: 9.8pt; } .carril .paso-o .p-texto { font-size: 8.4pt; }
   .carril .paso-o .p-texto { margin-top: 0.4mm; }
@@ -127,6 +127,8 @@
   .flujo-din .via { text-align: center; font: 600 6.4pt/1.3 var(--f-texto); color: var(--gris); }
   .flujo-din .via::before { content: ''; display: block; height: 0; border-top: 0.45mm solid var(--azul); margin: 0 1mm 1.4mm; }
   .flujo-din .via.punteada::before { border-top-style: dashed; border-color: var(--gris-claro); }
+  .via-d { margin-top: 2.6mm; padding-top: 2.6mm; border-top: 0.2mm solid var(--borde-frio); font: 400 8pt/1.45 var(--f-texto); color: var(--tinta-2); }
+  .via-d b { color: var(--navy); font-weight: 750; }
   .ejemplo td.num { font-family: var(--f-titulos); font-weight: 800; font-stretch: 112.5%; }
 
   /* ---------- roadmap ---------- */
@@ -182,6 +184,52 @@
   .hueso .tabla td { padding: 2.4mm 2.4mm 2.4mm 0; }
   .matriz { font-size: 7.9pt; } .matriz td { padding: 2.8mm 2.4mm 2.8mm 0; }
   #vision .meta .p-cifra { font-size: 28pt; }
+
+  /* ===================== ola 7 · dirección de arte ===================== */
+  /* estado como texto chico junto al título de la función (las pastillas quedan para un solo bloque por página) */
+  .est { display: inline-flex; align-items: center; gap: 1mm; font: 750 5.9pt/1.1 var(--f-texto); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; vertical-align: 0.12em; }
+  .est::before { content: ''; flex: none; width: 2.4mm; height: 2.4mm; background: currentColor; -webkit-mask: var(--icono) center / contain no-repeat; mask: var(--icono) center / contain no-repeat; }
+  .est.construido { color: #0D5A31; --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='black'/%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .est.en-pruebas { color: var(--azul-profundo); --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.6' fill='none' stroke='black' stroke-width='2.8'/%3E%3Cpath d='M12 2.4a9.6 9.6 0 0 1 0 19.2z' fill='black'/%3E%3C/svg%3E"); }
+  .est.disenado { color: #6B5800; --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20l1-4.6L15.6 4.8a2 2 0 0 1 2.8 0l.8.8a2 2 0 0 1 0 2.8L8.6 19 4 20z' fill='black'/%3E%3C/svg%3E"); }
+  .est.concepto { color: var(--gris); --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke='black' stroke-width='2.6' stroke-dasharray='3.2 3'/%3E%3C/svg%3E"); }
+  .p-oscuro .est.construido, .desp .est.construido { color: #A9DDBB; }
+  .p-oscuro .est.en-pruebas, .desp .est.en-pruebas { color: #A9C4EE; }
+  .p-oscuro .est.disenado, .desp .est.disenado { color: var(--amarillo); }
+  .p-oscuro .est.concepto, .desp .est.concepto { color: rgba(233, 239, 249, 0.62); }
+  .p-h .est { margin-left: 1.6mm; }
+
+  /* UI despiezada: el teléfono y, flotando, recortes reales ampliados sobre un plano de color de la marca */
+  .desp { position: relative; flex: none; border-radius: 6mm; overflow: hidden; background: var(--azul); }
+  .desp.prof { background: var(--azul-profundo); }
+  .desp > .capa { position: absolute; inset: 0; }
+  .desp .aro { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.07); }
+  .desp .aro.linea { background: none; box-shadow: inset 0 0 0 0.3mm rgba(255, 255, 255, 0.16); }
+  .desp .movil { position: absolute; z-index: 1; box-shadow: inset 0 0 0 0.15mm rgba(255, 255, 255, 0.3), 0 1.5mm 3mm rgba(8, 20, 42, 0.3), 0 9mm 20mm rgba(8, 20, 42, 0.4); }
+  .desp .flota { z-index: 2; }
+  .desp .rotulo { position: absolute; z-index: 3; }
+  .etq { position: absolute; z-index: 3; display: flex; align-items: flex-start; gap: 2mm; white-space: nowrap; font: 750 8pt/1.1 var(--f-texto); color: #FFFFFF; }
+  .etq .k { font: 900 11pt/0.9 var(--f-titulos); font-stretch: 125%; color: var(--amarillo); }
+  .etq .tx { display: flex; flex-direction: column; }
+  .etq .app { margin: 1mm 0 0; color: rgba(233, 239, 249, 0.72); }
+  .etq .app.pro { color: var(--amarillo); }
+
+  /* guías: la etiqueta se centra en la altura del punto que explica */
+  .guia.g { transform: translateY(-50%); }
+  .guia .t { display: block; white-space: normal; width: var(--ancho-t, 40mm); font: 750 7.6pt/1.25 var(--f-texto); }
+  .guia.der .t { text-align: right; }
+  .guia .t small { display: block; margin-top: 0.6mm; font: 400 6.7pt/1.38 var(--f-texto); color: rgba(233, 239, 249, 0.78); }
+  .guia .t .est { margin-top: 1.2mm; }
+
+  /* escenas ilustradas (plantilla/escenas.js y las propias de esta pieza, abajo) */
+  .esc { position: relative; flex: none; }
+  .esc > [data-escena], .esc > [data-escena-p] { width: 100%; }
+  .pie-esc { font: 600 7.2pt/1.4 var(--f-texto); color: rgba(233, 239, 249, 0.66); }
+
+  /* etapas con el estado en texto */
+  .etapa .est { display: flex; width: max-content; margin-top: 1.8mm; }
+  .etapa .est + .est { margin-top: 1mm; }
+  .peldano .est { margin-top: 2mm; align-self: flex-start; }
 </style>
 </head>
 <body>
@@ -194,6 +242,7 @@
       <div data-iso="maqueta" data-paleta="noche" data-pines="1" data-rotulos="1" data-tam="15" class="abs" style="left:-4mm;width:214mm;bottom:20mm"></div>
     </div>
     <img class="abs permite-salir" src="img/m-propuestas-titanio-der.webp" alt="" style="right:5mm;top:34mm;width:70mm;z-index:2">
+    <div class="flota abs permite-salir" style="left:118mm;top:121mm;width:50mm;z-index:3;border-radius:2.6mm;box-shadow:0 .8mm 1.6mm rgba(0,0,0,.25),0 7mm 18mm rgba(0,0,0,.45)"><img src="img/r-chat-propuesta.webp" alt="Tarjeta de propuesta en el chat: $ 45.000, aceptar"></div>
     <div class="caja" style="top:15mm;left:16mm;right:16mm;bottom:14mm">
       <div class="fila entre" style="align-items:flex-start"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx" style="height:8.5mm"><div class="serie" style="color:#FFFFFF"><b>Colección Handyx · Hecho en Mar del Plata</b>Edición 1 · Noviembre de 2026</div></div>
       <div style="margin-top:24mm;max-width:116mm">
@@ -298,13 +347,13 @@
 <!-- =============================== 4 · PROBLEMA =============================== -->
 <section class="pagina p-oscuro" id="problema">
   <div class="lamina">
-    <div class="a-sangre" style="overflow:hidden"><div class="foto" style="right:0;bottom:0;width:190mm;height:150mm;--capa:linear-gradient(180deg,#0E1D36 0%,rgba(14,29,54,0.25) 40%,rgba(14,29,54,0.45) 75%,rgba(14,29,54,0.85) 100%),linear-gradient(90deg,#0E1D36 0%,rgba(14,29,54,0) 30%)"><img src="../../marca/fotos/aerea-faro-mogotes-navy.webp" alt="" style="object-position:50% 60%"></div></div>
+    <div class="a-sangre grano" style="background:radial-gradient(150mm 90mm at 50% 66%, #15315D 0%, rgba(14,29,54,0) 72%)"></div>
     <div class="cab-p"><span>02 · El problema</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">El problema</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:140mm">Arreglar algo en casa todavía es una <span class="p-marca">odisea</span></h1>
-      <p class="p-lead" style="margin-top:5mm;max-width:120mm;font-size:10.4pt">De los dos lados del arreglo. Son hipótesis de producto, armadas en conversaciones con vecinos y especialistas: el piloto las confirma o las descarta.</p>
-      <div class="grilla" style="margin-top:12mm;column-gap:9mm">
+      <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.4pt">De los dos lados del arreglo. Son hipótesis de producto, armadas en conversaciones con vecinos y especialistas: el piloto las confirma o las descarta.</p>
+      <div class="grilla" style="margin-top:9mm;column-gap:9mm">
         <div class="c-6 carril"><p class="p-h" style="color:var(--amarillo);margin-bottom:2mm">Quien necesita un arreglo</p>
           <div class="paso-o"><span class="k">1</span><div><p class="p-h">Pregunta a conocidos</p><p class="p-texto">Y en los grupos del barrio o del edificio, sin saber a quién creerle.</p></div></div>
           <div class="paso-o"><span class="k">2</span><div><p class="p-h">Espera</p><p class="p-texto">Las respuestas llegan de a una; el precio, al final.</p></div></div>
@@ -320,227 +369,238 @@
           <div class="paso-o"><span class="k">5</span><div><p class="p-h">No tiene cómo mostrarse</p><p class="p-texto">Un trabajo bien hecho no queda a la vista de nuevos clientes.</p></div></div>
         </div>
       </div>
+      <div class="esc" style="margin:2mm auto 0;width:96mm"><div data-escena-p="odisea" data-tono="oscuro"></div></div>
       <p class="p-h empuja" style="margin-bottom:3mm">Tres preguntas que el piloto tiene que responder</p>
       <div class="grilla" style="column-gap:4mm">
         <div class="c-4 pregunta-piloto"><p class="q">¿Cuántas propuestas recibe un pedido, y en cuánto tiempo?</p><p class="p-texto">Sin ese dato no prometemos plazos: el horario lo declara cada especialista.</p></div>
         <div class="c-4 pregunta-piloto"><p class="q">¿Quien pide elige por precio, por perfil o por las dos cosas?</p><p class="p-texto">Define qué mostrar primero en cada propuesta.</p></div>
         <div class="c-4 pregunta-piloto"><p class="q">¿Quien contrató una vez vuelve a contratar dentro de Handyx?</p><p class="p-texto">Es la prueba de que el valor queda adentro.</p></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Hipótesis cualitativas del equipo, de conversaciones con vecinos y especialistas informadas por el fundador: sin número auditado ni muestra estadística. Ilustración: el faro y Punta Mogotes.</p>
+      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Hipótesis cualitativas del equipo, de conversaciones con vecinos y especialistas informadas por el fundador: sin número auditado ni muestra estadística. Escena: ilustración propia de esta pieza.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 5 · SOLUCIÓN =============================== -->
+<!-- =============================== 5 · SOLUCIÓN (despiece) =============================== -->
 <section class="pagina p-oscuro" id="solucion">
   <div class="lamina">
-    <div class="a-sangre" style="background:radial-gradient(160mm 100mm at 50% 55%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
     <div class="cab-p"><span>03 · La solución</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">La solución, de punta a punta</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:160mm">Un arreglo, <span class="p-marca">dos apps</span> y una sola conversación</h1>
-      <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">Quien pide publica; los especialistas de su zona proponen con su precio; quien pide compara, elige y paga directo. Handyx ordena el camino y no toca la plata del trabajo.</p>
-      <div class="zigzag" style="margin-top:9mm">
-        <div class="movil titanio" style="left:0;top:0"><div class="pant"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido"></div><span class="toque" style="left:50%;top:92.2%">1</span></div>
-        <div class="movil titanio" style="left:44.67mm;top:42mm"><div class="pant"><img src="img/f-revisar.webp" alt="Revisar la propuesta antes de enviarla"></div><span class="toque" style="left:50%;top:85.5%">2</span></div>
-        <div class="movil titanio" style="left:89.33mm;top:0"><div class="pant"><img src="img/c-propuestas.webp" alt="Propuestas recibidas"></div><span class="toque" style="left:73.5%;top:62.3%">3</span></div>
-        <div class="movil titanio" style="left:134mm;top:42mm"><div class="pant"><img src="img/s-pagar.webp" alt="Pagar al especialista"></div><span class="toque" style="left:83.3%;top:39.1%">4</span></div>
-        <svg class="enlaces" viewBox="0 0 174 128" preserveAspectRatio="none"><defs><marker id="f5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#F5F59A"/></marker></defs>
-          <g fill="none" stroke="#F5F59A" stroke-width="0.55" stroke-linecap="round" marker-end="url(#f5)"><path d="M23.4 76.2 C35 76.2 34 86 43.4 86"/><path d="M68 112.6 C84 112.6 80 50 88.1 50"/><path d="M122 51.5 C128 51.5 126 66 132.8 66"/></g></svg>
-        <div class="pie" style="left:0;top:90mm"><div class="n">01</div><span class="app">Customer App</span><p class="p-h">Publica el pedido</p><p class="p-texto">Rubro, qué pasa y un precio orientativo de referencia.</p></div>
-        <div class="pie" style="left:44.67mm;top:0"><div class="n">02</div><span class="app pro">Professional App</span><p class="p-h">Propone con su precio</p><p class="p-texto">Ve la zona aproximada, pone su precio y su horario.</p></div>
-        <div class="pie" style="left:89.33mm;top:90mm"><div class="n">03</div><span class="app">Customer App</span><p class="p-h">Elige y acepta</p><p class="p-texto">Compara precio, fecha, garantía y perfil; acepta una.</p></div>
-        <div class="pie" style="left:134mm;top:0"><div class="n">04</div><span class="app">Customer App</span><p class="p-h">Paga directo</p><p class="p-texto">Al especialista, con Mercado Pago o en efectivo.</p></div>
+      <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">Quien pide publica; los especialistas de su zona proponen con su precio; quien pide compara, elige y paga directo. Todo pasa por el chat del pedido, y Handyx no toca la plata del trabajo.</p>
+      <div class="desp" style="margin-top:9mm;height:150mm">
+        <div class="capa grano"></div>
+        <div class="aro" style="left:27mm;top:6mm;width:120mm;height:120mm"></div>
+        <div class="aro linea" style="left:12mm;top:-9mm;width:150mm;height:150mm"></div>
+        <div class="movil titanio" style="--w:58mm;left:58mm;top:17mm"><div class="pant"><img src="img/m-chat.webp" alt="Chat del pedido: la propuesta llega como tarjeta"></div></div>
+        <span class="etq" style="left:7mm;top:9mm"><span class="k">01</span><span class="tx">Publica el pedido<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:6mm;top:20mm;width:60mm"><img src="img/r-pedido.webp" alt="Tarjeta del pedido: Plomería, pierde o gotea una canilla"></div>
+        <span class="etq" style="left:118mm;top:9mm"><span class="k">02</span><span class="tx">Propone con su precio<span class="app pro">Professional App</span></span></span>
+        <div class="flota" style="left:110mm;top:20mm;width:57mm"><img src="img/r-propuesta-esp.webp" alt="Propuesta del especialista: $ 47.000, recibe el 100 %"></div>
+        <span class="etq" style="left:7mm;top:80mm"><span class="k">03</span><span class="tx">Elige y acepta en el chat<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:4mm;top:91mm;width:62mm"><img src="img/r-chat-propuesta.webp" alt="Tarjeta de propuesta en el chat con Ver y Aceptar"></div>
+        <span class="etq" style="left:118mm;top:80mm"><span class="k">04</span><span class="tx">Paga directo<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:110mm;top:91mm;width:57mm"><img src="img/r-pagar.webp" alt="Pagar a Julián Ortiz con Mercado Pago"></div>
+        <span class="rotulo diseno" style="left:6mm;bottom:6mm">Diseño propuesto · datos ficticios</span>
       </div>
       <div class="grilla empuja" style="column-gap:7mm">
         <div class="c-4 col-r principio"><p class="p-h">Sin comisión al especialista</p><p class="p-texto">Cobra su precio completo. Handyx se financia con una tarifa de servicio a quien pide.</p></div>
         <div class="c-4 col-r principio"><p class="p-h">Handyx sugiere, nunca impone</p><p class="p-texto">El precio lo pone cada especialista; la app muestra un rango de referencia.</p></div>
         <div class="c-4 col-r principio"><p class="p-h">La plata no pasa por Handyx</p><p class="p-texto">Un pago informado no es un pago verificado: queda verificado cuando se confirma.</p></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Publicar, proponer, comparar y aceptar <span class="estado en-pruebas">En pruebas</span> Pago directo informado <span class="estado en-pruebas">En pruebas</span> Precio orientativo <span class="estado disenado">Diseñado</span></p>
+      <p class="p-origen" style="margin-top:4mm">P-Revisar, F-Revisar, M-Chat y S-Pagar. Publicar, proponer, comparar y aceptar <span class="estado en-pruebas">En pruebas</span> Pago directo informado <span class="estado en-pruebas">En pruebas</span> Precio orientativo <span class="estado disenado">Diseñado</span></p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 6 · ECOSISTEMA =============================== -->
+<!-- =============================== 6 · ECOSISTEMA (escena: cómo conectamos) =============================== -->
 <section class="pagina p-oscuro" id="ecosistema">
   <div class="lamina">
-    <div class="a-sangre" style="background:radial-gradient(140mm 90mm at 50% 42%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
+    <div class="a-sangre grano" style="background:radial-gradient(150mm 110mm at 50% 40%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
     <div class="cab-p"><span>04 · El ecosistema</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
-      <span class="p-ceja">El ecosistema Handyx</span>
+      <span class="p-ceja">El ecosistema Handyx · cómo conectamos</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:150mm">Tres superficies para un mismo <span class="p-marca">arreglo</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:140mm;font-size:10.4pt">Dos apps, una para cada lado del arreglo, y un portal para el equipo. Quien pide y quien trabaja se encuentran en el mismo pedido.</p>
-      <div data-iso="costa" data-paleta="noche" data-pines="1" data-rotulos="1" data-solo="faro,puerto,casino,torreon" class="permite-salir" style="margin:-4mm auto 0;width:146mm"></div>
+      <div class="esc" style="margin:2mm auto 0;width:150mm">
+        <div data-escena="conectar" data-tono="oscuro"></div>
+        <span class="guia der g" style="right:97.9mm;top:23.3mm;--largo:14mm"><span class="t" style="--ancho-t:30mm">Quien pide<small>Cuenta qué pasa y elige.</small></span></span>
+        <span class="guia g" style="left:92.6mm;top:23.3mm;--largo:16mm"><span class="t" style="--ancho-t:30mm">Quien trabaja<small>Propone con su precio y cobra completo.</small></span></span>
+      </div>
       <div class="grilla empuja" style="column-gap:7mm">
-        <div class="c-4 superficie"><div class="disp"><img src="img/m-inicio-titanio.webp" alt=""></div><span class="dossier">Dossier 02</span><p class="p-h">Customer App</p><p class="p-texto">Para quien necesita un arreglo: pide, compara propuestas con precio y paga directo.</p><span class="estado en-pruebas">En pruebas · vista de prueba</span></div>
-        <div class="c-4 superficie"><div class="disp"><img src="img/m-esp-pedido-titanio.webp" alt=""></div><span class="dossier">Dossier 03</span><p class="p-h">Professional App</p><p class="p-texto">Para el especialista: pedidos de su zona, su precio y su agenda, con cobro directo.</p><span class="estado en-pruebas">En pruebas · vista de prueba</span></div>
-        <div class="c-4 superficie"><div class="disp"><img src="img/m-portal-titanio.webp" alt="" style="width:100%;height:auto;max-height:none"></div><span class="dossier">Dossier 04</span><p class="p-h">Operations Portal</p><p class="p-texto">El equipo ordena preregistros, reclamos y campañas. Hoy trabaja con lo que llega de la landing.</p><span class="estado construido">Construido · sin datos reales</span></div>
+        <div class="c-4 superficie"><div class="disp" style="height:42mm"><img src="img/m-inicio-titanio.webp" alt=""></div><span class="dossier">Dossier 02</span><p class="p-h">Customer App <span class="est en-pruebas">En pruebas</span></p><p class="p-texto">Para quien necesita un arreglo: pide, compara propuestas con precio y paga directo.</p></div>
+        <div class="c-4 superficie"><div class="disp" style="height:42mm"><img src="img/m-esp-pedido-titanio.webp" alt=""></div><span class="dossier">Dossier 03</span><p class="p-h">Professional App <span class="est en-pruebas">En pruebas</span></p><p class="p-texto">Para el especialista: pedidos de su zona, su precio y su agenda, con cobro directo.</p></div>
+        <div class="c-4 superficie"><div class="disp" style="height:42mm"><img src="img/m-portal-titanio.webp" alt="" style="width:100%;height:auto;max-height:none"></div><span class="dossier">Dossier 04</span><p class="p-h">Operations Portal <span class="est construido">Construido</span></p><p class="p-texto">El equipo ordena preregistros, reclamos y campañas. Hoy trabaja con lo que llega de la landing, sin datos reales.</p></div>
       </div>
       <div class="grilla" style="margin-top:7mm;column-gap:7mm">
         <div class="c-6 col-r"><p class="p-h">Qué ya está conectado</p><p class="p-texto">Lo que alguien deja en la landing llega cifrado al backend de captación y el equipo lo trabaja desde el portal, probado en local. Las dos apps comparten un mismo contrato de datos.</p></div>
-        <div class="c-6 col-r"><p class="p-h">Qué falta conectar <span class="estado concepto" style="margin-left:1.4mm">Concepto</span></p><p class="p-texto">Lo que pasa en las apps —pedidos, pagos informados, verificación y reclamos— todavía no llega al portal. Es el próximo tramo del roadmap operativo.</p></div>
+        <div class="c-6 col-r"><p class="p-h">Qué falta conectar <span class="est concepto">Concepto</span></p><p class="p-texto">Lo que pasa en las apps —pedidos, pagos informados, verificación y reclamos— todavía no llega al portal. Es el próximo tramo del roadmap operativo.</p></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Repos de producto y publicaciones del 29/10 y del 07/11/2026; ningún backend está desplegado. Pantallas: diseño propuesto, datos ficticios. Maqueta de la costa: ilustración.</p>
+      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Repos de producto y publicaciones del 29/10 y del 07/11/2026; ningún backend está desplegado. Apps: vista de prueba con datos ficticios. Escena: ilustración, no una pantalla.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 7 · ELEGIR =============================== -->
+<!-- =============================== 7 · ELEGIR (despiece) =============================== -->
 <section class="pagina p-oscuro" id="elegir">
   <div class="lamina">
-    <div class="a-sangre" style="background:radial-gradient(120mm 140mm at 26% 58%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
     <div class="cab-p"><span>05 · Elegir por calidad y precio</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">La pantalla que decide</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:160mm">Cuatro propuestas, <span class="p-marca">una decisión</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">Acá está el valor para quien pide: precio, fecha, garantía y quién es cada especialista, lado a lado y antes de contratar. Es también donde Handyx cobra su tarifa, a la vista.</p>
-      <div class="heroe" style="margin-top:10mm">
-        <div class="movil titanio" style="--w:70mm"><div class="pant"><img src="img/c-propuestas.webp" alt="Lista de propuestas"></div>
-          <span class="toque" style="left:49.3%;top:14.9%">1</span><span class="toque" style="left:71.8%;top:30.7%">2</span><span class="toque" style="left:24.6%;top:56%">3</span><span class="toque" style="left:73.5%;top:62.3%">4</span></div>
-        <div class="notas">
-          <div class="nota"><span class="num">1</span><div><p class="p-h">Un precio orientativo de referencia</p><p class="p-texto">Sale de trabajos parecidos en la zona. Handyx sugiere; cada especialista pone su precio.</p><span class="estado disenado">Diseñado</span></div></div>
-          <div class="nota"><span class="num">2</span><div><p class="p-h">En el orden en que llegan, sin rankings</p><p class="p-texto">La lista no es una recomendación. La etiqueta de promedio que se ve es un diseño a validar.</p><span class="estado en-pruebas">Orden de llegada · En pruebas</span></div></div>
-          <div class="nota"><span class="num">3</span><div><p class="p-h">Identidad y antecedentes, a la vista</p><p class="p-texto">Los sellos salen del estado del servidor: los pone el equipo cuando verifica (p. <span data-ir="validamos"><span class="p"></span></span>).</p><span class="estado en-pruebas">En pruebas</span></div></div>
-          <div class="nota"><span class="num">4</span><div><p class="p-h">Se acepta exactamente lo que se vio</p><p class="p-texto">Aceptar pide confirmación; si la propuesta cambió, no se acepta la versión vieja. Una sola propuesta gana.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        </div>
+      <div class="desp" style="margin-top:9mm;height:156mm">
+        <div class="capa grano"></div>
+        <div class="aro" style="left:-12mm;top:10mm;width:122mm;height:122mm"></div>
+        <div class="movil titanio" style="--w:64mm;left:6mm;top:14mm"><div class="pant"><img src="img/c-propuestas.webp" alt="Lista de cuatro propuestas"></div></div>
+        <div class="flota" style="left:46mm;top:12mm;width:82mm"><img src="img/r-orientativo.webp" alt="Precio orientativo de Handyx: $ 38.000 a $ 52.000"></div>
+        <div class="flota" style="left:46mm;top:41mm;width:82mm"><img src="img/r-julian.webp" alt="Propuesta de Julián Ortiz: $ 45.000, jueves 19 de 10 a 12 h"></div>
+        <span class="guia clara g" style="left:126mm;top:23.2mm;--largo:3mm"><span class="t" style="--ancho-t:38mm">Precio orientativo<small>De trabajos parecidos en la zona: Handyx sugiere, cada uno pone su precio.</small><span class="est disenado">Diseñado</span></span></span>
+        <span class="guia clara g" style="left:121.2mm;top:51.6mm;--largo:7.8mm"><span class="t" style="--ancho-t:38mm">En el orden en que llegan<small>Sin rankings. La etiqueta de promedio es un diseño a validar.</small><span class="est en-pruebas">En pruebas</span></span></span>
+        <span class="guia clara g" style="left:122.4mm;top:69.9mm;--largo:6.6mm"><span class="t" style="--ancho-t:38mm">Precio, fecha y garantía<small>Todo lo que importa, antes de contratar.</small></span></span>
+        <span class="guia clara g" style="left:99.8mm;top:100.4mm;--largo:29.2mm"><span class="t" style="--ancho-t:38mm">Identidad y antecedentes<small>Sellos del servidor (p. <span data-ir="validamos"><span class="p"></span></span>).</small><span class="est en-pruebas">En pruebas</span></span></span>
+        <span class="guia clara g" style="left:121mm;top:113.5mm;--largo:8mm"><span class="t" style="--ancho-t:38mm">Se acepta lo que se vio<small>Con confirmación; gana una sola.</small><span class="est en-pruebas">En pruebas</span></span></span>
+        <span class="rotulo diseno" style="right:6mm;bottom:6mm">Diseño propuesto · datos ficticios</span>
       </div>
       <div class="grilla empuja" style="column-gap:7mm">
         <div class="c-6 col-r"><p class="p-h">Por qué importa para el negocio</p><p class="p-texto">Si comparar adentro es más claro que pedir presupuestos por mensajes, el pedido vuelve a Handyx. Es una hipótesis: la mide la repetición (p. <span data-ir="fugas"><span class="p"></span></span>).</p></div>
         <div class="c-6 col-r"><p class="p-h">La tarifa, antes de contratar</p><p class="p-texto">0 % hasta el 10/12/2026. Después, 15 % sobre el precio del especialista, en evaluación (p. <span data-ir="modelo"><span class="p"></span></span>).</p></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Lienzo «App del usuario», C-Propuestas. Estado de cada función según la auditoría del 07/11/2026.</p>
+      <p class="p-origen" style="margin-top:4mm">Lienzo «App del usuario», C-Propuestas: la pantalla y sus partes ampliadas. Estado de cada función según la auditoría del 07/11/2026.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 8 · OBRA (1/2) =============================== -->
+<!-- =============================== 8 · OBRA (1/2) · escena =============================== -->
 <section class="pagina p-oscuro" id="obra">
   <div class="lamina">
+    <div class="a-sangre grano" style="background:radial-gradient(170mm 120mm at 50% 52%, #15315D 0%, rgba(14,29,54,0) 72%)"></div>
     <div class="cab-p"><span>06 · Una obra de punta a punta · 1/2</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">Una obra de punta a punta</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:170mm">Un baño completo, de la propuesta al <span class="p-marca">último pago</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.4pt">Una obra de varios días cruza las dos apps: el especialista la arma por etapas, el cliente la aprueba, el equipo se suma y cada etapa se paga a quien la hizo.</p>
-      <div class="etapas" style="margin-top:9mm">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">Propone</p><p class="p-texto">Etapas, jornadas y montos.</p></div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Aprueba</p><p class="p-texto">El cliente, o pide cambios.</p></div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">Arma el equipo</p><p class="p-texto">Solo verificados.</p></div>
-        <div class="etapa"><span class="pto">4</span><p class="p-h">Cada jornada</p><p class="p-texto">Tareas y avance.</p></div>
-        <div class="etapa"><span class="pto">5</span><p class="p-h">Repuestos</p><p class="p-texto">Nada se suma sin OK.</p></div>
-        <div class="etapa"><span class="pto">6</span><p class="p-h">Paga por etapa</p><p class="p-texto">Directo a quien la hizo.</p></div>
+      <div class="esc" style="margin-top:6mm">
+        <div data-escena="obra" data-tono="oscuro"></div>
       </div>
-      <div class="fila-pant empuja" style="position:relative">
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/f-propuesta-obra.webp" alt="Propuesta de obra del especialista"></div><span class="toque" style="left:49.5%;top:91.6%">1</span></div>
-          <div class="n-et">01</div><span class="app pro">Professional App</span><p class="p-h">Arma la propuesta</p><p class="p-texto">Etapas con monto, jornadas, equipo; cobro por etapa y materiales aparte. Llega como tarjeta al chat.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/o-propuesta.webp" alt="Propuesta de obra que ve el cliente"></div><span class="toque" style="left:49.8%;top:84.1%">2</span></div>
-          <div class="n-et">02</div><span class="app">Customer App</span><p class="p-h">El cliente la aprueba</p><p class="p-texto">Ve el total, los días y a quién le paga cada etapa. Aprueba o pide cambios.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/f-obra-postulantes.webp" alt="Postulantes para la obra"></div><span class="toque" style="left:49.5%;top:40%">3</span></div>
-          <div class="n-et">03</div><span class="app pro">Professional App</span><p class="p-h">Suma otro oficio</p><p class="p-texto">La búsqueda la ven solo especialistas verificados de la zona; elige mirando su perfil.</p><span class="estado disenado">Diseñado</span></div>
+      <div class="etapas empuja">
+        <div class="etapa"><span class="pto">1</span><p class="p-h">Propone</p><p class="p-texto">Etapas con monto, jornadas y equipo.</p><span class="est disenado">Diseñado</span></div>
+        <div class="etapa"><span class="pto">2</span><p class="p-h">Aprueba</p><p class="p-texto">El cliente ve el total y a quién le paga cada etapa.</p><span class="est disenado">Diseñado</span></div>
+        <div class="etapa"><span class="pto">3</span><p class="p-h">Arma el equipo</p><p class="p-texto">La búsqueda la ven solo verificados de la zona.</p><span class="est disenado">Diseñado</span></div>
+        <div class="etapa"><span class="pto">4</span><p class="p-h">Cada jornada</p><p class="p-texto">Quién viene, tareas y el avance con fotos.</p><span class="est disenado">Diseñado</span><span class="est en-pruebas">Fotos · En pruebas</span></div>
+        <div class="etapa"><span class="pto">5</span><p class="p-h">Repuestos</p><p class="p-texto">Con el ticket; nada se suma sin OK.</p><span class="est disenado">Diseñado</span></div>
+        <div class="etapa"><span class="pto">6</span><p class="p-h">Paga por etapa</p><p class="p-texto">Directo a quien la hizo, al terminarla.</p><span class="est en-pruebas">En pruebas</span></div>
       </div>
-      <p class="p-origen" style="margin-top:6mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Lienzos del usuario y del especialista: F-PropuestaObra, O-Propuesta, F-ObraPostulantes. Sigue en la página de enfrente.</p>
+      <p class="p-origen" style="margin-top:6mm">Escena: ilustración de una obra por etapas. Flujo de los lienzos del usuario y del especialista (FL-Obra, RC-Obra); estados según la auditoría del 07/11/2026. Las pantallas siguen en la página de enfrente.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 9 · OBRA (2/2) =============================== -->
+<!-- =============================== 9 · OBRA (2/2) · despiece =============================== -->
 <section class="pagina p-oscuro">
   <div class="lamina">
     <div class="cab-p"><span>06 · Una obra de punta a punta · 2/2</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">Día a día y la plata</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:170mm">Todo queda a la vista, y Handyx <span class="p-marca">no toca la plata</span></h1>
-      <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.4pt">Cada jornada dice quién viene y qué se hizo; cada repuesto espera el OK del cliente; cada etapa se paga directo. Handyx registra lo acordado.</p>
-      <div class="fila-pant" style="margin-top:10mm">
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/f-obra-dia.webp" alt="Jornada de la obra"></div><span class="toque" style="left:15.3%;top:52.4%">4</span></div>
-          <div class="n-et">04</div><span class="app pro">Professional App</span><p class="p-h">Cada jornada, en orden</p><p class="p-texto">Quién viene, tareas para tachar y el avance del día con fotos, que ve el cliente.</p><span class="estado disenado">Diseñado</span> <span class="estado en-pruebas">Diario con fotos · En pruebas</span></div>
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/o-repuesto.webp" alt="Repuesto para aprobar"></div><span class="toque" style="left:48.8%;top:85%">5</span></div>
-          <div class="n-et">05</div><span class="app">Customer App</span><p class="p-h">Aprueba cada repuesto</p><p class="p-texto">Con el precio de la ferretería y la foto del ticket. Nada se suma al acuerdo sin su OK.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="obra-col"><div class="movil titanio"><div class="pant"><img src="img/o-pagos.webp" alt="Pagos de la obra"></div><span class="toque" style="left:49%;top:91.6%">6</span></div>
-          <div class="n-et">06</div><span class="app">Customer App</span><p class="p-h">Paga cada etapa</p><p class="p-texto">Directo a quien la hizo, cuando la confirma terminada. Pagado y lo que falta, separados.</p><span class="estado en-pruebas">Pago por etapa · En pruebas</span></div>
+      <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.4pt">El cliente aprueba la obra por etapas; cada jornada dice quién viene y qué se hizo; cada repuesto espera el OK del cliente; cada etapa se paga directo. Handyx registra lo acordado.</p>
+      <div class="desp prof" style="margin-top:9mm;height:150mm">
+        <div class="capa grano"></div>
+        <div class="aro" style="left:32mm;top:8mm;width:110mm;height:110mm"></div>
+        <div class="movil titanio" style="--w:56mm;left:57mm;top:21mm"><div class="pant"><img src="img/o-pagos.webp" alt="Pagos de la obra por etapa"></div></div>
+        <span class="etq" style="left:7mm;top:8mm"><span class="k">2</span><span class="tx">Aprueba la obra<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:5mm;top:19mm;width:56mm"><img src="img/r-propuesta-obra.webp" alt="Propuesta de obra: $ 850.000, etapas y a quién se le paga cada una"></div>
+        <span class="etq" style="left:118mm;top:8mm"><span class="k">4</span><span class="tx">Cada jornada<span class="app pro">Professional App</span></span></span>
+        <div class="flota" style="left:116mm;top:19mm;width:54mm"><img src="img/r-jornada.webp" alt="Jornada 3 de 6, martes 17"></div>
+        <span class="etq" style="left:118mm;top:48mm"><span class="k">5</span><span class="tx">Cada repuesto, con OK<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:116mm;top:59mm;width:54mm"><img src="img/r-repuesto.webp" alt="Repuesto para aprobar: $ 36.000 con la foto del ticket"></div>
+        <span class="etq" style="left:7mm;top:89mm"><span class="k">6</span><span class="tx">Cada etapa, directo<span class="app">Customer App</span></span></span>
+        <div class="flota" style="left:4mm;top:100mm;width:60mm"><img src="img/r-etapa-pagada.webp" alt="Etapas pagadas y verificadas, a quien las hizo"></div>
+        <span class="rotulo diseno" style="right:6mm;bottom:5mm">Diseño propuesto · datos ficticios</span>
       </div>
       <div class="no-hace empuja">
-        <div><p class="p-h" style="color:var(--amarillo)">El reparto, registrado</p><p class="p-texto" style="margin-top:1mm">El equipo acuerda cuánto le toca a cada uno; Handyx lo registra y no recibe ni reparte la plata. <span class="estado disenado">Diseñado</span></p></div>
-        <div><p class="p-h" style="color:var(--amarillo)">La dirección, por día</p><p class="p-texto" style="margin-top:1mm">Cada profesional ve la dirección exacta solo para los días que trabaja; en el grupo nadie ve el celular del cliente. <span class="estado disenado">Diseñado</span></p></div>
+        <div><p class="p-h" style="color:var(--amarillo)">El reparto, registrado</p><p class="p-texto" style="margin-top:1mm">El equipo acuerda cuánto le toca a cada uno; Handyx lo registra y no recibe ni reparte la plata.</p><span class="est disenado" style="margin-top:1.6mm">Diseñado</span></div>
+        <div><p class="p-h" style="color:var(--amarillo)">La dirección, por día</p><p class="p-texto" style="margin-top:1mm">Cada profesional ve la dirección exacta solo para los días que trabaja; en el grupo nadie ve el celular del cliente.</p><span class="est disenado" style="margin-top:1.6mm">Diseñado</span></div>
         <div><p class="p-h" style="color:var(--amarillo)">Para el negocio</p><p class="p-texto" style="margin-top:1mm">Una obra es un trabajo de ticket alto y de varios oficios: más razones para quedarse adentro que un arreglo suelto. Hipótesis a medir.</p></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> F-ObraDia, O-Repuesto y O-Pagos; reparto: F-Reparto; dirección por día: FL-Equipo. Nombres y montos inventados. Estado al 07/11/2026.</p>
+      <p class="p-origen" style="margin-top:4mm">O-Propuesta, F-ObraDia, O-Repuesto y O-Pagos; reparto: F-Reparto; dirección por día: FL-Equipo. Nombres y montos inventados. Estado al 07/11/2026.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 10 · VALIDAMOS =============================== -->
+<!-- =============================== 10 · VALIDAMOS (escena + despiece) =============================== -->
 <section class="pagina p-oscuro" id="validamos">
   <div class="lamina">
-    <div class="a-sangre" style="background:radial-gradient(120mm 140mm at 74% 66%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
     <div class="cab-p"><span>07 · Cómo validamos</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
-      <span class="p-ceja">Cómo validamos a los especialistas</span>
-      <h1 class="p-titulo" style="margin-top:5mm;max-width:160mm">Registrarse no es <span class="p-marca">estar verificado</span></h1>
-      <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">Un especialista recibe pedidos recién cuando el equipo revisó su identidad, sus antecedentes y, en los rubros que la piden, su matrícula. El sello sale del servidor, no de lo que alguien cargó.</p>
-      <div class="etapas" style="margin-top:9mm">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">Preregistro</p><p class="p-texto">En la landing, con aviso de privacidad. Formulario cerrado hasta el aviso definitivo.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Contacto</p><p class="p-texto">El equipo lo contacta desde el CRM del portal.</p><span class="estado construido">Construido</span></div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, rubros, zonas, selfie, DNI, CUIT/CUIL y certificados.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">4</span><p class="p-h">Revisión del equipo</p><p class="p-texto">Antecedentes en persona; corrige o rechaza.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">5</span><p class="p-h">Habilitado</p><p class="p-texto">Por rubro y zona; Gas y Aire, con matrícula.</p><span class="estado en-pruebas">En pruebas</span></div>
-      </div>
-      <div class="heroe invertido empuja">
-        <div class="movil titanio" style="--w:64mm"><div class="pant"><img src="img/c-certificados.webp" alt="Perfil del especialista con sus verificaciones"></div>
-          <span class="toque" style="left:50%;top:28.2%">1</span><span class="toque" style="left:76.3%;top:48.2%">2</span><span class="toque" style="left:76.3%;top:57.5%">3</span><span class="toque" style="left:77.5%;top:67.8%">4</span></div>
-        <div class="notas">
-          <p class="p-h" style="color:var(--amarillo)">Lo que ve quien elige, antes de contratar</p>
-          <div class="nota"><span class="num">1</span><div><p class="p-h">El sello lo pone el equipo</p><p class="p-texto">Solo el equipo de verificación habilita; el sello aparece cuando el servidor lo confirma.</p></div></div>
-          <div class="nota"><span class="num">2</span><div><p class="p-h">Identidad revisada, con fecha</p><p class="p-texto">Cada verificación dice cuándo se hizo.</p></div></div>
-          <div class="nota"><span class="num">3</span><div><p class="p-h">Antecedentes, en persona</p><p class="p-texto">Se muestran en un turno presencial: nunca circulan como archivo.</p></div></div>
-          <div class="nota"><span class="num">4</span><div><p class="p-h">Cargado no es verificado</p><p class="p-texto">Un curso subido y sin revisar se ve como «cargado», nunca como verificado.</p><span class="estado disenado">Perfil completo · Diseñado</span></div></div>
+      <div class="grilla" style="column-gap:6mm;align-items:end">
+        <div class="c-7">
+          <span class="p-ceja">Cómo validamos a los especialistas</span>
+          <h1 class="p-titulo" style="margin-top:5mm">Registrarse no es <span class="p-marca">estar verificado</span></h1>
+          <p class="p-lead" style="margin-top:5mm;font-size:10.4pt">Un especialista recibe pedidos recién cuando el equipo revisó su identidad, sus antecedentes y, en los rubros que la piden, su matrícula. El sello sale del servidor, no de lo que alguien cargó.</p>
         </div>
+        <div class="c-5 esc"><div data-escena="verificar" data-tono="oscuro"></div></div>
       </div>
-      <p class="p-origen" style="margin-top:6mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> C-Certificados. Alta en 10 pasos del lienzo: Diseñado; alta en código con antecedentes presenciales: En pruebas. Plazo de verificación: [a definir].</p>
+      <div class="etapas" style="margin-top:10mm">
+        <div class="etapa"><span class="pto">1</span><p class="p-h">Preregistro</p><p class="p-texto">En la landing, con aviso de privacidad. Cerrado hasta el aviso definitivo.</p><span class="est en-pruebas">En pruebas</span></div>
+        <div class="etapa"><span class="pto">2</span><p class="p-h">Contacto</p><p class="p-texto">El equipo lo contacta desde el CRM del portal.</p><span class="est construido">Construido</span></div>
+        <div class="etapa"><span class="pto">3</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, rubros, zonas, selfie, DNI, CUIT/CUIL y certificados.</p><span class="est en-pruebas">En pruebas</span></div>
+        <div class="etapa"><span class="pto">4</span><p class="p-h">Revisión del equipo</p><p class="p-texto">Antecedentes en persona; corrige o rechaza.</p><span class="est en-pruebas">En pruebas</span></div>
+        <div class="etapa"><span class="pto">5</span><p class="p-h">Habilitado</p><p class="p-texto">Por rubro y zona; Gas y Aire, con matrícula.</p><span class="est en-pruebas">En pruebas</span></div>
+      </div>
+      <div class="desp empuja" style="height:124mm">
+        <div class="capa grano"></div>
+        <div class="aro" style="left:-10mm;top:-12mm;width:118mm;height:118mm"></div>
+        <p class="abs" style="left:7mm;top:6mm;z-index:3;font:800 6.2pt/1 var(--f-texto);letter-spacing:.2em;text-transform:uppercase;color:var(--amarillo)">Lo que ve quien elige, antes de contratar</p>
+        <div class="flota" style="left:9mm;top:14mm;width:94mm"><img src="img/r-verificado.webp" alt="Verificado por Operations: identidad, antecedentes y un curso cargado sin revisar"></div>
+        <span class="guia clara g" style="left:95.3mm;top:34.1mm;--largo:10.7mm"><span class="t" style="--ancho-t:58mm">Identidad revisada, con fecha<small>Cada verificación dice cuándo se hizo.</small></span></span>
+        <span class="guia clara g" style="left:95.3mm;top:54.8mm;--largo:10.7mm"><span class="t" style="--ancho-t:58mm">Antecedentes, en persona<small>Se muestran en un turno presencial: nunca circulan como archivo.</small></span></span>
+        <span class="guia clara g" style="left:95.3mm;top:77.2mm;--largo:10.7mm"><span class="t" style="--ancho-t:58mm">Cargado no es verificado<small>Un curso subido y sin revisar se ve como «cargado», nunca como verificado.</small><span class="est disenado">Perfil completo · Diseñado</span></span></span>
+        <span class="guia clara g" style="left:95.3mm;top:99.5mm;--largo:10.7mm"><span class="t" style="--ancho-t:58mm">El sello lo pone el equipo<small>Solo el equipo de verificación habilita; el sello aparece cuando el servidor lo confirma.</small></span></span>
+        <span class="rotulo diseno" style="right:6mm;bottom:5mm">Diseño propuesto · datos ficticios</span>
+      </div>
+      <p class="p-origen" style="margin-top:4mm">C-Certificados, bloque «Verificado por Operations» ampliado. Alta en 10 pasos del lienzo: Diseñado; alta en código con antecedentes presenciales: En pruebas. Plazo de verificación: [a definir]. Escena: ilustración.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 11 · CAMINO =============================== -->
+<!-- =============================== 11 · CAMINO (escena + recortes) =============================== -->
 <section class="pagina p-oscuro" id="camino">
   <div class="lamina">
-    <div class="a-sangre" style="background:radial-gradient(120mm 140mm at 26% 46%, #15315D 0%, rgba(14,29,54,0) 70%)"></div>
+    <div class="a-sangre grano" style="background:radial-gradient(160mm 120mm at 55% 50%, #15315D 0%, rgba(14,29,54,0) 72%)"></div>
     <div class="cab-p"><span>08 · Cómo suben de categoría</span><span>Handyx · Business &amp; Investment</span></div>
     <div class="caja">
       <span class="p-ceja">Camino Handyx</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:166mm">Se sube con trabajos, <span class="p-marca">no con rankings</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">El especialista avanza por estaciones a medida que suma trabajos y cobros verificados dentro de Handyx. Es un incentivo para crecer adentro: lo que pasa por fuera no cuenta.</p>
-      <div class="heroe" style="margin-top:7mm">
-        <div class="movil titanio" style="--w:58mm"><div class="pant"><img src="img/g-inicio.webp" alt="Inicio del Camino Handyx"></div>
-          <span class="toque" style="left:19%;top:16.3%">1</span><span class="toque" style="left:80.8%;top:32.5%">2</span><span class="toque" style="left:50%;top:47.4%">3</span><span class="toque" style="left:84%;top:83%">4</span></div>
-        <div class="notas">
-          <div class="nota"><span class="num">1</span><div><p class="p-h">El avance, por trabajos verificados</p><p class="p-texto">Solo cuentan los trabajos verificados. Nada se resta.</p></div></div>
-          <div class="nota"><span class="num">2</span><div><p class="p-h">Kit de bienvenida y manual</p><p class="p-texto">Al quedar verificado: remera y el manual de la app, en la app o impreso.</p></div></div>
-          <div class="nota"><span class="num">3</span><div><p class="p-h">Mini caminos</p><p class="p-texto">Por trabajos, por cobros verificados y por oficio, con la próxima recompensa a la vista.</p></div></div>
-          <div class="nota"><span class="num">4</span><div><p class="p-h">Áreas del camino</p><p class="p-texto">Taller, obra y ciudad, con premios grandes.</p><span class="estado concepto">Concepto</span></div></div>
-        </div>
+      <div class="esc" style="margin-top:4mm">
+        <div data-escena="camino" data-tono="oscuro"></div>
+        <div class="flota" style="left:4mm;top:7mm;width:64mm;z-index:2"><img src="img/r-anillo.webp" alt="Te faltan 2 para la Gorra Handyx: 8 de 10 trabajos"></div>
+        <div class="flota" style="left:4mm;top:42mm;width:64mm;z-index:2"><img src="img/r-mini-camino.webp" alt="Mini camino: trabajos verificados, 8 de 10"></div>
+        <span class="rotulo diseno abs" style="left:4mm;top:61mm;z-index:2">Diseño propuesto · datos ficticios</span>
       </div>
       <div class="escalera empuja">
-        <div class="peldano" style="--h:26mm"><div class="p-num">00</div><p class="p-h">Bienvenida</p><p class="p-texto">Kit y manual al quedar verificado.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="peldano" style="--h:30mm"><div class="p-num">01</div><p class="p-h">Estaciones</p><p class="p-texto">Por trabajos verificados.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="peldano" style="--h:34mm"><div class="p-num">02</div><p class="p-h">Mini caminos</p><p class="p-texto">Cobros verificados y oficio.</p><span class="estado disenado">Diseñado</span></div>
-        <div class="peldano alto" style="--h:38mm"><div class="p-num">03</div><p class="p-h">Premios</p><p class="p-texto">Visibles de antemano, revisados antes de entregar; en borrador con Legal.</p><span class="estado disenado">Diseñado</span></div>
+        <div class="peldano" style="--h:40mm"><div class="p-num">00</div><p class="p-h">Bienvenida</p><p class="p-texto">Kit y manual al quedar verificado.</p><span class="est disenado">Diseñado</span></div>
+        <div class="peldano" style="--h:50mm"><div class="p-num">01</div><p class="p-h">Estaciones</p><p class="p-texto">Por trabajos verificados.</p><span class="est disenado">Diseñado</span></div>
+        <div class="peldano" style="--h:60mm"><div class="p-num">02</div><p class="p-h">Mini caminos</p><p class="p-texto">Cobros verificados y oficio.</p><span class="est disenado">Diseñado</span></div>
+        <div class="peldano alto" style="--h:70mm"><div class="p-num">03</div><p class="p-h">Premios</p><p class="p-texto">Visibles de antemano, revisados antes de entregar; en borrador con Legal.</p><span class="est disenado">Diseñado</span></div>
       </div>
       <div class="fila" style="margin-top:5mm;gap:7mm;flex-wrap:wrap"><span class="regla-c">Nada se resta</span><span class="regla-c">Sin rankings ni azar</span><span class="regla-c">Las insignias no cambian los pedidos</span></div>
-      <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> G-Inicio. Camino, mini caminos, kit, premios e insignias: Diseñado; montos y premios en borrador. Ninguna función del camino tiene código.</p>
+      <p class="p-origen" style="margin-top:4mm">G-Inicio (recortes ampliados). Camino, mini caminos, kit, premios e insignias: Diseñado; montos y premios en borrador. Ninguna función del camino tiene código. Áreas del camino (taller, obra y ciudad): Concepto. Escena: ilustración.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 12 · FUGAS =============================== -->
+<!-- =============================== 12 · FUGAS (escena propia «quedarse») =============================== -->
 <section class="pagina p-oscuro" id="fugas">
   <div class="lamina">
     <div class="cab-p"><span>09 · Desintermediación</span><span>Handyx · Business &amp; Investment</span></div>
@@ -548,29 +608,29 @@
       <span class="p-ceja">Cómo evitamos que se arreglen por fuera</span>
       <h1 class="p-titulo" style="margin-top:5mm;max-width:166mm">Nada lo impide del todo: hacemos que <span class="p-marca">convenga quedarse</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.4pt">Es el riesgo de todo marketplace de servicios y no lo escondemos. La respuesta es valor adentro para los dos lados, y medirlo como repetición dentro de Handyx.</p>
-      <div class="grilla" style="margin-top:8mm;column-gap:8mm;align-items:start">
-        <div class="c-5" style="position:relative;height:142mm">
-          <div class="movil titanio abs" style="--w:44mm;left:0;top:0"><div class="pant"><img src="img/m-chat.webp" alt="Chat del pedido con tarjetas"></div><span class="toque" style="left:62%;top:52.5%">1</span></div>
-          <div class="movil titanio abs" style="--w:44mm;right:0;top:50mm"><div class="pant"><img src="img/s-informe.webp" alt="Informe del trabajo con garantía"></div><span class="toque" style="left:51.4%;top:14.9%">2</span></div>
-        </div>
-        <div class="c-7">
-          <p class="p-h" style="color:var(--amarillo);margin-bottom:1.6mm">Lo que queda adentro, y en qué estado está</p>
+      <div class="esc" style="margin:2mm auto 0;width:116mm">
+        <div data-escena-p="quedarse" data-tono="oscuro"></div>
+      </div>
+      <div class="grilla" style="margin-top:3mm;column-gap:9mm;align-items:start">
+        <div class="c-6">
           <div class="meca"><div><p class="p-h">Sin comisión al especialista</p><p class="p-texto">Cobra su precio completo: no gana nada saliéndose.</p></div><span class="tipo-dato">Decisión · 07/11</span></div>
-          <div class="meca"><div><p class="p-h">Propuestas comparables</p><p class="p-texto">Varias, con precio y condiciones, lado a lado.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h"><span class="ad">1</span> Chat por pedido u obra</p><p class="p-texto">Propuestas y cambios llegan como tarjetas; todo queda registrado.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h">Dirección exacta solo al aceptar</p><p class="p-texto">Antes, el especialista ve la zona aproximada.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h">Historial de pedidos y trabajos</p><p class="p-texto">El de la casa, con informes y garantías, está diseñado.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h">Reseñas</p><p class="p-texto">Solo en la vista de prueba, todavía sin backend.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h"><span class="ad">2</span> Garantía registrada en el informe</p><p class="p-texto">Texto de garantía pendiente de Legal.</p></div><span class="estado disenado">Diseñado</span></div>
-          <div class="meca"><div><p class="p-h">Reclamos con seguimiento</p><p class="p-texto">En la app; en el portal, con plazos por gravedad.</p></div><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="meca"><div><p class="p-h">Camino Handyx</p><p class="p-texto">Solo cuenta lo verificado adentro (p. <span data-ir="camino"><span class="p"></span></span>).</p></div><span class="estado disenado">Diseñado</span></div>
+          <div class="meca"><div><p class="p-h">Propuestas comparables</p><p class="p-texto">Varias, con precio y condiciones, lado a lado.</p></div><span class="est en-pruebas">En pruebas</span></div>
+          <div class="meca"><div><p class="p-h">Chat por pedido u obra</p><p class="p-texto">Propuestas y cambios llegan como tarjetas; todo queda registrado.</p></div><span class="est en-pruebas">En pruebas</span></div>
+          <div class="meca"><div><p class="p-h">Dirección exacta solo al aceptar</p><p class="p-texto">Antes, el especialista ve la zona aproximada.</p></div><span class="est en-pruebas">En pruebas</span></div>
+          <div class="meca"><div><p class="p-h">Historial de pedidos y trabajos</p><p class="p-texto">El de la casa, con informes y garantías, está diseñado.</p></div><span class="est en-pruebas">En pruebas</span></div>
+        </div>
+        <div class="c-6">
+          <div class="meca"><div><p class="p-h">Reseñas</p><p class="p-texto">Solo en la vista de prueba, todavía sin backend.</p></div><span class="est en-pruebas">En pruebas</span></div>
+          <div class="meca"><div><p class="p-h">Garantía registrada en el informe</p><p class="p-texto">Texto de garantía pendiente de Legal.</p></div><span class="est disenado">Diseñado</span></div>
+          <div class="meca"><div><p class="p-h">Reclamos con seguimiento</p><p class="p-texto">En la app; en el portal, con plazos por gravedad.</p></div><span class="est en-pruebas">En pruebas</span></div>
+          <div class="meca"><div><p class="p-h">Camino Handyx</p><p class="p-texto">Solo cuenta lo verificado adentro (p. <span data-ir="camino"><span class="p"></span></span>).</p></div><span class="est disenado">Diseñado</span></div>
         </div>
       </div>
       <div class="bloque-t empuja" style="display:grid;grid-template-columns:1fr 1fr;column-gap:7mm">
         <div><p class="p-h" style="color:var(--amarillo)">Cómo lo medimos</p><p class="p-texto" style="margin-top:1mm">Clientes que vuelven a contratar dentro de Handyx, por cohorte de llegada. Hoy el portal tiene cohortes de preregistros; la retención de clientes de las apps es todavía un concepto.</p><div class="chips"><span class="estado construido">Cohortes de preregistros</span><span class="estado concepto">Retención de clientes</span></div></div>
         <div><p class="p-h" style="color:var(--amarillo)">La primera prueba</p><p class="p-texto" style="margin-top:1mm"><b>5 clientes que vuelven</b> en diciembre de 2026, junto con 50 trabajos con tarifa. Si no vuelven, revisamos precio visible, calidad y seguimiento antes de escalar.</p><div class="chips"><span class="tipo-dato">Objetivo</span></div></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> M-Chat y S-Informe. Estados: auditorías del usuario, del especialista y del portal (07/11/2026). META-REPETIDORES, META-TRABAJOS: objetivo.</p>
+      <p class="p-origen" style="margin-top:4mm">Estados: auditorías del usuario, del especialista y del portal (07/11/2026). META-REPETIDORES, META-TRABAJOS: objetivo. Escena: ilustración propia de esta pieza (los dos lados dentro del mismo pedido).</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
@@ -625,15 +685,16 @@
         <div class="c-4 modelo-col"><span class="cuando">En evaluación · desde el 10/12/2026</span><div class="grande">15 %</div><p class="p-h" style="margin-top:2mm">A quien pide</p><p class="p-texto">Sobre el precio del especialista, visible antes de contratar. Cómo se cobra: en evaluación; todavía no está implementado.</p><span class="tipo-dato" style="margin-top:2.4mm">En evaluación</span></div>
         <div class="c-4 modelo-col"><span class="cuando">Futuras · concepto</span><div class="grande" style="font-size:15pt;line-height:1.1">Más líneas</div><p class="p-texto" style="margin-top:2mm">Handyx Business: empresas, consorcios y administraciones. Ferreterías adheridas. Más rubros y herramientas por oficio.</p><span class="estado concepto" style="margin-top:2.4mm">Concepto</span></div>
       </div>
-      <p class="p-h" style="margin-top:10mm">Cómo circula el dinero</p>
-      <div class="flujo-din" style="margin-top:4mm">
-        <div class="nodo-d"><p class="p-h">Quien pide</p><p class="p-texto">elige y paga</p></div>
-        <div class="via">precio, directo<br>Mercado Pago o efectivo</div>
-        <div class="nodo-d"><p class="p-h">Especialista</p><p class="p-texto">cobra su precio completo</p></div>
-        <div class="via punteada">tarifa (desde el 10/12)<br>cobro en evaluación</div>
-        <div class="nodo-d navy"><p class="p-h">Handyx</p><p class="p-texto">ingreso bruto</p></div>
+      <div class="grilla" style="margin-top:9mm;column-gap:7mm;align-items:center">
+        <div class="c-6 esc"><div data-escena="pago" data-tono="claro"></div></div>
+        <div class="c-6">
+          <p class="p-h">Cómo circula el dinero</p>
+          <div class="via-d"><b>El precio, directo al especialista.</b> Quien pide paga con Mercado Pago o en efectivo; el especialista cobra su precio completo.</div>
+          <div class="via-d"><b>Handyx no toca la plata del trabajo.</b> No la recibe ni la reparte: registra lo acordado.</div>
+          <div class="via-d"><b>La tarifa, aparte y desde el 10/12.</b> A quien pide, 15 % en evaluación; cómo se cobra todavía no está definido. Es el ingreso bruto de Handyx.</div>
+        </div>
       </div>
-      <div class="grilla" style="margin-top:10mm;column-gap:8mm;align-items:start">
+      <div class="grilla" style="margin-top:9mm;column-gap:8mm;align-items:start">
         <div class="c-7">
           <p class="p-h">Ejemplo ilustrativo · desde el 10/12/2026</p>
           <table class="tabla ejemplo" style="margin-top:3mm;font-size:8.6pt">
@@ -698,17 +759,17 @@
       <h1 class="p-titulo" style="margin-top:5mm;max-width:166mm">Dos ejes de captación, medidos <span class="p-marca">por barrio</span></h1>
       <p class="p-lead" style="margin-top:5mm;max-width:150mm;font-size:10.4pt">Lo digital trae volumen; lo físico, confianza y pedidos de la misma zona. Hoy todo es estrategia prevista: nada está en ejecución ni medido.</p>
       <div class="grilla" style="margin-top:8mm;column-gap:8mm">
-        <div class="c-6"><p class="p-h" style="color:var(--amarillo);margin-bottom:1.6mm">Digital</p>
-          <div class="meca"><div><p class="p-h">Anuncios por barrio y urgencia</p><p class="p-texto">Un enlace por pieza y por barrio.</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Búsqueda local por rubro</p><p class="p-texto">Ficha local y una landing por rubro.</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Videos cortos</p><p class="p-texto">Problemas concretos: una pérdida, un enchufe.</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Referidos</p><p class="p-texto">Con costo, reglas y control de abuso.</p></div><span class="tipo-dato">Previsto</span></div>
+        <div class="c-6"><p class="p-h" style="color:var(--amarillo);margin-bottom:1.6mm">Digital <span class="tipo-dato" style="margin-left:1.6mm">Previsto</span></p>
+          <div class="meca"><div><p class="p-h">Anuncios por barrio y urgencia</p><p class="p-texto">Un enlace por pieza y por barrio.</p></div></div>
+          <div class="meca"><div><p class="p-h">Búsqueda local por rubro</p><p class="p-texto">Ficha local y una landing por rubro.</p></div></div>
+          <div class="meca"><div><p class="p-h">Videos cortos</p><p class="p-texto">Problemas concretos: una pérdida, un enchufe.</p></div></div>
+          <div class="meca"><div><p class="p-h">Referidos</p><p class="p-texto">Con costo, reglas y control de abuso.</p></div></div>
         </div>
-        <div class="c-6"><p class="p-h" style="color:var(--amarillo);margin-bottom:1.6mm">Físico</p>
-          <div class="meca"><div><p class="p-h">Porteros y administradores</p><p class="p-texto">El canal de la prueba de octubre (dato informado).</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Volante por barrio con su QR</p><p class="p-texto">Para saber qué funciona y dónde.</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Comercios y ferreterías del barrio</p><p class="p-texto">Aliado solo quien acepta por escrito.</p></div><span class="tipo-dato">Previsto</span></div>
-          <div class="meca"><div><p class="p-h">Remeras para especialistas</p><p class="p-texto">Con la marca, en la calle y en el trabajo.</p></div><span class="tipo-dato">Previsto</span></div>
+        <div class="c-6"><p class="p-h" style="color:var(--amarillo);margin-bottom:1.6mm">Físico <span class="tipo-dato" style="margin-left:1.6mm">Previsto</span></p>
+          <div class="meca"><div><p class="p-h">Porteros y administradores</p><p class="p-texto">El canal de la prueba de octubre (dato informado).</p></div></div>
+          <div class="meca"><div><p class="p-h">Volante por barrio con su QR</p><p class="p-texto">Para saber qué funciona y dónde.</p></div></div>
+          <div class="meca"><div><p class="p-h">Comercios y ferreterías del barrio</p><p class="p-texto">Aliado solo quien acepta por escrito.</p></div></div>
+          <div class="meca"><div><p class="p-h">Remeras para especialistas</p><p class="p-texto">Con la marca, en la calle y en el trabajo.</p></div></div>
         </div>
       </div>
       <p class="p-h" style="margin-top:8mm">Un registro no es un cliente: medimos contra trabajos completados</p>
@@ -719,13 +780,17 @@
         <div class="etapa"><span class="pto">4</span><p class="p-h">Trabajo completado</p><p class="p-texto">CAC</p></div>
         <div class="etapa"><span class="pto">5</span><p class="p-h">Vuelve</p><p class="p-texto">Retención</p></div>
       </div>
-      <div class="foto" style="position:relative;margin-top:7mm;height:44mm;border-radius:3mm;--capa:linear-gradient(90deg,rgba(14,29,54,0.85) 0%,rgba(14,29,54,0.2) 55%,rgba(14,29,54,0.1) 100%)"><img src="../../marca/fotos/aerea-cabo-puerto-navy.webp" alt="" style="object-position:50% 62%"><p style="position:absolute;z-index:1;left:6mm;top:50%;transform:translateY(-50%);max-width:80mm;font:900 13pt/1.1 var(--f-titulos);font-stretch:125%;color:#FFFFFF">Barrio por barrio: <span style="color:var(--amarillo)">un enlace y un QR por pieza</span></p></div>
+      <div class="grilla" style="margin-top:6mm;column-gap:7mm;align-items:center">
+        <div class="c-5 esc"><div data-escena="barrios" data-tono="oscuro"></div></div>
+        <div class="c-7"><p style="font:900 13pt/1.1 var(--f-titulos);font-stretch:125%;color:#FFFFFF">Barrio por barrio: <span style="color:var(--amarillo)">un enlace y un QR por pieza</span></p>
+          <p class="p-texto" style="margin-top:2.4mm">El portal ya registra campañas con enlaces y QR, cohortes y un mapa por barrio <span class="est construido">Construido</span>. De qué barrio y de qué pieza llega cada registro de la landing: [a definir].</p></div>
+      </div>
       <div class="grilla empuja" style="column-gap:5mm">
         <div class="c-4 bloque-t"><div class="p-cifra"><small>USD</small> 6</div><p class="p-texto" style="margin-top:2mm">Techo de CAC: lo máximo para que el primer trabajo pague la captación (15 % de un ticket supuesto de USD 40).</p><span class="tipo-dato" style="margin-top:2mm">Proyección · a medir</span></div>
         <div class="c-4 bloque-t"><div class="p-cifra">≈ <small>USD</small> 2</div><p class="p-texto" style="margin-top:2mm">CAC estimado: USD 100 de pauta por mes ÷ 50 clientes nuevos por mes, que todavía no se midieron.</p><span class="tipo-dato" style="margin-top:2mm">Proyección con supuesto</span></div>
         <div class="c-4 bloque-t"><div class="p-cifra"><small>USD</small> 100</div><p class="p-texto" style="margin-top:2mm">de pauta mensual de marketing hoy. El portal ya registra campañas con enlaces y QR.</p><span class="tipo-dato" style="margin-top:2mm">Dato informado</span></div>
       </div>
-      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Estrategia y experimentos del equipo (31/10); ninguna alianza firmada. CAC-MAXIMO y CAC-ESTIMADO: proyecciones; SUP-CLIENTES-MES: supuesto. COSTO-MARKETING: dato informado (04/11). Campañas: portal interno, Construido; origen de cada registro en la landing: [a definir]. Ilustración: Cabo Corrientes y el puerto.</p>
+      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. Estrategia y experimentos del equipo (31/10); ninguna alianza firmada. CAC-MAXIMO y CAC-ESTIMADO: proyecciones; SUP-CLIENTES-MES: supuesto. COSTO-MARKETING: dato informado (04/11). Campañas: portal interno, Construido; origen de cada registro en la landing: [a definir]. Escena: ilustración del mapa por barrio.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
@@ -764,12 +829,12 @@
       <table class="matriz" style="margin-top:7mm">
         <thead><tr><th></th><th><span class="estado construido">Construido</span></th><th><span class="estado en-pruebas">En pruebas</span></th><th>Planificado</th></tr></thead>
         <tbody>
-          <tr><td>Producto</td><td>Landing con demo interactiva, publicada el 29/10. Portal interno, publicado el 07/11.</td><td>Las dos apps en vista de prueba desde el 07/11. Backend de captación completo, sin desplegar. API de las apps, Taller de Electricidad y HandIA, en ramas.</td><td>Pedido en 3 toques, presupuestador, modo trabajo, obras, Camino Handyx <span class="estado disenado">Diseñado</span><br>Herramientas de los otros oficios <span class="estado concepto">Concepto</span></td></tr>
-          <tr><td>Operaciones</td><td>CRM de preregistros y reclamos con plazos por gravedad.</td><td>Alta y verificación de especialistas por el equipo. Legajos y tareas, con datos de muestra.</td><td>Pedidos, pagos informados y reclamos de las apps en el portal <span class="estado concepto">Concepto</span></td></tr>
-          <tr><td>Comercial</td><td>Nada todavía.</td><td>Tarifa 0 % hasta el 10/12 en las apps. Pago directo informado; Mercado Pago al especialista.</td><td>Tarifa de servicio del 15 % desde el 10/12, en evaluación. Handyx Business <span class="estado concepto">Concepto</span></td></tr>
+          <tr><td>Producto</td><td>Landing con demo interactiva, publicada el 29/10. Portal interno, publicado el 07/11.</td><td>Las dos apps en vista de prueba desde el 07/11. Backend de captación completo, sin desplegar. API de las apps, Taller de Electricidad y HandIA, en ramas.</td><td>Pedido en 3 toques, presupuestador, modo trabajo, obras, Camino Handyx <span class="est disenado">Diseñado</span><br>Herramientas de los otros oficios <span class="est concepto">Concepto</span></td></tr>
+          <tr><td>Operaciones</td><td>CRM de preregistros y reclamos con plazos por gravedad.</td><td>Alta y verificación de especialistas por el equipo. Legajos y tareas, con datos de muestra.</td><td>Pedidos, pagos informados y reclamos de las apps en el portal <span class="est concepto">Concepto</span></td></tr>
+          <tr><td>Comercial</td><td>Nada todavía.</td><td>Tarifa 0 % hasta el 10/12 en las apps. Pago directo informado; Mercado Pago al especialista.</td><td>Tarifa de servicio del 15 % desde el 10/12, en evaluación. Handyx Business <span class="est concepto">Concepto</span></td></tr>
           <tr><td>Marketing</td><td>Campañas con enlaces y QR, cohortes y mapa por barrio, en el portal.</td><td>Registro de la landing, cerrado hasta el aviso de privacidad definitivo.</td><td>Anuncios por barrio, búsqueda local, volantes y comercios con QR.</td></tr>
           <tr><td>Expansión</td><td>Nada todavía.</td><td>Nada todavía.</td><td>Consolidar Mar del Plata; después, una ciudad de perfil parecido.</td></tr>
-          <tr><td>Alianzas</td><td>Ninguna firmada.</td><td>Porteros y administradores: prueba informada de octubre.</td><td>Ferreterías adheridas: app y panel del ferretero <span class="estado disenado">Diseñado</span></td></tr>
+          <tr><td>Alianzas</td><td>Ninguna firmada.</td><td>Porteros y administradores: prueba informada de octubre.</td><td>Ferreterías adheridas: app y panel del ferretero <span class="est disenado">Diseñado</span></td></tr>
         </tbody>
       </table>
       <p class="p-h empuja" style="margin-bottom:3mm">El orden de lo que sigue, sin fechas</p>
@@ -911,12 +976,12 @@
       <span class="p-ceja">Lo que nos preguntan sin vueltas</span>
       <h1 class="p-titulo" style="margin-top:5mm">Las preguntas <span class="p-marca">incómodas</span></h1>
       <div class="grilla dudas" style="margin-top:8mm;row-gap:5mm;column-gap:5mm">
-        <div class="c-6 duda"><p class="q">¿Qué impide que se arreglen por fuera?</p><p class="corta">Nada lo impide del todo: es un riesgo y lo medimos.</p><p class="larga">Hacemos que convenga quedarse: sin comisión al especialista, propuestas comparables, chat del pedido, dirección exacta solo al aceptar, historial, reclamos y garantía registrada. Se mide como repetición dentro de Handyx.</p><p class="hoy"><b>Hoy</b><span class="estado en-pruebas">Chat y propuestas</span><span class="estado disenado">Garantía</span><span class="tipo-dato">5 que vuelven · objetivo</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Por qué ahora y por qué Mar del Plata?</p><p class="corta">Es donde estamos y donde podemos revisar la oferta cara a cara.</p><p class="larga">259.623 hogares en el partido (unidad a confirmar) alcanzan para probar densidad por barrio antes de otra ciudad. Ahora, porque el producto está en pruebas y la demo cerrada arranca en noviembre de 2026.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Dato informado</span><span class="estado en-pruebas">Apps en vista de prueba</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Qué impide que se arreglen por fuera?</p><p class="corta">Nada lo impide del todo: es un riesgo y lo medimos.</p><p class="larga">Hacemos que convenga quedarse: sin comisión al especialista, propuestas comparables, chat del pedido, dirección exacta solo al aceptar, historial, reclamos y garantía registrada. Se mide como repetición dentro de Handyx.</p><p class="hoy"><b>Hoy</b><span class="est en-pruebas">Chat y propuestas</span><span class="est disenado">Garantía</span><span class="tipo-dato">5 que vuelven · objetivo</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Por qué ahora y por qué Mar del Plata?</p><p class="corta">Es donde estamos y donde podemos revisar la oferta cara a cara.</p><p class="larga">259.623 hogares en el partido (unidad a confirmar) alcanzan para probar densidad por barrio antes de otra ciudad. Ahora, porque el producto está en pruebas y la demo cerrada arranca en noviembre de 2026.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Dato informado</span><span class="est en-pruebas">Apps en vista de prueba</span></p></div>
         <div class="c-6 duda"><p class="q">¿Y si lo copia alguien grande?</p><p class="corta">Las funciones se copian; la apuesta es densidad local y confianza acumulada.</p><p class="larga">El 0 % al especialista no es una barrera. Lo que buscamos que cueste copiar es una red verificada barrio por barrio, el historial y que el cliente vuelva a elegir al mismo especialista. Hoy es una hipótesis.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Hipótesis</span> Se demuestra con repetición y cobertura por zona.</p></div>
         <div class="c-6 duda"><p class="q">¿Cuánto gana Handyx por trabajo?</p><p class="corta">Hasta el 10/12/2026, nada. Después, ≈ USD 6 con un ticket supuesto de USD 40.</p><p class="larga">La tarifa del 15 % a quien pide está en evaluación y todavía no se cobra en la app. Es ingreso bruto, antes de costos de cobro, impuestos y soporte: la contribución por trabajo está sin medir.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Proyección</span><span class="tipo-dato">15 % en evaluación</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Cuál es el CAC?</p><p class="corta">Todavía no lo medimos.</p><p class="larga">Lo calculamos sobre clientes con su primer trabajo completado, no sobre registros. El techo es USD 6 (lo que deja ese primer trabajo); la estimación, ≈ USD 2, sale de USD 100 de pauta y 50 clientes por mes, un supuesto.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Proyección · a medir</span><span class="estado construido">Campañas en el portal</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Qué está construido de verdad?</p><p class="corta">La landing y el portal, publicados; las dos apps, en vista de prueba.</p><p class="larga">Ningún backend está desplegado: hoy nadie puede pedir ni cobrar un trabajo real a través de Handyx. Los 5 trabajos de prueba se coordinaron a mano. Cada función de este dossier dice su estado.</p><p class="hoy"><b>Hoy</b><span class="estado construido">Landing · portal</span><span class="estado en-pruebas">Apps · backends</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Cuál es el CAC?</p><p class="corta">Todavía no lo medimos.</p><p class="larga">Lo calculamos sobre clientes con su primer trabajo completado, no sobre registros. El techo es USD 6 (lo que deja ese primer trabajo); la estimación, ≈ USD 2, sale de USD 100 de pauta y 50 clientes por mes, un supuesto.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Proyección · a medir</span><span class="est construido">Campañas en el portal</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Qué está construido de verdad?</p><p class="corta">La landing y el portal, publicados; las dos apps, en vista de prueba.</p><p class="larga">Ningún backend está desplegado: hoy nadie puede pedir ni cobrar un trabajo real a través de Handyx. Los 5 trabajos de prueba se coordinaron a mano. Cada función de este dossier dice su estado.</p><p class="hoy"><b>Hoy</b><span class="est construido">Landing · portal</span><span class="est en-pruebas">Apps · backends</span></p></div>
       </div>
       <p class="p-origen empuja">Estado al 07/11/2026. Respuestas sobre las preguntas preparadas para ATICMA y las preguntas difíciles del equipo, con las cifras de este dossier (MDP-HOGARES, INGRESO-POR-TRABAJO, CAC-MAXIMO, CAC-ESTIMADO, META-REPETIDORES).</p>
     </div>
@@ -939,8 +1004,9 @@
         <div class="c-4 meta"><div class="p-cifra">40 %</div><p class="p-texto">de los servicios que contratan los particulares en la Argentina, a fines de 2027</p><span class="tipo-dato">Objetivo · sin metodología</span></div>
       </div>
       <p class="p-texto" style="margin-top:3mm">Son objetivos, no pronósticos ni retornos prometidos: se revisan con los datos del piloto.</p>
-      <div class="grilla" style="margin-top:8mm;column-gap:8mm">
-        <div class="c-7">
+      <div class="grilla" style="margin-top:9mm;column-gap:7mm;align-items:center">
+        <div class="c-4 esc"><div data-escena="equipo" data-tono="oscuro"></div></div>
+        <div class="c-8">
           <p class="p-h" style="color:var(--amarillo)">Equipo</p>
           <div class="grilla" style="margin-top:2mm;column-gap:4mm">
             <div class="c-4 col-r persona"><p class="p-h">Ignacio Gauna</p><p class="p-texto">Fundador. Desarrollo, producto y coordinación.</p></div>
@@ -949,17 +1015,17 @@
           </div>
           <p class="p-texto" style="margin-top:3mm">Un riesgo que reconocemos: hoy Handyx depende mucho del fundador. Por eso cada módulo está documentado y la operación se apoya en procesos escritos.</p>
         </div>
-        <div class="c-5">
-          <p class="p-h" style="color:var(--amarillo)">ATICMA Emprende 2026</p>
-          <p class="p-texto" style="margin-top:2mm">Handyx se presentó en la semifinal. No llegamos a la final; usamos lo aprendido para ordenar el producto, los números y esta documentación.</p>
-          <p class="p-texto" style="margin-top:2mm">A los proyectos finalistas les ofrecemos, sin costo, ayuda para preparar materiales de presentación como este, con el acuerdo de ATICMA y de cada uno.</p>
-        </div>
+      </div>
+      <div class="grilla col-r" style="margin-top:8mm;column-gap:8mm">
+        <p class="c-12 p-h" style="color:var(--amarillo);margin-bottom:-3mm">ATICMA Emprende 2026</p>
+        <p class="c-6 p-texto">Handyx se presentó en la semifinal. No llegamos a la final; usamos lo aprendido para ordenar el producto, los números y esta documentación.</p>
+        <p class="c-6 p-texto">A los proyectos finalistas les ofrecemos, sin costo, ayuda para preparar materiales de presentación como este, con el acuerdo de ATICMA y de cada uno.</p>
       </div>
       <div class="empuja" style="padding:5mm 6mm;border-radius:3mm;background:var(--amarillo);color:var(--navy)">
         <p style="font:900 15pt/1.1 var(--f-titulos);font-stretch:125%">Lo que pedimos hoy es una reunión.</p>
         <p style="margin-top:2mm;font:400 8.6pt/1.45 var(--f-texto)">Para recorrer el producto en vivo, revisar juntos los números de este dossier y conversar cómo encaja una inversión en la etapa que viene. Ignacio Gauna · ignaciogauna.developer@gmail.com · 223 667-4044</p>
       </div>
-      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. META-1M, META-5M y META-CUOTA-NACIONAL: objetivos del fundador (04–05/11), sin metodología de mercado. Equipo según el material del proyecto. Ilustración: la Rambla al atardecer.</p>
+      <p class="p-origen" style="margin-top:4mm">Estado al 07/11/2026. META-1M, META-5M y META-CUOTA-NACIONAL: objetivos del fundador (04–05/11), sin metodología de mercado. Equipo según el material del proyecto. Foto: la Rambla al atardecer; escena: ilustración.</p>
     </div>
     <div class="pie-p"><span>Handyx · Business &amp; Investment</span><b class="folio-n"></b></div>
   </div>
@@ -1001,6 +1067,108 @@
   </div>
 </section>
 
+<script src="../../plantilla/escenas.js"></script>
+<script>
+// Escena propia del Dossier 01 (mismo lenguaje que plantilla/escenas.js, que no se edita): «quedarse».
+// Los dos lados dentro del mismo pedido —chat, propuesta aceptada— y alrededor lo que hace que convenga seguir adentro:
+// chat, propuestas comparables, dirección al aceptar, garantía y reseñas. Uso: <div data-escena-p="quedarse" data-tono="oscuro">.
+(function () {
+  const T = {
+    claro: { tinta: '#0E1D36', linea: '#0E1D36', suave: '#C9D6EE', papel: '#FFFFFF', piso: 'rgba(14,29,54,0.10)', azul: '#1F57A8', medio: '#2C66B8', prof: '#143E7E', cielo: '#E9EFF9', amar: '#F5F59A', amarFuerte: '#E8D84A', hueso: '#F7F6F1', arena: '#F3F0E8', piedra: '#E2DCCD', piel: ['#E7B48C', '#C98C62', '#8D5B3B'], pelo: '#26324A', pantalon: '#26324A' },
+    oscuro: { tinta: '#FFFFFF', linea: '#E9EFF9', suave: '#2C4A7A', papel: '#13284A', piso: 'rgba(0,0,0,0.28)', azul: '#2C66B8', medio: '#3A76CC', prof: '#1F57A8', cielo: '#1B3560', amar: '#F5F59A', amarFuerte: '#F5F59A', hueso: '#E9EFF9', arena: '#22385E', piedra: '#2C4A7A', piel: ['#D9A27C', '#B47A55', '#7A4E33'], pelo: '#060E1C', pantalon: '#060E1C' },
+  };
+  function persona(p, x, y, s, o = {}) {
+    const piel = p.piel[o.piel ?? 0], ropa = o.ropa || p.azul, pan = o.pantalon || p.pantalon, pose = o.pose || 'quieta';
+    const brazo = (d) => `<path d="${d}" fill="none" stroke="${ropa}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const mano = (cx, cy) => `<circle cx="${cx}" cy="${cy}" r="3.3" fill="${piel}"/>`;
+    let g = `<ellipse cx="0" cy="0" rx="19" ry="3.2" fill="${p.piso}"/>`;
+    g += `<path d="M-12 -72 L-3 -72 L-5 -4 L-11.5 -4 Z M3 -72 L12 -72 L11.5 -4 L5 -4 Z" fill="${pan}"/>`;
+    g += `<rect x="-14.5" y="-5" width="11" height="5" rx="2.5" fill="${p.linea === '#0E1D36' ? '#0E1D36' : '#060E1C'}"/><rect x="3.5" y="-5" width="11" height="5" rx="2.5" fill="${p.linea === '#0E1D36' ? '#0E1D36' : '#060E1C'}"/>`;
+    // brazo de atrás
+    if (pose === 'caja') g += brazo('M13 -118 C17 -104 18 -94 17 -84') + mano(17, -82) + `<rect x="9" y="-80" width="22" height="15" rx="2" fill="${o.caja || p.amarFuerte}"/><path d="M15 -80 V-84 H25 V-80" fill="none" stroke="${p.linea}" stroke-width="1.6"/><path d="M9 -74 H31" stroke="${p.linea}" stroke-width="1" opacity=".35"/>`;
+    g += `<path d="M-15 -72 L15 -72 L13.5 -117 C12.5 -123 6.5 -126 0 -126 C-6.5 -126 -12.5 -123 -13.5 -117 Z" fill="${ropa}"/>`;
+    g += `<path d="M-4 -126 L0 -119 L4 -126" fill="none" stroke="${p.papel}" stroke-width="1.2" opacity=".55"/>`;
+    g += `<rect x="-3" y="-132" width="6" height="8" fill="${piel}"/><ellipse cx="0" cy="-141" rx="9" ry="10.5" fill="${piel}"/>`;
+    const pelo = o.pelo || 'corto';
+    if (pelo === 'largo') g += `<path d="M-10 -140 C-11 -154 -2 -156 3 -154.5 C10 -153 11 -146 10.5 -139 C11 -132 12 -127 14 -123 L6 -124 C7 -132 6 -140 3 -144 C-2 -140 -7 -140 -10 -140 Z" fill="${p.pelo}"/><path d="M-10 -140 C-11 -132 -12 -127 -13 -123 L-7 -124 C-8 -130 -8 -136 -10 -140 Z" fill="${p.pelo}"/>`;
+    else if (pelo === 'gorra') g += `<path d="M-9.6 -142 C-10 -154 10 -154 9.6 -142 Z" fill="${o.gorra || p.prof}"/><path d="M8 -143.5 H18 C19 -143.5 19 -141.5 18 -141.5 H8 Z" fill="${o.gorra || p.prof}"/>`;
+    else if (pelo === 'rodete') g += `<path d="M-9.5 -141 C-10 -153 -2 -155 3 -153.5 C9 -152 10 -146 9.6 -141 C7 -146 -6 -147 -9.5 -141 Z" fill="${p.pelo}"/><circle cx="-3" cy="-153" r="4.4" fill="${p.pelo}"/>`;
+    else g += `<path d="M-9.5 -141 C-10 -153 -2 -155 3 -153.5 C9 -152 10 -146 9.6 -141 C7 -146 -6 -147 -9.5 -141 Z" fill="${p.pelo}"/>`;
+    // brazo de adelante según la pose
+    if (pose === 'celular') g += brazo('M-13 -118 C-17 -104 -14 -98 -5 -101') + mano(-4, -102) + `<rect x="-7" y="-115" width="9" height="15" rx="2" fill="${p.linea === '#0E1D36' ? '#0E1D36' : '#060E1C'}"/><rect x="-6" y="-113.6" width="7" height="11.5" rx="1" fill="${p.amar}"/>`;
+    else if (pose === 'saluda') g += brazo('M-13 -118 C-22 -126 -24 -138 -21 -148') + mano(-21, -150);
+    else if (pose === 'senala') g += brazo('M-13 -118 C-24 -112 -32 -108 -40 -108') + mano(-41, -108);
+    else g += brazo('M-13 -118 C-17 -104 -18 -94 -17 -84') + mano(-17, -82);
+    if (pose !== 'caja') g += brazo('M13 -118 C17 -104 18 -94 17 -84') + mano(17, -82);
+    return `<g transform="translate(${x} ${y}) scale(${s})">${g}</g>`;
+  }
+  const barra = (x, y, w, h, f, r = 2) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${f}"/>`;
+  const E = {
+    // el problema: cada lado con sus mensajes sueltos, notas y esperas; la conexión se corta en el medio
+    odisea(p) {
+      const negro = p.linea === '#0E1D36' ? '#0E1D36' : '#060E1C';
+      let s = `<path d="M10 206 H390" stroke="${p.linea}" stroke-width=".8" opacity=".25"/>`;
+      s += `<g transform="translate(212 0) scale(-1 1)">${persona(p, 106, 206, 0.95, { pose: 'celular', pelo: 'largo', ropa: p.medio, piel: 0 })}</g>`;
+      s += persona(p, 296, 206, 0.95, { pose: 'quieta', pelo: 'gorra', ropa: p.prof, piel: 2 });
+      // mensajes que llegan de a uno, sin respuesta clara
+      const burbuja = (x, y, w, r, f) => `<g transform="translate(${x} ${y}) rotate(${r})"><rect x="${-w / 2}" y="-9" width="${w}" height="18" rx="9" fill="${f}" stroke="${p.suave}" stroke-width=".8"/><path d="M${-w / 2 + 8} 8 L${-w / 2 + 4} 15 L${-w / 2 + 14} 8" fill="${f}"/>${barra(-w / 2 + 8, -2.5, w - 26, 5, p.suave, 2.5)}</g>`;
+      s += burbuja(52, 52, 52, -8, p.papel) + burbuja(128, 34, 44, 6, p.cielo) + burbuja(58, 108, 40, 4, p.cielo) + burbuja(150, 82, 34, -5, p.papel);
+      s += `<text x="173" y="40" font-family="Archivo, sans-serif" font-weight="900" font-size="22" fill="${p.suave}">?</text><text x="26" y="84" font-family="Archivo, sans-serif" font-weight="900" font-size="16" fill="${p.suave}">?</text>`;
+      // notas en papel, precios de memoria y un reloj que espera
+      const nota = (x, y, r) => `<g transform="translate(${x} ${y}) rotate(${r})"><rect x="-17" y="-21" width="34" height="42" rx="3" fill="${p.papel}" stroke="${p.suave}" stroke-width=".8"/>${[0, 1, 2, 3].map((k) => barra(-11, -13 + k * 8, 22 - (k % 2) * 8, 3.4, p.cielo, 1.7)).join('')}</g>`;
+      s += nota(250, 52, -9) + nota(338, 40, 7) + nota(362, 104, -4);
+      s += `<g transform="translate(244 112)"><circle r="15" fill="${p.papel}" stroke="${p.suave}" stroke-width=".8"/><path d="M0 -8 V0 L6 4" fill="none" stroke="${p.linea}" stroke-width="1.6" stroke-linecap="round"/></g>`;
+      // la conexión que no se termina de dar
+      s += `<path d="M120 150 C150 136 170 134 188 140" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      s += `<path d="M212 140 C230 134 252 136 282 150" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      s += `<circle cx="200" cy="141" r="10" fill="${p.amar}"/><text x="200" y="146.4" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="14" fill="#0E1D36">?</text>`;
+      return s;
+    },
+    quedarse(p) {
+      const negro = p.linea === '#0E1D36' ? '#0E1D36' : '#060E1C';
+      let s = `<path d="M10 206 H390" stroke="${p.linea}" stroke-width=".8" opacity=".25"/>`;
+      // los dos lados, mirándose; cada uno con su celular
+      s += `<g transform="translate(184 0) scale(-1 1)">${persona(p, 92, 206, 0.95, { pose: 'celular', pelo: 'largo', ropa: p.medio, piel: 0 })}</g>`;
+      s += persona(p, 308, 206, 0.95, { pose: 'celular', pelo: 'gorra', ropa: p.prof, piel: 1 });
+      // el pedido: una conversación con la propuesta aceptada adentro
+      s += `<rect x="150" y="64" width="100" height="132" rx="12" fill="${p.papel}" stroke="${p.suave}" stroke-width="1"/>`;
+      s += `<path d="M150 82 V76 Q150 64 162 64 H238 Q250 64 250 76 V82 Z" fill="${p.azul}"/>` + barra(162, 70, 38, 5, '#FFFFFF', 2.5);
+      s += barra(160, 90, 56, 13, p.cielo, 6.5) + barra(166, 95, 34, 3.4, p.suave, 1.7);
+      s += `<rect x="160" y="110" width="80" height="38" rx="7" fill="${p.papel}" stroke="${p.azul}" stroke-width="1.6"/>`;
+      s += barra(168, 118, 30, 4, p.suave, 2) + barra(168, 127, 48, 6, p.tinta, 3) + barra(168, 138, 64, 5, p.azul, 2.5);
+      s += `<circle cx="238" cy="111" r="10" fill="${p.amar}"/><path d="M233.5 111 L237 114.5 L243 107.5" fill="none" stroke="#0E1D36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+      s += barra(184, 155, 56, 13, p.azul, 6.5) + barra(190, 160, 30, 3.4, '#FFFFFF', 1.7);
+      s += barra(158, 178, 84, 10, p.cielo, 5);
+      // del celular de cada uno al mismo pedido
+      s += `<path d="M98 104 C118 98 134 108 150 114" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      s += `<path d="M302 104 C282 98 266 108 250 114" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      // lo que queda adentro, en un arco: chat, propuestas, dirección al aceptar, garantía, reseñas
+      const ic = {
+        chat: (x, y) => `<path d="M${x - 6} ${y - 5} H${x + 6} Q${x + 8} ${y - 5} ${x + 8} ${y - 3} V${y + 3} Q${x + 8} ${y + 5} ${x + 6} ${y + 5} H${x - 1} L${x - 5} ${y + 8.5} V${y + 5} H${x - 6} Q${x - 8} ${y + 5} ${x - 8} ${y + 3} V${y - 3} Q${x - 8} ${y - 5} ${x - 6} ${y - 5} Z"/>`,
+        cartas: (x, y) => `<rect x="${x - 8}" y="${y - 6}" width="11" height="13" rx="2"/><rect x="${x - 3}" y="${y - 7.5}" width="11" height="13" rx="2" fill="${p.papel}"/>`,
+        pin: (x, y) => `<path d="M${x} ${y + 8} C${x - 6} ${y + 1} ${x - 7} ${y - 2} ${x - 7} ${y - 3} A7 7 0 0 1 ${x + 7} ${y - 3} C${x + 7} ${y - 2} ${x + 6} ${y + 1} ${x} ${y + 8} Z"/><circle cx="${x}" cy="${y - 3}" r="2.4"/>`,
+        escudo: (x, y) => `<path d="M${x} ${y - 8} L${x + 7} ${y - 5} V${y} C${x + 7} ${y + 4.5} ${x + 3.5} ${y + 7} ${x} ${y + 8.5} C${x - 3.5} ${y + 7} ${x - 7} ${y + 4.5} ${x - 7} ${y} V${y - 5} Z"/><path d="M${x - 3} ${y} L${x - 0.6} ${y + 2.6} L${x + 3.4} ${y - 2}"/>`,
+        estrella: (x, y) => { let d = ''; for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + (k * Math.PI) / 5, r = k % 2 ? 3.6 : 8.2; d += `${k ? 'L' : 'M'}${(x + r * Math.cos(a)).toFixed(2)} ${(y + 0.8 + r * Math.sin(a)).toFixed(2)} `; } return `<path d="${d}Z"/>`; },
+      };
+      [['chat', -135], ['cartas', -112.5], ['pin', -90], ['escudo', -67.5], ['estrella', -45]].forEach(([n, ang]) => {
+        const a = (ang * Math.PI) / 180, x = 200 + 112 * Math.cos(a), y = 124 + 112 * Math.sin(a);
+        s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14" fill="${p.papel}" stroke="${p.suave}" stroke-width="1"/>`;
+        s += `<g fill="none" stroke="${p.linea}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ic[n](x, y)}</g>`;
+      });
+      return s;
+    },
+  };
+  function reemplazar() {
+    document.querySelectorAll('[data-escena-p]').forEach((el) => {
+      const p = T[el.dataset.tono || 'claro'] || T.claro, f = E[el.dataset.escenaP];
+      if (!f) return;
+      const fondo = el.dataset.fondo === 'no' ? '' : `<circle cx="200" cy="124" r="112" fill="${p.cielo}" opacity="${el.dataset.tono === 'oscuro' ? .5 : .7}"/>`;
+      el.innerHTML = `<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración: ${el.dataset.escenaP}" style="display:block;width:100%;height:auto;overflow:visible">${fondo}${f(p)}</svg>`;
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reemplazar); else reemplazar();
+})();
+</script>
 <script src="../../plantilla/iso.js"></script>
 <script src="../../plantilla/pieza.js"></script>
 </body>
