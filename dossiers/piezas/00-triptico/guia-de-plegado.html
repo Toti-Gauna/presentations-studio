@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es-AR" class="apaisado" data-pieza="triptico">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Tríptico en acordeón · guía de plegado para la imprenta</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<link rel="stylesheet" href="../../plantilla/premium.css">
+<style>
+  .cara { position: relative; width: 112mm; height: 79.2mm; box-shadow: 0 0 0 0.3mm var(--navy); background: #FFFFFF; overflow: hidden; }
+  .cara img { width: 100%; height: 100%; display: block; opacity: 0.6; }
+  .cara .pliegue { position: absolute; top: -2mm; bottom: -2mm; border-left: 0.45mm dashed var(--rojo); }
+  .cara .pliegue.valle { border-left-style: dotted; border-color: var(--azul); }
+  .cara .n { position: absolute; top: 2.4mm; transform: translateX(-50%); font: 800 6.4pt/1 var(--f-texto); color: #FFFFFF; background: var(--navy); padding: 0.9mm 1.6mm; border-radius: 99px; white-space: nowrap; }
+  .zig { width: 100%; height: 24mm; }
+  .zig path { fill: none; stroke: var(--navy); stroke-width: 1.4; stroke-linejoin: round; }
+  .leyenda { display: flex; gap: 6mm; font: 600 7pt/1 var(--f-texto); color: var(--tinta-2); }
+  .leyenda i { display: inline-block; width: 8mm; border-top: 0.45mm dashed var(--rojo); margin-right: 1.6mm; vertical-align: middle; }
+  .leyenda i.v { border-top: 0.45mm dotted var(--azul); }
+  .tabla td { font-size: 7.4pt; }
+</style>
+</head>
+<body>
+<section class="pagina">
+  <div class="lamina">
+    <div class="caja" style="top:13mm;bottom:11mm;left:14mm;right:14mm">
+      <span class="p-ceja">Guía para la imprenta</span>
+      <h1 class="p-titulo" style="margin-top:3mm;font-size:20pt">Tríptico Handyx · plegado en <span class="p-marca">acordeón</span></h1>
+      <p class="p-texto" style="margin-top:3mm;max-width:250mm;color:var(--tinta-2)">A4 apaisado (297 × 210 mm), doble faz, cuatro paneles iguales de 74,25 mm por cara: tres pliegues alternados (zigzag), plegado final 74,25 × 210 mm. El PDF de imprenta trae 3 mm de sangrado por lado. Las líneas de pliegue no se imprimen.</p>
+      <div class="fila" style="gap:10mm;margin-top:6mm;align-items:flex-start">
+        <div><p class="p-h" style="font-size:8.6pt">Cara 1 (la que se ve primero)</p>
+          <div class="cara" style="margin-top:2mm"><img src="img/cara-1.webp" alt="">
+            <span class="pliegue" style="left:25%"></span><span class="pliegue valle" style="left:50%"></span><span class="pliegue" style="left:75%"></span>
+            <span class="n" style="left:12.5%">1 · Portada</span><span class="n" style="left:37.5%">2 · Problema</span><span class="n" style="left:62.5%">3 · Solución</span><span class="n" style="left:87.5%">4 · Solución</span></div></div>
+        <div><p class="p-h" style="font-size:8.6pt">Cara 2 (al dar vuelta la hoja por el lado corto)</p>
+          <div class="cara" style="margin-top:2mm"><img src="img/cara-2.webp" alt="">
+            <span class="pliegue" style="left:25%"></span><span class="pliegue valle" style="left:50%"></span><span class="pliegue" style="left:75%"></span>
+            <span class="n" style="left:12.5%">5 · Customer</span><span class="n" style="left:37.5%">6 · Professional</span><span class="n" style="left:62.5%">7 · Portal</span><span class="n" style="left:87.5%">8 · Contratapa</span></div></div>
+      </div>
+      <div class="leyenda" style="margin-top:4mm"><span><i></i>Pliegue en monte (vista desde la cara 1)</span><span><i class="v"></i>Pliegue en valle</span></div>
+      <div class="grilla" style="margin-top:6mm;column-gap:10mm">
+        <div class="c-5">
+          <p class="p-h" style="font-size:9pt">Cómo se pliega</p>
+          <svg class="zig" viewBox="0 0 200 60"><path d="M10 50 L55 14 L100 50 L145 14 L190 50"/><text x="22" y="58" font-size="10" font-family="DM Sans" fill="#0E1D36">1</text><text x="70" y="58" font-size="10" font-family="DM Sans" fill="#0E1D36">2</text><text x="118" y="58" font-size="10" font-family="DM Sans" fill="#0E1D36">3</text><text x="166" y="58" font-size="10" font-family="DM Sans" fill="#0E1D36">4</text></svg>
+          <div class="etapas" style="margin-top:3mm">
+            <div class="etapa"><span class="pto">1</span><p class="p-texto">Cara 1 arriba. Plegá en monte entre 1 y 2.</p></div>
+            <div class="etapa"><span class="pto">2</span><p class="p-texto">En valle entre 2 y 3.</p></div>
+            <div class="etapa"><span class="pto">3</span><p class="p-texto">En monte entre 3 y 4. Arriba queda la portada; atrás, la contratapa con el QR.</p></div>
+          </div>
+        </div>
+        <div class="c-7">
+          <p class="p-h" style="font-size:9pt">Especificaciones</p>
+          <table class="tabla" style="margin-top:2mm"><tbody>
+            <tr><td class="fuerte">Formato final</td><td>297 × 210 mm, plegado en acordeón a 74,25 × 210 mm</td></tr>
+            <tr><td class="fuerte">Archivo</td><td>Handyx-Triptico-imprenta.pdf · 2 páginas (cara 1, cara 2) · 303 × 216 mm con sangrado · TrimBox y BleedBox</td></tr>
+            <tr><td class="fuerte">Papel</td><td>Ilustración mate 170 g, doble faz, con hendido en los tres pliegues</td></tr>
+            <tr><td class="fuerte">Volteo</td><td>Por el lado corto: así el panel 8 (contratapa) queda detrás de la portada. Pedir una prueba impresa y plegada antes de la tirada</td></tr>
+            <tr><td class="fuerte">Color</td><td>RGB; pedir prueba de color antes de una tirada grande</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

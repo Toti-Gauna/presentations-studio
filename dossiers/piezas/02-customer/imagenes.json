@@ -1,0 +1,701 @@
+[
+{
+"de": "usuario/A-Datos.png",
+"a": "a-datos.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/A-Zona.png",
+"a": "a-zona.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/A-Casa.png",
+"a": "a-casa.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/A-Listo.png",
+"a": "a-listo.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/I-Inicio.png",
+"a": "i-inicio.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/I-HandIAChat.png",
+"a": "i-handiachat.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/I-HandIAFicha.png",
+"a": "i-handiaficha.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/I-Voz.png",
+"a": "i-voz.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/C-Aceptar.png",
+"a": "c-aceptar.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/C-Aceptada.png",
+"a": "c-aceptada.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/C-Cambios.png",
+"a": "c-cambios.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/C-Visita.png",
+"a": "c-visita.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/M-Chat.png",
+"a": "m-chat.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/S-EnCamino.png",
+"a": "s-encamino.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/S-Adicional.png",
+"a": "s-adicional.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/S-Informe.png",
+"a": "s-informe.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/S-Conformidad.png",
+"a": "s-conformidad.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/O-Obra.png",
+"a": "o-obra.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/O-Fecha.png",
+"a": "o-fecha.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/O-Grupo.png",
+"a": "o-grupo.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/O-Pagos.png",
+"a": "o-pagos.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/H-Hogar.png",
+"a": "h-hogar.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/H-Historial.png",
+"a": "h-historial.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/H-Garantias.png",
+"a": "h-garantias.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/recortes/C-Propuestas-recorte.png",
+"a": "c-propuestas.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/recortes/C-Detalle-recorte.png",
+"a": "c-detalle.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/recortes/C-Certificados-recorte.png",
+"a": "c-certificados.webp",
+"recorte": [
+0,
+0,
+1170,
+2532
+],
+"ancho": 780
+},
+{
+"de": "usuario/FL-Obra.png",
+"a": "fl-obra.webp"
+},
+{
+"de": "dossiers/estilos2/img/m-inicio-plata.webp",
+"a": "m-inicio-plata.webp"
+},
+{
+"de": "dossiers/estilos2/img/m-propuestas-plata.webp",
+"a": "m-propuestas-plata.webp"
+},
+{
+"de": "marca/fotos/aerea-centro-playa-azul.webp",
+"a": "f-centro-playa.webp",
+"recorte": [
+0,
+400,
+1200,
+1600
+]
+},
+{
+"de": "marca/fotos/aerea-faro-mogotes-azul.webp",
+"a": "f-faro-mogotes.webp",
+"recorte": [
+0,
+450,
+1200,
+1600
+]
+},
+{
+"de": "marca/fotos/rambla-fuego-azul.webp",
+"a": "f-rambla.webp",
+"recorte": [
+0,
+380,
+1512,
+1440
+]
+},
+{
+"de": "marca/fotos/aerea-puerto-sur-azul.webp",
+"a": "f-puerto-sur.webp",
+"recorte": [
+0,
+700,
+900,
+1600
+]
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-01.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-02.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-03.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-04.webp"
+},
+{
+"de": "número de capítulo calado (cap-n de premium.css) renderizado a imagen",
+"a": "cap-05.webp"
+},
+{
+"de": "usuario/I-Inicio.png",
+"a": "dz-rubros.webp",
+"recorte": [
+10,
+548,
+1160,
+1140
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Que.png",
+"a": "dz-quepasa.webp",
+"recorte": [
+30,
+170,
+1150,
+1000
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Fotos.png",
+"a": "dz-fotos.webp",
+"recorte": [
+30,
+470,
+1150,
+1010
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/P-Revisar.png",
+"a": "dz-pedido.webp",
+"recorte": [
+30,
+195,
+1150,
+605
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-orientativo.webp",
+"recorte": [
+30,
+200,
+1140,
+478
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-precio.webp",
+"recorte": [
+70,
+845,
+1100,
+1140
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-sellos.webp",
+"recorte": [
+60,
+1352,
+800,
+1468
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Propuestas.png",
+"a": "dz-botones.webp",
+"recorte": [
+60,
+1478,
+1110,
+1655
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Comparar.png",
+"a": "dz-mejor.webp",
+"recorte": [
+30,
+200,
+1140,
+728
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Comparar.png",
+"a": "dz-tabla.webp",
+"recorte": [
+20,
+745,
+1150,
+2045
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Agendado.png",
+"a": "dz-turno.webp",
+"recorte": [
+35,
+195,
+1135,
+805
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-EnCamino.png",
+"a": "dz-llegada.webp",
+"recorte": [
+40,
+1375,
+1130,
+1800
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Llego.png",
+"a": "dz-codigo.webp",
+"recorte": [
+40,
+815,
+1130,
+1250
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-Trabajando.png",
+"a": "dz-estados.webp",
+"recorte": [
+40,
+495,
+1150,
+1205
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/S-PagoInformado.png",
+"a": "dz-pago-informado.webp",
+"recorte": [
+40,
+690,
+1130,
+1250
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/X-Pagos.png",
+"a": "dz-pagos-reg.webp",
+"recorte": [
+40,
+180,
+1150,
+1090
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Propuesta.png",
+"a": "dz-obra-etapas.webp",
+"recorte": [
+30,
+190,
+1140,
+1405
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Dia.png",
+"a": "dz-obra-dia.webp",
+"recorte": [
+40,
+370,
+1130,
+1255
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Repuesto.png",
+"a": "dz-obra-repuesto.webp",
+"recorte": [
+40,
+555,
+1150,
+1125
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/O-Gastado.png",
+"a": "dz-obra-gastado.webp",
+"recorte": [
+30,
+185,
+1150,
+645
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/C-Certificados.png",
+"a": "dz-verif-lista.webp",
+"recorte": [
+40,
+1000,
+1130,
+2110
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/H-Compartir.png",
+"a": "dz-compartir.webp",
+"recorte": [
+25,
+795,
+1165,
+1975
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Mensajes.png",
+"a": "dz-mensajes.webp",
+"recorte": [
+30,
+700,
+1140,
+1452
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Chat.png",
+"a": "dz-chat-prop.webp",
+"recorte": [
+30,
+962,
+965,
+1420
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Chat.png",
+"a": "dz-chat-horario.webp",
+"recorte": [
+30,
+1712,
+965,
+2170
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/I-Avisos.png",
+"a": "dz-avisos.webp",
+"recorte": [
+25,
+280,
+1150,
+1005
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-propuestas.webp",
+"a": "dz-pwa-orden.webp",
+"recorte": [
+0,
+118,
+690,
+232
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-propuestas.webp",
+"a": "dz-pwa-sinverif.webp",
+"recorte": [
+20,
+1030,
+650,
+1160
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-seguimiento.webp",
+"a": "dz-pwa-etapas.webp",
+"recorte": [
+20,
+1268,
+660,
+1541
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "brands/handyx/assets/capturas/usuario-pago-metodo.webp",
+"a": "dz-pago-metodo.webp",
+"recorte": [
+15,
+522,
+780,
+1370
+],
+"uso": "despiece (ola 7)"
+}
+]

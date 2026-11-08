@@ -1,0 +1,4961 @@
+{
+  "superficie": "especialista",
+  "corte": "2026-11-07",
+  "fuentes": [
+    {
+      "id": "lienzo-especialista",
+      "tipo": "lienzo",
+      "ref": "Artifact JzUxRPjWxq2Aykk8aukDG8 «Handyx · Diseño completo del bloque Taller», copia en S/artifacts/especialista (196 tableros) y capturas en S/capturas/especialista",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "specialist-fe@f7c0733",
+      "tipo": "repo",
+      "ref": "handyx-specialist-fe origin/main: fases 1, 2 y lote 3.1 (mock) + workflow de Hostinger",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "specialist-fe@585418d",
+      "tipo": "repo",
+      "ref": "handyx-specialist-fe rama claude/pensive-hypatia-jajjgm: fases 3.2–5, Taller H0.1/H1, diseño D.1 y plan por olas",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "specialist-be@cf3b39d",
+      "tipo": "repo",
+      "ref": "handyx-specialist-be rama claude/pensive-hypatia-jajjgm (main = «Initial commit» fc5af22)",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "client-be@8ce44f4",
+      "tipo": "repo",
+      "ref": "handyx-client-be rama claude/pensive-hypatia-jajjgm (dueño del contrato y del esquema)",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "client-be@179bd86",
+      "tipo": "repo",
+      "ref": "handyx-client-be rama fase-4-backend-conciliado",
+      "fecha": "2026-11-02"
+    },
+    {
+      "id": "landing-fe@ac3b245",
+      "tipo": "repo",
+      "ref": "Handy-landing-page-fe origin/main: demo interactiva (src/render/demo/especialista.ts), apps por rol, tarifas.json",
+      "fecha": "2026-10-29"
+    },
+    {
+      "id": "capturas-pwa",
+      "tipo": "doc",
+      "ref": "brands/handyx/assets/capturas/especialista-*.webp + capturas.json (servidor simulado; commit de origen sin dato)",
+      "fecha": "sin dato"
+    },
+    {
+      "id": "afirmaciones",
+      "tipo": "pitch",
+      "ref": "decks/handyx-aticma/afirmaciones.json (FEE-ESPECIALISTA, TARIFA-USUARIO, PRUEBA-COM-*, DESARROLLOS-PLAN, ESP-REGISTRADOS)",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "pitch",
+      "tipo": "pitch",
+      "ref": "S/capturas/pitch 011–013 (a-profesional), 071–073 (q-12), 142–147 (x-herramientas), 169–171 (x-mes-2), 207–212 (x-ferreterias)",
+      "fecha": "2026-11-05"
+    },
+    {
+      "id": "personajes",
+      "tipo": "doc",
+      "ref": "dossiers/inventario/personajes-lienzos.json",
+      "fecha": "2026-11-07"
+    },
+    {
+      "id": "pedido",
+      "tipo": "doc",
+      "ref": "docs/handyx/pedido-dossiers.md §1–3, §7, §14",
+      "fecha": "2026-11-07"
+    }
+  ],
+  "modulos": [
+    {
+      "id": "A",
+      "nombre": "Acceso y seguridad",
+      "tableros": [
+        "D6-Bienvenida.dc.html",
+        "D6-Login.dc.html",
+        "D6-Login2FA.dc.html",
+        "D6-Recuperar.dc.html",
+        "D6-Acceso.dc.html",
+        "D6-Codigo.dc.html",
+        "D6-Seguridad.dc.html",
+        "D6-TOTP.dc.html",
+        "RC-Login.dc.html",
+        "FL-Acceso.dc.html",
+        "X-Escritorio.dc.html"
+      ],
+      "resumen": "Entrar a la cuenta, recuperar la contraseña y una segunda verificación opcional; la app es solo para el celular."
+    },
+    {
+      "id": "V",
+      "nombre": "Alta y verificación",
+      "tableros": [
+        "RG-1.dc.html",
+        "RG-2.dc.html",
+        "RG-3.dc.html",
+        "RG-4.dc.html",
+        "RG-5.dc.html",
+        "RG-6.dc.html",
+        "RG-7.dc.html",
+        "RG-8.dc.html",
+        "RG-9.dc.html",
+        "RG-10.dc.html",
+        "D6-Alta.dc.html",
+        "FL-Alta.dc.html",
+        "RC-Onboarding.dc.html"
+      ],
+      "resumen": "Registro en 10 pasos con documentos que revisa el equipo de verificación; cargar no es estar verificado."
+    },
+    {
+      "id": "OB",
+      "nombre": "Onboarding",
+      "tableros": [
+        "OB-Aprobado.dc.html",
+        "OB-Permisos.dc.html",
+        "OB-Tour.dc.html",
+        "OB-PrimerosPasos.dc.html"
+      ],
+      "resumen": "Habilitación, permisos explicados, cómo funciona y primeros pasos."
+    },
+    {
+      "id": "P",
+      "nombre": "Pedidos y propuestas",
+      "tableros": [
+        "F-Inicio.dc.html",
+        "F-Pedido.dc.html",
+        "F-Precio.dc.html",
+        "F-PrecioTeclado.dc.html",
+        "F-Fecha.dc.html",
+        "F-FechaHora.dc.html",
+        "F-Revisar.dc.html",
+        "F-Enviada.dc.html",
+        "FL-Pedido.dc.html",
+        "RC-Pedido.dc.html"
+      ],
+      "resumen": "Recibir pedidos de la zona sin obligación, poner el precio propio con la sugerencia de Handyx y proponer fecha."
+    },
+    {
+      "id": "D",
+      "nombre": "Tu día y el trabajo",
+      "tableros": [
+        "F-InicioDia.dc.html",
+        "F-InicioRuta.dc.html",
+        "TR-EnCamino.dc.html",
+        "TR-Cobro.dc.html",
+        "F-Trabajo.dc.html",
+        "FL-Trabajo.dc.html",
+        "FL-Dia.dc.html",
+        "RC-Dia.dc.html"
+      ],
+      "resumen": "El recorrido del día, el viaje con ubicación compartida solo en camino, terminar e informar el cobro."
+    },
+    {
+      "id": "MT",
+      "nombre": "Modo trabajo y cierre (H0)",
+      "tableros": [
+        "H0-Modo.dc.html",
+        "H0-ModoHerramientas.dc.html",
+        "H0-ModoAyuda.dc.html",
+        "H0-ModoAgenda.dc.html",
+        "H0-AntesDespues.dc.html",
+        "H0-AntesLado.dc.html",
+        "H0-Informe.dc.html",
+        "H0-InformeEnviado.dc.html",
+        "FL-Cierre.dc.html"
+      ],
+      "resumen": "Tareas, fotos, herramientas y ayuda durante el trabajo; antes y después e informe que se arma solo."
+    },
+    {
+      "id": "TA",
+      "nombre": "Pestaña Taller, agenda e ingresos",
+      "tableros": [
+        "F-Herramientas.dc.html",
+        "F-Agenda.dc.html",
+        "F-AgendaPasadas.dc.html",
+        "F-AgendaMes.dc.html",
+        "F-Ingresos.dc.html",
+        "H0-Gasto.dc.html",
+        "FL-Plata.dc.html",
+        "FL-Mapa.dc.html",
+        "RC-Agenda.dc.html"
+      ],
+      "resumen": "Agenda, ingresos y gastos (bruto y neto) y accesos a presupuestos, equipamiento, herramientas y ferretería."
+    },
+    {
+      "id": "PR",
+      "nombre": "Presupuestos y lista de precios (H0)",
+      "tableros": [
+        "H0-Presupuesto.dc.html",
+        "H0-AgregarMaterial.dc.html",
+        "H0-MaterialOpciones.dc.html",
+        "H0-MaterialNuevo.dc.html",
+        "H0-AgregarLista.dc.html",
+        "H0-Precios.dc.html",
+        "H0-PreciosFoto.dc.html",
+        "H0-PreciosRevisar.dc.html",
+        "H0-PrecioItem.dc.html",
+        "H0-ManoObra.dc.html",
+        "FL-Presupuesto.dc.html",
+        "RC-Presupuesto.dc.html"
+      ],
+      "resumen": "Presupuestador con mano de obra y materiales que salen de la lista de precios propia."
+    },
+    {
+      "id": "EQ",
+      "nombre": "Tu equipamiento (H0)",
+      "tableros": [
+        "H0-Equipo.dc.html",
+        "H0-EquipoCategoria.dc.html",
+        "H0-EquipoDetalle.dc.html",
+        "H0-EquipoBaja.dc.html",
+        "H0-EquipoAgregar.dc.html",
+        "FL-Equipamiento.dc.html",
+        "RC-Equipamiento.dc.html"
+      ],
+      "resumen": "Herramientas, instrumentos y consumibles: dónde están, mantenimiento, préstamos y reposición."
+    },
+    {
+      "id": "O",
+      "nombre": "Obras de varios días",
+      "tableros": [
+        "F-Obras.dc.html",
+        "F-ObraNueva.dc.html",
+        "F-Obra.dc.html",
+        "F-ObraDia.dc.html",
+        "F-ObraDiaHorario.dc.html",
+        "F-ObraDiaTarea.dc.html",
+        "F-ObraDiaAvance.dc.html",
+        "F-ObraRepuestos.dc.html",
+        "F-RepuestoOrigen.dc.html",
+        "F-ObraRepuesto.dc.html",
+        "F-ObraFecha.dc.html",
+        "F-PropuestaObra.dc.html",
+        "FL-Obra.dc.html",
+        "RC-Obra.dc.html",
+        "RC-Repuestos.dc.html"
+      ],
+      "resumen": "Obras por etapas y jornadas, con avance que ve el cliente, repuestos que aprueba y fechas que se mueven con su acuerdo."
+    },
+    {
+      "id": "OE",
+      "nombre": "Obras en equipo",
+      "tableros": [
+        "F-ObraEquipo.dc.html",
+        "F-Invitar.dc.html",
+        "F-Reparto.dc.html",
+        "F-ObraBuscar.dc.html",
+        "F-InicioConvocatoria.dc.html",
+        "F-ConvocatoriaDetalle.dc.html",
+        "F-ObraPostulantes.dc.html",
+        "F-PerfilProfesional.dc.html",
+        "FL-Equipo.dc.html",
+        "RC-Equipo.dc.html"
+      ],
+      "resumen": "Sumar especialistas verificados a una obra y registrar el reparto; Handyx no toca la plata."
+    },
+    {
+      "id": "M",
+      "nombre": "Mensajes",
+      "tableros": [
+        "F-Mensajes.dc.html",
+        "F-Chat.dc.html",
+        "F-ChatGrupo.dc.html",
+        "F-ChatAcciones.dc.html",
+        "F-ChatEditar.dc.html",
+        "F-ChatBorrar.dc.html",
+        "F-ChatSeleccion.dc.html",
+        "F-ChatMedia.dc.html",
+        "F-ChatAdjuntar.dc.html",
+        "F-ChatGrupoInfo.dc.html",
+        "FL-Mensajes.dc.html",
+        "RC-Chat.dc.html",
+        "RC-Mensajes.dc.html"
+      ],
+      "resumen": "Chats atados a un pedido, una obra o el equipo; lo importante viaja como tarjeta que responde el cliente."
+    },
+    {
+      "id": "R",
+      "nombre": "Ferretería (app del especialista)",
+      "tableros": [
+        "R-Catalogo.dc.html",
+        "R-Categoria.dc.html",
+        "R-Pedir.dc.html",
+        "R-Comparar.dc.html",
+        "R-Ferreterias.dc.html",
+        "R-Estado.dc.html",
+        "R-Retiro.dc.html",
+        "R-Mostrador.dc.html",
+        "FL-Ferreteria.dc.html",
+        "RC-Ferreteria.dc.html"
+      ],
+      "resumen": "Pedido único a una ferretería adherida y retiro con QR; primero simulado con ferreterías ficticias."
+    },
+    {
+      "id": "FE",
+      "nombre": "Handyx Ferreterías (panel web y teléfono del ferretero)",
+      "tableros": [
+        "FE-Alta.dc.html",
+        "FE-Inicio.dc.html",
+        "FE-Pedido.dc.html",
+        "FE-Escanear.dc.html",
+        "FE-Retiro.dc.html",
+        "FE-Catalogo.dc.html",
+        "FE-Importar.dc.html",
+        "FE-Metricas.dc.html",
+        "FE-MovilEscanear.dc.html",
+        "FE-Movil.dc.html",
+        "FL-Ferretero.dc.html"
+      ],
+      "resumen": "Panel de escritorio (1280×800) y app en el teléfono para que la ferretería confirme, prepare y entregue; la venta la cobra la ferretería."
+    },
+    {
+      "id": "G",
+      "nombre": "Camino Handyx",
+      "tableros": [
+        "G-Inicio.dc.html",
+        "G-Bienvenida.dc.html",
+        "G-Manual.dc.html",
+        "G-Camino.dc.html",
+        "G-MiniCamino.dc.html",
+        "F-Regalo.dc.html",
+        "G-Canje.dc.html",
+        "G-Vitrina.dc.html",
+        "G-Insignias.dc.html",
+        "G-Areas.dc.html",
+        "FL-Camino.dc.html",
+        "RC-Camino.dc.html"
+      ],
+      "resumen": "Kit de bienvenida, manual y premios sin azar por trabajos y cobros verificados."
+    },
+    {
+      "id": "T",
+      "nombre": "Herramientas del teléfono y por oficio",
+      "tableros": [
+        "T-Taller.dc.html",
+        "T-Medir.dc.html",
+        "T-Escanear.dc.html",
+        "T-Modelo3D.dc.html",
+        "T-Nivel.dc.html",
+        "T-Electricidad.dc.html",
+        "T-Tablero.dc.html",
+        "T-TableroPared.dc.html",
+        "T-Cables.dc.html",
+        "T-Informe.dc.html",
+        "OF-Aire.dc.html",
+        "OF-Plomeria.dc.html",
+        "OF-Gas.dc.html",
+        "OF-Albanileria.dc.html",
+        "OF-Cerrajeria.dc.html",
+        "FL-Taller.dc.html",
+        "RC-Taller.dc.html"
+      ],
+      "resumen": "Herramientas para todos los oficios (H0), las de Electricidad (H1, con código) y H2–H6 «después del deploy»."
+    },
+    {
+      "id": "CU",
+      "nombre": "Cuenta, avisos y ayuda",
+      "tableros": [
+        "F-Cuenta.dc.html",
+        "CU-Perfil.dc.html",
+        "CU-Datos.dc.html",
+        "CU-Disponibilidad.dc.html",
+        "CU-Cobros.dc.html",
+        "CU-Notificaciones.dc.html",
+        "CU-Privacidad.dc.html",
+        "D6-Avisos.dc.html",
+        "D6-Ayuda.dc.html",
+        "D6-Error.dc.html",
+        "D6-Fallo.dc.html",
+        "RC-Cuenta.dc.html",
+        "RC-Mensajes.dc.html"
+      ],
+      "resumen": "Perfil público, disponibilidad y zonas, medios de cobro, avisos, privacidad y baja, ayuda y errores."
+    },
+    {
+      "id": "DEMO",
+      "nombre": "Demo pública del especialista (landing)",
+      "tableros": [],
+      "resumen": "Demo interactiva de la landing en modo especialista (25 pantallas) y su versión como app por rol."
+    },
+    {
+      "id": "EXP",
+      "nombre": "Exploraciones descartadas",
+      "tableros": [
+        "Main.dc.html",
+        "A-Precio.dc.html",
+        "A-Regalo.dc.html",
+        "B-Inicio.dc.html",
+        "B-Precio.dc.html",
+        "B-Regalo.dc.html",
+        "C-Inicio.dc.html",
+        "C-Obras.dc.html",
+        "C-Obra.dc.html",
+        "C-Ingresos.dc.html",
+        "C-Precio.dc.html",
+        "C-Regalo.dc.html"
+      ],
+      "resumen": "Tres direcciones de arte de D.1 (A Taller de obra, B Noche de obra, C Costa de Mar del Plata), descartadas por «la estética de hoy mejorada»."
+    }
+  ],
+  "funciones": [
+    {
+      "id": "E-A-01",
+      "modulo": "A",
+      "nombre": "Entrar con email y contraseña, Google o Apple; recuperar la contraseña",
+      "que_hace": "Entrás a tu cuenta con email y contraseña o con Google o Apple, y si te olvidaste la contraseña pedís una nueva.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Acceso.tsx",
+          "dice": "Acceso, Registro y Recuperar en main (mock)"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "5.2: registro, código de 6 dígitos, recuperación de un solo uso, Google y Apple"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/acceso.md",
+          "dice": "acceso del especialista; sin proveedor de email en producción responde 503"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Login.dc.html",
+          "dice": "Entrá a tu cuenta · Google · Apple"
+        }
+      ],
+      "tableros": [
+        "D6-Bienvenida.dc.html",
+        "D6-Login.dc.html",
+        "D6-Recuperar.dc.html"
+      ],
+      "notas": "En main corre con el servidor simulado; con la API, solo en local (rama). Proveedores sin credenciales."
+    },
+    {
+      "id": "E-A-02",
+      "modulo": "A",
+      "nombre": "Entrar con teléfono o con un código por SMS, sin contraseña",
+      "que_hace": "Elegís recibir un código por email o por SMS y entrás sin contraseña.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Acceso.dc.html",
+          "dice": "Código por email · Código por SMS"
+        },
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "V.1: SMS necesita proveedor autorizado"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:docs/plan.md",
+          "dice": "Auth: «Sin SMS»"
+        }
+      ],
+      "tableros": [
+        "D6-Acceso.dc.html",
+        "D6-Codigo.dc.html"
+      ],
+      "notas": "El código por email existe en la rama; el SMS no tiene proveedor y el plan original decía «Sin SMS»."
+    },
+    {
+      "id": "E-A-03",
+      "modulo": "A",
+      "nombre": "Segunda verificación opcional",
+      "que_hace": "Si querés más seguridad, activás una segunda verificación (app autenticadora, SMS o email) con códigos de respaldo y ves los teléfonos con la sesión abierta.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Seguridad.dc.html",
+          "dice": "Opcional. Además del código, te pedimos otra prueba al entrar desde un teléfono nuevo"
+        },
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/plan-olas.md",
+          "dice": "lotes 1.1 y 1.5"
+        }
+      ],
+      "tableros": [
+        "D6-Seguridad.dc.html",
+        "D6-TOTP.dc.html",
+        "D6-Login2FA.dc.html"
+      ],
+      "notas": "Describir solo la función; no mostrar D6-TOTP (lleva una clave de ejemplo con forma de secreto)."
+    },
+    {
+      "id": "E-A-04",
+      "modulo": "A",
+      "nombre": "Solo en el celular",
+      "que_hace": "Si alguien entra desde una computadora ve una vista de muestra y un QR para abrir la app en el teléfono.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "X-Escritorio.dc.html",
+          "dice": "Handyx se usa desde el celular"
+        }
+      ],
+      "tableros": [
+        "X-Escritorio.dc.html"
+      ],
+      "notas": "Muestra la Canilla."
+    },
+    {
+      "id": "E-V-01",
+      "modulo": "V",
+      "nombre": "Alta guiada con identidad, rubros, foto y antecedentes presenciales",
+      "que_hace": "Cargás tus datos, DNI y CUIT/CUIL, elegís rubros y zonas, te sacás una foto y reservás un turno para mostrar los antecedentes en persona; el equipo revisa y habilita.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/contracts/dto.ts",
+          "dice": "antecedentes: z.enum(ESTADOS_PRESENCIAL)"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/alta/",
+          "dice": "PasoDatos, PasoIdentidad, PasoRubros, PasoSelfie, PasoZonas, PasoAntecedentes, ResumenAlta"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/handoff.md",
+          "dice": "antecedentes imposibles de subir; verificación solo por Operations"
+        }
+      ],
+      "tableros": [
+        "RG-1.dc.html",
+        "RG-3.dc.html",
+        "RG-4.dc.html",
+        "RG-5.dc.html",
+        "RG-6.dc.html",
+        "RG-7.dc.html"
+      ],
+      "notas": "Es el alta que hoy existe en código. El lienzo la reemplaza por 10 pasos (E-V-02)."
+    },
+    {
+      "id": "E-V-02",
+      "modulo": "V",
+      "nombre": "Registro en 10 pasos que se retoma",
+      "que_hace": "Te registrás en 10 pasos con barra de avance (datos y contraseña, domicilio cifrado, rubros, zonas en el mapa, selfie, DNI, CUIT/CUIL y cómo facturás, certificados, antecedentes y revisión) y podés cortar y seguir después.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Alta.dc.html",
+          "dice": "Se puede cortar y retomar en cualquier paso"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "RG-2.dc.html",
+          "dice": "Cifrado. Los clientes solo ven tu zona de trabajo, nunca tu domicilio"
+        }
+      ],
+      "tableros": [
+        "RG-1.dc.html",
+        "RG-2.dc.html",
+        "RG-3.dc.html",
+        "RG-4.dc.html",
+        "RG-5.dc.html",
+        "RG-6.dc.html",
+        "RG-7.dc.html",
+        "RG-8.dc.html",
+        "RG-9.dc.html",
+        "RG-10.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-V-03",
+      "modulo": "V",
+      "nombre": "Antecedentes penales por foto o PDF",
+      "que_hace": "Subís el certificado de antecedentes en foto o PDF; según el diseño va cifrado, lo ve solo el equipo de verificación y se borra al verificarte.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "RG-9.dc.html",
+          "dice": "Subí el certificado de antecedentes: una foto clara o el PDF"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:CLAUDE.md",
+          "dice": "Antecedentes penales por foto o PDF (decisión del 08/11; todavía no implementado)"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/contracts/contratos.test.ts",
+          "dice": "el perfil no tiene campos para archivos de antecedentes"
+        }
+      ],
+      "tableros": [
+        "RG-9.dc.html",
+        "D6-Alta.dc.html",
+        "CU-Datos.dc.html"
+      ],
+      "notas": "Contradicción abierta con la regla anterior (antecedentes nunca como archivo). Falta revisión legal. Ver contradicciones."
+    },
+    {
+      "id": "E-V-04",
+      "modulo": "V",
+      "nombre": "Rubros con matrícula",
+      "que_hace": "Elegís tus rubros; los que piden matrícula se habilitan recién cuando Handyx la verifica.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/handoff.md",
+          "dice": "rubros con matrícula"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "RG-3.dc.html",
+          "dice": "Gas · Pide matrícula · Aire acondicionado · Pide matrícula"
+        }
+      ],
+      "tableros": [
+        "RG-3.dc.html",
+        "RG-8.dc.html"
+      ],
+      "notas": "El lienzo fija matrícula obligatoria en Gas y Aire acondicionado."
+    },
+    {
+      "id": "E-V-05",
+      "modulo": "V",
+      "nombre": "Certificados opcionales que suman al perfil",
+      "que_hace": "Subís cursos, seguro u otros certificados; uno verificado aparece en tu perfil y uno cargado todavía no.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "RG-8.dc.html",
+          "dice": "Un certificado verificado aparece en tu perfil; uno cargado, todavía no"
+        }
+      ],
+      "tableros": [
+        "RG-8.dc.html",
+        "CU-Perfil.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-V-06",
+      "modulo": "V",
+      "nombre": "Estado del alta y habilitación por el equipo",
+      "que_hace": "Ves qué está listo, qué se está evaluando y qué falta; si hay que corregir algo te dicen qué. Solo el equipo de verificación habilita.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/alta/EstadosAlta.tsx",
+          "dice": "estados de revisión, corrección, rechazo y habilitación"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:CLAUDE.md",
+          "dice": "documento cargado ≠ verificado; solo Operations verifica"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Alta.dc.html",
+          "dice": "Cargar un documento todavía no es estar verificado"
+        }
+      ],
+      "tableros": [
+        "D6-Alta.dc.html"
+      ],
+      "notas": "En el lienzo el texto evita nombrar áreas internas («Estamos evaluando tu perfil»); las capturas reales dicen «Operations»."
+    },
+    {
+      "id": "E-OB-01",
+      "modulo": "OB",
+      "nombre": "Habilitado, permisos explicados, cómo funciona y primeros pasos",
+      "que_hace": "Al quedar habilitado ves los rubros activos, por qué se piden avisos y ubicación (solo en viaje) y una lista de primeros pasos opcionales.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OB-Permisos.dc.html",
+          "dice": "Nunca en segundo plano ni cuando estás No disponible"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "OB-PrimerosPasos.dc.html",
+          "dice": "Ninguna es obligatoria para recibir pedidos"
+        }
+      ],
+      "tableros": [
+        "OB-Aprobado.dc.html",
+        "OB-Permisos.dc.html",
+        "OB-Tour.dc.html",
+        "OB-PrimerosPasos.dc.html"
+      ],
+      "notas": "OB-Tour dice «no te cobramos comisión» (ver contradicción de tarifas)."
+    },
+    {
+      "id": "E-OB-02",
+      "modulo": "OB",
+      "nombre": "Bienvenida y aviso de tarifa 0 % en el primer ingreso",
+      "que_hace": "La primera vez ves la bienvenida y un aviso de que Handyx no cobra tarifa durante la demo (hasta el 10/12/2026).",
+      "estado": "En pruebas",
+      "horizonte": "lanzamiento 10/11 (vigencia 10/11–10/12/2026 según el contrato)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/contracts/fee.ts",
+          "dice": "Demo cerrada 10/11/2026–10/12/2026: fee de Handy 0 %"
+        },
+        {
+          "fuente": "doc",
+          "ref": "capturas-pwa:especialista-modal-fee.webp",
+          "dice": "Modal de primer ingreso: Handy no cobra tarifa durante la demo"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:CLAUDE.md",
+          "dice": "el modal y el contador de «0 % durante la demo» se quitan en D.5"
+        }
+      ],
+      "tableros": [],
+      "notas": "Existe en código pero la rama ya decidió quitarlo por «sin comisión nunca»."
+    },
+    {
+      "id": "E-P-01",
+      "modulo": "P",
+      "nombre": "Disponible para urgentes y pedidos programados, sin obligación",
+      "que_hace": "Prendés «Disponible» para recibir urgentes en el momento y elegís si querés programados; lo apagás cuando quieras y no aceptar no tiene consecuencias.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Disponibilidad.tsx",
+          "dice": "opt-in urgente «Ahora» revocable"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "opt-out de urgentes (efecto en la siguiente consulta)"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "CU-Disponibilidad.dc.html",
+          "dice": "Urgentes ahora · Solo cuando prendés Disponible en el Inicio"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-Pedido.dc.html",
+          "dice": "Ahora no · no tiene ninguna consecuencia"
+        }
+      ],
+      "tableros": [
+        "F-Inicio.dc.html",
+        "CU-Disponibilidad.dc.html"
+      ],
+      "notas": "Cumple la regla «sin obligación ni asignaciones; urgentes solo con opt-in revocable»."
+    },
+    {
+      "id": "E-P-02",
+      "modulo": "P",
+      "nombre": "Inicio sobre el mapa con el pedido entrante",
+      "que_hace": "En el Inicio ves el mapa con tus zonas y los pedidos que llegan en una tarjeta con rubro, zona aproximada y vigencia.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "4.5: Inicio sobre el mapa, pedido entrante, Tu precio y avisos (mapa base pendiente)"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-Inicio.dc.html",
+          "dice": "Handyx sugiere · vos decidís · Ver pedido"
+        }
+      ],
+      "tableros": [
+        "F-Inicio.dc.html"
+      ],
+      "notas": "El rediseño del lienzo (Disponible en la cabecera, barra de vidrio con pestaña Taller) es Diseñado (lote 1.3)."
+    },
+    {
+      "id": "E-P-03",
+      "modulo": "P",
+      "nombre": "Bandeja de pedidos por orden de llegada",
+      "que_hace": "Ves todos los pedidos para vos por orden de llegada o por cercanía, con filtros por tipo.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Pedidos.tsx",
+          "dice": "bandeja"
+        },
+        {
+          "fuente": "doc",
+          "ref": "capturas-pwa:especialista-pedidos.webp",
+          "dice": "No tenés obligación de aceptar ninguno"
+        }
+      ],
+      "tableros": [],
+      "notas": "No tiene tablero propio en el lienzo: allí los pedidos viven solo en el Inicio."
+    },
+    {
+      "id": "E-P-04",
+      "modulo": "P",
+      "nombre": "Detalle del pedido sin datos del cliente",
+      "que_hace": "Ves qué necesita el cliente, la zona aproximada y la franja; la dirección exacta llega solo si te elige.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/pedidos.md",
+          "dice": "antes de contratar solo barrio y círculo desplazado"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-Pedido.dc.html",
+          "dice": "La dirección exacta llega cuando el cliente acepta"
+        }
+      ],
+      "tableros": [
+        "F-Pedido.dc.html"
+      ],
+      "notas": "Las fotos del pedido no están en el contrato todavía (handoff 4.5)."
+    },
+    {
+      "id": "E-P-05",
+      "modulo": "P",
+      "nombre": "Tu precio con la sugerencia de Handyx",
+      "que_hace": "Ponés tu precio; Handyx sugiere uno para cada pedido, pero decidís vos.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/TuPrecio.tsx",
+          "dice": "«Handyx sugiere $ X · Vos decidís»"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/pedidos.md",
+          "dice": "precio sugerido versionado que publica Operations"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "H0-ManoObra.dc.html",
+          "dice": "Son tus precios: Handyx solo sugiere para cada pedido y vos decidís"
+        }
+      ],
+      "tableros": [
+        "F-Precio.dc.html"
+      ],
+      "notas": "La tabla de precios sugeridos del mock es de prueba; la real la define Product."
+    },
+    {
+      "id": "E-P-06",
+      "modulo": "P",
+      "nombre": "Precio con cinta y teclado, materiales y garantía",
+      "que_hace": "Deslizás una cinta o escribís el monto, y marcás si incluye materiales y garantía de 30 días.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Precio.dc.html",
+          "dice": "Deslizá la cinta o tocá un atajo"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-PrecioTeclado.dc.html",
+          "dice": "Escribí tu precio"
+        }
+      ],
+      "tableros": [
+        "F-Precio.dc.html",
+        "F-PrecioTeclado.dc.html"
+      ],
+      "notas": "Muestra «Recibís el 100 % · Handyx no te cobra comisión»."
+    },
+    {
+      "id": "E-P-07",
+      "modulo": "P",
+      "nombre": "Proponer día y horario",
+      "que_hace": "Aceptás el horario que pidió el cliente o proponés otro; es una propuesta hasta que el cliente acepta.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "Cuándo podés ir: en 30 min, 1 o 2 horas, el día que pidió u otro día y horario"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-Fecha.dc.html",
+          "dice": "Es una propuesta: el cliente la acepta o elige otra"
+        }
+      ],
+      "tableros": [
+        "F-Fecha.dc.html",
+        "F-FechaHora.dc.html",
+        "F-Revisar.dc.html"
+      ],
+      "notas": "El horario a medida (ruedas de hora) es Diseñado."
+    },
+    {
+      "id": "E-P-08",
+      "modulo": "P",
+      "nombre": "Contraoferta, aceptación y vencimiento",
+      "que_hace": "Negociás con el cliente: contraoferta, aceptar o rechazar con confirmación, retirar tu propuesta; si dos aceptan a la vez, gana una sola.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/pedidos.md",
+          "dice": "aceptación transaccional, una sola gana, 409"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:docs/plan.md",
+          "dice": "2.3 aceptar/rechazar/contraofertar, vencimiento 5 min"
+        }
+      ],
+      "tableros": [
+        "F-Revisar.dc.html",
+        "F-Enviada.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-P-09",
+      "modulo": "P",
+      "nombre": "Avisos que abren el detalle, nunca aceptan",
+      "que_hace": "Te enteras de pedidos nuevos, respuestas y pagos; el aviso te lleva al detalle y no acepta nada solo.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:CLAUDE.md",
+          "dice": "Avisos abren el detalle, nunca aceptan"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Avisos.dc.html",
+          "dice": "Los avisos te llevan al detalle. Nada se acepta desde acá"
+        }
+      ],
+      "tableros": [
+        "D6-Avisos.dc.html"
+      ],
+      "notas": "Push sin proveedor (no_disponible)."
+    },
+    {
+      "id": "E-D-01",
+      "modulo": "D",
+      "nombre": "Trabajo agendado con dirección exacta",
+      "que_hace": "Cuando el cliente acepta ves la dirección, el acuerdo, el chat y «Salir para allá».",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/TrabajoDetalle.tsx",
+          "dice": "detalle con acuerdo inmutable"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-Trabajo.dc.html",
+          "dice": "Te la mostramos porque el cliente aceptó"
+        }
+      ],
+      "tableros": [
+        "F-Trabajo.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-D-02",
+      "modulo": "D",
+      "nombre": "Viaje con ubicación compartida solo en camino y llegada",
+      "que_hace": "Al salir, el cliente ve que vas en camino; la llegada se marca sola al estar en la puerta o con «Ya llegué».",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/viaje.md",
+          "dice": "posiciones cifradas, 30 días de retención, geocerca de 80 m"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "TR-EnCamino.dc.html",
+          "dice": "Tu ubicación se comparte solo hasta que llegás"
+        }
+      ],
+      "tableros": [
+        "TR-EnCamino.dc.html"
+      ],
+      "notas": "Necesita instancias propias de trayectos y geocodificador (pendientes)."
+    },
+    {
+      "id": "E-D-03",
+      "modulo": "D",
+      "nombre": "Tu día: próxima parada y recorrido",
+      "que_hace": "Con varios trabajos hoy, el Inicio muestra la próxima parada, el recorrido ordenado, los kilómetros del mes y avisar una demora.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-InicioDia.dc.html",
+          "dice": "Tenés 3 paradas hoy"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Dia.dc.html",
+          "dice": "Los avisos los manda el especialista con un toque"
+        }
+      ],
+      "tableros": [
+        "F-InicioDia.dc.html",
+        "F-InicioRuta.dc.html",
+        "H0-ModoAgenda.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-D-04",
+      "modulo": "D",
+      "nombre": "Adicionales de repuestos o mano de obra",
+      "que_hace": "Durante el trabajo agregás un adicional con tu precio; el cliente lo acepta o lo rechaza y mientras tanto rige el precio vigente.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/trabajo/AgregarAdicional.tsx",
+          "dice": "adicionales"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "adicionales y total vigente"
+        }
+      ],
+      "tableros": [
+        "F-Trabajo.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-D-05",
+      "modulo": "D",
+      "nombre": "Cambiar la fecha o cancelar con motivo",
+      "que_hace": "Proponés otra fecha (cambia cuando el cliente acepta) o cancelás con un motivo, sin penalización automática.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/trabajo/CancelarTrabajo.tsx",
+          "dice": "cancelación con motivo"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:docs/handoff.md",
+          "dice": "Cancelar un trabajo no tiene penalización automática"
+        }
+      ],
+      "tableros": [
+        "F-Trabajo.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-D-06",
+      "modulo": "D",
+      "nombre": "Terminé e informar el cobro",
+      "que_hace": "Al terminar informás cómo te pagó el cliente (Mercado Pago o efectivo); queda «informado» hasta que se verifica.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/caja.md",
+          "dice": "«me pagaron» (reportado, nunca verificado)"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "TR-Cobro.dc.html",
+          "dice": "Queda «informado por vos» hasta que Lucía lo confirma o se verifica el pago"
+        }
+      ],
+      "tableros": [
+        "TR-Cobro.dc.html"
+      ],
+      "notas": "Mercado Pago sin credenciales (503)."
+    },
+    {
+      "id": "E-D-07",
+      "modulo": "D",
+      "nombre": "Llamar al cliente sin mostrar teléfonos",
+      "que_hace": "Llamás desde la app por un número puente, sin ver ni mostrar teléfonos.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "La llamada puente necesita un proveedor de telefonía pago"
+        }
+      ],
+      "tableros": [],
+      "notas": "Sin proveedor responde 503; no aparece en el lienzo."
+    },
+    {
+      "id": "E-MT-01",
+      "modulo": "MT",
+      "nombre": "Modo trabajo",
+      "que_hace": "Al empezar, una pantalla grande con cronómetro, tareas que arrancan por la seguridad, y un toque para foto, repuestos, ayuda y agenda.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Modo.dc.html",
+          "dice": "Tarea lista · siguiente · Terminé el trabajo"
+        },
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "H0.4: botones de 56 px o más para usar con guantes"
+        }
+      ],
+      "tableros": [
+        "H0-Modo.dc.html"
+      ],
+      "notas": "En código existe solo el cronómetro del trabajo en curso."
+    },
+    {
+      "id": "E-MT-02",
+      "modulo": "MT",
+      "nombre": "Herramientas a mano sin salir del trabajo",
+      "que_hace": "Nivel, linterna, lupa, medir, calculadoras, código de barras, nota de voz y checklist de seguridad.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-ModoHerramientas.dc.html",
+          "dice": "Sin salir del trabajo"
+        }
+      ],
+      "tableros": [
+        "H0-ModoHerramientas.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-MT-03",
+      "modulo": "MT",
+      "nombre": "Pedir ayuda a otro especialista",
+      "que_hace": "Llamás o escribís a un contacto, lo sumás al trabajo o buscás un especialista nuevo para terminar.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-ModoAyuda.dc.html",
+          "dice": "Buscar un profesional nuevo · lo ven verificados de la zona"
+        }
+      ],
+      "tableros": [
+        "H0-ModoAyuda.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-MT-04",
+      "modulo": "MT",
+      "nombre": "Antes y después",
+      "que_hace": "Comparás el antes y el después deslizando o lado a lado y contás (o dictás) qué cambiaste.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-AntesDespues.dc.html",
+          "dice": "Podés dictarlo: se escribe solo"
+        }
+      ],
+      "tableros": [
+        "H0-AntesDespues.dc.html",
+        "H0-AntesLado.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-MT-05",
+      "modulo": "MT",
+      "nombre": "Informe del trabajo, conformidad y garantía",
+      "que_hace": "El informe se completa solo con lo que hiciste; el cliente da su conformidad con un toque, arranca la garantía, queda el PDF y un recordatorio de mantenimiento para vos.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Informe.dc.html",
+          "dice": "Lo recibe Lucía en el chat y en PDF"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "H0-InformeEnviado.dc.html",
+          "dice": "Recordatorio de mantenimiento · te avisamos a vos"
+        }
+      ],
+      "tableros": [
+        "H0-Informe.dc.html",
+        "H0-InformeEnviado.dc.html"
+      ],
+      "notas": "El lado del cliente depende de la app del usuario."
+    },
+    {
+      "id": "E-TA-01",
+      "modulo": "TA",
+      "nombre": "Pestaña Taller",
+      "que_hace": "Una pestaña que junta agenda, ingresos y gastos, presupuestos y precios, equipamiento, herramientas del teléfono y ferretería.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Herramientas.dc.html",
+          "dice": "Agenda, plata y herramientas"
+        },
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "La pestaña «Agenda» se reemplaza por «Taller»"
+        }
+      ],
+      "tableros": [
+        "F-Herramientas.dc.html"
+      ],
+      "notas": "En código existe /taller/ solo con las herramientas de Electricidad."
+    },
+    {
+      "id": "E-TA-02",
+      "modulo": "TA",
+      "nombre": "Agenda del mes y del día",
+      "que_hace": "Ves tus turnos del mes y del día; una obra aparece jornada por jornada y se marcan superposiciones.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Agenda.tsx",
+          "dice": "agenda mensual"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "agenda con superposición"
+        },
+        {
+          "fuente": "doc",
+          "ref": "capturas-pwa:especialista-agenda.webp",
+          "dice": "Agenda mensual con un trabajo confirmado"
+        }
+      ],
+      "tableros": [
+        "F-Agenda.dc.html",
+        "F-AgendaPasadas.dc.html",
+        "F-AgendaMes.dc.html"
+      ],
+      "notas": "Las vistas Pasadas/Hoy/Futuras del lienzo son Diseñado."
+    },
+    {
+      "id": "E-TA-03",
+      "modulo": "TA",
+      "nombre": "Caja: lo cobrado, verificado e informado",
+      "que_hace": "Ves lo cobrado en el mes separando lo verificado de lo informado; el pago va directo a vos y no hay saldo en Handyx.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Caja.tsx",
+          "dice": "caja"
+        },
+        {
+          "fuente": "doc",
+          "ref": "capturas-pwa:especialista-cobro.webp",
+          "dice": "El pago va directo a vos"
+        }
+      ],
+      "tableros": [],
+      "notas": "En el lienzo la Caja se reemplaza por Tus ingresos (E-TA-04)."
+    },
+    {
+      "id": "E-TA-04",
+      "modulo": "TA",
+      "nombre": "Ingresos y gastos: bruto, gastos y neto",
+      "que_hace": "Sabés cuánto te queda: bruto (en Handyx y por fuera), gastos de materiales y viáticos, neto y ganancia por trabajo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Ingresos.dc.html",
+          "dice": "Neto · lo que te queda"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/taller/catalogo.ts",
+          "dice": "ingresos: fase H0, lista: false"
+        }
+      ],
+      "tableros": [
+        "F-Ingresos.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-TA-05",
+      "modulo": "TA",
+      "nombre": "Cargar un gasto con la foto del ticket",
+      "que_hace": "Cargás un gasto con la foto del ticket (leída en el teléfono) y elegís si se lo cobrás al cliente como adicional.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Gasto.dc.html",
+          "dice": "Leído en tu teléfono"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Plata.dc.html",
+          "dice": "Los gastos son del especialista: el cliente nunca los ve"
+        }
+      ],
+      "tableros": [
+        "H0-Gasto.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-TA-06",
+      "modulo": "TA",
+      "nombre": "Exportar el mes, metas y ayuda de monotributo",
+      "que_hace": "Exportar el mes, fijar metas y una ayuda orientativa de monotributo.",
+      "estado": "Concepto",
+      "horizonte": "sin fecha",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "H0.3: metas; exportar el mes; ayuda de monotributo orientativa"
+        }
+      ],
+      "tableros": [],
+      "notas": "Solo en el plan; no está dibujado."
+    },
+    {
+      "id": "E-PR-01",
+      "modulo": "PR",
+      "nombre": "Presupuesto dentro del chat",
+      "que_hace": "Mandás un presupuesto estructurado en la conversación con el cliente.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:docs/plan.md",
+          "dice": "2.3 presupuesto en chat"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Hilo.tsx",
+          "dice": "hilo del chat"
+        }
+      ],
+      "tableros": [],
+      "notas": "Versión anterior al presupuestador del lienzo."
+    },
+    {
+      "id": "E-PR-02",
+      "modulo": "PR",
+      "nombre": "Presupuestador con mano de obra y materiales",
+      "que_hace": "Armás el presupuesto con tus tarifas y materiales de tu lista y lo mandás por el chat; si cambia un precio antes de que acepte, sale una versión nueva.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Presupuesto.dc.html",
+          "dice": "Total para el cliente $ 47.000 · Mandar a Lucía por el chat"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Presupuesto.dc.html",
+          "dice": "Cambió un precio · De uno que se actualiza, antes de aceptar"
+        }
+      ],
+      "tableros": [
+        "H0-Presupuesto.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-PR-03",
+      "modulo": "PR",
+      "nombre": "Agregar materiales de a uno, varios o nuevos",
+      "que_hace": "Buscás en tu lista y tocás; elegís cobrarlo, anotarlo como gasto o congelar el precio; si no está, lo cargás y su nombre (no tu precio) suma al catálogo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-MaterialNuevo.dc.html",
+          "dice": "El nombre del material se suma al catálogo de Handyx… Tu precio queda solo para vos"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "H0-AgregarLista.dc.html",
+          "dice": "Kit · Cambio de grifería"
+        }
+      ],
+      "tableros": [
+        "H0-AgregarMaterial.dc.html",
+        "H0-MaterialOpciones.dc.html",
+        "H0-MaterialNuevo.dc.html",
+        "H0-AgregarLista.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-PR-04",
+      "modulo": "PR",
+      "nombre": "Lista de precios propia",
+      "que_hace": "Tus materiales y tarifas por categoría, con lo que subió y los precios viejos marcados.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Precios.dc.html",
+          "dice": "Con esto se arman tus presupuestos en segundos"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/taller/catalogo.ts",
+          "dice": "precios: fase H0, lista: false"
+        }
+      ],
+      "tableros": [
+        "H0-Precios.dc.html",
+        "H0-PrecioItem.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-PR-05",
+      "modulo": "PR",
+      "nombre": "Foto de la lista del corralón",
+      "que_hace": "Le sacás una foto a la lista del corralón; se lee en el teléfono (la foto no sale) y revisás cada precio.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-PreciosFoto.dc.html",
+          "dice": "Se lee en tu teléfono: la foto no sale de acá"
+        }
+      ],
+      "tableros": [
+        "H0-PreciosFoto.dc.html",
+        "H0-PreciosRevisar.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-PR-06",
+      "modulo": "PR",
+      "nombre": "Tarifas de mano de obra",
+      "que_hace": "Cargás hora, visita, recargo de urgencia y precio por tarea para presupuestar más rápido.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-ManoObra.dc.html",
+          "dice": "Son tus precios: Handyx solo sugiere"
+        }
+      ],
+      "tableros": [
+        "H0-ManoObra.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-PR-07",
+      "modulo": "PR",
+      "nombre": "Catálogo con precios de ferreterías de Mar del Plata",
+      "que_hace": "Sumar precios desde las listas reales de las ferreterías.",
+      "estado": "Concepto",
+      "horizonte": "sin fecha",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Precios.dc.html",
+          "dice": "Catálogo de ferreterías · Pronto"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Presupuesto.dc.html",
+          "dice": "Después se suma el catálogo con los precios de las ferreterías de Mar del Plata"
+        }
+      ],
+      "tableros": [
+        "H0-Precios.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-EQ-01",
+      "modulo": "EQ",
+      "nombre": "Equipamiento por categoría y ubicación",
+      "que_hace": "Ves herramientas, instrumentos, seguridad y consumibles, dónde está cada cosa (camioneta, taller, prestado) y lo que queda poco.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-Equipo.dc.html",
+          "dice": "Matafuego vence 12/12 · 3 quedan pocos"
+        }
+      ],
+      "tableros": [
+        "H0-Equipo.dc.html",
+        "H0-EquipoCategoria.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-EQ-02",
+      "modulo": "EQ",
+      "nombre": "Agregar herramienta y recordar mantenimiento",
+      "que_hace": "Sumás una herramienta con foto o código de barras y te recuerda el mantenimiento.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-EquipoAgregar.dc.html",
+          "dice": "Recordarme el mantenimiento"
+        }
+      ],
+      "tableros": [
+        "H0-EquipoAgregar.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-EQ-03",
+      "modulo": "EQ",
+      "nombre": "Historial, préstamo y «ya no la tengo»",
+      "que_hace": "Cada herramienta tiene historial (préstamos y trabajos); la prestás, la movés o la das de baja y la reponés.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "H0-EquipoBaja.dc.html",
+          "dice": "Sale de tu equipamiento, pero queda en el historial"
+        }
+      ],
+      "tableros": [
+        "H0-EquipoDetalle.dc.html",
+        "H0-EquipoBaja.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-O-01",
+      "modulo": "O",
+      "nombre": "Obra por etapas con jornadas, diario y cobro por etapa",
+      "que_hace": "Seguís una obra de varios días: plan por etapas, jornadas, diario con fotos que ve el cliente y el cobro de cada etapa.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/obra/",
+          "dice": "PlanObra, JornadasObra, DiarioObra, ResumenObra"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "etapas con su cobro, pedido de otro día, diario con fotos privadas"
+        }
+      ],
+      "tableros": [
+        "F-Obra.dc.html",
+        "F-ObraDia.dc.html"
+      ],
+      "notas": "El plan de obra lo crea la API de usuario (handoff 5.6)."
+    },
+    {
+      "id": "E-O-02",
+      "modulo": "O",
+      "nombre": "Pestaña Obras",
+      "que_hace": "Lista de obras en curso, próximas y terminadas con su avance.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Obras.dc.html",
+          "dice": "2 en curso · 1 próxima"
+        }
+      ],
+      "tableros": [
+        "F-Obras.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-O-03",
+      "modulo": "O",
+      "nombre": "Proponer una obra y mandar la propuesta por chat",
+      "que_hace": "Proponés una obra a un cliente tuyo o nuevo (por enlace) con etapas, jornadas, montos y equipo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-ObraNueva.dc.html",
+          "dice": "La propuesta le llega a Carla como tarjeta en el chat"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-PropuestaObra.dc.html",
+          "dice": "Cobro por etapa · Materiales aparte"
+        }
+      ],
+      "tableros": [
+        "F-ObraNueva.dc.html",
+        "F-PropuestaObra.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-O-04",
+      "modulo": "O",
+      "nombre": "Jornada con tareas, quién viene y avance",
+      "que_hace": "Cada jornada tiene horario, tareas asignadas, quién viene, materiales y el avance que ve el cliente.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-ObraDia.dc.html",
+          "dice": "Avance del día · lo ve Martín"
+        }
+      ],
+      "tableros": [
+        "F-ObraDia.dc.html",
+        "F-ObraDiaHorario.dc.html",
+        "F-ObraDiaTarea.dc.html",
+        "F-ObraDiaAvance.dc.html"
+      ],
+      "notas": "El diario con fotos ya existe (E-O-01)."
+    },
+    {
+      "id": "E-O-05",
+      "modulo": "O",
+      "nombre": "Repuestos que aprueba el cliente",
+      "que_hace": "Cargás repuestos por jornada; el cliente los aprueba en el chat; elegís conseguirlos vos o en una ferretería adherida y te avisa el día anterior si falta comprar.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-RepuestoOrigen.dc.html",
+          "dice": "Lo consigo yo · En una ferretería adherida"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-ObraRepuesto.dc.html",
+          "dice": "Avisarme si el día anterior falta comprarlo"
+        }
+      ],
+      "tableros": [
+        "F-ObraRepuestos.dc.html",
+        "F-RepuestoOrigen.dc.html",
+        "F-ObraRepuesto.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-O-06",
+      "modulo": "O",
+      "nombre": "Pedir otro día para una jornada",
+      "que_hace": "Pedís mover una jornada; cambia cuando el cliente acepta.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/handoff.md",
+          "dice": "«Pedir otro día»: es una solicitud que no mueve las demás jornadas"
+        }
+      ],
+      "tableros": [
+        "F-ObraFecha.dc.html"
+      ],
+      "notas": "Correr «esta y las que siguen» y avisar al equipo es Diseñado."
+    },
+    {
+      "id": "E-OE-01",
+      "modulo": "OE",
+      "nombre": "Equipo de la obra e invitación",
+      "que_hace": "Invitás a un contacto o mandás un enlace con código que vence; tiene que estar verificado y no ve nada hasta aceptar.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Invitar.dc.html",
+          "dice": "Vale 48 horas · solo para esta obra"
+        }
+      ],
+      "tableros": [
+        "F-ObraEquipo.dc.html",
+        "F-Invitar.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-OE-02",
+      "modulo": "OE",
+      "nombre": "Reparto del pago registrado",
+      "que_hace": "Acuerdan cuánto le toca a cada uno y cómo cobra; Handyx registra lo acordado y no recibe ni reparte la plata.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Reparto.dc.html",
+          "dice": "Handyx no recibe ni reparte la plata: registra lo que acuerdan entre ustedes"
+        }
+      ],
+      "tableros": [
+        "F-Reparto.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-OE-03",
+      "modulo": "OE",
+      "nombre": "Buscar un especialista nuevo para la obra",
+      "que_hace": "Publicás una búsqueda que ven solo especialistas verificados de la zona; se postulan, ves su perfil y elegís vos.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-ObraBuscar.dc.html",
+          "dice": "Verificado por Handyx · Siempre: no se puede apagar"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Equipo.dc.html",
+          "dice": "La búsqueda la ven solo verificados y cierra sola"
+        }
+      ],
+      "tableros": [
+        "F-ObraBuscar.dc.html",
+        "F-InicioConvocatoria.dc.html",
+        "F-ConvocatoriaDetalle.dc.html",
+        "F-ObraPostulantes.dc.html",
+        "F-PerfilProfesional.dc.html"
+      ],
+      "notas": "F-PerfilProfesional muestra opiniones de clientes ficticias."
+    },
+    {
+      "id": "E-OE-04",
+      "modulo": "OE",
+      "nombre": "Contactos",
+      "que_hace": "Guardás contactos desde un chat, sin teléfonos.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/Contactos.tsx",
+          "dice": "contactos"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "contactos"
+        }
+      ],
+      "tableros": [],
+      "notas": "Base de «Contactos y equipos» de F-Cuenta."
+    },
+    {
+      "id": "E-M-01",
+      "modulo": "M",
+      "nombre": "Chat con el cliente",
+      "que_hace": "Conversás con el cliente antes y durante el trabajo, con fotos y respuestas rápidas que nunca se mandan solas.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Hilo.tsx",
+          "dice": "chat previo a contratar"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "chat cifrado con fotos privadas"
+        }
+      ],
+      "tableros": [
+        "F-Mensajes.dc.html",
+        "F-Chat.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-M-02",
+      "modulo": "M",
+      "nombre": "Chat grupal de la obra y filtros",
+      "que_hace": "Un grupo por obra con el cliente y el equipo; la lista se filtra por pedidos, obras, equipo y soporte.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-Mensajes.dc.html",
+          "dice": "Todos · Pedidos · Obras · Equipo · Soporte"
+        }
+      ],
+      "tableros": [
+        "F-Mensajes.dc.html",
+        "F-ChatGrupo.dc.html",
+        "F-ChatGrupoInfo.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-M-03",
+      "modulo": "M",
+      "nombre": "Reacciones, editar y borrar para todos",
+      "que_hace": "Reaccionás, editás (queda «editado») o borrás para todos; el borrado se guarda oculto por si hay un reclamo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-ChatBorrar.dc.html",
+          "dice": "Lo guardamos oculto por si hay un reclamo sobre la obra"
+        }
+      ],
+      "tableros": [
+        "F-ChatAcciones.dc.html",
+        "F-ChatEditar.dc.html",
+        "F-ChatBorrar.dc.html",
+        "F-ChatSeleccion.dc.html"
+      ],
+      "notas": "Retención de los borrados: pendiente de Legal."
+    },
+    {
+      "id": "E-M-04",
+      "modulo": "M",
+      "nombre": "Tarjetas en el chat",
+      "que_hace": "Mandás presupuestos, propuestas de obra, repuestos, cambios de fecha, fotos e informes como tarjetas que el cliente responde ahí.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "F-ChatAdjuntar.dc.html",
+          "dice": "Llega como tarjeta: el cliente acepta, aprueba o pide cambios"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Mensajes.dc.html",
+          "dice": "Nada se manda solo"
+        }
+      ],
+      "tableros": [
+        "F-ChatAdjuntar.dc.html",
+        "F-ChatMedia.dc.html"
+      ],
+      "notas": "Videos de hasta 1 minuto, sin ubicación."
+    },
+    {
+      "id": "E-R-01",
+      "modulo": "R",
+      "nombre": "Catálogo y pedido único a la ferretería",
+      "que_hace": "Buscás en un catálogo por categorías con variantes y armás un pedido agrupado por trabajo, con casillas de gasto y cobro.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "R-Catalogo.dc.html",
+          "dice": "Simulación: ferreterías ficticias"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "R-Pedir.dc.html",
+          "dice": "Registrar como gasto · Cobrar al cliente lo que corresponda"
+        }
+      ],
+      "tableros": [
+        "R-Catalogo.dc.html",
+        "R-Categoria.dc.html",
+        "R-Pedir.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-R-02",
+      "modulo": "R",
+      "nombre": "Comparar ferreterías adheridas",
+      "que_hace": "Comparás precio, stock, distancia y horario de cada ferretería; el precio puede cambiar hasta que confirma.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "R-Comparar.dc.html",
+          "dice": "Cada ferretería pone sus precios"
+        }
+      ],
+      "tableros": [
+        "R-Comparar.dc.html",
+        "R-Ferreterias.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-R-03",
+      "modulo": "R",
+      "nombre": "Estado del pedido, retiro con QR y lista para el mostrador",
+      "que_hace": "Seguís el pedido (enviado, confirmado, listo), retirás mostrando un QR o una lista con letra grande, y el ticket queda como gasto.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "R-Retiro.dc.html",
+          "dice": "El ferretero lo escanea con su app y ve toda la lista"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "R-Estado.dc.html",
+          "dice": "Teflón: no hay de 12 mm · Ofrecen 19 mm"
+        }
+      ],
+      "tableros": [
+        "R-Estado.dc.html",
+        "R-Retiro.dc.html",
+        "R-Mostrador.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-R-04",
+      "modulo": "R",
+      "nombre": "Piloto con ferreterías aliadas reales",
+      "que_hace": "Pasar del catálogo simulado a listas reales de ferreterías de Mar del Plata.",
+      "estado": "Concepto",
+      "horizonte": "sin fecha",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FL-Ferreteria.dc.html",
+          "dice": "Después, el catálogo se arma con las listas reales"
+        },
+        {
+          "fuente": "doc",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "R.3 Piloto real con ferreterías aliadas"
+        },
+        {
+          "fuente": "pitch",
+          "ref": "pitch:207–212",
+          "dice": "Visión · a explorar · sin alianzas firmadas"
+        }
+      ],
+      "tableros": [],
+      "notas": ""
+    },
+    {
+      "id": "E-FE-01",
+      "modulo": "FE",
+      "nombre": "Alta de la ferretería",
+      "que_hace": "La ferretería se suma con datos, dirección y horarios, cómo entrega, lista de precios y su equipo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Alta.dc.html",
+          "dice": "Cobrás vos en el mostrador; Handyx no se queda con nada de la venta"
+        }
+      ],
+      "tableros": [
+        "FE-Alta.dc.html"
+      ],
+      "notas": "Panel web de 1280×800. Repo propio sin crear (requiere autorización)."
+    },
+    {
+      "id": "E-FE-02",
+      "modulo": "FE",
+      "nombre": "Pedidos del día: confirmar, preparar, entregar",
+      "que_hace": "La ferretería ve pedidos nuevos, preparando, listos y retirados; confirma stock y precio, sugiere reemplazos, escanea el QR y marca retirado.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Pedido.dc.html",
+          "dice": "Lo paga en el mostrador. Handyx no cobra nada de esta venta"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Retiro.dc.html",
+          "dice": "A Julián le llega el ticket y queda como gasto en su app"
+        }
+      ],
+      "tableros": [
+        "FE-Inicio.dc.html",
+        "FE-Pedido.dc.html",
+        "FE-Escanear.dc.html",
+        "FE-Retiro.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-FE-03",
+      "modulo": "FE",
+      "nombre": "Catálogo, precios e importación de la lista",
+      "que_hace": "Mantiene su catálogo y precios (suba en %, precios viejos marcados) e importa la lista desde un archivo con revisión.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Importar.dc.html",
+          "dice": "Para corregir · No se publican hasta revisarlos"
+        }
+      ],
+      "tableros": [
+        "FE-Catalogo.dc.html",
+        "FE-Importar.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-FE-04",
+      "modulo": "FE",
+      "nombre": "Métricas para la ferretería",
+      "que_hace": "Pedidos del mes, lo más pedido y sugerencias de stock.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Metricas.dc.html",
+          "dice": "Lo que te trae Handyx · Ejemplo"
+        }
+      ],
+      "tableros": [
+        "FE-Metricas.dc.html"
+      ],
+      "notas": "Cifras de ejemplo."
+    },
+    {
+      "id": "E-FE-05",
+      "modulo": "FE",
+      "nombre": "App del ferretero en el teléfono",
+      "que_hace": "Escanear el QR del especialista y preparar el pedido desde el teléfono.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "FE-Movil.dc.html",
+          "dice": "Listo para retirar · avisar a Julián"
+        }
+      ],
+      "tableros": [
+        "FE-MovilEscanear.dc.html",
+        "FE-Movil.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-G-01",
+      "modulo": "G",
+      "nombre": "Kit de bienvenida y manual",
+      "que_hace": "Al quedar verificado elegís el talle de la remera y si querés el manual en la app, impreso o los dos (6 capítulos).",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "G-Bienvenida.dc.html",
+          "dice": "Te lo damos al quedar verificado"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "G-Manual.dc.html",
+          "dice": "Leer el manual da una insignia; no cambia los pedidos que recibís"
+        }
+      ],
+      "tableros": [
+        "G-Bienvenida.dc.html",
+        "G-Manual.dc.html"
+      ],
+      "notas": "«Retiro en un punto Handyx · Centro»: punto sin confirmar."
+    },
+    {
+      "id": "E-G-02",
+      "modulo": "G",
+      "nombre": "Camino de trabajos y mini caminos",
+      "que_hace": "Avanzás por estaciones con trabajos verificados y por cobros verificados u oficio; nada se resta y no hay rankings.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "G-Inicio.dc.html",
+          "dice": "Solo cuentan trabajos verificados. Nada se resta"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "G-MiniCamino.dc.html",
+          "dice": "Montos y premios en borrador: los define Handyx con Legal. Sin sorteos"
+        }
+      ],
+      "tableros": [
+        "G-Inicio.dc.html",
+        "G-Camino.dc.html",
+        "G-MiniCamino.dc.html"
+      ],
+      "notas": "Premios del oficio Electricidad en borrador en código (src/taller/premios.ts)."
+    },
+    {
+      "id": "E-G-03",
+      "modulo": "G",
+      "nombre": "El regalo, canje y vitrina",
+      "que_hace": "Al llegar a un hito se abre el premio, elegís cómo recibirlo y queda en tu vitrina; cada premio se revisa antes de entregarlo.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "G-Vitrina.dc.html",
+          "dice": "Revisamos cada premio antes de entregarlo. Las cantidades de la escalera son un borrador"
+        }
+      ],
+      "tableros": [
+        "F-Regalo.dc.html",
+        "G-Canje.dc.html",
+        "G-Vitrina.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-G-04",
+      "modulo": "G",
+      "nombre": "Insignias por usar la app",
+      "que_hace": "Insignias de reconocimiento que no dan premios ni cambian los pedidos.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "G-Insignias.dc.html",
+          "dice": "No dan premios ni cambian los pedidos que recibís"
+        }
+      ],
+      "tableros": [
+        "G-Insignias.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-G-05",
+      "modulo": "G",
+      "nombre": "Áreas del camino",
+      "que_hace": "El camino dividido en áreas (taller, obra, ciudad) con premios grandes.",
+      "estado": "Concepto",
+      "horizonte": "sin fecha",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "G-Areas.dc.html",
+          "dice": "Concepto: no entra en esta versión"
+        }
+      ],
+      "tableros": [
+        "G-Areas.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-01",
+      "modulo": "T",
+      "nombre": "Herramientas del teléfono para todos los oficios",
+      "que_hace": "Medir con la cámara, escanear en 3D, modelo 3D con medidas, plomada y ángulos, linterna y lupa y conversor.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "T-Taller.dc.html",
+          "dice": "Para todos los oficios"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "T-Medir.dc.html",
+          "dice": "Es una medida aproximada: para cortar, confirmala con la cinta"
+        }
+      ],
+      "tableros": [
+        "T-Taller.dc.html",
+        "T-Medir.dc.html",
+        "T-Escanear.dc.html",
+        "T-Modelo3D.dc.html"
+      ],
+      "notas": "Falta decidir dónde se procesa el escaneo 3D."
+    },
+    {
+      "id": "E-T-02",
+      "modulo": "T",
+      "nombre": "Nivel con el giroscopio",
+      "que_hace": "Usás el teléfono como nivel y pendiente.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/taller/catalogo.ts",
+          "dice": "nivel: fase H0, lista: true"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/Nivel.tsx",
+          "dice": "pantalla"
+        }
+      ],
+      "tableros": [
+        "T-Nivel.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-03",
+      "modulo": "T",
+      "nombre": "Calculadoras de Electricidad",
+      "que_hace": "Sección y caída de tensión, planificador de vivienda, iluminación, consumo y ahorro, Ohm y referencias; andan sin conexión.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/taller/catalogo.ts",
+          "dice": "H1 · Electricidad, lista: true, sinConexion"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "T-Cables.dc.html",
+          "dice": "Tabla en revisión técnica. Es orientativa"
+        }
+      ],
+      "tableros": [
+        "T-Electricidad.dc.html",
+        "T-Cables.dc.html"
+      ],
+      "notas": "Valores «en revisión técnica» hasta que los revise un profesional y Legal."
+    },
+    {
+      "id": "E-T-04",
+      "modulo": "T",
+      "nombre": "Tablero 3D y verlo en la pared",
+      "que_hace": "Armás el tablero en 3D con su cómputo de materiales y lo mostrás en la pared del cliente con realidad aumentada.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/Tablero3D.tsx",
+          "dice": "armador 3D"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/herramientas.md",
+          "dice": "AR: falta probarlo en un Android y un iPhone reales"
+        }
+      ],
+      "tableros": [
+        "T-Tablero.dc.html",
+        "T-TableroPared.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-05",
+      "modulo": "T",
+      "nombre": "Informe eléctrico con semáforo",
+      "que_hace": "Cargás las mediciones de tus instrumentos y sale un informe con semáforo para el cliente; no es un certificado.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/Informe.tsx",
+          "dice": "informe"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "T-Informe.dc.html",
+          "dice": "No es un certificado. Sin datos del cliente"
+        }
+      ],
+      "tableros": [
+        "T-Informe.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-06",
+      "modulo": "T",
+      "nombre": "Recorrido de caños en 3D y checklists",
+      "que_hace": "Dibujás el recorrido de caños por ambiente con sus materiales y seguís checklists con la seguridad primero.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/Canalizacion3D.tsx",
+          "dice": "recorrido de caños"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/Checklists.tsx",
+          "dice": "checklists"
+        }
+      ],
+      "tableros": [
+        "T-Electricidad.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-07",
+      "modulo": "T",
+      "nombre": "Etiquetas del tablero con IA y presupuesto dictado",
+      "que_hace": "Una foto del tablero propone etiquetas; contás el trabajo y sale la lista de tareas y materiales (sin datos personales).",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/handoff.md",
+          "dice": "responden 503 mientras no haya un proveedor de IA autorizado"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/pantallas/taller/EtiquetadoIa.tsx",
+          "dice": "en el mock el resultado es simulado"
+        }
+      ],
+      "tableros": [],
+      "notas": "No figura en el lienzo; sin proveedor de IA."
+    },
+    {
+      "id": "E-T-08",
+      "modulo": "T",
+      "nombre": "H2 · Aire acondicionado: frigorías con la brújula",
+      "que_hace": "Calcular frigorías según orientación y medidas, y ver el equipo en la pared.",
+      "estado": "Concepto",
+      "horizonte": "posterior al lanzamiento («después del deploy»)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OF-Aire.dc.html",
+          "dice": "Después del deploy · H2 · Cálculo · orientativo"
+        }
+      ],
+      "tableros": [
+        "OF-Aire.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-09",
+      "modulo": "T",
+      "nombre": "H3 · Plomería: pendiente de desagüe y pérdida por el medidor",
+      "que_hace": "Medir la pendiente con el teléfono y detectar pérdidas con dos fotos del medidor.",
+      "estado": "Concepto",
+      "horizonte": "posterior al lanzamiento («después del deploy»)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OF-Plomeria.dc.html",
+          "dice": "Después del deploy · H3 · Con el teléfono"
+        }
+      ],
+      "tableros": [
+        "OF-Plomeria.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-10",
+      "modulo": "T",
+      "nombre": "H4 · Gas: prueba de hermeticidad registrada y protocolo",
+      "que_hace": "Registrar la prueba con fotos del manómetro y seguir un protocolo ante olor a gas; el teléfono no detecta gas.",
+      "estado": "Concepto",
+      "horizonte": "posterior al lanzamiento («después del deploy»)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OF-Gas.dc.html",
+          "dice": "El teléfono no detecta gas ni monóxido. Las mediciones son tuyas"
+        }
+      ],
+      "tableros": [
+        "OF-Gas.dc.html"
+      ],
+      "notas": "Con revisión técnica y legal."
+    },
+    {
+      "id": "E-T-11",
+      "modulo": "T",
+      "nombre": "H5 · Albañilería: cómputo de materiales",
+      "que_hace": "Calcular ladrillos, cemento y arena de un muro y pasarlos a la lista de repuestos.",
+      "estado": "Concepto",
+      "horizonte": "posterior al lanzamiento («después del deploy»)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OF-Albanileria.dc.html",
+          "dice": "Después del deploy · H5 · Muros y revoques"
+        }
+      ],
+      "tableros": [
+        "OF-Albanileria.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-12",
+      "modulo": "T",
+      "nombre": "H6 · Cerrajería: identificación y constancia de autorización",
+      "que_hace": "Identificar el tipo de cerradura por foto y firmar una constancia de que la persona puede pedir la apertura, sin guardar el DNI.",
+      "estado": "Concepto",
+      "horizonte": "posterior al lanzamiento («después del deploy»)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "OF-Cerrajeria.dc.html",
+          "dice": "La IA identifica el tipo de cerradura por foto. Nunca decodifica llaves"
+        }
+      ],
+      "tableros": [
+        "OF-Cerrajeria.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-T-13",
+      "modulo": "T",
+      "nombre": "HandIA para profesionales y feedback con IA",
+      "que_hace": "Sugerencias con IA para presupuesto, materiales y recordatorios.",
+      "estado": "Concepto",
+      "horizonte": "sin dato",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "pitch",
+          "ref": "pitch:011–013",
+          "dice": "HandIA para profesionales · Visión · con la inversión"
+        },
+        {
+          "fuente": "pitch",
+          "ref": "pitch:169–171",
+          "dice": "Mes 2: HandIA para profesionales · Plan propuesto · a validar"
+        }
+      ],
+      "tableros": [],
+      "notas": "No aparece en el lienzo; solo en el pitch."
+    },
+    {
+      "id": "E-CU-01",
+      "modulo": "CU",
+      "nombre": "Perfil público con sello de verificación",
+      "que_hace": "Los clientes ven tu nombre, rubros habilitados y el sello solo si el servidor verificó tu alta.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/contracts/dto.ts",
+          "dice": "verificado: solo true si el backend verificó el alta completa"
+        }
+      ],
+      "tableros": [
+        "CU-Perfil.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-CU-02",
+      "modulo": "CU",
+      "nombre": "Perfil con presentación, trabajos verificados, certificados y opiniones",
+      "que_hace": "Tu perfil suma foto, presentación, cantidad de trabajos verificados, certificados y lo que dicen los clientes.",
+      "estado": "Diseñado",
+      "horizonte": "sin fecha (plan por olas, a la espera del OK de Ignacio)",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "CU-Perfil.dc.html",
+          "dice": "Así te ven los clientes"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "F-PerfilProfesional.dc.html",
+          "dice": "Lo que dicen los clientes"
+        }
+      ],
+      "tableros": [
+        "CU-Perfil.dc.html",
+        "F-PerfilProfesional.dc.html"
+      ],
+      "notas": "No hay calificaciones ni opiniones en código ni en el plan; las del diseño son ficticias."
+    },
+    {
+      "id": "E-CU-03",
+      "modulo": "CU",
+      "nombre": "Disponibilidad, zonas y horarios",
+      "que_hace": "Configurás rubros, zonas, días y horarios.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Disponibilidad.tsx",
+          "dice": "cobertura, días y horarios"
+        }
+      ],
+      "tableros": [
+        "CU-Disponibilidad.dc.html"
+      ],
+      "notas": ""
+    },
+    {
+      "id": "E-CU-04",
+      "modulo": "CU",
+      "nombre": "Medios de cobro",
+      "que_hace": "Elegís Mercado Pago, efectivo o los dos; el cliente te paga directo.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/caja.md",
+          "dice": "formas de cobro con versión; Mercado Pago solo con la cuenta vinculada"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "CU-Cobros.dc.html",
+          "dice": "Handyx no recibe la plata"
+        }
+      ],
+      "tableros": [
+        "CU-Cobros.dc.html"
+      ],
+      "notas": "Transferencia: Diseñado. Mercado Pago sin credenciales."
+    },
+    {
+      "id": "E-CU-05",
+      "modulo": "CU",
+      "nombre": "Avisos configurables",
+      "que_hace": "Elegís qué avisos te llegan.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:src/contracts/dto.ts",
+          "dice": "PreferenciasSchema"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "CU-Notificaciones.dc.html",
+          "dice": "Silencio de 22 a 7"
+        }
+      ],
+      "tableros": [
+        "CU-Notificaciones.dc.html"
+      ],
+      "notas": "El silencio nocturno es Diseñado."
+    },
+    {
+      "id": "E-CU-06",
+      "modulo": "CU",
+      "nombre": "Privacidad y baja real",
+      "que_hace": "Pedís la baja con estado visible; se borra lo que corresponde y se informa lo que se retiene por ley.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Baja.tsx",
+          "dice": "baja"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/handoff.md",
+          "dice": "baja: anonimiza y deja informado lo que retiene"
+        }
+      ],
+      "tableros": [
+        "CU-Privacidad.dc.html"
+      ],
+      "notas": "«Descargar mis datos» es Diseñado."
+    },
+    {
+      "id": "E-CU-07",
+      "modulo": "CU",
+      "nombre": "Centro de ayuda y casos de soporte",
+      "que_hace": "Buscás respuestas por tema y abrís un caso con historial.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:src/pantallas/Soporte.tsx",
+          "dice": "soporte"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-be@cf3b39d:docs/trabajos.md",
+          "dice": "soporte auditable"
+        }
+      ],
+      "tableros": [
+        "D6-Ayuda.dc.html"
+      ],
+      "notas": "La respuesta «¿Cuánto me cobra Handyx? Nada» del lienzo choca con la tarifa de la landing."
+    },
+    {
+      "id": "E-CU-08",
+      "modulo": "CU",
+      "nombre": "Errores sin datos inventados",
+      "que_hace": "Sin conexión o con error del servidor, la app lo dice, conserva lo cargado y ofrece reintentar; nunca muestra datos falsos.",
+      "estado": "En pruebas",
+      "horizonte": "sin fecha (el deploy va al final del bloque Taller; plan por olas esperando el OK)",
+      "publicado": "no (solo en rama; handoff: «Nada desplegado»)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@f7c0733:CLAUDE.md",
+          "dice": "Nunca caer a fixtures ante un error"
+        },
+        {
+          "fuente": "lienzo",
+          "ref": "D6-Error.dc.html",
+          "dice": "Nunca mostramos datos inventados"
+        }
+      ],
+      "tableros": [
+        "D6-Error.dc.html",
+        "D6-Fallo.dc.html"
+      ],
+      "notas": "Las ilustraciones nuevas son Diseñado."
+    },
+    {
+      "id": "E-CU-09",
+      "modulo": "CU",
+      "nombre": "Contador de días sin tarifa en Cuenta",
+      "que_hace": "La Cuenta muestra cuántos días quedan sin tarifa de Handyx (hasta el 10/12/2026).",
+      "estado": "En pruebas",
+      "horizonte": "lanzamiento 10/11 (hasta el 10/12/2026)",
+      "publicado": "sin verificar (el workflow de main publica la vista previa con datos de prueba solo si se habilita su variable)",
+      "evidencia": [
+        {
+          "fuente": "doc",
+          "ref": "capturas-pwa:especialista-cuenta.webp",
+          "dice": "Tarifa de Handy durante la demo · 23 días restantes"
+        }
+      ],
+      "tableros": [],
+      "notas": "A quitar según la rama (sin comisión nunca)."
+    },
+    {
+      "id": "E-DEMO-01",
+      "modulo": "DEMO",
+      "nombre": "Demo interactiva del especialista en la landing",
+      "que_hace": "Recorrido de muestra del especialista: pedido, precio, en camino, chat, trabajo, adicional, fin, turnos, caja, cuenta, rubros y cupón de la camada fundadora.",
+      "estado": "Construido",
+      "horizonte": "lanzamiento 10/11",
+      "publicado": "sin verificar (publicación de la landing por workflow con variable; no se pudo comprobar desde este entorno)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "landing-fe@ac3b245:src/render/demo/especialista.ts",
+          "dice": "25 pantallas e-*; TARIFAS = tarifas.normal"
+        },
+        {
+          "fuente": "repo",
+          "ref": "landing-fe@ac3b245:src/content/tarifas.json",
+          "dice": "especialista 10, cliente 10; camada fundadora 5 % por 12 meses"
+        }
+      ],
+      "tableros": [],
+      "notas": "Pieza pública sin backend. Muestra tarifa del 10 % al especialista."
+    },
+    {
+      "id": "E-DEMO-02",
+      "modulo": "DEMO",
+      "nombre": "App del especialista como demo instalable",
+      "que_hace": "La misma demo en modo app con el rol fijo, instalable, con noindex hasta el 10/11.",
+      "estado": "Construido",
+      "horizonte": "lanzamiento 10/11",
+      "publicado": "sin verificar (apps.yml publica en workers.handyc.com solo con su variable habilitada)",
+      "evidencia": [
+        {
+          "fuente": "repo",
+          "ref": "landing-fe@ac3b245:docs/modulos/apps-por-rol.md",
+          "dice": "Especialista · https://workers.handyc.com · Hoy las apps son la demo"
+        }
+      ],
+      "tableros": [],
+      "notas": "Choca con el dominio workers.handyx.pro del workflow de la PWA."
+    },
+    {
+      "id": "E-EXP-01",
+      "modulo": "EXP",
+      "nombre": "Direcciones de arte A, B y C (descartadas)",
+      "que_hace": "Tres estéticas alternativas de Inicio, Tu precio y el regalo, que no se eligieron.",
+      "estado": "Concepto",
+      "horizonte": "sin fecha",
+      "publicado": "no",
+      "evidencia": [
+        {
+          "fuente": "lienzo",
+          "ref": "notaExp (canvas.json)",
+          "dice": "A Taller de obra, B Noche de obra y C Costa de Mar del Plata. Se eligió la estética de hoy mejorada"
+        },
+        {
+          "fuente": "repo",
+          "ref": "specialist-fe@585418d:docs/rediseno-deluxe.md",
+          "dice": "§7: La fila C queda como descartada"
+        }
+      ],
+      "tableros": [
+        "Main.dc.html",
+        "A-Precio.dc.html",
+        "A-Regalo.dc.html",
+        "B-Inicio.dc.html",
+        "B-Precio.dc.html",
+        "B-Regalo.dc.html",
+        "C-Inicio.dc.html",
+        "C-Obras.dc.html",
+        "C-Obra.dc.html",
+        "C-Ingresos.dc.html",
+        "C-Precio.dc.html",
+        "C-Regalo.dc.html"
+      ],
+      "notas": "No usar en los dossiers. Muestran «Tarifa de Handyx durante la demo 0 %», la pestaña Agenda y A-Precio tiene la Canilla."
+    }
+  ],
+  "recorridos": [
+    {
+      "id": "E-R-01",
+      "titulo": "Del registro a estar habilitado",
+      "necesidad": "Empezar a trabajar con Handyx con un perfil que los clientes puedan creer.",
+      "accion": "Crea la cuenta, completa el alta en 10 pasos (datos, domicilio, rubros, zonas, selfie, DNI, CUIT/CUIL, certificados, antecedentes) y la envía.",
+      "que_hace_handyx": "Guarda los datos cifrados, el equipo de verificación revisa cada documento y habilita los rubros; cargar no es estar verificado.",
+      "resultado": "Queda habilitado en sus rubros y zonas, con permisos explicados, primeros pasos y el kit de bienvenida.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "D6-Bienvenida.dc.html",
+          "texto": "Bienvenida: «Crear cuenta»: Primera pantalla de la app. Elegís «Crear cuenta» para empezar el registro o «Ya tengo cuenta» para iniciar sesión."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-1.dc.html",
+          "texto": "Tus datos y contraseña: Primer paso del registro: nombre, teléfono, email y la contraseña con la que vas a entrar."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-2.dc.html",
+          "texto": "Dónde vivís (cifrado): Cargás dónde vivís. Se guarda cifrado y nunca se le muestra a nadie."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-3.dc.html",
+          "texto": "Rubros: Elegís tus rubros. Gas y Aire acondicionado piden matrícula para habilitarse."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-4.dc.html",
+          "texto": "Zonas: Marcás en el mapa los barrios donde querés trabajar."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-5.dc.html",
+          "texto": "Selfie: Te sacás una selfie con el óvalo de guía, para comparar con tu DNI."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-6.dc.html",
+          "texto": "DNI frente y dorso: Sacás el DNI de frente y de dorso dentro del marco."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-7.dc.html",
+          "texto": "CUIT o CUIL: Cargás tu CUIT o CUIL y contás cómo facturás."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-8.dc.html",
+          "texto": "Certificados y matrículas: Subís matrículas y certificados. Los obligatorios están marcados; los demás suman a tu perfil."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-9.dc.html",
+          "texto": "Antecedentes por foto o PDF: Subís el certificado de antecedentes en foto o PDF. Va cifrado, lo ve solo el equipo de verificación y se borra al verificar."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "RG-10.dc.html",
+          "texto": "Revisar y enviar: Revisás todo lo cargado, aceptás los textos y mandás tu alta para que la evaluemos."
+        },
+        {
+          "n": 12,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "D6-Alta.dc.html",
+          "texto": "Evaluamos tu perfil: Ves cómo va tu alta: lo que está listo, lo que estamos evaluando y lo que falta. Si hay que corregir algo, te decimos qué."
+        },
+        {
+          "n": 13,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "OB-Aprobado.dc.html",
+          "texto": "¡Estás habilitado!: ¡Quedaste habilitado! Ves los rubros que se activaron y el kit de bienvenida que te espera."
+        },
+        {
+          "n": 14,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "OB-Permisos.dc.html",
+          "texto": "Avisos y ubicación: Te explicamos para qué sirven los avisos y la ubicación, y los activás si querés."
+        },
+        {
+          "n": 15,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "OB-Tour.dc.html",
+          "texto": "Cómo funciona: Tres pasos de cómo funciona Handyx: te llega un pedido, ponés tu precio y cobrás directo."
+        },
+        {
+          "n": 16,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "OB-PrimerosPasos.dc.html",
+          "texto": "Primeros pasos: Lista de primeros pasos: completar el perfil, elegir los horarios, cargar cómo cobrás y ponerte disponible."
+        },
+        {
+          "n": 17,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "G-Bienvenida.dc.html",
+          "texto": "Kit de bienvenida: Elegís el talle de la remera y cómo querés el manual: en la app, impreso o los dos."
+        },
+        {
+          "n": 18,
+          "tablero": "RC-Onboarding.dc.html",
+          "pantalla": "F-Inicio.dc.html",
+          "texto": "Primer día en el mapa: Tu Inicio: el mapa siempre detrás, arriba Disponible dentro de la cabecera, y los pedidos que llegan en tarjetas flotantes. Tocás «Ver pedido» para ver el detalle."
+        }
+      ],
+      "estado": "Diseñado (el alta actual en código, con antecedentes presenciales, está En pruebas)",
+      "captura_principal": "S/capturas/especialista/OB-Aprobado.png",
+      "secciones_dossier": [
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "E-R-02",
+      "titulo": "Recibir un pedido y mandar una propuesta",
+      "necesidad": "Conseguir trabajos de su zona sin perder tiempo ni quedar atado.",
+      "accion": "Prende Disponible, abre el pedido, pone su precio con la sugerencia de Handyx, propone fecha y envía; o lo deja pasar.",
+      "que_hace_handyx": "Le muestra solo pedidos de sus rubros y zonas con zona aproximada, sugiere un precio sin imponerlo y no aplica consecuencias si no acepta.",
+      "resultado": "La propuesta llega al cliente; cuando acepta, el trabajo queda agendado con la dirección exacta.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Inicio.dc.html",
+          "texto": "Pedido flotante sobre el mapa: Tu Inicio: el mapa siempre detrás, arriba Disponible dentro de la cabecera, y los pedidos que llegan en tarjetas flotantes. Tocás «Ver pedido» para ver el detalle."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Pedido.dc.html",
+          "texto": "Detalle del pedido: El detalle del pedido: qué necesita el cliente, fotos, zona aproximada y franja. Desde acá ponés tu precio o lo dejás pasar."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Precio.dc.html",
+          "texto": "Tu precio con la cinta: Ponés tu precio deslizando la cinta o con atajos. Handyx sugiere un precio; vos decidís. Marcás si incluye materiales y garantía."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-PrecioTeclado.dc.html",
+          "texto": "O lo escribís: Escribís el precio exacto con el teclado."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Fecha.dc.html",
+          "texto": "Día y franja: Aceptás el horario que pidió el cliente o proponés otro día y franja en el calendario."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-FechaHora.dc.html",
+          "texto": "Horario a medida: Elegís un horario a medida: una franja como «de 6 a 8» o una hora exacta."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Revisar.dc.html",
+          "texto": "Revisar y enviar: Revisás precio, fecha y mensaje antes de mandar la propuesta."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Enviada.dc.html",
+          "texto": "Propuesta enviada: Tu propuesta llegó al cliente. Podés escribirle mientras decide."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Chat.dc.html",
+          "texto": "Chat con el cliente: El chat con un cliente: mensajes, fotos y tarjetas de presupuesto, repuestos o cambios de fecha que se responden ahí."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Pedido.dc.html",
+          "pantalla": "F-Trabajo.dc.html",
+          "texto": "Trabajo agendado: El trabajo agendado: dirección, cliente, chat, cambiar fecha, salir para allá y entrar en Modo trabajo."
+        }
+      ],
+      "estado": "En pruebas (núcleo en código con servidor simulado y API local, rama) · rediseño del lienzo Diseñado",
+      "captura_principal": "S/capturas/especialista/recortes/F-Pedido-sin-canilla.png",
+      "secciones_dossier": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "id": "E-R-03",
+      "titulo": "Presupuesto con la lista de precios propia",
+      "necesidad": "Presupuestar rápido y sin perder plata cuando suben los materiales.",
+      "accion": "Arma el presupuesto con sus tarifas y materiales de su lista (o carga uno nuevo) y lo manda por el chat; mantiene la lista con una foto del corralón.",
+      "que_hace_handyx": "Calcula el total, avisa si un precio que se actualiza cambió antes de que el cliente acepte y lee la foto en el teléfono sin enviarla.",
+      "resultado": "El cliente recibe una tarjeta con el presupuesto y lo acepta o pide cambios en el chat.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "F-Trabajo.dc.html",
+          "texto": "Desde el trabajo: El trabajo agendado: dirección, cliente, chat, cambiar fecha, salir para allá y entrar en Modo trabajo."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-Presupuesto.dc.html",
+          "texto": "Presupuestador: Armás un presupuesto con mano de obra y materiales, y lo mandás por el chat."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-AgregarMaterial.dc.html",
+          "texto": "Agregar un material: Buscás en tu lista de precios, tocás el material y elegís la cantidad. Si no está, lo agregás. Las opciones (cobrar, gasto, precio) quedan resumidas."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-MaterialOpciones.dc.html",
+          "texto": "Opciones (si las querés cambiar): Las opciones del material: cobrárselo al cliente, anotarlo como gasto y congelar el precio. Quedan como tu forma de agregar."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-MaterialNuevo.dc.html",
+          "texto": "Si no está: material nuevo: Si lo que buscás no está en tu lista, lo cargás acá (nombre, categoría y precio). Queda guardado y el nombre suma al catálogo de Handyx."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-AgregarLista.dc.html",
+          "texto": "O varios: Sumás varios materiales de una vez: marcás los de un kit o de tu lista y listo."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "F-Chat.dc.html",
+          "texto": "Llega por el chat: El chat con un cliente: mensajes, fotos y tarjetas de presupuesto, repuestos o cambios de fecha que se responden ahí."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-Precios.dc.html",
+          "texto": "Tu lista de precios: Tu lista de precios por categoría, con lo que subió y lo que quedó viejo."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-PreciosFoto.dc.html",
+          "texto": "Foto del corralón: Sacás una foto a la lista del corralón para cargar precios."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-PreciosRevisar.dc.html",
+          "texto": "Revisar lo leído: Revisás lo que se leyó de la foto antes de guardarlo."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-PrecioItem.dc.html",
+          "texto": "Detalle e historial: El detalle de un precio y cómo cambió en el tiempo."
+        },
+        {
+          "n": 12,
+          "tablero": "RC-Presupuesto.dc.html",
+          "pantalla": "H0-ManoObra.dc.html",
+          "texto": "Mano de obra: Tus tarifas de mano de obra por tarea, para presupuestar más rápido."
+        }
+      ],
+      "estado": "Diseñado",
+      "captura_principal": "S/capturas/especialista/H0-Presupuesto.png",
+      "secciones_dossier": [
+        "8",
+        "13"
+      ]
+    },
+    {
+      "id": "E-R-04",
+      "titulo": "Un día de trabajo: de la ruta al cobro",
+      "necesidad": "Ordenar el día, llegar a tiempo, trabajar cómodo y cobrar sin vueltas.",
+      "accion": "Sigue su recorrido, sale para la parada, trabaja en Modo trabajo, saca el antes y después, informa el cobro y manda el informe.",
+      "que_hace_handyx": "Comparte la ubicación solo durante el viaje, arma el informe solo, registra el cobro como informado hasta verificarlo y activa la garantía con la conformidad del cliente.",
+      "resultado": "Trabajo cerrado con informe en PDF, garantía activa y el ingreso en Tus ingresos.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "F-InicioDia.dc.html",
+          "texto": "Tu día en el Inicio: Cuando tenés trabajos hoy, el Inicio muestra tu día: la próxima parada con la hora estimada, chatear, avisar una demora y salir para allá."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "F-InicioRuta.dc.html",
+          "texto": "Tu recorrido: Tu recorrido del día en orden, con el tiempo de cada tramo. Podés reordenar las paradas."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "TR-EnCamino.dc.html",
+          "texto": "En camino: Vas para allá: el cliente ve tu llegada solo durante el viaje. Podés avisar una demora o dejar de compartir."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-Modo.dc.html",
+          "texto": "Modo trabajo: Modo trabajo: cronómetro, tareas grandes, fotos, repuestos, ayuda y «terminé»."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-ModoHerramientas.dc.html",
+          "texto": "Herramientas a mano: Las herramientas a mano mientras trabajás: nivel, linterna, medir, calculadoras, y «Pedir ayuda» para llamar a un contacto o buscar un profesional nuevo."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-ModoAyuda.dc.html",
+          "texto": "Pedir ayuda (o buscar uno nuevo): Llamás o le escribís a un contacto, lo sumás al trabajo o buscás un profesional nuevo para terminar la obra."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-AntesDespues.dc.html",
+          "texto": "Antes y después: Comparás el antes y el después deslizando, y contás qué cambiaste."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-AntesLado.dc.html",
+          "texto": "Lado a lado: El antes y el después lado a lado."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "TR-Cobro.dc.html",
+          "texto": "¿Cómo te pagó?: Informás cómo te pagó el cliente (Mercado Pago o efectivo). Queda informado hasta que se verifica."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-Informe.dc.html",
+          "texto": "Informe del trabajo: El informe del trabajo, que se completa solo: causa, antes y después, pruebas, materiales y garantía."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "H0-InformeEnviado.dc.html",
+          "texto": "Conformidad y garantía: El cliente recibió el informe: da su conformidad, arranca la garantía y queda el PDF."
+        },
+        {
+          "n": 12,
+          "tablero": "RC-Dia.dc.html",
+          "pantalla": "F-Ingresos.dc.html",
+          "texto": "Tus ingresos: Lo que cobraste en el mes: bruto, gastos y neto, y la ganancia de cada trabajo. Desde acá cargás un gasto."
+        }
+      ],
+      "estado": "Diseñado (viaje, llegada, Terminé e informar el cobro En pruebas)",
+      "captura_principal": "S/capturas/especialista/H0-Modo.png",
+      "secciones_dossier": [
+        "10",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "id": "E-R-05",
+      "titulo": "Una obra de varios días",
+      "necesidad": "Llevar una obra larga ordenada, con el cliente al tanto y sin discusiones por materiales o fechas.",
+      "accion": "Propone la obra por etapas, sigue cada jornada con tareas y avance, carga repuestos para aprobar y mueve jornadas.",
+      "que_hace_handyx": "Muestra el avance al cliente, pide su aprobación para repuestos y fechas, avisa el día anterior si falta comprar y mantiene las fechas vigentes hasta que acepte.",
+      "resultado": "Obra con plan, diario y plata a la vista: gastado, cobrado y lo que falta cobrar.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraNueva.dc.html",
+          "texto": "Proponer una obra nueva: Proponés una obra nueva: elegís para quién (un cliente tuyo o uno nuevo con un enlace), el nombre y los oficios; después armás etapas y montos."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-PropuestaObra.dc.html",
+          "texto": "Etapas y montos: Armás la propuesta de obra: etapas, jornadas, montos y el equipo que necesitás."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-Obras.dc.html",
+          "texto": "Tus obras: Tus obras de varios días: en curso, próximas y terminadas, con el avance de cada una. Desde acá proponés una obra nueva."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-Obra.dc.html",
+          "texto": "La obra: La obra entera: avance, días en línea de tiempo, equipo, repuestos y chat. Tocás un día para ver la jornada."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraDia.dc.html",
+          "texto": "Una jornada: Una jornada: quién viene, tareas, avance y materiales. Cambiás el horario, sumás tareas o cargás el avance."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraDiaHorario.dc.html",
+          "texto": "Cambiar el horario: Cambiás el horario de la jornada con una franja u hora exacta; el cliente lo acepta."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraDiaTarea.dc.html",
+          "texto": "Agregar una tarea: Sumás una tarea a la jornada y elegís quién la hace."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraDiaAvance.dc.html",
+          "texto": "Cargar el avance: Cargás el avance del día con fotos y una nota para el cliente."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraRepuestos.dc.html",
+          "texto": "Repuestos: Los repuestos de la obra: esperando aprobación, aprobados y comprados. Sumás uno nuevo o pedís en la ferretería."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-RepuestoOrigen.dc.html",
+          "texto": "¿Cómo lo conseguís?: Elegís cómo conseguir el repuesto: lo conseguís vos o en una ferretería adherida."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraRepuesto.dc.html",
+          "texto": "Lo consigo yo: Lo conseguís vos: cargás el repuesto, el precio de tu lista o a mano, y lo mandás a aprobar."
+        },
+        {
+          "n": 12,
+          "tablero": "RC-Obra.dc.html",
+          "pantalla": "F-ObraFecha.dc.html",
+          "texto": "Mover jornadas: Movés una jornada, o esta y las que siguen. Hasta que el cliente acepta, siguen las fechas de ahora."
+        }
+      ],
+      "estado": "Diseñado (plan, jornadas, diario y cobro por etapa En pruebas)",
+      "captura_principal": "S/capturas/especialista/F-Obra.png",
+      "secciones_dossier": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "id": "E-R-06",
+      "titulo": "Armar un equipo para una obra",
+      "necesidad": "Sumar a otro especialista confiable cuando la obra pide otro oficio.",
+      "accion": "Invita a un contacto o publica una búsqueda; revisa postulantes y su perfil, elige y acuerda el reparto.",
+      "que_hace_handyx": "Muestra la búsqueda solo a especialistas verificados de la zona, sin la dirección; registra el reparto y no recibe ni reparte la plata.",
+      "resultado": "Equipo armado en el chat de la obra; cada uno cobra su parte directo del cliente o como lo acuerden.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ObraEquipo.dc.html",
+          "texto": "Equipo de la obra: Quién trabaja en la obra y su parte. Invitás a un contacto o buscás un profesional nuevo."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-Invitar.dc.html",
+          "texto": "Invitar a un contacto: Invitás a un profesional de tus contactos o con un enlace con código que vence."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-Reparto.dc.html",
+          "texto": "Reparto del pago: Cuánto le toca a cada uno y cómo cobra. Cada uno lo acepta; Handyx no toca la plata."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ChatGrupo.dc.html",
+          "texto": "Chat grupal: El chat de la obra con el cliente y el equipo: reacciones, mensajes editados y borrados, fotos y videos."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ObraBuscar.dc.html",
+          "texto": "O buscar uno nuevo: Publicás una búsqueda: oficio, jornadas, su parte del pago y un mensaje. La ven verificados de la zona."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-InicioConvocatoria.dc.html",
+          "texto": "Lo ve otro profesional en su Inicio: Lo que ve otro profesional en su Inicio cuando un titular busca su oficio cerca: puede ver la obra o descartarla."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ConvocatoriaDetalle.dc.html",
+          "texto": "Ve la obra y se postula: El otro profesional ve la obra (sin la dirección) y se postula con un mensaje."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ObraPostulantes.dc.html",
+          "texto": "Postulantes: Ves quiénes se postularon, mirás su perfil, les escribís y elegís a quién sumar."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-PerfilProfesional.dc.html",
+          "texto": "Ver su perfil: El perfil de otro profesional tal como lo ve un cliente: verificaciones, trabajos, fotos y comentarios. Desde acá le escribís o lo elegís."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Equipo.dc.html",
+          "pantalla": "F-ChatGrupoInfo.dc.html",
+          "texto": "Entra al grupo: Las personas del grupo, las fotos y archivos, y agregar personas, silenciar o salir."
+        }
+      ],
+      "estado": "Diseñado",
+      "captura_principal": "S/capturas/especialista/F-Reparto.png",
+      "secciones_dossier": [
+        "11",
+        "15"
+      ]
+    },
+    {
+      "id": "E-R-07",
+      "titulo": "Hablar con el cliente y el equipo",
+      "necesidad": "Tener todo lo de cada trabajo en un lugar y que lo importante quede registrado.",
+      "accion": "Chatea, manda tarjetas (presupuesto, propuesta de obra, repuestos, cambio de fecha, informe), fotos y videos; edita o borra.",
+      "que_hace_handyx": "Ata cada chat a un pedido, obra o equipo; las tarjetas no se editan y un mensaje borrado queda guardado oculto por si hay un reclamo; nada se manda solo.",
+      "resultado": "Conversaciones ordenadas por trabajo, con decisiones que el cliente responde ahí mismo.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatGrupo.dc.html",
+          "texto": "Chat de la obra: El chat de la obra con el cliente y el equipo: reacciones, mensajes editados y borrados, fotos y videos."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatAcciones.dc.html",
+          "texto": "Mantener apretado: reacciones y acciones: Mantenés apretado un mensaje: reaccionás o elegís responder, editar, copiar, seleccionar, fijar o borrar."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatEditar.dc.html",
+          "texto": "Editar: Corregís un mensaje tuyo; todos ven «editado»."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatBorrar.dc.html",
+          "texto": "Borrar para todos: Borrás un mensaje para todos. Se ve «Mensaje eliminado» y se guarda oculto por si hay un reclamo."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatSeleccion.dc.html",
+          "texto": "Seleccionar varios: Seleccionás varios mensajes para copiarlos, reenviarlos o borrarlos."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatMedia.dc.html",
+          "texto": "Sacar o elegir fotos y videos: Sacás una foto o grabás un video, o elegís de la galería o de tus archivos. Se achican y pierden la ubicación."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatAdjuntar.dc.html",
+          "texto": "Mandar tarjetas: Mandás una tarjeta: presupuesto, propuesta de obra, repuestos para aprobar, cambio de fecha o informe."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-ChatGrupoInfo.dc.html",
+          "texto": "Grupo: personas y archivos: Las personas del grupo, las fotos y archivos, y agregar personas, silenciar o salir."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Chat.dc.html",
+          "pantalla": "F-Invitar.dc.html",
+          "texto": "Agregar personas: Invitás a un profesional de tus contactos o con un enlace con código que vence."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Mensajes.dc.html",
+          "pantalla": "F-Mensajes.dc.html",
+          "texto": "Tus mensajes: Todos tus chats, filtrados por pedidos, obras, equipo y soporte."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Mensajes.dc.html",
+          "pantalla": "F-Chat.dc.html",
+          "texto": "Chat con un cliente: El chat con un cliente: mensajes, fotos y tarjetas de presupuesto, repuestos o cambios de fecha que se responden ahí."
+        },
+        {
+          "n": 12,
+          "tablero": "RC-Mensajes.dc.html",
+          "pantalla": "D6-Avisos.dc.html",
+          "texto": "Avisos: Todos tus avisos (pedidos, obras, mensajes, pagos). Cada aviso abre su detalle; ninguno acepta nada por vos."
+        },
+        {
+          "n": 13,
+          "tablero": "RC-Mensajes.dc.html",
+          "pantalla": "D6-Ayuda.dc.html",
+          "texto": "Ayuda: Preguntas frecuentes por tema, buscador y contacto con soporte por chat."
+        }
+      ],
+      "estado": "Diseñado (chat con el cliente, fotos y contactos En pruebas)",
+      "captura_principal": "S/capturas/especialista/F-ChatAdjuntar.png",
+      "secciones_dossier": [
+        "7",
+        "11"
+      ]
+    },
+    {
+      "id": "E-R-08",
+      "titulo": "Conseguir los materiales en una ferretería adherida",
+      "necesidad": "Comprar lo que falta sin dictar listas ni perder tiempo en el mostrador.",
+      "accion": "Arma un pedido único desde el presupuesto o la obra, compara ferreterías, espera la confirmación y retira con un QR.",
+      "que_hace_handyx": "Envía el pedido a la ferretería elegida, que confirma precios y reemplazos; al retirar, el ticket queda como gasto. La venta la cobra la ferretería; Handyx no se queda con nada.",
+      "resultado": "Materiales listos para retirar y el gasto registrado.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Catalogo.dc.html",
+          "texto": "Catálogo por categorías: El catálogo de la ferretería por categorías, con buscador."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Categoria.dc.html",
+          "texto": "Variantes: Los productos de una categoría con sus variantes y cantidades."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Pedir.dc.html",
+          "texto": "Tu pedido: Tu pedido único, agrupado por trabajo, con las casillas de gasto y cobro."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Ferreterias.dc.html",
+          "texto": "Elegir ferretería: Elegís la ferretería en el mapa, con horario y distancia."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Estado.dc.html",
+          "texto": "Estado del pedido: Cómo va tu pedido: enviado, confirmado con precios, listo para retirar."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Retiro.dc.html",
+          "texto": "QR a pantalla completa: El QR a pantalla completa para que el ferretero lo escanee al retirar."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "R-Mostrador.dc.html",
+          "texto": "O la lista grande: La lista con letra grande para mostrar o leer en el mostrador."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "FE-MovilEscanear.dc.html",
+          "texto": "El ferretero escanea: En el teléfono del ferretero: escanear el QR."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "FE-Movil.dc.html",
+          "texto": "Prepara y entrega: En el teléfono del ferretero: preparar el pedido."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Ferreteria.dc.html",
+          "pantalla": "H0-Gasto.dc.html",
+          "texto": "Queda como gasto: Cargás un gasto con la foto del ticket o a mano, y elegís si se lo cobrás al cliente."
+        }
+      ],
+      "estado": "Diseñado (simulación con ferreterías ficticias)",
+      "captura_principal": "S/capturas/especialista/R-Retiro.png",
+      "secciones_dossier": [
+        "13"
+      ]
+    },
+    {
+      "id": "E-R-09",
+      "titulo": "Agenda, ingresos y equipamiento",
+      "necesidad": "Saber qué viene, cuánto gana de verdad y qué herramientas tiene.",
+      "accion": "Entra a la pestaña Taller, revisa la agenda, mira bruto, gastos y neto, carga un gasto y gestiona su equipamiento.",
+      "que_hace_handyx": "Separa lo verificado de lo informado, calcula la ganancia por trabajo y recuerda mantenimientos y reposiciones.",
+      "resultado": "Una vista de su actividad como negocio: agenda, plata y herramientas.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "F-Herramientas.dc.html",
+          "texto": "Pestaña Taller: La pestaña Taller: agenda, ingresos y gastos, presupuestos y precios, tu equipamiento, las herramientas del teléfono y la ferretería, cada uno con su resumen."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "F-Agenda.dc.html",
+          "texto": "Agenda: hoy: Tu agenda de hoy con los turnos. Arriba cambiás entre Pasadas, Hoy y Futuras, y la semana entera se ve de un vistazo."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "F-AgendaPasadas.dc.html",
+          "texto": "Pasadas: Los trabajos que ya hiciste, con su estado de cobro."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "F-AgendaMes.dc.html",
+          "texto": "El mes: El mes completo con obras y trabajos por día."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "F-Ingresos.dc.html",
+          "texto": "Ingresos y gastos: Lo que cobraste en el mes: bruto, gastos y neto, y la ganancia de cada trabajo. Desde acá cargás un gasto."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "H0-Gasto.dc.html",
+          "texto": "Cargar un gasto: Cargás un gasto con la foto del ticket o a mano, y elegís si se lo cobrás al cliente."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "H0-Equipo.dc.html",
+          "texto": "Tu equipamiento: Tu equipamiento por categoría: dónde está cada cosa, mantenimientos y lo que queda poco."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "H0-EquipoCategoria.dc.html",
+          "texto": "Una categoría: Las herramientas de una categoría con su estado. Tocás una para ver el detalle."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "H0-EquipoDetalle.dc.html",
+          "texto": "Una herramienta: Una herramienta: dónde está, mantenimiento e historial. La prestás, la movés o avisás que ya no la tenés."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Agenda.dc.html",
+          "pantalla": "H0-EquipoBaja.dc.html",
+          "texto": "Ya no la tengo: Contás qué pasó (se rompió, la vendiste, la perdiste…) y si querés reponerla."
+        }
+      ],
+      "estado": "Diseñado (agenda y caja En pruebas)",
+      "captura_principal": "S/capturas/especialista/F-Ingresos.png",
+      "secciones_dossier": [
+        "10",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "id": "E-R-10",
+      "titulo": "Las herramientas del teléfono y del oficio",
+      "necesidad": "Medir, calcular y mostrar al cliente sin cargar más aparatos.",
+      "accion": "Usa medir con la cámara, escaneo 3D y nivel; en Electricidad arma el tablero 3D, lo muestra en la pared, calcula cables y hace el informe.",
+      "que_hace_handyx": "Aclara que las medidas son aproximadas, que los cálculos están en revisión técnica y que el teléfono no detecta tensión; manda lo calculado al presupuesto o al chat.",
+      "resultado": "Presupuestos e informes más precisos y fáciles de explicar.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "F-Herramientas.dc.html",
+          "texto": "Pestaña Taller: La pestaña Taller: agenda, ingresos y gastos, presupuestos y precios, tu equipamiento, las herramientas del teléfono y la ferretería, cada uno con su resumen."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Taller.dc.html",
+          "texto": "Herramientas del teléfono: Tu taller: herramientas para todos los oficios y, aparte, las del tuyo."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Medir.dc.html",
+          "texto": "Medir con la cámara: Medís con la cámara del teléfono (AR)."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Escanear.dc.html",
+          "texto": "Escanear en 3D: Escaneás un objeto en 3D a partir de fotos."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Modelo3D.dc.html",
+          "texto": "Modelo 3D: El modelo 3D: lo girás, medís y lo mandás al presupuesto o por chat."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Nivel.dc.html",
+          "texto": "Nivel: Nivel con el giroscopio del teléfono."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Electricidad.dc.html",
+          "texto": "Tu oficio: Las herramientas de Electricidad: cables, tablero 3D e informe."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Tablero.dc.html",
+          "texto": "Tablero 3D: Armás el tablero en 3D con su cómputo de materiales."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-TableroPared.dc.html",
+          "texto": "En la pared: Ves el tablero en la pared con realidad aumentada."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Cables.dc.html",
+          "texto": "Cables: Calculás la sección y la caída de tensión de los cables."
+        },
+        {
+          "n": 11,
+          "tablero": "RC-Taller.dc.html",
+          "pantalla": "T-Informe.dc.html",
+          "texto": "Informe eléctrico: El informe eléctrico con semáforo para el cliente."
+        }
+      ],
+      "estado": "Mixto: Electricidad (H1) y nivel En pruebas; herramientas para todos Diseñado; H2–H6 Concepto",
+      "captura_principal": "S/capturas/especialista/T-Tablero.png",
+      "secciones_dossier": [
+        "14"
+      ]
+    },
+    {
+      "id": "E-R-11",
+      "titulo": "Camino Handyx",
+      "necesidad": "Sentir que crecer en Handyx tiene recompensa, sin presión.",
+      "accion": "Recibe el kit de bienvenida, lee el manual, avanza por trabajos y cobros verificados y canjea premios.",
+      "que_hace_handyx": "Cuenta solo lo verificado, revisa cada premio antes de entregarlo y no usa azar, rankings ni aceptación de pedidos.",
+      "resultado": "Premios por hitos visibles de antemano e insignias por usar la app.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Inicio.dc.html",
+          "texto": "Tu camino: Tu camino: el próximo premio, el kit de bienvenida y tus mini caminos."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Bienvenida.dc.html",
+          "texto": "Kit de bienvenida: Elegís el talle de la remera y cómo querés el manual: en la app, impreso o los dos."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Manual.dc.html",
+          "texto": "Manual: El manual de uso en 6 capítulos cortos."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Camino.dc.html",
+          "texto": "Camino de trabajos: El camino de trabajos verificados, estación por estación."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-MiniCamino.dc.html",
+          "texto": "Mini camino de cobros: Un mini camino por cobros verificados, con sus hitos."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "F-Regalo.dc.html",
+          "texto": "El regalo: Llegaste a un hito del camino: se abre tu premio y elegís cómo recibirlo."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Canje.dc.html",
+          "texto": "Canje: Canjeás un premio: color y si lo retirás o te lo mandamos."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Vitrina.dc.html",
+          "texto": "Vitrina: Tus premios ganados y los que vienen."
+        },
+        {
+          "n": 9,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Insignias.dc.html",
+          "texto": "Insignias: Tus insignias por usar la app; no tienen premio físico."
+        },
+        {
+          "n": 10,
+          "tablero": "RC-Camino.dc.html",
+          "pantalla": "G-Areas.dc.html",
+          "texto": "Áreas (concepto): Concepto para más adelante: áreas del camino (taller, obra, ciudad)."
+        }
+      ],
+      "estado": "Diseñado (montos y premios en borrador; áreas Concepto)",
+      "captura_principal": "S/capturas/especialista/G-Camino.png",
+      "secciones_dossier": [
+        "15"
+      ]
+    },
+    {
+      "id": "E-R-12",
+      "titulo": "Su cuenta: perfil, disponibilidad y cobros",
+      "necesidad": "Controlar cómo lo ven los clientes, cuándo trabaja y cómo cobra.",
+      "accion": "Revisa su perfil, datos verificados, disponibilidad y zonas, medios de cobro, avisos, privacidad y seguridad.",
+      "que_hace_handyx": "Muestra solo los últimos números de los documentos, deja los urgentes con permiso revocable y no recibe la plata del servicio.",
+      "resultado": "Cuenta bajo su control, con baja real y segunda verificación opcional.",
+      "pasos": [
+        {
+          "n": 1,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "F-Cuenta.dc.html",
+          "texto": "Tu cuenta: Toda tu cuenta: perfil, camino, equipamiento, presupuestos, disponibilidad, cobros, avisos, seguridad, privacidad y ayuda."
+        },
+        {
+          "n": 2,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Perfil.dc.html",
+          "texto": "Tu perfil: Lo que ven los clientes de vos: foto, rubros, matrículas verificadas y trabajos hechos."
+        },
+        {
+          "n": 3,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Datos.dc.html",
+          "texto": "Datos y verificación: Tus datos y el estado de cada verificación. Lo sensible se ve con los últimos dígitos."
+        },
+        {
+          "n": 4,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Disponibilidad.dc.html",
+          "texto": "Disponibilidad: Tus días, horarios y zonas de trabajo, y si aceptás urgencias."
+        },
+        {
+          "n": 5,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Cobros.dc.html",
+          "texto": "Medios de cobro: Tus medios de cobro (Mercado Pago, alias o CBU, efectivo). La plata va directo a vos."
+        },
+        {
+          "n": 6,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Notificaciones.dc.html",
+          "texto": "Avisos: Elegís qué avisos te llegan y en qué horario."
+        },
+        {
+          "n": 7,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "CU-Privacidad.dc.html",
+          "texto": "Privacidad y baja: Descargar tus datos, ver qué guardamos y dar de baja la cuenta."
+        },
+        {
+          "n": 8,
+          "tablero": "RC-Cuenta.dc.html",
+          "pantalla": "D6-Seguridad.dc.html",
+          "texto": "Seguridad: Activás o cambiás la segunda verificación (app, SMS o email), ves tus códigos de respaldo y los teléfonos con la sesión abierta."
+        }
+      ],
+      "estado": "Diseñado (perfil público, disponibilidad, cobros, avisos y baja En pruebas)",
+      "captura_principal": "S/capturas/especialista/CU-Disponibilidad.png",
+      "secciones_dossier": [
+        "4",
+        "5",
+        "6",
+        "11"
+      ]
+    }
+  ],
+  "indice_dossier": [
+    {
+      "seccion": "1. Portada",
+      "cubre": [],
+      "capturas": [
+        "S/capturas/especialista/FL-Mapa.png"
+      ],
+      "huecos": "Pieza editorial; puede usar un celular del lienzo (p. ej. F-InicioDia) sin la Canilla."
+    },
+    {
+      "seccion": "2. El problema del profesional independiente",
+      "cubre": [],
+      "capturas": [],
+      "huecos": "Ninguna fuente de esta superficie trae datos sobre el problema; hace falta investigación o testimonios reales (no inventados). Solo hay claims del pitch sin verificar."
+    },
+    {
+      "seccion": "3. La propuesta de Handyx",
+      "cubre": [
+        "E-P-01",
+        "E-P-05",
+        "E-TA-04",
+        "E-T-03",
+        "E-G-02"
+      ],
+      "capturas": [
+        "S/capturas/especialista/D6-Bienvenida.png (recorte)",
+        "S/capturas/especialista/FL-Mapa.png"
+      ],
+      "huecos": "Definir el mensaje de tarifa (ver contradicción). La frase de la bienvenida: «Tu trabajo, tus precios»."
+    },
+    {
+      "seccion": "4. Registro y perfil profesional",
+      "cubre": [
+        "E-V-01",
+        "E-V-02",
+        "E-V-03",
+        "E-V-05",
+        "E-V-06",
+        "E-OB-01",
+        "E-CU-01",
+        "E-CU-02"
+      ],
+      "capturas": [
+        "S/capturas/especialista/RG-3.png",
+        "S/capturas/especialista/RG-8.png",
+        "S/capturas/especialista/D6-Alta.png",
+        "S/capturas/especialista/OB-Aprobado.png",
+        "S/capturas/especialista/CU-Perfil.png"
+      ],
+      "huecos": "Antecedentes: dos versiones contradictorias. El perfil con opiniones de clientes es solo diseño."
+    },
+    {
+      "seccion": "5. Especialidades y servicios",
+      "cubre": [
+        "E-V-04",
+        "E-V-05",
+        "E-CU-03",
+        "E-PR-06"
+      ],
+      "capturas": [
+        "S/capturas/especialista/RG-3.png",
+        "S/capturas/especialista/RG-4.png",
+        "S/capturas/especialista/H0-ManoObra.png"
+      ],
+      "huecos": "Los seis rubros están fijos; no hay catálogo de servicios por rubro más allá de las tarifas por tarea."
+    },
+    {
+      "seccion": "6. Recepción de oportunidades",
+      "cubre": [
+        "E-P-01",
+        "E-P-02",
+        "E-P-03",
+        "E-P-04",
+        "E-P-09",
+        "E-OE-03"
+      ],
+      "capturas": [
+        "S/capturas/especialista/recortes/F-Inicio-sin-canilla.png",
+        "S/capturas/especialista/CU-Disponibilidad.png",
+        "brands/handyx/assets/capturas/especialista-pedidos.webp"
+      ],
+      "huecos": "Sin cifras de pedidos reales. Mostrar «sin obligación de aceptar»."
+    },
+    {
+      "seccion": "7. Gestión de solicitudes",
+      "cubre": [
+        "E-P-04",
+        "E-P-08",
+        "E-P-10",
+        "E-M-01",
+        "E-M-04"
+      ],
+      "capturas": [
+        "S/capturas/especialista/recortes/F-Pedido-sin-canilla.png",
+        "S/capturas/especialista/F-Chat.png"
+      ],
+      "huecos": "No hay una bandeja de solicitudes en el lienzo (los pedidos viven en el Inicio); en código sí."
+    },
+    {
+      "seccion": "8. Elaboración y envío de presupuestos",
+      "cubre": [
+        "E-P-05",
+        "E-P-06",
+        "E-PR-01",
+        "E-PR-02",
+        "E-PR-03",
+        "E-PR-04",
+        "E-PR-05"
+      ],
+      "capturas": [
+        "S/capturas/especialista/recortes/F-Precio-sin-canilla.png",
+        "S/capturas/especialista/H0-Presupuesto.png",
+        "S/capturas/especialista/H0-AgregarMaterial.png",
+        "S/capturas/especialista/H0-PreciosRevisar.png"
+      ],
+      "huecos": "El presupuestador completo es Diseñado; en código hay propuesta con precio y presupuesto en el chat."
+    },
+    {
+      "seccion": "9. Comparación y aceptación de trabajos",
+      "cubre": [
+        "E-P-01",
+        "E-P-07",
+        "E-P-08",
+        "E-O-03"
+      ],
+      "capturas": [
+        "S/capturas/especialista/F-Revisar.png",
+        "S/capturas/especialista/F-Enviada.png (alternativa sin Canilla: F-Revisar)"
+      ],
+      "huecos": "El especialista no compara pedidos entre sí en una vista dedicada; decide uno por uno («Ahora no» sin consecuencias)."
+    },
+    {
+      "seccion": "10. Agenda y organización",
+      "cubre": [
+        "E-TA-02",
+        "E-D-03",
+        "E-O-01",
+        "E-O-04",
+        "E-O-06"
+      ],
+      "capturas": [
+        "S/capturas/especialista/F-InicioDia.png",
+        "S/capturas/especialista/F-AgendaMes.png",
+        "S/capturas/especialista/F-Obra.png",
+        "brands/handyx/assets/capturas/especialista-agenda.webp"
+      ],
+      "huecos": ""
+    },
+    {
+      "seccion": "11. Gestión de clientes",
+      "cubre": [
+        "E-M-01",
+        "E-M-02",
+        "E-OE-04",
+        "E-O-03",
+        "E-MT-05"
+      ],
+      "capturas": [
+        "S/capturas/especialista/F-Mensajes.png",
+        "S/capturas/especialista/F-ObraNueva.png"
+      ],
+      "huecos": "No hay una ficha o lista de clientes propia: la relación vive en el chat, los contactos (de especialistas) y «obra nueva a un cliente tuyo». Preguntar si está prevista."
+    },
+    {
+      "seccion": "12. Historial de trabajos",
+      "cubre": [
+        "E-TA-02",
+        "E-TA-03",
+        "E-MT-05",
+        "E-O-01"
+      ],
+      "capturas": [
+        "S/capturas/especialista/F-AgendaPasadas.png",
+        "S/capturas/especialista/H0-InformeEnviado.png"
+      ],
+      "huecos": "Historial = agenda pasadas, informes con PDF y Mis trabajos (código). No hay una pantalla de historial dedicada en el lienzo."
+    },
+    {
+      "seccion": "13. Herramientas administrativas",
+      "cubre": [
+        "E-TA-01",
+        "E-TA-04",
+        "E-TA-05",
+        "E-PR-04",
+        "E-EQ-01",
+        "E-EQ-03",
+        "E-R-01",
+        "E-R-03",
+        "E-MT-01"
+      ],
+      "capturas": [
+        "S/capturas/especialista/F-Herramientas.png",
+        "S/capturas/especialista/F-Ingresos.png",
+        "S/capturas/especialista/H0-Precios.png",
+        "S/capturas/especialista/H0-EquipoDetalle.png",
+        "S/capturas/especialista/R-Retiro.png",
+        "S/capturas/especialista/FE-Pedido.png"
+      ],
+      "huecos": "Todo Diseñado salvo la caja. Exportar el mes y ayuda de monotributo solo en el plan (Concepto)."
+    },
+    {
+      "seccion": "14. Herramientas específicas por oficio",
+      "cubre": [
+        "E-T-01",
+        "E-T-02",
+        "E-T-03",
+        "E-T-04",
+        "E-T-05",
+        "E-T-06",
+        "E-T-07",
+        "E-T-08",
+        "E-T-09",
+        "E-T-10",
+        "E-T-11",
+        "E-T-12"
+      ],
+      "capturas": [
+        "S/capturas/especialista/T-Taller.png",
+        "S/capturas/especialista/T-Tablero.png",
+        "S/capturas/especialista/T-Informe.png",
+        "S/capturas/especialista/T-Cables.png",
+        "S/capturas/especialista/OF-Gas.png",
+        "S/capturas/especialista/OF-Aire.png"
+      ],
+      "huecos": "Solo Electricidad tiene código (rama, sin revisión técnica ni prueba de AR en dispositivos). H2–H6: un tablero cada uno, «después del deploy»."
+    },
+    {
+      "seccion": "15. Reputación y crecimiento",
+      "cubre": [
+        "E-CU-01",
+        "E-CU-02",
+        "E-G-01",
+        "E-G-02",
+        "E-G-03",
+        "E-G-04",
+        "E-OE-03"
+      ],
+      "capturas": [
+        "S/capturas/especialista/G-Camino.png",
+        "S/capturas/especialista/F-Regalo.png",
+        "S/capturas/especialista/G-MiniCamino.png",
+        "S/capturas/especialista/CU-Perfil.png"
+      ],
+      "huecos": "No hay sistema de calificaciones ni opiniones en código ni en el plan; el diseño muestra opiniones ficticias. Premios y montos en borrador."
+    },
+    {
+      "seccion": "16. Roadmap profesional",
+      "cubre": [
+        "E-T-08",
+        "E-T-09",
+        "E-T-10",
+        "E-T-11",
+        "E-T-12",
+        "E-T-13",
+        "E-G-05",
+        "E-R-04",
+        "E-PR-07",
+        "E-TA-06"
+      ],
+      "capturas": [
+        "S/capturas/especialista/OF-Plomeria.png",
+        "S/capturas/especialista/OF-Albanileria.png",
+        "S/capturas/especialista/G-Areas.png"
+      ],
+      "huecos": "Fuente: docs/plan-olas.md (olas 0–6 y oficios después del deploy), sin fechas aprobadas. El pitch pone «HandIA para profesionales» en el mes 2 (diciembre): contradicción de horizonte."
+    },
+    {
+      "seccion": "17. Cierre",
+      "cubre": [],
+      "capturas": [
+        "S/capturas/especialista/D6-Bienvenida.png (recorte)"
+      ],
+      "huecos": "Contacto y QR según plan-dossiers."
+    }
+  ],
+  "contradicciones": [
+    {
+      "tema": "Antecedentes penales: archivo o verificación presencial",
+      "a": {
+        "dice": "Antecedentes nunca como archivo; el certificado se muestra en persona y la app solo reserva un turno. El contrato 0.10.0 y su prueba impiden un campo de archivo.",
+        "fuente": "specialist-fe@f7c0733:CLAUDE.md y src/contracts/dto.ts; specialist-fe@585418d:src/contracts/contratos.test.ts; specialist-be (código del alta)",
+        "fecha": "2026-10-29 (main) y 2026-11-07 (contrato de la rama)"
+      },
+      "b": {
+        "dice": "Antecedentes por foto o PDF: cifrados, solo el equipo de verificación, nunca a IA, se borran al verificar; todavía no implementado y con revisión legal pendiente. El lienzo ya lo dibuja (RG-9, D6-Alta, CU-Datos).",
+        "fuente": "specialist-fe@585418d:CLAUDE.md, docs/herramientas.md V.4; specialist-be@cf3b39d:CLAUDE.md; client-be@8ce44f4:CLAUDE.md; lienzo RG-9",
+        "fecha": "2026-11-07 (los documentos la fechan «08/11/2026»)"
+      },
+      "impacto": "El dossier no puede afirmar cómo se verifican los antecedentes; mostrar RG-9 como función existente sería falso.",
+      "pregunta": "¿Qué versión se comunica a inversores mientras falta la revisión legal? ¿Se muestra el paso o solo «verificación de antecedentes»?"
+    },
+    {
+      "tema": "Tarifa o comisión al especialista (cuatro versiones)",
+      "a": {
+        "dice": "Tarifa de Handyx 0 % para usuario y especialista solo durante la demo (10/11–10/12/2026), con modal de primer ingreso y contador en Cuenta; después ninguna tarifa sin política aprobada. Las capturas reales lo muestran.",
+        "fuente": "specialist-fe@f7c0733:src/contracts/fee.ts; client-be@8ce44f4:src/contracts/v1/fee.ts (aún con especialistaBp); capturas-pwa especialista-modal-fee y -cuenta",
+        "fecha": "2026-10-29 / 2026-11-07"
+      },
+      "b": {
+        "dice": "10 % al especialista y 10 % al cliente; el primer mes desde el 10/11 sin tarifa; camada fundadora: primeros 50, 5 % al especialista durante 12 meses. La demo muestra el 10 %.",
+        "fuente": "landing-fe@ac3b245:src/content/tarifas.json y src/render/demo/especialista.ts; Handy-landing-page-fe/CLAUDE.md",
+        "fecha": "2026-10-29 (decisión del 27/10)"
+      },
+      "c": {
+        "dice": "Handyx no le cobra comisión al especialista, nunca; se quitan el modal y el contador. El lienzo dice «Recibís el 100 % · Handyx no te cobra comisión» y la ayuda responde «Nada».",
+        "fuente": "specialist-fe@585418d:CLAUDE.md; specialist-be@cf3b39d:CLAUDE.md; client-be@8ce44f4:CLAUDE.md; lienzo F-Precio, OB-Tour, CU-Cobros, D6-Ayuda",
+        "fecha": "2026-11-07 (fechada «08/11/2026»)"
+      },
+      "d": {
+        "dice": "Pitch: comisión al profesional 0 % y tarifa del usuario 15 %; la prueba con porteros de octubre usó 10 % + 10 %.",
+        "fuente": "afirmaciones.json FEE-ESPECIALISTA, TARIFA-USUARIO, PRUEBA-COM-USUARIO, PRUEBA-COM-PROFESIONAL",
+        "fecha": "2026-11-04 / 2026-11-05"
+      },
+      "impacto": "Es el mensaje central del dossier (sección 3) y aparece dentro de muchas pantallas (F-Precio, OB-Tour, CU-Cobros, D6-Ayuda, TR-Cobro, exploraciones A/B/C con «0 % durante la demo»).",
+      "pregunta": "¿Cuál es la política vigente al 10/11 para el especialista y cuál para el cliente? ¿Se corrigen la landing, el contrato y las capturas antes de imprimir?"
+    },
+    {
+      "tema": "Dominio de la app del especialista",
+      "a": {
+        "dice": "workers.handyc.com (la demo en modo app, desde la landing).",
+        "fuente": "landing-fe@ac3b245:.github/workflows/apps.yml y docs/modulos/apps-por-rol.md",
+        "fecha": "2026-10-29"
+      },
+      "b": {
+        "dice": "workers.handyx.pro (workflow de la PWA real en main) y specialist.handyx.pro (demo del mock en la rama).",
+        "fuente": "specialist-fe@f7c0733:.github/workflows/hostinger.yml; specialist-fe@585418d:docs/deploy.md",
+        "fecha": "2026-11-07"
+      },
+      "impacto": "Un QR o URL impreso puede quedar apuntando al lugar equivocado; además mezcla dos dominios raíz (handyc.com y handyx.pro).",
+      "pregunta": "¿Cuál es el dominio oficial de la app del especialista y cuál se imprime, si alguno?"
+    },
+    {
+      "tema": "Lanzamiento del 10/11 frente al plan de la PWA del especialista",
+      "a": {
+        "dice": "La PWA se lanza el 10/11/2026; las apps por rol de la landing salen de noindex ese día.",
+        "fuente": "consigna de la ola 1; landing-fe@ac3b245:docs/modulos/apps-por-rol.md",
+        "fecha": "2026-11-07"
+      },
+      "b": {
+        "dice": "Deploy del producto al final, después del bloque Taller (olas 0–5, esperando el OK); «Nada desplegado; ningún proveedor con credenciales». La API del especialista no está en main.",
+        "fuente": "specialist-fe@585418d:docs/herramientas.md §5, docs/plan-olas.md, docs/handoff.md; specialist-be main = Initial commit",
+        "fecha": "2026-11-07"
+      },
+      "impacto": "El 10/11 solo puede salir la demo pública (landing) o la vista previa con datos de prueba; ninguna función del lienzo estará en manos de especialistas reales.",
+      "pregunta": "¿Qué ve un especialista el 10/11: la demo de la landing, la vista previa del mock o nada?"
+    },
+    {
+      "tema": "Horizonte de las herramientas por oficio",
+      "a": {
+        "dice": "H2–H6 (Aire, Plomería, Gas, Albañilería, Cerrajería) «después del deploy», de a dos oficios por ola.",
+        "fuente": "lienzo (título de la fila OF-*); specialist-fe@585418d:docs/plan-olas.md",
+        "fecha": "2026-11-07"
+      },
+      "b": {
+        "dice": "Mes 2 (diciembre): «HandIA para profesionales» y herramientas de su oficio; 18 herramientas por oficio (3 × 6) para 2027.",
+        "fuente": "pitch 169–171 (x-mes-2); afirmaciones DESARROLLOS-PLAN",
+        "fecha": "2026-11-05"
+      },
+      "impacto": "El roadmap profesional del dossier podría prometer diciembre para algo que el plan técnico deja sin fecha.",
+      "pregunta": "¿El roadmap profesional sigue el plan por olas (sin fechas) o el plan de 3 meses del pitch?"
+    },
+    {
+      "tema": "Fechas de las decisiones",
+      "a": {
+        "dice": "Decisiones y revisión fechadas «08/11/2026» (dirección de arte, sin comisión, antecedentes por archivo, revisión UX/UI).",
+        "fuente": "specialist-fe@585418d:docs/handoff.md, docs/herramientas.md; lienzo UX-Revision",
+        "fecha": "documentos"
+      },
+      "b": {
+        "dice": "Los commits que las registran son del 07/11/2026 y hoy es 07/11.",
+        "fuente": "git log de handyx-specialist-fe, -be y handyx-client-be",
+        "fecha": "2026-11-07"
+      },
+      "impacto": "Citar «08/11» en un dossier del 07/11 se lee como error.",
+      "pregunta": "¿Se citan esas decisiones con fecha 07/11?"
+    },
+    {
+      "tema": "Barra de navegación de la app",
+      "a": {
+        "dice": "Inicio · Trabajos · Agenda · Mensajes · Cuenta (código y capturas reales).",
+        "fuente": "specialist-fe@f7c0733 y capturas-pwa",
+        "fecha": "2026-10-29"
+      },
+      "b": {
+        "dice": "Inicio · Obras · Taller · Mensajes · Cuenta (lienzo); el pitch muestra Inicio · Herramientas · Agenda · Números.",
+        "fuente": "lienzo FL-Mapa; pitch 144–147",
+        "fecha": "2026-11-07 / 2026-11-05"
+      },
+      "impacto": "Mezclar capturas reales y del lienzo en una misma página muestra dos apps distintas.",
+      "pregunta": "¿El dossier usa solo el lienzo (rotulado «Diseño propuesto») y deja las capturas reales para una página de «estado del código»?"
+    }
+  ],
+  "faltantes": [
+    {
+      "dato": "Política de tarifa definitiva para especialista y cliente al 10/11",
+      "para": "dossier 03 · 3 y 13",
+      "pregunta": "¿0 % al especialista siempre, 10 % con primer mes gratis o 0 % hasta el 10/12? ¿Y la camada fundadora sigue?"
+    },
+    {
+      "dato": "Versión aprobada del proceso de antecedentes",
+      "para": "dossier 03 · 4",
+      "pregunta": "¿Archivo con borrado al verificar o turno presencial? ¿Hay revisión legal?"
+    },
+    {
+      "dato": "Dominio oficial de la app del especialista",
+      "para": "dossier 03 · 17 y QR",
+      "pregunta": "¿workers.handyc.com, workers.handyx.pro o specialist.handyx.pro?"
+    },
+    {
+      "dato": "Qué estará disponible el 10/11 para especialistas",
+      "para": "dossier 03 · 16",
+      "pregunta": "¿Se publica la vista previa con datos de prueba, la demo de la landing o nada?"
+    },
+    {
+      "dato": "Datos del problema del profesional independiente",
+      "para": "dossier 03 · 2",
+      "pregunta": "¿Hay entrevistas, encuestas o datos del preregistro (56 especialistas registrados, sin conciliar) que se puedan citar?"
+    },
+    {
+      "dato": "Sistema de reputación (calificaciones u opiniones)",
+      "para": "dossier 03 · 15",
+      "pregunta": "¿Está previsto? Hoy solo hay sello de verificación y trabajos verificados; las opiniones del diseño son ficticias."
+    },
+    {
+      "dato": "Gestión de clientes",
+      "para": "dossier 03 · 11",
+      "pregunta": "¿Se planea una lista o ficha de clientes del especialista, o la gestión de clientes es el chat y la obra?"
+    },
+    {
+      "dato": "Ferreterías aliadas y condiciones comerciales",
+      "para": "dossier 03 · 13",
+      "pregunta": "¿Hay alguna ferretería con acuerdo? Las condiciones figuran «a definir»."
+    },
+    {
+      "dato": "Escalera de premios, presupuesto y logística (punto Handyx, kit con remera)",
+      "para": "dossier 03 · 15",
+      "pregunta": "¿Existe el punto Handyx del Centro? ¿Quién paga y entrega los premios?"
+    },
+    {
+      "dato": "Proveedores autorizados (SMS, IA, Mercado Pago, almacenamiento, mapas y trayectos, telefonía)",
+      "para": "dossier 03 · 16",
+      "pregunta": "¿Cuáles están contratados o tienen fecha?"
+    },
+    {
+      "dato": "Revisión técnica de los cálculos de Electricidad y prueba de AR en dispositivos",
+      "para": "dossier 03 · 14",
+      "pregunta": "¿Hay profesionales evaluadores asignados?"
+    },
+    {
+      "dato": "Repo y backend de Handyx Ferreterías",
+      "para": "dossier 03 · 13",
+      "pregunta": "¿Se autoriza crear el repo del panel del ferretero? Hoy es solo diseño."
+    },
+    {
+      "dato": "Origen de las capturas reales de la PWA",
+      "para": "dossier 03 · todas",
+      "pregunta": "capturas.json no dice de qué commit salen; parecen de main (fase 3). ¿Se recapturan desde la rama?"
+    }
+  ],
+  "capturas_recomendadas": [
+    {
+      "png": "S/capturas/especialista/FL-Mapa.png",
+      "tablero": "FL-Mapa.dc.html",
+      "uso": "dossier 03 · 3 (mapa de la app)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "4112×1932",
+      "personajes": [],
+      "riesgos": [
+        "texto chico: rehacer como diagrama editorial con las cinco pestañas"
+      ],
+      "motivo": "Resume la app en un solo esquema: las cinco pestañas y a dónde lleva cada una."
+    },
+    {
+      "png": "S/capturas/especialista/recortes/D6-Bienvenida-sin-canilla.png",
+      "tablero": "D6-Bienvenida.dc.html",
+      "uso": "dossier 03 · 3 y 17",
+      "rotulo": "Diseño propuesto",
+      "recorte": "0,1440,1170,1092",
+      "px": "1170×1092",
+      "personajes": [],
+      "riesgos": [
+        "el tablero completo muestra la Canilla en la ilustración: usar solo el recorte"
+      ],
+      "motivo": "«Tu trabajo, tus precios · Vos elegís qué trabajos tomar» condensa la propuesta."
+    },
+    {
+      "png": "S/capturas/especialista/RG-3.png",
+      "tablero": "RG-3.dc.html",
+      "uso": "dossier 03 · 4 y 5",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [],
+      "motivo": "Rubros con la marca «Pide matrícula» en Gas y Aire: especialidades y verificación en una pantalla."
+    },
+    {
+      "png": "S/capturas/especialista/RG-8.png",
+      "tablero": "RG-8.dc.html",
+      "uso": "dossier 03 · 4",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2700",
+      "personajes": [],
+      "riesgos": [],
+      "motivo": "Distingue obligatorio de opcional y «un certificado cargado todavía no» aparece en el perfil."
+    },
+    {
+      "png": "S/capturas/especialista/D6-Alta.png",
+      "tablero": "D6-Alta.dc.html",
+      "uso": "dossier 03 · 4",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2640",
+      "personajes": [],
+      "riesgos": [
+        "menciona «Antecedentes penales · PDF cargado»: depende de la contradicción de antecedentes",
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Muestra que cargar no es estar verificado."
+    },
+    {
+      "png": "S/capturas/especialista/OB-Aprobado.png",
+      "tablero": "OB-Aprobado.dc.html",
+      "uso": "dossier 03 · 4 (resultado del alta)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "sello «Verificado» y nombre de muestra (Julián): cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Cierre positivo del alta con rubros habilitados."
+    },
+    {
+      "png": "S/capturas/especialista/CU-Disponibilidad.png",
+      "tablero": "CU-Disponibilidad.dc.html",
+      "uso": "dossier 03 · 6",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [],
+      "motivo": "Urgentes solo con Disponible encendido y programados aparte: la oferta sin obligación."
+    },
+    {
+      "png": "S/capturas/especialista/recortes/F-Inicio-sin-canilla.png",
+      "tablero": "F-Inicio.dc.html",
+      "uso": "dossier 03 · 6",
+      "rotulo": "Diseño propuesto",
+      "recorte": "0,0,1170,1150",
+      "px": "1170×1150",
+      "personajes": [],
+      "riesgos": [
+        "el tablero completo muestra la Canilla en la tarjeta del pedido; alternativa: F-InicioDia"
+      ],
+      "motivo": "Cabecera con Disponible sobre el mapa."
+    },
+    {
+      "png": "S/capturas/especialista/recortes/F-Pedido-sin-canilla.png",
+      "tablero": "F-Pedido.dc.html",
+      "uso": "dossier 03 · 6 y 7",
+      "rotulo": "Diseño propuesto",
+      "recorte": "0,1130,1170,1330",
+      "px": "1170×1330",
+      "personajes": [],
+      "riesgos": [
+        "el tablero completo muestra la Canilla junto a «Plomería»"
+      ],
+      "motivo": "Zona aproximada, dirección solo si aceptan, «Handyx sugiere» y «Ahora no · no tiene ninguna consecuencia»."
+    },
+    {
+      "png": "S/capturas/especialista/recortes/F-Precio-sin-canilla.png",
+      "tablero": "F-Precio.dc.html",
+      "uso": "dossier 03 · 8",
+      "rotulo": "Diseño propuesto",
+      "recorte": "0,420,1170,2112",
+      "px": "1170×2112",
+      "personajes": [],
+      "riesgos": [
+        "mensaje de tarifa sin definir («Handyx no te cobra comisión» / «Recibís el 100 %»)"
+      ],
+      "motivo": "La cinta de precio con la sugerencia: «Handy sugiere, nunca impone»."
+    },
+    {
+      "png": "S/capturas/especialista/F-Revisar.png",
+      "tablero": "F-Revisar.dc.html",
+      "uso": "dossier 03 · 9 (alternativa a F-Enviada, que muestra la Canilla)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "mensaje de tarifa sin definir («Handyx no te cobra comisión» / «Recibís el 100 %»)"
+      ],
+      "motivo": "«Hasta que acepte, no es un trabajo agendado»: la propuesta como acuerdo."
+    },
+    {
+      "png": "S/capturas/especialista/H0-Presupuesto.png",
+      "tablero": "H0-Presupuesto.dc.html",
+      "uso": "dossier 03 · 8",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "El presupuestador con mano de obra, materiales y precios fijos o que se actualizan."
+    },
+    {
+      "png": "S/capturas/especialista/H0-AgregarMaterial.png",
+      "tablero": "H0-AgregarMaterial.dc.html",
+      "uso": "dossier 03 · 8 (alternativa a H0-MaterialNuevo, que muestra la Canilla)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [],
+      "motivo": "Cobrar al cliente y anotar como gasto en un paso."
+    },
+    {
+      "png": "S/capturas/especialista/H0-PreciosRevisar.png",
+      "tablero": "H0-PreciosRevisar.dc.html",
+      "uso": "dossier 03 · 13",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "«Corralón Simulación»: comercio ficticio"
+      ],
+      "motivo": "Lista del corralón leída en el teléfono: herramienta administrativa concreta."
+    },
+    {
+      "png": "S/capturas/especialista/H0-ManoObra.png",
+      "tablero": "H0-ManoObra.dc.html",
+      "uso": "dossier 03 · 5",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Tarifas propias por tarea: «Handyx solo sugiere y vos decidís»."
+    },
+    {
+      "png": "S/capturas/especialista/F-InicioDia.png",
+      "tablero": "F-InicioDia.dc.html",
+      "uso": "dossier 03 · 10",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "El día con paradas, sin la Canilla: alternativa a F-Inicio."
+    },
+    {
+      "png": "S/capturas/especialista/F-AgendaMes.png",
+      "tablero": "F-AgendaMes.dc.html",
+      "uso": "dossier 03 · 10",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Mes con obras y trabajos de un vistazo."
+    },
+    {
+      "png": "S/capturas/especialista/H0-Modo.png",
+      "tablero": "H0-Modo.dc.html",
+      "uso": "dossier 03 · 13 (herramienta de trabajo)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Modo trabajo: la app como herramienta durante el trabajo, no solo antes."
+    },
+    {
+      "png": "S/capturas/especialista/H0-InformeEnviado.png",
+      "tablero": "H0-InformeEnviado.dc.html",
+      "uso": "dossier 03 · 12",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Conformidad, garantía, recordatorio y PDF: historial que vale para el cliente."
+    },
+    {
+      "png": "S/capturas/especialista/F-Herramientas.png",
+      "tablero": "F-Herramientas.dc.html",
+      "uso": "dossier 03 · 13",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "La pestaña Taller resume agenda, plata, presupuestos, equipamiento, herramientas y ferretería."
+    },
+    {
+      "png": "S/capturas/especialista/F-Ingresos.png",
+      "tablero": "F-Ingresos.dc.html",
+      "uso": "dossier 03 · 13",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Bruto, gastos y neto, con lo verificado aparte."
+    },
+    {
+      "png": "S/capturas/especialista/H0-EquipoDetalle.png",
+      "tablero": "H0-EquipoDetalle.dc.html",
+      "uso": "dossier 03 · 13",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2850",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Historial, mantenimiento y préstamo de una herramienta."
+    },
+    {
+      "png": "S/capturas/especialista/F-Obra.png",
+      "tablero": "F-Obra.dc.html",
+      "uso": "dossier 03 · 10 y 11",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×3390",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Obra por días con gastado, falta cobrar y cambios pendientes del cliente."
+    },
+    {
+      "png": "S/capturas/especialista/F-Reparto.png",
+      "tablero": "F-Reparto.dc.html",
+      "uso": "dossier 03 · 11 y 15",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×3000",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "«Handyx no recibe ni reparte la plata»."
+    },
+    {
+      "png": "S/capturas/especialista/F-ObraBuscar.png",
+      "tablero": "F-ObraBuscar.dc.html",
+      "uso": "dossier 03 · 15 (red de especialistas)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Búsqueda visible solo para verificados de la zona; nadie entra solo."
+    },
+    {
+      "png": "S/capturas/especialista/F-ChatAdjuntar.png",
+      "tablero": "F-ChatAdjuntar.dc.html",
+      "uso": "dossier 03 · 7 y 11",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real"
+      ],
+      "motivo": "Tarjetas que el cliente responde en el chat."
+    },
+    {
+      "png": "S/capturas/especialista/R-Retiro.png",
+      "tablero": "R-Retiro.dc.html",
+      "uso": "dossier 03 · 13 (ferretería)",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "«Ferretería Simulación Centro»: ficticia; no hay ferreterías aliadas"
+      ],
+      "motivo": "Retiro con QR: el punto de contacto con la ferretería."
+    },
+    {
+      "png": "S/capturas/especialista/FE-Pedido.png",
+      "tablero": "FE-Pedido.dc.html",
+      "uso": "dossier 03 · 13 (panel del ferretero)",
+      "rotulo": "Muestra · datos ficticios",
+      "recorte": null,
+      "px": "2560×1600",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real",
+        "«Verificado por Handyx» sobre un nombre de muestra"
+      ],
+      "motivo": "«Lo paga en el mostrador. Handyx no cobra nada de esta venta»."
+    },
+    {
+      "png": "S/capturas/especialista/T-Taller.png",
+      "tablero": "T-Taller.dc.html",
+      "uso": "dossier 03 · 14",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [
+        "foco",
+        "llave"
+      ],
+      "riesgos": [],
+      "motivo": "Herramientas para todos y del oficio; marca «Otros oficios · llegan más adelante»."
+    },
+    {
+      "png": "S/capturas/especialista/T-Tablero.png",
+      "tablero": "T-Tablero.dc.html",
+      "uso": "dossier 03 · 14",
+      "rotulo": "Diseño propuesto (función con código en rama: En pruebas)",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "tabla «en revisión técnica»: rotular"
+      ],
+      "motivo": "Tablero 3D con cómputo al presupuesto: la herramienta más avanzada."
+    },
+    {
+      "png": "S/capturas/especialista/T-Informe.png",
+      "tablero": "T-Informe.dc.html",
+      "uso": "dossier 03 · 14",
+      "rotulo": "Diseño propuesto (función con código en rama: En pruebas)",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "valores de medición de ejemplo"
+      ],
+      "motivo": "Informe con semáforo «No es un certificado»."
+    },
+    {
+      "png": "S/capturas/especialista/OF-Gas.png",
+      "tablero": "OF-Gas.dc.html",
+      "uso": "dossier 03 · 14 y 16",
+      "rotulo": "Concepto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "herramienta de seguridad: mantener el aviso «El teléfono no detecta gas ni monóxido»"
+      ],
+      "motivo": "Muestra el rumbo de H2–H6 con su límite de seguridad."
+    },
+    {
+      "png": "S/capturas/especialista/OF-Aire.png",
+      "tablero": "OF-Aire.dc.html",
+      "uso": "dossier 03 · 16",
+      "rotulo": "Concepto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [],
+      "motivo": "Oportunidad de evolución por oficio, rotulada «Después del deploy»."
+    },
+    {
+      "png": "S/capturas/especialista/G-Camino.png",
+      "tablero": "G-Camino.dc.html",
+      "uso": "dossier 03 · 15",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [
+        "llave"
+      ],
+      "riesgos": [
+        "premios en borrador"
+      ],
+      "motivo": "El camino por trabajos verificados sin rankings."
+    },
+    {
+      "png": "S/capturas/especialista/F-Regalo.png",
+      "tablero": "F-Regalo.dc.html",
+      "uso": "dossier 03 · 15",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [
+        "llave"
+      ],
+      "riesgos": [
+        "premio en borrador («Gorra Handyx»)"
+      ],
+      "motivo": "Hito con premio visible de antemano."
+    },
+    {
+      "png": "S/capturas/especialista/G-MiniCamino.png",
+      "tablero": "G-MiniCamino.dc.html",
+      "uso": "dossier 03 · 15",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "montos en borrador que pueden leerse como compromiso"
+      ],
+      "motivo": "Mini camino por cobros verificados, «Sin sorteos»."
+    },
+    {
+      "png": "S/capturas/especialista/CU-Perfil.png",
+      "tablero": "CU-Perfil.dc.html",
+      "uso": "dossier 03 · 4 y 15",
+      "rotulo": "Diseño propuesto",
+      "recorte": null,
+      "px": "1170×2532",
+      "personajes": [],
+      "riesgos": [
+        "cifra/nombre de muestra que puede leerse como real",
+        "«Verificado por Handyx» y «38 trabajos verificados» de muestra"
+      ],
+      "motivo": "Cómo lo ven los clientes; usar en lugar de F-PerfilProfesional (opiniones ficticias)."
+    },
+    {
+      "png": "brands/handyx/assets/capturas/especialista-pedidos.webp",
+      "tablero": "PWA /pedidos/ (servidor simulado)",
+      "uso": "dossier 03 · 6 o página «estado del código»",
+      "rotulo": "Pantalla de la PWA · datos de prueba",
+      "recorte": null,
+      "px": "780×1688",
+      "personajes": [],
+      "riesgos": [
+        "texto con «Handy» en lugar de «Handyx»",
+        "«Tarifa de Handy: 0 % durante la demo» (ver contradicción)",
+        "banner «Datos de prueba» visible: mantenerlo"
+      ],
+      "motivo": "Prueba de que el flujo existe en código: «No tenés obligación de aceptar ninguno»."
+    },
+    {
+      "png": "brands/handyx/assets/capturas/especialista-cobro.webp",
+      "tablero": "PWA /caja/ (servidor simulado)",
+      "uso": "dossier 03 · 13 o página «estado del código»",
+      "rotulo": "Pantalla de la PWA · datos de prueba",
+      "recorte": null,
+      "px": "780×1688",
+      "personajes": [],
+      "riesgos": [
+        "nombra el área interna «Operations»",
+        "«Handy» en lugar de «Handyx»"
+      ],
+      "motivo": "Caja real del código: pago directo, verificado vs reportado."
+    }
+  ],
+  "riesgos_de_publicacion": [
+    {
+      "que": "Mensajes de tarifa contradictorios dentro de las pantallas",
+      "donde": "F-Precio, F-PrecioTeclado, F-Revisar, OB-Tour, CU-Cobros, D6-Ayuda, TR-Cobro, capturas reales (modal y Cuenta), demo de la landing (10 %), exploraciones A/B/C",
+      "recomendacion": "Decidir la política antes de imprimir; mientras tanto elegir recortes sin la frase o rotularla «sujeto a la política vigente»."
+    },
+    {
+      "que": "Antecedentes por archivo presentado como hecho",
+      "donde": "RG-9, D6-Alta, CU-Datos, RC-Onboarding",
+      "recomendacion": "No usar RG-9 hasta decidir; describir «verificación de antecedentes por el equipo» sin detallar el proceso."
+    },
+    {
+      "que": "La Canilla (personaje no permitido)",
+      "donde": "16 tableros: A-Precio, D6-Bienvenida, F-Enviada, F-Inicio, F-Pedido, F-Precio, F-PrecioTeclado, F-Trabajo, G-Vitrina, H0-MaterialNuevo, RC-Camino, RC-Login, RC-Onboarding, RC-Pedido, RC-Presupuesto, X-Escritorio",
+      "recomendacion": "Usar los recortes de S/capturas/especialista/recortes/ (D6-Bienvenida, F-Inicio, F-Pedido, F-Precio, F-Trabajo, G-Vitrina) o alternativas: F-Revisar por F-Enviada, H0-AgregarMaterial por H0-MaterialNuevo, F-InicioDia por F-Inicio, G-Camino por G-Vitrina; no usar los RC-* completos."
+    },
+    {
+      "que": "Opiniones de clientes ficticias con forma de testimonio",
+      "donde": "F-PerfilProfesional («Lo que dicen los clientes»)",
+      "recomendacion": "No usar, o recortar arriba de las opiniones; no hay sistema de opiniones en código ni en plan."
+    },
+    {
+      "que": "Cifras, nombres y sellos de muestra",
+      "donde": "Casi todas las pantallas (Julián Ortiz, Lucía Ferreyra, $ 239.500, 38 trabajos verificados, FE-Inicio y FE-Metricas con $ 1.284.000, 96 pedidos y 34 profesionales verificados)",
+      "recomendacion": "Rótulo «Muestra · datos ficticios» en cada imagen; nunca citar esas cifras en el texto."
+    },
+    {
+      "que": "Presentar el diseño como producto disponible",
+      "donde": "Todo el lienzo; la PWA en código corre con servidor simulado o con la API solo en local",
+      "recomendacion": "Separar en el dossier «Diseñado» de «En pruebas»; nada está Construido salvo la demo de la landing."
+    },
+    {
+      "que": "Clave de ejemplo con forma de secreto",
+      "donde": "D6-TOTP",
+      "recomendacion": "No usar la captura; describir la segunda verificación sin pantallas de configuración."
+    },
+    {
+      "que": "Herramientas de seguridad (gas, electricidad, cerrajería) sin sus avisos",
+      "donde": "OF-Gas, T-Electricidad, T-Cables, OF-Cerrajeria",
+      "recomendacion": "Mantener visibles «el teléfono no detecta tensión, gas ni monóxido», «en revisión técnica» y «nunca decodifica llaves»."
+    },
+    {
+      "que": "Ferreterías presentadas como aliadas",
+      "donde": "R-*, FE-*, RC-Ferreteria",
+      "recomendacion": "Rotular «Simulación · ferreterías ficticias»; no hay alianzas firmadas y las condiciones están a definir."
+    },
+    {
+      "que": "Urgencia con cuenta regresiva y «+1 al camino»",
+      "donde": "F-Inicio, F-Pedido («Quedan 18:42», «+1 al camino si se verifica»)",
+      "recomendacion": "Acompañar con «Ahora no · no tiene ninguna consecuencia» para no sugerir presión; recomendación de diseño, sin modificarlo."
+    },
+    {
+      "que": "Dominio impreso",
+      "donde": "QR y textos de contacto",
+      "recomendacion": "No imprimir un dominio de la app del especialista hasta resolver workers.handyc.com / workers.handyx.pro / specialist.handyx.pro."
+    },
+    {
+      "que": "Capturas reales con marca vieja y área interna",
+      "donde": "brands/handyx/assets/capturas/especialista-*.webp",
+      "recomendacion": "Usarlas solo como «estado del código», con su rótulo; o recapturar desde la rama."
+    },
+    {
+      "que": "Fechas «08/11» en material del 07/11",
+      "donde": "UX-Revision (lienzo) y docs de la rama",
+      "recomendacion": "No usar UX-Revision como pieza; citar las decisiones con fecha 07/11."
+    }
+  ]
+}

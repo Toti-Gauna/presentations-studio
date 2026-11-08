@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es-AR" class="apaisado" data-pieza="triptico">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Tríptico institucional (acordeón)</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<link rel="stylesheet" href="../../plantilla/premium.css">
+<style>
+  /* Acordeón: A4 apaisado, 4 paneles iguales de 74,25 mm por cara, plegado en zigzag (ver guia-de-plegado.html) */
+  .paneles.acordeon { grid-template-columns: repeat(4, 74.25mm); }
+  .panel { padding: 11mm 8mm 10mm; }
+  .panel .p-titulo { font-size: 16.5pt; }
+  .panel .p-texto { font-size: 7.8pt; }
+  .panel .p-ceja { font-size: 5.8pt; gap: 2mm; }
+  .panel .p-ceja::before { width: 6mm; }
+  .chico-pie { font: 500 5.8pt/1.4 var(--f-texto); color: var(--gris); }
+  .p-oscuro .chico-pie, .p-azul .chico-pie { color: rgba(233, 239, 249, 0.62); }
+
+  /* cara 1 */
+  .A1 { --fondo-panel: var(--navy); color: rgba(233, 239, 249, 0.82); }
+  .A1 .fondo { overflow: hidden; background: radial-gradient(70mm 80mm at 50% 70%, #163463 0%, rgba(14, 29, 54, 0) 72%), var(--navy); }
+  .A1 .lema { font: 900 13pt/1.02 var(--f-titulos); font-stretch: 125%; color: var(--amarillo); letter-spacing: -0.01em; }
+  .A1 .tel { position: absolute; right: -9mm; top: 58mm; width: 52mm; z-index: 2; }
+  .A1 .maq { position: absolute; left: -16mm; bottom: 8mm; width: 112mm; }
+  .A1 .mapa { position: absolute; left: -30mm; top: -10mm; width: 150mm; opacity: 0.12; }
+  .A2 { --fondo-panel: var(--hueso); }
+  .dolores { display: grid; gap: 4.2mm; }
+  .dolor { display: grid; grid-template-columns: 9mm minmax(0, 1fr); gap: 2.6mm; align-items: start; }
+  .dolor svg { width: 9mm; height: 9mm; padding: 1.8mm; border-radius: 2mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.25mm var(--borde); stroke: var(--azul); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .dolor .p-h { font-size: 8.6pt; }
+  .dolor .p-texto { margin-top: 0.6mm; font-size: 7.5pt; }
+  .A3, .A4 { --fondo-panel: #FFFFFF; }
+  .paso-t { display: grid; grid-template-columns: 6.4mm minmax(0, 1fr); gap: 2.6mm; }
+  .paso-t .num { width: 6.4mm; height: 6.4mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.4pt/1 var(--f-titulos); font-stretch: 112.5%; }
+  .paso-t .p-h { font-size: 8.8pt; }
+  .paso-t .p-texto { margin-top: 0.4mm; font-size: 7.5pt; }
+  .gana { padding: 3mm 3.2mm; border-radius: 2.2mm; background: var(--cielo); font: 400 7.2pt/1.45 var(--f-texto); color: var(--azul-profundo); }
+  .gana b { color: var(--navy); }
+
+  /* cara 2 */
+  .B1, .B2, .B3 { --fondo-panel: #FFFFFF; }
+  .panorama { position: absolute; left: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); width: calc(222.75mm + var(--sangrado)); height: calc(88mm + var(--sangrado)); background: var(--azul); overflow: hidden; z-index: 0; }
+  .panorama .maq { position: absolute; right: 2mm; bottom: -7mm; width: 136mm; }
+  .panorama .mapa { position: absolute; left: -10mm; top: -20mm; width: 150mm; opacity: 0.1; }
+  .B-cab { position: absolute; left: 8mm; top: 12mm; z-index: 2; width: 66mm; }
+  .clave { margin-top: auto; padding: 3mm 3.2mm; border-radius: 2.2mm; background: var(--hueso); font: 400 7.2pt/1.45 var(--f-texto); color: var(--tinta-2); }
+  .clave b { color: var(--navy); }
+  .handy-b { margin-top: auto; display: flex; justify-content: flex-end; gap: 1mm; margin-bottom: -1mm; }
+  .handy-b img { width: 17mm; }
+  .B-cab .p-titulo { color: #FFFFFF; font-size: 15pt; }
+  .disp-B { height: 62mm; margin-top: 50mm; display: flex; align-items: flex-end; justify-content: center; }
+  .disp-B img { max-height: 100%; width: auto; }
+  .disp-B.nb img { width: 100%; height: auto; }
+  .B4 { --fondo-panel: var(--navy); color: rgba(233, 239, 249, 0.82); }
+  .B4 .qr-caja { padding: 4.4mm; border-radius: 3mm; background: #FFFFFF; width: 44mm; margin: 0 auto; }
+  .B4 .qr-caja img { width: 100%; }
+  .B4 .url { text-align: center; font: 750 7.6pt/1.2 var(--f-texto); color: var(--amarillo); margin-top: 2.6mm; }
+  .B4 .destinos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2mm 3mm; font: 600 6.8pt/1.35 var(--f-texto); color: #FFFFFF; }
+  .B4 .destinos span::before { content: ''; display: inline-block; width: 1.3mm; height: 1.3mm; border-radius: 0.3mm; background: var(--amarillo); margin-right: 1.4mm; vertical-align: 0.25em; }
+  .B4 .contacto { display: grid; gap: 1.2mm; font: 500 7.4pt/1.35 var(--f-texto); }
+  .B4 .contacto b { display: block; font: 800 5.6pt/1.2 var(--f-texto); letter-spacing: 0.18em; text-transform: uppercase; color: rgba(233, 239, 249, 0.55); }
+  .B4 .contacto span { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<!-- =================== CARA 1 · se ve primero: portada | problema | solución (dos paneles) =================== -->
+<section class="pagina">
+  <div class="lamina">
+    <div class="paneles acordeon">
+
+      <div class="panel A1 p-oscuro">
+        <div class="fondo"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""><div class="maq" data-iso="costa" data-paleta="noche" data-pines="1"></div></div>
+        <div class="fila entre" style="align-items:flex-start"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx" style="height:7mm"></div>
+        <p class="lema" style="margin-top:9mm">Soluciones,<br>no problemas.</p>
+        <p class="p-texto" style="margin-top:4mm;max-width:40mm;color:rgba(233,239,249,0.86);font-size:7.8pt">Conectamos a quien necesita un arreglo en su casa con especialistas de su zona, con propuestas claras para elegir por calidad y por precio.</p>
+        <div style="margin-top:auto;position:relative;z-index:3">
+          <span class="p-ceja sin-raya" style="font-size:5.8pt">Mar del Plata · 2026</span>
+          <p class="chico-pie" style="margin-top:1.4mm">Pantalla: diseño propuesto · datos ficticios. Plano: © colaboradores de OpenStreetMap.</p>
+        </div>
+        <img class="tel permite-salir" src="img/m-inicio-titanio-izq.webp" alt="La app de Handyx en un teléfono">
+      </div>
+
+      <div class="panel A2">
+        <div class="fondo"></div>
+        <span class="p-ceja">El problema</span>
+        <h2 class="p-titulo" style="margin-top:4mm">Arreglar algo en casa todavía es una <span class="p-marca">odisea</span></h2>
+        <div class="dolores" style="margin-top:8mm">
+          <div class="dolor"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/><path d="M9 9.2a1.6 1.6 0 1 1 2.2 1.5c-.5.2-.7.6-.7 1.1v.4"/><path d="M10.5 14h.01"/></svg><div><p class="p-h">¿A quién llamo?</p><p class="p-texto">Encontrar a alguien confiable depende de un contacto o de la suerte.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7.5" height="16" rx="1.5"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.5"/><path d="M5.5 8h2.5M5.5 11h2.5M16 8h2.5M16 11h2.5"/></svg><div><p class="p-h">Presupuestos que no se comparan</p><p class="p-texto">Cada uno llega distinto, sin saber qué incluye ni cuánto es razonable.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><div><p class="p-h">Todo disperso</p><p class="p-texto">Fechas, precios y fotos se pierden entre mensajes y llamadas.</p></div></div>
+          <div class="dolor"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16l4 4 5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg><div><p class="p-h">El especialista, sin herramientas</p><p class="p-texto">Presupuesta a mano, organiza su agenda de memoria y cobra como puede.</p></div></div>
+        </div>
+        <p class="chico-pie" style="margin-top:auto">Hipótesis del producto, a partir de entrevistas con vecinos y especialistas.</p>
+      </div>
+
+      <div class="panel A3">
+        <div class="fondo"></div>
+        <span class="p-ceja">La solución</span>
+        <h2 class="p-titulo" style="margin-top:4mm">Un circuito <span class="p-marca">simple</span></h2>
+        <div style="display:grid;gap:3.4mm;margin-top:6mm">
+          <div class="paso-t"><span class="num">1</span><div><p class="p-h">Contás qué pasa</p><p class="p-texto">Elegís el rubro, sumás fotos si querés y publicás.</p></div></div>
+          <div class="paso-t"><span class="num">2</span><div><p class="p-h">Recibís propuestas</p><p class="p-texto">De especialistas de tu zona, con precio y fecha.</p></div></div>
+        </div>
+        <div class="movil" style="--w:42mm;margin:auto auto 0"><div class="pant"><img src="img/p-revisar.webp" alt="Revisar y publicar el pedido"></div><span class="toque" style="left:50%;top:92.2%">1</span></div>
+        <p class="chico-pie" style="margin-top:3mm;text-align:center">Diseño propuesto · datos ficticios</p>
+      </div>
+
+      <div class="panel A4">
+        <div class="fondo"></div>
+        <div style="display:grid;gap:3.4mm">
+          <div class="paso-t"><span class="num">3</span><div><p class="p-h">Elegís por calidad y precio</p><p class="p-texto">Todo a la vista para comparar.</p></div></div>
+          <div class="paso-t"><span class="num">4</span><div><p class="p-h">Seguís el trabajo y pagás directo</p><p class="p-texto">Al especialista, en efectivo o con Mercado Pago.</p></div></div>
+        </div>
+        <div class="movil" style="--w:42mm;margin:7mm auto 0"><div class="pant"><img src="img/c-propuestas.webp" alt="Propuestas para comparar"></div><span class="toque" style="left:73.5%;top:62.3%">3</span></div>
+        <p class="gana" style="margin-top:auto"><b>Cómo gana Handyx.</b> El especialista cobra su precio completo, sin comisión. Quien pide paga una tarifa de servicio: 0 % hasta el 10/12/2026; después, en evaluación.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== CARA 2 · el ecosistema (tres paneles con la ciudad) | contratapa con QR =================== -->
+<section class="pagina">
+  <div class="lamina">
+    <div class="panorama fondo"><img class="mapa" src="../../marca/mapa-mdp-blanco.svg" alt=""><div class="maq" data-iso="maqueta" data-paleta="dia" data-pines="1" data-rotulos="1" data-solo="faro,puerto,casino,torreon,catedral" data-tam="16"></div></div>
+    <div class="B-cab p-azul" style="background:none"><span class="p-ceja">El ecosistema</span><h2 class="p-titulo" style="margin-top:3mm">Tres superficies, un mismo <span class="p-marca">arreglo</span></h2></div>
+    <div class="paneles acordeon">
+
+      <div class="panel B1">
+        <div class="fondo" style="background:none"></div>
+        <div class="disp-B"><img src="img/m-inicio-plata.webp" alt="Customer App"></div>
+        <span class="p-ceja" style="margin-top:3mm">Customer App</span>
+        <p class="p-texto" style="margin-top:2mm;color:var(--tinta-2)">Para quien necesita un arreglo: pide, compara propuestas, sigue el trabajo y paga directo.</p>
+        <span class="estado en-pruebas" style="margin-top:2.4mm;align-self:flex-start">En pruebas</span>
+        <div style="margin-top:auto"></div><p class="clave" style="margin-top:0"><b>La plata no pasa por Handyx.</b> El trabajo se le paga directo al especialista, en efectivo o con Mercado Pago.</p>
+      </div>
+
+      <div class="panel B2">
+        <div class="fondo" style="background:none"></div>
+        <div class="disp-B"><img src="img/m-esp-pedido-plata.webp" alt="Professional App"></div>
+        <span class="p-ceja" style="margin-top:3mm">Professional App</span>
+        <p class="p-texto" style="margin-top:2mm;color:var(--tinta-2)">La herramienta del especialista: pedidos de su zona, su precio, su agenda y su cobro, sin comisión.</p>
+        <div style="display:flex;gap:1.6mm;flex-wrap:wrap;margin-top:2.4mm"><span class="estado en-pruebas">En pruebas</span><span class="estado disenado">Herramientas: diseñado</span></div>
+        <div style="margin-top:auto"></div><p class="clave" style="margin-top:0"><b>Sin comisión.</b> El especialista pone su precio y lo cobra completo; Handyx sugiere, nunca impone.</p>
+      </div>
+
+      <div class="panel B3">
+        <div class="fondo" style="background:none"></div>
+        <div class="disp-B nb"><img src="img/m-portal-plata.webp" alt="Operations Portal"></div>
+        <span class="p-ceja" style="margin-top:3mm">Operations Portal</span>
+        <p class="p-texto" style="margin-top:2mm;color:var(--tinta-2)">Donde el equipo ordena preregistros, reclamos, campañas y métricas por barrio.</p>
+        <span class="estado construido" style="margin-top:2.4mm;align-self:flex-start">Construido</span>
+        <div style="margin-top:auto"></div><p class="clave" style="margin-top:0"><b>Nuestra visión.</b> Que resolver un arreglo en casa sea simple, claro y justo, para quien lo pide y para quien lo hace.</p>
+        <p class="chico-pie" style="margin-top:3mm">Estado al 07/11/2026. Pantallas: diseño propuesto, datos ficticios. Plano: © colaboradores de OpenStreetMap.</p>
+      </div>
+
+      <div class="panel B4 p-oscuro">
+        <div class="fondo" style="overflow:hidden"><img src="img/rambla-fuego-navy.webp" alt="" style="position:absolute;left:0;top:0;width:100%;height:92mm;object-fit:cover;object-position:center 30%"><div style="position:absolute;left:0;right:0;top:40mm;height:52mm;background:linear-gradient(180deg,rgba(14,29,54,0),#0E1D36)"></div></div>
+        <img src="../../marca/logo-handyx-blanco.svg" alt="Handyx" style="height:6mm;align-self:flex-start">
+        <h2 class="p-titulo" style="margin-top:22mm;font-size:14pt">Un problema viejo con una nueva solución que <span class="p-marca">elegís</span>.</h2>
+        <p class="p-texto" style="margin-top:2.4mm">Te invitamos a conocer Handyx: la demo, los cuatro dossiers y el portafolio del fundador, en un solo lugar.</p>
+        <div class="qr-caja" style="margin-top:5mm;width:40mm"><img src="../../marca/qr-hub.svg" alt="Código QR a landing.handyc.com/handyx"></div>
+        <p class="url"><a href="https://landing.handyc.com/handyx/">landing.handyc.com/handyx</a></p>
+        <div class="destinos" style="margin-top:4mm"><span>Landing</span><span>Business &amp; Investment</span><span>Customer App</span><span>Professional App</span><span>Operations Portal</span><span>Portafolio</span></div>
+        <div class="contacto" style="margin-top:auto">
+          <div><b>Contacto</b><span>Ignacio Gauna, fundador</span></div>
+          <div><span><a href="mailto:ignaciogauna.developer@gmail.com">ignaciogauna.developer@gmail.com</a></span></div>
+          <div><span><a href="tel:+5492236674044">223 667-4044</a> · <a href="https://landing.handyc.com/">landing.handyc.com</a></span></div>
+        </div>
+        <p class="chico-pie" style="margin-top:3mm">Colección Handyx · Edición 1 · Hecho en Mar del Plata, noviembre de 2026.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="../../plantilla/iso.js"></script>
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

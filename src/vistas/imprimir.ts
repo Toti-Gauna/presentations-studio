@@ -28,11 +28,28 @@ else {
     );
   const usadas = new Set<string>();
   escenas.forEach((e, i) => {
-    const marco = h('div', { class: 'marco' });
-    const hoja = h('section', { class: 'hoja' }, marco);
-    raiz.append(hoja);
-    const rep = new Reproductor(marco, escenas, s.paquete.tema, s.ctx, { modo: 'reducido', escalar: lectura, pie: true });
-    rep.mostrar({ ...estadoInicial(), escena: i, paso: e.pasos - 1 });
+    // Si algo sale de escena en un paso, el último paso no muestra todo: en diapositivas se imprime una página por paso.
+    // Las animaciones también: cada paso muestra un momento distinto de la escena.
+    const conSalidas = !lectura && e.elementos.some((x) => x.sale !== undefined || x.tipo === 'animacion');
+    const pasos = conSalidas ? Array.from({ length: e.pasos }, (_, k) => k) : [e.pasos - 1];
+    let hoja = h('section', { class: 'hoja' });
+    for (const paso of pasos) {
+      // Fotogramas de un video (Mar del Plata, el mundo…): páginas fijas antes de la del póster, solo en diapositivas.
+      if (!lectura)
+        for (const v of e.elementos)
+          if (v.tipo === 'video' && v.paso === paso)
+            for (const f of v.fotogramas) {
+              const r = s.ctx.recursos.get(f.recurso);
+              if (!r) continue;
+              raiz.append(h('section', { class: 'hoja', 'data-escena': e.id, 'data-paso': String(paso), 'data-fotograma': f.recurso },
+                h('div', { class: 'marco' }, h('img', { class: 'fotograma', src: s.ctx.url(r.archivo), alt: f.alt }))));
+            }
+      const marco = h('div', { class: 'marco' });
+      hoja = h('section', { class: 'hoja', 'data-escena': e.id, 'data-paso': String(paso) }, marco);
+      raiz.append(hoja);
+      const rep = new Reproductor(marco, escenas, s.paquete.tema, s.ctx, { modo: 'reducido', escalar: lectura, pie: true });
+      rep.mostrar({ ...estadoInicial(), escena: i, paso });
+    }
     for (const r of e.referencias) usadas.add(r);
     for (const m of JSON.stringify(e.elementos).matchAll(/\{\{([A-Z][A-Z0-9-]+)\}\}|"afirmacion":"([A-Z][A-Z0-9-]+)"/g)) usadas.add((m[1] ?? m[2]) as string);
     if (lectura) {

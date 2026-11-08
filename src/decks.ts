@@ -2,6 +2,7 @@
 // Con VITE_PUBLICADA=<etiqueta> el build usa la versión congelada (decks/<id>/publicadas/<etiqueta>/).
 import { validarPaquete, type Paquete, type Resultado } from './core/validar.ts';
 import { huella } from './core/afirmaciones.ts';
+import type { CargarAnimacion, CrearAnimacion } from './render/animacion.ts';
 
 const json = (patron: Record<string, unknown>) => patron;
 const decks = json(import.meta.glob('/decks/*/deck.json', { eager: true, import: 'default' }));
@@ -29,7 +30,10 @@ export function cargar(id: string): Cargado {
   const deck = leer('deck.json', decks);
   if (!deck) return { ok: false, errores: [`no existe el deck "${id}"`], avisos: [], id, huella: '', publicada: null };
   const temaId = (deck as { tema?: string }).tema ?? '';
-  const entrada = { deck, tema: temas[`/brands/${temaId}/tema.json`], afirmaciones: leer('afirmaciones.json', afirmaciones) ?? [], qrs: leer('qr.json', qrs) ?? [] };
+  const datosDe = (deck as { datosDe?: string }).datosDe;
+  const datos = (nombre: string, fuente: Record<string, unknown>) =>
+    (congelada && publicadas[congelada + nombre]) ?? fuente[`/decks/${datosDe ?? id}/${nombre}`] ?? [];
+  const entrada = { deck, tema: temas[`/brands/${temaId}/tema.json`], afirmaciones: datos('afirmaciones.json', afirmaciones), qrs: datos('qr.json', qrs) };
   const r = validarPaquete(entrada);
   return { ...r, id, huella: huella(JSON.stringify(entrada)), publicada: congelada && publicadas[congelada + 'deck.json'] ? (PUBLICADA as string) : null };
 }
@@ -37,6 +41,22 @@ export function cargar(id: string): Cargado {
 /** URL servible de un recurso de marca (o '' si falta: el render muestra el faltante). */
 export function urlRecurso(tema: string, archivo: string): string {
   return recursos[`/brands/${tema}/assets/${archivo}`] ?? '';
+}
+
+/** Carpeta de archivos de un tema (puede compartir la de otra marca con assetsDe). */
+// Animaciones de cada marca (escenas en código): se cargan bajo demanda, una por diapositiva.
+const animaciones = import.meta.glob('/brands/*/animaciones/*.ts');
+export function cargadorAnimaciones(carpeta: string): CargarAnimacion {
+  return async (modulo) => {
+    const cargar = animaciones[`/brands/${carpeta}/animaciones/${modulo}.ts`];
+    if (!cargar) return null;
+    const m = (await cargar()) as { default: CrearAnimacion };
+    return m.default;
+  };
+}
+
+export function carpetaDe(tema: { id: string; assetsDe?: string | undefined }): string {
+  return tema.assetsDe ?? tema.id;
 }
 
 export function parametros(): { deck: string; version: string | null } {

@@ -1,0 +1,2967 @@
+{
+ "versionEsquema": 1,
+ "id": "handyx-aticma",
+ "titulo": "Handyx · ATICMA 2026",
+ "idioma": "es-AR",
+ "tema": "handyx-premium",
+ "hub": {
+  "grupo": "Handyx · ATICMA 2026 (final)",
+  "descripcion": "Siete diapositivas para 180 segundos con el guion de Ignacio y cierre con el clip del mundo; modo de ensayo, 30 láminas de respaldo y 20 posibles preguntas del jurado. Modelo 0 % / 15 %.",
+  "orden": 0,
+  "estilo": "comercial"
+ },
+ "corte": "2026-11-04",
+ "estado": "borrador",
+ "rotulos": "pie",
+ "versiones": [
+  {
+   "id": "evento",
+   "titulo": "ATICMA (180 s)",
+   "audiencia": "Jurado ATICMA · movimiento completo",
+   "duracionObjetivo": 180,
+   "tolerancia": 0,
+   "movimiento": "completo",
+   "escenas": [
+    "a-odisea",
+    "a-handia",
+    "a-profesional",
+    "a-empezamos",
+    "a-mercado",
+    "a-competencia",
+    "a-equipo"
+   ],
+   "anexos": [
+    "s-preguntas",
+    "q-01",
+    "q-02",
+    "q-03",
+    "q-04",
+    "q-05",
+    "q-06",
+    "q-07",
+    "q-08",
+    "q-09",
+    "q-10",
+    "q-11",
+    "q-12",
+    "q-13",
+    "q-14",
+    "q-15",
+    "q-16",
+    "q-17",
+    "q-18",
+    "q-19",
+    "q-20",
+    "s-extra",
+    "x-proyeccion",
+    "x-costos",
+    "x-cac",
+    "x-validacion",
+    "x-roadmap",
+    "x-competidores",
+    "x-competidores-mundo",
+    "x-ux-ia",
+    "x-marca",
+    "x-publicidades",
+    "x-marketing",
+    "x-herramientas-1",
+    "x-herramientas-2",
+    "x-negocios",
+    "x-profesiones",
+    "x-plan-3m",
+    "x-trimestres",
+    "x-mes-1",
+    "x-mes-2",
+    "x-mes-3",
+    "x-inversion",
+    "x-un-millon",
+    "x-mapa",
+    "x-5m",
+    "x-business",
+    "x-multiplicar-1",
+    "x-multiplicar-2",
+    "x-circulo",
+    "x-ferreterias",
+    "x-handia-voz",
+    "x-ipo"
+   ]
+  },
+  {
+   "id": "estatica",
+   "titulo": "ATICMA (180 s, sin animaciones)",
+   "audiencia": "Si la organización pide pantallas estáticas",
+   "duracionObjetivo": 180,
+   "tolerancia": 0,
+   "movimiento": "reducido",
+   "escenas": [
+    "a-odisea",
+    "a-handia",
+    "a-profesional",
+    "a-empezamos",
+    "a-mercado",
+    "a-competencia",
+    "a-equipo"
+   ],
+   "anexos": [
+    "s-preguntas",
+    "q-01",
+    "q-02",
+    "q-03",
+    "q-04",
+    "q-05",
+    "q-06",
+    "q-07",
+    "q-08",
+    "q-09",
+    "q-10",
+    "q-11",
+    "q-12",
+    "q-13",
+    "q-14",
+    "q-15",
+    "q-16",
+    "q-17",
+    "q-18",
+    "q-19",
+    "q-20",
+    "s-extra",
+    "x-proyeccion",
+    "x-costos",
+    "x-cac",
+    "x-validacion",
+    "x-roadmap",
+    "x-competidores",
+    "x-competidores-mundo",
+    "x-ux-ia",
+    "x-marca",
+    "x-publicidades",
+    "x-marketing",
+    "x-herramientas-1",
+    "x-herramientas-2",
+    "x-negocios",
+    "x-profesiones",
+    "x-plan-3m",
+    "x-trimestres",
+    "x-mes-1",
+    "x-mes-2",
+    "x-mes-3",
+    "x-inversion",
+    "x-un-millon",
+    "x-mapa",
+    "x-5m",
+    "x-business",
+    "x-multiplicar-1",
+    "x-multiplicar-2",
+    "x-circulo",
+    "x-ferreterias",
+    "x-handia-voz",
+    "x-ipo"
+   ]
+  }
+ ],
+ "recursos": [
+  {
+   "id": "logo",
+   "tipo": "imagen",
+   "archivo": "logo-handyx.webp",
+   "procedencia": "Handy-landing-page-fe/assets/brand/logo-handyx.png (wordmark oficial)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "handys-grupo",
+   "tipo": "imagen",
+   "archivo": "handys-grupo.webp",
+   "procedencia": "Handy-landing-page-fe/src/img/handys-grupo.webp",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-handia",
+   "tipo": "imagen",
+   "archivo": "demo-landing/usuario-handia.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-usuario-inicio",
+   "tipo": "imagen",
+   "archivo": "demo-landing/usuario-inicio.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-usuario-describir",
+   "tipo": "imagen",
+   "archivo": "demo-landing/usuario-describir.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-usuario-agenda",
+   "tipo": "imagen",
+   "archivo": "demo-landing/usuario-agenda.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-especialista-agenda",
+   "tipo": "imagen",
+   "archivo": "demo-landing/especialista-agenda.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-especialista-mensajes",
+   "tipo": "imagen",
+   "archivo": "demo-landing/especialista-mensajes.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "demo-especialista-pedido",
+   "tipo": "imagen",
+   "archivo": "demo-landing/especialista-pedido.webp",
+   "procedencia": "Captura de la demo interactiva de la landing (landing.handyc.com/demo, Handy-landing-page-fe): referencia visual de la app con datos ficticios",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-electricidad",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-electricidad.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-plomeria",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-plomeria.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-gas",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-gas.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-cerrajeria",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-cerrajeria.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-albanileria",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-albanileria.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-aire",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-aire.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-numeros",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-numeros.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-negocios",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-negocios.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026), datos de ejemplo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "mapa-crecimiento",
+   "tipo": "imagen",
+   "archivo": "conceptos/mapa-crecimiento.png",
+   "procedencia": "Mapa de crecimiento creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "herr-turnos",
+   "tipo": "imagen",
+   "archivo": "conceptos/herramientas-turnos.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "app-local",
+   "tipo": "imagen",
+   "archivo": "conceptos/app-local.webp",
+   "procedencia": "Diseño propuesto creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo",
+   "tipo": "video",
+   "archivo": "video/mundo-final.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026): mapa con d3-geo y Natural Earth (world-atlas), personajes de Handyx",
+   "licencia": "Propia (Handyx); datos geográficos de dominio público",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-poster",
+   "tipo": "imagen",
+   "archivo": "video/mundo-final-poster.jpg",
+   "procedencia": "Último cuadro de la animación del mundo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-mdp",
+   "tipo": "imagen",
+   "archivo": "video/mundo-mar-del-plata.jpg",
+   "procedencia": "Cuadro de la animación del mundo (2,2 s): Hoy empezamos en Mar del Plata",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-arreglar",
+   "tipo": "imagen",
+   "archivo": "video/mundo-arreglar.jpg",
+   "procedencia": "Cuadro de la animación del mundo (8 s): Mañana queremos arreglar el mundo",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-mundo-soluciones",
+   "tipo": "imagen",
+   "archivo": "video/mundo-soluciones.jpg",
+   "procedencia": "Cuadro de la animación del mundo (13,2 s): Un mundo con más soluciones y menos problemas",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "circulo-multiplica",
+   "tipo": "imagen",
+   "archivo": "conceptos/circulo-multiplica.png",
+   "procedencia": "Gráfico creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "camino-ipo",
+   "tipo": "imagen",
+   "archivo": "conceptos/camino-ipo.png",
+   "procedencia": "Gráfico creado para el pitch (05/11/2026)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-ferreterias",
+   "tipo": "video",
+   "archivo": "video/ferreterias.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026) con los personajes de Handyx y los íconos Lucide; pantalla del celular: diseño propuesto con datos ficticios",
+   "licencia": "Propia (Handyx); íconos Lucide (ISC)",
+   "estado": "final"
+  },
+  {
+   "id": "video-ferreterias-poster",
+   "tipo": "imagen",
+   "archivo": "video/ferreterias-poster.jpg",
+   "procedencia": "Último cuadro de la animación de ferreterías conectadas",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "video-handia-voz",
+   "tipo": "video",
+   "archivo": "video/handia-voz.mp4",
+   "procedencia": "Animación creada para el pitch (05/11/2026) con los personajes de Handyx y los íconos Lucide; música y efectos sintetizados; la voz real se generará con ElevenLabs",
+   "licencia": "Propia (Handyx); íconos Lucide (ISC)",
+   "estado": "final"
+  },
+  {
+   "id": "video-handia-voz-poster",
+   "tipo": "imagen",
+   "archivo": "video/handia-voz-poster.jpg",
+   "procedencia": "Último cuadro de la animación «HandIA te habla»",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "pub-presupuestas",
+   "tipo": "imagen",
+   "archivo": "publicidades/especialista-presupuestas-esperas.webp",
+   "procedencia": "Cuadro del trailer del especialista (kinetic-studio)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "pub-urgencia",
+   "tipo": "imagen",
+   "archivo": "publicidades/usuario-urgencia-programado-obra.webp",
+   "procedencia": "Cuadro del trailer del usuario (kinetic-studio)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "pub-agenda",
+   "tipo": "imagen",
+   "archivo": "publicidades/especialista-tu-agenda.webp",
+   "procedencia": "Cuadro del trailer del especialista (kinetic-studio)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "pub-telefono",
+   "tipo": "imagen",
+   "archivo": "publicidades/usuario-tu-telefono.webp",
+   "procedencia": "Cuadro del trailer del usuario (kinetic-studio)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  }
+ ],
+ "escenas": [
+  {
+   "id": "a-odisea",
+   "titulo": "La odisea",
+   "disposicion": "dividido",
+   "paleta": "neutro",
+   "duracion": 25,
+   "pasos": 5,
+   "clasificacion": "hecho",
+   "transicion": "fundido",
+   "objetivo": "Que el jurado entienda el problema de los dos lados antes de escuchar la solución.",
+   "guion": "Buenas tardes. Soy Ignacio Gauna, fundador y CEO de Handyx.\n\nA todos alguna vez se nos rompió algo en casa. Y conocemos la odisea de conseguir un profesional y organizar ese arreglo.\n\nDel otro lado hay buenos profesionales buscando clientes, con herramientas dispersas para organizarse y trabajar mejor.\n\nPor esa doble necesidad creamos Handyx. Buscamos más que conectar: una experiencia fluida, cómoda y con control para ambos.",
+   "notas": "0:00–0:25. Una sola idea: conseguir un profesional es una odisea, y del otro lado hay profesionales que necesitan clientes y orden.\nPersonajes de marca (grifo roto = la casa; llave = el profesional). Logo auténtico de Handyx (assets de la landing). Sin fotos de personas.\nRitmo: este tramo tiene más palabras que segundos (ver docs/handyx/aticma-guion.md): no apurar, dejar que la lámina hable.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Conseguir un profesional no debería ser una odisea. En casa: algo se rompió y no sabés a quién llamar. Del otro lado, el profesional busca clientes y organiza su trabajo con herramientas dispersas. Handyx une las dos necesidades: encontrar a quién llamar, coordinar el arreglo y organizar el trabajo.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "odisea",
+     "alt": "Animación: la casa con una pérdida y los chats que se amontonan; del otro lado, el especialista con la agenda vacía y herramientas dispersas; Handyx une los dos lados",
+     "tiempos": [
+      2.6,
+      3.2,
+      3.8,
+      3.2,
+      3.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-handia",
+   "titulo": "HandIA te orienta",
+   "disposicion": "dividido",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 5,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el recorrido del usuario: el momento en que una foto y una descripción se convierten en una solicitud comprensible, y el camino directo por oficio.",
+   "guion": "Imaginen algo: se les rompió algo y no saben a quién llamar. Con HandIA, nuestro asistente de inteligencia artificial, van a poder mandar una foto, describir el problema y recibir orientación sobre qué especialista necesitan y un costo aproximado para comparar presupuestos. El presupuesto final lo fija el profesional.\n\nSi ya saben a quién llamar, eligen directamente el oficio y comparan presupuestos.",
+   "notas": "0:25–0:55. Cinco golpes (→ al decir…): 1 «Imaginen algo: se les rompió algo y no saben a quién llamar» (entra solo) · 2 «…van a poder mandar una foto, describir el problema» · 3 «…y recibir orientación sobre qué especialista necesitan y un costo aproximado» · 4 «El presupuesto final lo fija el profesional» · 5 «Si ya saben a quién llamar, eligen directamente el oficio».\nPantallas y celular: demo de la landing (landing.handyc.com/demo), datos ficticios; HandIA está en desarrollo (rótulo «Demo · HandIA en desarrollo»). El rango de costo y los tres presupuestos son un ejemplo ilustrativo (afirmaciones HANDIA-EJ-* y EJ-PRES-*), no precios reales. El profesional fija precio, alcance y disponibilidad: Handyx sugiere, nunca impone.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Camino 1, con HandIA (en desarrollo; se ve en la demo): el usuario cuenta qué pasó y manda una foto; HandIA detecta el oficio y arma el pedido, y a futuro dará una referencia aproximada de costo. Después compara presupuestos y el profesional fija el precio final. Camino 2: si ya sabe qué oficio necesita, lo elige y publica su solicitud.",
+   "referencias": [],
+   "preguntas": "¿HandIA funciona hoy? → Está en desarrollo: lo que se ve es la demo. Hoy la app permite elegir el oficio, describir el problema con fotos y recibir propuestas.",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "handia",
+     "alt": "Animación: Foco ve que la pileta de la cocina pierde y no sabe a quién llamar; con HandIA saca una foto y describe el problema, HandIA detecta Plomería y da un costo aproximado, salen tres presupuestos de ejemplo para comparar y Llave sella que el precio lo pone el profesional; en el camino 2 elige Gas en la grilla de oficios, publica el pedido y le llegan presupuestos.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.8,
+      2.8,
+      3.6
+     ],
+     "afirmaciones": [
+      "HANDIA-EJ-MIN",
+      "HANDIA-EJ-MAX",
+      "EJ-PRES-1",
+      "EJ-PRES-2",
+      "EJ-PRES-3"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-profesional",
+   "titulo": "Herramientas para el profesional",
+   "disposicion": "dividido",
+   "paleta": "neutro",
+   "duracion": 22,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar que Handyx quiere acompañar el trabajo diario del especialista, no solo enviarle un contacto.",
+   "guion": "Del lado del profesional, reunimos trabajos, ingresos, gastos y herramientas por oficio. A futuro queremos potenciarlas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
+   "notas": "0:55–1:17. Tres golpes (→ al decir…): 1 «Del lado del profesional, reunimos trabajos, ingresos, gastos» (entra solo) · 2 «…y herramientas por oficio» · 3 «A futuro queremos potenciarlas con inteligencia artificial».\nPantallas de la demo de la landing (agenda y mensajes del profesional, datos ficticios). Trabajos, agenda e ingresos (cobros) existen en la app; la pantalla de cobros no se muestra porque todavía tiene la tarifa anterior.\nGastos y herramientas por oficio NO existen todavía: se muestran como propuesta visual. La IA para el profesional es la próxima evolución (visión), sin funciones automáticas inventadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Para el profesional, Handyx reúne trabajos y agenda, ingresos, gastos y herramientas por oficio. Trabajos, agenda e ingresos están en la app; gastos y herramientas por oficio son una propuesta. Próxima evolución: herramientas potenciadas con inteligencia artificial para que cada trabajo sea mejor que el anterior.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "profesional",
+     "alt": "Animación: la app del profesional (demo, datos ficticios) con trabajos, clientes, ingresos y gastos; las herramientas propuestas para los seis oficios, con Electricidad al frente; y HandIA para profesionales: presupuesto, materiales, recordatorios y fotos, para que cada trabajo sea mejor que el anterior",
+     "tiempos": [
+      3.4,
+      3.8,
+      3.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-empezamos",
+   "titulo": "Ya empezamos",
+   "disposicion": "dividido",
+   "paleta": "azul",
+   "duracion": 21,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Distinguir lo hecho (apps desarrolladas, pruebas, primeros trabajos y comisiones) de lo que viene.",
+   "guion": "Ya contamos con ambas aplicaciones desarrolladas y las estamos probando. Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos y cobramos nuestras primeras comisiones. Ahora queremos llevar esa experiencia más allá de los edificios.",
+   "notas": "1:17–1:38. Cuatro golpes (→ al decir…): 1 «Ya contamos con ambas aplicaciones desarrolladas» (entra solo) · 2 «Con ayuda de porteros de distintos edificios, concretamos nuestros primeros trabajos» · 3 «…y cobramos nuestras primeras comisiones» · 4 «Ahora queremos llevar esa experiencia más allá de los edificios».\nCifras informadas por Ignacio: 5 trabajos con comisión cobrada en la prueba con porteros ($ 350.000 en trabajos: cuatro de $ 50.000 y uno de $ 150.000) con el plan original de la prueba, 10 % al usuario + 10 % al profesional = $ 70.000 de ingresos brutos de Handyx (confirmado por Ignacio el 05/11). 56 especialistas registrados en el preregistro: no son activos ni verificados.\nLos cobros se coordinaron a mano con los porteros: no atribuirlos a un flujo automático de pagos. El modelo vigente (0 % al profesional, 15 % al usuario) es posterior a la prueba.\nPantallas: demo de la landing con datos ficticios; las apps están desarrolladas y en pruebas cerradas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Ya empezamos: la app de usuario y la del profesional están desarrolladas y en pruebas cerradas. Con ayuda de porteros de distintos edificios concretamos los primeros trabajos y cobramos las primeras comisiones con el plan original de la prueba (10 % al usuario y 10 % al profesional). Además hay especialistas registrados en el preregistro, que todavía no son activos ni verificados. Próximo paso: llevar esa experiencia más allá de los edificios.",
+   "referencias": [],
+   "preguntas": "¿Cuántos trabajos cobraron? → Los primeros, con ayuda de porteros; estamos conciliando cantidades y comprobantes y los mostramos cuando estén conciliados.",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "empezamos",
+     "alt": "Animación: las apps de usuario y del profesional llegan con su sello «Desarrollada · en pruebas»; de los edificios con porteros salen Handys de distintos oficios hasta Llave, las comisiones del usuario (Foco) y del profesional (Llave) llegan a la alcancía de Handyx, y la ciudad se expande con casas, un comercio y pines más allá de los edificios.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.8,
+      3.2
+     ],
+     "afirmaciones": [
+      "TRABAJOS-INFORMADOS",
+      "PRUEBA-MONTO",
+      "PRUEBA-COM-USUARIO",
+      "PRUEBA-COM-PROFESIONAL",
+      "PRUEBA-INGRESO-HANDYX",
+      "ESP-REGISTRADOS"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-mercado",
+   "titulo": "Mercado y visión",
+   "disposicion": "dividido",
+   "paleta": "gris",
+   "duracion": 26,
+   "pasos": 5,
+   "clasificacion": "meta",
+   "transicion": "fundido",
+   "objetivo": "Justificar el número con una cuenta visible (hogares × arreglos × ticket) y mostrar la aspiración del primer trimestre y la visión como objetivos.",
+   "guion": "Arrancamos con seis profesiones en General Pueyrredón, un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25% de los trabajos contratados allí y generar cien mil dólares de ingresos brutos.\n\nPara fines de 2027 queremos llegar a 72 profesiones y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx.",
+   "notas": "1:38–2:04. Cinco golpes (→ al decir…): 1 «Arrancamos con seis profesiones en General Pueyrredon» (entra solo) · 2 «…un partido de casi 260 mil hogares. Para el primer trimestre comercial aspiramos a captar el 25 %» · 3 «…y generar cien mil dólares de ingresos brutos» · 4 «Para fines de 2027 queremos llegar a 72 profesiones» · 5 «…y que cuatro de cada diez servicios contratados por particulares en Argentina pasen por Handyx».\nOJO: en la grabación actual Ignacio dice «20 %»; la cifra oficial es 25 % (pantalla y subtítulos).\n1:38–2:04. Cuenta sugerida por Luigi (mentor ATICMA, 04/11): hogares × arreglos por año × ticket medio × participación × tarifa. 1 arreglo por hogar por año y ticket de USD 40 son SUPUESTOS del mentor, no datos medidos.\nCon esos supuestos, el 20 % de un trimestre son ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas; para USD 100.000 hace falta un ticket de ≈ USD 51 (o más participación). Ticket real de la prueba: $ 70.000 ≈ USD 45 (5 trabajos, muestra chica): con ese ticket el 25 % del trimestre da ≈ USD 109.000. Profesiones de ejemplo para llegar a 72: ver el respaldo «De 6 a 72 profesiones».\n259.623 = hogares (dato aportado por Ignacio, Censo 2022); INDEC lo publica como viviendas particulares ocupadas: confirmar la unidad con la fuente municipal (anexo A/B). Hogares ≠ usuarios ≠ presupuestos ≠ trabajos contratados.\n20 %, USD 100.000, 72 profesiones y 40 % son ASPIRACIONES del fundador, no participación actual ni pronósticos. No hay base medida de trabajos contratados en el partido.\nUSD 100.000 de ingresos brutos propios (tarifas) ≠ USD 100.000 de inversión buscada.\nLa meta operativa de 50 trabajos cobrados y 5 clientes que vuelven (dic. 2026) está en el anexo B.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mercado inicial: General Pueyrredon, 259.623 hogares (Censo 2022), con seis profesiones. Con los supuestos de 1 arreglo por hogar por año y USD 40 por arreglo, son ≈ USD 10,4 millones por año; el 20 % de un trimestre equivale a ≈ 13.000 trabajos y ≈ USD 78.000 de tarifas (USD 100.000 requiere un ticket medio de ≈ USD 51). Aspiraciones para el primer trimestre comercial: 20 % de los trabajos contratados en el partido y USD 100.000 de ingresos brutos propios de Handyx. Visión a fines de 2027: 72 profesiones y 4 de cada 10 servicios contratados por particulares en Argentina. Son objetivos, no resultados.",
+   "referencias": [
+    "MDP-HOGARES",
+    "SUP-ARREGLOS-HOGAR",
+    "SUP-TICKET-USD",
+    "MERCADO-USD",
+    "Q1-TRABAJOS",
+    "Q1-TARIFAS-40",
+    "TICKET-PARA-OBJETIVO",
+    "META-CUOTA-LOCAL",
+    "META-INGRESOS-TRIM",
+    "META-PROFESIONES",
+    "META-CUOTA-NACIONAL"
+   ],
+   "preguntas": "¿De dónde sale el número? → Hogares × 1 arreglo por año × USD 40 (supuestos) ≈ USD 10,4 M por año; el 20 % de un trimestre son ≈ 13.000 trabajos. Con USD 40 dan ≈ USD 78.000; los USD 100.000 piden un ticket de ≈ USD 51. Todavía no medimos el ticket ni la frecuencia: lo primero es la meta operativa de diciembre.",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "mercado",
+     "alt": "Animación: los seis oficios con sus Handys y los hogares de General Pueyrredon que se encienden; la cuenta del primer trimestre en bloques conectados (hogares, arreglos por año, trimestre, participación, ticket real y tarifa) hasta los ingresos brutos contra el objetivo; la grilla de profesiones que se llena mes a mes hasta fines de 2027; y el mapa de Argentina con Buenos Aires, Mar del Plata y cuatro de cada diez casas con Handyx.",
+     "tiempos": [
+      3.2,
+      3.6,
+      3.2,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "PROFESIONES-INICIALES",
+      "SUP-ARREGLOS-HOGAR",
+      "MERCADO-TRIM-N",
+      "META-CUOTA-LOCAL",
+      "Q1-TRABAJOS-N",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO",
+      "Q1-TARIFAS-REAL-N",
+      "META-INGRESOS-TRIM",
+      "PROF-POR-MES",
+      "META-PROFESIONES",
+      "META-CUOTA-NACIONAL"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-competencia",
+   "titulo": "Competencia y modelo",
+   "disposicion": "dividido",
+   "paleta": "neutro",
+   "duracion": 26,
+   "pasos": 5,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Comparar con honestidad y dejar claro el modelo: 0 % al profesional, 15 % al usuario, presupuesto completo.",
+   "guion": "Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional. Nosotros creemos que ese no es el camino. El dinero que gana trabajando tiene que llegar completo a su casa.\n\nNuestro modelo es simple: el usuario paga una tarifa del 15%, visible antes de contratar. El profesional fija su presupuesto y Handyx no le cobra comisión.",
+   "notas": "2:04–2:30. Cinco golpes (→ al decir…): 1 «Y hablemos de competencia. La conocemos. Algunas plataformas cobran comisión al profesional» (entra solo: océano rojo con Clickie, Home Solution, Checkatrade y Muovi, un ejemplo por modelo de cobro) · 2 «Nosotros creemos que ese no es el camino» (cómo lo resuelve Handyx en cada modelo) · 3 «El dinero que gana trabajando tiene que llegar completo a su casa» · 4 «Nuestro modelo es simple: el usuario paga una tarifa del 15 %, visible antes de contratar» · 5 «El profesional fija su presupuesto y Handyx no le cobra comisión» (océano azul: eliminamos, reducimos, aumentamos, creamos).\nEn pantalla van los nombres (pedido de Ignacio del 05/11), sin logos: Clickie (comisión al profesional, hasta 15 %), Home Solution (por contacto u oportunidad), Checkatrade (suscripción, Reino Unido) y Muovi (comisión cero anunciada por un tiempo). Datos de fuentes públicas e información del equipo: a revalidar.\n2:04–2:30. Pedido de Luigi (mentor ATICMA): mostrar que hay Clickie y 3 o 4 más en Argentina, y varios en Colombia, Uruguay, Chile, México, Europa y EE. UU., y encontrar el diferencial. El mapa agrupa por cómo le cobran al profesional; el diferencial buscado: el profesional no paga comisión por su trabajo. Modelos de Taskrabbit, Angi, Thumbtack y Checkatrade: búsqueda web del 04/11/2026 (fuentes de comparación, a revalidar). IguanaFix, según Cronista, se enfocó en clientes corporativos.\nCompetidores según la información pública indicada por Ignacio (04/11/2026); no se pudo verificar desde esta sesión (dominios bloqueados): Clickie (términos del 14/10/2026 contemplan comisión al profesional; también describe orientación con IA y estimaciones de precio), Muovi (anuncia comisión cero temporal y herramientas para profesionales), Home Solution (recibir y comparar propuestas; cobro al prestador por acceso a oportunidades). No decir que nadie más tiene IA, herramientas o comisión cero.\nEjemplo ilustrativo ($ 100.000): sin descontar costos de cobro, fiscales ni operativos. El circuito de cobro y rendición está en definición.\nDiferenciación buscada (no demostrada): herramientas por oficio + confianza + historial + que el cliente vuelva a elegir al profesional; el uso recurrente podría fortalecerla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Competencia, por modelo: Clickie cobra comisión al profesional (hasta 15 %), Home Solution le cobra por contacto u oportunidad, Checkatrade (Reino Unido) una suscripción y Muovi anuncia comisión cero por tiempo limitado. Handyx: 0 % de comisión al profesional y 15 % de tarifa de servicio al usuario, visible antes de contratar. Ejemplo: presupuesto de $ 100.000; el usuario paga $ 115.000; el profesional recibe $ 100.000 y Handyx $ 15.000 brutos, antes de costos.",
+   "referencias": [
+    "FEE-ESPECIALISTA",
+    "TARIFA-USUARIO",
+    "EJ-P",
+    "EJ-F",
+    "EJ-T"
+   ],
+   "preguntas": "¿Qué no pueden copiar? → Las funciones se copian; apostamos a la combinación de herramientas útiles por oficio, confianza e historial con clientes que vuelven a elegir al profesional. Es una hipótesis que el uso recurrente tiene que demostrar.",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "competencia",
+     "alt": "Animación: océano rojo con cuatro plataformas anónimas que le cobran al profesional de distintas formas y, al lado de cada una, cómo lo resuelve Handyx; el presupuesto llega completo a la casa de Llave, el recibo del ejemplo muestra la tarifa visible que paga el usuario, y el mar se vuelve azul mientras Llave navega en el barco de Handyx, entran las cuatro acciones, el contador de desarrollos del plan y los Handys de cada oficio que se suben.",
+     "tiempos": [
+      3.6,
+      2.6,
+      3.2,
+      3.6,
+      4.8
+     ],
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "EJ-P",
+      "EJ-F",
+      "EJ-T",
+      "TARIFA-USUARIO",
+      "FEE-ESPECIALISTA",
+      "DESARROLLOS-PLAN"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "a-equipo",
+   "titulo": "Equipo, inversión y visión",
+   "disposicion": "dividido",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 6,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar un equipo chico con sueños grandes, el pedido de inversión y cerrar con una imagen memorable.",
+   "guion": "Somos un equipo chico, pero nuestros sueños no lo son. Desarrollé agentes de inteligencia artificial que superviso para potenciar distintas áreas del negocio.\n\nBuscamos cien mil dólares de inversión inicial para tecnología, operaciones y marketing. Queremos llegar a Silicon Valley para aprender y conectar con mentores e inversores.\n\nHoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo.\n\nNo queremos solamente conectar personas. Queremos ayudar a los profesionales a trabajar cada vez mejor.\n\nY con ellos, construir un mundo con más soluciones y menos problemas.\n\nMuchísimas gracias.",
+   "notas": "2:30–3:00. Cinco golpes (→ al decir…): 1 «Somos un equipo chico» (entra solo) · 2 «Desarrollé agentes de inteligencia artificial» · 3 «Buscamos cien mil dólares» · 4 «Queremos llegar a Silicon Valley» · 5 «Hoy empezamos en Mar del Plata»: arranca el clip del mundo (≈ 19 s: Mar del Plata → el mundo con grietas → los Handys lo arreglan → «Un mundo con más soluciones y menos problemas» → ¡Muchas gracias!). Tiene efectos de sonido suaves; sin sonido: ?sonido=no · 6 al terminar el clip («Muchísimas gracias»): cierre con los dos QR, la landing (landing.handyc.com) y el portafolio de Ignacio (toti-gauna.github.io/portafolio-2026/en/); queda en pantalla durante las preguntas.\nIgnacio: fundador, desarrollo, producto y coordinación. Abigail: diseño y marketing, dedicación parcial. Agentes de IA desarrollados y supervisados por Ignacio: no son empleados autónomos ni operan sin supervisión humana.\nUSD 100.000 = inversión inicial buscada (no recibida), distinta del objetivo de ingresos. Reparto propuesto el 05/11 a pedido de Ignacio, a aprobar: marketing 45 %, operaciones 30 %, tecnología 15 % (se baja desarrollo: con IA es más barato que nunca) y legal/reserva 10 % (no entra en la barra; detalle en «Cada dólar de la inversión»).\nSilicon Valley = aprendizaje, mentoría y conexiones; no hay inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Equipo: Ignacio (fundador, desarrollo, producto y coordinación) con el apoyo de Abigail en diseño y marketing, y agentes de inteligencia artificial que él desarrolló y supervisa. Handyx busca USD 100.000 de inversión inicial para tecnología, operaciones y marketing, y quiere llegar a Silicon Valley para aprender y conectar con mentores e inversores. Hoy empezamos en Mar del Plata. Mañana queremos arreglar el mundo: un mundo con más soluciones y menos problemas.",
+   "referencias": [
+    "INV-TOTAL",
+    "INV-TECNOLOGIA",
+    "INV-MARKETING",
+    "INV-OPERACIONES"
+   ],
+   "preguntas": "¿Por qué USD 100.000? → USD 45.000 marketing y captación, USD 30.000 operaciones, USD 15.000 tecnología y USD 10.000 legal y reserva (propuesta). Detalle por dólar y camino a USD 1 millón en el respaldo.",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "equipo",
+     "alt": "Animación: Ignacio y Abigail con los Handys, los agentes de IA que Ignacio supervisa, la inversión inicial buscada con el reparto propuesto y qué mejora cada parte, y el vuelo de Mar del Plata a Silicon Valley",
+     "tiempos": [
+      3.0,
+      3.6,
+      4.0,
+      3.2,
+      0.8,
+      3.0
+     ],
+     "afirmaciones": [
+      "INV-TOTAL",
+      "INV-MARKETING",
+      "INV-OPERACIONES",
+      "INV-TECNOLOGIA",
+      "INV-LEGAL",
+      "PROF-POR-MES",
+      "META-BA-MESES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "mundo",
+     "tipo": "video",
+     "recurso": "video-mundo",
+     "poster": "video-mundo-poster",
+     "alt": "Mar del Plata, un mundo con grietas que los Handys arreglan y el cierre de Handyx",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 4,
+     "sale": 5,
+     "entrada": "ninguna",
+     "fotogramas": [
+      {
+       "recurso": "video-mundo-mdp",
+       "alt": "Hoy empezamos en Mar del Plata: el mapa con Mar del Plata marcado"
+      },
+      {
+       "recurso": "video-mundo-arreglar",
+       "alt": "Mañana queremos arreglar el mundo: los Handys arreglan las grietas del planeta"
+      },
+      {
+       "recurso": "video-mundo-soluciones",
+       "alt": "Un mundo con más soluciones y menos problemas: el planeta arreglado, rodeado de Handys"
+      }
+     ]
+    },
+    {
+     "id": "qa",
+     "area": "libre",
+     "pos": {
+      "x": 19.375,
+      "y": 30,
+      "w": 30
+     },
+     "paso": 5,
+     "entrada": "escala",
+     "tipo": "qr",
+     "qr": "landing"
+    },
+    {
+     "id": "qb",
+     "area": "libre",
+     "pos": {
+      "x": 50.625,
+      "y": 30,
+      "w": 30
+     },
+     "paso": 5,
+     "entrada": "escala",
+     "tipo": "qr",
+     "qr": "portafolio"
+    }
+   ]
+  },
+  {
+   "id": "x-proyeccion",
+   "titulo": "Proyección: de dónde sale el número",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la cuenta que justifica los números, con supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 M por año · 2 nuestro objetivo es el 25 % de un trimestre: ≈ 16.200 trabajos · 3 con el ticket real de la prueba ($ 70.000 ≈ USD 45) y la tarifa del 15 %: ≈ USD 109.000 en el trimestre · 4 con el ticket supuesto de USD 40, el escenario conservador: ≈ USD 97.000 (para llegar a USD 100.000 hace falta un ticket de ≈ USD 41).\nCuenta sugerida por Luigi (mentor ATICMA, 04/11). Supuestos: 1 arreglo por hogar por año, ticket de USD 40, 5 % en 2 años. Mecánica (50.000 autos × 3 × USD 200) es un escenario fuera de los 6 rubros; parque automotor sin fuente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "259.623 hogares × 1 arreglo por año × USD 40 ≈ USD 10,4 millones por año. El 25 % de un trimestre son ≈ 16.200 trabajos: con ticket de USD 40 dejan ≈ USD 97.000 de tarifas; con ≈ USD 41, USD 100.000. A dos años, el 5 % deja ≈ USD 78.000 por año; si se sumara mecánica, ≈ USD 225.000 más por año (escenario fuera de alcance).",
+   "referencias": [
+    "MERCADO-USD",
+    "Q1-TRABAJOS",
+    "Q1-TARIFAS-40",
+    "TICKET-PARA-OBJETIVO",
+    "PROY-ANUAL-5",
+    "PROY-AUTO-5"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-proyeccion",
+     "alt": "Animación: embudo de la proyección. Los hogares de General Pueyrredon, por un arreglo al año y un ticket supuesto, dan el valor anual de los arreglos del hogar; la parte objetivo de un trimestre da los trabajos, que con la tarifa de Handyx pasan a una balanza: de un lado las tarifas del trimestre con el ticket real de la prueba, del otro el escenario conservador con el ticket supuesto. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "MERCADO-USD",
+      "META-CUOTA-LOCAL",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "Q1-TARIFAS-40",
+      "Q1-TARIFAS-REAL-N",
+      "Q1-TRABAJOS-N",
+      "SUP-ARREGLOS-HOGAR",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-costos",
+   "titulo": "Costos y punto de equilibrio",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cuánto cuesta mantener Handyx y cuántos trabajos lo cubren.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 mantener Handyx hoy cuesta ≈ USD 400 por mes, sin sueldos ni impuestos · 2 desarrollo USD 200, servidores USD 100, marketing USD 100 · 3 con un ticket supuesto de USD 40 y la tarifa del 15 %, cada trabajo deja USD 6 · 4 con ≈ 67 trabajos por mes cubrimos los costos: ese es el punto de equilibrio.\nCostos mensuales estimados por Ignacio (04/11): servidores USD 100, desarrollo USD 200, marketing USD 100 (en USD; si eran pesos, corregir). Equilibrio con ticket de USD 40 (supuesto): USD 400 ÷ USD 6 ≈ 67 trabajos por mes. No incluye sueldos ni impuestos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mantener Handyx hoy cuesta ≈ USD 400 por mes: desarrollo USD 200, servidores USD 100 y marketing USD 100. Con USD 6 de tarifa por trabajo (ticket de USD 40), ≈ 67 trabajos por mes cubren esos costos.",
+   "referencias": [
+    "COSTOS-MES",
+    "COSTO-SERVIDORES",
+    "COSTO-DESARROLLO",
+    "COSTO-MARKETING",
+    "EQUILIBRIO-TRABAJOS",
+    "INGRESO-POR-TRABAJO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-costos",
+     "alt": "Animación: columna con los costos mensuales estimados de Handyx, repartidos en desarrollo, servidores y marketing, sin sueldos ni impuestos. Al lado, un tanque de tarifas que se llena con la tarifa de cada trabajo (ticket supuesto por la tarifa de Handyx) hasta la línea de los costos: el punto de equilibrio en trabajos por mes. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.4
+     ],
+     "afirmaciones": [
+      "COSTO-DESARROLLO",
+      "COSTO-MARKETING",
+      "COSTO-SERVIDORES",
+      "COSTOS-MES",
+      "EQUILIBRIO-TRABAJOS",
+      "INGRESO-POR-TRABAJO",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-cac",
+   "titulo": "CAC y LTV",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Responder cuánto cuesta conseguir un cliente y cuánto deja.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 conseguir un cliente cuesta ≈ USD 2: USD 100 de marketing por mes ÷ 50 clientes nuevos (supuesto a medir) · 2 cada cliente deja USD 6 por arreglo, uno por año, durante 3 años supuestos: USD 18 · 3 o sea, ≈ 9 veces lo que cuesta conseguirlo · 4 aunque el CAC subiera hasta USD 6, se recupera con el primer trabajo.\nCAC estimado = USD 100 de marketing ÷ 50 clientes nuevos por mes (SUPUESTO: igual a la meta de diciembre llevada a un mes; medir). LTV = USD 6 × 1 arreglo por año × 3 años (SUPUESTO de permanencia). CAC máximo USD 6: se recupera con el primer trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "CAC estimado ≈ USD 2 (USD 100 de marketing para 50 clientes nuevos por mes, supuesto). LTV estimado ≈ USD 18 (USD 6 por arreglo, 1 arreglo por año, 3 años). LTV/CAC ≈ 9. Regla: mientras el CAC esté por debajo de USD 6, se recupera con el primer trabajo.",
+   "referencias": [
+    "CAC-ESTIMADO",
+    "LTV-ESTIMADO",
+    "LTV-CAC",
+    "CAC-MAXIMO",
+    "SUP-CLIENTES-MES",
+    "SUP-ANIOS-CLIENTE"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-cac",
+     "alt": "Animación: barras en la misma escala. El costo estimado de conseguir un cliente (marketing del mes dividido por los clientes nuevos, supuesto) y lo que ese cliente deja año por año con un arreglo anual (supuestos). Una regla de bloques del tamaño del CAC cubre el LTV y muestra cuántas veces entra; el CAC máximo mide lo mismo que la tarifa del primer año: se recupera con el primer trabajo. Proyección con supuestos a validar.",
+     "tiempos": [
+      3.2,
+      3.4,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "CAC-MAXIMO",
+      "COSTO-MARKETING",
+      "INGRESO-POR-TRABAJO",
+      "LTV-CAC",
+      "LTV-ESTIMADO",
+      "SUP-ANIOS-CLIENTE",
+      "SUP-ARREGLOS-HOGAR",
+      "SUP-CLIENTES-MES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-validacion",
+   "titulo": "Validación",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la evidencia y la próxima prueba.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Las apps: desarrolladas y en pruebas · 2 Con porteros: trabajos con comisión cobrada · 3 Preregistro: especialistas registrados · 4 Lo que falta: la próxima prueba.\n5 y 56: informados por Ignacio; conciliación de comprobantes y corte del CRM pendientes. Los 56 no son activos ni verificados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Validación: dos apps desarrolladas y en pruebas; con porteros de edificios se concretaron 5 trabajos con comisión cobrada (informado; comprobantes en conciliación); 56 especialistas registrados en el preregistro (no son activos ni verificados). Próxima prueba: 50 trabajos con tarifa cobrada y 5 clientes que vuelvan en diciembre de 2026.",
+   "referencias": [
+    "TRABAJOS-INFORMADOS",
+    "ESP-REGISTRADOS",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-validacion",
+     "alt": "Animación: Validación. Las apps: desarrolladas y en pruebas; Con porteros: trabajos con comisión cobrada; Preregistro: especialistas registrados; Lo que falta: la próxima prueba.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.4,
+      3.6
+     ],
+     "afirmaciones": [
+      "ESP-REGISTRADOS",
+      "META-REPETIDORES",
+      "META-TRABAJOS",
+      "TRABAJOS-INFORMADOS"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-roadmap",
+   "titulo": "Roadmap",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Separar lo que existe, lo próximo y la visión, sin fechas inventadas.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 lanzamos el 10/11/2026 con 6 profesiones y la tarifa del 15 % visible antes de contratar · 2 en el primer trimestre, HandIA premium y para profesionales, y toda Buenos Aires con 24 profesiones · 3 en 2027, una región por trimestre (Centro, Cuyo y Litoral, Norte) hasta 72 profesiones en septiembre · 4 la visión: toda Argentina, con el 40 % de los servicios contratados por particulares. Plan propuesto, a validar; los hitos están equiespaciados (el eje no es proporcional al tiempo).\nHandIA, gastos, herramientas por oficio e IA para el profesional: visión sin fecha. Circuito de cobro del 15 % en implementación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Hoy: pedir por oficio con descripción y fotos, propuestas con precio del profesional, chat, agenda, trabajos y cobros. Próximo: lanzamiento de la PWA (10/11/2026) y tarifa del 15 % visible antes de contratar. Visión: HandIA con referencia de costo, gastos, herramientas por oficio, IA para el profesional, historial y más profesiones.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-roadmap",
+     "alt": "Animación: roadmap de Handyx en una línea de tiempo. El lanzamiento de la app con las profesiones de arranque y la tarifa visible; el primer trimestre con HandIA premium y para profesionales y toda Buenos Aires; después, una región por trimestre hasta la meta de profesiones; y la visión de Handyx en toda Argentina. Los Handys se suman al equipo en cada hito.",
+     "tiempos": [
+      3.0,
+      3.3,
+      3.3,
+      3.3
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "META-CUOTA-NACIONAL",
+      "PROF-Q1",
+      "PROF-Q4",
+      "PROFESIONES-INICIALES",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-competidores",
+   "titulo": "La competencia en Argentina, por modelo",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar a la competencia directa por su modelo y funcionalidades (con nombres, sin logos) y cómo le gana Handyx.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada plataforma, por su modelo de cobro · 2 Qué paga el profesional en cada modelo · 3 Cómo Handyx le gana a cada modelo · 4 Del mar rojo a nuestro océano azul.\nClickie: iProfesional, Forbes Argentina, La Gaceta, Mercado (2026): 15 % al profesional (12 % con Pro de USD 15/mes), 5 % o 10 % al usuario según la nota; ronda ángel de USD 150.000; ya opera en Mar del Plata. Muovi y Home Solution: datos de Ignacio (sitios bloqueados aquí). IguanaFix: Cronista (foco corporativo). Zolvers: servicio doméstico, fee al cliente (Cronista). Servidos y Yo te lo arreglo: modelo sin dato confirmado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Plataforma A: cobra comisión al profesional y al usuario, ofrece orientación con IA y ya opera en Mar del Plata. Plataforma B: el profesional paga por acceso a oportunidades. Plataforma D: anuncia comisión cero por tiempo limitado. Plataforma E: se enfocó en empresas. Plataforma F: servicio doméstico. Plataformas G y H: oficios, modelo sin dato confirmado. Handyx: 0 % al profesional y 15 % al usuario, visible, más herramientas por oficio, HandIA y clientes que vuelven.",
+   "referencias": [
+    "COMP-CLICKIE-PRO",
+    "COMP-CLICKIE-RONDA",
+    "FEE-ESPECIALISTA",
+    "TARIFA-USUARIO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-competidores",
+     "alt": "Animación: La competencia en Argentina, por modelo. Cada plataforma, por su modelo de cobro; Qué paga el profesional en cada modelo; Cómo Handyx le gana a cada modelo; Del mar rojo a nuestro océano azul.",
+     "tiempos": [
+      3.2,
+      3.4,
+      3.4,
+      3.8
+     ],
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "FEE-ESPECIALISTA",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-competidores-mundo",
+   "titulo": "Competidores en la región y el mundo",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Mostrar que el modelo existe afuera y cómo cobran.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Latinoamérica: apps de oficios y servicio doméstico · 2 Estados Unidos: pagar por cada contacto · 3 Europa: cuota mensual o comisión · 4 Nuestro camino: el profesional no paga.\nBúsqueda web del 04/11/2026: Xataka MX (Ay Fix), Valora Analitik (GoFixii), Developargentina (Zolvers), Infonegocios (IguanaFix), Housecall Pro, Jobber y comparadores (Thumbtack USD 15–80+ por contacto; Angi USD 50–200 por contacto compartido; Taskrabbit 15–30 % según fuentes en conflicto; Checkatrade suscripción). Revalidar en las páginas oficiales.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "El modelo existe en todo el mundo. En México, Colombia, Chile y Uruguay hay apps de oficios y de servicio doméstico. En EE. UU. hay plataformas que le cobran al profesional por contacto y otras con comisión; en el Reino Unido, con suscripción. Diferencial de Handyx: el profesional no paga por su trabajo y suma herramientas para trabajar mejor.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-competidores-mundo",
+     "alt": "Animación: Competidores en la región y el mundo. Latinoamérica: apps de oficios y servicio doméstico; Estados Unidos: pagar por cada contacto; Europa: cuota mensual o comisión; Nuestro camino: el profesional no paga.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.6
+     ],
+     "afirmaciones": [
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-mes-1",
+   "titulo": "Plan · mes 1: HandIA premium y lanzamiento",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 1, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Tres golpes (avanzar con cada frase): 1 el vecino estrena HandIA premium, con la tarifa del 15 % visible y cobrada en la app · 2 el profesional recibe pedidos más claros y se suman 6 profesiones con sus herramientas · 3 lo medimos en trabajos con tarifa cobrada: objetivo 50 en diciembre. Ojo: las apps hoy prevén 0 % de fee hasta el 10/12 (confirmar con Ignacio cuál vale para el pitch).\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 1: HandIA premium y lanzamiento. HandIA premium: foto, voz y referencia de costo Tarifa del {{TARIFA-USUARIO}} visible y cobro en la app Lanzamiento ({{LANZAMIENTO}}) y {{PROF-POR-MES}} profesiones nuevas con sus herramientas Valor: Ingresos reales desde el primer trabajo Pedidos más claros para el especialista Mide: trabajos con tarifa cobrada (meta {{META-TRABAJOS}} en diciembre).",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-1",
+     "alt": "Animación: plan del primer mes. El vecino estrena HandIA premium con foto, voz y referencia de costo y ve la tarifa en la app; el profesional recibe pedidos más claros y se suman profesiones con sus herramientas; se mide en trabajos con tarifa cobrada. HandIA en el celular de la demo, con datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "META-BA-MESES",
+      "META-TRABAJOS",
+      "PROF-POR-MES",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-mes-2",
+   "titulo": "Plan · mes 2: HandIA para profesionales",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 2, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Tres golpes (avanzar con cada frase): 1 el profesional suma HandIA (presupuesto, materiales y recordatorios), las herramientas de su oficio y sus números con feedback de IA · 2 el vecino tiene 6 profesiones nuevas para pedir y mejor servicio · 3 lo medimos en profesionales activos por semana y clientes que repiten: objetivo 5 en diciembre.\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 2: HandIA para profesionales. HandIA para profesionales: presupuesto, materiales y recordatorios Herramientas de cada oficio y {{PROF-POR-MES}} profesiones nuevas Ingresos y gastos con feedback de IA Valor: Retención: el profesional usa Handyx todos los días Mejor servicio: más clientes que vuelven Mide: profesionales activos por semana y clientes que repiten (meta {{META-REPETIDORES}}).",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-2",
+     "alt": "Animación: plan del segundo mes. El profesional suma HandIA para presupuesto, materiales y recordatorios, herramientas de su oficio e ingresos y gastos con IA; el vecino tiene más profesiones y mejor servicio; se mide en profesionales activos y clientes que vuelven. Celular con un diseño propuesto de herramientas, datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
+     ],
+     "afirmaciones": [
+      "META-BA-MESES",
+      "META-REPETIDORES",
+      "PROF-POR-MES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-mes-3",
+   "titulo": "Plan · mes 3: Toda Buenos Aires",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué se hace en el mes 3, qué valor genera y cómo se mide.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Tres golpes (avanzar con cada frase): 1 toda Buenos Aires en 3 meses, con 24 profesiones con sus herramientas · 2 más trabajo para más profesionales y el primer piloto de Handyx for Business · 3 lo medimos en CAC por canal, turnos B2B y trabajos por mes. Las ferreterías conectadas van en el segundo trimestre (ver «Cómo crece Handyx, trimestre a trimestre»).\nPlan propuesto (05/11, Ignacio): en 3 meses HandIA premium y aplicada al especialista, 6 profesiones nuevas por mes con sus herramientas y toda Buenos Aires. A validar. Desarrollo potenciado con IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 3: Toda Buenos Aires. Toda Buenos Aires en {{META-BA-MESES}} meses {{PROF-Q1}} profesiones, cada una con sus herramientas Piloto de Handyx for Business y ferreterías conectadas Valor: Primer ingreso B2B y más demanda Más trabajo para más profesionales Mide: CAC por canal, turnos B2B y trabajos por mes.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-mes-3",
+     "alt": "Animación: plan del tercer mes. Handyx llega a toda Buenos Aires con más profesiones; el profesional tiene más trabajo y turnos en comercios con el primer piloto de Handyx for Business; se mide en CAC por canal, turnos y trabajos por mes. Celular con un diseño propuesto de Business, datos ficticios.",
+     "tiempos": [
+      3.6,
+      3.2,
+      3.4
+     ],
+     "afirmaciones": [
+      "META-BA-MESES",
+      "PROF-Q1"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-inversion",
+   "titulo": "Cada dólar de la inversión",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar para qué se gasta cada dólar de los USD 100.000.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 La inversión buscada: cómo se reparte · 2 Marketing: publicidad con IA, redes y calle · 3 Operaciones: formar y acompañar a los profesionales · 4 Tecnología: una app que se diferencia.\nPropuesta de asignación preparada el 05/11 a pedido de Ignacio, a aprobar: 45 % marketing y captación, 30 % operaciones, 15 % tecnología, 10 % legal, contable y reserva. Se baja desarrollo porque hoy es más barato que nunca construir un producto premium con herramientas de IA. Silicon Valley: aprendizaje y conexiones; sin inversión comprometida.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "USD 100.000 de inversión inicial buscada (no recibida). Marketing y captación USD 45.000: ads por barrio y urgencia USD 20.000, porteros y administradores USD 10.000, contenido con los Handys USD 8.000, presencia local USD 7.000. Operaciones USD 30.000: comunicación y formación de profesionales USD 10.000, soporte USD 10.000, verificación USD 6.000, cobros USD 4.000. Tecnología USD 15.000: HandIA y feedback USD 6.000, herramientas por oficio USD 5.000, servidores USD 4.000. Legal y contable USD 6.000 y reserva USD 4.000.",
+   "referencias": [
+    "INV-TOTAL",
+    "INV-MARKETING",
+    "INV-OPERACIONES",
+    "INV-TECNOLOGIA",
+    "INV-LEGAL"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-inversion",
+     "alt": "Animación: Cada dólar de la inversión. La inversión buscada: cómo se reparte; Marketing: publicidad con IA, redes y calle; Operaciones: formar y acompañar a los profesionales; Tecnología: una app que se diferencia.",
+     "tiempos": [
+      3.0,
+      4.0,
+      3.4,
+      3.6
+     ],
+     "afirmaciones": [
+      "INV-LEGAL",
+      "INV-M-ADS",
+      "INV-M-HANDYS",
+      "INV-M-LOCAL",
+      "INV-M-PORTEROS",
+      "INV-MARKETING",
+      "INV-O-COBROS",
+      "INV-O-FORMACION",
+      "INV-O-SOPORTE",
+      "INV-O-VERIF",
+      "INV-OPERACIONES",
+      "INV-T-HERR",
+      "INV-T-IA",
+      "INV-T-SERV",
+      "INV-TECNOLOGIA",
+      "INV-TOTAL"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-un-millon",
+   "titulo": "Hacia USD 1 millón",
+   "disposicion": "izquierda",
+   "paleta": "azul",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué volumen haría falta para mover USD 1 millón y cómo lo impulsan el marketing y la IA.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 El objetivo: trabajos movidos por Handyx · 2 La cuenta: cuántos trabajos hacen falta · 3 Qué significa: el partido y las tarifas · 4 El motor: marketing e IA que suman gente.\nAspiración de Ignacio (05/11): que la inversión de USD 100.000 impulse USD 1 millón en trabajos por Handyx. Horizonte supuesto: 12 meses. Ticket de la prueba ($ 70.000 ≈ USD 45). No es un retorno prometido ni un pronóstico validado. Si se entendiera USD 1 M de ingresos propios de Handyx harían falta ≈ 148.000 trabajos: varias ciudades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "USD 1 millón en trabajos por Handyx en 12 meses son ≈ 22.300 trabajos con el ticket de la prueba: ≈ 1.860 por mes, ≈ 62 por día, ≈ 8,6 % de los arreglos anuales del partido. Dejarían ≈ USD 150.000 de tarifas. Con un CAC de ≈ USD 2, los USD 45.000 de marketing alcanzan para ≈ 22.500 clientes. El marketing y la IA impulsan la adopción: más personas piden, más profesionales se suman y se forman.",
+   "referencias": [
+    "META-1M",
+    "M1-TRABAJOS",
+    "M1-MES",
+    "M1-DIA",
+    "M1-TARIFAS",
+    "M1-CUOTA",
+    "M1-CLIENTES-CAC"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-un-millon",
+     "alt": "Animación: Hacia USD 1 millón. El objetivo: trabajos movidos por Handyx; La cuenta: cuántos trabajos hacen falta; Qué significa: el partido y las tarifas; El motor: marketing e IA que suman gente.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "INV-MARKETING",
+      "INV-TOTAL",
+      "M1-CLIENTES-CAC",
+      "M1-CUOTA",
+      "M1-DIA",
+      "M1-MES",
+      "M1-TARIFAS",
+      "M1-TRABAJOS",
+      "META-1M",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-ux-ia",
+   "titulo": "UX + IA: el diferencial",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Comparar el recorrido de pedir un arreglo: sin app, con apps con comisión y con Handyx.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 hoy, por WhatsApp, preguntás en grupos, esperás y el precio llega al final · 2 en las apps con comisión hay pedido y propuestas, algunas con IA, pero el profesional paga una comisión (el «hasta 15 %» es de una sola plataforma) · 3 en Handyx mandás una foto, HandIA arma el pedido, ves el precio antes de contratar y el profesional no paga comisión y suma herramientas · 4 lo que nos diferencia no es una función: es el recorrido completo, con historial para que el cliente vuelva a elegir al profesional (meta, todavía no demostrada).\nComparación de recorridos, no de pantallas: las capturas de la competencia se suman cuando Ignacio las mande desde sus apps (no se pudieron obtener desde esta sesión). Clickie: comisión al profesional y orientación con IA (fuentes de prensa 2026).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Hoy, por WhatsApp: preguntás en grupos, esperás respuestas y el precio llega al final. Apps con comisión: pedido y propuestas, algunas con IA, y el profesional paga una comisión. Handyx: foto y descripción, HandIA arma el pedido, propuestas con precio visible antes de contratar, 0 % al profesional y herramientas para su oficio.",
+   "referencias": [
+    "COMP-CLICKIE-PRO",
+    "FEE-ESPECIALISTA",
+    "TARIFA-USUARIO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-ux-ia",
+     "alt": "Animación: el mismo arreglo en tres experiencias. Hoy, por WhatsApp, preguntás en grupos, esperás respuestas y el precio llega al final. En apps con comisión hay pedido y propuestas, algunas suman IA y el profesional paga una comisión. Con Handyx, una foto y HandIA arma el pedido, el precio es visible antes de contratar y el profesional no paga comisión y suma herramientas por oficio (HandIA y herramientas en desarrollo). Lo que nos diferencia no es una función: es el recorrido completo, con historial para que el cliente vuelva.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.8,
+      3.4
+     ],
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-marca",
+   "titulo": "Marca y UX/UI",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la identidad de Handyx y su interfaz.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Los Handys: el vecino, el profesional y cada oficio · 2 Pensados para que los chicos los recuerden · 3 La paleta y la tipografía de la app · 4 La app: pedir en pocos pasos.\nPantallas de la demo de la landing (datos ficticios). Los Handys son los personajes de la marca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Handyx tiene identidad propia: los Handys (personajes de cada oficio), colores y tipografía de la app, y un tono cercano en español rioplatense. La interfaz está pensada para pedir en pocos pasos y para que el profesional ordene su trabajo.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-marca",
+     "alt": "Animación: Marca y UX/UI. Los Handys: el vecino, el profesional y cada oficio; Pensados para que los chicos los recuerden; La paleta y la tipografía de la app; La app: pedir en pocos pasos.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-publicidades",
+   "titulo": "Publicidades",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Mostrar las piezas listas para pautar.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "3 golpes (avanzar con cada frase): 1 Ya tenemos piezas para vecinos y profesionales · 2 En el celular y en cualquier pantalla · 3 Lo que viene: publicidades hechas con IA.\nCuadros de los trailers de kinetic-studio que no muestran la tarifa anterior. Antes de pautar hay que renderizarlos con el modelo 0 % / 15 % (hoy dicen «Primer mes sin tarifa»).\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Piezas en video 16:9 y 9:16 para usuarios y profesionales: el problema (preguntás y esperás), cómo se pide (urgencia, programado u obra), la agenda del profesional y la privacidad (tu teléfono no se comparte).",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-publicidades",
+     "alt": "Animación: Publicidades. Ya tenemos piezas para vecinos y profesionales; En el celular y en cualquier pantalla; Lo que viene: publicidades hechas con IA.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-marketing",
+   "titulo": "Tracción en los dos lados",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo captamos usuarios y profesionales.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Digital: publicidades con IA en todas las redes · 2 En la calle: postes, volantes y remeras · 3 En los edificios: porteros y administradores · 4 Y el boca a boca, en los dos lados.\nEstrategias a medir con CAC y repetición. «Los chicos repiten lo que ven»: los Handys son personajes pensados para que los chicos los reconozcan y lo cuenten en casa; es una estrategia de recordación, no un dato medido.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Usuarios: porteros y administradores, los Handys (los chicos los reconocen y lo cuentan en casa), ads por barrio y urgencia, y referidos. Profesionales: 0 % de comisión como mensaje, ferreterías y corralones, formación con herramientas por oficio y referidos entre oficios.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-marketing",
+     "alt": "Animación: Tracción en los dos lados. Digital: publicidades con IA en todas las redes; En la calle: postes, volantes y remeras; En los edificios: porteros y administradores; Y el boca a boca, en los dos lados.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-herramientas-1",
+   "titulo": "Herramientas por oficio (1/2)",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar las herramientas que queremos dar a cada profesión.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Tres golpes (avanzar con cada frase): 1 Electricidad: calculadora de cable y lector de esquemas con IA · 2 Plomería: detector de pérdidas guiado y materiales que se suman al presupuesto · 3 Gas: checklist de seguridad, registro de revisiones e informe para el cliente (la IA no certifica instalaciones; valores de ejemplo). Diseño propuesto: estas herramientas todavía no existen en la app.\nDiseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Herramientas por oficio, diseño propuesto: Electricidad; Plomería; Gas.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-herramientas-1",
+     "alt": "Animación: herramientas para cada oficio, diseño propuesto con datos de ejemplo. Electricidad: calculá el cable y entendé cada esquema con IA. Plomería: ubicá la pérdida y presupuestá los materiales. Gas: revisá con checklist y dejale un informe al cliente. Cada celular entra con el Handy de su oficio en acción.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-herramientas-2",
+   "titulo": "Herramientas por oficio (2/2)",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 3,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar las herramientas que queremos dar a cada profesión.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Tres golpes (avanzar con cada frase): 1 Cerrajería: cada apertura queda registrada con hora y fotos, en el historial · 2 Albañilería: calculadora de materiales, etapas y avance de obra con fotos · 3 Aire acondicionado: calculadora de frigorías y recordatorio del service. Diseño propuesto: estas herramientas todavía no existen en la app.\nDiseños propuestos (visión): calculadoras, checklists y registros por oficio. Valores de ejemplo, orientativos. La IA no certifica instalaciones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Herramientas por oficio, diseño propuesto: Cerrajería; Albañilería; Aire acondicionado.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-herramientas-2",
+     "alt": "Animación: herramientas para cada oficio, diseño propuesto con datos de ejemplo. Cerrajería: hora y fotos de cada apertura, en el historial. Albañilería: calculá materiales y seguí cada etapa con fotos. Aire acondicionado: estimá frigorías y avisá cuándo toca el service. Cada celular entra con el Handy de su oficio en acción.",
+     "tiempos": [
+      3.6,
+      3.6,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-negocios",
+   "titulo": "Más profesiones, herramientas y negocios",
+   "disposicion": "izquierda",
+   "paleta": "azul",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo crece la plataforma: profesiones nuevas con sus herramientas y negocios integrados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada profesión nueva llega con sus herramientas · 2 Cada profesional ordena sus números, con IA · 3 Handyx for Business: el local elige por mérito · 4 Ferreterías conectadas: stock para profesionales.\nVisión: cada profesión nueva llega con sus herramientas; Handyx para negocios integra el CRM de un local (por ejemplo, un restaurante que busca mozos) y ordena a los disponibles por valoraciones y turnos cumplidos. Diseño propuesto, sin socios ni integraciones acordadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Cada profesión nueva llega con sus herramientas: limpieza con checklist por ambiente, mecánica con diagnóstico y repuestos, jardinería con calendario de poda. Handyx para negocios: un restaurante pide mozos y elige entre los disponibles ordenados por valoraciones y turnos cumplidos, integrado a su sistema. El profesional ordena sus números y recibe feedback con IA.",
+   "referencias": [
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-negocios",
+     "alt": "Animación: Más profesiones, herramientas y negocios. Cada profesión nueva llega con sus herramientas; Cada profesional ordena sus números, con IA; Handyx for Business: el local elige por mérito; Ferreterías conectadas: stock para profesionales.",
+     "tiempos": [
+      3.4,
+      3.4,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "META-PROFESIONES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-plan-3m",
+   "titulo": "Lo que logramos en 3 meses",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el plan de los próximos 3 meses: HandIA premium y para profesionales, 6 profesiones nuevas por mes y toda Buenos Aires.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 partimos del lanzamiento (10/11/2026) con 6 profesiones y desarrollo potenciado con IA · 2 mes 1: HandIA premium (foto, voz y referencia de costo), lanzamiento y tarifa visible, más 6 profesiones · 3 mes 2: HandIA para profesionales y herramientas de cada oficio · 4 mes 3: toda Buenos Aires, 24 profesiones y el primer piloto de Handyx for Business. Los 12 y 18 intermedios se calculan como 6 + 6 por mes (plan de Ignacio del 05/11).\nPlan de Ignacio (05/11), a validar: en los primeros 3 meses, HandIA a nivel premium y aplicada al especialista; los desarrollos de las diapositivas; 6 profesiones nuevas por mes, cada una con sus herramientas (6 → 24); y toda Buenos Aires. Desarrollo potenciado con IA: más rápido y más barato que nunca.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Mes 1: HandIA premium (foto, voz y referencia de costo), tarifa del 15 % y lanzamiento con 6 profesiones nuevas. Mes 2: HandIA para profesionales y herramientas de cada oficio, con 6 profesiones nuevas. Mes 3: toda Buenos Aires con 24 profesiones, piloto de Handyx for Business y ferreterías conectadas.",
+   "referencias": [
+    "PROF-POR-MES",
+    "PROF-Q1",
+    "META-BA-MESES",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-plan-3m",
+     "alt": "Animación: plan del primer trimestre de Handyx, mes a mes. El primer mes, HandIA premium y el lanzamiento; el segundo, HandIA para profesionales y herramientas de cada oficio; el tercero, toda Buenos Aires y el primer piloto de Handyx for Business. Una torre de profesiones suma una fila por mes y el contador sube.",
+     "tiempos": [
+      2.8,
+      3.2,
+      3.2,
+      3.4
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "META-BA-MESES",
+      "PROF-POR-MES",
+      "PROF-Q1",
+      "PROFESIONES-INICIALES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-mapa",
+   "titulo": "Cómo crece Handyx",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el mapa de crecimiento: Handyx for People (B2C) y Handyx for Business (B2B) sobre un mismo núcleo.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Cuatro golpes (avanzar con cada frase): 1 un mismo núcleo (verificación, valoraciones, pagos y HandIA) · 2 primera rama, Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio, clientes que vuelven y ferreterías conectadas · 3 segunda rama, Handyx for Business: personal por turnos, mantenimiento del local, apps a medida y meritocracia · 4 todo se potencia a través del núcleo; de Mar del Plata a toda Buenos Aires y a la Argentina en 2027.\nVisión (05/11): sin socios ni integraciones acordadas. «Con IA, crear y mantener apps para cada comercio es más barato que nunca» es una opinión del equipo. Las ferreterías conectadas son una idea a explorar.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Handyx crece en dos ramas sobre un mismo núcleo (verificación, valoraciones, pagos y HandIA). Handyx for People: de 6 a 72 profesiones, HandIA, herramientas por oficio, clientes que vuelven y ferreterías conectadas. Handyx for Business: personal por turnos (mozos, bartenders, cocina) por días o semanas, mantenimiento del local con técnicos verificados, apps a medida para cada comercio integradas a Handyx y meritocracia. Hoy Mar del Plata; en 2027, Argentina.",
+   "referencias": [
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES",
+    "PROF-POR-MES",
+    "META-BA-MESES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "crece",
+     "alt": "Animación: del núcleo de Handyx (verificación, valoraciones, pagos y HandIA) crecen Handyx for People, con los Handys de cada oficio en sus nodos y Foco al final, y Handyx for Business, con un local que atiende Llave; los pulsos que cruzan el núcleo muestran cómo se potencian, con la expansión de Mar del Plata a toda Buenos Aires y a la Argentina en 2027.",
+     "tiempos": [
+      2.8,
+      3.6,
+      3.6,
+      3.2
+     ],
+     "afirmaciones": [
+      "PROFESIONES-INICIALES",
+      "META-PROFESIONES",
+      "PROF-POR-MES",
+      "META-BA-MESES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-5m",
+   "titulo": "Hacia USD 5 millones en 2027",
+   "disposicion": "izquierda",
+   "paleta": "azul",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la aspiración de USD 5 millones de ingresos a fines de 2027 con su cuenta.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 La aspiración: ingresos anuales de Handyx · 2 Handyx for People: trabajos en todo el país · 3 Handyx for Business: turnos para comercios · 4 Juntos: hacia la meta, antes de costos.\nAspiración de Ignacio (05/11): USD 5 M de ingresos de Handyx a fines de 2027. Supuestos a validar: 520.000 trabajos al año en Argentina (≈ 1.425 por día) con el ticket de la prueba (≈ USD 45); 1.000 comercios con 5 turnos por semana de USD 40. No incluye suscripciones de apps a medida ni otros ingresos. Antes de costos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Aspiración a fines de 2027: USD 5 millones de ingresos para Handyx. Handyx for People: 520.000 trabajos por año en las 72 profesiones (≈ 1.425 por día en Argentina) × USD 45 × 15 % ≈ USD 3,5 millones. Handyx for Business: 1.000 comercios × 5 turnos por semana × USD 40 × 15 % ≈ USD 1,56 millones. Supuestos a validar, antes de costos.",
+   "referencias": [
+    "META-5M",
+    "P-INGRESOS",
+    "B-INGRESOS",
+    "P-TRABAJOS",
+    "B-COMERCIOS",
+    "TOTAL-5M"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-5m",
+     "alt": "Animación: Hacia USD 5 millones en 2027. La aspiración: ingresos anuales de Handyx; Handyx for People: trabajos en todo el país; Handyx for Business: turnos para comercios; Juntos: hacia la meta, antes de costos.",
+     "tiempos": [
+      3.0,
+      3.6,
+      3.4,
+      3.4
+     ],
+     "afirmaciones": [
+      "B-COMERCIOS",
+      "B-INGRESOS",
+      "B-INGRESOS-N",
+      "B-TURNO-USD",
+      "B-TURNOS",
+      "B-TURNOS-SEM",
+      "META-5M",
+      "META-PROFESIONES",
+      "P-DIA",
+      "P-INGRESOS",
+      "P-INGRESOS-N",
+      "P-TRABAJOS",
+      "PRUEBA-TICKET-USD",
+      "TARIFA-USUARIO",
+      "TOTAL-5M",
+      "TOTAL-5M-N"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-business",
+   "titulo": "Handyx for Business",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo un local contrata personal por días o semanas y cómo tendría su propia app integrada.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Handyx for Business: lo que necesita un local · 2 Personal por turnos: mozos, barra y cocina · 3 Mantenimiento con técnicos verificados · 4 Su propia app, integrada a Handyx.\nDiseños propuestos (visión): turnos fijos (mozos viernes y sábados, repetir 4 semanas), reemplazo automático por mérito y app a medida para un comercio (reservas, carta, «trabajá con nosotros», mantenimiento) integrada a Handyx.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Un local elige personal por días fijos o semanas (por ejemplo, mozos los viernes y sábados durante 4 semanas). Si alguien no puede, Handyx ofrece al siguiente disponible ordenado por valoraciones y turnos cumplidos. Además, Handyx for Business puede crear una app para cada comercio, integrada a Handyx: reservas, pedidos, postulantes y mantenimiento.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-business",
+     "alt": "Animación: Handyx for Business. Handyx for Business: lo que necesita un local; Personal por turnos: mozos, barra y cocina; Mantenimiento con técnicos verificados; Su propia app, integrada a Handyx.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-multiplicar-1",
+   "titulo": "Maneras de multiplicar ingresos (1/2)",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar cómo crecen los ingresos desde la operación.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Más trabajos: cada uno deja su tarifa · 2 Más profesiones: más motivos para volver · 3 Clientes que vuelven: sin pagar otra captación · 4 Handyx for Business: turnos para comercios.\nFuentes de ingreso y palancas de crecimiento. Tarifa y profesiones: modelo definido y metas del fundador. Handyx for Business y apps a medida: visión, sin precios aprobados. Materiales: idea a explorar, sin alianzas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Cómo se multiplican los ingresos desde la operación: más trabajos (cada uno deja la tarifa del 15 %), más profesiones (de 6 a 72, más motivos para volver), clientes que vuelven (cada repetición suma ingreso sin volver a pagar captación), Handyx for Business (turnos de personal con la misma tarifa), apps a medida para comercios (suscripción, opción futura) y alianzas de materiales con ferreterías y corralones (a explorar).",
+   "referencias": [
+    "TARIFA-USUARIO",
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-multiplicar-1",
+     "alt": "Animación: Maneras de multiplicar ingresos (1/2). Más trabajos: cada uno deja su tarifa; Más profesiones: más motivos para volver; Clientes que vuelven: sin pagar otra captación; Handyx for Business: turnos para comercios.",
+     "tiempos": [
+      3.2,
+      3.0,
+      3.0,
+      3.2
+     ],
+     "afirmaciones": [
+      "META-PROFESIONES",
+      "PROFESIONES-INICIALES",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-multiplicar-2",
+   "titulo": "Maneras de multiplicar ingresos (2/2)",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Explicar qué hacemos con las ganancias: reinvertir para crecer y una tesorería que protege a Handyx a largo plazo.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Primero: reinvertir para crecer · 2 Antes de invertir: meses de costos guardados · 3 La tesorería protege; el negocio multiplica · 4 La plata de los inversores va al plan.\nVisión de Ignacio (05/11): reinvertir las ganancias en la empresa y formar una tesorería con activos (acciones, criptomonedas) como colchón y escudo de largo plazo. Encuadre propuesto para el jurado: la tesorería trabaja solo con excedentes —nunca con la inversión recibida ni con la caja operativa—, con política aprobada por el directorio, diversificación y cripto acotada. No se prometen rendimientos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Con las ganancias, dos caminos. Primero, reinvertir en crecer: marketing e IA mientras el costo de conseguir un cliente sea menor que lo que deja, y formación de profesionales. Segundo, una tesorería que protege: solo con excedentes, después de guardar 12 meses de costos; diversificada en bonos, ETFs y acciones, con criptomonedas como máximo el 10 %; aprobada por el directorio y reportada cada trimestre. Objetivo: salud financiera, protección frente a la inflación y un escudo para Handyx a largo plazo. No prometemos rendimientos: la tesorería protege, el negocio multiplica.",
+   "referencias": [
+    "POL-CAJA-MESES",
+    "POL-CRIPTO-MAX"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-multiplicar-2",
+     "alt": "Animación: Maneras de multiplicar ingresos (2/2). Primero: reinvertir para crecer; Antes de invertir: meses de costos guardados; La tesorería protege; el negocio multiplica; La plata de los inversores va al plan.",
+     "tiempos": [
+      3.2,
+      3.2,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "POL-CAJA-MESES",
+      "POL-CRIPTO-MAX"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-circulo",
+   "titulo": "El círculo que multiplica",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar en un solo gráfico cómo se retroalimentan los ingresos y cómo los excedentes forman la tesorería.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Cada trabajo deja ingresos · 2 Las ganancias se reinvierten · 3 Mejor app y más profesiones · 4 Más trabajos: el círculo vuelve a girar.\nGráfico conceptual (sin cifras): más trabajos → más tarifas → ganancias → reinversión → más trabajos; con los excedentes, una tesorería diversificada con política.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "El círculo que multiplica: más trabajos generan más tarifas; las ganancias, después de costos, se reinvierten en marketing e IA para conseguir más trabajos. Con los excedentes, una tesorería diversificada (bonos, ETFs y acciones; cripto acotada) funciona como colchón de largo plazo, con política aprobada por el directorio.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-circulo",
+     "alt": "Animación: El círculo que multiplica. Cada trabajo deja ingresos; Las ganancias se reinvierten; Mejor app y más profesiones; Más trabajos: el círculo vuelve a girar.",
+     "tiempos": [
+      3.0,
+      3.0,
+      3.0,
+      3.6
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-ipo",
+   "titulo": "Camino a la IPO",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la visión de largo plazo: de pre-seed a cotizar en bolsa, con los requisitos de cada etapa.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Hoy: pre-seed en Mar del Plata · 2 Después: rondas seed y serie A · 3 Escala con rentabilidad y buen gobierno · 4 Visión: cotizar en bolsa.\nVisión de largo plazo, sin fechas ni valuación (no se inventan términos de inversión). Precedentes argentinos públicos: MercadoLibre (Nasdaq, 2007) y Globant (NYSE, 2014). Requisitos típicos de una IPO: ingresos recurrentes y crecientes, rentabilidad, estados contables auditados, gobierno corporativo y directorio independiente.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Camino a la IPO, como visión: hoy pre-seed en Mar del Plata; después seed (Argentina y Handyx for Business), serie A (Latinoamérica y herramientas con IA) y escala con rentabilidad, estados auditados y directorio independiente; finalmente cotizar en bolsa, como lo hicieron MercadoLibre en Nasdaq (2007) y Globant en la NYSE (2014). Sin fechas ni valuación comprometidas.",
+   "referencias": [
+    "PREC-MELI",
+    "PREC-GLOBANT"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-ipo",
+     "alt": "Animación: Camino a la IPO. Hoy: pre-seed en Mar del Plata; Después: rondas seed y serie A; Escala con rentabilidad y buen gobierno; Visión: cotizar en bolsa.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.2,
+      3.2
+     ],
+     "afirmaciones": [
+      "PREC-GLOBANT",
+      "PREC-MELI"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-ferreterias",
+   "titulo": "Ferreterías conectadas: stock para los profesionales",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 30,
+   "pasos": 6,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar cómo queremos conectar a los profesionales con las ferreterías y los corralones del barrio para conseguir materiales.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Seis golpes (avanzar con cada frase): 1 el barrio, la ferretería y un edificio · 2 «se rompió un caño»: el vecino pide el arreglo · 3 el profesional acepta el trabajo y agrega los materiales en su app · 4 Handyx le muestra stock en una ferretería cercana y lo reserva · 5 el vecino sigue el pedido en su app y ve qué materiales se usan · 6 el profesional retira la caja camino al trabajo y llega con todo: arreglo listo; ganan el profesional, la ferretería, el vecino y Handyx.\nVisión de Ignacio (05/11): conectarnos con los ferreteros para conseguir stock para los profesionales. A explorar: no hay alianzas firmadas, acuerdos comerciales, comisiones ni precios definidos. Las pantallas son un diseño propuesto con datos ficticios. Si preguntan cómo gana Handyx: otra fuente de ingresos a explorar con las ferreterías, sin modelo definido todavía.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Ferreterías conectadas: el profesional agrega en su app los materiales del trabajo, Handyx le muestra qué ferretería del barrio los tiene en stock y los reserva, el vecino lo sigue en su app y el profesional los retira camino al trabajo y llega con todo. El profesional llega con lo que necesita, la ferretería vende más en su barrio, el vecino tiene menos idas y vueltas y Handyx suma otra fuente de ingresos. Es una visión a explorar, sin alianzas firmadas.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "ferreterias",
+     "alt": "Animación: en una ciudad con una ferretería y un edificio con una pérdida, el profesional agrega los materiales al trabajo en su celular, Handyx le muestra stock en una ferretería cercana y lo reserva, el vecino lo sigue en su app y el profesional llega con todo: arreglo listo (visión a explorar, sin alianzas firmadas).",
+     "tiempos": [
+      2.8,
+      2.6,
+      3.2,
+      3.2,
+      3.0,
+      3.4
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-handia-voz",
+   "titulo": "HandIA te habla: un mejor servicio, con tu voz",
+   "disposicion": "izquierda",
+   "paleta": "oceano",
+   "duracion": 30,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar qué suma la inversión en IA: HandIA con voz natural para ayudarte a conseguir un mejor servicio.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Visión de Ignacio (05/11): con la inversión (partida de tecnología · IA, propuesta), HandIA te habla con una voz natural generada con ElevenLabs (proveedor previsto; sin contrato). Animación de 18,5 s que arranca sola (música y efectos suaves; sin sonido: ?sonido=no): HandIA saluda, el vecino cuenta el problema, HandIA pide una foto, arma el pedido y muestra especialistas cerca; el pedido se envía. La voz todavía no está en el video: se ve el texto y la onda de la voz. Para sumar la voz real: scripts/video-pitch/handia-voz/voz-elevenlabs.mjs con ELEVENLABS_API_KEY. Celular: diseño propuesto con datos ficticios. Beneficios: hablás en vez de escribir (más fácil para todos), pedidos más claros con foto y descripción, te guía antes, durante y después del trabajo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Con la inversión, HandIA te habla: una voz natural que te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir, el pedido llega más claro y el especialista llega preparado. La voz se genera con ElevenLabs.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "clip",
+     "tipo": "video",
+     "recurso": "video-handia-voz",
+     "poster": "video-handia-voz-poster",
+     "alt": "Animación: HandIA habla con el vecino desde el celular, le pide una foto del calefón, arma el pedido y muestra especialistas cerca",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-profesiones",
+   "titulo": "De 6 a 72 profesiones",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar con ejemplos concretos cómo se llega a 72 profesiones.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "4 golpes (avanzar con cada frase): 1 Hoy: las profesiones del lanzamiento · 2 Ejemplos para el hogar y sus equipos · 3 Más ejemplos: movilidad y negocios · 4 Cuidados, con verificación reforzada.\nEjemplos propuestos a pedido de Ignacio (04/11) para crecer de 6 a 72 profesiones: no están confirmados ni ordenados por prioridad; validar con demanda (pedidos fuera de rubro, búsquedas, preregistro) y con capacidad de verificación por oficio. Cuidado de adultos mayores (05/11, pedido de Ignacio): hay oferta en carteles de comercios del barrio; por ser un servicio dentro de la casa con personas mayores, entra con verificación reforzada.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Hoy: electricidad, plomería, gas, cerrajería, albañilería y aire acondicionado. Próximas posibles: limpieza, pintura, jardinería, carpintería, herrería, durlock, techos, pisos, vidriería, persianas, control de plagas y piletas; electrodomésticos, cámaras y alarmas, redes y wifi, paneles solares; mecánica, electricidad del auto, gomería y lavado de autos; fletes y mudanzas, armado de muebles, tapicería y cuidado de mascotas.",
+   "referencias": [
+    "PROFESIONES-INICIALES",
+    "META-PROFESIONES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "anexo-profesiones",
+     "alt": "Animación: De 6 a 72 profesiones. Hoy: las profesiones del lanzamiento; Ejemplos para el hogar y sus equipos; Más ejemplos: movilidad y negocios; Cuidados, con verificación reforzada.",
+     "tiempos": [
+      3.0,
+      3.4,
+      3.4,
+      3.6
+     ],
+     "afirmaciones": [
+      "META-PROFESIONES",
+      "PROFESIONES-INICIALES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-01",
+   "titulo": "Posible pregunta 1: ¿Cuál es tu CAC?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: CAC y LTV.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuál es tu CAC? Hoy, ≈ {{CAC-ESTIMADO}} por cliente con {{COSTO-MARKETING}} de marketing por mes (supuesto: {{SUP-CLIENTES-MES}} clientes nuevos). El techo es {{CAC-MAXIMO}}: se recupera con el primer trabajo.",
+   "referencias": [
+    "CAC-ESTIMADO",
+    "CAC-MAXIMO",
+    "COSTO-MARKETING",
+    "LTV-CAC",
+    "LTV-ESTIMADO",
+    "SUP-CLIENTES-MES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-01",
+     "alt": "Animación de la respuesta: ¿Cuál es tu CAC?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "CAC-ESTIMADO",
+      "CAC-MAXIMO",
+      "COSTO-MARKETING",
+      "LTV-CAC",
+      "LTV-ESTIMADO",
+      "SUP-CLIENTES-MES"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-02",
+   "titulo": "Posible pregunta 2: ¿Cuánto cuesta mantener Handyx?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Costos y punto de equilibrio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuánto cuesta mantener Handyx? Hoy ≈ {{COSTOS-MES}} por mes. Con {{INGRESO-POR-TRABAJO}} de tarifa por trabajo, {{EQUILIBRIO-TRABAJOS}} trabajos por mes cubren esos costos.",
+   "referencias": [
+    "COSTO-DESARROLLO",
+    "COSTO-MARKETING",
+    "COSTO-SERVIDORES",
+    "COSTOS-MES",
+    "EQUILIBRIO-TRABAJOS",
+    "INGRESO-POR-TRABAJO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-02",
+     "alt": "Animación de la respuesta: ¿Cuánto cuesta mantener Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "COSTO-DESARROLLO",
+      "COSTO-MARKETING",
+      "COSTO-SERVIDORES",
+      "COSTOS-MES",
+      "EQUILIBRIO-TRABAJOS",
+      "INGRESO-POR-TRABAJO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-03",
+   "titulo": "Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Proyección: de dónde sale el número.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿De dónde salen el 25 % y los USD 100.000? {{MDP-HOGARES}} hogares × 1 arreglo por año × {{SUP-TICKET-USD}}: {{MERCADO-USD}} por año. El 25 % de un trimestre son {{Q1-TRABAJOS}} trabajos. Con el ticket promedio de nuestros 5 trabajos ({{PRUEBA-TICKET}} ≈ USD 45) dejan {{Q1-TARIFAS-REAL}} de tarifas.",
+   "referencias": [
+    "MDP-HOGARES",
+    "MERCADO-TRIM-N",
+    "MERCADO-USD",
+    "META-CUOTA-LOCAL",
+    "PRUEBA-TICKET",
+    "PRUEBA-TICKET-USD",
+    "Q1-TARIFAS-REAL",
+    "Q1-TRABAJOS",
+    "SUP-TICKET-USD",
+    "TARIFA-USUARIO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-03",
+     "alt": "Animación de la respuesta: ¿De dónde salen el 25 % y los USD 100.000?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "MDP-HOGARES",
+      "MERCADO-TRIM-N",
+      "MERCADO-USD",
+      "META-CUOTA-LOCAL",
+      "PRUEBA-TICKET",
+      "PRUEBA-TICKET-USD",
+      "Q1-TARIFAS-REAL",
+      "Q1-TRABAJOS",
+      "SUP-TICKET-USD",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-04",
+   "titulo": "Posible pregunta 4: ¿Cuántos trabajos tienen cobrados?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Validación.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cuántos trabajos tienen cobrados? {{TRABAJOS-INFORMADOS}} trabajos con comisión cobrada, con ayuda de porteros: {{PRUEBA-MONTO}} en trabajos y **{{PRUEBA-INGRESO-HANDYX}} de ingresos para Handyx** con el plan original ({{PRUEBA-COM-USUARIO}} al usuario + {{PRUEBA-COM-PROFESIONAL}} al profesional). Además, {{ESP-REGISTRADOS}} especialistas registrados (todavía no activos ni verificados).",
+   "referencias": [
+    "ESP-REGISTRADOS",
+    "META-REPETIDORES",
+    "META-TRABAJOS",
+    "PRUEBA-COM-PROFESIONAL",
+    "PRUEBA-COM-USUARIO",
+    "PRUEBA-INGRESO-HANDYX",
+    "PRUEBA-MONTO",
+    "TRABAJOS-INFORMADOS"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-04",
+     "alt": "Animación de la respuesta: ¿Cuántos trabajos tienen cobrados?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "ESP-REGISTRADOS",
+      "META-REPETIDORES",
+      "META-TRABAJOS",
+      "PRUEBA-COM-PROFESIONAL",
+      "PRUEBA-COM-USUARIO",
+      "PRUEBA-INGRESO-HANDYX",
+      "PRUEBA-MONTO",
+      "TRABAJOS-INFORMADOS"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-05",
+   "titulo": "Posible pregunta 5: ¿HandIA funciona hoy?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: UX + IA.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿HandIA funciona hoy? Está en desarrollo: lo que mostramos es la demo, que ya detecta el oficio y arma el pedido. La referencia de costo viene después. El precio final siempre lo fija el profesional.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-05",
+     "alt": "Animación de la respuesta: ¿HandIA funciona hoy?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-06",
+   "titulo": "Posible pregunta 6: ¿Qué los diferencia de la competencia?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: La competencia, por modelo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué los diferencia de la competencia? El recorrido completo: foto, HandIA arma el pedido, precio visible antes de contratar y **{{FEE-ESPECIALISTA}} al profesional**. Clickie le cobra al profesional hasta {{COMP-CLICKIE-PRO}}, Home Solution por contacto y Muovi anuncia comisión cero por tiempo limitado.",
+   "referencias": [
+    "COMP-CLICKIE-PRO",
+    "DESARROLLOS-PLAN",
+    "FEE-ESPECIALISTA"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-06",
+     "alt": "Animación de la respuesta: ¿Qué los diferencia de la competencia?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "COMP-CLICKIE-PRO",
+      "DESARROLLOS-PLAN",
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-07",
+   "titulo": "Posible pregunta 7: ¿Cómo cobran el 15 %?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Competencia y modelo.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo cobran el 15 %? La tarifa se muestra antes de contratar y la paga el usuario. El circuito de cobro está en implementación; en las pruebas lo coordinamos a mano.",
+   "referencias": [
+    "EJ-F",
+    "EJ-P",
+    "EJ-T",
+    "FEE-ESPECIALISTA",
+    "TARIFA-USUARIO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-07",
+     "alt": "Animación de la respuesta: ¿Cómo cobran el 15 %?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "EJ-F",
+      "EJ-P",
+      "EJ-T",
+      "FEE-ESPECIALISTA",
+      "TARIFA-USUARIO"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-08",
+   "titulo": "Posible pregunta 8: ¿Cómo captan y retienen profesionales?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Tracción en los dos lados.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo captan y retienen profesionales? Captamos con el preregistro, los porteros y el boca a boca entre oficios. Los retenemos con 0 % de comisión, herramientas para el día a día y clientes que vuelven.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-08",
+     "alt": "Animación de la respuesta: ¿Cómo captan y retienen profesionales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-09",
+   "titulo": "Posible pregunta 9: ¿En qué usarían los USD 100.000?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Cada dólar de la inversión.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿En qué usarían los USD 100.000? Sobre todo en que más personas adopten Handyx: {{INV-MARKETING}} en marketing (publicidades hechas con IA con Seedance 2.5, redes, postes, volantes y remeras con los Handys), {{INV-OPERACIONES}} en operaciones y {{INV-TECNOLOGIA}} en tecnología.",
+   "referencias": [
+    "INV-LEGAL",
+    "INV-MARKETING",
+    "INV-OPERACIONES",
+    "INV-TECNOLOGIA",
+    "INV-TOTAL"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-09",
+     "alt": "Animación de la respuesta: ¿En qué usarían los USD 100.000?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "INV-LEGAL",
+      "INV-MARKETING",
+      "INV-OPERACIONES",
+      "INV-TECNOLOGIA",
+      "INV-TOTAL"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-10",
+   "titulo": "Posible pregunta 10: ¿Qué hacen si los clientes no vuelven?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Plan de 3 meses.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué hacen si los clientes no vuelven? Es nuestra prueba más importante. Antes de escalar, revisamos precio visible, calidad y seguimiento del trabajo: preferimos aprender con pocos casos que crecer sin retención.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-10",
+     "alt": "Animación de la respuesta: ¿Qué hacen si los clientes no vuelven?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-11",
+   "titulo": "Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Hacia USD 1 millón.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Por qué invertirían USD 100.000 en Handyx? Porque el marketing y la IA pueden mover USD 1 millón en trabajos: {{M1-MES}} trabajos por mes, {{M1-CUOTA}} de los arreglos del partido. Es nuestra aspiración, con la cuenta a la vista.",
+   "referencias": [
+    "M1-CUOTA",
+    "M1-MES",
+    "M1-TARIFAS",
+    "META-1M"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-11",
+     "alt": "Animación de la respuesta: ¿Por qué invertirían USD 100.000 en Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "M1-CUOTA",
+      "M1-MES",
+      "M1-TARIFAS",
+      "META-1M"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-12",
+   "titulo": "Posible pregunta 12: ¿Qué herramientas van a tener los profesionales?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Herramientas por oficio.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué herramientas van a tener los profesionales? Herramientas para cada oficio: calculadoras, checklists de seguridad, registros y fotos del trabajo. Además, sus números (ingresos y gastos) y feedback con IA para mejorar.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-12",
+     "alt": "Animación de la respuesta: ¿Qué herramientas van a tener los profesionales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-13",
+   "titulo": "Posible pregunta 13: ¿Cómo van a conseguir tracción?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Tracción y publicidades.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo van a conseguir tracción? En los dos lados: publicidades hechas con IA (Seedance 2.5) en todas las redes, porteros, carteles en postes y volantes en los locales del barrio, y los Handys, que los chicos reconocen y cuentan en casa; para los profesionales, {{FEE-ESPECIALISTA}} de comisión, remeras con el Handy de su oficio, ferreterías y formación.",
+   "referencias": [
+    "FEE-ESPECIALISTA"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-13",
+     "alt": "Animación de la respuesta: ¿Cómo van a conseguir tracción?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "FEE-ESPECIALISTA"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-14",
+   "titulo": "Posible pregunta 14: ¿Hasta dónde puede crecer Handyx?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Hacia USD 5 millones.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Hasta dónde puede crecer Handyx? Con 72 profesiones y Handyx for Business, aspiramos a {{META-5M}} de ingresos a fines de 2027: ≈ USD 3,5 M de personas y ≈ USD 1,56 M de comercios que contratan personal por turnos.",
+   "referencias": [
+    "B-INGRESOS",
+    "B-INGRESOS-N",
+    "META-5M",
+    "P-INGRESOS",
+    "P-INGRESOS-N",
+    "TOTAL-5M"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-14",
+     "alt": "Animación de la respuesta: ¿Hasta dónde puede crecer Handyx?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "B-INGRESOS",
+      "B-INGRESOS-N",
+      "META-5M",
+      "P-INGRESOS",
+      "P-INGRESOS-N",
+      "TOTAL-5M"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-15",
+   "titulo": "Posible pregunta 15: ¿Cómo van a multiplicar los ingresos?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Maneras de multiplicar ingresos.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo van a multiplicar los ingresos? Con el negocio: más trabajos, más profesiones, clientes que vuelven y Handyx for Business. Con las finanzas: reinvertimos las ganancias en crecer y los excedentes forman una tesorería que protege a Handyx a largo plazo.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-15",
+     "alt": "Animación de la respuesta: ¿Cómo van a multiplicar los ingresos?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-16",
+   "titulo": "Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Las ganancias trabajan dos veces.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Van a invertir la plata de los inversores en cripto? No. La inversión va al plan: marketing, operaciones y tecnología. La tesorería trabaja solo con excedentes, después de guardar {{POL-CAJA-MESES}} meses de costos, y con cripto como máximo el {{POL-CRIPTO-MAX}}.",
+   "referencias": [
+    "POL-CAJA-MESES",
+    "POL-CRIPTO-MAX"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-16",
+     "alt": "Animación de la respuesta: ¿Van a invertir la plata de los inversores en cripto?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "POL-CAJA-MESES",
+      "POL-CRIPTO-MAX"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-17",
+   "titulo": "Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Camino a la IPO.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Piensan en una salida? ¿Una IPO? Sí, como visión de largo plazo: de pre-seed a seed, serie A y escala con rentabilidad, auditoría y directorio independiente, hasta cotizar en bolsa como MercadoLibre y Globant.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-17",
+     "alt": "Animación de la respuesta: ¿Piensan en una salida? ¿Una IPO?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-18",
+   "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Ferreterías conectadas.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Cómo consiguen los materiales? Hoy cada profesional los compra por su cuenta. Queremos conectar Handyx con las ferreterías y los corralones del barrio: el profesional ve qué materiales necesita y dónde hay stock cerca, los reserva y los retira camino al trabajo. Es una visión a explorar, sin alianzas firmadas.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-18",
+     "alt": "Animación de la respuesta: ¿Cómo consiguen los materiales?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-19",
+   "titulo": "Posible pregunta 19: ¿Qué suma HandIA con la inversión?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: HandIA te habla.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué suma HandIA con la inversión? Con la inversión, HandIA te va a poder hablar con una voz natural (ElevenLabs): te pregunta qué pasó, te pide una foto, arma el pedido y te muestra especialistas cerca. Hablás en vez de escribir: más fácil para todos y pedidos más claros para el especialista.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-19",
+     "alt": "Animación de la respuesta: ¿Qué suma HandIA con la inversión?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "q-20",
+   "titulo": "Posible pregunta 20: ¿Qué logran en los próximos 3 meses?",
+   "disposicion": "izquierda",
+   "paleta": "neutro",
+   "duracion": 20,
+   "pasos": 3,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Respuesta breve, con números y supuestos rotulados.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Respuesta completa en docs/handyx/aticma-preguntas.md. Pasos: entra la pregunta · → la respuesta con su dato · → los puntos clave. Respaldo: Cómo crece Handyx, trimestre a trimestre.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "¿Qué logran en los próximos 3 meses? Mes 1: HandIA premium y {{PROF-POR-MES}} profesiones nuevas con sus herramientas. Mes 2: HandIA para profesionales y otras {{PROF-POR-MES}}. Mes 3: toda Buenos Aires, con {{PROF-Q1}} profesiones y el piloto de Handyx for Business.",
+   "referencias": [
+    "PROF-POR-MES",
+    "PROF-Q1"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "pregunta-20",
+     "alt": "Animación de la respuesta: ¿Qué logran en los próximos 3 meses?",
+     "tiempos": [
+      2.6,
+      3.8,
+      2.8
+     ],
+     "afirmaciones": [
+      "PROF-POR-MES",
+      "PROF-Q1"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "x-trimestres",
+   "titulo": "Cómo crece Handyx, trimestre a trimestre",
+   "disposicion": "izquierda",
+   "paleta": "gris",
+   "duracion": 30,
+   "pasos": 6,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el plan de crecimiento por trimestre: zonas del país, profesiones nuevas cada mes y lo que suman Handyx for People y Handyx for Business.",
+   "guion": "(Respaldo para preguntas: fuera de los 180 segundos.)",
+   "notas": "Seis golpes (avanzar con cada frase): 1 lanzamiento en Mar del Plata (10/11/2026) con 6 profesiones · 2 primer trimestre (nov–ene): toda Buenos Aires en 3 meses, 6 profesiones nuevas por mes, HandIA premium para usuarios y para profesionales · 3 segundo trimestre: Centro (Córdoba, Rosario, Santa Fe) · 4 tercer trimestre: Cuyo y Litoral · 5 cuarto trimestre: Norte · 6 fines de 2027: toda Argentina y la visión del 40 %.\nPlan propuesto por Ignacio (05/11), a validar con los primeros datos: no hay oficinas, socios ni presupuesto por región. Las zonas del mapa son estilizadas, no límites provinciales. Las profesiones nuevas no están confirmadas ni ordenadas: los Handys de cada trimestre son decorado.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Plan de crecimiento por trimestre (propuesto, a validar): lanzamiento en Mar del Plata con seis profesiones; en el primer trimestre, toda Buenos Aires, seis profesiones nuevas por mes con sus herramientas, HandIA premium para usuarios y HandIA para profesionales, y un primer piloto con locales; después, una región por trimestre (Centro, Cuyo y Litoral, Norte y Patagonia) mientras mejoran Handyx for People y Handyx for Business, hasta 72 profesiones y la visión de fines de 2027.",
+   "referencias": [
+    "LANZAMIENTO",
+    "PROFESIONES-INICIALES",
+    "PROF-POR-MES",
+    "META-BA-MESES",
+    "PROF-Q1",
+    "PROF-Q2",
+    "PROF-Q3",
+    "PROF-Q4",
+    "META-CUOTA-NACIONAL"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "trimestres",
+     "alt": "Animación: mapa de Argentina en mosaicos que se enciende zona por zona —Mar del Plata, Buenos Aires, Centro, Cuyo y Litoral, Norte y Patagonia— con un Handy que llega a cada región, mientras la tarjeta de cada trimestre suma profesiones de 6 a 72, Handyx for People y Handyx for Business, hasta la visión de fines de 2027.",
+     "tiempos": [
+      2.8,
+      3.2,
+      3.0,
+      3.0,
+      3.0,
+      3.0
+     ],
+     "afirmaciones": [
+      "LANZAMIENTO",
+      "PROFESIONES-INICIALES",
+      "PROF-POR-MES",
+      "META-BA-MESES",
+      "PROF-Q1",
+      "PROF-Q2",
+      "PROF-Q3",
+      "PROF-Q4",
+      "META-CUOTA-NACIONAL"
+     ],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "s-extra",
+   "titulo": "Material extra",
+   "disposicion": "centro",
+   "paleta": "azul",
+   "duracion": 5,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Separar el material extra: números, planes, producto y visión.",
+   "guion": "(Portada de sección: fuera de los 180 segundos.)",
+   "notas": "Portada de sección: separa el bloque en el PPT, el PDF y el índice del presentador. No toma letra de atajo; se abre con su número + Enter.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Material extra.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "seccion-extra",
+     "alt": "Portada «Material extra»: números, planes, producto y visión, con los Handys",
+     "tiempos": [
+      3.2
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ],
+   "seccion": true
+  },
+  {
+   "id": "s-preguntas",
+   "titulo": "Preguntas del jurado",
+   "disposicion": "centro",
+   "paleta": "azul",
+   "duracion": 5,
+   "pasos": 1,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Separar las posibles preguntas del jurado y sus respuestas.",
+   "guion": "(Portada de sección: fuera de los 180 segundos.)",
+   "notas": "Portada de sección: separa el bloque en el PPT, el PDF y el índice del presentador. No toma letra de atajo; se abre con su número + Enter.\nFuente del guion y de las metas: prompt maestro del pitch ATICMA 2026 (Ignacio, 04/11/2026).",
+   "lectura": "Preguntas del jurado.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "anim",
+     "tipo": "animacion",
+     "modulo": "seccion-preguntas",
+     "alt": "Portada «Preguntas del jurado»: cada respuesta, corta y con sus números a la vista, con los Handys",
+     "tiempos": [
+      3.2
+     ],
+     "afirmaciones": [],
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ],
+   "seccion": true
+  }
+ ]
+}

@@ -1,0 +1,3773 @@
+{
+ "superficie": "portal",
+ "corte": "2026-11-07",
+ "fuentes": [
+  {
+   "id": "lienzo-portal-v3",
+   "tipo": "lienzo",
+   "ref": "S/artifacts/portal/project (canvas «Handyx · Portal interno v3 (rediseño)», 36 tableros, 6 páginas) + S/capturas/portal (PNG, textos.md, hojas)",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "portal@3fc06e2",
+   "tipo": "repo",
+   "ref": "handy-internal-portal origin/main «Mapa: barrios reales de OpenStreetMap que cubren todo el Partido (#13)» · incluye las olas 1–4 del portal v2 (#10, #11) y las decisiones post-ola-4 (#12)",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "portal@2ed5c5f",
+   "tipo": "repo",
+   "ref": "handy-internal-portal rama claude/handyx-portal-v1-phases-3xzfm1 · docs/v3/00-plan-v3.md («propuesta · espera el OK de Ignacio»)",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "portal@8ea1c63",
+   "tipo": "repo",
+   "ref": "handy-internal-portal rama claude/portal-v2-post-ola-4 (ya mergeada en main por #12): decisiones de Ignacio sobre plazos de reclamos, legajos, PDF de 10 MB, presupuesto de marketing y frase del login",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "portal@857127c",
+   "tipo": "repo",
+   "ref": "handy-internal-portal rama datos-barrios (mergeada en main por #13): geometría real de 130 zonas del Partido",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "portal-publicacion",
+   "tipo": "doc",
+   "ref": "Historial de ejecuciones de GitHub Actions del portal (solo lectura): publicación manual exitosa sobre main 3fc06e2 el 07/11 15:53 UTC; las publicaciones por push del 07/11 fallaron; la vista previa en GitHub Pages falla desde el 30/10",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "landing-be@4cb77e4",
+   "tipo": "repo",
+   "ref": "Handy-landing-page-be origin/main «Portal v1 en el backend, runbook de despliegue y decisiones de producción (#8)» · handoff.md, docs/ops.md, docs/contract-delta.md, docs/implementation-plan.md",
+   "fecha": "2026-11-02"
+  },
+  {
+   "id": "landing-fe@ac3b245",
+   "tipo": "repo",
+   "ref": "Handy-landing-page-fe origin/main · src/config.ts (captura cerrada hasta aviso definitivo) y CLAUDE.md (tarifas)",
+   "fecha": "2026-10-29"
+  },
+  {
+   "id": "client-be@fase-4-backend-conciliado",
+   "tipo": "repo",
+   "ref": "handyx-client-be rama fase-4-backend-conciliado (sin mergear): docs/architecture.md, docs/auth-permissions.md, docs/adr/ADR-0002",
+   "fecha": "2026-11-02"
+  },
+  {
+   "id": "specialist-be@cf3b39d",
+   "tipo": "repo",
+   "ref": "handyx-specialist-be rama claude/pensive-hypatia-jajjgm (sin mergear): src/services/operaciones.service.ts y CLAUDE.md",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "specialist-fe@f7c0733",
+   "tipo": "repo",
+   "ref": "handyx-specialist-fe origin/main · docs/state-machines.md, docs/plan.md, CLAUDE.md",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "pitch-afirmaciones",
+   "tipo": "pitch",
+   "ref": "decks/handyx-aticma/afirmaciones.json (ESP-REGISTRADOS, INV-O-COBROS) y pitch 183–186 «Cómo crece Handyx»",
+   "fecha": "2026-11-05"
+  },
+  {
+   "id": "inventario-personajes",
+   "tipo": "doc",
+   "ref": "dossiers/inventario/personajes-lienzos.json",
+   "fecha": "2026-11-07"
+  }
+ ],
+ "modulos": [
+  {
+   "id": "I",
+   "nombre": "Inicio y supervisión del día",
+   "tableros": [
+    "Inicio.dc.html",
+    "Tour.dc.html",
+    "RC-Inicio.dc.html",
+    "Mini.dc.html",
+    "Onb.dc.html",
+    "PasoFlujo.dc.html"
+   ],
+   "resumen": "La primera pantalla del equipo: lo urgente de hoy, los tickets propios y cómo viene la semana, con cada número explicado."
+  },
+  {
+   "id": "F",
+   "nombre": "Marco y sistema visual",
+   "tableros": [
+    "Main.dc.html",
+    "Sistema.dc.html",
+    "Sidebar.dc.html",
+    "Shell.dc.html"
+   ],
+   "resumen": "Menú agrupado, búsqueda rápida, sistema visual Handyx y reglas comunes a todas las pantallas."
+  },
+  {
+   "id": "A",
+   "nombre": "Acceso, guía y tour",
+   "tableros": [
+    "Login.dc.html",
+    "Bienvenida.dc.html",
+    "Tour.dc.html",
+    "Guia.dc.html",
+    "RC-Acceso.dc.html",
+    "RC-Ayuda.dc.html"
+   ],
+   "resumen": "Ingreso solo para el equipo, bienvenida por rol, recorrido guiado y ayuda en cada pantalla."
+  },
+  {
+   "id": "C",
+   "nombre": "Clientes y pre-registros (CRM)",
+   "tableros": [
+    "Preregistros.dc.html",
+    "Ficha.dc.html",
+    "RC-Preregistros.dc.html"
+   ],
+   "resumen": "Quién se anotó en la landing, a quién contactar primero y qué pasó con cada contacto."
+  },
+  {
+   "id": "E",
+   "nombre": "Especialistas y legajos",
+   "tableros": [
+    "Legal.dc.html",
+    "RC-Legal.dc.html"
+   ],
+   "resumen": "Especialistas después del alta y requisitos para trabajar (legajos); la verificación todavía no tiene pantalla en el portal."
+  },
+  {
+   "id": "S",
+   "nombre": "Solicitudes y trabajos",
+   "tableros": [],
+   "resumen": "Pedidos, propuestas, búsqueda manual y pagos reportados de las apps: solo aparecen en el menú; no hay datos ni diseño."
+  },
+  {
+   "id": "R",
+   "nombre": "Reclamos e incidencias",
+   "tableros": [
+    "Reclamos.dc.html",
+    "RC-Reclamos.dc.html"
+   ],
+   "resumen": "Reclamos ordenados por gravedad y plazo, con recorrido del caso, responsable y resolución."
+  },
+  {
+   "id": "T",
+   "nombre": "Tareas del equipo",
+   "tableros": [
+    "Tareas.dc.html",
+    "Ticket.dc.html",
+    "RC-Tareas.dc.html"
+   ],
+   "resumen": "Tickets tipo Jira con sprints, tablero, subtareas y comentarios."
+  },
+  {
+   "id": "K",
+   "nombre": "Campañas (administración comercial)",
+   "tableros": [
+    "Campana.dc.html",
+    "RC-Campana.dc.html"
+   ],
+   "resumen": "Registrar campañas, armar enlaces y QR, medir si traen gente y anotar aprendizajes."
+  },
+  {
+   "id": "H",
+   "nombre": "Cohortes",
+   "tableros": [
+    "Cohortes.dc.html",
+    "RC-Cohortes.dc.html"
+   ],
+   "resumen": "Si la gente que llega ahora se atiende mejor que la que llegó antes, explicado para quien nunca vio una tabla de cohortes."
+  },
+  {
+   "id": "M",
+   "nombre": "Mapa por barrio",
+   "tableros": [
+    "MapaInicio.dc.html",
+    "Mapa.dc.html",
+    "RC-Mapa.dc.html"
+   ],
+   "resumen": "Barrios reales del Partido de General Pueyrredon pintados según la pregunta elegida."
+  },
+  {
+   "id": "D",
+   "nombre": "Docs del equipo",
+   "tableros": [
+    "Docs.dc.html",
+    "DocsJson.dc.html",
+    "RC-Docs.dc.html"
+   ],
+   "resumen": "Biblioteca de guías y procesos, editor por bloques y generador de docs desde IA."
+  },
+  {
+   "id": "L",
+   "nombre": "Legal y compliance",
+   "tableros": [
+    "Legal.dc.html",
+    "RC-Legal.dc.html"
+   ],
+   "resumen": "Papeles de la empresa con vencimientos y reglas de privacidad y retención."
+  },
+  {
+   "id": "X",
+   "nombre": "Transversal: seguridad, privacidad y configuración",
+   "tableros": [],
+   "resumen": "Acceso por tarea, registro de actividad, datos cifrados, supresión de grupos chicos, importación y configuración."
+  },
+  {
+   "id": "P",
+   "nombre": "Presentaciones (sale en v3)",
+   "tableros": [
+    "Main.dc.html"
+   ],
+   "resumen": "Biblioteca y proyección de presentaciones: está en el código v2 y el lienzo v3 la saca del menú."
+  }
+ ],
+ "funciones": [
+  {
+   "id": "P-I-01",
+   "modulo": "I",
+   "nombre": "Bandeja de lo urgente del día",
+   "que_hace": "Junta en una lista lo que no puede esperar: seguimientos vencidos, especialistas sin contactar y reclamos abiertos, cada uno con su acción.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/inicio.md",
+     "dice": "Hoy (bandeja): seguimientos vencidos y del día… especialistas sin contactar… reclamos abiertos"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:src/modules/inicio",
+     "dice": "Inicio v2 entregado en la ola 2"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html"
+   ],
+   "notas": "Versión v2 en código. El lienzo v3 la redibuja como «12 cosas para hoy» (ver P-I-02)."
+  },
+  {
+   "id": "P-I-02",
+   "modulo": "I",
+   "nombre": "«Para hoy» en tres pastillas (reclamos graves, sin contactar +48 h, papeles que vencen)",
+   "que_hace": "Resume el día en tres números que llevan a la lista ya filtrada.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Inicio.dc.html",
+     "dice": "PARA HOY · 12 cosas para hoy · Tocá cada una para ir directo a la lista filtrada"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Agente A · Inicio (Para hoy, Tus tickets, Reclamos, Semana…)"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html",
+    "RC-Inicio.dc.html"
+   ],
+   "notas": "La pastilla de papeles depende de Legal, que solo corre con datos de muestra."
+  },
+  {
+   "id": "P-I-03",
+   "modulo": "I",
+   "nombre": "«¿Cómo venimos?» con cifras explicadas",
+   "que_hace": "Muestra registros, contacto efectivo y compromiso con su denominador, fecha de cálculo y exclusiones.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/inicio.md",
+     "dice": "Cómo venimos: … con su denominador, fecha de cálculo y exclusiones. Sin sparkline ni delta"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Analítica… denominadores explícitos; tasa con denominador 0 = null"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html"
+   ],
+   "notas": "El backend vigente no da series ni período anterior."
+  },
+  {
+   "id": "P-I-04",
+   "modulo": "I",
+   "nombre": "«¿Cómo viene la semana?» con comparación contra la semana anterior",
+   "que_hace": "Cuatro preguntas con su número y la flecha contra la semana anterior; si falta el dato dice «Sin dato».",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Inicio.dc.html",
+     "dice": "¿Cómo viene la semana? · Comparado con la semana anterior · Sin dato · Fuente pendiente"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html"
+   ],
+   "notas": "Comparar contra la semana anterior y «¿Resolvemos los reclamos?» no existen en el contrato vigente."
+  },
+  {
+   "id": "P-I-05",
+   "modulo": "I",
+   "nombre": "Sprint actual y vencimientos legales en Inicio",
+   "que_hace": "Trae al Inicio los tickets del sprint y lo que vence en Legal.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "Inicio con los bloques reales de cada módulo (sprint actual de Tareas y vencimientos de Legal…; sin backend nuevo, «fuente pendiente»)"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html"
+   ],
+   "notas": "Solo con datos de muestra hasta que exista el backend propio del portal."
+  },
+  {
+   "id": "P-I-06",
+   "modulo": "I",
+   "nombre": "Ordenar y ocultar bloques del Inicio",
+   "que_hace": "Cada persona cambia el orden de los bloques de su Inicio.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/inicio.md",
+     "dice": "Personalizar abre una hoja para ocultar y ordenar bloques… en memoria hasta que exista preferencias"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Inicio.dc.html",
+     "dice": "Ordenar bloques"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html"
+   ],
+   "notas": "No se guarda entre sesiones: el portal no usa almacenamiento del navegador."
+  },
+  {
+   "id": "P-I-07",
+   "modulo": "I",
+   "nombre": "Un bloque que falla no rompe el resto",
+   "que_hace": "Si un bloque no carga, lo dice y ofrece reintentar; lo demás sigue funcionando.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/inicio.md",
+     "dice": "Cada bloque carga por separado (un error en uno no tumba el resto)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Error de reclamos en Inicio · Causa encontrada… Pasa también con backend real"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html",
+    "RC-Inicio.dc.html"
+   ],
+   "notas": "Hay un error conocido en el bloque de reclamos (ver contradicciones); el arreglo está planificado en la ola 1 del v3."
+  },
+  {
+   "id": "P-F-01",
+   "modulo": "F",
+   "nombre": "Menú agrupado por tarea (v2)",
+   "que_hace": "Menú lateral con los módulos agrupados, que se achica a íconos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:src/ui/shell",
+     "dice": "Sidebar: riel de 72 px… grupos plegables"
+    }
+   ],
+   "tableros": [],
+   "notas": "Versión v2, en navy y con grupos plegables."
+  },
+  {
+   "id": "P-F-02",
+   "modulo": "F",
+   "nombre": "Menú azul Handyx con grupos fijos (Día a día, Crecimiento, Equipo, Empresa)",
+   "que_hace": "Menú que se abre y cierra sin saltos, con grupos fijos y la guía siempre abajo.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Shell.dc.html",
+     "dice": "Sidebar que no se rompe… Los grupos no se pliegan"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Ola 1 · Sidebar nuevo… 272 ↔ 88 px"
+    }
+   ],
+   "tableros": [
+    "Sidebar.dc.html",
+    "Shell.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-F-03",
+   "modulo": "F",
+   "nombre": "Buscar o ir a… (atajo de teclado)",
+   "que_hace": "Busca personas, pantallas y acciones desde cualquier lugar.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "Ctrl+K con todas las pantallas y subpantallas… y acciones"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Ayuda.dc.html",
+     "dice": "Busca personas, barrios, tickets y pantallas"
+    }
+   ],
+   "tableros": [
+    "Sidebar.dc.html",
+    "RC-Ayuda.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-F-04",
+   "modulo": "F",
+   "nombre": "Avisos del equipo (menciones, asignaciones y vencimientos)",
+   "que_hace": "Junta en una campanita lo que pasó mientras no mirabas.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Ayuda.dc.html",
+     "dice": "La campanita junta menciones, asignaciones y vencimientos"
+    }
+   ],
+   "tableros": [
+    "RC-Ayuda.dc.html"
+   ],
+   "notas": "No hay avisos en el código v2."
+  },
+  {
+   "id": "P-F-05",
+   "modulo": "F",
+   "nombre": "Volver y migas en todas las fichas",
+   "que_hace": "Botón Volver arriba a la izquierda que conserva los filtros.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Main.dc.html",
+     "dice": "Botón Volver en cada ficha"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Las fichas solo tienen migas"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html",
+    "Ticket.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-F-06",
+   "modulo": "F",
+   "nombre": "Sistema visual Handyx v3 (relieve, select propio, modal único, íconos)",
+   "que_hace": "Mismo lenguaje que la app del especialista adaptado a un panel de escritorio.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Sistema.dc.html",
+     "dice": "Sistema visual Handyx · El mismo lenguaje que la app del especialista, adaptado a un CRM de escritorio"
+    }
+   ],
+   "tableros": [
+    "Sistema.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-F-07",
+   "modulo": "F",
+   "nombre": "Sistema de diseño v2 en código (tokens, componentes, gráficos accesibles)",
+   "que_hace": "Componentes comunes y librería de gráficos con tabla alternativa y supresión de grupos chicos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "2.3 Gráficos: librería src/ui/charts… tooltip por teclado, tabla alternativa, faltantes y n < 5"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-F-08",
+   "modulo": "F",
+   "nombre": "Modo oscuro y uso en celular y tableta",
+   "que_hace": "El portal funciona en claro y oscuro y en pantallas de 390, 820 y 1280 px.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "25 rutas × 390/820/1280 + oscuro = 100 casos con 0 problemas"
+    }
+   ],
+   "tableros": [],
+   "notas": "El lienzo v3 solo dibuja el escritorio en claro."
+  },
+  {
+   "id": "P-F-09",
+   "modulo": "F",
+   "nombre": "Pantalla de carga con los Handys",
+   "que_hace": "Animación breve al abrir el portal si la carga tarda.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/acceso.md",
+     "dice": "Los Handys entran en secuencia… Solo aparece si el arranque pasa de 300 ms"
+    }
+   ],
+   "tableros": [],
+   "notas": "Usa los cinco Handys (incluye personajes fuera de la lista permitida)."
+  },
+  {
+   "id": "P-A-01",
+   "modulo": "A",
+   "nombre": "Ingreso solo para el equipo",
+   "que_hace": "Entran solo cuentas del equipo creadas por quien administra; no hay registro público.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/acceso.md",
+     "dice": "Login partido… No hay registro ni recuperación"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Login.dc.html",
+     "dice": "SOLO PARA EL EQUIPO… Las cuentas no se crean desde acá"
+    }
+   ],
+   "tableros": [
+    "Login.dc.html"
+   ],
+   "notas": "Se describe solo la capacidad; el mecanismo no se publica."
+  },
+  {
+   "id": "P-A-02",
+   "modulo": "A",
+   "nombre": "Muestra navegable con datos ficticios (v2)",
+   "que_hace": "Versión del portal sin servidor, rotulada «Muestra · datos ficticios», para mostrarlo sin tocar datos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "no: la vista previa pública falla desde el 30/10 (historial de ejecuciones)",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/architecture/system.md",
+     "dice": "sin ella, solo existe la muestra con fixtures ficticios"
+    },
+    {
+     "fuente": "doc",
+     "ref": "portal-publicacion",
+     "dice": "Deploy GitHub Pages: failure en todos los push desde el 30/10"
+    }
+   ],
+   "tableros": [],
+   "notas": "Es la fuente de las 45 capturas MOCK del código (docs/capturas-v2)."
+  },
+  {
+   "id": "P-A-03",
+   "modulo": "A",
+   "nombre": "Entrar a la muestra desde el login",
+   "que_hace": "El login de la muestra se ve igual al real y ofrece entrar sin cuenta.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Login.dc.html",
+     "dice": "Estás en la muestra… entrá sin cuenta"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Login en la muestra… (reemplaza SinBackend)"
+    }
+   ],
+   "tableros": [
+    "Login.dc.html",
+    "RC-Acceso.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-A-04",
+   "modulo": "A",
+   "nombre": "Bienvenida con elección de rol",
+   "que_hace": "La primera vez, cada persona elige en qué trabaja y se le marcan los módulos que más va a usar.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Bienvenida.dc.html",
+     "dice": "¿En qué trabajás? Operaciones · Crecimiento · Soporte · Dirección"
+    }
+   ],
+   "tableros": [
+    "Bienvenida.dc.html",
+    "RC-Acceso.dc.html"
+   ],
+   "notas": "El plan v3 propone ofrecerla en cada sesión hasta tener dónde guardar que ya se vio."
+  },
+  {
+   "id": "P-A-05",
+   "modulo": "A",
+   "nombre": "Recorrido guiado (spotlight)",
+   "que_hace": "Oscurece la pantalla e ilumina cada parte con una explicación paso a paso.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Tour.dc.html",
+     "dice": "PASO 1 DE 5 · El menú, siempre a mano"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Onboarding · No existe"
+    }
+   ],
+   "tableros": [
+    "Tour.dc.html",
+    "RC-Acceso.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-A-06",
+   "modulo": "A",
+   "nombre": "Ayuda de cada pantalla (16 onboardings)",
+   "que_hace": "El botón «?» de cada pantalla abre su propio recorrido con ejemplos del día a día.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Indice.dc.html",
+     "dice": "el onboarding de cada pantalla: qué se ilumina, qué dice el globo y un ejemplo real"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "16 onboardings (pasos, texto del globo y ejemplo)"
+    }
+   ],
+   "tableros": [
+    "Onb.dc.html",
+    "RC-Ayuda.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-A-07",
+   "modulo": "A",
+   "nombre": "Guía del portal (anatomía, módulo por módulo y glosario)",
+   "que_hace": "Explica cómo se lee cualquier pantalla y qué hacer en cada módulo.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Guia.dc.html",
+     "dice": "Anatomía de una pantalla · Módulo por módulo · Palabras que vas a ver"
+    }
+   ],
+   "tableros": [
+    "Guia.dc.html",
+    "RC-Ayuda.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-01",
+   "modulo": "C",
+   "nombre": "Pre-registros separados en especialistas y lista de espera",
+   "que_hace": "Dos listas que no se mezclan, con conteos por estado y paginación.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Lista de cada audiencia (especialistas y lista de espera)… paginación del servidor"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/contract-delta.md",
+     "dice": "especialista pendiente_contacto → contactado → comprometido; usuario en_espera → avisado"
+    }
+   ],
+   "tableros": [
+    "Preregistros.dc.html"
+   ],
+   "notas": "Sin gente real todavía: la captura de la landing está cerrada hasta el aviso definitivo."
+  },
+  {
+   "id": "P-C-02",
+   "modulo": "C",
+   "nombre": "Filtros por rubro, ciudad y estado y búsqueda exacta",
+   "que_hace": "Filtra la lista y busca a una persona por su identificador o su WhatsApp completo.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "búsqueda exacta… rubro, ciudad… chips y Limpiar todo"
+    }
+   ],
+   "tableros": [
+    "Preregistros.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-03",
+   "modulo": "C",
+   "nombre": "Barrio de cada pre-registro y filtro por barrio",
+   "que_hace": "Muestra el barrio en la lista y permite filtrar por él.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Preregistros.dc.html",
+     "dice": "Barrio: Centro · NOMBRE OFICIO BARRIO ESTADO"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Barrios en el mapa · Requiere una zona gruesa en el alta"
+    }
+   ],
+   "tableros": [
+    "Preregistros.dc.html"
+   ],
+   "notas": "Bloqueado: la landing no pide barrio."
+  },
+  {
+   "id": "P-C-04",
+   "modulo": "C",
+   "nombre": "Contactar al siguiente",
+   "que_hace": "Abre la ficha de la persona que más tiempo lleva esperando.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Acción principal: «Contactar al siguiente» (lista)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Preregistros.dc.html",
+     "dice": "Contactar al siguiente"
+    }
+   ],
+   "tableros": [
+    "Preregistros.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-05",
+   "modulo": "C",
+   "nombre": "Ficha del pre-registro con etapa, siguiente paso e historial",
+   "que_hace": "Una sola acción principal según el estado, pestañas y todo lo que pasó con la persona.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Ficha: encabezado con una única acción principal, etapas… pestañas Resumen · Seguimiento · Historial · Datos"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": "El lienzo v3 la redibuja con otras etapas (ver contradicciones)."
+  },
+  {
+   "id": "P-C-06",
+   "modulo": "C",
+   "nombre": "Contacto guiado por WhatsApp sin envíos automáticos",
+   "que_hace": "Abre WhatsApp sin texto escrito y después registra qué pasó; nada se manda solo.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "WhatsApp es un enlace… sin texto; el mensaje sugerido se copia a mano"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Preregistros.dc.html",
+     "dice": "WhatsApp lo abre siempre una persona; nada se manda solo"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html",
+    "RC-Preregistros.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-07",
+   "modulo": "C",
+   "nombre": "Seguimiento: próximo paso, notas y tareas internas del contacto",
+   "que_hace": "Cada ficha guarda el próximo paso, notas internas y tareas del equipo.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Seguimiento (SeguimientoPanel): próximo paso, notas y tareas del equipo"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "PII y texto libre cifrados… títulos de tareas, notas"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-08",
+   "modulo": "C",
+   "nombre": "Avisar acceso a la lista de espera",
+   "que_hace": "Registra que a un vecino en lista de espera se le avisó.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/contract-delta.md",
+     "dice": "Evento nuevo aviso (usuario en_espera → avisado)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "«Avisar acceso»"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-C-09",
+   "modulo": "C",
+   "nombre": "Asignar responsable viendo la carga de cada persona",
+   "que_hace": "Elige quién se ocupa de cada pre-registro mostrando cuántos abiertos tiene cada uno.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Ficha.dc.html",
+     "dice": "Responsable · Tomás Méndez 4 abiertos · menos cargado · Sin asignar: vuelve a la bandeja del equipo"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html",
+    "RC-Preregistros.dc.html"
+   ],
+   "notas": "El contrato vigente de pre-registros no tiene responsable."
+  },
+  {
+   "id": "P-C-10",
+   "modulo": "C",
+   "nombre": "Reparto automático de pre-registros",
+   "que_hace": "Asigna cada pre-registro nuevo a alguien del equipo sin intervención.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Campana.dc.html",
+     "dice": "A mejorar… Propuesta: reparto automático y alerta en Inicio"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Ficha.dc.html",
+     "dice": "Asignada a Lucía · Por reparto automático del equipo"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": "Aparece como ejemplo en la ficha y como propuesta en un aprendizaje: no hay regla definida."
+  },
+  {
+   "id": "P-C-11",
+   "modulo": "C",
+   "nombre": "Campaña de origen en la ficha",
+   "que_hace": "Dice por qué campaña llegó cada persona.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Ficha.dc.html",
+     "dice": "Llegó el 4 de noviembre por la campaña “Especialistas MdP · Nov”"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "registrosAtribuidos: null: la captura no lleva UTM"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": "Bloqueado hasta que la landing mande el origen."
+  },
+  {
+   "id": "P-C-12",
+   "modulo": "C",
+   "nombre": "Datos de contacto protegidos",
+   "que_hace": "Los datos personales están cifrados, se ven solo en la ficha y cada vez que alguien los abre queda registrado.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:CLAUDE.md",
+     "dice": "Sin PII en claro en la base"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "las lecturas de datos descifrados… se auditan antes de responder"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Ficha.dc.html",
+     "dice": "Datos de contacto · Cifrados · Mostrar completo (queda registrado)"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-C-13",
+   "modulo": "C",
+   "nombre": "Importar planillas de contactos",
+   "que_hace": "Carga lotes con validación por fila; un duplicado nunca pisa datos y el lote se puede revertir.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/importar.md",
+     "dice": "Validación por fila… Nunca se pisa un dato ni un consentimiento… Revertir lote"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "lo importado se guarda… sin consentimiento… No se envía ningún mensaje"
+    }
+   ],
+   "tableros": [
+    "Preregistros.dc.html"
+   ],
+   "notas": "Lo importado no cuenta como «anotado» ni da permiso de contacto. Un lote de especialistas fuera de Mar del Plata se rechaza entero."
+  },
+  {
+   "id": "P-C-14",
+   "modulo": "C",
+   "nombre": "Exportación sin datos personales",
+   "que_hace": "Genera una exportación sin nombre, WhatsApp ni email, que queda registrada.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/importar.md",
+     "dice": "exportación minimizada (ID, audiencia, ciudad local/otra y rubro; sin nombre, WhatsApp ni email)"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-C-15",
+   "modulo": "C",
+   "nombre": "Gestión de clientes con cuenta en la app",
+   "que_hace": "Ver y atender a los usuarios activos de la PWA desde el portal.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Pedidos, propuestas, pagos, verificación, habilitación y disponibilidad son de la PWA… no hay contrato de lectura todavía"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@fase-4-backend-conciliado:docs/architecture.md",
+     "dice": "las vistas operativas de la app… se exponen en la Fase 4"
+    }
+   ],
+   "tableros": [],
+   "notas": "El pre-registro no es una cuenta y no hay migración automática entre la lista de espera y la app."
+  },
+  {
+   "id": "P-C-16",
+   "modulo": "C",
+   "nombre": "Códigos de invitación para la demo cerrada",
+   "que_hace": "Operations emite códigos de uso único para entrar a las apps.",
+   "estado": "Concepto",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@fase-4-backend-conciliado:docs/adr/ADR-0002-auth-de-consumidores.md",
+     "dice": "Demo cerrada: el alta exige un código de invitación que emite Operations"
+    }
+   ],
+   "tableros": [],
+   "notas": "No hay pantalla en el portal ni en el lienzo. Ver faltantes: quién emite los códigos el 10/11."
+  },
+  {
+   "id": "P-E-01",
+   "modulo": "E",
+   "nombre": "Especialistas después del alta (verificado → habilitado → activo)",
+   "que_hace": "Lista y ficha de especialistas con el paso que les falta y si reciben pedidos.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Especialistas… Con el backend vigente es «fuente pendiente»… en la muestra salen los fixtures"
+    }
+   ],
+   "tableros": [],
+   "notas": "En el lienzo v3 solo es un ítem del menú, sin tablero."
+  },
+  {
+   "id": "P-E-02",
+   "modulo": "E",
+   "nombre": "Verificación de documentos y alta por Operations",
+   "que_hace": "Revisar documentos, pedir correcciones, habilitar o rechazar a un especialista.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "specialist-be@cf3b39d:src/services/operaciones.service.ts",
+     "dice": "Operations: la ÚNICA vía para verificar documentos, decidir el alta… desde un proceso privado"
+    },
+    {
+     "fuente": "repo",
+     "ref": "specialist-fe@f7c0733:docs/state-machines.md",
+     "dice": "en_revision --> habilitada: operations"
+    }
+   ],
+   "tableros": [],
+   "notas": "Existe en una rama sin mergear del backend del especialista y corre fuera del portal; el portal no tiene pantalla."
+  },
+  {
+   "id": "P-E-03",
+   "modulo": "E",
+   "nombre": "Legajos: requisitos para trabajar",
+   "que_hace": "Por especialista: monotributo con CUIT, constancia en PDF de hasta 10 MB y antecedentes en 7 días; sin ellos no puede tomar trabajos.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@8ea1c63",
+     "dice": "Legal: constancia de monotributo (CUIT)… antecedentes penales dentro de los 7 días… sin antecedentes ni monotributo verificados y vigentes la persona no puede tomar trabajos"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/legal.md",
+     "dice": "Legajos de personas… en la muestra siempre, con un rótulo grande «Datos ficticios»"
+    }
+   ],
+   "tableros": [
+    "RC-Legal.dc.html"
+   ],
+   "notas": "Solo con datos de muestra rotulados «Datos ficticios»; el backend que lo sostendría no existe. Hay contradicciones sobre antecedentes como archivo."
+  },
+  {
+   "id": "P-E-04",
+   "modulo": "E",
+   "nombre": "Ver un documento de un legajo con resguardos",
+   "que_hace": "Pide motivo y confirmación reforzada, muestra el documento con marca de agua, sin descarga, y lo registra.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/legal.md",
+     "dice": "Visor: motivo obligatorio… documento inline con marca de agua… sin descarga ni impresión"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "el alto (H-01, visor de legajos) se corrigió"
+    }
+   ],
+   "tableros": [
+    "RC-Legal.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-E-05",
+   "modulo": "E",
+   "nombre": "Vista «Personas» con acciones por requisito",
+   "que_hace": "Cada especialista con sus tres requisitos y botones para escribirle o pedir el PDF.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Legal.dc.html",
+     "dice": "Personas · legajos · Cada especialista con sus 3 requisitos y si puede trabajar"
+    }
+   ],
+   "tableros": [
+    "Legal.dc.html",
+    "RC-Legal.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-S-01",
+   "modulo": "S",
+   "nombre": "Ver pedidos, propuestas y su estado",
+   "que_hace": "Qué se pidió, dónde y en qué paso va cada pedido de la app.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:src/modules/solicitudes/Rutas.tsx",
+     "dice": "Pedidos y su estado… (pantalla que explica lo que va a aparecer)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/crm.md",
+     "dice": "Solicitudes: Siempre «fuente pendiente»… Fecha de publicación del contrato: [A CONFIRMAR]"
+    }
+   ],
+   "tableros": [],
+   "notas": "Solo un ítem del menú en el lienzo v3."
+  },
+  {
+   "id": "P-S-02",
+   "modulo": "S",
+   "nombre": "Búsqueda manual cuando no hay oferta",
+   "que_hace": "Si nadie propone a tiempo, Operations busca un especialista a mano.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handy-docs/04-solicitudes-y-reclamos.md",
+     "dice": "Si falta oferta, Operations busca a mano"
+    },
+    {
+     "fuente": "repo",
+     "ref": "specialist-fe@f7c0733:docs/state-machines.md",
+     "dice": "sin_propuestas --> busqueda_manual: operations"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-S-03",
+   "modulo": "S",
+   "nombre": "Pagos reportados (seguimiento, sin manejar dinero)",
+   "que_hace": "Ver si el usuario reportó que pagó; Handyx no recibe ni distribuye ese dinero.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:src/modules/solicitudes/Rutas.tsx",
+     "dice": "Pagos reportados… Handy no recibe ni distribuye ese dinero: el pago es directo entre las personas"
+    },
+    {
+     "fuente": "repo",
+     "ref": "specialist-fe@f7c0733:docs/state-machines.md",
+     "dice": "reportado → verificado (operations o sistema) · reportado → en_discrepancia"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-S-04",
+   "modulo": "S",
+   "nombre": "Cancelar un trabajo como Operations",
+   "que_hace": "Intervenir un trabajo agendado o en curso.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "specialist-fe@f7c0733:docs/state-machines.md",
+     "dice": "en_curso --> cancelado: operations"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-R-01",
+   "modulo": "R",
+   "nombre": "Reclamos ordenados por gravedad y plazo",
+   "que_hace": "Crítica y alta se responden hoy, media en 2 días y baja en 3; lo vencido va primero.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/reclamos.md",
+     "dice": "crítica y alta, el mismo día; media, 2 días; baja, 3 días… Es una regla de la interfaz: el contrato vigente no tiene plazos"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Reclamos.dc.html",
+     "dice": "Plazo por gravedad: Crítica · hoy · Alta · hoy · Media · 2 días · Baja · 3 días"
+    }
+   ],
+   "tableros": [
+    "Reclamos.dc.html",
+    "RC-Reclamos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-02",
+   "modulo": "R",
+   "nombre": "Ficha del reclamo con recorrido, responsable y resolución",
+   "que_hace": "Abierto → en análisis → resuelto → cerrado, con historial y resolución obligatoria.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/reclamos.md",
+     "dice": "Recorrido del caso… Resolver exige resolución"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "reclamos… con 14 permisos nuevos… auditoría transaccional"
+    }
+   ],
+   "tableros": [
+    "RC-Reclamos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-03",
+   "modulo": "R",
+   "nombre": "Cargar un reclamo que llega por teléfono o mail",
+   "que_hace": "Alta de un reclamo con gravedad; el plazo se calcula solo.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/reclamos.md",
+     "dice": "«Nuevo reclamo» en una hoja con stepper"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Reclamos.dc.html",
+     "dice": "Para reclamos que llegan por teléfono o mail"
+    }
+   ],
+   "tableros": [
+    "Reclamos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-04",
+   "modulo": "R",
+   "nombre": "Vista «Por plazo» en columnas con tiempo restante",
+   "que_hace": "Tres columnas (hoy, 2 días, 3 días) con una barra de cuánto queda.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Reclamos.dc.html",
+     "dice": "Para hoy · En 2 días · En 3 días · quedan 3 h"
+    }
+   ],
+   "tableros": [
+    "Reclamos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-05",
+   "modulo": "R",
+   "nombre": "Resueltos a tiempo",
+   "que_hace": "Cuántos reclamos se resolvieron dentro del plazo esta semana.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Reclamos.dc.html",
+     "dice": "11 de 14 resueltos a tiempo esta semana"
+    }
+   ],
+   "tableros": [
+    "Reclamos.dc.html",
+    "Inicio.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-06",
+   "modulo": "R",
+   "nombre": "Pasar un reclamo a un ticket del equipo",
+   "que_hace": "Lo que no se resuelve en el reclamo se convierte en una tarea.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Reclamos.dc.html",
+     "dice": "Lo que no se resuelve en el reclamo pasa a Tareas"
+    }
+   ],
+   "tableros": [
+    "RC-Reclamos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-R-07",
+   "modulo": "R",
+   "nombre": "Adjuntos en reclamos",
+   "que_hace": "Sumar fotos o archivos a un reclamo.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/reclamos.md",
+     "dice": "Adjuntos · Fuente pendiente (almacenamiento privado no contratado)"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-R-08",
+   "modulo": "R",
+   "nombre": "Recibir los reclamos que los usuarios cargan en la app",
+   "que_hace": "Que los reclamos hechos desde la PWA lleguen al portal.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@fase-4-backend-conciliado:docs/auth-permissions.md",
+     "dice": "Operations… búsqueda manual, verificación, pagos, reclamos (Fase 4)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Ownership: este servicio es dueño de… casos"
+    }
+   ],
+   "tableros": [],
+   "notas": "Hoy los reclamos del portal viven en el backend de captación; la app del usuario tiene los suyos en otra base. No hay conexión."
+  },
+  {
+   "id": "P-T-01",
+   "modulo": "T",
+   "nombre": "Tablero del sprint con arrastre",
+   "que_hace": "Columnas por estado; los tickets se mueven arrastrando o con «Mover a…».",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/tareas.md",
+     "dice": "Tablero: columnas por estado… arrastre… y menú «Mover a…»… Contrato nuevo §7.3"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "Tareas, Presentaciones y Legal quedan ocultos en producción hasta handy-internal-be"
+    }
+   ],
+   "tableros": [
+    "Tareas.dc.html",
+    "RC-Tareas.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-T-02",
+   "modulo": "T",
+   "nombre": "Backlog y sprints",
+   "que_hace": "Planificar lo que sigue, iniciar y cerrar sprints eligiendo el destino de lo pendiente.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/tareas.md",
+     "dice": "Backlog… Sprints: crear/editar, iniciar con objetivo, cerrar eligiendo el destino"
+    }
+   ],
+   "tableros": [
+    "Tareas.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-T-03",
+   "modulo": "T",
+   "nombre": "Reportes del sprint",
+   "que_hace": "Avance del sprint, velocidad, alcance y tiempos de ciclo.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/tareas.md",
+     "dice": "Reportes: burndown… velocidad de los últimos 6 sprints… cycle y lead time"
+    }
+   ],
+   "tableros": [
+    "Tareas.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-T-04",
+   "modulo": "T",
+   "nombre": "Ticket con subtareas, comentarios, vínculos e historial",
+   "que_hace": "Cada ticket con tipo, prioridad, responsable, fecha, partes para tachar y vínculo a pre-registros o reclamos.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/tareas.md",
+     "dice": "Ficha: descripción, subtickets, comentarios, vínculos, historial"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Ticket.dc.html",
+     "dice": "Vinculado: Pre-registros · Sin contactar · Centro"
+    }
+   ],
+   "tableros": [
+    "Ticket.dc.html",
+    "RC-Tareas.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-T-05",
+   "modulo": "T",
+   "nombre": "Vistas Lista y Mis tareas, filtro por persona y menciones",
+   "que_hace": "Ver solo lo propio, filtrar por responsable y avisar con @.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Tareas.dc.html",
+     "dice": "Tablero, Lista, Mis tareas, Backlog… Comentá con @ para avisar a alguien"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Agente D · vistas Tablero/Lista/Mis tareas/Backlog, filtro por persona"
+    }
+   ],
+   "tableros": [
+    "Tareas.dc.html",
+    "Ticket.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-K-01",
+   "modulo": "K",
+   "nombre": "Registrar campañas con presupuesto y gasto",
+   "que_hace": "Alta de campañas con canal, inicio, presupuesto y gasto; una corrección es otro asiento.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Importes en centavos enteros, moneda fija ARS; el gasto de una campaña es inmutable"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "El portal no publica anuncios: registra la campaña, arma enlaces con UTM + QR y mide"
+    }
+   ],
+   "tableros": [
+    "Campana.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-K-02",
+   "modulo": "K",
+   "nombre": "Asistente de campaña con enlaces y QR por pieza",
+   "que_hace": "Seis pasos: objetivo, audiencia, canal y presupuesto, piezas, enlaces con QR y revisión.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "Wizard (6 pasos…) … Enlaces (UTM + Qr SVG por pieza y red, copiar)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "el wizard lanza con el contrato vigente"
+    }
+   ],
+   "tableros": [],
+   "notas": "Los enlaces se arman, pero la landing todavía no registra el origen: no se puede medir qué trajo cada uno."
+  },
+  {
+   "id": "P-K-03",
+   "modulo": "K",
+   "nombre": "Pausar, reanudar, finalizar y anotar aprendizajes",
+   "que_hace": "Cambiar el estado de una campaña y dejar lo aprendido.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "Aprendizajes… texto único sin fecha · Anotar aprendizaje · …/cambios"
+    }
+   ],
+   "tableros": [
+    "Campana.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-K-04",
+   "modulo": "K",
+   "nombre": "Panel «¿Está funcionando?»: veredicto, meta, costo por pre-registro, embudo y piezas",
+   "que_hace": "Responde si la campaña trae gente, dónde se pierde y qué pieza y día funcionan mejor.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "Panel (serie, ritmo, CPL, embudo, pieza/red/día, proyección) · contrato nuevo · Muestra: sí · Si falta: aviso + solo gasto vs. presupuesto"
+    }
+   ],
+   "tableros": [
+    "Campana.dc.html",
+    "RC-Campana.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-K-05",
+   "modulo": "K",
+   "nombre": "Panel de campaña v3 con veredicto, tres pestañas y aprendizajes firmados",
+   "que_hace": "Arriba la respuesta; abajo Embudo, Piezas/redes/días y Aprendizajes (funcionó, a mejorar, hipótesis).",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Campana.dc.html",
+     "dice": "¿ESTÁ FUNCIONANDO? · Embudo · Piezas, redes y días · Aprendizajes"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Campana.dc.html",
+     "dice": "Funcionó · A mejorar · Hipótesis… firmados por quien los anotó"
+    }
+   ],
+   "tableros": [
+    "Campana.dc.html",
+    "RC-Campana.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-K-06",
+   "modulo": "K",
+   "nombre": "Atribución de pre-registros a campañas",
+   "que_hace": "Saber de qué campaña vino cada persona para calcular costo por pre-registro.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Atribución de registros a campañas · registrosAtribuidos: null: la captura no lleva UTM (cambio de contrato con la landing)"
+    }
+   ],
+   "tableros": [
+    "Inicio.dc.html",
+    "Campana.dc.html"
+   ],
+   "notas": "Todas las pantallas lo rotulan «Fuente pendiente» en lugar de inventar el número."
+  },
+  {
+   "id": "P-K-07",
+   "modulo": "K",
+   "nombre": "Pack de marketing (12 piezas) y guía para redes",
+   "que_hace": "Plantillas de piezas con la marca y una guía de tono y formatos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "Guía 10 (marketing), pack de 12 piezas (npm run marketing:build)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Docs.dc.html",
+     "dice": "Guía 10 · Pack para redes"
+    }
+   ],
+   "tableros": [
+    "Docs.dc.html"
+   ],
+   "notas": "Pieza que no necesita backend. No se revisó qué personajes usan las piezas."
+  },
+  {
+   "id": "P-K-08",
+   "modulo": "K",
+   "nombre": "Impresiones y clics de los anuncios",
+   "que_hace": "Traer alcance y clics de las plataformas de anuncios.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "Impresiones y clics · fuente pendiente: Meta/Google/LinkedIn Ads"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-H-01",
+   "modulo": "H",
+   "nombre": "Tabla de cohortes semanal de pre-registros",
+   "que_hace": "Qué porcentaje de cada semana de llegada fue contactado, con celdas incompletas marcadas y grupos chicos ocultos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Cohortes: celda incompleta hasta que termina la ventana y chica con base < umbral (≥ 5)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/cohortes.md",
+     "dice": "Backend vigente… solo la matriz semanal"
+    }
+   ],
+   "tableros": [
+    "Cohortes.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-H-02",
+   "modulo": "H",
+   "nombre": "Cohortes ampliadas: por mes, tiempo hasta el primer contacto, curva de sin contactar, cortes y lectura guiada",
+   "que_hace": "Más formas de leer el avance de cada grupo, con intervalos y una lectura en palabras.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/cohortes.md",
+     "dice": "tiempo hasta el evento, curvas, cortes y agrupar por mes quedan como «fuente pendiente»… Muestra: personas ficticias"
+    }
+   ],
+   "tableros": [
+    "Cohortes.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-H-03",
+   "modulo": "H",
+   "nombre": "Cohortes explicadas en tres pasos",
+   "que_hace": "Antes de la tabla, explica qué es una cohorte, qué medir y cómo leer los colores.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Cohortes.dc.html",
+     "dice": "¿Qué es una cohorte? En tres pasos · LECTURA GUIADA"
+    }
+   ],
+   "tableros": [
+    "Cohortes.dc.html",
+    "RC-Cohortes.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-H-04",
+   "modulo": "H",
+   "nombre": "Retención de clientes de la app",
+   "que_hace": "Cohortes de uso de usuarios y especialistas con cuenta.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/cohortes.md",
+     "dice": "qué pasa con «retención de clientes» (PWA, fuentesPendientes: [\"pwa\"])"
+    }
+   ],
+   "tableros": [],
+   "notas": "Hoy las cohortes miden el contacto de pre-registros, no la retención de clientes."
+  },
+  {
+   "id": "P-M-01",
+   "modulo": "M",
+   "nombre": "Barrios reales del Partido de General Pueyrredon",
+   "que_hace": "130 zonas sin huecos a partir de OpenStreetMap, con aviso cuando un límite es aproximado.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@857127c",
+     "dice": "130 zonas sin huecos. 108 con límite de OSM… 21 aproximadas… y la zona rural"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:src/modules/mapa/barrios.geo.json",
+     "dice": "ficticia: false · ODbL 1.0 · © colaboradores de OpenStreetMap"
+    }
+   ],
+   "tableros": [
+    "Mapa.dc.html",
+    "MapaInicio.dc.html"
+   ],
+   "notas": "La geografía es real y publicable con atribución."
+  },
+  {
+   "id": "P-M-02",
+   "modulo": "M",
+   "nombre": "Mar del Plata contra otras ciudades",
+   "que_hace": "Cuántos anotados hay en la ciudad y fuera de ella, sin mostrar grupos de menos de 5.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Mapas: solo dos celdas (Mar del Plata / otras ciudades) porque el alta no guarda zona fina"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-M-03",
+   "modulo": "M",
+   "nombre": "Capas por barrio (demanda, oferta, oferta por demanda, crecimiento)",
+   "que_hace": "Pinta cada barrio, con panel del barrio, lista accesible y supresión de grupos chicos.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/mapa.md",
+     "dice": "Capas por barrio · muestra.ts (ficticio) · Backend vigente: Fuente pendiente: el alta no guarda barrio"
+    }
+   ],
+   "tableros": [
+    "Mapa.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-M-04",
+   "modulo": "M",
+   "nombre": "«¿Qué querés ver en el mapa?»: cinco preguntas",
+   "que_hace": "Elegir la pregunta (cobertura, dónde se pide, huecos, sin contactar, reclamos) y si ya tiene datos.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "MapaInicio.dc.html",
+     "dice": "Cobertura de especialistas · Dónde se piden trabajos · Huecos · Pre-registros sin contactar · Reclamos por barrio"
+    }
+   ],
+   "tableros": [
+    "MapaInicio.dc.html",
+    "RC-Mapa.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-M-05",
+   "modulo": "M",
+   "nombre": "Tabla de barrios paginada, con buscador y descarga, y acciones desde el barrio",
+   "que_hace": "Comparar los barrios de a 10 y pasar a «ver especialistas» o «crear campaña para este barrio».",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Mapa.dc.html",
+     "dice": "Todos los barrios · 1–10 de 99 barrios · Crear campaña para este barrio · Descargar tabla"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Mapa · Lista accesible sin paginar"
+    }
+   ],
+   "tableros": [
+    "Mapa.dc.html",
+    "RC-Mapa.dc.html"
+   ],
+   "notas": "El código v2 ya ofrece «Planear una campaña» desde el mapa."
+  },
+  {
+   "id": "P-M-06",
+   "modulo": "M",
+   "nombre": "Dónde se piden trabajos y reclamos por barrio",
+   "que_hace": "Ubicar pedidos y reclamos en el mapa.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "MapaInicio.dc.html",
+     "dice": "Dónde se piden trabajos · Fuente pendiente"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Mapa.dc.html",
+     "dice": "«Dónde se piden trabajos» está en gris hasta que la landing pida el barrio"
+    }
+   ],
+   "tableros": [
+    "MapaInicio.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-D-01",
+   "modulo": "D",
+   "nombre": "Biblioteca de documentos del equipo con versiones",
+   "que_hace": "Crear, leer, versionar, publicar y archivar guías y procesos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/docs.md",
+     "dice": "Lista, lectura, crear, versión, estado · Backend vigente: contenido en Markdown"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Handy Docs"
+    }
+   ],
+   "tableros": [
+    "Docs.dc.html",
+    "RC-Docs.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-D-02",
+   "modulo": "D",
+   "nombre": "Editor por bloques con control de datos sensibles",
+   "que_hace": "Pasos, checklists, tablas y avisos; antes de guardar bloquea teléfonos reales y claves.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/docs.md",
+     "dice": "Editor de bloques… secretos y teléfonos reales bloquean"
+    }
+   ],
+   "tableros": [],
+   "notas": "Con el backend vigente se guarda como texto con formato."
+  },
+  {
+   "id": "P-D-03",
+   "modulo": "D",
+   "nombre": "Bloques avanzados y comentarios por bloque",
+   "que_hace": "Bloques de decisión, ticket, métrica en vivo e imagen, y comentarios sobre cada bloque.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/docs.md",
+     "dice": "Decisión, ticket, métrica, imagen · Deshabilitados… Comentarios por bloque · Fuente pendiente"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-D-04",
+   "modulo": "D",
+   "nombre": "Guías operativas escritas (11)",
+   "que_hace": "Guías de acceso, CRM, importación, solicitudes y reclamos, campañas, analítica, docs, operación, límites, marketing digital y apps.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handy-docs",
+     "dice": "01-acceso… 11-apps-de-handy"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Docs.dc.html",
+     "dice": "Cómo contactar a un pre-registro · Responder un reclamo grave · Requisitos del especialista"
+    }
+   ],
+   "tableros": [
+    "Docs.dc.html"
+   ],
+   "notas": "Contenido en el repositorio; no hay evidencia de que estén cargadas en un portal en uso."
+  },
+  {
+   "id": "P-D-05",
+   "modulo": "D",
+   "nombre": "Lectura en modal grande con índice",
+   "que_hace": "Cada doc se lee a pantalla casi completa y se vuelve a donde estabas.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Docs.dc.html",
+     "dice": "Lectura en un modal completo"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Hojas laterales… Reemplazarlas por el modal grande"
+    }
+   ],
+   "tableros": [
+    "Docs.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-D-06",
+   "modulo": "D",
+   "nombre": "Generar un doc desde lo que escribe una IA",
+   "que_hace": "Se copian instrucciones a la IA, se pega su respuesta, se valida bloque por bloque y se publica.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "DocsJson.dc.html",
+     "dice": "Generar un doc desde JSON · Pegar JSON · Revisar · Publicar"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+     "dice": "Agente E · Generar desde JSON… lo que entra de una IA es contenido no confiable"
+    }
+   ],
+   "tableros": [
+    "DocsJson.dc.html",
+    "RC-Docs.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-L-01",
+   "modulo": "L",
+   "nombre": "Documentos de la empresa con vencimientos y versiones",
+   "que_hace": "Biblioteca de papeles de Handyx con lo que vence en los próximos 60 días y alta reforzada.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/legal.md",
+     "dice": "Documentos de la empresa… Contrato nuevo (handy-internal-be)… Es un módulo nuevo: Handy-landing-page-be no lo tiene"
+    }
+   ],
+   "tableros": [
+    "Legal.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-L-02",
+   "modulo": "L",
+   "nombre": "Legal en tres vistas: Resumen, Empresa y Personas",
+   "que_hace": "«Qué hay que hacer» con un botón por fila, cuatro contadores y documentos agrupados (sociedad, seguros, privacidad).",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Legal.dc.html",
+     "dice": "Resumen · Empresa · Personas · 3 cosas esta semana"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Legal.dc.html",
+     "dice": "SOCIEDAD · SEGUROS · PRIVACIDAD"
+    }
+   ],
+   "tableros": [
+    "Legal.dc.html",
+    "RC-Legal.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-L-03",
+   "modulo": "L",
+   "nombre": "Retención de 12 meses y purga de vencidos",
+   "que_hace": "Los pre-registros vencen a los 12 meses y se borran de verdad.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "no: la decisión de producción del 02/11 es no purgar",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:CLAUDE.md",
+     "dice": "Retención: pre-registros 12 meses calendario (04-A); purga real"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:handoff.md",
+     "dice": "Sin purga: no se borra ningún dato vencido… hay que alinear el aviso o reactivar la purga"
+    }
+   ],
+   "tableros": [
+    "Ficha.dc.html"
+   ],
+   "notas": "En código y probado; apagado por decisión (ver contradicciones)."
+  },
+  {
+   "id": "P-L-04",
+   "modulo": "L",
+   "nombre": "Derechos de las personas (acceso, rectificación, supresión)",
+   "que_hace": "Atender pedidos de quien dejó sus datos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:handoff.md",
+     "dice": "Purga y derechos… buscar / acceso / suprimir / rectificar"
+    }
+   ],
+   "tableros": [],
+   "notas": "Se resuelve fuera del portal, con un procedimiento privado del backend."
+  },
+  {
+   "id": "P-X-01",
+   "modulo": "X",
+   "nombre": "Permisos por tarea",
+   "que_hace": "Cada persona ve y hace solo lo que su función permite; el servidor lo exige igual.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Permiso por endpoint en el servidor; write nunca implica read"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/config.md",
+     "dice": "Permisos… «Tu cuenta: sí/no»"
+    }
+   ],
+   "tableros": [],
+   "notas": "No publicar la lista de permisos ni roles técnicos."
+  },
+  {
+   "id": "P-X-02",
+   "modulo": "X",
+   "nombre": "Registro de quién hizo qué y cuándo",
+   "que_hace": "Cada cambio y cada lectura de datos personales queda registrado en la misma operación.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "Toda mutación escribe su fila de auditoría en la misma transacción"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-X-03",
+   "modulo": "X",
+   "nombre": "Consultar el registro de actividad desde el portal",
+   "que_hace": "Ver la actividad del equipo en el Inicio o en una pantalla.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-be@4cb77e4:docs/ops.md",
+     "dice": "audit:read (consultar la auditoría) · No expuesto; la auditoría se escribe"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/inicio.md",
+     "dice": "Actividad del equipo · Fuente pendiente"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "P-X-04",
+   "modulo": "X",
+   "nombre": "Grupos chicos ocultos en métricas y mapa",
+   "que_hace": "Con menos de 5 personas no se muestra el número, y se evita que se deduzca.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/mapa.md",
+     "dice": "n < umbral no se muestra… ninguna relación puede quedar con un solo desconocido"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Mapa.dc.html",
+     "dice": "Con menos de 5 no mostramos el número"
+    }
+   ],
+   "tableros": [
+    "Mapa.dc.html",
+    "Cohortes.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-X-05",
+   "modulo": "X",
+   "nombre": "Configuración de solo lectura: fuentes, políticas y diccionario de métricas",
+   "que_hace": "Muestra de dónde sale cada dato y su estado, las políticas vigentes y qué mide cada métrica.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/config.md",
+     "dice": "Solo lectura… Fuentes… Políticas… Diccionario"
+    }
+   ],
+   "tableros": [
+    "Sidebar.dc.html"
+   ],
+   "notas": "No tiene tablero en el lienzo v3 (solo el ítem del menú)."
+  },
+  {
+   "id": "P-X-06",
+   "modulo": "X",
+   "nombre": "«Fuente pendiente» en lugar de cifras inventadas",
+   "que_hace": "Cuando el dato no existe, la pantalla lo dice y explica qué falta.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar: el frontend v2 del portal se publicó desde main el 07/11 (workflow de publicación del portal, ejecución manual con éxito sobre 3fc06e2); el backend de captación y CRM figura «nada desplegado» en su handoff (29/10, 02/11), así que no hay uso real confirmado",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "Sistema.dc.html",
+     "dice": "Fuente pendiente · El backend todavía no publica la atribución por UTM. No mostramos ningún número inventado."
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/campanas.md",
+     "dice": "Un faltante nunca es cero"
+    }
+   ],
+   "tableros": [
+    "Sistema.dc.html",
+    "Inicio.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "P-X-07",
+   "modulo": "X",
+   "nombre": "Backend propio del portal",
+   "que_hace": "Una API interna nueva para tareas, legal, legajos, archivos, atribución, mapa por barrio y preferencias.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/adr/ADR-0004-backend-handy-internal-be.md",
+     "dice": "status: propuesta… handy-internal-be pasa a ser la única API del portal"
+    },
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/handoff.md",
+     "dice": "no existe handy-internal-be"
+    }
+   ],
+   "tableros": [],
+   "notas": "No se pudo acceder a ese repositorio desde esta sesión."
+  },
+  {
+   "id": "P-P-01",
+   "modulo": "P",
+   "nombre": "Presentaciones del equipo (biblioteca, editor, proyección con control desde el celular)",
+   "que_hace": "Armar y proyectar presentaciones con cifras que salen de una fuente real.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "portal@3fc06e2:docs/modules/presentaciones.md",
+     "dice": "Biblioteca, editor, pantalla con QR local y control remoto"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "Main.dc.html",
+     "dice": "Eliminar Presentaciones · Fuera del menú por ahora para no sumar carga"
+    }
+   ],
+   "tableros": [
+    "Main.dc.html"
+   ],
+   "notas": "El lienzo v3 la saca del menú; el código queda guardado sin rutas. No conviene presentarla en el dossier."
+  }
+ ],
+ "recorridos": [
+  {
+   "id": "P-RC-02",
+   "titulo": "Empezar el día",
+   "necesidad": "Saber qué no puede esperar a mañana.",
+   "accion": "Abre Inicio, lee «Para hoy» y toca cada pastilla.",
+   "que_hace_handyx": "Junta reclamos graves, personas sin contactar hace más de 48 h, papeles que vencen y tickets propios, y lleva a cada lista ya filtrada.",
+   "resultado": "Lo urgente resuelto primero y la semana a la vista.",
+   "estado": "Diseñado (v3); la bandeja del día existe en código v2 (Construido) y los bloques de Tareas y Legal corren con muestra (En pruebas)",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Inicio.dc.html",
+     "pantalla": "Inicio.dc.html",
+     "texto": "Inicio · Para hoy: 12 cosas, separadas en reclamos graves, gente sin contactar y papeles que vencen."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Inicio.dc.html",
+     "pantalla": "Reclamos.dc.html",
+     "texto": "Toca «3 reclamos graves»: llega a Reclamos con la columna Para hoy adelante."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Inicio.dc.html",
+     "pantalla": "Preregistros.dc.html",
+     "texto": "Vuelve y toca «7 sin contactar»: la lista viene filtrada, los más viejos primero."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Inicio.dc.html",
+     "pantalla": "Legal.dc.html",
+     "texto": "Toca «2 papeles vencen»: Legal abre en Resumen con un botón por cosa."
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Inicio.dc.html",
+     "pantalla": "Ticket.dc.html",
+     "texto": "Desde «Tus tickets» entra directo al ticket."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/recortes/Inicio-para-hoy.png"
+  },
+  {
+   "id": "P-RC-03",
+   "titulo": "Contactar a un pre-registro",
+   "necesidad": "Que nadie que se anotó quede esperando sin respuesta.",
+   "accion": "Filtra los que esperan, abre la ficha, asigna, abre WhatsApp y registra el resultado.",
+   "que_hace_handyx": "Ordena por antigüedad, propone el siguiente paso, abre WhatsApp sin mensaje automático y guarda el resultado en el historial.",
+   "resultado": "Cada contacto con su próximo paso y su historia; se pasa al siguiente sin volver atrás.",
+   "estado": "Construido en v2 (lista, ficha y contacto guiado); el flujo v3 con responsable y origen por campaña es Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Preregistros.dc.html",
+     "pantalla": "Preregistros.dc.html",
+     "texto": "Pestaña Especialistas, tarjeta «Sin contactar +48 h» y filtro de barrio."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Preregistros.dc.html",
+     "pantalla": "Ficha.dc.html",
+     "texto": "Ficha: siguiente paso en amarillo y responsable con la carga de cada uno."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Preregistros.dc.html",
+     "pantalla": "Docs.dc.html",
+     "texto": "Si hay dudas, abre la guía «Cómo contactar a un pre-registro»."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Preregistros.dc.html",
+     "pantalla": "Ficha.dc.html",
+     "texto": "«Hecho, registrar»: queda en el historial y pasa a la siguiente persona."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/recortes/Ficha-sin-contacto.png"
+  },
+  {
+   "id": "P-RC-04",
+   "titulo": "Responder un reclamo",
+   "necesidad": "Que lo grave se atienda hoy y que todos los reclamos tengan respuesta.",
+   "accion": "Entra desde Inicio, trabaja la columna de hoy, responde y cambia el estado.",
+   "que_hace_handyx": "Ordena por vencidos, gravedad y plazo; calcula el plazo solo; exige escribir la resolución; lo que no se resuelve pasa a un ticket.",
+   "resultado": "Reclamos cerrados dentro del plazo y con su historia.",
+   "estado": "Construido en v2 (lista, plazos, ficha, alta); la vista por columnas y el paso a ticket son Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Reclamos.dc.html",
+     "pantalla": "Inicio.dc.html",
+     "texto": "El bloque de Reclamos muestra los tres que vencen primero."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Reclamos.dc.html",
+     "pantalla": "Reclamos.dc.html",
+     "texto": "Por plazo: Para hoy, En 2 días y En 3 días, con barra de tiempo restante."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Reclamos.dc.html",
+     "pantalla": "Reclamos.dc.html",
+     "texto": "Vista Lista para buscar uno puntual."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Reclamos.dc.html",
+     "pantalla": "Ticket.dc.html",
+     "texto": "Lo que no se resuelve en el reclamo pasa a Tareas."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/Reclamos.png"
+  },
+  {
+   "id": "P-RC-05",
+   "titulo": "Trabajar un ticket del equipo",
+   "necesidad": "Saber quién hace qué y para cuándo.",
+   "accion": "Mira el sprint, filtra lo propio, abre el ticket, tacha subtareas y lo mueve.",
+   "que_hace_handyx": "Muestra el avance del sprint, vincula el ticket con los pre-registros o reclamos que lo originan y avisa a quien revisa.",
+   "resultado": "Trabajo interno ordenado y visible para todo el equipo.",
+   "estado": "En pruebas (código v2 solo con datos de muestra); vistas Mis tareas y menciones: Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Tareas.dc.html",
+     "pantalla": "Tareas.dc.html",
+     "texto": "Tablero del sprint: Por hacer, En curso, En revisión y Hecho."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Tareas.dc.html",
+     "pantalla": "Tareas.dc.html",
+     "texto": "Mis tareas: solo los tickets propios, lo de hoy arriba."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Tareas.dc.html",
+     "pantalla": "Ticket.dc.html",
+     "texto": "Ticket con descripción, vínculo, subtareas y comentarios."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Tareas.dc.html",
+     "pantalla": "Tareas.dc.html",
+     "texto": "Pasa a «En revisión» y la barra del sprint avanza."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/Tareas.png"
+  },
+  {
+   "id": "P-RC-06",
+   "titulo": "Leer el mapa por barrio",
+   "necesidad": "Decidir dónde buscar especialistas o hacer campañas.",
+   "accion": "Elige una pregunta, mira el mapa, toca un barrio y actúa.",
+   "que_hace_handyx": "Pinta los barrios reales del Partido según la pregunta, oculta los grupos de menos de 5 y ofrece ver especialistas o crear una campaña para ese barrio.",
+   "resultado": "Una decisión territorial con fuente y período.",
+   "estado": "Diseñado (v3); geometría real Construida; capas por barrio En pruebas (el alta no guarda barrio)",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Mapa.dc.html",
+     "pantalla": "MapaInicio.dc.html",
+     "texto": "¿Qué querés ver? Cinco preguntas, cada una dice si ya tiene datos."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Mapa.dc.html",
+     "pantalla": "Mapa.dc.html",
+     "texto": "Mapa de la cobertura, panel del barrio y tabla paginada."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Mapa.dc.html",
+     "pantalla": "Preregistros.dc.html",
+     "texto": "«Ver especialistas de Centro»: la lista llega filtrada."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Mapa.dc.html",
+     "pantalla": "Campana.dc.html",
+     "texto": "O «Crear campaña para este barrio»."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/recortes/Mapa-mapa-y-barrio.png"
+  },
+  {
+   "id": "P-RC-07",
+   "titulo": "Medir una campaña",
+   "necesidad": "Saber si la plata de marketing trae gente y dónde se pierde.",
+   "accion": "Abre el panel de la campaña, lee el veredicto y revisa embudo, piezas y aprendizajes.",
+   "que_hace_handyx": "Responde «¿está funcionando?», muestra el embudo de anuncio a alta y qué pieza y día rinden más, y guarda lo aprendido firmado.",
+   "resultado": "Qué repetir y qué cortar en la próxima campaña.",
+   "estado": "En pruebas (panel solo con muestra: falta la atribución desde la landing); versión v3: Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Campana.dc.html",
+     "pantalla": "Campana.dc.html",
+     "texto": "Veredicto y embudo."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Campana.dc.html",
+     "pantalla": "Campana.dc.html",
+     "texto": "Piezas, redes y días: qué pieza trajo más gente y qué día funciona mejor."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Campana.dc.html",
+     "pantalla": "Campana.dc.html",
+     "texto": "Aprendizajes: funcionó, a mejorar e hipótesis."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Campana.dc.html",
+     "pantalla": "Docs.dc.html",
+     "texto": "Para la próxima pieza, abre la Guía 10 en Docs."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/recortes/Campana-embudo.png"
+  },
+  {
+   "id": "P-RC-08",
+   "titulo": "Leer las cohortes",
+   "necesidad": "Saber si el equipo atiende mejor a quienes llegan ahora que a los de antes.",
+   "accion": "Entra a Cohortes, elige qué medir y lee la tabla con la lectura guiada.",
+   "que_hace_handyx": "Agrupa por fecha de llegada, sigue cada grupo semana a semana, marca lo que todavía no maduró y lo traduce a tres frases.",
+   "resultado": "Detectar grupos que se perdieron y actuar sobre ellos.",
+   "estado": "Construido (matriz semanal); por mes, curvas y lectura guiada En pruebas; explicación v3 Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Cohortes.dc.html",
+     "pantalla": "Inicio.dc.html",
+     "texto": "El número «¿Contactamos a tiempo?» despierta la pregunta."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Cohortes.dc.html",
+     "pantalla": "Cohortes.dc.html",
+     "texto": "Qué es una cohorte en 3 pasos, qué medir, tabla y lectura guiada."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Cohortes.dc.html",
+     "pantalla": "Preregistros.dc.html",
+     "texto": "Para actuar: vuelve a la lista de los que esperan y crea un ticket."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/recortes/Cohortes-tabla.png"
+  },
+  {
+   "id": "P-RC-09",
+   "titulo": "Leer y crear un doc",
+   "necesidad": "Que todo el equipo haga las cosas de la misma manera.",
+   "accion": "Busca en la biblioteca, lee en el modal y genera un doc nuevo con ayuda de una IA.",
+   "que_hace_handyx": "Ordena guías por categoría, las muestra completas y valida lo que escribe la IA antes de publicarlo.",
+   "resultado": "Procesos escritos, versionados y a mano.",
+   "estado": "Construido en v2 (biblioteca, editor, versiones); modal y generador desde IA: Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Docs.dc.html",
+     "pantalla": "Docs.dc.html",
+     "texto": "Biblioteca con buscador y categorías."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Docs.dc.html",
+     "pantalla": "Docs.dc.html",
+     "texto": "Lectura en el modal con índice."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Docs.dc.html",
+     "pantalla": "DocsJson.dc.html",
+     "texto": "Generar desde JSON: instrucciones para la IA, validación y vista previa."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Docs.dc.html",
+     "pantalla": "Docs.dc.html",
+     "texto": "Doc publicado con versión 1 y autor."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/Docs.png"
+  },
+  {
+   "id": "P-RC-10",
+   "titulo": "Poner al día Legal y Compliance",
+   "necesidad": "Que la empresa y quienes trabajan en domicilios tengan los papeles al día.",
+   "accion": "Resuelve lo urgente desde Resumen y revisa Empresa y Personas.",
+   "que_hace_handyx": "Ordena por vencimiento, ofrece la acción concreta de cada fila y marca qué especialista no puede tomar trabajos por un requisito faltante.",
+   "resultado": "Nada vence sin aviso; ningún especialista sin requisitos toma trabajos.",
+   "estado": "En pruebas (documentos y legajos solo con muestra); las tres vistas v3: Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Legal.dc.html",
+     "pantalla": "Inicio.dc.html",
+     "texto": "El bloque de Legal muestra lo que vence esta semana."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Legal.dc.html",
+     "pantalla": "Legal.dc.html",
+     "texto": "Resumen: tres cosas de la semana con su botón y cuatro contadores."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Legal.dc.html",
+     "pantalla": "Legal.dc.html",
+     "texto": "Personas: requisitos de cada especialista y si puede trabajar."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Legal.dc.html",
+     "pantalla": "Legal.dc.html",
+     "texto": "Empresa: sociedad, seguros y privacidad con estado y vencimiento."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/Legal.png"
+  },
+  {
+   "id": "P-RC-11",
+   "titulo": "Pedir ayuda en cualquier pantalla",
+   "necesidad": "Que alguien nuevo aprenda el portal sin depender de otra persona.",
+   "accion": "Toca «?» en la pantalla en la que está o abre la Guía del portal.",
+   "que_hace_handyx": "Ilumina cada parte de la pantalla con un ejemplo del día a día y lleva de la guía al módulo.",
+   "resultado": "Equipo autónomo; se suma gente sin capacitaciones largas.",
+   "estado": "Diseñado",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Ayuda.dc.html",
+     "pantalla": "Inicio.dc.html",
+     "texto": "Todas las pantallas tienen el «?» en el mismo lugar."
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Ayuda.dc.html",
+     "pantalla": "Tour.dc.html",
+     "texto": "Recorrido de esa pantalla, con el mismo spotlight del primer día."
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Ayuda.dc.html",
+     "pantalla": "Guia.dc.html",
+     "texto": "Guía del portal: anatomía, módulo por módulo y glosario."
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Ayuda.dc.html",
+     "pantalla": "Preregistros.dc.html",
+     "texto": "«Ir a Pre-registros»: de la guía al trabajo."
+    }
+   ],
+   "captura_principal": "S/capturas/portal/Tour.png"
+  }
+ ],
+ "arquitectura": {
+  "nivel": "capacidades (qué información fluye); sin mecanismos, proveedores ni direcciones",
+  "texto": "                 VECINOS Y ESPECIALISTAS\n                          │ se anotan (nombre, WhatsApp, ciudad, rubro, consentimiento)\n                          ▼\n   ┌──────────────────────────────┐   contador público (cota inferior, desde 20)\n   │  LANDING (pública)           │◄──────────────────────────────┐\n   └──────────────┬───────────────┘                               │\n                  │ pre-registro                                  │\n                  ▼                                               │\n   ┌──────────────────────────────────────────────────────────┐   │\n   │  BACKEND DE CAPTACIÓN Y CRM                               ├───┘\n   │  pre-registros cifrados · seguimiento · importaciones ·  │\n   │  campañas y gasto · reclamos · docs · métricas agregadas │\n   │  registro de actividad · retención 12 meses              │\n   └──────────────▲───────────────────────────────────────────┘\n                  │ lee y escribe (solo el equipo, por permisos)\n   ┌──────────────┴───────────────────────────────────────────┐\n   │  PORTAL INTERNO (equipo Handyx)                           │\n   │  Inicio · Pre-registros · Reclamos · Campañas · Cohortes ·│\n   │  Mapa · Docs · [Tareas · Legal · Legajos: datos de muestra]│\n   └──────────────┬───────────────────────────────────────────┘\n                  ┆ PENDIENTE (sin contrato todavía: «fuente pendiente»)\n                  ┆ pedidos · propuestas · búsqueda manual · pagos reportados ·\n                  ┆ verificación de especialistas · reclamos de la app · invitaciones\n                  ▼\n   ┌──────────────────────────┐        ┌──────────────────────────────┐\n   │  PWA DEL USUARIO + su API │◄──────►│  PWA DEL ESPECIALISTA + su API │\n   │  pedidos, trabajos, chat, │ base   │  alta, documentos, agenda,     │\n   │  pagos reportados,        │ común  │  propuestas, cobro directo     │\n   │  reclamos                 │ de la  │                                │\n   └──────────────────────────┘ app    └──────────────────────────────┘\n        │  el usuario paga directo al especialista (Mercado Pago o efectivo):\n        │  el dinero no pasa por Handyx ni por el portal\n        ▼\n   ESPECIALISTA\n\n   PROPUESTO (sin código accesible): backend propio del portal para tareas, legal,\n   legajos, archivos, atribución de campañas, mapa por barrio y preferencias.\n   HOY FUERA DEL PORTAL: la verificación de especialistas (procedimiento interno del\n   backend del especialista, rama sin mergear) y los derechos de las personas.",
+  "flujos": [
+   {
+    "de": "Landing",
+    "a": "Backend de captación y CRM",
+    "que": "pre-registros con consentimiento (usuario: lista de espera; especialista: contacto para el alta)",
+    "estado": "Construido; captura cerrada hasta el aviso de privacidad definitivo; backend sin desplegar al corte"
+   },
+   {
+    "de": "Backend de captación y CRM",
+    "a": "Landing",
+    "que": "contador público como cota inferior (0 si hay menos de 20)",
+    "estado": "Construido"
+   },
+   {
+    "de": "Portal",
+    "a": "Backend de captación y CRM",
+    "que": "seguimiento, importación, exportación sin datos personales, campañas y gasto, reclamos, docs, métricas agregadas",
+    "estado": "Construido (verificado en local)"
+   },
+   {
+    "de": "Portal",
+    "a": "Backend propio del portal (propuesto)",
+    "que": "tareas, legal y legajos, archivos, atribución, mapa por barrio, preferencias",
+    "estado": "Concepto (el portal ya tiene las pantallas con datos de muestra)"
+   },
+   {
+    "de": "Apps (PWA)",
+    "a": "Portal",
+    "que": "pedidos, propuestas, pagos reportados, verificación, reclamos de la app",
+    "estado": "Concepto: sin contrato de lectura"
+   },
+   {
+    "de": "Operations",
+    "a": "Backend del especialista",
+    "que": "verificación de documentos y alta",
+    "estado": "En pruebas en una rama, fuera del portal"
+   },
+   {
+    "de": "Pre-registro",
+    "a": "Cuenta de la app",
+    "que": "no hay migración automática: el pre-registro no es una cuenta",
+    "estado": "regla de diseño"
+   }
+  ]
+ },
+ "indice_dossier": [
+  {
+   "seccion": "1. Portada",
+   "cubre": [],
+   "capturas": [
+    "S/capturas/portal/recortes/Inicio-sin-sidebar.png",
+    "S/capturas/portal/recortes/Sidebar-sin-usuario.png"
+   ],
+   "huecos": "Evitar Main (grupo de personajes y notas de trabajo). Rotular «Diseño propuesto · datos ficticios»."
+  },
+  {
+   "seccion": "2. La importancia de la infraestructura operativa",
+   "cubre": [
+    "P-I-01",
+    "P-X-06",
+    "P-X-02",
+    "P-A-06"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Bienvenida-modulos.png"
+   ],
+   "huecos": "No hay datos de uso real del portal ni del tamaño del equipo: el texto tiene que hablar de capacidades, no de volumen."
+  },
+  {
+   "seccion": "3. Arquitectura general del ecosistema",
+   "cubre": [
+    "P-X-07",
+    "P-C-15",
+    "P-S-01",
+    "P-E-02"
+   ],
+   "capturas": [],
+   "huecos": "Diagrama en «arquitectura». Falta confirmar si el portal publicado ya habla con un backend desplegado y cuándo existirá el contrato con las apps."
+  },
+  {
+   "seccion": "4. Gestión de clientes",
+   "cubre": [
+    "P-C-01",
+    "P-C-02",
+    "P-C-04",
+    "P-C-05",
+    "P-C-06",
+    "P-C-07",
+    "P-C-08",
+    "P-C-12",
+    "P-C-13",
+    "P-C-14",
+    "P-C-15",
+    "P-C-16"
+   ],
+   "capturas": [
+    "S/capturas/portal/Preregistros.png",
+    "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-preregistros_usuarios-1280.jpg"
+   ],
+   "huecos": "El portal gestiona la lista de espera, no clientes con cuenta: la gestión de usuarios de la app es Concepto. No hay invitaciones en el portal."
+  },
+  {
+   "seccion": "5. Gestión de profesionales",
+   "cubre": [
+    "P-C-01",
+    "P-C-05",
+    "P-C-09",
+    "P-C-13",
+    "P-E-01",
+    "P-E-02",
+    "P-E-03",
+    "P-E-04",
+    "P-E-05"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Ficha-sin-contacto.png",
+    "S/capturas/portal/RC-Preregistros.png",
+    "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-preregistros_especialistas-1280.jpg"
+   ],
+   "huecos": "La verificación no tiene pantalla en el portal; los legajos solo corren con muestra; hay contradicciones sobre antecedentes y sobre la comisión al especialista."
+  },
+  {
+   "seccion": "6. Supervisión de operaciones",
+   "cubre": [
+    "P-I-01",
+    "P-I-02",
+    "P-I-05",
+    "P-I-07",
+    "P-R-01",
+    "P-F-03"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Inicio-para-hoy.png",
+    "S/capturas/portal/RC-Inicio.png"
+   ],
+   "huecos": "Sin pedidos ni trabajos de las apps, la supervisión cubre contacto, reclamos y papeles, no la operación de servicios."
+  },
+  {
+   "seccion": "7. Seguimiento de trabajos",
+   "cubre": [
+    "P-S-01",
+    "P-S-02",
+    "P-S-03",
+    "P-S-04"
+   ],
+   "capturas": [
+    "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-solicitudes-1280.jpg"
+   ],
+   "huecos": "Hueco mayor: todo es Concepto. Ojo: «Tareas» son tickets internos del equipo, no trabajos de clientes; no mezclarlos."
+  },
+  {
+   "seccion": "8. Administración comercial",
+   "cubre": [
+    "P-K-01",
+    "P-K-02",
+    "P-K-03",
+    "P-K-04",
+    "P-K-05",
+    "P-K-06",
+    "P-K-07",
+    "P-K-08"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Campana-embudo.png",
+    "S/capturas/portal/RC-Campana.png"
+   ],
+   "huecos": "Sin atribución no hay costo por pre-registro real. Moneda del presupuesto en discusión (USD en el lienzo y en la decisión del 07/11; pesos en el backend)."
+  },
+  {
+   "seccion": "9. Gestión de transacciones y comisiones",
+   "cubre": [
+    "P-S-03",
+    "P-X-05",
+    "P-K-01"
+   ],
+   "capturas": [],
+   "huecos": "El portal no procesa pagos ni cobra comisiones. Lo que muestra o planea: (1) Configuración y Handy Docs registran la política de la demo (tarifa de Handyx del 0 % para usuario y especialista del 10/11 al 10/12, sin descuento sobre el precio del especialista; después, «sin tarifa aprobada: no se cobra nada automáticamente»); (2) Solicitudes promete, cuando exista el contrato, «pagos reportados» con la aclaración «Handy no recibe ni distribuye ese dinero: el pago es directo entre las personas»; (3) Reclamos tiene la categoría «Pago» (cobro distinto al presupuesto); (4) Campañas registra gasto de marketing. No hay pantalla de comisiones, liquidaciones ni facturación en el código ni en el lienzo. Falta saber cómo cobrará Handyx su tarifa cuando exista y cuál es la tarifa al especialista (fuentes contradictorias). Recomendación: titular la sección como «Pagos entre personas y política de tarifas» y declarar que el portal no maneja dinero."
+  },
+  {
+   "seccion": "10. Incidencias y soporte",
+   "cubre": [
+    "P-R-01",
+    "P-R-02",
+    "P-R-03",
+    "P-R-04",
+    "P-R-05",
+    "P-R-06",
+    "P-R-07",
+    "P-R-08",
+    "P-D-04"
+   ],
+   "capturas": [
+    "S/capturas/portal/Reclamos.png",
+    "S/capturas/portal/RC-Reclamos.png"
+   ],
+   "huecos": "Los reclamos que el usuario carga en la app no llegan al portal; sin adjuntos. Reemplazar los textos de ejemplo sensibles (pérdida de gas)."
+  },
+  {
+   "seccion": "11. Analítica y métricas",
+   "cubre": [
+    "P-I-03",
+    "P-I-04",
+    "P-K-04",
+    "P-X-04",
+    "P-X-05",
+    "P-X-06"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Inicio-semana.png"
+   ],
+   "huecos": "Ninguna métrica real disponible (captura cerrada, backend sin desplegar). Mostrar el método (denominador, fuente, «sin dato») y no los números."
+  },
+  {
+   "seccion": "12. Cohortes y retención",
+   "cubre": [
+    "P-H-01",
+    "P-H-02",
+    "P-H-03",
+    "P-H-04"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/Cohortes-tabla.png",
+    "S/capturas/portal/RC-Cohortes.png"
+   ],
+   "huecos": "Las cohortes miden contacto de pre-registros; la retención de clientes de la app es Concepto. Las filas junio–noviembre son ficticias y parecen tracción."
+  },
+  {
+   "seccion": "13. Mapas y actividad territorial",
+   "cubre": [
+    "P-M-01",
+    "P-M-02",
+    "P-M-03",
+    "P-M-04",
+    "P-M-05",
+    "P-M-06"
+   ],
+   "capturas": [
+    "S/capturas/portal/recortes/mapa-partido-geometria-osm.png",
+    "S/capturas/portal/recortes/MapaInicio-preguntas.png",
+    "S/capturas/portal/recortes/Mapa-mapa-y-barrio.png"
+   ],
+   "huecos": "La geografía es real; cualquier color o número encima es ficticio. Por barrio depende de que la landing pida el barrio."
+  },
+  {
+   "seccion": "14. Herramientas de supervisión",
+   "cubre": [
+    "P-T-01",
+    "P-T-02",
+    "P-T-03",
+    "P-T-04",
+    "P-T-05",
+    "P-D-01",
+    "P-D-02",
+    "P-D-05",
+    "P-D-06",
+    "P-L-01",
+    "P-L-02",
+    "P-F-03",
+    "P-F-04",
+    "P-X-02",
+    "P-X-03"
+   ],
+   "capturas": [
+    "S/capturas/portal/Tareas.png",
+    "S/capturas/portal/Docs.png",
+    "S/capturas/portal/Legal.png"
+   ],
+   "huecos": "Tareas y Legal corren solo con muestra; el registro de actividad se escribe pero no se puede consultar desde el portal."
+  },
+  {
+   "seccion": "15. Escalabilidad",
+   "cubre": [
+    "P-X-07",
+    "P-A-04",
+    "P-A-05",
+    "P-A-06",
+    "P-A-07",
+    "P-X-01",
+    "P-F-08"
+   ],
+   "capturas": [
+    "S/capturas/portal/Tour.png",
+    "S/capturas/portal/recortes/Bienvenida-modulos.png"
+   ],
+   "huecos": "Escalan el equipo (onboarding, guía, permisos por tarea) y el modelo de datos. No hay diseño para otras ciudades: el mapa cubre solo el Partido y la importación rechaza especialistas fuera de Mar del Plata, mientras el pitch habla de «toda Buenos Aires en 3 meses» (visión a validar)."
+  },
+  {
+   "seccion": "16. Roadmap operativo",
+   "cubre": [
+    "P-X-07",
+    "P-K-06",
+    "P-C-03",
+    "P-S-01",
+    "P-P-01"
+   ],
+   "capturas": [
+    "S/capturas/portal/RC-Indice.png"
+   ],
+   "huecos": "El plan v3 (4 olas) es una propuesta sin fechas que espera el OK. Dependencias externas: aviso definitivo, despliegue del backend, barrio y origen en la landing, contrato con las apps, backend propio del portal."
+  },
+  {
+   "seccion": "17. Cierre",
+   "cubre": [],
+   "capturas": [
+    "S/capturas/portal/recortes/mapa-ciudad-geometria-osm.png"
+   ],
+   "huecos": "Sin cifras propias del portal. Cerrar con el principio «no mostramos ningún número inventado» y la invitación a recorrer la muestra rotulada."
+  }
+ ],
+ "contradicciones": [
+  {
+   "tema": "Publicación del portal",
+   "a": {
+    "dice": "Publicación del frontend v2 sobre main 3fc06e2 con éxito (ejecución manual)",
+    "fuente": "historial de GitHub Actions del portal",
+    "fecha": "2026-11-07 15:53 UTC"
+   },
+   "b": {
+    "dice": "«Despliegue… Sigue bloqueado por la carpeta del servidor»; backend de captación: «Nada desplegado»",
+    "fuente": "portal@2ed5c5f:docs/v3/00-plan-v3.md · landing-be@4cb77e4:handoff.md",
+    "fecha": "2026-11-07 18:47 UTC / 2026-10-29"
+   },
+   "impacto": "No se puede afirmar en el dossier que el portal esté «en uso» ni «publicado».",
+   "pregunta": "¿El portal publicado el 07/11 está conectado a un backend desplegado y alguien del equipo ya lo usa?"
+  },
+  {
+   "tema": "Etapas del pre-registro",
+   "a": {
+    "dice": "Nuevo · Contactado · En seguimiento · Listo para alta",
+    "fuente": "Ficha.dc.html, Preregistros.dc.html",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Especialista: pendiente de contacto → contactado → comprometido; usuario: en espera → avisado. El plan v3 dice que los contratos siguen iguales",
+    "fuente": "landing-be@4cb77e4:docs/contract-delta.md · portal@2ed5c5f:docs/v3/00-plan-v3.md",
+    "fecha": "2026-10-27 / 2026-11-07"
+   },
+   "impacto": "El dossier podría describir etapas que el sistema no tiene.",
+   "pregunta": "¿Las etapas v3 son solo rótulos nuevos de las mismas etapas o un cambio de contrato?"
+  },
+  {
+   "tema": "Oficios de ejemplo",
+   "a": {
+    "dice": "Pintor, Pintor · Los Andes, «Otros» en el mapa",
+    "fuente": "Preregistros.dc.html, RC-Legal.dc.html",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Seis rubros: Electricidad, Plomería, Gas, Cerrajería, Albañilería, Aire acondicionado",
+    "fuente": "landing-fe@ac3b245:CLAUDE.md",
+    "fecha": "2026-10-29"
+   },
+   "impacto": "Capturas con un oficio que la landing no ofrece.",
+   "pregunta": "¿Se reemplazan los ejemplos por los seis rubros vigentes?"
+  },
+  {
+   "tema": "Moneda del presupuesto de marketing",
+   "a": {
+    "dice": "Presupuesto: 100 USD; costo c/u ≈ 0,6 USD; «US$ 100 por mes» en la Guía 10 y el asistente",
+    "fuente": "Campana.dc.html · portal@8ea1c63",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Importes en centavos enteros, moneda fija ARS; Handy Docs: importes en pesos enteros; regla editorial: montos en pesos",
+    "fuente": "landing-be@4cb77e4:docs/ops.md · portal@3fc06e2:docs/handy-docs/05-campanas.md · consigna-ola-1.md",
+    "fecha": "2026-11-02 / 2026-11-07"
+   },
+   "impacto": "Montos en dólares en capturas y un backend que solo guarda pesos.",
+   "pregunta": "¿El presupuesto de marketing se fija en dólares o en pesos?"
+  },
+  {
+   "tema": "Antecedentes penales como archivo",
+   "a": {
+    "dice": "«Antecedentes nunca como archivo»",
+    "fuente": "specialist-fe@f7c0733:CLAUDE.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Legajos con antecedentes dentro de los 7 días y visor de documentos de personas; «Antecedentes penales por foto o PDF (decisión de Ignacio del 08/11/2026)»",
+    "fuente": "portal@8ea1c63 · specialist-be@cf3b39d:CLAUDE.md",
+    "fecha": "2026-11-07 (el commit cita una decisión con fecha 08/11)"
+   },
+   "impacto": "Afecta cómo se presenta la verificación y el cuidado de datos sensibles.",
+   "pregunta": "¿Cuál es la regla vigente y por qué el commit del 07/11 cita una decisión del 08/11?"
+  },
+  {
+   "tema": "Comisión al especialista",
+   "a": {
+    "dice": "10 % al cliente y 10 % al especialista; primer mes sin tarifa; camada fundadora 5 %",
+    "fuente": "landing-fe@ac3b245:CLAUDE.md",
+    "fecha": "2026-10-29"
+   },
+   "b": {
+    "dice": "«Handyx no le cobra comisión al especialista, nunca (decisión del 08/11/2026)»; portal: después del 10/12 «sin tarifa aprobada»",
+    "fuente": "specialist-be@cf3b39d:CLAUDE.md · portal@3fc06e2:src/ops/sources.ts",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Sección 9 del dossier y coherencia con el Dossier 01.",
+   "pregunta": "¿Qué tarifa se cobra a cada parte después de la demo y cómo se cobra si el dinero no pasa por Handyx?"
+  },
+  {
+   "tema": "Retención de datos",
+   "a": {
+    "dice": "Pre-registros 12 meses calendario, purga real (aviso 04-A); la ficha muestra «Se vence noviembre de 2027»",
+    "fuente": "landing-be@4cb77e4:CLAUDE.md · Ficha.dc.html",
+    "fecha": "2026-10-27 / 2026-11-07"
+   },
+   "b": {
+    "dice": "«Sin purga: no se borra ningún dato vencido… hay que alinear el aviso o reactivar la purga»",
+    "fuente": "landing-be@4cb77e4:handoff.md (decisión del 02/11)",
+    "fecha": "2026-11-02"
+   },
+   "impacto": "No se puede prometer en el dossier el borrado a los 12 meses.",
+   "pregunta": "¿Se reactiva la purga o se cambia el aviso antes de octubre de 2027?"
+  },
+  {
+   "tema": "Plazos de reclamos",
+   "a": {
+    "dice": "Crítica y alta hoy, media 2 días, baja 3 días",
+    "fuente": "Reclamos.dc.html · portal@3fc06e2:docs/modules/reclamos.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "«No hay plazos comerciales inventados»; la captura MOCK de Reclamos dice «[A CONFIRMAR: plazos de respuesta por gravedad]»",
+    "fuente": "portal@3fc06e2:docs/handy-docs/04-solicitudes-y-reclamos.md · docs/capturas-v2/MOCK-reclamos-1280.jpg",
+    "fecha": "anterior al 07/11"
+   },
+   "impacto": "La guía del equipo y una captura del código quedaron viejas.",
+   "pregunta": "¿Se actualizan la Guía 04 y las capturas MOCK con la decisión del 07/11?"
+  },
+  {
+   "tema": "Error del bloque de reclamos en Inicio",
+   "a": {
+    "dice": "Cada bloque carga por separado; regresión total con 0 problemas",
+    "fuente": "portal@3fc06e2:docs/handoff.md · docs/modules/inicio.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "«Causa encontrada… falla con e.getTime is not a function. Pasa también con backend real»",
+    "fuente": "portal@2ed5c5f:docs/v3/00-plan-v3.md",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "El bloque de reclamos del Inicio publicado puede fallar.",
+   "pregunta": "¿Se corrige antes de mostrar el portal a terceros?"
+  },
+  {
+   "tema": "Dónde se verifica a los especialistas",
+   "a": {
+    "dice": "«handy-internal-portal · Futuro consumidor de la revisión de Operations»",
+    "fuente": "specialist-fe@f7c0733:docs/plan.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "«la ÚNICA vía para verificar documentos… desde un proceso privado»; el portal no tiene pantalla de verificación",
+    "fuente": "specialist-be@cf3b39d:src/services/operaciones.service.ts",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "El dossier no puede mostrar la verificación como función del portal.",
+   "pregunta": "¿La verificación pasa al portal? ¿Cuándo?"
+  },
+  {
+   "tema": "Presentaciones",
+   "a": {
+    "dice": "Módulo Presentations en código, registrado en el menú v2",
+    "fuente": "portal@3fc06e2:docs/modules/presentaciones.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "«Eliminar Presentaciones · Fuera del menú por ahora»",
+    "fuente": "Main.dc.html",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Una función construida que no conviene presentar.",
+   "pregunta": "¿Queda sin rutas o se borra (decisión 2 del plan v3)?"
+  },
+  {
+   "tema": "Nombre del dominio del portal",
+   "a": {
+    "dice": "internal.handyc.com",
+    "fuente": "workflow de publicación del portal (portal@3fc06e2) · runbook de despliegue del backend (landing-be@4cb77e4)",
+    "fecha": "2026-11-02"
+   },
+   "b": {
+    "dice": "interno.handyc.com",
+    "fuente": "client-be@fase-4-backend-conciliado:docs/architecture.md",
+    "fecha": "2026-11-02"
+   },
+   "impacto": "Menor (documentación). No publicar el dominio en el dossier.",
+   "pregunta": "¿Se corrige la documentación del backend del usuario?"
+  },
+  {
+   "tema": "Tecnología de las apps según el portal",
+   "a": {
+    "dice": "«Las apps de usuario y especialista son React Native bare»",
+    "fuente": "portal@3fc06e2:docs/architecture/system.md",
+    "fecha": "2026-10-10"
+   },
+   "b": {
+    "dice": "Las apps son PWA con exportación estática",
+    "fuente": "handyx-specialist-fe y handyx-client-fe CLAUDE.md",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Documento de arquitectura del portal desactualizado.",
+   "pregunta": "¿Se actualiza system.md?"
+  },
+  {
+   "tema": "Tracción aparente en las muestras",
+   "a": {
+    "dice": "Especialistas 86 · Usuarios 44; cohortes junio–noviembre de 38 a 73 personas; 41 especialistas en 7 días",
+    "fuente": "Preregistros.dc.html, Cohortes.dc.html, Campana.dc.html (ficticio)",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "56 especialistas registrados «no mostrar hasta conciliar»; la captura de la landing está cerrada hasta el aviso definitivo",
+    "fuente": "pitch-afirmaciones (ESP-REGISTRADOS) · landing-fe@ac3b245:src/config.ts",
+    "fecha": "2026-11-04 / 2026-10-29"
+   },
+   "impacto": "Un inversor puede leer las cifras de muestra como reales y contrastarlas con el pitch.",
+   "pregunta": "¿Se reemplazan las cifras por marcadores neutros o se rotulan en cada captura?"
+  }
+ ],
+ "faltantes": [
+  {
+   "dato": "Uso real del portal",
+   "para": "dossier 04 · 1, 2 y 16",
+   "pregunta": "¿Alguien del equipo usa hoy el portal con datos reales? ¿Desde cuándo y cuántas personas?"
+  },
+  {
+   "dato": "Despliegue del backend de captación y apertura de la captura",
+   "para": "dossier 04 · 3 y 16",
+   "pregunta": "¿Cuándo se despliega el backend y se publica el aviso de privacidad definitivo para abrir la captura?"
+  },
+  {
+   "dato": "Aprobación y calendario del plan v3",
+   "para": "dossier 04 · 16",
+   "pregunta": "¿Aprobaste el plan v3 y las 4 decisiones de su §5? ¿Con qué fechas?"
+  },
+  {
+   "dato": "Backend propio del portal",
+   "para": "dossier 04 · 3, 15 y 16",
+   "pregunta": "¿Existe código de handy-internal-be? (no fue accesible desde esta sesión)"
+  },
+  {
+   "dato": "Invitaciones de la demo cerrada",
+   "para": "dossier 04 · 4",
+   "pregunta": "¿Quién y con qué herramienta emite los códigos de invitación desde el 10/11, si el portal no tiene esa pantalla?"
+  },
+  {
+   "dato": "Contrato de lectura con las apps",
+   "para": "dossier 04 · 6, 7 y 10",
+   "pregunta": "¿Cuándo podrá el portal ver pedidos, propuestas, pagos reportados y reclamos de las apps?"
+  },
+  {
+   "dato": "Verificación de especialistas el 10/11",
+   "para": "dossier 04 · 5",
+   "pregunta": "¿Dónde y cómo verifica Operations a los especialistas en el lanzamiento?"
+  },
+  {
+   "dato": "Cobro de la tarifa de Handyx",
+   "para": "dossier 04 · 9",
+   "pregunta": "Si el dinero va directo al especialista, ¿cómo cobrará Handyx su tarifa y qué mostrará el portal?"
+  },
+  {
+   "dato": "Los 56 especialistas registrados",
+   "para": "dossier 04 · 5 y 11",
+   "pregunta": "¿Dónde están esos registros? ¿Se importan al CRM (quedarían como «importados», sin consentimiento)?"
+  },
+  {
+   "dato": "Barrio y origen en la captura",
+   "para": "dossier 04 · 8 y 13",
+   "pregunta": "¿Se suman barrio y origen de campaña al formulario de la landing? ¿Cuándo?"
+  },
+  {
+   "dato": "Equipo y roles reales",
+   "para": "dossier 04 · 2 y 15",
+   "pregunta": "¿Qué funciones existen hoy (Operaciones, Crecimiento, Soporte, Dirección) y cuántas personas hay? Las de las capturas son ficticias."
+  },
+  {
+   "dato": "Estado legal real de la empresa",
+   "para": "dossier 04 · 14 (y dossier 01)",
+   "pregunta": "¿Handyx está constituida? ¿Seguros y registro de bases de datos están vigentes? Las capturas de Legal muestran ejemplos que pueden leerse como faltas reales."
+  },
+  {
+   "dato": "Expansión territorial en la operación",
+   "para": "dossier 04 · 15",
+   "pregunta": "¿Hay plan para operar otras ciudades desde el portal? Hoy el mapa es solo el Partido y la importación rechaza especialistas de otras ciudades."
+  },
+  {
+   "dato": "Personajes de las piezas de marketing",
+   "para": "dossier 04 · 8",
+   "pregunta": "¿Qué personajes usan las 12 piezas del pack? (no revisado en esta ola)"
+  }
+ ],
+ "capturas_recomendadas": [
+  {
+   "png": "S/capturas/portal/recortes/Inicio-para-hoy.png",
+   "tablero": "Inicio.dc.html",
+   "uso": "dossier 04 · 6. Supervisión de operaciones",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Inicio.png (604,140,2212,930)",
+   "px": "2212×930",
+   "personajes": [
+    "llave"
+   ],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (12, 3, 7, 2; «Buen día, Lucía»; HND-54)"
+   ],
+   "motivo": "Resume la idea del portal en un bloque: lo urgente primero, cada número lleva a la lista."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Inicio-semana.png",
+   "tablero": "Inicio.dc.html",
+   "uso": "dossier 04 · 11. Analítica y métricas",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Inicio.png (604,1948,2212,438)",
+   "px": "2212×438",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (38, 64 %, 11 de 14)",
+    "dejar visible «Sin dato · Fuente pendiente»: es el mensaje"
+   ],
+   "motivo": "Muestra el método: pregunta, número, comparación, fuente y «sin dato» en lugar de inventar."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Inicio-sin-sidebar.png",
+   "tablero": "Inicio.dc.html",
+   "uso": "dossier 04 · 1. Portada (alternativa: 6)",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Inicio.png (545,0,2335,2926)",
+   "px": "2335×2926",
+   "personajes": [
+    "llave"
+   ],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "reclamo «Pérdida de gas sin resolver» y «Antecedentes de Marina R.» visibles"
+   ],
+   "motivo": "Pantalla completa sin el pie del menú con el nombre de la persona."
+  },
+  {
+   "png": "S/capturas/portal/Preregistros.png",
+   "tablero": "Preregistros.dc.html",
+   "uso": "dossier 04 · 4. Gestión de clientes",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×2320",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (86, 44, siete nombres y apellidos)",
+    "oficio «Pintor» fuera de los seis rubros"
+   ],
+   "motivo": "La lista explica sola la pregunta «¿a quién contactamos hoy?»."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Ficha-sin-contacto.png",
+   "tablero": "Ficha.dc.html",
+   "uso": "dossier 04 · 5. Gestión de profesionales",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Ficha.png (576,50,2304,1690)",
+   "px": "2304×1690",
+   "personajes": [
+    "llave"
+   ],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (Marina Rodríguez, Lucía Ferrer, Tomás Méndez, Carla Aguirre)",
+    "«Gasista matriculada» en el historial: tapar"
+   ],
+   "motivo": "Ficha con siguiente paso, historial y responsable; el recorte deja afuera el bloque de datos de contacto."
+  },
+  {
+   "png": "S/capturas/portal/Reclamos.png",
+   "tablero": "Reclamos.dc.html",
+   "uso": "dossier 04 · 10. Incidencias y soporte",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×2320",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "reclamos de ejemplo graves («Pérdida de gas…», «Cobro duplicado en el pago») que pueden leerse como incidentes reales"
+   ],
+   "motivo": "La regla de plazos por gravedad está a la vista."
+  },
+  {
+   "png": "S/capturas/portal/Tareas.png",
+   "tablero": "Tareas.dc.html",
+   "uso": "dossier 04 · 14. Herramientas de supervisión",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×2320",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (sprint 14, 9 de 20; iniciales del equipo, incluida la de Ignacio)"
+   ],
+   "motivo": "Tablero tipo Jira legible de un vistazo."
+  },
+  {
+   "png": "S/capturas/portal/recortes/MapaInicio-preguntas.png",
+   "tablero": "MapaInicio.dc.html",
+   "uso": "dossier 04 · 13. Mapas y actividad territorial",
+   "rotulo": "Diseño propuesto",
+   "recorte": "MapaInicio.png (576,440,2284,1400): deja afuera la canilla",
+   "px": "2284×1400",
+   "personajes": [],
+   "riesgos": [
+    "los mini mapas de cada pregunta son ilustrativos"
+   ],
+   "motivo": "Explica que el mapa responde preguntas y dice cuándo la fuente está pendiente."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Mapa-mapa-y-barrio.png",
+   "tablero": "Mapa.dc.html",
+   "uso": "dossier 04 · 13. Mapas y actividad territorial",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Mapa.png (606,434,2212,1950)",
+   "px": "2212×1950",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (34 especialistas en Centro, oficios)",
+    "título «Especialistas activos»: no hay especialistas activos antes del 10/11",
+    "la forma de los barrios del lienzo es esquemática; la real es la del recorte OSM"
+   ],
+   "motivo": "Mapa + panel del barrio con las dos acciones."
+  },
+  {
+   "png": "S/capturas/portal/recortes/mapa-partido-geometria-osm.png",
+   "tablero": "(generado desde el código: src/modules/mapa/barrios.geo.json)",
+   "uso": "dossier 04 · 13 (y 15)",
+   "rotulo": "Geografía real · OpenStreetMap (ODbL) · sin datos",
+   "recorte": null,
+   "px": "2400×3157",
+   "personajes": [],
+   "riesgos": [
+    "mantener la atribución «© colaboradores de OpenStreetMap»"
+   ],
+   "motivo": "Única imagen del portal sin datos ficticios: la geometría real de 130 zonas que usa el código."
+  },
+  {
+   "png": "S/capturas/portal/recortes/mapa-ciudad-geometria-osm.png",
+   "tablero": "(generado desde el código)",
+   "uso": "dossier 04 · 17. Cierre (o 13)",
+   "rotulo": "Geografía real · OpenStreetMap (ODbL) · sin datos",
+   "recorte": null,
+   "px": "2400×3420",
+   "personajes": [],
+   "riesgos": [
+    "mantener la atribución"
+   ],
+   "motivo": "Zona urbana de Mar del Plata, apta como fondo editorial."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Campana-embudo.png",
+   "tablero": "Campana.dc.html",
+   "uso": "dossier 04 · 8. Administración comercial",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Campana.png (560,840,2300,1120): deja afuera presupuesto en USD y veredicto",
+   "px": "2300×1120",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (3.200, 410, 41, 28, 9)",
+    "«Matrícula verificada» como subtítulo: tapar o reescribir"
+   ],
+   "motivo": "Embudo con lectura accionable, sin los montos en dólares."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Cohortes-tabla.png",
+   "tablero": "Cohortes.dc.html",
+   "uso": "dossier 04 · 12. Cohortes y retención",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": "Cohortes.png (560,1020,2300,1180)",
+   "px": "2300×1180",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (meses junio–noviembre con 38 a 73 personas: parece tracción)"
+   ],
+   "motivo": "Tabla clara con celdas que no maduraron rayadas."
+  },
+  {
+   "png": "S/capturas/portal/Docs.png",
+   "tablero": "Docs.dc.html",
+   "uso": "dossier 04 · 14. Herramientas de supervisión",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×2200",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (autoras y fechas)",
+    "requisitos del especialista en un doc de ejemplo (en contradicción)"
+   ],
+   "motivo": "Biblioteca y lectura en modal; transmite procesos escritos."
+  },
+  {
+   "png": "S/capturas/portal/Legal.png",
+   "tablero": "Legal.dc.html",
+   "uso": "dossier 04 · 14 (o 5)",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×2840",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (31 al día, 1 no puede trabajar)",
+    "«Antecedentes penales de Marina Rodríguez» y «Constancia de monotributo de Julián Pereyra»: nombres + dato sensible",
+    "«Renovar el seguro de responsabilidad civil»: puede leerse como situación real de la empresa"
+   ],
+   "motivo": "Resumen con acción por fila; usar solo con nombres tapados."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Bienvenida-modulos.png",
+   "tablero": "Bienvenida.dc.html",
+   "uso": "dossier 04 · 2 (y 15)",
+   "rotulo": "Diseño propuesto",
+   "recorte": "Bienvenida.png (230,1200,2420,780): deja afuera el grupo de personajes",
+   "px": "2420×780",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Los nueve módulos explicados en una línea cada uno."
+  },
+  {
+   "png": "S/capturas/portal/Tour.png",
+   "tablero": "Tour.dc.html",
+   "uso": "dossier 04 · 15. Escalabilidad",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "2880×1800",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (Lucía Ferrer en el menú)"
+   ],
+   "motivo": "Recorrido guiado: el equipo aprende solo."
+  },
+  {
+   "png": "S/capturas/portal/recortes/Sidebar-sin-usuario.png",
+   "tablero": "Sidebar.dc.html",
+   "uso": "dossier 04 · 1 o 3 (mapa de módulos)",
+   "rotulo": "Diseño propuesto",
+   "recorte": "Sidebar.png (0,0,816,2520)",
+   "px": "816×2520",
+   "personajes": [],
+   "riesgos": [
+    "contadores de muestra (12, 3, 5, 2)"
+   ],
+   "motivo": "Menú con los módulos agrupados por tarea."
+  },
+  {
+   "png": "S/capturas/portal/RC-Indice.png",
+   "tablero": "RC-Indice.dc.html",
+   "uso": "dossier 04 · 16. Roadmap operativo (o anexo)",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "3616×2000",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Los 11 recorridos en una página."
+  },
+  {
+   "png": "S/capturas/portal/RC-Preregistros.png",
+   "tablero": "RC-Preregistros.dc.html",
+   "uso": "dossier 04 · 5 (recorrido)",
+   "rotulo": "Diseño propuesto · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "3616×4200",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "datos de contacto de muestra en la miniatura de la ficha"
+   ],
+   "motivo": "Recorrido completo con onboarding."
+  },
+  {
+   "png": "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-preregistros_especialistas-1280.jpg",
+   "tablero": "(código v2, muestra)",
+   "uso": "dossier 04 · 4 o 5 («así es hoy en código»)",
+   "rotulo": "Pantalla del portal v2 en código · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "1280×800",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Prueba que la lista existe en código, distinta del diseño v3."
+  },
+  {
+   "png": "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-inicio-1280.jpg",
+   "tablero": "(código v2, muestra)",
+   "uso": "dossier 04 · 6 («así es hoy en código»)",
+   "rotulo": "Pantalla del portal v2 en código · Muestra · datos ficticios",
+   "recorte": null,
+   "px": "1280×800",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "reclamos de ejemplo sobre conducta y pagos"
+   ],
+   "motivo": "Inicio real del código con rótulo de muestra visible."
+  },
+  {
+   "png": "S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-solicitudes-1280.jpg",
+   "tablero": "(código v2)",
+   "uso": "dossier 04 · 7. Seguimiento de trabajos",
+   "rotulo": "Pantalla del portal v2 en código · fuente pendiente",
+   "recorte": null,
+   "px": "1280×800",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Muestra honestamente que los trabajos todavía no llegan al portal."
+  }
+ ],
+ "riesgos_de_publicacion": [
+  {
+   "que": "Mecanismo de acceso (código de 6 dígitos, app autenticadora, cuentas que se crean afuera, email de ejemplo del equipo, dominio del portal)",
+   "donde": "Login.png, RC-Acceso.png, Guia.png (glosario), RC-Legal.png («Ver legajo (pide tu código)»), MOCK-legal_documentos (pedido de código)",
+   "recomendacion": "No usar Login ni RC-Acceso; tapar la fila del glosario sobre verificación reforzada y el texto entre paréntesis del legajo. Describir solo «acceso solo para el equipo»."
+  },
+  {
+   "que": "Datos de contacto de muestra con forma de dato real (WhatsApp enmascarado, email de ejemplo) y «Mostrar completo (queda registrado)»",
+   "donde": "Ficha.png, RC-Preregistros.png",
+   "recomendacion": "Usar el recorte Ficha-sin-contacto.png; en recorridos, difuminar el bloque «Datos de contacto»."
+  },
+  {
+   "que": "Nombres y apellidos ficticios (Lucía Ferrer, Tomás Méndez, Carla Aguirre, Marina Rodríguez, Julián Pereyra, Sofía Vidal…) y el nombre real de Ignacio mezclado con datos ficticios (tareas, aprendizajes, «Informó: Ignacio»)",
+   "donde": "casi todos los tableros; Tareas.png, Ticket.png, RC-Campana.png, RC-Legal.png",
+   "recomendacion": "Rótulo «Muestra · datos ficticios» en cada imagen; reemplazar o tapar «Ignacio» para no mezclar una persona real con datos inventados."
+  },
+  {
+   "que": "Cifras de muestra que parecen tracción (12 cosas para hoy, 38, 64 %, 11 de 14, 41 pre-registros, 86/44, cohortes de 38 a 73 personas, embudo 3.200 → 9, 34 especialistas en Centro)",
+   "donde": "Inicio, Mini, PasoFlujo, Onb, Preregistros, Campana, Cohortes, Mapa y todos los RC",
+   "recomendacion": "Rotular siempre, preferir recortes que muestren el método y no el número, y no ubicarlas cerca de cifras reales del pitch."
+  },
+  {
+   "que": "Incidentes de ejemplo que pueden leerse como reales y dañar la reputación (pérdida de gas sin resolver, especialista que no se presentó, cobro duplicado)",
+   "donde": "Inicio.png, Reclamos.png, RC-Reclamos.png, RC-Inicio.png, MOCK-inicio, MOCK-reclamos",
+   "recomendacion": "Rotular o reemplazar por textos neutros en una versión editorial; evitar el primer plano de esos títulos."
+  },
+  {
+   "que": "Situación legal de ejemplo que puede leerse como faltas reales (registro de bases de datos «Falta cargar», seguro que vence, constancia fiscal, contrato de hosting)",
+   "donde": "RC-Legal.png (vista Empresa), Legal.png, MOCK-legal_documentos-1280.jpg",
+   "recomendacion": "No usar la vista Empresa; en Resumen tapar nombres y vencimientos."
+  },
+  {
+   "que": "Montos en dólares",
+   "donde": "Campana.png (100 USD, ≈ 0,6 USD), RC-Campana.png",
+   "recomendacion": "Usar Campana-embudo.png; si se muestra el encabezado, tapar el presupuesto."
+  },
+  {
+   "que": "Palabras fuera de las reglas («matriculada», «Matrícula verificada», «gasista matriculado», «especialistas activos»)",
+   "donde": "Ficha.png, Campana.png, Ticket.png, Mapa.png, RC-Preregistros.png",
+   "recomendacion": "Tapar o recortar; en el texto del dossier hablar de «requisitos» y «especialistas anotados»."
+  },
+  {
+   "que": "Personajes fuera de la lista (grupo, canilla, gota)",
+   "donde": "Main.png, Login.png, Bienvenida.png (grupo); MapaInicio.png (canilla); Guia.png (canilla y gota según el inventario); miniaturas dentro de RC-Acceso.png, RC-Mapa.png y RC-Ayuda.png; pantalla de carga del código v2 (cinco Handys)",
+   "recomendacion": "Usar Bienvenida-modulos.png y MapaInicio-preguntas.png (recortes sin personajes); no usar Main ni Login; en recorridos, recortar las miniaturas afectadas. Alternativas: Foco para bienvenida y guía, Engranaje para el mapa, Llave (ya usada en Inicio y Ficha)."
+  },
+  {
+   "que": "Notas de trabajo del lienzo («TUS 17 PEDIDOS», «Corregí sobre cada tablero», «Eliminar Presentaciones»)",
+   "donde": "Main.png",
+   "recomendacion": "No usar Main en el dossier."
+  },
+  {
+   "que": "Detalles técnicos internos en tickets de muestra del código v2 (nombres de protocolos y componentes de tiempo real)",
+   "donde": "MOCK-tareas-*.jpg",
+   "recomendacion": "Usar el tablero del lienzo (Tareas.png) en lugar de las capturas MOCK de Tareas."
+  },
+  {
+   "que": "Datos de infraestructura en documentos fuente (host y puerto del servidor en el plan v3, proveedores en diagramas de los repos, variables de despliegue)",
+   "donde": "docs/v3/00-plan-v3.md §5, docs/architecture/*.md, docs/runbooks del backend",
+   "recomendacion": "No copiar nada de esas secciones al dossier; usar solo el diagrama de capacidades de este informe."
+  },
+  {
+   "que": "Presentar como existente lo que es diseño",
+   "donde": "todo el lienzo v3",
+   "recomendacion": "Cada captura del lienzo lleva «Diseño propuesto»; las del código v2, «Pantalla del portal v2 · datos de muestra»."
+  }
+ ]
+}

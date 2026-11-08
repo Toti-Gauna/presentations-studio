@@ -1,0 +1,6 @@
+# VPS: Caddy termina TLS (HTTPS/WSS automático) y reenvía al servidor de sesiones.
+# Opción A: solo sesiones (frontend en Hostinger).  Opción B: también el build (SERVIR_ESTATICOS=dist).
+sesiones.handyc.com {
+	encode gzip
+	reverse_proxy 127.0.0.1:8787
+}

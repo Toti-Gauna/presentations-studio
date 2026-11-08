@@ -1,0 +1,297 @@
+[
+ {
+  "de": "S/ola7/w04/rr4/inicio.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-parahoy.webp",
+  "recorte_css": [
+   304,
+   215,
+   671,
+   318
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/inicio.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-tickets.webp",
+  "recorte_css": [
+   993,
+   215,
+   415,
+   314
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/inicio.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-kpi-64.webp",
+  "recorte_css": [
+   584,
+   1032,
+   266,
+   161
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/inicio.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-kpi-sindato.webp",
+  "recorte_css": [
+   1143,
+   1032,
+   266,
+   161
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/inicio.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-muestra.webp",
+  "recorte_css": [
+   416,
+   24,
+   172,
+   24
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/preregistros.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-pre-botones.webp",
+  "recorte_css": [
+   1003,
+   131,
+   413,
+   64
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/preregistros.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-pre-filas.webp",
+  "recorte_css": [
+   305,
+   495,
+   1102,
+   236
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/ficha.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-fi-cabecera.webp",
+  "recorte_css": [
+   304,
+   101,
+   1104,
+   230
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/ficha.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-fi-siguiente.webp",
+  "recorte_css": [
+   304,
+   353,
+   683,
+   127
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/ficha.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-fi-historial.webp",
+  "recorte_css": [
+   304,
+   498,
+   683,
+   352
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/ficha.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-fi-contacto.webp",
+  "recorte_css": [
+   1007,
+   879,
+   401,
+   262
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/reclamos.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-re-tarjeta.webp",
+  "recorte_css": [
+   318,
+   354,
+   329,
+   183
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/reclamos.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-re-columna.webp",
+  "recorte_css": [
+   304,
+   287,
+   357,
+   649
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/campana.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ca-veredicto.webp",
+  "recorte_css": [
+   304,
+   218,
+   1104,
+   198
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/campana.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ca-embudo.webp",
+  "recorte_css": [
+   304,
+   508,
+   1104,
+   433
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/cohortes.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-co-tabla.webp",
+  "recorte_css": [
+   304,
+   568,
+   1104,
+   529
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/cohortes.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-co-lectura.webp",
+  "recorte_css": [
+   304,
+   1119,
+   542,
+   247
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/cohortes.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-co-tiempo.webp",
+  "recorte_css": [
+   864,
+   1119,
+   544,
+   243
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/mapa.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ma-mapa.webp",
+  "recorte_css": [
+   304,
+   216,
+   579,
+   976
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/mapa.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ma-barrio.webp",
+  "recorte_css": [
+   901,
+   216,
+   507,
+   320
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/mapa.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ma-acciones.webp",
+  "recorte_css": [
+   916,
+   1059,
+   477,
+   118
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/tareas.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ta-sprint.webp",
+  "recorte_css": [
+   296,
+   163,
+   640,
+   60
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/tareas.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ta-54.webp",
+  "recorte_css": [
+   316,
+   379,
+   242,
+   134
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/tareas.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-ta-48.webp",
+  "recorte_css": [
+   875,
+   379,
+   242,
+   134
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/legal.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-le-nopueden.webp",
+  "recorte_css": [
+   1141,
+   692,
+   267,
+   79
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ola7/w04/rr4/preregistros.png (lienzo «Portal interno v3», re-render a escala 4 con rerender/trabajos-ola6.json)",
+  "a": "c-pre-kpi7.webp",
+  "recorte_css": [
+   583,
+   283,
+   267,
+   72
+  ],
+  "salida": "escala 3, WebP q94"
+ },
+ {
+  "de": "S/ops04/rr2/docs-v3.png → recorte [32,30,2160,1362] a 2x (ola 6), y de ahí [540,190,1420,600]",
+  "a": "c-doc-pasos.webp",
+  "salida": "WebP q94"
+ },
+ {
+  "de": "inicio a 2x (dispositivo.cjs, laptop plata)",
+  "a": "l-inicio-plata.webp"
+ }
+]

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="usuario">
+<head>
+<meta charset="utf-8">
+<title>Handyx · tres estilos para la colección</title>
+<link rel="stylesheet" href="../plantilla/base.css">
+<style>
+  /* ===== piezas comunes a los tres estilos ===== */
+  .pantalla { position: relative; width: var(--w, 34mm); aspect-ratio: 390 / 844; border-radius: calc(var(--w, 34mm) * 0.09); overflow: hidden; background: #fff; }
+  .pantalla > img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .rec { display: grid; grid-template-columns: minmax(0,1fr) 10mm minmax(0,1fr) 10mm minmax(0,1fr) 10mm minmax(0,1fr); align-items: start; }
+  .rec .pantalla { --w: 32mm; }
+  .rec-paso { display: flex; flex-direction: column; align-items: center; }
+  .rec-pie { width: 100%; margin-top: 3.5mm; }
+  .rec-pie .n { display: inline-grid; place-items: center; width: 5.6mm; height: 5.6mm; border-radius: 50%; font: 800 7.4pt/1 var(--f-titulos); }
+  .rec-pie h4 { display: inline; margin-left: 1.4mm; font: 750 8.6pt/1.2 var(--f-texto); text-transform: none; letter-spacing: 0; }
+  .rec-pie p { font-size: 7.6pt; line-height: 1.4; margin-top: 1.4mm; }
+  .rec-flecha { position: relative; height: 74mm; display: flex; align-items: center; justify-content: center; }
+  .rec-flecha::before { content: ''; position: absolute; left: 0; right: 1.4mm; top: 50%; border-top: 0.5mm solid currentColor; }
+  .rec-flecha::after { content: ''; position: absolute; right: 0; top: calc(50% - 1.5mm); border: 1.5mm solid transparent; border-left: 2mm solid currentColor; border-right: 0; }
+  .etiqueta { position: relative; z-index: 1; writing-mode: vertical-rl; transform: rotate(180deg); padding: 2mm 1mm; border-radius: 99px; font: 750 6.4pt/1 var(--f-texto); white-space: nowrap; }
+  .escena { position: relative; overflow: hidden; }
+  .escena .gente { position: absolute; display: flex; align-items: flex-end; gap: 2mm; }
+
+  /* ===== A · LIENZO: el lenguaje de los tableros de diseño ===== */
+  .A { --fondo: #FFFFFF; }
+  .A.tablero { --fondo: var(--hueso); }
+  .A .pantalla { box-shadow: 0 0 0 0.25mm #DADFE8, 0 3mm 9mm rgba(14, 29, 54, 0.14); }
+  .A .rec-flecha { color: var(--azul); }
+  .A .etiqueta { background: var(--amarillo); color: var(--navy); }
+  .A .rec-pie .n { background: var(--azul); color: #fff; }
+  .A .ceja { color: var(--azul); }
+  .A-tapa .a-sangre { background: var(--hueso); }
+  .A-tapa .ciudad { position: absolute; left: -3mm; right: -3mm; bottom: -3mm; }
+  .A-tapa .tel { position: absolute; right: 22mm; top: 92mm; --w: 70mm; transform: rotate(4deg); }
+  .A-tapa .foco { position: absolute; left: 22mm; bottom: 70mm; width: 34mm; }
+  .A-tapa .vecina { position: absolute; left: 60mm; bottom: 46mm; width: 30mm; }
+  .tarjeta-tablero { background: #fff; border-radius: 3mm; padding: 6mm; box-shadow: 0 0 0 0.25mm #E2DCCD; }
+  .leyenda-tablero { display: flex; gap: 6mm; font: 600 7pt/1 var(--f-texto); color: var(--gris); }
+  .leyenda-tablero i { display: inline-block; width: 6mm; height: 2.4mm; border-radius: 99px; margin-right: 1.6mm; vertical-align: middle; }
+
+  /* ===== B · BARRIO: escenas ilustradas a sangre ===== */
+  .B .rec-flecha { color: #fff; }
+  .B .etiqueta { background: var(--amarillo); color: var(--navy); }
+  .B .rec-pie .n { background: var(--amarillo); color: var(--navy); }
+  .B .pantalla { box-shadow: 0 0 0 1mm #fff, 0 4mm 12mm rgba(8, 20, 42, 0.35); }
+  .B-escena { position: absolute; left: -3mm; right: -3mm; top: -3mm; background: var(--azul); overflow: hidden; }
+  .B .rec-pie h4, .B .rec-pie p { color: #fff; }
+  .B .rec-pie p { color: rgba(255, 255, 255, 0.82); }
+
+  /* ===== C · PLANO: dibujo de línea sobre navy ===== */
+  .C { --fondo: var(--navy); color: rgba(233, 239, 249, 0.82); }
+  .C h1, .C h2, .C h4, .C .fuerte { color: #fff; }
+  .C .ceja { color: var(--amarillo); }
+  .C mark { background: none; color: var(--amarillo); }
+  .C .pantalla { box-shadow: 0 0 0 0.35mm rgba(233, 239, 249, 0.55); }
+  .C .rec-flecha { color: rgba(233, 239, 249, 0.75); }
+  .C .etiqueta { background: transparent; color: var(--amarillo); box-shadow: inset 0 0 0 0.3mm var(--amarillo); }
+  .C .rec-pie .n { background: transparent; color: var(--amarillo); box-shadow: inset 0 0 0 0.35mm var(--amarillo); }
+  .C .rec-pie p { color: rgba(233, 239, 249, 0.7); }
+  .C .cabecera, .C .folio { color: rgba(233, 239, 249, 0.55); }
+  .C .folio-n { color: #fff; }
+  .C .cabecera::after { border-color: rgba(233, 239, 249, 0.16); }
+  .grilla-plano { position: absolute; inset: -3mm; background-image: linear-gradient(rgba(233,239,249,0.05) 0.2mm, transparent 0.2mm), linear-gradient(90deg, rgba(233,239,249,0.05) 0.2mm, transparent 0.2mm); background-size: 10mm 10mm; }
+  .estilo-marca { position: absolute; right: 18mm; top: 10mm; font: 800 6.4pt/1 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; padding: 1.2mm 2.4mm; border-radius: 99px; background: var(--amarillo); color: var(--navy); z-index: 5; }
+</style>
+</head>
+<body>
+
+<!-- ==================== A · LIENZO ==================== -->
+<section class="pagina A A-tapa tapa tapa-clara" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre"><div class="ciudad" data-ilustra="ciudad" data-paleta="clara"></div></div>
+    <span class="estilo-marca">Estilo A · Lienzo</span>
+    <div class="caja">
+      <div class="tapa-cabeza"><img class="logo" style="--h:9mm" src="../marca/logo-handyx.svg" alt="Handyx"><div class="tapa-serie"><b>Colección Handyx</b>Dossier 02 de 04</div></div>
+      <div class="esp-5"><span class="ceja">02 · Customer App</span>
+        <h1 class="tapa-titulo esp-2" style="color:var(--navy)">Pedir un arreglo,<br><mark>sin vueltas</mark></h1>
+        <p class="tapa-bajada esp-3" style="color:var(--tinta-2)">Contás qué pasa, recibís propuestas claras y elegís vos, por calidad y por precio.</p></div>
+    </div>
+    <div class="pantalla tel permite-salir"><img src="img/i-inicio.webp" alt=""></div>
+    <img class="foco permite-salir" src="../marca/personajes/bombilla-b.svg" alt="Foco">
+    <div class="vecina permite-salir" data-ilustra="vecina" data-paleta="clara"></div>
+  </div>
+</section>
+
+<section class="pagina A" data-folio="8">
+  <div class="lamina">
+    <div class="cabecera"><span>07 · Solicitud de servicios</span><span>Handyx · Customer App</span></div>
+    <span class="estilo-marca">Estilo A · Lienzo</span>
+    <div class="caja">
+      <span class="ceja">07 · Solicitud de servicios</span>
+      <h1 class="esp-1">Se rompió algo en casa. <mark>Tres toques</mark> y está pedido.</h1>
+      <p class="bajada esp-3" style="max-width:150mm">Elegís el rubro, contás qué pasa con tus palabras y publicás. Fotos, medidas, día y dirección son opcionales y se cambian antes de publicar.</p>
+      <div class="escena esp-4" style="height:96mm">
+        <div class="tarjeta-tablero" style="position:absolute;inset:0;padding:0;overflow:hidden"><div data-ilustra="ciudad" data-paleta="clara" style="position:absolute;left:0;right:0;bottom:0"></div></div>
+        <div class="gente" style="left:14mm;bottom:12mm"><div data-ilustra="vecina" data-paleta="clara" style="width:24mm"></div><img src="../marca/personajes/bombilla-c.svg" style="width:22mm" alt="Foco"></div>
+        <div class="gente" style="right:22mm;bottom:12mm"><div data-ilustra="especialista" data-paleta="clara" style="width:24mm"></div><img src="../marca/personajes/llave-b.svg" style="width:26mm" alt="Llave"></div>
+      </div>
+      <div class="grilla esp-4">
+        <div class="c-4"><div class="cifra" style="font-size:22pt">3</div><p class="cifra-rotulo">toques para publicar un pedido</p><span class="estado disenado esp-1">Diseñado</span></div>
+        <div class="c-4"><div class="cifra" style="font-size:22pt">6</div><p class="cifra-rotulo">rubros: electricidad, plomería, gas, cerrajería, albañilería y aire</p><span class="tipo-dato esp-1">Dato verificado</span></div>
+        <div class="c-4"><div class="cifra" style="font-size:22pt">0 %</div><p class="cifra-rotulo">tarifa de servicio hasta el 10/12/2026</p><span class="tipo-dato esp-1">Decisión del fundador</span></div>
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<section class="pagina A tablero" data-folio="9">
+  <div class="lamina">
+    <div class="cabecera"><span>Recorrido con pantallas</span><span>Handyx · Customer App</span></div>
+    <span class="estilo-marca">Estilo A · Lienzo</span>
+    <div class="caja">
+      <span class="ceja">Recorrido con pantallas</span>
+      <h1 class="esp-1">Pedir un <mark>arreglo</mark></h1>
+      <div class="leyenda-tablero esp-2"><span><i style="background:var(--amarillo)"></i>Lo que pasa entre pantallas</span><span><i style="background:var(--azul)"></i>Orden del recorrido</span></div>
+      <div class="tarjeta-tablero esp-4">
+        <div class="rec">
+          <div class="rec-paso"><div class="pantalla"><img src="img/i-inicio.webp" alt=""></div><div class="rec-pie"><span class="n">1</span><h4>Tocás un rubro</h4><p>Rubros, tu próximo turno y HandIA si no sabés cuál es.</p></div></div>
+          <div class="rec-flecha"><span class="etiqueta">Toca «Plomería»</span></div>
+          <div class="rec-paso"><div class="pantalla"><img src="img/p-que.webp" alt=""></div><div class="rec-pie"><span class="n">2</span><h4>¿Qué pasa?</h4><p>Elegís una opción o lo contás con tus palabras.</p></div></div>
+          <div class="rec-flecha"><span class="etiqueta">Camino corto</span></div>
+          <div class="rec-paso"><div class="pantalla"><img src="img/p-revisar.webp" alt=""></div><div class="rec-pie"><span class="n">3</span><h4>Revisás</h4><p>Todo junto: cuándo, dónde y el precio orientativo.</p></div></div>
+          <div class="rec-flecha"><span class="etiqueta">Publicar</span></div>
+          <div class="rec-paso"><div class="pantalla"><img src="img/c-propuestas.webp" alt=""></div><div class="rec-pie"><span class="n">4</span><h4>Llegan propuestas</h4><p>De especialistas de tu zona, en el orden en que llegan.</p></div></div>
+        </div>
+      </div>
+      <div class="flujo esp-5">
+        <div><h4>Necesidad</h4><p>Se rompió algo y no sabés a quién llamar.</p></div>
+        <div><h4>Acción</h4><p>Elegís el rubro y contás qué pasa.</p></div>
+        <div><h4>Qué hace Handyx</h4><p>Muestra el pedido a especialistas del rubro y la zona.</p></div>
+        <div><h4>Resultado</h4><p>Propuestas con precio para comparar.</p></div>
+      </div>
+      <p class="fuente empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> &nbsp;Pedido en pasos <span class="estado en-pruebas">En pruebas</span> · camino en tres toques <span class="estado disenado">Diseñado</span></p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<!-- ==================== B · BARRIO ==================== -->
+<section class="pagina B tapa" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre" style="background:var(--azul)"><div data-ilustra="ciudad" data-paleta="marca" style="position:absolute;left:0;right:0;bottom:0"></div></div>
+    <span class="estilo-marca">Estilo B · Barrio</span>
+    <div class="caja">
+      <div class="tapa-cabeza"><img class="logo" style="--h:9mm" src="../marca/logo-handyx-blanco.svg" alt="Handyx"><div class="tapa-serie"><b>Colección Handyx</b>Dossier 02 de 04</div></div>
+      <div class="esp-5"><span class="ceja" style="color:var(--amarillo)">02 · Customer App</span>
+        <h1 class="tapa-titulo esp-2">Tu casa,<br><mark>resuelta</mark></h1>
+        <p class="tapa-bajada esp-3">Pedir un arreglo en Mar del Plata, comparar propuestas claras y elegir con tranquilidad.</p></div>
+    </div>
+    <div class="permite-salir" style="position:absolute;right:18mm;top:104mm"><div class="pantalla" style="--w:62mm;box-shadow:0 0 0 1.2mm #fff,0 5mm 16mm rgba(8,20,42,.4)"><img src="img/i-inicio.webp" alt=""></div></div>
+    <div class="gente permite-salir" style="position:absolute;left:18mm;bottom:52mm;display:flex;align-items:flex-end;gap:2mm"><div data-ilustra="vecina" data-paleta="marca" style="width:30mm"></div><img src="../marca/personajes/bombilla-b.svg" style="width:30mm" alt="Foco"></div>
+  </div>
+</section>
+
+<section class="pagina B" data-folio="8">
+  <div class="lamina">
+    <div class="B-escena" style="height:162mm"><div data-ilustra="ciudad" data-paleta="marca" style="position:absolute;left:0;right:0;bottom:0"></div></div>
+    <span class="estilo-marca">Estilo B · Barrio</span>
+    <div class="caja" style="color:#fff">
+      <span class="ceja" style="color:var(--amarillo)">07 · Solicitud de servicios</span>
+      <h1 class="esp-1" style="color:#fff">Se rompió algo. <mark style="background:none;color:var(--amarillo)">Tres toques</mark> y está pedido.</h1>
+      <p class="bajada esp-3" style="color:rgba(255,255,255,.88);max-width:140mm">Elegís el rubro, contás qué pasa y publicás. Fotos, medidas y día son opcionales.</p>
+      <div class="gente" style="position:absolute;left:4mm;top:84mm;display:flex;align-items:flex-end;gap:3mm"><div data-ilustra="vecina" data-paleta="marca" style="width:22mm"></div><img src="../marca/personajes/bombilla-c.svg" style="width:20mm" alt="Foco"></div>
+      <div class="gente" style="position:absolute;right:6mm;top:84mm;display:flex;align-items:flex-end;gap:3mm"><img src="../marca/personajes/llave-b.svg" style="width:24mm" alt="Llave"><div data-ilustra="especialista" data-paleta="marca" style="width:22mm"></div></div>
+      <div class="grilla" style="margin-top:auto;color:var(--tinta-2)">
+        <div class="c-4 tarjeta blanca"><div class="cifra" style="font-size:20pt">3</div><p class="cifra-rotulo">toques para publicar</p><span class="estado disenado esp-1">Diseñado</span></div>
+        <div class="c-4 tarjeta blanca"><div class="cifra" style="font-size:20pt">6</div><p class="cifra-rotulo">rubros del hogar</p><span class="tipo-dato esp-1">Dato verificado</span></div>
+        <div class="c-4 tarjeta blanca"><div class="cifra" style="font-size:20pt">0 %</div><p class="cifra-rotulo">tarifa hasta el 10/12/2026</p><span class="tipo-dato esp-1">Decisión del fundador</span></div>
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<section class="pagina B" data-folio="9" style="--fondo:var(--azul-profundo)">
+  <div class="lamina">
+    <div class="cabecera" style="color:rgba(255,255,255,.6)"><span>Recorrido</span><span>Handyx · Customer App</span></div>
+    <span class="estilo-marca">Estilo B · Barrio</span>
+    <div class="caja">
+      <span class="ceja" style="color:var(--amarillo)">Recorrido con pantallas</span>
+      <h1 class="esp-1" style="color:#fff">Pedir un <mark style="background:none;color:var(--amarillo)">arreglo</mark></h1>
+      <div class="rec esp-5">
+        <div class="rec-paso"><div class="pantalla"><img src="img/i-inicio.webp" alt=""></div><div class="rec-pie"><span class="n">1</span><h4>Tocás un rubro</h4><p>Rubros, tu próximo turno y HandIA.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Toca «Plomería»</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/p-que.webp" alt=""></div><div class="rec-pie"><span class="n">2</span><h4>¿Qué pasa?</h4><p>Una opción o tus palabras.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Camino corto</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/p-revisar.webp" alt=""></div><div class="rec-pie"><span class="n">3</span><h4>Revisás</h4><p>Cuándo, dónde y el precio orientativo.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Publicar</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/c-propuestas.webp" alt=""></div><div class="rec-pie"><span class="n">4</span><h4>Propuestas</h4><p>De especialistas de tu zona.</p></div></div>
+      </div>
+      <div class="tarjeta blanca empuja" style="display:grid;grid-template-columns:repeat(4,1fr);gap:4mm">
+        <div><h4 style="color:var(--azul)">Necesidad</h4><p class="chico">Se rompió algo y no sabés a quién llamar.</p></div>
+        <div><h4 style="color:var(--azul)">Acción</h4><p class="chico">Elegís el rubro y contás qué pasa.</p></div>
+        <div><h4 style="color:var(--azul)">Qué hace Handyx</h4><p class="chico">Lo muestra a especialistas de la zona.</p></div>
+        <div><h4 style="color:var(--azul)">Resultado</h4><p class="chico">Propuestas con precio para comparar.</p></div>
+      </div>
+      <p class="fuente esp-2" style="color:rgba(255,255,255,.7)"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Pedido en pasos: en pruebas · tres toques: diseñado.</p>
+    </div>
+    <div class="folio" style="color:rgba(255,255,255,.6)"><span>Handyx · Customer App</span><span class="folio-n" style="color:#fff">00</span></div>
+  </div>
+</section>
+
+<!-- ==================== C · PLANO ==================== -->
+<section class="pagina C tapa" data-folio="1">
+  <div class="lamina">
+    <div class="a-sangre" style="background:var(--navy)"><div class="grilla-plano"></div><div data-ilustra="ciudad" data-paleta="linea" style="position:absolute;left:0;right:0;bottom:0"></div></div>
+    <span class="estilo-marca">Estilo C · Plano</span>
+    <div class="caja">
+      <div class="tapa-cabeza"><img class="logo" style="--h:9mm" src="../marca/logo-handyx-blanco.svg" alt="Handyx"><div class="tapa-serie"><b>Colección Handyx</b>Dossier 02 de 04</div></div>
+      <div class="esp-5"><span class="ceja">02 · Customer App</span>
+        <h1 class="tapa-titulo esp-2">Pedir un arreglo,<br><mark>sin vueltas</mark></h1>
+        <p class="tapa-bajada esp-3">Contás qué pasa, recibís propuestas claras y elegís vos, por calidad y por precio.</p></div>
+    </div>
+    <div class="permite-salir" style="position:absolute;right:20mm;top:96mm"><div class="pantalla" style="--w:64mm;box-shadow:0 0 0 0.4mm rgba(233,239,249,.7),0 0 0 3mm rgba(245,245,154,.12)"><img src="img/i-inicio.webp" alt=""></div></div>
+    <div class="permite-salir" style="position:absolute;left:20mm;bottom:58mm;display:flex;gap:2mm;align-items:flex-end"><div data-ilustra="vecina" data-paleta="linea" style="width:28mm"></div></div>
+  </div>
+</section>
+
+<section class="pagina C" data-folio="8">
+  <div class="lamina">
+    <div class="a-sangre"><div class="grilla-plano"></div></div>
+    <div class="cabecera"><span>07 · Solicitud de servicios</span><span>Handyx · Customer App</span></div>
+    <span class="estilo-marca">Estilo C · Plano</span>
+    <div class="caja">
+      <span class="ceja">07 · Solicitud de servicios</span>
+      <h1 class="esp-1">Se rompió algo en casa. <mark>Tres toques</mark> y está pedido.</h1>
+      <p class="bajada esp-3" style="color:rgba(233,239,249,.86);max-width:150mm">Elegís el rubro, contás qué pasa con tus palabras y publicás. Fotos, medidas, día y dirección son opcionales.</p>
+      <div class="escena esp-4" style="height:100mm;border-radius:3mm;box-shadow:inset 0 0 0 0.3mm rgba(233,239,249,.2);overflow:hidden">
+        <div data-ilustra="ciudad" data-paleta="linea" style="position:absolute;left:0;right:0;bottom:0"></div>
+        <div class="gente" style="left:14mm;bottom:10mm"><div data-ilustra="vecina" data-paleta="linea" style="width:22mm"></div></div>
+        <div class="gente" style="right:22mm;bottom:10mm"><div data-ilustra="especialista" data-paleta="linea" style="width:22mm"></div></div>
+      </div>
+      <div class="grilla esp-4">
+        <div class="c-4"><div class="cifra" style="font-size:22pt;color:#fff">3</div><p class="cifra-rotulo" style="color:rgba(233,239,249,.8)">toques para publicar</p><span class="estado disenado esp-1">Diseñado</span></div>
+        <div class="c-4"><div class="cifra" style="font-size:22pt;color:#fff">6</div><p class="cifra-rotulo" style="color:rgba(233,239,249,.8)">rubros del hogar</p></div>
+        <div class="c-4"><div class="cifra" style="font-size:22pt;color:var(--amarillo)">0 %</div><p class="cifra-rotulo" style="color:rgba(233,239,249,.8)">tarifa hasta el 10/12/2026</p></div>
+      </div>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<section class="pagina C" data-folio="9">
+  <div class="lamina">
+    <div class="a-sangre"><div class="grilla-plano"></div></div>
+    <div class="cabecera"><span>Recorrido con pantallas</span><span>Handyx · Customer App</span></div>
+    <span class="estilo-marca">Estilo C · Plano</span>
+    <div class="caja">
+      <span class="ceja">Recorrido con pantallas</span>
+      <h1 class="esp-1">Pedir un <mark>arreglo</mark></h1>
+      <div class="rec esp-5">
+        <div class="rec-paso"><div class="pantalla"><img src="img/i-inicio.webp" alt=""></div><div class="rec-pie"><span class="n">1</span><h4>Tocás un rubro</h4><p>Rubros, tu próximo turno y HandIA.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Toca «Plomería»</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/p-que.webp" alt=""></div><div class="rec-pie"><span class="n">2</span><h4>¿Qué pasa?</h4><p>Una opción o tus palabras.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Camino corto</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/p-revisar.webp" alt=""></div><div class="rec-pie"><span class="n">3</span><h4>Revisás</h4><p>Cuándo, dónde y el precio orientativo.</p></div></div>
+        <div class="rec-flecha"><span class="etiqueta">Publicar</span></div>
+        <div class="rec-paso"><div class="pantalla"><img src="img/c-propuestas.webp" alt=""></div><div class="rec-pie"><span class="n">4</span><h4>Propuestas</h4><p>De especialistas de tu zona.</p></div></div>
+      </div>
+      <div class="flujo esp-5" style="border-top-color:rgba(233,239,249,.5)">
+        <div><h4 style="color:var(--amarillo)">Necesidad</h4><p style="color:rgba(233,239,249,.8)">Se rompió algo y no sabés a quién llamar.</p></div>
+        <div><h4 style="color:var(--amarillo)">Acción</h4><p style="color:rgba(233,239,249,.8)">Elegís el rubro y contás qué pasa.</p></div>
+        <div><h4 style="color:var(--amarillo)">Qué hace Handyx</h4><p style="color:rgba(233,239,249,.8)">Lo muestra a especialistas de la zona.</p></div>
+        <div><h4 style="color:var(--amarillo)">Resultado</h4><p style="color:rgba(233,239,249,.8)">Propuestas con precio para comparar.</p></div>
+      </div>
+      <p class="fuente empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Pedido en pasos: en pruebas · tres toques: diseñado.</p>
+    </div>
+    <div class="folio"><span>Handyx · Customer App</span><span class="folio-n">00</span></div>
+  </div>
+</section>
+
+<script src="../plantilla/ilustra.js"></script>
+<script src="../plantilla/pieza.js"></script>
+</body>
+</html>

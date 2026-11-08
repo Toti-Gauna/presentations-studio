@@ -1,0 +1,5 @@
+[
+ {"tablero":"Docs.dc.html","a":"docs-sinmenu.png","escala":1,
+  "reemplazos":[["Contale los requisitos: monotributo con CUIT y antecedentes penales en 7 días.","Contale cuáles son los próximos pasos para el alta."]],
+  "js":"(() => { const a = document.querySelector('aside'); let e = a; while (e && !(e.getAttribute('style')||'').includes('flex: 0 0 auto')) e = e.parentElement; if (e) e.style.display = 'none'; })()"}
+]

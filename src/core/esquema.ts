@@ -1,4 +1,4 @@
-// Esquema de contenidos del motor (versión 1). Núcleo sin marca: nada de Handyx acá.
+// Esquema de contenidos del motor (versión 1). Núcleo sin marca: nada de ninguna marca acá.
 // Todo deck, tema, QR y afirmación se valida con estos esquemas antes de mostrarse.
 import { z } from 'zod';
 
@@ -18,7 +18,7 @@ export const urlPublica = z
   }, 'URL pública: solo https (o http://localhost en ensayo), sin credenciales');
 
 // ── Afirmaciones (claims) ────────────────────────────────────────────────────
-export const TipoAfirmacion = z.enum(['observado', 'informado', 'supuesto', 'proyeccion', 'meta']);
+export const TipoAfirmacion = z.enum(['observado', 'informado', 'supuesto', 'proyeccion', 'meta', 'ejemplo']);
 export const Afirmacion = z
   .object({
     id: z.string().regex(/^[A-Z][A-Z0-9-]{1,40}$/, 'id de afirmación: MAYÚSCULAS-Y-GUIONES'),
@@ -35,7 +35,7 @@ export const Afirmacion = z
     formula: z.string().optional(),
     dependencias: z.array(z.string()).default([]),
     uso: z.enum(['publico', 'anexo', 'notas']),
-    formato: z.enum(['entero', 'ars', 'porcentaje', 'texto', 'fecha']).default('texto'),
+    formato: z.enum(['entero', 'ars', 'usd', 'millones', 'porcentaje', 'texto', 'fecha']).default('texto'),
   })
   .strict();
 export type Afirmacion = z.infer<typeof Afirmacion>;
@@ -75,16 +75,24 @@ const base = {
   area: z.enum(['centro', 'arriba', 'abajo', 'izquierda', 'derecha', 'fondo', 'libre']).default('centro'),
   /** Posición libre en % del escenario (solo con area=libre). */
   pos: z.object({ x: z.number(), y: z.number(), w: z.number().optional() }).strict().optional(),
-  entrada: z.enum(['ninguna', 'fundido', 'subir', 'escala', 'mascara', 'palabras', 'contar']).default('fundido'),
+  entrada: z.enum(['ninguna', 'fundido', 'subir', 'escala', 'mascara', 'palabras', 'contar', 'traer', 'golpe']).default('fundido'),
+  /** Con entrada "traer": id del elemento personaje que trae esta pieza a escena. */
+  traidoPor: id.optional(),
+  /** Lado desde el que llega lo traído (si el personaje entra en el mismo paso). */
+  desde: z.enum(['izq', 'der']).default('izq'),
   enfasis: z.boolean().default(false),
+  /** Caja estilo lámina alrededor del elemento. */
+  caja: z.enum(['blanca', 'azul', 'amarilla', 'gris', 'navy']).optional(),
+  /** Paso en el que el elemento sale de escena (opcional). */
+  sale: z.number().int().min(1).optional(),
 };
 const Accion = z.enum(['reposo', 'entrar', 'salir', 'saludar', 'festejar', 'caminar', 'mirar', 'senalar', 'reaccionar', 'satisfaccion']);
 export type Accion = z.infer<typeof Accion>;
 
 export const Elemento = z.discriminatedUnion('tipo', [
-  z.object({ ...base, tipo: z.literal('titulo'), texto: z.string(), nivel: z.number().int().min(1).max(3).default(1) }).strict(),
-  z.object({ ...base, tipo: z.literal('texto'), texto: z.string(), tamano: z.enum(['s', 'm', 'l']).default('m') }).strict(),
-  z.object({ ...base, tipo: z.literal('etiqueta'), texto: z.string(), tono: z.enum(['neutro', 'aviso', 'demo', 'proyeccion', 'meta']).default('neutro') }).strict(),
+  z.object({ ...base, tipo: z.literal('titulo'), texto: z.string(), nivel: z.number().int().min(1).max(3).default(1), kicker: z.string().optional() }).strict(),
+  z.object({ ...base, tipo: z.literal('texto'), texto: z.string(), tamano: z.enum(['xs', 's', 'm', 'l']).default('m') }).strict(),
+  z.object({ ...base, tipo: z.literal('etiqueta'), texto: z.string(), tono: z.enum(['neutro', 'aviso', 'demo', 'proyeccion', 'meta', 'kicker']).default('neutro') }).strict(),
   z
     .object({ ...base, tipo: z.literal('cifra'), afirmacion: z.string(), leyenda: z.string(), detalle: z.string().optional() })
     .strict(),
@@ -93,7 +101,10 @@ export const Elemento = z.discriminatedUnion('tipo', [
       ...base,
       tipo: z.literal('lista'),
       items: z.array(z.object({ texto: z.string(), paso: z.number().int().min(0).optional(), icono: z.string().optional() }).strict()).min(1),
-      estilo: z.enum(['vinetas', 'numerada', 'mosaicos', 'contraste']).default('vinetas'),
+      estilo: z.enum(['vinetas', 'numerada', 'mosaicos', 'contraste', 'escalera']).default('vinetas'),
+      /** Columnas de los mosaicos (si falta: hasta 4 en una fila, si no 3). */
+      columnas: z.number().int().min(1).max(6).optional(),
+      encabezado: z.string().optional(),
     })
     .strict(),
   z
@@ -120,6 +131,10 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('tabla'),
       columnas: z.array(z.string()).min(2),
       filas: z.array(z.array(z.string())).min(1),
+      /** Índice (desde 0) de la fila destacada, ej. la propia marca en una comparación. */
+      destacar: z.number().int().min(0).optional(),
+      /** Paso en que se revela la fila destacada (si difiere del elemento). */
+      pasoDestacada: z.number().int().min(0).optional(),
     })
     .strict(),
   z.object({ ...base, tipo: z.literal('qr'), qr: id }).strict(),
@@ -129,13 +144,68 @@ export const Elemento = z.discriminatedUnion('tipo', [
       tipo: z.literal('personaje'),
       personaje: z.string(),
       tamano: z.number().min(5).max(80).default(28),
-      acciones: z.array(z.object({ paso: z.number().int().min(0), accion: Accion, hacia: z.enum(['izq', 'der']).optional() }).strict()).default([]),
+      acciones: z.array(z.object({ paso: z.number().int().min(0), accion: Accion, hacia: z.enum(['izq', 'der']).optional(), distancia: z.number().min(0).max(1900).optional() }).strict()).default([]),
       continuidad: z.boolean().default(false),
     })
     .strict(),
-  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string() }).strict(),
+  z.object({ ...base, tipo: z.literal('imagen'), recurso: z.string(), alt: z.string(), forma: z.enum(['normal', 'circulo']).default('normal'), /** Ocupa todo el ancho de su caja, sin el tope de alto (gráficos anchos). */ llenar: z.boolean().default(false) }).strict(),
   z
-    .object({ ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false) })
+    .object({
+      ...base,
+      tipo: z.literal('oceano'),
+      /** Pasos relativos: 0 mar rojo con competidores · 1 la marca toma lo mejor de cada uno · 2 océano azul. */
+      competidores: z.array(z.object({ nombre: z.string(), nota: z.string(), mejor: z.string() }).strict()).min(2).max(8),
+      marca: z.string(),
+      pasoToma: z.number().int().min(0),
+      pasoAzul: z.number().int().min(0),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('reparto'),
+      total: z.string(),
+      leyendaTotal: z.string(),
+      partes: z.array(z.object({ afirmacion: z.string(), etiqueta: z.string(), tono: z.enum(['azul', 'amarilla', 'gris']) }).strict()).min(2).max(4),
+      pasoPartes: z.number().int().min(0),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('circulos'),
+      capas: z.array(z.object({ etiqueta: z.string(), paso: z.number().int().min(0).default(0) }).strict()).min(2).max(4),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('telefono'),
+      /** Pantallas reales (recursos de imagen) que se suceden por paso dentro de un marco de celular 9:19,5. */
+      pantallas: z.array(z.object({ recurso: z.string(), paso: z.number().int().min(0).default(0), alt: z.string() }).strict()).min(1),
+      leyenda: z.string().optional(),
+      alto: z.number().min(20).max(95).default(78),
+    })
+    .strict(),
+  z
+    .object({
+      ...base, tipo: z.literal('video'), recurso: z.string(), poster: z.string(), alt: z.string(), sonido: z.boolean().default(false), auto: z.boolean().default(false), cubrir: z.boolean().default(false),
+      /** Imágenes fijas del video para las exportaciones (PDF, PPTX): una página por imagen, antes de la del póster, en el paso donde entra el video. En vivo no cambian nada. */
+      fotogramas: z.array(z.object({ recurso: z.string(), alt: z.string() }).strict()).default([]),
+    })
+    .strict(),
+  z
+    .object({
+      ...base,
+      tipo: z.literal('animacion'),
+      /** Escena animada de la marca: brands/<carpeta>/animaciones/<modulo>.ts. Cada paso de la diapositiva reproduce un tramo. */
+      modulo: z.string().regex(/^[a-z0-9-]+$/),
+      alt: z.string(),
+      /** Segundos de animación de cada paso (los mismos tramos que el módulo). Uno por paso de la escena. */
+      tiempos: z.array(z.number().positive().max(60)).min(1),
+      /** Afirmaciones que la animación muestra (sus cifras salen de acá; se rotulan al pie). */
+      afirmaciones: z.array(z.string()).default([]),
+    })
     .strict(),
 ]);
 export type Elemento = z.infer<typeof Elemento>;
@@ -161,6 +231,8 @@ export const Escena = z
     sonido: z.string().optional(),
     respaldo: z.string().default(''),
     preguntas: z.string().default(''),
+    /** Portada de sección (separador entre bloques de anexos): aparece en el índice y en las exportaciones, pero no toma letra de atajo. */
+    seccion: z.boolean().default(false),
   })
   .strict()
   .superRefine((e, ctx) => {
@@ -168,9 +240,14 @@ export const Escena = z
     for (const el of e.elementos) {
       if (ids.has(el.id)) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: elemento repetido ${el.id}` });
       ids.add(el.id);
-      const pasos = [el.paso, ...('items' in el ? el.items.map((i) => i.paso ?? 0) : []), ...('nodos' in el ? el.nodos.map((n) => n.paso ?? 0) : []), ...('acciones' in el ? el.acciones.map((a) => a.paso) : [])];
+      const pasos = [el.paso, ...('items' in el ? el.items.map((i) => i.paso ?? 0) : []), ...('nodos' in el ? el.nodos.map((n) => n.paso ?? 0) : []), ...('acciones' in el ? el.acciones.map((a) => a.paso) : []), ...('pantallas' in el ? el.pantallas.map((p) => p.paso) : []), ...('capas' in el ? el.capas.map((c) => c.paso) : []), ...(el.tipo === 'oceano' ? [el.pasoToma, el.pasoAzul] : []), ...(el.tipo === 'reparto' ? [el.pasoPartes] : []), ...(el.sale !== undefined ? [el.sale] : [])];
       for (const p of pasos) if (p >= e.pasos) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} usa paso ${p} pero la escena tiene ${e.pasos}` });
       if (el.area === 'libre' && !el.pos) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} area libre sin pos` });
+      if (el.entrada === 'traer') {
+        const pj = e.elementos.find((x) => x.id === el.traidoPor);
+        if (!pj || pj.tipo !== 'personaje') ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} se trae pero "traidoPor" no es un personaje de la escena` });
+        else if (pj.paso > el.paso) ctx.addIssue({ code: 'custom', message: `escena ${e.id}: ${el.id} se trae en el paso ${el.paso} pero ${pj.id} aparece en el ${pj.paso}` });
+      }
     }
   });
 export type Escena = z.infer<typeof Escena>;
@@ -185,6 +262,10 @@ export const VersionDeck = z
     tolerancia: z.number().int().min(0).default(0),
     escenas: z.array(id).min(1),
     anexos: z.array(id).default([]),
+    /** Duración de escena propia de esta versión (segundos); si falta, se usa la de la escena. */
+    duraciones: z.record(z.string(), z.number().int().min(3).max(900)).default({}),
+    /** Movimiento por defecto de esta versión (p. ej. "reducido" = modo evento estático). `?movimiento=` lo reemplaza. */
+    movimiento: z.enum(['completo', 'ligero', 'reducido']).optional(),
   })
   .strict();
 
@@ -208,6 +289,15 @@ export const Deck = z
     titulo: z.string(),
     idioma: z.string().default('es-AR'),
     tema: id,
+    /** Deck del que se toman afirmaciones y QR (misma base factual para varias presentaciones). */
+    datosDe: id.optional(),
+    /** Rótulos de las cifras (dato informado, supuesto, proyección…): junto a cada cifra o agrupados en un pie discreto por escena. */
+    rotulos: z.enum(['chips', 'pie']).default('chips'),
+    /** Cómo aparece en el hub de presentaciones. */
+    hub: z
+      .object({ grupo: z.string(), descripcion: z.string(), orden: z.number().int().default(50), estilo: z.string().optional(), visible: z.boolean().default(true) })
+      .strict()
+      .optional(),
     corte: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     /** borrador: admite QR provisorios. final: el validador exige destinos definitivos. */
     estado: z.enum(['borrador', 'final']),
@@ -220,7 +310,7 @@ export type Deck = z.infer<typeof Deck>;
 export type VersionDeck = z.infer<typeof VersionDeck>;
 
 // ── Tema de marca ────────────────────────────────────────────────────────────
-const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional() }).strict();
+const Paleta = z.object({ fondo: z.string(), tinta: z.string(), acento: z.string(), suave: z.string(), superficie: z.string(), marcador: z.string().optional(), marcadorTinta: z.string().optional(), tintaSuperficie: z.string().optional() }).strict();
 export const Personaje = z
   .object({
     nombre: z.string(),
@@ -241,6 +331,9 @@ export const Tema = z
     radios: z.object({ chico: z.string(), medio: z.string(), grande: z.string() }).strict(),
     personajes: z.record(z.string(), Personaje).default({}),
     pie: z.string().default(''),
+    /** Tema que comparte los archivos de otra marca (personajes, video, capturas). */
+    assetsDe: id.optional(),
+    titulos: z.object({ peso: z.number().int().min(400).max(900), ancho: z.string() }).strict().optional(),
   })
   .strict()
   .refine((t) => 'neutro' in t.paletas, 'el tema necesita una paleta "neutro"');

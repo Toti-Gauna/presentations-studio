@@ -1,0 +1,24 @@
+# Render · servidor de CONTROL del celular (WebSocket). La presentación se publica aparte, estática, en Hostinger.
+# No sirve la web: solo /salud, /api/sesiones, /ws y las redirecciones /r/<id> de los QR.
+# ALLOWED_ORIGINS = el dominio exacto donde está la presentación (ej. https://presentaciones.handyc.com). Sin barra final.
+# Plan free (USD 0): duerme tras 15 min sin tráfico y tarda ~1 min en despertar. El presentador lo despierta al abrirse
+# y lo consulta cada 4 min mientras está abierto. Para que nunca duerma: cambiar a starter (pago) en Render, sin tocar código.
+services:
+  - type: web
+    name: handyx-control
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci --omit=dev --ignore-scripts
+    startCommand: node server/main.ts
+    healthCheckPath: /salud
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22.18.0"
+      - key: CONFIAR_PROXY
+        value: "true"
+      - key: QR_REDIRECCIONES
+        value: decks/handyx/qr.json
+      - key: ALLOWED_ORIGINS
+        sync: false

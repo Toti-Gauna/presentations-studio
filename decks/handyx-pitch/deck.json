@@ -1,0 +1,2287 @@
+{
+ "versionEsquema": 1,
+ "id": "handyx-pitch",
+ "titulo": "Handyx · Pitch premium",
+ "idioma": "es-AR",
+ "tema": "handyx-premium",
+ "datosDe": "handyx",
+ "hub": {
+  "grupo": "Handyx · pitch premium",
+  "descripcion": "Estilo de las láminas del 02/11, con motion graphics: modelo de negocio, mar rojo → océano azul, mercado, tracción sin app. Mismas cifras rotuladas.",
+  "orden": 1,
+  "estilo": "comercial"
+ },
+ "corte": "2026-10-31",
+ "estado": "borrador",
+ "versiones": [
+  {
+   "id": "aticma",
+   "titulo": "ATICMA (≈ 4 min)",
+   "audiencia": "Semifinal ATICMA · sin pedido",
+   "duracionObjetivo": 240,
+   "tolerancia": 10,
+   "escenas": [
+    "p-portada",
+    "p-marca",
+    "p-problema",
+    "p-une",
+    "p-pantallas",
+    "p-movimiento",
+    "p-modelo",
+    "p-oceano",
+    "p-mercado",
+    "p-traccion",
+    "p-logramos",
+    "p-qr"
+   ],
+   "anexos": [
+    "p-porque",
+    "p-hitos",
+    "p-movimiento-largo"
+   ]
+  },
+  {
+   "id": "aticma-3",
+   "titulo": "ATICMA corta (3 min)",
+   "audiencia": "Si la duración oficial es 3 minutos",
+   "duracionObjetivo": 180,
+   "tolerancia": 0,
+   "escenas": [
+    "p-portada",
+    "p-marca",
+    "p-problema",
+    "p-une",
+    "p-movimiento",
+    "p-modelo",
+    "p-oceano",
+    "p-traccion",
+    "p-logramos"
+   ],
+   "duraciones": {
+    "p-portada": 8,
+    "p-marca": 10,
+    "p-problema": 20,
+    "p-une": 18,
+    "p-modelo": 24,
+    "p-oceano": 32,
+    "p-traccion": 20,
+    "p-logramos": 14
+   },
+   "anexos": [
+    "p-mercado",
+    "p-porque",
+    "p-qr"
+   ]
+  },
+  {
+   "id": "inversores",
+   "titulo": "Inversores (≈ 6 min)",
+   "audiencia": "Ángeles y fondos · con pedido",
+   "duracionObjetivo": 360,
+   "tolerancia": 30,
+   "escenas": [
+    "p-portada",
+    "p-marca",
+    "p-problema",
+    "p-une",
+    "p-pantallas",
+    "p-movimiento-largo",
+    "p-modelo",
+    "p-oceano",
+    "p-porque",
+    "p-mercado",
+    "p-traccion",
+    "p-hitos",
+    "p-pedido",
+    "p-qr"
+   ],
+   "anexos": []
+  }
+ ],
+ "recursos": [
+  {
+   "id": "cap-usuario-inicio",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-inicio.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-pedido",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-pedido.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-propuestas",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-propuestas.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-chat",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-chat.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-usuario-pago",
+   "tipo": "imagen",
+   "archivo": "capturas/usuario-pago.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-inicio",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-disponibilidad.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-pedido",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-pedido-detalle.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-presupuesto",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-presupuesto.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-agenda",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-agenda.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "cap-especialista-cobro",
+   "tipo": "imagen",
+   "archivo": "capturas/especialista-cobro.webp",
+   "procedencia": "Captura Playwright del prototipo (modo de prueba, datos sintéticos)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/a-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino",
+   "tipo": "video",
+   "archivo": "video/clips/a-vecino.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-vecino-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-vecino-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista",
+   "tipo": "video",
+   "archivo": "video/clips/a-especialista.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-especialista-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-especialista-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final",
+   "tipo": "video",
+   "archivo": "video/clips/a-final.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-a-final-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/a-final-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada",
+   "tipo": "video",
+   "archivo": "video/clips/u-entrada.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-entrada-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-entrada-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/u-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos",
+   "tipo": "video",
+   "archivo": "video/clips/u-presupuestos.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-presupuestos-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-presupuestos-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento",
+   "tipo": "video",
+   "archivo": "video/clips/u-seguimiento.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-seguimiento-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-seguimiento-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/u-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-u-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/u-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho",
+   "tipo": "video",
+   "archivo": "video/clips/e-gancho.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-gancho-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-gancho-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido",
+   "tipo": "video",
+   "archivo": "video/clips/e-pedido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-pedido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-pedido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido",
+   "tipo": "video",
+   "archivo": "video/clips/e-elegido.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-elegido-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-elegido-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro",
+   "tipo": "video",
+   "archivo": "video/clips/e-cobro.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-cobro-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-cobro-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen",
+   "tipo": "video",
+   "archivo": "video/clips/e-resumen.mp4",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "clip-e-resumen-poster",
+   "tipo": "imagen",
+   "archivo": "video/clips/e-resumen-poster.jpg",
+   "procedencia": "Clip de kinetic-studio (publicidad o trailer re-renderizado con Handyx, 10/11 y tarifa vigente)",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  },
+  {
+   "id": "handys-grupo",
+   "tipo": "imagen",
+   "archivo": "handys-grupo.webp",
+   "procedencia": "Handy-landing-page-fe/src/img/handys-grupo.webp",
+   "licencia": "Propia (Handyx)",
+   "estado": "final"
+  }
+ ],
+ "escenas": [
+  {
+   "id": "p-portada",
+   "titulo": "¿A quién se le rompió algo en casa?",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 9,
+   "pasos": 2,
+   "clasificacion": "supuesto",
+   "transicion": "corte",
+   "objetivo": "Abrir con una pregunta que todos contestan con la mano levantada; los Handys rotos muestran el problema.",
+   "guion": "¿A quién se le rompió algo en casa? … A todos. Y todos hicimos lo mismo.",
+   "notas": "Pausa de 1 s con la pregunta. Si el jurado levanta la mano, aprovecharlo.",
+   "lectura": "Pregunta de apertura: a todos se nos rompió algo en casa.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 1,
+     "texto": "¿A quién se le rompió algo ==en casa?==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 10,
+      "w": 80
+     },
+     "paso": 0,
+     "entrada": "palabras"
+    },
+    {
+     "id": "g",
+     "tipo": "personaje",
+     "personaje": "grifo-roto",
+     "area": "libre",
+     "pos": {
+      "x": 8,
+      "y": 46
+     },
+     "tamano": 40,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "e",
+     "tipo": "personaje",
+     "personaje": "engranaje-roto",
+     "area": "libre",
+     "pos": {
+      "x": 31,
+      "y": 50
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco-roto",
+     "area": "libre",
+     "pos": {
+      "x": 54,
+      "y": 50
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave-roto",
+     "area": "libre",
+     "pos": {
+      "x": 74,
+      "y": 46
+     },
+     "tamano": 40,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    }
+   ]
+  },
+  {
+   "id": "p-marca",
+   "titulo": "Handyx: soluciones, no problemas",
+   "disposicion": "centro",
+   "paleta": "azul",
+   "duracion": 12,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Presentar la marca y la promesa en una lámina: qué es y cómo funciona en una frase.",
+   "guion": "Esto es Handyx. Un marketplace de arreglos del hogar en Mar del Plata: conectamos hogares con especialistas verificados. Pedís desde el celular, conocés el precio antes y pagás al terminar.",
+   "notas": "Lanzamiento previsto el 10/11/2026. 'Verificados' = proceso de habilitación (DNI, CUIT y antecedentes exhibidos).",
+   "lectura": "Handyx conecta hogares con especialistas verificados en Mar del Plata: pedido desde el celular, precio antes de confirmar y pago al terminar. Lanzamiento previsto el 10/11/2026.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "tipo": "etiqueta",
+     "tono": "kicker",
+     "texto": "Marketplace B2C · arreglos del hogar · Mar del Plata",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 24
+     },
+     "entrada": "fundido"
+    },
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 1,
+     "texto": "Handy==x==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 30,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "golpe"
+    },
+    {
+     "id": "s",
+     "tipo": "texto",
+     "texto": "**Soluciones, no problemas.**",
+     "tamano": "l",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 46,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "subir"
+    },
+    {
+     "id": "d",
+     "tipo": "texto",
+     "texto": "Conectamos hogares con especialistas verificados. Pedís desde el celular, conocés el precio antes y pagás al terminar.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 58,
+      "w": 44
+     },
+     "paso": 1,
+     "entrada": "subir"
+    },
+    {
+     "id": "img",
+     "tipo": "imagen",
+     "recurso": "handys-grupo",
+     "alt": "Los Handys",
+     "forma": "circulo",
+     "area": "libre",
+     "pos": {
+      "x": 58,
+      "y": 20
+     },
+     "entrada": "escala"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Mar del Plata · Lanzamiento 10 de noviembre de 2026 · handyc.com",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 90,
+      "w": 60
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-problema",
+   "titulo": "¿Por qué pasa?",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 22,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Dimensionar el problema con datos (hogares de MdP) y las tres preguntas que nadie responde; cerrar con el interés medido.",
+   "guion": "En Mar del Plata hay 259.623 hogares. Cuando algo se rompe, todos hacen lo mismo: WhatsApp, Facebook o un número en un poste. Y quedan tres preguntas sin respuesta: ¿quién entra a mi casa?, ¿cuánto me va a cobrar?, y del otro lado, ¿cuándo es mi próximo trabajo? Entrevistamos a 100 usuarios y 150 especialistas: 43 de cada 100 usuarios nos preguntaron si ya podían bajar la app.",
+   "notas": "43/100 es interés declarado (PDF A p.15: opinión vs. comportamiento): por eso dice 'interés medido', no 'validado'. Viviendas: INDEC Censo 2022.",
+   "lectura": "Mar del Plata tiene 259.623 hogares (viviendas ocupadas, INDEC 2022). Hoy se resuelve por WhatsApp, Facebook o un número en un poste. Entrevistas propias: 100 usuarios y 150 especialistas; 43 de cada 100 usuarios preguntaron si ya podían bajar la app.",
+   "referencias": [
+    "MDP-VIVIENDAS",
+    "INTERES-APP",
+    "ENTREVISTAS-USUARIOS",
+    "ENTREVISTAS-ESPECIALISTAS",
+    "pdf:A-15"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "k",
+     "tipo": "etiqueta",
+     "tono": "kicker",
+     "texto": "¿Por qué pasa?",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 6
+     },
+     "entrada": "fundido"
+    },
+    {
+     "id": "c",
+     "tipo": "cifra",
+     "afirmacion": "MDP-VIVIENDAS",
+     "leyenda": "**hogares en Mar del Plata.** Cuando algo se rompe, todos hacen lo mismo: WhatsApp, Facebook o un número en un poste.",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 14,
+      "w": 62
+     },
+     "entrada": "contar"
+    },
+    {
+     "id": "g",
+     "tipo": "personaje",
+     "personaje": "grifo",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 8
+     },
+     "tamano": 34,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "reaccionar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "tarj",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 47,
+      "w": 88
+     },
+     "paso": 1,
+     "entrada": "escala",
+     "items": [
+      {
+       "texto": "**¿Quién entra a mi casa?**\nNo sabés si está habilitado ni quién es."
+      },
+      {
+       "texto": "**¿Cuánto me va a cobrar?**\nEl precio aparece cuando el trabajo ya está hecho."
+      },
+      {
+       "texto": "**¿Cuándo es mi próximo trabajo?**\nVive del boca a boca, con una agenda que sube y baja."
+      }
+     ]
+    },
+    {
+     "id": "b",
+     "tipo": "texto",
+     "texto": "**{{INTERES-APP}} de 100** · Interés medido: entrevistamos a {{ENTREVISTAS-USUARIOS}} usuarios y {{ENTREVISTAS-ESPECIALISTAS}} especialistas; {{INTERES-APP}} de cada 100 usuarios preguntaron si ya podían bajar la app.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 74,
+      "w": 88
+     },
+     "paso": 2,
+     "entrada": "subir",
+     "caja": "azul"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Fuente: INDEC, Censo 2022 (General Pueyrredon: 667.082 habitantes, 259.623 viviendas ocupadas). Entrevistas propias.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 92,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-une",
+   "titulo": "Une a los dos",
+   "disposicion": "centro",
+   "paleta": "gris",
+   "duracion": 20,
+   "pasos": 4,
+   "clasificacion": "plan",
+   "transicion": "fundido",
+   "objetivo": "Mostrar el producto para los dos lados con la misma estructura, y la verificación como base de confianza.",
+   "guion": "Handyx une a los dos. El vecino pide desde el celular, recibe propuestas con precio y paga al terminar. El especialista recibe pedidos de su zona cuando está disponible, pone su precio y arma su agenda. Y antes de habilitar a alguien, verificamos DNI, CUIT y certificado de antecedentes.",
+   "notas": "Pago: directo al especialista al terminar (Mercado Pago o efectivo según las apps actuales); no decir 'con tarjeta'. Antecedentes: exhibidos, no se guardan.",
+   "lectura": "El vecino pide, compara propuestas con precio y paga al terminar; el especialista recibe pedidos de su zona, pone su precio y organiza su agenda. Verificación previa: DNI, CUIT y certificado de antecedentes vigente exhibido.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Une a los dos.",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 10,
+      "w": 60
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Qué hace Handyx?"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 0,
+      "y": 58
+     },
+     "tamano": 16,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "entrar"
+      }
+     ],
+     "paso": 1,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 8
+     },
+     "tamano": 20,
+     "acciones": [
+      {
+       "paso": 2,
+       "accion": "entrar",
+       "hacia": "izq"
+      }
+     ],
+     "paso": 2,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "encabezado": "El vecino",
+     "caja": "blanca",
+     "area": "libre",
+     "pos": {
+      "x": 12,
+      "y": 30,
+      "w": 39
+     },
+     "paso": 1,
+     "entrada": "traer",
+     "traidoPor": "f",
+     "items": [
+      {
+       "texto": "**Pide desde el celular**\nPlomería, electricidad, gas, cerrajería y más."
+      },
+      {
+       "texto": "**Recibe propuestas con precio**\nCompara y elige con quién seguir."
+      },
+      {
+       "texto": "**Paga al terminar**\nDirecto al especialista."
+      }
+     ]
+    },
+    {
+     "id": "e",
+     "tipo": "lista",
+     "estilo": "numerada",
+     "encabezado": "El especialista",
+     "caja": "azul",
+     "area": "libre",
+     "pos": {
+      "x": 54,
+      "y": 30,
+      "w": 40
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "l",
+     "desde": "der",
+     "items": [
+      {
+       "texto": "**Recibe pedidos de su zona**\nSolo cuando se pone disponible."
+      },
+      {
+       "texto": "**Pone su precio**\nHandyx sugiere; él decide."
+      },
+      {
+       "texto": "**Arma su agenda**\nTurnos, chat y cobros en una sola app."
+      }
+     ]
+    },
+    {
+     "id": "b",
+     "tipo": "texto",
+     "texto": "**Verificamos antes de habilitar:** DNI, CUIT y certificado de antecedentes vigente exhibido.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 84,
+      "w": 88
+     },
+     "paso": 3,
+     "entrada": "escala",
+     "caja": "amarilla"
+    }
+   ]
+  },
+  {
+   "id": "p-pantallas",
+   "titulo": "Tres pantallas",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 18,
+   "pasos": 3,
+   "clasificacion": "demo",
+   "transicion": "fundido",
+   "objetivo": "Mostrar la app real (prototipo) en tres momentos.",
+   "guion": "¿Cómo se ve? Tres pantallas: pedís, recibís propuestas y seguís el trabajo.",
+   "notas": "Capturas reales del prototipo en modo de prueba (datos ficticios). Sale el 10/11.",
+   "lectura": "Prototipo de la app del vecino: pedido, propuestas con precio y seguimiento del trabajo.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Tres pantallas.",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Cómo se ve?"
+    },
+    {
+     "id": "demo",
+     "tipo": "etiqueta",
+     "tono": "kicker",
+     "texto": "Demo · sale el {{LANZAMIENTO}}",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 14
+     },
+     "caja": "amarilla",
+     "entrada": "escala"
+    },
+    {
+     "id": "t1",
+     "tipo": "telefono",
+     "alto": 58,
+     "area": "libre",
+     "pos": {
+      "x": 9,
+      "y": 28
+     },
+     "leyenda": "**1 · Pide**",
+     "pantallas": [
+      {
+       "recurso": "cap-usuario-pedido",
+       "alt": "Pedir un servicio"
+      }
+     ],
+     "entrada": "subir"
+    },
+    {
+     "id": "t2",
+     "tipo": "telefono",
+     "alto": 58,
+     "area": "libre",
+     "pos": {
+      "x": 39,
+      "y": 28
+     },
+     "leyenda": "**2 · Recibe propuestas**",
+     "paso": 1,
+     "pantallas": [
+      {
+       "recurso": "cap-usuario-propuestas",
+       "alt": "Propuestas"
+      }
+     ],
+     "entrada": "subir"
+    },
+    {
+     "id": "t3",
+     "tipo": "telefono",
+     "alto": 58,
+     "area": "libre",
+     "pos": {
+      "x": 69,
+      "y": 28
+     },
+     "leyenda": "**3 · Sigue el trabajo**",
+     "paso": 2,
+     "pantallas": [
+      {
+       "recurso": "cap-usuario-chat",
+       "alt": "Chat con el especialista"
+      }
+     ],
+     "entrada": "subir"
+    }
+   ]
+  },
+  {
+   "id": "p-movimiento",
+   "titulo": "La app en movimiento",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 17,
+   "pasos": 2,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar la app en movimiento con música (clips de kinetic-studio).",
+   "guion": "Así se usa: el vecino pide y elige; el especialista recibe pedidos cerca y pone su precio.",
+   "notas": "Animación de la demo, no uso real. Cada paso arranca un clip; el sonido sale si se activó en la pantalla pública.",
+   "lectura": "Animación de la app del vecino y del especialista.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "v0",
+     "tipo": "video",
+     "recurso": "clip-a-vecino",
+     "poster": "clip-a-vecino-poster",
+     "alt": "La app en movimiento 1",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v1",
+     "tipo": "video",
+     "recurso": "clip-a-especialista",
+     "poster": "clip-a-especialista-poster",
+     "alt": "La app en movimiento 2",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-movimiento-largo",
+   "titulo": "La app, paso a paso",
+   "disposicion": "centro",
+   "paleta": "kinetic",
+   "duracion": 50,
+   "pasos": 4,
+   "clasificacion": "demo",
+   "transicion": "corte",
+   "objetivo": "Mostrar la app en movimiento con música (clips de kinetic-studio).",
+   "guion": "Pedido, presupuestos con precio final, y del otro lado: pedido cerca, su precio, trabajo y cobro.",
+   "notas": "Animación de la demo, no uso real. Cada paso arranca un clip; el sonido sale si se activó en la pantalla pública.",
+   "lectura": "Recorrido animado de las dos apps.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "v0",
+     "tipo": "video",
+     "recurso": "clip-u-pedido",
+     "poster": "clip-u-pedido-poster",
+     "alt": "La app, paso a paso 1",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "v1",
+     "tipo": "video",
+     "recurso": "clip-u-presupuestos",
+     "poster": "clip-u-presupuestos-poster",
+     "alt": "La app, paso a paso 2",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 1,
+     "entrada": "fundido"
+    },
+    {
+     "id": "v2",
+     "tipo": "video",
+     "recurso": "clip-e-pedido",
+     "poster": "clip-e-pedido-poster",
+     "alt": "La app, paso a paso 3",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 2,
+     "entrada": "fundido"
+    },
+    {
+     "id": "v3",
+     "tipo": "video",
+     "recurso": "clip-e-cobro",
+     "poster": "clip-e-cobro-poster",
+     "alt": "La app, paso a paso 4",
+     "sonido": true,
+     "auto": true,
+     "cubrir": true,
+     "area": "fondo",
+     "paso": 3,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-modelo",
+   "titulo": "Cobramos solo cuando hay trabajo",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 26,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Explicar el modelo de negocio con un arreglo concreto, compararlo con la competencia y mostrar los incentivos de lanzamiento.",
+   "guion": "¿Cómo ganamos? Cobramos solo cuando hay trabajo: 10 % al especialista y 10 % al usuario, sin suscripción. En un arreglo de 80 mil pesos, el vecino paga 88 mil, el especialista recibe 72 mil y a Handyx le quedan 16 mil, antes de costos. Clickie cobra 15 % al especialista y 5 % al usuario en algunos casos, más un plan Pro. Y para arrancar: los primeros 50 especialistas pagan 5 % fijo, y del 10/11 al 10/12 no cobramos comisión.",
+   "notas": "Precio base $ 80.000 = estimación interna a validar (la landing usa $ 45.000 como ejemplo). Ingreso bruto ≠ margen: restar pasarela, impuestos y soporte. Clickie: Forbes Argentina e iProfesional 2026, a verificar. PDF C p.44–45: ingreso neto = porción del GMV que es de la plataforma; MRR no aplica.",
+   "lectura": "Modelo: comisión por trabajo, 10 % al especialista + 10 % al usuario, sin suscripción. Ejemplo con un arreglo de $ 80.000 (estimación a validar): el vecino paga $ 88.000, el especialista recibe $ 72.000 y Handyx ingresa $ 16.000 brutos. Comparación: Clickie cobra 15 % al especialista (12 % con plan Pro de USD 15/mes) y 5 % al usuario en algunos casos. Lanzamiento: primeros 50 especialistas al 5 % fijo y demo sin comisión del 10/11 al 10/12.",
+   "referencias": [
+    "TICKET-ESTIMADO",
+    "EJ80-USUARIO",
+    "EJ80-ESPECIALISTA",
+    "EJ80-HANDYX",
+    "COMP-CLICKIE",
+    "TARIFA-FUNDADORES",
+    "pdf:C-45"
+   ],
+   "preguntas": "¿Por qué 10 % + 10 % y no más barato? → Es menos que lo que hoy cobra la alternativa con app para el especialista, sin suscripción; el primer mes es gratis y los primeros 50 pagan 5 %.",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Cobramos solo cuando ==hay trabajo.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 80
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Cómo ganamos?"
+    },
+    {
+     "id": "s",
+     "tipo": "texto",
+     "texto": "**Marketplace B2C: 10 % al especialista + 10 % al usuario. Sin suscripción.**",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 30,
+      "w": 42
+     },
+     "paso": 0,
+     "entrada": "subir"
+    },
+    {
+     "id": "r",
+     "tipo": "reparto",
+     "total": "EJ80-USUARIO",
+     "leyendaTotal": "Arreglo de {{TICKET-ESTIMADO}} → **paga el vecino**",
+     "partes": [
+      {
+       "afirmacion": "EJ80-ESPECIALISTA",
+       "etiqueta": "recibe el especialista",
+       "tono": "azul"
+      },
+      {
+       "afirmacion": "EJ80-HANDYX",
+       "etiqueta": "ingreso bruto Handyx",
+       "tono": "amarilla"
+      }
+     ],
+     "pasoPartes": 2,
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 46,
+      "w": 42
+     },
+     "paso": 1,
+     "entrada": "subir"
+    },
+    {
+     "id": "tab",
+     "tipo": "tabla",
+     "area": "libre",
+     "pos": {
+      "x": 52,
+      "y": 28,
+      "w": 42
+     },
+     "paso": 1,
+     "entrada": "subir",
+     "columnas": [
+      "Quién",
+      "Cuánto cobra"
+     ],
+     "filas": [
+      [
+       "WhatsApp / boca a boca",
+       "Gratis, sin verificación ni garantía"
+      ],
+      [
+       "Clickie",
+       "15 % al especialista + 5 % al usuario (en algunos casos); plan Pro USD 15/mes"
+      ],
+      [
+       "Handyx",
+       "10 % al especialista + 10 % al usuario, sin suscripción"
+      ]
+     ],
+     "destacar": 2,
+     "pasoDestacada": 2
+    },
+    {
+     "id": "b",
+     "tipo": "texto",
+     "texto": "Primeros {{FUNDADORES-CUPO}} especialistas: {{TARIFA-FUNDADORES}} fijo. Demo del 10/11 al 10/12 sin comisión.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 52,
+      "y": 71,
+      "w": 42
+     },
+     "paso": 3,
+     "entrada": "escala",
+     "caja": "gris"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Precio base de $ 80.000: estimación interna a validar. Clickie: Forbes Argentina e iProfesional, 2026 (a verificar). Ingreso bruto, antes de pasarela, impuestos y soporte.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 92,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-oceano",
+   "titulo": "Del mar rojo al océano azul",
+   "disposicion": "centro",
+   "paleta": "oceano",
+   "duracion": 34,
+   "pasos": 4,
+   "clasificacion": "mixto",
+   "transicion": "corte",
+   "objetivo": "Mostrar la competencia como un mar rojo, cómo Handyx toma lo mejor de cada alternativa y el océano azul de valor para los dos lados.",
+   "guion": "Hoy, arreglar algo en casa es un mar rojo: WhatsApp y Facebook, el boca en boca, un número en un poste, y apps como Clickie, HomeSolution o IguanaFix. Cada uno hace algo bien, pero nadie lo hace todo. Handyx toma lo mejor de cada uno: el chat, la confianza de una recomendación, alguien de tu barrio, pedir desde una app, las reseñas y el presupuesto antes de empezar. Y lo une en un solo lugar. Eso es nuestro océano azul: para el vecino, especialistas verificados y el precio antes; para el especialista, pedidos de su zona, su precio y una comisión baja.",
+   "notas": "No hay logos de terceros: solo nombres. Datos de competencia de las láminas: Clickie (Forbes Argentina e iProfesional 2026); HomeSolution e IguanaFix (comparativas de otras apps del rubro, a verificar). No decir 'sin competencia'. PDF B p.17: también compite 'no hacer nada'. El océano azul es nuestra propuesta de valor, no una barrera probada.",
+   "lectura": "La competencia hoy: WhatsApp y Facebook, el boca en boca, números en postes y apps (Clickie, HomeSolution, IguanaFix). Cada alternativa resuelve una parte. Handyx integra lo mejor de cada una —chat, confianza de una recomendación, cercanía, pedido por app, reseñas y presupuesto previo— y suma verificación y una comisión baja para el especialista.",
+   "referencias": [
+    "COMP-CLICKIE",
+    "TARIFA-FUNDADORES",
+    "pdf:B-17"
+   ],
+   "preguntas": "¿No es copiable? → Cada pieza es copiable por separado; la apuesta es tener las seis juntas en una ciudad, con verificación y densidad local. Es hipótesis, no barrera probada.",
+   "elementos": [
+    {
+     "id": "mar",
+     "tipo": "oceano",
+     "area": "fondo",
+     "marca": "Handy==x==",
+     "competidores": [
+      {
+       "nombre": "WhatsApp y Facebook",
+       "nota": "Gratis, sin verificación ni garantía",
+       "mejor": "Hablar por chat"
+      },
+      {
+       "nombre": "Boca en boca",
+       "nota": "Depende de a quién conocés",
+       "mejor": "Confianza de una recomendación"
+      },
+      {
+       "nombre": "Un número en un poste",
+       "nota": "Nadie sabe quién es",
+       "mejor": "Alguien de tu barrio"
+      },
+      {
+       "nombre": "Clickie",
+       "nota": "15 % + 5 % en algunos casos; plan Pro",
+       "mejor": "Pedir desde una app"
+      },
+      {
+       "nombre": "HomeSolution",
+       "nota": "Recomendados, sin verificar identidad",
+       "mejor": "Reseñas de la comunidad"
+      },
+      {
+       "nombre": "IguanaFix",
+       "nota": "Casi sin actividad en Argentina",
+       "mejor": "Presupuesto antes de empezar"
+      }
+     ],
+     "pasoToma": 1,
+     "pasoAzul": 2,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "t1",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Un ==mar rojo.==",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 6,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "golpe",
+     "kicker": "¿Y la competencia?",
+     "sale": 1
+    },
+    {
+     "id": "t2",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Handyx toma lo mejor de cada uno.",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 6,
+      "w": 90
+     },
+     "paso": 1,
+     "entrada": "mascara",
+     "sale": 2
+    },
+    {
+     "id": "t3",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Un ==océano azul.==",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 6,
+      "w": 50
+     },
+     "paso": 2,
+     "entrada": "golpe"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 1,
+      "y": 72
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 2,
+       "accion": "entrar"
+      },
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 2,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 82,
+      "y": 70
+     },
+     "tamano": 24,
+     "acciones": [
+      {
+       "paso": 2,
+       "accion": "entrar",
+       "hacia": "izq"
+      },
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 2,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "bv",
+     "tipo": "lista",
+     "estilo": "vinetas",
+     "encabezado": "Para el vecino",
+     "caja": "blanca",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 38,
+      "w": 40
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "f",
+     "items": [
+      {
+       "texto": "Especialistas **verificados**"
+      },
+      {
+       "texto": "**Precio antes** de confirmar"
+      },
+      {
+       "texto": "Chat **sin dar tu teléfono**"
+      },
+      {
+       "texto": "Reseñas y **pago al terminar**"
+      }
+     ]
+    },
+    {
+     "id": "be",
+     "tipo": "lista",
+     "estilo": "vinetas",
+     "encabezado": "Para el especialista",
+     "caja": "azul",
+     "area": "libre",
+     "pos": {
+      "x": 55,
+      "y": 38,
+      "w": 40
+     },
+     "paso": 2,
+     "entrada": "traer",
+     "traidoPor": "l",
+     "desde": "der",
+     "items": [
+      {
+       "texto": "**Pedidos de su zona**, cuando quiere"
+      },
+      {
+       "texto": "**Su precio**: Handyx sugiere, él decide"
+      },
+      {
+       "texto": "**10 % sin suscripción** · 5 % los primeros 50"
+      },
+      {
+       "texto": "**Agenda, chat y cobros** en una app"
+      }
+     ]
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Clickie: Forbes Argentina e iProfesional, 2026. HomeSolution e IguanaFix: comparativas publicadas por otras apps del rubro, a verificar.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 94,
+      "w": 90
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-porque",
+   "titulo": "Por qué Handyx y no otro",
+   "disposicion": "centro",
+   "paleta": "gris",
+   "duracion": 24,
+   "pasos": 2,
+   "clasificacion": "mixto",
+   "transicion": "fundido",
+   "objetivo": "Comparación detallada para preguntas de inversores.",
+   "guion": "Comparado uno por uno: ninguno verifica identidad y antecedentes antes de habilitar, y la comisión del especialista es más baja con Handyx.",
+   "notas": "Fuentes de competencia a verificar (ver pie).",
+   "lectura": "Comparación de alternativas: verificación previa, precio acordado antes y comisión baja para el especialista.",
+   "referencias": [
+    "COMP-CLICKIE"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Por qué Handyx y no otro.",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 80
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Y la competencia?"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 6
+     },
+     "tamano": 18,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "tab",
+     "tipo": "tabla",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 28,
+      "w": 88
+     },
+     "entrada": "subir",
+     "columnas": [
+      "Alternativa",
+      "Qué pasa hoy",
+      "Con Handyx"
+     ],
+     "filas": [
+      [
+       "WhatsApp, Facebook, boca a boca",
+       "Gratis, pero nadie verifica y el precio aparece al final",
+       "Verificamos DNI, CUIT y antecedentes. El precio se acuerda antes."
+      ],
+      [
+       "Clickie (ya en Mar del Plata)",
+       "15 % al especialista (12 % con plan Pro de USD 15/mes) y 5 % al usuario en algunos casos",
+       "10 % al especialista y sin suscripción. Crecemos con los porteros y marketing digital."
+      ],
+      [
+       "HomeSolution",
+       "Profesionales recomendados por la comunidad, sin verificación de identidad detallada",
+       "Verificamos a cada especialista antes de habilitarlo."
+      ],
+      [
+       "IguanaFix",
+       "Casi sin actividad en Argentina: su comisión alejó a los profesionales",
+       "Comisión baja para el especialista: 5 % a los primeros 50."
+      ]
+     ]
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Clickie: Forbes Argentina e iProfesional, 2026. HomeSolution e IguanaFix: comparativas publicadas por otras apps del rubro (Muovi, Solvit), a verificar.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 92,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-mercado",
+   "titulo": "Una ciudad primero",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 24,
+   "pasos": 4,
+   "clasificacion": "proyeccion",
+   "transicion": "fundido",
+   "objetivo": "Dimensionar el mercado con la lógica de las láminas (hogares × precio × 1 trabajo/año) y mostrar lo que proyectamos atender por capacidad.",
+   "guion": "¿Cuánto puede crecer? Una ciudad primero; después, ciudad por ciudad. Latinoamérica: unos 10 mil millones de dólares al año. Argentina: 913 millones. Mar del Plata: 13,3 millones, de los que Handyx tomaría un 20 % de ingreso bruto. Y siendo prudentes, por capacidad proyectamos atender unos 30 millones de pesos en los primeros 13 meses.",
+   "notas": "Supuestos: 1 trabajo por hogar al año y USD 51 por trabajo ($ 80.000 al BNA $ 1.560 del 30/10/2026, a validar). Lo que la lámina llama SOM es el mercado local total; el SOM por capacidad del modelo es $ 30 M en 13 meses (PDF A p.11: mostrar que entendemos el mercado).",
+   "lectura": "Mercado (USD por año, BNA $ 1.560 al 30/10/2026; 1 trabajo por hogar al año, USD 51): Latinoamérica ≈ USD 10.000 M; Argentina ≈ USD 913 M; Mar del Plata ≈ USD 13,3 M (Handyx 20 %: USD 2,7 M). Proyección por capacidad del modelo: ≈ $ 30 M en 13 meses.",
+   "referencias": [
+    "TAM-USD",
+    "SAM-USD",
+    "SOM-USD",
+    "SOM-HANDY-USD",
+    "TIPO-CAMBIO",
+    "TICKET-USD",
+    "PROY-SOM-ARS",
+    "pdf:A-11"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Una ciudad primero. Después, ==ciudad por ciudad.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 6,
+      "w": 70
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Cuánto puede crecer?"
+    },
+    {
+     "id": "e",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "area": "libre",
+     "pos": {
+      "x": 86,
+      "y": 4
+     },
+     "tamano": 16,
+     "acciones": [
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "cir",
+     "tipo": "circulos",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 30
+     },
+     "capas": [
+      {
+       "etiqueta": "TAM"
+      },
+      {
+       "etiqueta": "SAM",
+       "paso": 1
+      },
+      {
+       "etiqueta": "SOM",
+       "paso": 2
+      }
+     ],
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c1",
+     "tipo": "texto",
+     "texto": "TAM · Latinoamérica · 10 años\n**{{TAM-USD}}** · ≈ 195 M hogares × USD 51",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 44,
+      "y": 28,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "caja": "blanca"
+    },
+    {
+     "id": "c2",
+     "tipo": "texto",
+     "texto": "SAM · Argentina · 3 a 5 años\n**{{SAM-USD}}** · 17,8 M viviendas × USD 51",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 44,
+      "y": 43,
+      "w": 50
+     },
+     "paso": 1,
+     "entrada": "subir",
+     "caja": "blanca"
+    },
+    {
+     "id": "c3",
+     "tipo": "texto",
+     "texto": "SOM · Mar del Plata · 1 año\n**{{SOM-USD}}** · Handyx (20 %): **{{SOM-HANDY-USD}}**",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 44,
+      "y": 58,
+      "w": 50
+     },
+     "paso": 2,
+     "entrada": "escala",
+     "caja": "amarilla"
+    },
+    {
+     "id": "cap",
+     "tipo": "texto",
+     "texto": "Proyección prudente por capacidad: **{{PROY-SOM-ARS}}** atendidos en 13 meses.",
+     "tamano": "s",
+     "area": "libre",
+     "pos": {
+      "x": 44,
+      "y": 76,
+      "w": 50
+     },
+     "paso": 3,
+     "entrada": "fundido"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Por año, en USD al oficial BNA de $ 1.560 (30/10/2026). Supuestos: 1 trabajo por hogar al año · precio $ 80.000 ≈ USD 51 (a validar) · ingreso Handyx 20 % bruto. Hogares LatAm: estimación propia (663 M hab. ÷ 3,4 por hogar, CEPAL). Viviendas: INDEC, Censo 2022.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 93,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-traccion",
+   "titulo": "Ya lo hicimos. Sin app.",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 22,
+   "pasos": 3,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Tracción real: trabajos cobrados sin app, especialistas que piden más, preregistrados; y el equipo.",
+   "guion": "¿Por qué nosotros? Porque ya lo hicimos, sin app. El 30 de octubre hicimos 5 trabajos con 10 % de comisión cobrada a cada lado, con 2 electricistas y 2 plomeros. Dos especialistas pidieron más trabajo, y tenemos 56 especialistas preregistrados. Somos Ignacio, que construyó toda la plataforma, y Abigail, que diseñó la identidad, los Handys y las dos apps.",
+   "notas": "Datos informados por Ignacio (31/10), sin auditar contra el CRM. Con MET-01 esos 5 trabajos sí cuentan como cobrados. Preregistro ≠ especialista habilitado.",
+   "lectura": "Tracción al 31/10/2026 (informada): 5 trabajos el 30/10 sin la app, con 10 % de comisión cobrada a cada lado (2 electricistas y 2 plomeros); 2 especialistas pidieron más trabajo; 56 especialistas preregistrados. Equipo: Ignacio (CEO, producto y desarrollo) y Abigail (diseño).",
+   "referencias": [
+    "TRABAJOS-SIN-APP",
+    "ESP-ACTIVOS-30-10",
+    "ESP-PIDIERON-MAS",
+    "ESP-REGISTRADOS"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Ya lo hicimos. ==Sin app.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 60
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "¿Por qué nosotros?"
+    },
+    {
+     "id": "i",
+     "tipo": "texto",
+     "texto": "**Ignacio**\nCEO, producto y desarrollo. Fullstack senior: construyó toda la plataforma.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 15,
+      "y": 30,
+      "w": 32
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "caja": "gris"
+    },
+    {
+     "id": "pi",
+     "tipo": "personaje",
+     "personaje": "engranaje",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 31
+     },
+     "tamano": 14,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "a",
+     "tipo": "texto",
+     "texto": "**Abigail**\nDiseño. Identidad, Handys y UX/UI de las dos apps.",
+     "tamano": "m",
+     "area": "libre",
+     "pos": {
+      "x": 15,
+      "y": 56,
+      "w": 32
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "caja": "gris"
+    },
+    {
+     "id": "pa",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 57
+     },
+     "tamano": 14,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "saludar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "tr",
+     "tipo": "cifra",
+     "afirmacion": "TRABAJOS-SIN-APP",
+     "leyenda": "**trabajos** con 10 % de comisión cobrada a cada lado",
+     "detalle": "Con 2 electricistas y 2 plomeros · {{ESP-PIDIERON-MAS}} especialistas pidieron más trabajo · {{ESP-REGISTRADOS}} especialistas preregistrados",
+     "area": "libre",
+     "pos": {
+      "x": 52,
+      "y": 28,
+      "w": 42
+     },
+     "paso": 1,
+     "entrada": "contar",
+     "caja": "azul"
+    },
+    {
+     "id": "k",
+     "tipo": "etiqueta",
+     "texto": "30/10 · sin la app",
+     "area": "libre",
+     "pos": {
+      "x": 54,
+      "y": 24,
+      "w": 30
+     },
+     "paso": 1,
+     "entrada": "fundido",
+     "tono": "kicker"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Registros al 31/10/2026, informados por el fundador. Preregistro no equivale a especialista habilitado.",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 92,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-hitos",
+   "titulo": "Lo que viene",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 18,
+   "pasos": 4,
+   "clasificacion": "meta",
+   "transicion": "fundido",
+   "objetivo": "Hitos con el foco caminando.",
+   "guion": "El 10 de noviembre lanzamos. Un mes de demo sin comisión. El 10 de diciembre arranca la tarifa. Y el objetivo: llegar al mercado de Mar del Plata en un año, ciudad por ciudad después.",
+   "notas": "Fechas previstas. Objetivo 31/12: 50 trabajos cobrados y 5 usuarios que repiten (MET-01).",
+   "lectura": "Hitos: lanzamiento 10/11/2026, demo sin comisión hasta el 10/12, tarifa desde el 10/12; objetivo de 50 trabajos cobrados y 5 que repiten al 31/12.",
+   "referencias": [
+    "LANZAMIENTO",
+    "PILOTO-FIN",
+    "META-TRABAJOS",
+    "META-REPETIDORES"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "Lo que ==viene.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 50
+     },
+     "paso": 0,
+     "entrada": "mascara",
+     "kicker": "Próximos pasos"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 5,
+      "y": 28
+     },
+     "tamano": 16,
+     "acciones": [
+      {
+       "paso": 0,
+       "accion": "entrar"
+      },
+      {
+       "paso": 1,
+       "accion": "caminar",
+       "hacia": "der",
+       "distancia": 420
+      },
+      {
+       "paso": 2,
+       "accion": "caminar",
+       "hacia": "der",
+       "distancia": 420
+      },
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "fl",
+     "tipo": "flujo",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 50,
+      "w": 88
+     },
+     "entrada": "escala",
+     "nodos": [
+      {
+       "texto": "{{LANZAMIENTO}}",
+       "detalle": "Sale la app"
+      },
+      {
+       "texto": "Demo",
+       "detalle": "Sin comisión",
+       "paso": 1
+      },
+      {
+       "texto": "{{PILOTO-FIN}}",
+       "detalle": "Arranca la tarifa",
+       "paso": 2
+      },
+      {
+       "texto": "31/12",
+       "detalle": "{{META-TRABAJOS}} trabajos cobrados y {{META-REPETIDORES}} que repiten",
+       "paso": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "p-logramos",
+   "titulo": "Qué logramos",
+   "disposicion": "centro",
+   "paleta": "azul",
+   "duracion": 16,
+   "pasos": 2,
+   "clasificacion": "meta",
+   "transicion": "fundido",
+   "objetivo": "Cierre ATICMA sin pedido: qué vamos a lograr.",
+   "guion": "Lanzamos el 10 de noviembre. Y en un año, el mercado de Mar del Plata. Handyx: soluciones, no problemas.",
+   "notas": "ATICMA: sin pedido (decisión de Ignacio).",
+   "lectura": "Objetivos: lanzamiento el 10/11/2026 y el mercado de Mar del Plata en un año.",
+   "referencias": [
+    "LANZAMIENTO"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 1,
+     "texto": "Lanzamos el ==10/11.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 10,
+      "w": 70
+     },
+     "paso": 0,
+     "entrada": "golpe",
+     "kicker": "¿Qué logramos?"
+    },
+    {
+     "id": "o",
+     "tipo": "texto",
+     "texto": "**Objetivo en un año:** el mercado de Mar del Plata. Después, ciudad por ciudad.",
+     "tamano": "l",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 40,
+      "w": 60
+     },
+     "paso": 0,
+     "entrada": "subir",
+     "caja": "blanca"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 76,
+      "y": 40
+     },
+     "tamano": 30,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "c",
+     "tipo": "titulo",
+     "texto": "Handyx. Soluciones, no problemas.",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 70,
+      "w": 80
+     },
+     "paso": 1,
+     "entrada": "golpe",
+     "nivel": 2
+    }
+   ]
+  },
+  {
+   "id": "p-pedido",
+   "titulo": "USD 30.000 y un mentor",
+   "disposicion": "centro",
+   "paleta": "azul",
+   "duracion": 22,
+   "pasos": 4,
+   "clasificacion": "informado",
+   "transicion": "fundido",
+   "objetivo": "Pedido concreto para inversores.",
+   "guion": "¿Qué pedimos? 30 mil dólares y un mentor. Para crecer con los porteros y marketing digital con IA, y un mentor para escalar en volumen y crecer como empresa. Con eso: lanzamos el 10/11 y vamos por el mercado de Mar del Plata en un año.",
+   "notas": "No va en ATICMA. Sin valuación ni instrumento definidos.",
+   "lectura": "Pedido a inversores: USD 30.000 y un mentor. Uso: crecer con porteros y marketing digital con IA; mentoría para escalar.",
+   "referencias": [
+    "PEDIDO-USD"
+   ],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 2,
+     "texto": "USD 30.000 ==y un mentor.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 80
+     },
+     "paso": 0,
+     "entrada": "golpe",
+     "kicker": "¿Qué pedimos?"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 84,
+      "y": 4
+     },
+     "tamano": 16,
+     "acciones": [
+      {
+       "paso": 3,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "cards",
+     "tipo": "lista",
+     "estilo": "mosaicos",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 32,
+      "w": 88
+     },
+     "entrada": "escala",
+     "items": [
+      {
+       "texto": "**Cuánto**\nUSD 30.000"
+      },
+      {
+       "texto": "**Para qué**\nCrecer con los porteros y marketing digital con IA",
+       "paso": 1
+      },
+      {
+       "texto": "**Y un mentor**\nPara escalar en volumen y crecer como empresa",
+       "paso": 2
+      },
+      {
+       "texto": "**Qué logramos**\nLanzamos el 10/11/2026. El mercado de Mar del Plata, en 1 año.",
+       "paso": 3
+      }
+     ]
+    },
+    {
+     "id": "c",
+     "tipo": "texto",
+     "texto": "Handyx. Soluciones, no problemas.",
+     "tamano": "l",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 74,
+      "w": 80
+     },
+     "paso": 3,
+     "entrada": "fundido"
+    },
+    {
+     "id": "pie",
+     "tipo": "texto",
+     "texto": "Ignacio · handyc.com · WhatsApp 223 446-7881 · ignaciogauna.developer@gmail.com",
+     "tamano": "xs",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 90,
+      "w": 88
+     },
+     "paso": 0,
+     "entrada": "fundido"
+    }
+   ]
+  },
+  {
+   "id": "p-qr",
+   "titulo": "Sumate",
+   "disposicion": "centro",
+   "paleta": "neutro",
+   "duracion": 10,
+   "pasos": 2,
+   "clasificacion": "plan",
+   "transicion": "corte",
+   "objetivo": "QR públicos de registro.",
+   "guion": "Escaneá el que te toca. Gracias.",
+   "notas": "QR públicos (no el de control).",
+   "lectura": "Registro en landing.handyc.com.",
+   "referencias": [],
+   "preguntas": "",
+   "elementos": [
+    {
+     "id": "t",
+     "tipo": "titulo",
+     "nivel": 1,
+     "texto": "Soluciones, ==no problemas.==",
+     "area": "libre",
+     "pos": {
+      "x": 6,
+      "y": 8,
+      "w": 70
+     },
+     "paso": 0,
+     "entrada": "palabras",
+     "kicker": "Sumate"
+    },
+    {
+     "id": "qa",
+     "tipo": "qr",
+     "qr": "registro-usuarios",
+     "area": "libre",
+     "pos": {
+      "x": 14,
+      "y": 34
+     },
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "qb",
+     "tipo": "qr",
+     "qr": "registro-especialistas",
+     "area": "libre",
+     "pos": {
+      "x": 58,
+      "y": 34
+     },
+     "paso": 1,
+     "entrada": "escala"
+    },
+    {
+     "id": "f",
+     "tipo": "personaje",
+     "personaje": "foco",
+     "area": "libre",
+     "pos": {
+      "x": 2,
+      "y": 58
+     },
+     "tamano": 22,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    },
+    {
+     "id": "l",
+     "tipo": "personaje",
+     "personaje": "llave",
+     "area": "libre",
+     "pos": {
+      "x": 82,
+      "y": 56
+     },
+     "tamano": 24,
+     "acciones": [
+      {
+       "paso": 1,
+       "accion": "festejar"
+      }
+     ],
+     "paso": 0,
+     "entrada": "ninguna"
+    }
+   ]
+  }
+ ]
+}

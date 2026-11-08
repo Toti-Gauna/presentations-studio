@@ -1,0 +1,21 @@
+.vista-inicio { background: #F7F6F1; color: #0E1D36; }
+.vista-inicio #app { max-width: 1180px; margin: 0 auto; padding: 32px 16px 64px; }
+.hub-cabecera h1 { font-family: 'Archivo Variable', sans-serif; font-weight: 900; font-stretch: 125%; font-size: clamp(34px, 6vw, 64px); margin: 4px 0 8px; line-height: 1; }
+.hub-kicker { font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 13px; color: #1F57A8; margin: 0; }
+.hub-bajada { max-width: 62ch; color: #5F6B84; font-size: 17px; }
+.hub-grupo h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #5F6B84; margin: 40px 0 12px; }
+.hub-tarjeta { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 24px; background: #fff; border-radius: 24px; padding: 18px; margin-bottom: 18px; box-shadow: 0 6px 0 #DADFE8; }
+.hub-tarjeta[data-estilo='comercial'] { box-shadow: 0 6px 0 #F5F59A, inset 0 0 0 3px #F5F59A; }
+.hub-mini { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #0E1D36; align-self: start; }
+.hub-cuerpo h3 { font-family: 'Archivo Variable', sans-serif; font-weight: 900; font-stretch: 112%; font-size: 24px; margin: 4px 0 6px; }
+.hub-desc { margin: 0 0 6px; color: #26324A; }
+.hub-meta { font: 12px ui-monospace, monospace; color: #5F6B84; margin: 0 0 12px; }
+.hub-versiones { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.hub-versiones li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: center; padding: 10px 12px; background: #F7F6F1; border-radius: 14px; }
+.hub-v-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hub-v-info span { font-size: 13px; color: #5F6B84; }
+.hub-v-acciones { display: flex; flex-wrap: wrap; gap: 6px; }
+.hub-v-acciones .btn { text-decoration: none; display: inline-flex; align-items: center; font-size: 14px; }
+.hub-avisos { margin-top: 10px; font-size: 13px; color: #5F6B84; }
+.hub-error { color: #D93025; font-weight: 700; }
+@media (max-width: 760px) { .hub-tarjeta { grid-template-columns: 1fr; } }

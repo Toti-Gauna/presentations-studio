@@ -1,0 +1,243 @@
+[
+ {
+  "tablero": "Inicio.dc.html",
+  "a": "inicio.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Pérdida de gas sin resolver",
+    "El trabajo quedó sin terminar"
+   ],
+   [
+    "El especialista no se presentó",
+    "Cambió el horario sin avisar"
+   ],
+   [
+    "Seguro de responsabilidad civil",
+    "Ordenar la carpeta de documentos"
+   ],
+   [
+    "Antecedentes de Marina R.",
+    "Revisar la guía de reclamos"
+   ],
+   [
+    "día 6 de 7",
+    "en 6 días"
+   ]
+  ],
+  "js": "(()=>{const R=[document];const f=r=>r.querySelectorAll('*').forEach(e=>{if(e.shadowRoot){R.push(e.shadowRoot);f(e.shadowRoot)}});f(document);for(const r of R)r.querySelectorAll('img').forEach(i=>{if((i.getAttribute('src')||'').includes('/_blob/'))i.style.visibility='hidden'})})()"
+ },
+ {
+  "tablero": "Preregistros.dc.html",
+  "a": "preregistros.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "=Pintor",
+    "Cerrajero"
+   ]
+  ]
+ },
+ {
+  "tablero": "Ficha.dc.html",
+  "a": "ficha.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Gasista matriculada",
+    "Gasista"
+   ],
+   [
+    "Por reparto automático del equipo.",
+    "La asignó el equipo."
+   ],
+   [
+    "+54 9 223 ••• ••12",
+    "+54 9 ••• ••• ••12"
+   ],
+   [
+    "=Se vence",
+    "Retención"
+   ],
+   [
+    "noviembre de 2027",
+    "según el aviso"
+   ]
+  ],
+  "js": "(()=>{const R=[document];const f=r=>r.querySelectorAll('*').forEach(e=>{if(e.shadowRoot){R.push(e.shadowRoot);f(e.shadowRoot)}});f(document);for(const r of R)r.querySelectorAll('img').forEach(i=>{if((i.getAttribute('src')||'').includes('/_blob/'))i.style.visibility='hidden'})})()"
+ },
+ {
+  "tablero": "Reclamos.dc.html",
+  "a": "reclamos.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Pérdida de gas sin resolver después del arreglo",
+    "El trabajo quedó sin terminar"
+   ],
+   [
+    "Seguridad",
+    "Servicio"
+   ],
+   [
+    "El especialista no se presentó",
+    "Cambió el horario sin avisar"
+   ],
+   [
+    "Cobro duplicado en el pago",
+    "Pidió el informe del trabajo"
+   ],
+   [
+    "11 de 14 resueltos a tiempo esta semana",
+    ""
+   ]
+  ]
+ },
+ {
+  "tablero": "Campana.dc.html",
+  "a": "campana.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Presupuesto: 100 USD",
+    "Presupuesto cargado"
+   ],
+   [
+    "≈ 0,6",
+    "Sin dato"
+   ],
+   [
+    "USD · estimado",
+    "Fuente pendiente"
+   ],
+   [
+    "Matrícula verificada",
+    "Requisitos al día"
+   ],
+   [
+    "Revisá por qué no completan la matrícula.",
+    "Revisá qué les falta para el alta."
+   ]
+  ]
+ },
+ {
+  "tablero": "Cohortes.dc.html",
+  "a": "cohortes.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "=Junio",
+    "Mes 1"
+   ],
+   [
+    "=Julio",
+    "Mes 2"
+   ],
+   [
+    "=Agosto",
+    "Mes 3"
+   ],
+   [
+    "=Septiembre",
+    "Mes 4"
+   ],
+   [
+    "=Octubre",
+    "Mes 5"
+   ],
+   [
+    "=Noviembre",
+    "Mes 6"
+   ],
+   [
+    "Octubre es el mejor mes: en la primera semana ya contactamos al 71 %.",
+    "El mes 5 es el mejor: en la primera semana ya contactamos al 71 %."
+   ],
+   [
+    "Junio y julio quedaron por debajo del 50 % aun después de un mes: gente que se perdió.",
+    "Los meses 1 y 2 quedaron por debajo del 50 % aun después de un mes: gente que se perdió."
+   ],
+   [
+    "Noviembre recién empieza: no lo compares todavía.",
+    "El mes 6 recién empieza: no lo compares todavía."
+   ]
+  ],
+  "js": "(()=>{const R=[document];const f=r=>r.querySelectorAll('*').forEach(e=>{if(e.shadowRoot){R.push(e.shadowRoot);f(e.shadowRoot)}});f(document);const m=e=>/^\\s*\\d+\\s*personas\\s*$/.test(e.textContent);for(const r of R)r.querySelectorAll('*').forEach(e=>{if(m(e)&&![...e.children].some(m))e.textContent='muestra'})})()"
+ },
+ {
+  "tablero": "Mapa.dc.html",
+  "a": "mapa.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Especialistas activos por barrio",
+    "Especialistas por barrio"
+   ]
+  ]
+ },
+ {
+  "tablero": "Tareas.dc.html",
+  "a": "tareas.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "=IG",
+    "SV"
+   ],
+   [
+    "Renovar seguro de responsabilidad civil",
+    "Ordenar la carpeta de documentos"
+   ]
+  ]
+ },
+ {
+  "tablero": "Docs.dc.html",
+  "a": "docs.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Monotributo con CUIT, PDF hasta 10 MB y antecedentes en 7 días.",
+    "Qué se pide para el alta y quién lo revisa."
+   ]
+  ]
+ },
+ {
+  "tablero": "Legal.dc.html",
+  "a": "legal.png",
+  "escala": 2,
+  "reemplazos": [
+   [
+    "Antecedentes penales de Marina Rodríguez",
+    "Constancia de monotributo de un especialista"
+   ],
+   [
+    "Día 6 de 7. Si no llegan, queda sin poder tomar trabajos.",
+    "Falta el PDF. Sin ella no toma trabajos."
+   ],
+   [
+    "Renovar el seguro de responsabilidad civil",
+    "Ordenar la carpeta de documentos"
+   ],
+   [
+    "Vence el 11 de noviembre. Ticket HND-52.",
+    "Ticket HND-52."
+   ],
+   [
+    "Constancia de monotributo de Julián Pereyra",
+    "Revisar la guía de privacidad del equipo"
+   ],
+   [
+    "Falta el PDF. Hasta 10 MB.",
+    "Versión nueva para aprobar."
+   ],
+   [
+    "=Pedir PDF",
+    "Ver doc"
+   ],
+   [
+    "=Escribirle",
+    "Pedir PDF"
+   ]
+  ]
+ }
+]

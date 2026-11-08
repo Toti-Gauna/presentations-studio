@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="t d">
+  <title id="t">Ejemplo conceptual de una herramienta por oficio</title>
+  <desc id="d">Esquema genérico con símbolos de fuente, protección, interruptor y lámpara, y una pregunta de ayuda. No es una instalación real ni tiene medidas.</desc>
+  <rect x="0" y="0" width="900" height="560" rx="28" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="900" height="560" rx="28" fill="none" stroke="#D6DCE8" stroke-width="3"/>
+  <!-- grilla de plano -->
+  <g stroke="#EEF0F6" stroke-width="2">
+    <path d="M60 120H840M60 200H840M60 280H840M60 360H840M60 440H840"/>
+    <path d="M140 90V480M260 90V480M380 90V480M500 90V480M620 90V480M740 90V480"/>
+  </g>
+  <!-- circuito genérico (símbolos, sin valores) -->
+  <g fill="none" stroke="#13305E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M140 400V200H300"/>
+    <path d="M380 200H500"/>
+    <path d="M572 200H660V400H140"/>
+    <!-- fuente -->
+    <circle cx="140" cy="300" r="36" fill="#FFFFFF"/>
+    <path d="M122 300q9-16 18 0t18 0"/>
+    <!-- protección -->
+    <rect x="300" y="172" width="80" height="56" rx="10" fill="#FFFFFF"/>
+    <path d="M318 214l22-28 22 28"/>
+    <!-- interruptor -->
+    <circle cx="500" cy="200" r="7" fill="#13305E"/>
+    <path d="M500 200l60-34"/>
+    <circle cx="572" cy="200" r="7" fill="#13305E"/>
+    <!-- lámpara -->
+    <circle cx="660" cy="300" r="36" fill="#FFFFFF"/>
+    <path d="M635 275l50 50M685 275l-50 50"/>
+  </g>
+  <!-- tramo resaltado -->
+  <path d="M300 200H380" stroke="#FFC93C" stroke-width="22" stroke-linecap="round" opacity=".55"/>
+  <!-- pregunta de ayuda -->
+  <g>
+    <rect x="214" y="252" width="392" height="96" rx="20" fill="#1F57A8"/>
+    <path d="M318 254l22-34 26 34z" fill="#1F57A8"/>
+    <text x="238" y="294" font-family="'DM Sans Variable','DM Sans',Arial,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">¿Qué hace este tramo?</text>
+    <text x="238" y="328" font-family="'DM Sans Variable','DM Sans',Arial,sans-serif" font-size="22" fill="#DCE6F6">Ayuda para leer el esquema</text>
+  </g>
+  <!-- rótulo -->
+  <rect x="40" y="34" width="420" height="46" rx="23" fill="#FFC93C"/>
+  <text x="62" y="66" font-family="'DM Sans Variable','DM Sans',Arial,sans-serif" font-size="24" font-weight="800" fill="#13305E">Ejemplo conceptual · visión</text>
+  <text x="60" y="520" font-family="'DM Sans Variable','DM Sans',Arial,sans-serif" font-size="20" fill="#5F6B84">Símbolos genéricos. No es una instalación real ni una instrucción de cableado.</text>
+</svg>

@@ -2,17 +2,27 @@
 // Modos: seguidor del presentador (misma computadora), autónoma con teclado, o remota (otra
 // computadora, por servidor con token público de solo lectura).
 import { aplicar, estadoInicial, type Comando, type Estado } from '../core/estado.ts';
-import { Reproductor } from '../render/reproductor.ts';
+import { Reproductor, modoMovimiento } from '../render/reproductor.ts';
 import { CanalLocal } from '../transporte/local.ts';
 import { ConexionRemota, servidorPermitido, wsDesde } from '../transporte/remoto.ts';
 import { iniciar, pantallaError, precargar, teclas } from './comun.ts';
+import { desbloquear, habilitarSonido } from '../render/sonido.ts';
 
 const raiz = document.getElementById('app') as HTMLElement;
 const s = iniciar();
 if ('error' in s) pantallaError(raiz, s.error, true);
 else {
   document.title = s.paquete.deck.titulo;
-  const rep = new Reproductor(raiz, s.escenas, s.paquete.tema, s.ctx);
+  const rep = new Reproductor(raiz, s.escenas, s.paquete.tema, s.ctx, { modo: modoMovimiento(s.version.movimiento) });
+  // Solo la pantalla pública suena. El navegador exige un gesto en ESTA ventana: el primer clic o tecla lo habilita.
+  const sinSonido = new URLSearchParams(location.search).get('sonido') === 'no';
+  habilitarSonido(!sinSonido);
+  const gesto = () => {
+    desbloquear();
+    rep.desbloquearAudio();
+  };
+  window.addEventListener('pointerdown', gesto, { once: true });
+  window.addEventListener('keydown', gesto, { once: true });
   let estado: Estado = estadoInicial();
   rep.mostrar(estado);
   const canal = new CanalLocal(s.paquete.deck.id, s.version.id);
@@ -51,7 +61,6 @@ else {
       b: () => ejecutar({ tipo: 'negro', valor: !estado.negro }),
       '.': () => ejecutar({ tipo: 'negro', valor: !estado.negro }),
     });
-    raiz.addEventListener('click', () => rep.desbloquearAudio(), { once: true });
   }
   void precargar(rep.escenario);
   let quieto: number | undefined;

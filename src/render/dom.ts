@@ -11,7 +11,9 @@ export function h<K extends keyof HTMLElementTagNameMap>(tag: K, attrs: Record<s
 export function marcado(texto: string): string {
   return escapar(texto)
     .replace(/==(.+?)==/g, '<mark>$1</mark>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*\n]+?)\*(?!\*)/g, '$1<em>$2</em>')
+    .replace(/\n/g, '<br>');
 }
 
 /** Envuelve cada palabra en un span (tipografía cinética) conservando el marcado. */

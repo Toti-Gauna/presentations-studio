@@ -1,0 +1,1204 @@
+{
+ "escenas": [
+  {
+   "id": "a-odisea",
+   "titulo": "La odisea",
+   "seccion": "pitch",
+   "pasos": 5,
+   "modulo": "odisea",
+   "videos": []
+  },
+  {
+   "id": "a-handia",
+   "titulo": "HandIA te orienta",
+   "seccion": "pitch",
+   "pasos": 5,
+   "modulo": "handia",
+   "videos": []
+  },
+  {
+   "id": "a-profesional",
+   "titulo": "Herramientas para el profesional",
+   "seccion": "pitch",
+   "pasos": 3,
+   "modulo": "profesional",
+   "videos": []
+  },
+  {
+   "id": "a-empezamos",
+   "titulo": "Ya empezamos",
+   "seccion": "pitch",
+   "pasos": 4,
+   "modulo": "empezamos",
+   "videos": []
+  },
+  {
+   "id": "a-mercado",
+   "titulo": "Mercado y visión",
+   "seccion": "pitch",
+   "pasos": 5,
+   "modulo": "mercado",
+   "videos": []
+  },
+  {
+   "id": "a-competencia",
+   "titulo": "Competencia y modelo",
+   "seccion": "pitch",
+   "pasos": 5,
+   "modulo": "competencia",
+   "videos": []
+  },
+  {
+   "id": "a-equipo",
+   "titulo": "Equipo, inversión y visión",
+   "seccion": "pitch",
+   "pasos": 6,
+   "modulo": "equipo",
+   "videos": [
+    "video-mundo"
+   ]
+  },
+  {
+   "id": "x-proyeccion",
+   "titulo": "Proyección: de dónde sale el número",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-proyeccion",
+   "videos": []
+  },
+  {
+   "id": "x-costos",
+   "titulo": "Costos y punto de equilibrio",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-costos",
+   "videos": []
+  },
+  {
+   "id": "x-cac",
+   "titulo": "CAC y LTV",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-cac",
+   "videos": []
+  },
+  {
+   "id": "x-validacion",
+   "titulo": "Validación",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-validacion",
+   "videos": []
+  },
+  {
+   "id": "x-roadmap",
+   "titulo": "Roadmap",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-roadmap",
+   "videos": []
+  },
+  {
+   "id": "x-competidores",
+   "titulo": "La competencia en Argentina, por modelo",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-competidores",
+   "videos": []
+  },
+  {
+   "id": "x-competidores-mundo",
+   "titulo": "Competidores en la región y el mundo",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-competidores-mundo",
+   "videos": []
+  },
+  {
+   "id": "x-mes-1",
+   "titulo": "Plan · mes 1: HandIA premium y lanzamiento",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-mes-1",
+   "videos": []
+  },
+  {
+   "id": "x-mes-2",
+   "titulo": "Plan · mes 2: HandIA para profesionales",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-mes-2",
+   "videos": []
+  },
+  {
+   "id": "x-mes-3",
+   "titulo": "Plan · mes 3: Toda Buenos Aires",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-mes-3",
+   "videos": []
+  },
+  {
+   "id": "x-inversion",
+   "titulo": "Cada dólar de la inversión",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-inversion",
+   "videos": []
+  },
+  {
+   "id": "x-un-millon",
+   "titulo": "Hacia USD 1 millón",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-un-millon",
+   "videos": []
+  },
+  {
+   "id": "x-ux-ia",
+   "titulo": "UX + IA: el diferencial",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-ux-ia",
+   "videos": []
+  },
+  {
+   "id": "x-marca",
+   "titulo": "Marca y UX/UI",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-marca",
+   "videos": []
+  },
+  {
+   "id": "x-publicidades",
+   "titulo": "Publicidades",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-publicidades",
+   "videos": []
+  },
+  {
+   "id": "x-marketing",
+   "titulo": "Tracción en los dos lados",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-marketing",
+   "videos": []
+  },
+  {
+   "id": "x-herramientas-1",
+   "titulo": "Herramientas por oficio (1/2)",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-herramientas-1",
+   "videos": []
+  },
+  {
+   "id": "x-herramientas-2",
+   "titulo": "Herramientas por oficio (2/2)",
+   "seccion": "material extra",
+   "pasos": 3,
+   "modulo": "anexo-herramientas-2",
+   "videos": []
+  },
+  {
+   "id": "x-negocios",
+   "titulo": "Más profesiones, herramientas y negocios",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-negocios",
+   "videos": []
+  },
+  {
+   "id": "x-plan-3m",
+   "titulo": "Lo que logramos en 3 meses",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-plan-3m",
+   "videos": []
+  },
+  {
+   "id": "x-mapa",
+   "titulo": "Cómo crece Handyx",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "crece",
+   "videos": []
+  },
+  {
+   "id": "x-5m",
+   "titulo": "Hacia USD 5 millones en 2027",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-5m",
+   "videos": []
+  },
+  {
+   "id": "x-business",
+   "titulo": "Handyx for Business",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-business",
+   "videos": []
+  },
+  {
+   "id": "x-multiplicar-1",
+   "titulo": "Maneras de multiplicar ingresos (1/2)",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-multiplicar-1",
+   "videos": []
+  },
+  {
+   "id": "x-multiplicar-2",
+   "titulo": "Maneras de multiplicar ingresos (2/2)",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-multiplicar-2",
+   "videos": []
+  },
+  {
+   "id": "x-circulo",
+   "titulo": "El círculo que multiplica",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-circulo",
+   "videos": []
+  },
+  {
+   "id": "x-ipo",
+   "titulo": "Camino a la IPO",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-ipo",
+   "videos": []
+  },
+  {
+   "id": "x-ferreterias",
+   "titulo": "Ferreterías conectadas: stock para los profesionales",
+   "seccion": "material extra",
+   "pasos": 6,
+   "modulo": "ferreterias",
+   "videos": []
+  },
+  {
+   "id": "x-handia-voz",
+   "titulo": "HandIA te habla: un mejor servicio, con tu voz",
+   "seccion": "material extra",
+   "pasos": 1,
+   "modulo": null,
+   "videos": [
+    "video-handia-voz"
+   ]
+  },
+  {
+   "id": "x-profesiones",
+   "titulo": "De 6 a 72 profesiones",
+   "seccion": "material extra",
+   "pasos": 4,
+   "modulo": "anexo-profesiones",
+   "videos": []
+  },
+  {
+   "id": "q-01",
+   "titulo": "Posible pregunta 1: ¿Cuál es tu CAC?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-01",
+   "videos": []
+  },
+  {
+   "id": "q-02",
+   "titulo": "Posible pregunta 2: ¿Cuánto cuesta mantener Handyx?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-02",
+   "videos": []
+  },
+  {
+   "id": "q-03",
+   "titulo": "Posible pregunta 3: ¿De dónde salen el 25 % y los USD 100.000?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-03",
+   "videos": []
+  },
+  {
+   "id": "q-04",
+   "titulo": "Posible pregunta 4: ¿Cuántos trabajos tienen cobrados?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-04",
+   "videos": []
+  },
+  {
+   "id": "q-05",
+   "titulo": "Posible pregunta 5: ¿HandIA funciona hoy?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-05",
+   "videos": []
+  },
+  {
+   "id": "q-06",
+   "titulo": "Posible pregunta 6: ¿Qué los diferencia de la competencia?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-06",
+   "videos": []
+  },
+  {
+   "id": "q-07",
+   "titulo": "Posible pregunta 7: ¿Cómo cobran el 15 %?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-07",
+   "videos": []
+  },
+  {
+   "id": "q-08",
+   "titulo": "Posible pregunta 8: ¿Cómo captan y retienen profesionales?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-08",
+   "videos": []
+  },
+  {
+   "id": "q-09",
+   "titulo": "Posible pregunta 9: ¿En qué usarían los USD 100.000?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-09",
+   "videos": []
+  },
+  {
+   "id": "q-10",
+   "titulo": "Posible pregunta 10: ¿Qué hacen si los clientes no vuelven?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-10",
+   "videos": []
+  },
+  {
+   "id": "q-11",
+   "titulo": "Posible pregunta 11: ¿Por qué invertirían USD 100.000 en Handyx?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-11",
+   "videos": []
+  },
+  {
+   "id": "q-12",
+   "titulo": "Posible pregunta 12: ¿Qué herramientas van a tener los profesionales?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-12",
+   "videos": []
+  },
+  {
+   "id": "q-13",
+   "titulo": "Posible pregunta 13: ¿Cómo van a conseguir tracción?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-13",
+   "videos": []
+  },
+  {
+   "id": "q-14",
+   "titulo": "Posible pregunta 14: ¿Hasta dónde puede crecer Handyx?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-14",
+   "videos": []
+  },
+  {
+   "id": "q-15",
+   "titulo": "Posible pregunta 15: ¿Cómo van a multiplicar los ingresos?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-15",
+   "videos": []
+  },
+  {
+   "id": "q-16",
+   "titulo": "Posible pregunta 16: ¿Van a invertir la plata de los inversores en cripto?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-16",
+   "videos": []
+  },
+  {
+   "id": "q-17",
+   "titulo": "Posible pregunta 17: ¿Piensan en una salida? ¿Una IPO?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-17",
+   "videos": []
+  },
+  {
+   "id": "q-18",
+   "titulo": "Posible pregunta 18: ¿Cómo consiguen los materiales?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-18",
+   "videos": []
+  },
+  {
+   "id": "q-19",
+   "titulo": "Posible pregunta 19: ¿Qué suma HandIA con la inversión?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-19",
+   "videos": []
+  },
+  {
+   "id": "q-20",
+   "titulo": "Posible pregunta 20: ¿Qué logran en los próximos 3 meses?",
+   "seccion": "preguntas",
+   "pasos": 3,
+   "modulo": "pregunta-20",
+   "videos": []
+  },
+  {
+   "id": "x-trimestres",
+   "titulo": "Cómo crece Handyx, trimestre a trimestre",
+   "seccion": "material extra",
+   "pasos": 6,
+   "modulo": "trimestres",
+   "videos": []
+  },
+  {
+   "id": "s-extra",
+   "titulo": "Material extra",
+   "seccion": "portada",
+   "pasos": 1,
+   "modulo": "seccion-extra",
+   "videos": []
+  },
+  {
+   "id": "s-preguntas",
+   "titulo": "Preguntas del jurado",
+   "seccion": "portada",
+   "pasos": 1,
+   "modulo": "seccion-preguntas",
+   "videos": []
+  }
+ ],
+ "diapositivas_pptx": 217,
+ "capturas_reales_pwa": [
+  {
+   "archivo": "usuario-inicio.webp",
+   "app": "usuario",
+   "pantalla": "inicio",
+   "ruta": "/inicio/",
+   "escenario": "varias-propuestas",
+   "descripcion": "Inicio con un pedido de plomería que ya tiene propuestas y la grilla de los seis rubros."
+  },
+  {
+   "archivo": "usuario-pedido.webp",
+   "app": "usuario",
+   "pantalla": "pedir",
+   "ruta": "/pedir/",
+   "escenario": "varias-propuestas",
+   "descripcion": "Nuevo pedido, paso 1: elegir el rubro (Plomería seleccionada)."
+  },
+  {
+   "archivo": "usuario-pedido-describir.webp",
+   "app": "usuario",
+   "pantalla": "pedir",
+   "ruta": "/pedir/?rubro=plomeria",
+   "escenario": "varias-propuestas",
+   "descripcion": "Nuevo pedido, paso 3: contar qué pasa, con fotos opcionales y privadas."
+  },
+  {
+   "archivo": "usuario-propuestas.webp",
+   "app": "usuario",
+   "pantalla": "propuestas",
+   "ruta": "/pedidos/propuestas/?pedido=de000000-0000-4000-8000-000000001001",
+   "escenario": "varias-propuestas",
+   "descripcion": "Propuestas recibidas por orden de llegada, sin ranking: $ 45.000 y $ 39.000 con comisión de Handy $ 0."
+  },
+  {
+   "archivo": "usuario-propuesta.webp",
+   "app": "usuario",
+   "pantalla": "propuesta",
+   "ruta": "/propuestas/detalle/?id=de000000-0000-4000-8000-000000001003",
+   "escenario": "varias-propuestas",
+   "descripcion": "Detalle de una propuesta: precio del especialista, comisión de Handy $ 0 (0 %), horario y qué incluye."
+  },
+  {
+   "archivo": "usuario-seguimiento.webp",
+   "app": "usuario",
+   "pantalla": "trabajo",
+   "ruta": "/trabajos/detalle/?id=de000000-0000-4000-8000-000000001005",
+   "escenario": "obra-por-etapas",
+   "descripcion": "Trabajo en curso (obra de albañilería): lo acordado, comisión $ 0 y etapas con su monto."
+  },
+  {
+   "archivo": "usuario-chat.webp",
+   "app": "usuario",
+   "pantalla": "conversacion",
+   "ruta": "/chats/conversacion/?id=de000000-0000-4000-8000-000000001002",
+   "escenario": "obra-por-etapas",
+   "descripcion": "Chat con el especialista con la propuesta aceptada dentro del hilo."
+  },
+  {
+   "archivo": "usuario-pago.webp",
+   "app": "usuario",
+   "pantalla": "pago",
+   "ruta": "/trabajos/pago/?id=de000000-0000-4000-8000-000000001005",
+   "escenario": "obra-por-etapas",
+   "descripcion": "Pago directo al especialista, sin pasar por Handy, por etapa de la obra."
+  },
+  {
+   "archivo": "usuario-pago-metodo.webp",
+   "app": "usuario",
+   "pantalla": "pago",
+   "ruta": "/trabajos/pago/?id=de000000-0000-4000-8000-000000001005",
+   "escenario": "obra-por-etapas",
+   "descripcion": "Elegir cómo pagar al especialista: efectivo o Mercado Pago, sin datos de tarjeta."
+  },
+  {
+   "archivo": "usuario-cuenta.webp",
+   "app": "usuario",
+   "pantalla": "cuenta",
+   "ruta": "/cuenta/",
+   "escenario": "varias-propuestas",
+   "descripcion": "Cuenta con el contador de la tarifa de Handy en 0 % hasta el 10/12."
+  },
+  {
+   "archivo": "usuario-modal-fee.webp",
+   "app": "usuario",
+   "pantalla": "modal-fee",
+   "ruta": "/inicio/",
+   "escenario": "nuevo-usuario (ingreso con la cuenta de prueba)",
+   "descripcion": "Modal de primer ingreso: demo cerrada, tarifa 0 % hasta el 10/12 y pago directo al especialista."
+  },
+  {
+   "archivo": "especialista-disponibilidad.webp",
+   "app": "especialista",
+   "pantalla": "inicio",
+   "ruta": "/inicio/",
+   "escenario": "habilitado",
+   "descripcion": "Inicio con los interruptores de disponibilidad (urgentes y programados encendidos) y pedidos para vos."
+  },
+  {
+   "archivo": "especialista-pedidos.webp",
+   "app": "especialista",
+   "pantalla": "pedidos",
+   "ruta": "/pedidos/",
+   "escenario": "habilitado",
+   "descripcion": "Bandeja de pedidos por orden de llegada, sin obligación de aceptar, con filtros por tipo."
+  },
+  {
+   "archivo": "especialista-pedido-detalle.webp",
+   "app": "especialista",
+   "pantalla": "pedido",
+   "ruta": "/pedidos/detalle/?id=00000000-0000-4000-8000-0000000000b2",
+   "escenario": "habilitado",
+   "descripcion": "Detalle de un pedido de plomería: zona, fecha pedida y búsqueda abierta, sin datos personales del cliente."
+  },
+  {
+   "archivo": "especialista-presupuesto.webp",
+   "app": "especialista",
+   "pantalla": "pedido",
+   "ruta": "/pedidos/detalle/?id=00000000-0000-4000-8000-0000000000b4",
+   "escenario": "habilitado",
+   "descripcion": "Enviar una propuesta: el especialista pone su precio ($ 20.000), día y qué incluye; Handy no cobra tarifa."
+  },
+  {
+   "archivo": "especialista-agenda.webp",
+   "app": "especialista",
+   "pantalla": "agenda",
+   "ruta": "/agenda/",
+   "escenario": "habilitado",
+   "descripcion": "Agenda mensual con un trabajo confirmado el miércoles 18/11."
+  },
+  {
+   "archivo": "especialista-trabajo.webp",
+   "app": "especialista",
+   "pantalla": "trabajo",
+   "ruta": "/trabajos/detalle/?id=00000000-0000-4000-8000-0000000000c4",
+   "escenario": "habilitado",
+   "descripcion": "Trabajo en curso (obra de albañilería de $ 320.000) con la acción \"Terminé el trabajo\"."
+  },
+  {
+   "archivo": "especialista-cobro.webp",
+   "app": "especialista",
+   "pantalla": "caja",
+   "ruta": "/caja/",
+   "escenario": "habilitado",
+   "descripcion": "Caja: el pago va directo al especialista; cobros verificados y reportados sin saldo en Handy."
+  },
+  {
+   "archivo": "especialista-cuenta.webp",
+   "app": "especialista",
+   "pantalla": "cuenta",
+   "ruta": "/cuenta/",
+   "escenario": "habilitado",
+   "descripcion": "Cuenta con el contador de días sin tarifa de Handy durante la demo (hasta el 10/12/2026)."
+  },
+  {
+   "archivo": "especialista-modal-fee.webp",
+   "app": "especialista",
+   "pantalla": "modal-fee",
+   "ruta": "/inicio/",
+   "escenario": "en_revision",
+   "descripcion": "Modal de primer ingreso: Handy no cobra tarifa durante la demo; no es un descuento sobre su precio."
+  }
+ ],
+ "demo_landing": [
+  "especialista-agenda.webp",
+  "especialista-mensajes.webp",
+  "especialista-pedido.webp",
+  "usuario-agenda.webp",
+  "usuario-describir.webp",
+  "usuario-handia.webp",
+  "usuario-inicio.webp"
+ ],
+ "conceptos": [
+  "app-local.webp",
+  "camino-ipo.png",
+  "circuito-conceptual.svg",
+  "circulo-multiplica.png",
+  "herramientas-aire.webp",
+  "herramientas-albanileria.webp",
+  "herramientas-cerrajeria.webp",
+  "herramientas-electricidad.webp",
+  "herramientas-gas.webp",
+  "herramientas-negocios.webp",
+  "herramientas-numeros.webp",
+  "herramientas-plomeria.webp",
+  "herramientas-turnos.webp",
+  "mapa-crecimiento.png"
+ ],
+ "publicidades": [
+  "especialista-presupuestas-esperas.webp",
+  "especialista-tu-agenda.webp",
+  "usuario-tu-telefono.webp",
+  "usuario-urgencia-programado-obra.webp"
+ ],
+ "video": [
+  "anuncio-16x9-poster.jpg",
+  "anuncio-16x9.mp4",
+  "anuncio-9x16-poster.jpg",
+  "anuncio-9x16.mp4",
+  "ferreterias-poster.jpg",
+  "ferreterias.mp4",
+  "handia-voz-poster.jpg",
+  "handia-voz.mp4",
+  "mundo-arreglar.jpg",
+  "mundo-final-poster.jpg",
+  "mundo-final.mp4",
+  "mundo-mar-del-plata.jpg",
+  "mundo-soluciones.jpg",
+  "trailer-especialista-poster.jpg",
+  "trailer-especialista.mp4",
+  "trailer-usuario-poster.jpg",
+  "trailer-usuario.mp4"
+ ],
+ "personajes_permitidos": [
+  "bombilla-a.webp",
+  "bombilla-b.webp",
+  "bombilla-c.webp",
+  "bombilla-d.webp",
+  "brocha-a.webp",
+  "brocha-b.webp",
+  "brocha-c.webp",
+  "brocha-d.webp",
+  "engranaje-a.webp",
+  "engranaje-b.webp",
+  "engranaje-c.webp",
+  "engranaje-d.webp",
+  "llave-a.webp",
+  "llave-b.webp",
+  "llave-c.webp",
+  "llave-d.webp"
+ ],
+ "logo_vectorial": [
+  "dossiers/marca/logo-handyx.svg",
+  "dossiers/marca/logo-handyx-blanco.svg"
+ ],
+ "afirmaciones_por_tipo": {
+  "observado": 6,
+  "meta": 14,
+  "informado": 14,
+  "ejemplo": 10,
+  "proyeccion": 39,
+  "supuesto": 32
+ },
+ "cifras_de_negocio": [
+  {
+   "id": "MDP-HOGARES",
+   "valor": 259623,
+   "formato": "entero",
+   "tipo": "observado",
+   "descripcion": "Hogares en el partido de General Pueyrredon (Censo 2022)"
+  },
+  {
+   "id": "META-PROFESIONES",
+   "valor": 72,
+   "formato": "entero",
+   "tipo": "meta",
+   "descripcion": "Visión: profesiones disponibles a fines de 2027"
+  },
+  {
+   "id": "META-CUOTA-LOCAL",
+   "valor": 25,
+   "formato": "porcentaje",
+   "tipo": "meta",
+   "descripcion": "Aspiración: parte de los trabajos contratados localmente que pasen por Handyx en el primer trimestre comercial (no es participación actual ni pronóstico)"
+  },
+  {
+   "id": "META-CUOTA-NACIONAL",
+   "valor": 40,
+   "formato": "porcentaje",
+   "tipo": "meta",
+   "descripcion": "Visión: parte de los servicios contratados por particulares en Argentina que pasen por Handyx a fines de 2027"
+  },
+  {
+   "id": "META-INGRESOS-TRIM",
+   "valor": "USD 100.000",
+   "formato": "texto",
+   "tipo": "meta",
+   "descripcion": "Aspiración: ingresos brutos propios de Handyx (tarifas) en el primer trimestre comercial. No es la inversión buscada"
+  },
+  {
+   "id": "FEE-ESPECIALISTA",
+   "valor": 0,
+   "formato": "porcentaje",
+   "tipo": "informado",
+   "descripcion": "Comisión de Handyx al profesional (modelo definido)"
+  },
+  {
+   "id": "TARIFA-USUARIO",
+   "valor": 15,
+   "formato": "porcentaje",
+   "tipo": "informado",
+   "descripcion": "Tarifa de servicio que paga el usuario sobre el presupuesto del profesional, visible antes de contratar (modelo definido)"
+  },
+  {
+   "id": "META-TRABAJOS",
+   "valor": 50,
+   "formato": "entero",
+   "tipo": "meta",
+   "descripcion": "Meta operativa: trabajos con tarifa de Handyx cobrada"
+  },
+  {
+   "id": "META-REPETIDORES",
+   "valor": 5,
+   "formato": "entero",
+   "tipo": "meta",
+   "descripcion": "Meta operativa: clientes que vuelven a contratar"
+  },
+  {
+   "id": "LANZAMIENTO",
+   "valor": "10/11/2026",
+   "formato": "texto",
+   "tipo": "meta",
+   "descripcion": "Fecha objetivo de lanzamiento de la PWA"
+  },
+  {
+   "id": "TRABAJOS-INFORMADOS",
+   "valor": 5,
+   "formato": "entero",
+   "tipo": "informado",
+   "descripcion": "Primeros trabajos con comisión cobrada (prueba con porteros, informado por el fundador; conciliación pendiente)"
+  },
+  {
+   "id": "ESP-REGISTRADOS",
+   "valor": 56,
+   "formato": "entero",
+   "tipo": "informado",
+   "descripcion": "Especialistas registrados en el preregistro (no activos ni verificados; pendiente de corte del CRM)"
+  },
+  {
+   "id": "MERCADO-ARREGLOS",
+   "valor": 259623,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Arreglos del hogar por año en General Pueyrredon (hogares × arreglos por hogar)"
+  },
+  {
+   "id": "MERCADO-USD",
+   "valor": "≈ USD 10,4 M",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Valor anual de esos arreglos (arreglos × ticket)"
+  },
+  {
+   "id": "Q1-TRABAJOS",
+   "valor": "≈ 16.200",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Trabajos que representa el 25 % de los arreglos de un trimestre"
+  },
+  {
+   "id": "Q1-TARIFAS-40",
+   "valor": "≈ USD 97.000",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Tarifas Handyx de esos trabajos con ticket de USD 40 (15 %)"
+  },
+  {
+   "id": "MERCADO-AUTO-USD",
+   "valor": "USD 30 M",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Valor anual de arreglos de autos con esos supuestos"
+  },
+  {
+   "id": "COSTO-SERVIDORES",
+   "valor": 100,
+   "formato": "usd",
+   "tipo": "informado",
+   "descripcion": "Costo mensual estimado de servidores"
+  },
+  {
+   "id": "COSTO-DESARROLLO",
+   "valor": 200,
+   "formato": "usd",
+   "tipo": "informado",
+   "descripcion": "Costo mensual estimado de desarrollo"
+  },
+  {
+   "id": "COSTO-MARKETING",
+   "valor": 100,
+   "formato": "usd",
+   "tipo": "informado",
+   "descripcion": "Costo mensual estimado de marketing"
+  },
+  {
+   "id": "COSTOS-MES",
+   "valor": 400,
+   "formato": "usd",
+   "tipo": "informado",
+   "descripcion": "Costo mensual total estimado para operar Handyx hoy"
+  },
+  {
+   "id": "EQUILIBRIO-TRABAJOS",
+   "valor": "≈ 67",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Trabajos por mes para cubrir los costos actuales (USD 400 ÷ USD 6 por trabajo)"
+  },
+  {
+   "id": "CAC-ESTIMADO",
+   "valor": 2,
+   "formato": "usd",
+   "tipo": "proyeccion",
+   "descripcion": "CAC estimado: marketing mensual ÷ clientes nuevos por mes"
+  },
+  {
+   "id": "CAC-MAXIMO",
+   "valor": 6,
+   "formato": "usd",
+   "tipo": "proyeccion",
+   "descripcion": "CAC máximo para recuperar la captación con el primer trabajo"
+  },
+  {
+   "id": "LTV-ESTIMADO",
+   "valor": 18,
+   "formato": "usd",
+   "tipo": "proyeccion",
+   "descripcion": "LTV estimado: USD 6 por arreglo × 1 arreglo por año × 3 años"
+  },
+  {
+   "id": "LTV-CAC",
+   "valor": 9,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Relación LTV / CAC con esos supuestos"
+  },
+  {
+   "id": "INV-TECNOLOGIA",
+   "valor": 15000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Propuesta de asignación de la inversión: tecnología (IA, herramientas por oficio, servidores)"
+  },
+  {
+   "id": "INV-MARKETING",
+   "valor": 45000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Propuesta de asignación de la inversión: marketing y captación"
+  },
+  {
+   "id": "INV-OPERACIONES",
+   "valor": 30000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Propuesta de asignación de la inversión: operaciones (formación y comunicación con profesionales, soporte, verificación, cobros)"
+  },
+  {
+   "id": "INV-TOTAL",
+   "valor": 100000,
+   "formato": "usd",
+   "tipo": "meta",
+   "descripcion": "Inversión inicial buscada (valor numérico para el reparto)"
+  },
+  {
+   "id": "COMP-CLICKIE-PRO",
+   "valor": "15 %",
+   "formato": "texto",
+   "tipo": "observado",
+   "descripcion": "Clickie: 15 % al profesional (12 % con plan Pro de USD 15 por mes) y 5 % o 10 % al usuario según la nota"
+  },
+  {
+   "id": "COMP-CLICKIE-RONDA",
+   "valor": "USD 150.000",
+   "formato": "texto",
+   "tipo": "observado",
+   "descripcion": "Clickie: ronda ángel informada por prensa"
+  },
+  {
+   "id": "PRUEBA-MONTO",
+   "valor": 350000,
+   "formato": "ars",
+   "tipo": "informado",
+   "descripcion": "Monto total de los 5 trabajos de la prueba (presupuestos de los profesionales)"
+  },
+  {
+   "id": "PRUEBA-TICKET",
+   "valor": 70000,
+   "formato": "ars",
+   "tipo": "informado",
+   "descripcion": "Ticket promedio de los 5 trabajos de la prueba"
+  },
+  {
+   "id": "PRUEBA-TICKET-USD",
+   "valor": "≈ USD 45",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Ticket promedio de la prueba en dólares"
+  },
+  {
+   "id": "Q1-TARIFAS-REAL",
+   "valor": "≈ USD 109.000",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Tarifas Handyx del 25 % del trimestre con el ticket promedio de la prueba (≈ USD 45)"
+  },
+  {
+   "id": "INV-LEGAL",
+   "valor": 10000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Propuesta de asignación: legal, contable y reserva"
+  },
+  {
+   "id": "INV-M-ADS",
+   "valor": 20000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Publicidades hechas con IA (Seedance 2.5) y marketing digital en todas las redes (anuncios por barrio y urgencia)"
+  },
+  {
+   "id": "INV-M-PORTEROS",
+   "valor": 10000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Porteros y administradores de edificios"
+  },
+  {
+   "id": "INV-M-HANDYS",
+   "valor": 8000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Remeras para los profesionales con el Handy de su oficio y contenido con los Handys"
+  },
+  {
+   "id": "INV-M-LOCAL",
+   "valor": 7000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Marketing en la calle: carteles en postes y volantes en locales"
+  },
+  {
+   "id": "INV-O-FORMACION",
+   "valor": 10000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Operaciones: comunicación y formación de profesionales"
+  },
+  {
+   "id": "INV-O-SOPORTE",
+   "valor": 10000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Operaciones: soporte a usuarios y profesionales"
+  },
+  {
+   "id": "INV-O-VERIF",
+   "valor": 6000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Operaciones: verificación de profesionales"
+  },
+  {
+   "id": "INV-O-COBROS",
+   "valor": 4000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Operaciones: cobros y pasarela"
+  },
+  {
+   "id": "INV-T-IA",
+   "valor": 6000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Tecnología: HandIA y feedback con IA"
+  },
+  {
+   "id": "INV-T-HERR",
+   "valor": 5000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Tecnología: herramientas por oficio"
+  },
+  {
+   "id": "INV-T-SERV",
+   "valor": 4000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Tecnología: servidores e infraestructura"
+  },
+  {
+   "id": "INV-L-LEGAL",
+   "valor": 6000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Legal y contable"
+  },
+  {
+   "id": "INV-L-RESERVA",
+   "valor": 4000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Reserva"
+  },
+  {
+   "id": "META-1M",
+   "valor": "USD 1 M",
+   "formato": "texto",
+   "tipo": "meta",
+   "descripcion": "Aspiración: USD 1 millón en trabajos movidos por Handyx (horizonte supuesto: 12 meses)"
+  },
+  {
+   "id": "INV-CRECIMIENTO",
+   "valor": 90000,
+   "formato": "usd",
+   "tipo": "supuesto",
+   "descripcion": "Parte de la inversión para crecer (marketing, operaciones y tecnología)"
+  },
+  {
+   "id": "META-5M",
+   "valor": "USD 5 M",
+   "formato": "texto",
+   "tipo": "meta",
+   "descripcion": "Aspiración: ingresos anuales de Handyx a fines de 2027 (Handyx for People + Handyx for Business)"
+  },
+  {
+   "id": "PRUEBA-COM-USUARIO",
+   "valor": 10,
+   "formato": "porcentaje",
+   "tipo": "informado",
+   "descripcion": "Plan de comisiones original de la prueba con porteros: parte del usuario"
+  },
+  {
+   "id": "PRUEBA-COM-PROFESIONAL",
+   "valor": 10,
+   "formato": "porcentaje",
+   "tipo": "informado",
+   "descripcion": "Plan de comisiones original de la prueba con porteros: parte del profesional"
+  },
+  {
+   "id": "PRUEBA-INGRESO-HANDYX",
+   "valor": 70000,
+   "formato": "ars",
+   "tipo": "informado",
+   "descripcion": "Ingreso bruto de Handyx en la prueba con porteros (plan original 10 % + 10 %)"
+  },
+  {
+   "id": "PRUEBA-INGRESO-USD",
+   "valor": "≈ USD 45",
+   "formato": "texto",
+   "tipo": "proyeccion",
+   "descripcion": "Ingreso bruto de la prueba en dólares"
+  },
+  {
+   "id": "PROF-POR-MES",
+   "valor": 6,
+   "formato": "entero",
+   "tipo": "meta",
+   "descripcion": "Profesiones nuevas por mes, cada una con sus herramientas"
+  },
+  {
+   "id": "META-BA-MESES",
+   "valor": 3,
+   "formato": "entero",
+   "tipo": "meta",
+   "descripcion": "Meses para llegar a toda Buenos Aires"
+  },
+  {
+   "id": "PROF-Q1",
+   "valor": 24,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Profesiones al cierre del primer trimestre (6 + 3 meses × 6)"
+  },
+  {
+   "id": "PROF-Q2",
+   "valor": 42,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Profesiones al cierre del segundo trimestre"
+  },
+  {
+   "id": "PROF-Q3",
+   "valor": 60,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Profesiones al cierre del tercer trimestre"
+  },
+  {
+   "id": "PROF-Q4",
+   "valor": 72,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Profesiones al llegar a la meta (septiembre de 2027)"
+  },
+  {
+   "id": "Q1-TRABAJOS-N",
+   "valor": 16200,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Trabajos del 25 % de un trimestre (numérico, para conteos)"
+  },
+  {
+   "id": "MERCADO-TRIM-N",
+   "valor": 64900,
+   "formato": "entero",
+   "tipo": "proyeccion",
+   "descripcion": "Arreglos del hogar en el partido por trimestre"
+  },
+  {
+   "id": "Q1-TARIFAS-REAL-N",
+   "valor": 109000,
+   "formato": "usd",
+   "tipo": "proyeccion",
+   "descripcion": "Tarifas del primer trimestre con el ticket real (numérico, para conteos)"
+  }
+ ],
+ "repos": {
+  "Handy-landing-page-fe": "ac3b245 2026-10-29 Merge pull request #17 from Toti-Gauna/feat/apps-por-rol",
+  "Handy-landing-page-be": "08e8264 2026-10-29 Merge pull request #7 from Toti-Gauna/ci/postgres-sin-ecr",
+  "handyx-client-fe": "e89d54f 2026-10-29 Merge pull request #1 from Toti-Gauna/fase-1-bases",
+  "handyx-specialist-fe": "1adbf11 2026-10-29 Merge pull request #1 from Toti-Gauna/claude/pensive-hypatia-jajjgm",
+  "handy-internal-portal": "14f0591 2026-10-30 Rediseño UX/UI del portal (fases A–E) y listo para publicar en internal.handyc.com (#7)",
+  "handyx-client-be": "e0a40da 2026-10-28 Initial commit",
+  "handyx-specialist-be": "fc5af22 2026-10-28 Initial commit"
+ }
+}

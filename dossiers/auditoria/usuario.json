@@ -1,0 +1,4305 @@
+{
+ "superficie": "usuario",
+ "corte": "2026-11-07",
+ "fuentes": [
+  {
+   "id": "lienzo-usuario",
+   "tipo": "lienzo",
+   "ref": "Artifact A4T5bqyE8WEiQkwD4ogDaZ · copia local S/artifacts/usuario/project + capturas S/capturas/usuario (128 tableros: 102 pantallas, 13 recorridos RC, 12 flujos FL, UX-Revision)",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "client-fe@ca04340",
+   "tipo": "repo",
+   "ref": "handyx-client-fe origin/main: fases 1 y 2 (mockup completo sobre servidor simulado) + workflow de publicación en handyx.pro",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "client-fe@3fc03b6 (fase-3-diseno)",
+   "tipo": "repo",
+   "ref": "handyx-client-fe rama fase-3-diseno: rediseño 3.1–3.9 y lotes 4.1–4.7 (viaje en vivo, conexión preparada); sin mergear",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "client-fe@589487b (handia-premium)",
+   "tipo": "repo",
+   "ref": "handyx-client-fe rama handia-premium (sale de fase-3-diseno): HandIA en el celular con voz local, fuente del lienzo en design/usuario, docs/diseno-usuario-deluxe.md, docs/plan-olas.md (Fase 7), docs/handia-premium-plan.md; sin mergear",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "client-be@main",
+   "tipo": "repo",
+   "ref": "handyx-client-be origin/main: e0a40da «Initial commit» (fetch de las 19:05); en GitHub, después, bd600fa y 150bbf2 agregan solo CI/CD a Render y la corrida dice «El repo todavía no tiene código: no hay nada que deployar»",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "client-be@179bd86 (fase-4-backend-conciliado)",
+   "tipo": "repo",
+   "ref": "handyx-client-be rama fase-4-backend-conciliado: contrato 1.0.0-draft.3 (54 endpoints de usuario), docs/state-machines.md, docs/handoff.md; probado solo contra PostgreSQL local aislado",
+   "fecha": "2026-11-02"
+  },
+  {
+   "id": "client-be@8ce44f4 (claude/pensive-hypatia-jajjgm)",
+   "tipo": "repo",
+   "ref": "handyx-client-be rama claude/pensive-hypatia-jajjgm: esquema compartido; último commit cambia CLAUDE.md (antecedentes por foto o PDF, sin comisión al especialista)",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "landing-fe@ac3b245",
+   "tipo": "repo",
+   "ref": "Handy-landing-page-fe origin/main: demo /demo/ rol usuario (src/render/demo/usuario.ts, docs/modulos/demo-interactiva.md, docs/modulos/apps-por-rol.md, src/content/tarifas.json)",
+   "fecha": "2026-10-29"
+  },
+  {
+   "id": "gh-run-42397628127",
+   "tipo": "doc",
+   "ref": "GitHub Actions handyx-client-fe «Publicar en Hostinger (handyx.pro)» sobre main ca04340: build en modo preview y job publicar OK con prueba pública",
+   "fecha": "2026-11-07"
+  },
+  {
+   "id": "gh-run-40933042318",
+   "tipo": "doc",
+   "ref": "GitHub Actions Handy-landing-page-fe «Apps por rol en Hostinger»: builds OK, job publicar omitido",
+   "fecha": "2026-10-29"
+  },
+  {
+   "id": "capturas-pwa",
+   "tipo": "doc",
+   "ref": "presentations-studio brands/handyx/assets/capturas/usuario-*.webp + capturas.json (11 capturas de la PWA con servidor simulado; navegación y textos de la Fase 2)",
+   "fecha": "2026-10-31"
+  },
+  {
+   "id": "demo-landing",
+   "tipo": "doc",
+   "ref": "presentations-studio brands/handyx/assets/demo-landing/usuario-*.webp y publicidades/usuario-*.webp",
+   "fecha": "2026-10-31"
+  },
+  {
+   "id": "afirmaciones",
+   "tipo": "pitch",
+   "ref": "decks/handyx-aticma/afirmaciones.json (TARIFA-USUARIO, FEE-ESPECIALISTA, PRUEBA-COM-USUARIO, LANZAMIENTO)",
+   "fecha": "2026-11-05"
+  },
+  {
+   "id": "personajes",
+   "tipo": "doc",
+   "ref": "dossiers/inventario/personajes-lienzos.json",
+   "fecha": "2026-11-07"
+  }
+ ],
+ "modulos": [
+  {
+   "id": "A",
+   "nombre": "Acceso y alta",
+   "tableros": [
+    "A-Bienvenida.dc.html",
+    "A-Entrar.dc.html",
+    "A-Codigo.dc.html",
+    "A-Segunda.dc.html",
+    "A-Datos.dc.html",
+    "A-Zona.dc.html",
+    "A-Avisos.dc.html",
+    "A-Casa.dc.html",
+    "A-CasaAmbientes.dc.html",
+    "A-CasaEquipos.dc.html",
+    "A-CasaFotos.dc.html",
+    "A-Listo.dc.html",
+    "RC-Alta.dc.html",
+    "RC-Entrar.dc.html",
+    "FL-Acceso.dc.html"
+   ],
+   "resumen": "Registro sin contraseña en 5 pasos con «Armá tu casa» opcional (diseño); en código existe el alta con invitación y contraseña sobre el servidor simulado."
+  },
+  {
+   "id": "I",
+   "nombre": "Inicio y HandIA",
+   "tableros": [
+    "I-Inicio.dc.html",
+    "I-HandIA.dc.html",
+    "I-HandIAChat.dc.html",
+    "I-HandIAPiensa.dc.html",
+    "I-HandIAFicha.dc.html",
+    "I-Voz.dc.html",
+    "I-VozHabla.dc.html",
+    "I-VozAjustes.dc.html",
+    "I-Avisos.dc.html",
+    "RC-HandIA.dc.html",
+    "FL-Mapa.dc.html",
+    "FL-Pedir.dc.html"
+   ],
+   "resumen": "Inicio con seis rubros y HandIA, el asistente que arma el pedido en el celular sin IA externa, por chat o por voz; el motor está en una rama, el diseño nuevo no."
+  },
+  {
+   "id": "P",
+   "nombre": "Pedir",
+   "tableros": [
+    "P-Rubro.dc.html",
+    "P-Que.dc.html",
+    "P-Fotos.dc.html",
+    "P-Anotar.dc.html",
+    "P-Medir.dc.html",
+    "P-Cuando.dc.html",
+    "P-Fecha.dc.html",
+    "P-Zona.dc.html",
+    "P-Revisar.dc.html",
+    "P-Publicado.dc.html",
+    "RC-Pedir.dc.html",
+    "FL-Pedir.dc.html"
+   ],
+   "resumen": "Pedido en 3 toques con precio orientativo de Handyx (diseño); en código, pedido en pasos con urgente, programado u obra."
+  },
+  {
+   "id": "C",
+   "nombre": "Propuestas y comparar",
+   "tableros": [
+    "C-Buscando.dc.html",
+    "C-Propuestas.dc.html",
+    "C-Comparar.dc.html",
+    "C-Detalle.dc.html",
+    "C-Visita.dc.html",
+    "C-Certificados.dc.html",
+    "C-Cambios.dc.html",
+    "C-Rechazar.dc.html",
+    "C-Aceptar.dc.html",
+    "C-Aceptada.dc.html",
+    "RC-Propuestas.dc.html",
+    "FL-Propuestas.dc.html"
+   ],
+   "resumen": "Propuestas con precio, condiciones y verificaciones; comparar lado a lado y «La mejor en perfil y precio» (solo diseño); aceptar exactamente la versión vista (código)."
+  },
+  {
+   "id": "S",
+   "nombre": "Seguimiento y pago",
+   "tableros": [
+    "S-Agendado.dc.html",
+    "S-EnCamino.dc.html",
+    "S-Llego.dc.html",
+    "S-Trabajando.dc.html",
+    "S-Adicional.dc.html",
+    "S-AntesDespues.dc.html",
+    "S-LadoALado.dc.html",
+    "S-Informe.dc.html",
+    "S-Conformidad.dc.html",
+    "S-Pagar.dc.html",
+    "S-PagoInformado.dc.html",
+    "S-Resena.dc.html",
+    "RC-Trabajo.dc.html",
+    "FL-Seguimiento.dc.html"
+   ],
+   "resumen": "Del turno al pago: viaje en vivo del servidor, adicionales, informe con garantía, conformidad, pago directo (informado ≠ verificado) y reseña."
+  },
+  {
+   "id": "O",
+   "nombre": "Obras",
+   "tableros": [
+    "O-Propuesta.dc.html",
+    "O-Obra.dc.html",
+    "O-Dia.dc.html",
+    "O-Repuesto.dc.html",
+    "O-Fecha.dc.html",
+    "O-Grupo.dc.html",
+    "O-Pagos.dc.html",
+    "O-Gastado.dc.html",
+    "RC-Obra.dc.html",
+    "FL-Obra.dc.html",
+    "FL-Equipo.dc.html"
+   ],
+   "resumen": "Obras de varios días por etapas, con equipo de varios profesionales, repuestos y pagos por etapa; en código hay etapas con confirmación y pago por etapa."
+  },
+  {
+   "id": "M",
+   "nombre": "Mensajes",
+   "tableros": [
+    "M-Mensajes.dc.html",
+    "M-Chat.dc.html",
+    "M-Seleccion.dc.html",
+    "M-Presupuesto.dc.html",
+    "M-Adjuntar.dc.html",
+    "M-Soporte.dc.html",
+    "RC-Mensajes.dc.html",
+    "FL-Mensajes.dc.html"
+   ],
+   "resumen": "Chats atados a un pedido u obra con tarjetas que se aceptan ahí mismo y Soporte atendido por personas."
+  },
+  {
+   "id": "H",
+   "nombre": "Mi hogar",
+   "tableros": [
+    "H-Hogar.dc.html",
+    "H-MiCasa.dc.html",
+    "H-Ambiente.dc.html",
+    "H-Equipo.dc.html",
+    "H-Sumar.dc.html",
+    "H-Rompio.dc.html",
+    "H-Compartir.dc.html",
+    "H-Compartido.dc.html",
+    "H-Recordatorios.dc.html",
+    "H-Historial.dc.html",
+    "H-Garantias.dc.html",
+    "H-Modelo3D.dc.html",
+    "H-AR.dc.html",
+    "RC-Hogar.dc.html",
+    "FL-Hogar.dc.html"
+   ],
+   "resumen": "Ficha privada de la casa con cuatro puertas (Mi casa, Algo se rompió, Mantenimiento, Historial y garantías); todo es diseño y pide contrato nuevo."
+  },
+  {
+   "id": "T",
+   "nombre": "Herramientas, 3D y AR",
+   "tableros": [
+    "T-Herramientas.dc.html",
+    "T-Medir.dc.html",
+    "T-Nivel.dc.html",
+    "T-Linterna.dc.html",
+    "T-Escanear.dc.html",
+    "T-Destino.dc.html",
+    "RC-Herramientas.dc.html",
+    "FL-Herramientas.dc.html"
+   ],
+   "resumen": "Las herramientas del especialista en el teléfono (medir, nivel, linterna, foto anotada, 3D, AR); todo termina en el chat o el pedido. Solo diseño."
+  },
+  {
+   "id": "G",
+   "nombre": "Camino del hogar",
+   "tableros": [
+    "G-Camino.dc.html",
+    "G-Insignias.dc.html",
+    "G-Insignia.dc.html",
+    "G-Beneficios.dc.html",
+    "G-Hito.dc.html",
+    "RC-Camino.dc.html",
+    "FL-Camino.dc.html"
+   ],
+   "resumen": "Gamificación por cuidar la casa, sin azar ni rankings; montos y premios en borrador para Legal."
+  },
+  {
+   "id": "X",
+   "nombre": "Actividad, cuenta, ayuda y errores",
+   "tableros": [
+    "X-Actividad.dc.html",
+    "X-Cuenta.dc.html",
+    "X-Datos.dc.html",
+    "X-Seguridad.dc.html",
+    "X-Pagos.dc.html",
+    "X-Privacidad.dc.html",
+    "X-Ayuda.dc.html",
+    "X-Respuesta.dc.html",
+    "X-Error.dc.html",
+    "X-SinConexion.dc.html",
+    "X-NoEncontrado.dc.html",
+    "RC-Actividad.dc.html",
+    "RC-Cuenta.dc.html",
+    "FL-Cuenta.dc.html"
+   ],
+   "resumen": "Actividad, cuenta desde el avatar, pagos registrados sin tarjetas, privacidad y baja, ayuda y errores que no dan nada por hecho; buena parte existe en código con mock."
+  },
+  {
+   "id": "L",
+   "nombre": "Superficies públicas hoy",
+   "tableros": [],
+   "resumen": "Lo que un tercero puede abrir hoy: la vista de prueba de la PWA en handyx.pro y la demo de la landing (datos ficticios en las dos)."
+  }
+ ],
+ "funciones": [
+  {
+   "id": "U-A-01",
+   "modulo": "A",
+   "nombre": "Bienvenida ilustrada",
+   "que_hace": "Primera pantalla con Mar del Plata dibujada, qué es Handyx y «Crear cuenta» o «Ya tengo cuenta».",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "A-Bienvenida.dc.html",
+     "dice": "Arreglos de casa con especialistas verificados · Contás qué pasa, recibís propuestas con precio y elegís vos."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "bienvenida ('/') existe con el diseño de la Fase 2"
+    }
+   ],
+   "tableros": [
+    "A-Bienvenida.dc.html",
+    "RC-Alta.dc.html"
+   ],
+   "notas": "La versión de código (Fase 2) es otra pantalla. El titular «especialistas verificados» es un riesgo de publicación."
+  },
+  {
+   "id": "U-A-02",
+   "modulo": "A",
+   "nombre": "Alta con invitación y contraseña, ingreso y recuperación",
+   "que_hace": "Crear la cuenta con un código de invitación, entrar con email y contraseña y recuperar la contraseña.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "registro, ingresar, recuperar, recuperar-nueva (lote 2.1)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "«Alta con invitación de la demo cerrada» · «Ingreso con email y contraseña»"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "Registro con invitación y contraseña (lo que existe hoy)"
+    }
+   ],
+   "tableros": [],
+   "notas": "El API probado solo contra base local aislada; main del BE no tiene código. El lienzo reemplaza esto por U-A-03."
+  },
+  {
+   "id": "U-A-03",
+   "modulo": "A",
+   "nombre": "Registro directo y entrar sin contraseña",
+   "que_hace": "Registrarse sin invitación y entrar con un código de 6 números por email o SMS, o con Google o Apple.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Acceso.dc.html",
+     "dice": "La gente se registra directo, sin invitación ni contraseñas."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "A-Codigo.dc.html",
+     "dice": "El código vence en 10 minutos."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "0.3 ¿arrancamos solo con código por email (sin SMS ni Google/Apple)?"
+    }
+   ],
+   "tableros": [
+    "A-Entrar.dc.html",
+    "A-Codigo.dc.html",
+    "RC-Alta.dc.html",
+    "RC-Entrar.dc.html",
+    "FL-Acceso.dc.html"
+   ],
+   "notas": "Contradice el contrato y AGENTS.md («demo cerrada con invitación»). Pide contrato draft.4, proveedores de SMS y OAuth (decisión 0.3 abierta)."
+  },
+  {
+   "id": "U-A-04",
+   "modulo": "A",
+   "nombre": "Datos mínimos sin DNI ni CUIT",
+   "que_hace": "Pide solo nombre, apellido y celular; el teléfono lo ve solo el especialista elegido.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "perfil · «Completá tu perfil» por pasos"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "A-Datos.dc.html",
+     "dice": "No te pedimos DNI ni CUIT. Tu teléfono lo ve solo el especialista que elijas."
+    }
+   ],
+   "tableros": [
+    "A-Datos.dc.html"
+   ],
+   "notas": "La pantalla A-Datos es rediseño (solo diseño); el perfil por pasos existe sobre mock."
+  },
+  {
+   "id": "U-A-05",
+   "modulo": "A",
+   "nombre": "Zona aproximada y dirección exacta solo al aceptar",
+   "que_hace": "Los especialistas ven el barrio; la dirección exacta se comparte con quien aceptaste.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "A-Zona.dc.html",
+     "dice": "Los especialistas ven solo la zona aproximada. La dirección exacta se comparte cuando aceptás una propuesta."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "bandeja con zona sin dirección … aceptación con la dirección exacta para el especialista"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):src/mapa/pantallas.ts",
+     "dice": "cuenta/direcciones"
+    }
+   ],
+   "tableros": [
+    "A-Zona.dc.html",
+    "P-Zona.dc.html"
+   ],
+   "notas": "Regla implementada en la rama del BE (lote 5.4) y probada con las dos APIs en local."
+  },
+  {
+   "id": "U-A-06",
+   "modulo": "A",
+   "nombre": "Elegir avisos",
+   "que_hace": "Elegís qué avisos te llegan (propuestas, turno, recordatorios), sin publicidad.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "A-Avisos.dc.html",
+     "dice": "Solo lo que te sirve. Nada de publicidad."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:docs/handoff.md",
+     "dice": "Push: solo el estado del permiso y la preferencia … con API real responde funcion_inactiva"
+    }
+   ],
+   "tableros": [
+    "A-Avisos.dc.html"
+   ],
+   "notas": "Las notificaciones push reales no están activas."
+  },
+  {
+   "id": "U-A-07",
+   "modulo": "A",
+   "nombre": "«Armá tu casa» en el alta",
+   "que_hace": "Paso opcional para cargar ambientes, equipos y una foto por ambiente; se puede saltar.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "A-Casa.dc.html",
+     "dice": "OPCIONAL · 2 MINUTOS · Armá tu casa"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "UX-Revision.dc.html",
+     "dice": "Mi hogar, recordatorios, camino, herramientas, 3D y AR no existen en v1: hace falta contrato nuevo."
+    }
+   ],
+   "tableros": [
+    "A-Casa.dc.html",
+    "A-CasaAmbientes.dc.html",
+    "A-CasaEquipos.dc.html",
+    "A-CasaFotos.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-A-08",
+   "modulo": "A",
+   "nombre": "Segunda verificación y sesiones abiertas",
+   "que_hace": "Un paso más de seguridad opcional y la lista de sesiones abiertas para cerrarlas.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "A-Segunda.dc.html",
+     "dice": "Si la activás, al entrar te pedimos un segundo código."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "No existe en el BE: OTP/Google/Apple/2FA"
+    }
+   ],
+   "tableros": [
+    "A-Segunda.dc.html",
+    "X-Seguridad.dc.html",
+    "RC-Entrar.dc.html"
+   ],
+   "notas": "Se describe la función, no el mecanismo."
+  },
+  {
+   "id": "U-A-09",
+   "modulo": "A",
+   "nombre": "Aviso de tarifa 0 % (después del alta, primer ingreso y contador en Cuenta)",
+   "que_hace": "Avisa que durante la demo no hay tarifa de servicio hasta el 10/12/2026 y que el trabajo se paga directo al especialista.",
+   "estado": "En pruebas",
+   "horizonte": "lanzamiento 10/11",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:docs/handoff.md",
+     "dice": "Fee 0 % en los tres lugares pedidos … Siempre «hasta el 10/12», sin presentarlo como descuento"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "A-Listo.dc.html",
+     "dice": "TARIFA DE SERVICIO 0 % hasta el 10/12/2026"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-modal-fee.webp",
+     "dice": "Demo cerrada. Del 10/11 al 10/12/2026, solo con invitación y en Mar del Plata."
+    }
+   ],
+   "tableros": [
+    "A-Listo.dc.html",
+    "X-Cuenta.dc.html"
+   ],
+   "notas": "Fin exacto (¿incluye el 10/12?) es supuesto a confirmar. Ver contradicción de tarifas."
+  },
+  {
+   "id": "U-I-01",
+   "modulo": "I",
+   "nombre": "Inicio con seis rubros, próximo turno y «Quiero…»",
+   "que_hace": "Elegís el rubro o una tarea frecuente, ves tu próximo turno y la tarjeta de HandIA.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "inicio (lote 2.x)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "I-Inicio.dc.html",
+     "dice": "Son tareas, no rubros nuevos: cada una la toma un especialista del rubro que corresponde."
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-inicio.webp",
+     "dice": "Inicio con un pedido de plomería que ya tiene propuestas y la grilla de los seis rubros"
+    }
+   ],
+   "tableros": [
+    "I-Inicio.dc.html"
+   ],
+   "notas": "El diseño del lienzo (cabecera, ticket del turno, barra con HandIA) es el lote 2B, sin desarrollar."
+  },
+  {
+   "id": "U-I-02",
+   "modulo": "I",
+   "nombre": "Barra de cinco pestañas con HandIA en el medio",
+   "que_hace": "Inicio · Actividad · HandIA · Mensajes · Mi hogar; la cuenta se abre desde el avatar.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Mapa.dc.html",
+     "dice": "Cinco pestañas en una barra de vidrio azul; HandIA encastrada en el medio."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "pestañas en código: Inicio, Pedidos, Mensajes, Agenda, Cuenta"
+    }
+   ],
+   "tableros": [
+    "FL-Mapa.dc.html"
+   ],
+   "notas": "El tablero UX-Revision habla de «pestañas de vidrio»; el pedido de la marca prohíbe vidrio esmerilado en la landing: revisar si aplica."
+  },
+  {
+   "id": "U-I-03",
+   "modulo": "I",
+   "nombre": "HandIA por chat: arma el pedido en el celular",
+   "que_hace": "Le contás qué pasa; sugiere el rubro, hace 2 a 4 preguntas, avisa riesgos primero y arma una ficha que revisás.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):AGENTS.md",
+     "dice": "HandIA incluida … conversa en el celular … sin IA externa … con API real, inactiva hasta el endpoint del BE"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/handoff.md",
+     "dice": "src/domain/handia-motor.ts … guías de 2 a 4 preguntas por rubro … ficha editable"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:AGENTS.md",
+     "dice": "HandIA desactivada"
+    }
+   ],
+   "tableros": [
+    "I-HandIA.dc.html",
+    "I-HandIAChat.dc.html",
+    "I-HandIAPiensa.dc.html",
+    "I-HandIAFicha.dc.html",
+    "RC-HandIA.dc.html",
+    "FL-Pedir.dc.html"
+   ],
+   "notas": "Solo en la rama handia-premium (no dispara el deploy) y solo en la vista de prueba. Es un motor de reglas local, no un modelo de IA."
+  },
+  {
+   "id": "U-I-04",
+   "modulo": "I",
+   "nombre": "HandIA modo voz con reconocimiento en el dispositivo",
+   "que_hace": "Hablás y HandIA responde en voz alta con subtítulos; la voz no sale del teléfono.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/handoff.md",
+     "dice": "solo con reconocimiento en el dispositivo … si el navegador mandaría la voz a un servidor, no escucha y lo explica (Safari/iOS hoy: solo lee en voz alta)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "I-VozAjustes.dc.html",
+     "dice": "Tu voz se reconoce en el celular · No se graba ni se manda a ningún lado"
+    }
+   ],
+   "tableros": [
+    "I-Voz.dc.html",
+    "I-VozHabla.dc.html",
+    "I-VozAjustes.dc.html"
+   ],
+   "notas": "En iPhone hoy no escucha. Prueba con 5 personas (R7) pendiente."
+  },
+  {
+   "id": "U-I-05",
+   "modulo": "I",
+   "nombre": "Rediseño visual de HandIA (chat con mensajes abajo, voz con esfera sin personaje, ajustes)",
+   "que_hace": "La presentación nueva del chat y de la voz que dibuja el lienzo.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "UX-Revision.dc.html",
+     "dice": "HandIA voz sin personaje: esfera de luz, textos livianos y hoja de ajustes."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "UX-Revision.dc.html",
+     "dice": "SVG de HandIA pensando y respondiendo: hoy provisionales, llegan los definitivos."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "Lote 2B: voz sin personaje (esfera) … Reusa el motor y la voz local actuales"
+    }
+   ],
+   "tableros": [
+    "I-HandIAChat.dc.html",
+    "I-Voz.dc.html",
+    "I-VozHabla.dc.html",
+    "I-VozAjustes.dc.html"
+   ],
+   "notas": "Los SVG definitivos los manda Ignacio."
+  },
+  {
+   "id": "U-I-06",
+   "modulo": "I",
+   "nombre": "HandIA con IA externa, cámara y agente que busca presupuestos",
+   "que_hace": "Razonamiento con OpenAI, voz con ElevenLabs, foto del problema y búsqueda de presupuestos recorriendo la app.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/handia-premium-plan.md",
+     "dice": "Al final, ChatGPT (OpenAI) con saldo … ElevenLabs para la voz … H6–H7 cambian eso solo con autorización explícita de Ignacio, consentimiento dentro de la app y revisión legal (Ley 25.326)"
+    }
+   ],
+   "tableros": [],
+   "notas": "Contradice el rótulo «sin IA externa» del lienzo si se presenta sin aclarar que es plan."
+  },
+  {
+   "id": "U-I-07",
+   "modulo": "I",
+   "nombre": "Avisos que llevan al detalle",
+   "que_hace": "La campana lista propuestas, mensajes, turnos y recordatorios; cada aviso abre su detalle y nunca acepta ni paga por vos.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "notificaciones · Avisos"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Avisos in-app · Marca un aviso como leído"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "I-Avisos.dc.html",
+     "dice": "Los avisos te llevan al detalle: nunca aceptan ni pagan nada por vos."
+    }
+   ],
+   "tableros": [
+    "I-Avisos.dc.html",
+    "RC-Actividad.dc.html"
+   ],
+   "notas": "Recordatorios del hogar y pasos del camino en los avisos: solo diseño."
+  },
+  {
+   "id": "U-P-01",
+   "modulo": "P",
+   "nombre": "Pedido en pasos: urgente, programado u obra",
+   "que_hace": "Elegís rubro y tipo, contás qué pasa, sumás fotos privadas, ubicación, fecha y hora; podés proponer un precio y activar la autoaceptación.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "Tipo: urgente / programado / obra … Precio propuesto opcional … Autoaceptación solo si la elijo (apagada por defecto)"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Crea un pedido y empieza la búsqueda · Sube una foto privada (jpeg/png/webp, 5 MB)"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-pedido.webp",
+     "dice": "Nuevo pedido, paso 1: elegir el rubro"
+    }
+   ],
+   "tableros": [],
+   "notas": "El precio propuesto por el usuario y la autoaceptación no aparecen en el lienzo."
+  },
+  {
+   "id": "U-P-02",
+   "modulo": "P",
+   "nombre": "Pedir en 3 toques",
+   "que_hace": "Rubro › qué pasa › revisar y publicar; fotos, medidas, día y dirección son opcionales y se cambian desde Revisar.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Pedir.dc.html",
+     "dice": "Camino corto en 3 toques: rubro › qué pasa › revisar y publicar."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "P-Que.dc.html",
+     "dice": "Si no elegís día, va como «lo antes posible»."
+    }
+   ],
+   "tableros": [
+    "P-Rubro.dc.html",
+    "P-Que.dc.html",
+    "P-Fotos.dc.html",
+    "P-Cuando.dc.html",
+    "P-Fecha.dc.html",
+    "P-Zona.dc.html",
+    "P-Revisar.dc.html",
+    "P-Publicado.dc.html",
+    "RC-Pedir.dc.html"
+   ],
+   "notas": "Lote 2C de la Fase 7."
+  },
+  {
+   "id": "U-P-03",
+   "modulo": "P",
+   "nombre": "Anotar la foto",
+   "que_hace": "Marcás sobre la foto con flechas, círculos o texto dónde está el problema.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "P-Anotar.dc.html",
+     "dice": "Gotea acá · Flecha · Círculo · Texto"
+    }
+   ],
+   "tableros": [
+    "P-Anotar.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-P-04",
+   "modulo": "P",
+   "nombre": "Medir con la cámara y sumar la medida al pedido",
+   "que_hace": "Medición aproximada con la cámara que viaja con el pedido.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "P-Medir.dc.html",
+     "dice": "Medida aproximada · sirve para orientar, no para cortar"
+    }
+   ],
+   "tableros": [
+    "P-Medir.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-P-05",
+   "modulo": "P",
+   "nombre": "Precio orientativo de Handyx",
+   "que_hace": "En Revisar, un rango sugerido de Handyx para el trabajo; cada especialista pone su precio.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "P-Revisar.dc.html",
+     "dice": "PRECIO ORIENTATIVO DE HANDYX $ 38.000 a $ 52.000 · Sale de trabajos parecidos en tu zona. Handyx sugiere, nunca impone"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/pedidos.ts",
+     "dice": "no hay campo de precio sugerido ni rango en el contrato v1"
+    }
+   ],
+   "tableros": [
+    "P-Revisar.dc.html",
+    "C-Propuestas.dc.html",
+    "M-Presupuesto.dc.html"
+   ],
+   "notas": "No existe en código ni en contrato; tampoco hay datos de «trabajos parecidos en tu zona». Los montos son de muestra."
+  },
+  {
+   "id": "U-P-06",
+   "modulo": "P",
+   "nombre": "Pedido publicado y búsqueda sin prometer tiempos",
+   "que_hace": "El pedido se muestra a especialistas del rubro y la zona; si nadie responde se puede relanzar o pedir búsqueda manual a Operations.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "buscando --> sin_respuesta: vence ventana (urgente 20 min / programado 12 h) … Sin ETA en ningún estado"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "P-Publicado.dc.html",
+     "dice": "Los especialistas responden cuando pueden: no hay un tiempo fijo."
+    }
+   ],
+   "tableros": [
+    "P-Publicado.dc.html",
+    "C-Buscando.dc.html"
+   ],
+   "notas": "Intentos de relanzar: 3, supuesto a confirmar."
+  },
+  {
+   "id": "U-P-07",
+   "modulo": "P",
+   "nombre": "Seis rubros y cobertura en Mar del Plata",
+   "que_hace": "Electricidad, Plomería, Gas, Cerrajería, Albañilería y Aire acondicionado; el servidor dice si la ciudad tiene cobertura.",
+   "estado": "En pruebas",
+   "horizonte": "lanzamiento 10/11",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Rubros aprobados · Si una ciudad tiene cobertura (inicio: Mar del Plata)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "P-Rubro.dc.html",
+     "dice": "Por ahora Handyx trabaja con estos seis rubros en Mar del Plata."
+    }
+   ],
+   "tableros": [
+    "P-Rubro.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-C-01",
+   "modulo": "C",
+   "nombre": "Lista de propuestas por orden de llegada",
+   "que_hace": "Cada propuesta con el precio del especialista, la tarifa de Handyx, horario, vigencia y verificaciones; sin ranking.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/app/(app)/pedidos/propuestas/page.tsx",
+     "dice": "Ordenadas por llegada. No es una recomendación ni un ranking."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Propuestas de un pedido propio"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-propuestas.webp",
+     "dice": "Propuestas recibidas por orden de llegada, sin ranking: $ 45.000 y $ 39.000 con comisión de Handy $ 0"
+    }
+   ],
+   "tableros": [],
+   "notas": "Vigencia de la propuesta urgente: 5 min (servidor)."
+  },
+  {
+   "id": "U-C-02",
+   "modulo": "C",
+   "nombre": "Tarjeta de propuesta extendida",
+   "que_hace": "Especialista y reseñas › precio › duración, garantía y equipo › verificaciones › Rechazar · Ver perfil · Aceptar.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "C-Propuestas.dc.html",
+     "dice": "En el orden en que llegaron … Aceptar una cierra las demás."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/propuestas.ts",
+     "dice": "la propuesta tiene monto, comisión, horario, alcance y vencimiento; no tiene duración, garantía, equipo ni materiales"
+    }
+   ],
+   "tableros": [
+    "C-Propuestas.dc.html",
+    "RC-Propuestas.dc.html"
+   ],
+   "notas": "Pide la «propuesta extendida» del contrato draft.4."
+  },
+  {
+   "id": "U-C-03",
+   "modulo": "C",
+   "nombre": "Comparar propuestas en tabla",
+   "que_hace": "Las propuestas lado a lado: total, precio del especialista, tarifa de Handyx, horario, vigencia, verificaciones y qué incluye, sin destacar ninguna.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@3fc03b6 (fase-3-diseno):src/app/(app)/pedidos/propuestas/page.tsx",
+     "dice": "«Comparar» muestra todas en una tabla, sin destacar ninguna."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/app/(app)/pedidos/propuestas/page.tsx",
+     "dice": "Comparar en tabla: Precio · Comisión de Handy · Horario · Qué incluye · Verificaciones"
+    }
+   ],
+   "tableros": [],
+   "notas": "Es lo que hay en código; la versión del lienzo es U-C-04."
+  },
+  {
+   "id": "U-C-04",
+   "modulo": "C",
+   "nombre": "«La mejor en perfil y precio» por promedio",
+   "que_hace": "Una nota de 0 a 10 por propuesta con pesos fijos iguales para todas y una frase que explica por qué; elige la persona.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "C-Comparar.dc.html",
+     "dice": "LA MEJOR EN PERFIL Y PRECIO · Julián Ortiz 8,7 de 10 · Sale de un promedio con las mismas reglas para todas. Elegís vos."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/diseno-usuario-deluxe.md",
+     "dice": "pesos fijos (precio 30, reseñas 25, verificaciones 20, garantía 15, fecha 10), a la vista. No es recomendación paga"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/pedidos.ts",
+     "dice": "sin rankings, superlativos ni «matriculado» sin dato real"
+    }
+   ],
+   "tableros": [
+    "C-Comparar.dc.html",
+    "C-Propuestas.dc.html",
+    "FL-Propuestas.dc.html"
+   ],
+   "notas": "No hay cálculo en código (lote 2C lo pide «con pesos fijos y prueba»). Los pesos no se ven en la pantalla final. Choca con la regla «sin ranking» del contrato y del código."
+  },
+  {
+   "id": "U-C-05",
+   "modulo": "C",
+   "nombre": "Detalle de una propuesta (básico)",
+   "que_hace": "Precio del especialista, tarifa de Handyx, horario, vigencia, qué incluye, quién la propuso; elegir abre la confirmación.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "propuesta · /propuestas/detalle/"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-propuesta.webp",
+     "dice": "Detalle de una propuesta: precio del especialista, comisión de Handy $ 0 (0 %), horario y qué incluye"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "U-C-06",
+   "modulo": "C",
+   "nombre": "Detalle de propuesta extendido",
+   "que_hace": "Cómo lo hace: materiales, equipo, duración, garantía, visita previa, qué incluye y qué no, y el mensaje del especialista.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "C-Detalle.dc.html",
+     "dice": "PRECIO DE JULIÁN $ 45.000 · Dentro del orientativo · QUÉ INCLUYE … NO INCLUYE"
+    }
+   ],
+   "tableros": [
+    "C-Detalle.dc.html"
+   ],
+   "notas": "«Dentro del orientativo» depende de U-P-05."
+  },
+  {
+   "id": "U-C-07",
+   "modulo": "C",
+   "nombre": "Verificaciones y trabajos realizados en la propuesta",
+   "que_hace": "Chips de identidad y antecedentes solo si Operations los verificó, y la cantidad de trabajos hechos en Handyx.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/pedidos.ts",
+     "dice": "verificaciones solo lista lo que Operations verificó de verdad … trabajosRealizados"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-propuesta.webp",
+     "dice": "Identidad verificada · Antecedentes verificados en persona · 12 trabajos realizados en Handy"
+    }
+   ],
+   "tableros": [],
+   "notas": "Con datos de prueba."
+  },
+  {
+   "id": "U-C-08",
+   "modulo": "C",
+   "nombre": "Perfil del especialista con reseñas y «cargado ≠ verificado»",
+   "que_hace": "Antes de elegir: cifras, verificaciones de Operations con fecha, certificados cargados sin revisar, trabajos recientes y reseñas.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "C-Certificados.dc.html",
+     "dice": "«Cargado» no es «verificado»: solo mostramos como verificado lo que revisó Operations."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:docs/handoff.md",
+     "dice": "Reseñas y contactos guardados: decisión de producto … fuera del contrato v1"
+    }
+   ],
+   "tableros": [
+    "C-Certificados.dc.html"
+   ],
+   "notas": "Reseñas y promedio de estrellas no existen en el contrato."
+  },
+  {
+   "id": "U-C-09",
+   "modulo": "C",
+   "nombre": "Visita para presupuestar",
+   "que_hace": "Si el especialista necesita ver antes: precio de la visita, qué se sabe y qué se define en ella.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "C-Visita.dc.html",
+     "dice": "$ 8.000 la visita · se descuenta si después lo contratás"
+    }
+   ],
+   "tableros": [
+    "C-Visita.dc.html"
+   ],
+   "notas": "El contrato no tiene el tipo visita (draft.4)."
+  },
+  {
+   "id": "U-C-10",
+   "modulo": "C",
+   "nombre": "Pedir cambios / contrapropuesta",
+   "que_hace": "Pedís otro día, otro precio o que incluya materiales; nada cambia hasta que aceptás la nueva.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Contrapropuesta del usuario (reemplaza la anterior)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "C-Cambios.dc.html",
+     "dice": "Julián te manda una propuesta nueva. Nada cambia hasta que la aceptes."
+    }
+   ],
+   "tableros": [
+    "C-Cambios.dc.html"
+   ],
+   "notas": "El código hace contrapropuesta directa; el lienzo la plantea como pedido de cambio al especialista."
+  },
+  {
+   "id": "U-C-11",
+   "modulo": "C",
+   "nombre": "Rechazar una propuesta",
+   "que_hace": "Rechazás; en el diseño, con un motivo opcional que el especialista no ve.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Rechaza una propuesta pendiente"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "C-Rechazar.dc.html",
+     "dice": "El motivo es opcional y nos ayuda a mejorar; Julián no lo ve."
+    }
+   ],
+   "tableros": [
+    "C-Rechazar.dc.html"
+   ],
+   "notas": "El motivo opcional es solo diseño."
+  },
+  {
+   "id": "U-C-12",
+   "modulo": "C",
+   "nombre": "Aceptar exactamente la propuesta vista",
+   "que_hace": "Confirmás en una hoja; se comparte la dirección con quien elegiste, las otras se cierran y se crea el turno.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "Aceptar exige la misma version que vio quien acepta: si cambió, 409"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "aceptación concurrente … una carrera entre las dos APIs"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "C-Aceptar.dc.html",
+     "dice": "Julián ve tu dirección exacta · Las otras propuestas se cierran · Pagás directo al terminar"
+    }
+   ],
+   "tableros": [
+    "C-Aceptar.dc.html",
+    "C-Aceptada.dc.html"
+   ],
+   "notas": "La pantalla «¡Turno confirmado!» con «qué sigue» es diseño."
+  },
+  {
+   "id": "U-S-01",
+   "modulo": "S",
+   "nombre": "Trabajo con sus estados",
+   "que_hace": "Agendado › en camino › llegó › trabajando › terminado › finalizado, con historial de cambios.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "agendado → en_camino → en_sitio («Llegué», lo marca el especialista) → en_curso → terminado_por_especialista → finalizado"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Agendado.dc.html",
+     "dice": "Turno confirmado · En camino · Llegó · Trabajando · Terminado y pago"
+    }
+   ],
+   "tableros": [
+    "S-Agendado.dc.html",
+    "S-Trabajando.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-S-02",
+   "modulo": "S",
+   "nombre": "Viaje en vivo con la llegada que calcula el servidor",
+   "que_hace": "Ves venir al especialista en el mapa solo mientras comparte el viaje; al llegar el mapa se apaga.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@3fc03b6 (fase-3-diseno):docs/handoff.md",
+     "dice": "Lote 4.7 · el seguimiento muestra la posición … y la llegada estimada que manda el servidor, solo mientras comparte"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "Decisión de Ignacio del 31/10: única excepción a «sin tiempos de llegada»"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-EnCamino.dc.html",
+     "dice": "LLEGADA ESTIMADA 10:24 · la calcula el servidor"
+    }
+   ],
+   "tableros": [
+    "S-EnCamino.dc.html"
+   ],
+   "notas": "Solo en fase-3-diseno (no en main ni en handyx.pro). Mapa propio sin terceros."
+  },
+  {
+   "id": "U-S-03",
+   "modulo": "S",
+   "nombre": "Código para abrir la puerta",
+   "que_hace": "Cuando llega, le pedís que te diga un código de 4 números antes de abrir; si no coincide, avisás a Soporte.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "S-Llego.dc.html",
+     "dice": "Pedile que te diga este código antes de abrir … Si el código no coincide, no abras y escribile a Soporte de Handyx."
+    }
+   ],
+   "tableros": [
+    "S-Llego.dc.html"
+   ],
+   "notas": "No existe en el contrato ni en la máquina de estados."
+  },
+  {
+   "id": "U-S-04",
+   "modulo": "S",
+   "nombre": "Aprobar un adicional",
+   "que_hace": "El especialista pide un repuesto o trabajo extra con foto y motivo; ves cómo cambia el total y lo aprobás, preguntás o rechazás.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/propuestas.ts",
+     "dice": "TIPOS_PROPUESTA = cotizacion, cambio_acuerdo, adicional"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "Fuera del contrato v1 de usuario (no se probó): responder adicionales y cambios de jornada que pide el especialista"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Adicional.dc.html",
+     "dice": "Nada se suma al acuerdo hasta que lo apruebes."
+    }
+   ],
+   "tableros": [
+    "S-Adicional.dc.html"
+   ],
+   "notas": "Existe como tipo y en el servidor simulado; el flujo con la API del especialista no está probado. Foto y «Preguntar» son diseño."
+  },
+  {
+   "id": "U-S-05",
+   "modulo": "S",
+   "nombre": "Antes y después",
+   "que_hace": "Fotos del antes y el después con deslizador o lado a lado.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "S-AntesDespues.dc.html",
+     "dice": "Antes y después · Deslizar · Lado a lado"
+    }
+   ],
+   "tableros": [
+    "S-AntesDespues.dc.html",
+    "S-LadoALado.dc.html"
+   ],
+   "notas": "Contrato draft.4."
+  },
+  {
+   "id": "U-S-06",
+   "modulo": "S",
+   "nombre": "Informe del trabajo con garantía",
+   "que_hace": "Qué encontró, pruebas, materiales, garantía con fecha y qué conviene hacer después; queda en Mi hogar.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "S-Informe.dc.html",
+     "dice": "Garantía activa hasta el 17/02/2027 … El informe queda guardado en Mi hogar."
+    }
+   ],
+   "tableros": [
+    "S-Informe.dc.html"
+   ],
+   "notas": "Texto de garantía pendiente de Legal (UX-Revision)."
+  },
+  {
+   "id": "U-S-07",
+   "modulo": "S",
+   "nombre": "Conformidad en un toque",
+   "que_hace": "Confirmás que terminó o avisás que hay un problema (vuelve a en curso).",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "El usuario confirma que terminó"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "finalizado (confirma el usuario) o vuelve a en_curso (el usuario indica que falta)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Conformidad.dc.html",
+     "dice": "¿Quedó arreglado? … Sí, quedó bien · Hay un problema"
+    }
+   ],
+   "tableros": [
+    "S-Conformidad.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-S-08",
+   "modulo": "S",
+   "nombre": "Pago directo en efectivo, informado ≠ verificado",
+   "que_hace": "Le pagás en mano al especialista y lo informás; Handyx no recibe ni reparte la plata y el pago queda «informado» hasta que se verifica.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "Handy no recibe ni distribuye el dinero … reportado ≠ verificado: verifica el proveedor u Operations"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-PagoInformado.dc.html",
+     "dice": "Informado no es verificado: el pago queda verificado cuando Julián lo confirma."
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-pago-metodo.webp",
+     "dice": "Efectivo o Mercado Pago, sin datos de tarjeta"
+    }
+   ],
+   "tableros": [
+    "S-Pagar.dc.html",
+    "S-PagoInformado.dc.html"
+   ],
+   "notas": "Quién verifica difiere entre lienzo y BE (ver contradicciones)."
+  },
+  {
+   "id": "U-S-09",
+   "modulo": "S",
+   "nombre": "Pagar con Mercado Pago al especialista",
+   "que_hace": "Te lleva al cobro de Mercado Pago del especialista; volver a la app no confirma nada: se espera el aviso de Mercado Pago.",
+   "estado": "En pruebas",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "reportar por MP y pedir el checkout responden funcion_inactiva hasta validar la integración en sandbox … La app ofrece efectivo"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Pagar.dc.html",
+     "dice": "Mercado Pago · Te llevamos al cobro de Julián · Se verifica solo · Volver a la app no confirma nada"
+    }
+   ],
+   "tableros": [
+    "S-Pagar.dc.html"
+   ],
+   "notas": "Código con la compuerta cerrada: hoy no se puede pagar por Mercado Pago. Requiere autorización de Ignacio."
+  },
+  {
+   "id": "U-S-10",
+   "modulo": "S",
+   "nombre": "Vuelta del checkout que no confirma nada",
+   "que_hace": "Al volver de pagar, la app consulta el estado real (pendiente, falló, cancelado, confirmado).",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "pago-retorno · volver de la URL de checkout no confirma el pago"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "Volver de una URL de checkout no cambia el estado."
+    }
+   ],
+   "tableros": [],
+   "notas": "No tiene pantalla propia en el lienzo."
+  },
+  {
+   "id": "U-S-11",
+   "modulo": "S",
+   "nombre": "Reseña opcional",
+   "que_hace": "Estrellas, qué estuvo bien y un comentario opcional sin datos personales.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):src/data/resena.ts",
+     "dice": "El contrato v1 todavía no tiene resenaCrear … resenaDisponible = esVistaDePrueba"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Resena.dc.html",
+     "dice": "¿Cómo te fue con Julián? … Publicar la reseña · Ahora no"
+    }
+   ],
+   "tableros": [
+    "S-Resena.dc.html"
+   ],
+   "notas": "Solo en la vista de prueba de la rama; sin backend. La hoja tipo Uber del lienzo es diseño."
+  },
+  {
+   "id": "U-S-12",
+   "modulo": "S",
+   "nombre": "Cambiar el turno o cancelar",
+   "que_hace": "Proponés otra fecha, hora, alcance o monto (vale el acuerdo actual hasta que se acepte) o cancelás un turno agendado.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Propone cambiar el acuerdo (turno, alcance o monto): queda pendiente · Cancela un trabajo agendado"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "S-Agendado.dc.html",
+     "dice": "Cambiar el turno · Cancelar"
+    }
+   ],
+   "tableros": [
+    "S-Agendado.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-S-13",
+   "modulo": "S",
+   "nombre": "Reclamos",
+   "que_hace": "Abrir un reclamo de un pedido o trabajo, seguir su estado y sumar información.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Abre un reclamo de un pedido/trabajo propio · Mis reclamos · Detalle e historial"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "reclamos, reclamo-nuevo, reclamo"
+    }
+   ],
+   "tableros": [],
+   "notas": "El lienzo no dibuja reclamos: solo «Hay un problema» en la conformidad y Soporte."
+  },
+  {
+   "id": "U-O-01",
+   "modulo": "O",
+   "nombre": "Obra por etapas con confirmación y pago por etapa",
+   "que_hace": "Un trabajo grande dividido en etapas con su monto; confirmás cada etapa terminada y la pagás directo.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Confirma una etapa de obra"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "Fuera del contrato v1 de usuario: etapas de obra con su cobro (5.6 de especialista)"
+    },
+    {
+     "fuente": "doc",
+     "ref": "capturas-pwa:usuario-seguimiento.webp",
+     "dice": "Trabajo en curso (obra de albañilería): lo acordado, comisión $ 0 y etapas con su monto"
+    }
+   ],
+   "tableros": [],
+   "notas": "Escenario «obra-por-etapas» del servidor simulado."
+  },
+  {
+   "id": "U-O-02",
+   "modulo": "O",
+   "nombre": "Propuesta de obra con días, etapas y a quién le pagás cada una",
+   "que_hace": "Total, fechas, etapas, quién hace cada una y cuánto; la aprobás o pedís cambios.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "O-Propuesta.dc.html",
+     "dice": "TOTAL DE LA OBRA $ 850.000 · 6 días · 3 profesionales · Pagás cada etapa … directo a quien la hizo"
+    }
+   ],
+   "tableros": [
+    "O-Propuesta.dc.html",
+    "RC-Obra.dc.html"
+   ],
+   "notas": "Contrato draft.4 (obras en equipo)."
+  },
+  {
+   "id": "U-O-03",
+   "modulo": "O",
+   "nombre": "Tu obra día a día",
+   "que_hace": "Etapas, jornadas con quién viene, avance con fotos, materiales del día, pagado y lo que falta.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "O-Obra.dc.html",
+     "dice": "EN OBRA Día 4 de 6 · PAGADO $ 400.000 · FALTA $ 450.000 + repuestos"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "O-Dia.dc.html",
+     "dice": "AVANCE DEL DÍA … MATERIALES DE HOY"
+    }
+   ],
+   "tableros": [
+    "O-Obra.dc.html",
+    "O-Dia.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-O-04",
+   "modulo": "O",
+   "nombre": "Repuesto para aprobar",
+   "que_hace": "El especialista pide un repuesto con precio de ferretería y foto del ticket; nada se suma sin tu OK.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "O-Repuesto.dc.html",
+     "dice": "Precio de la ferretería $ 36.000 … Ver la foto del ticket"
+    }
+   ],
+   "tableros": [
+    "O-Repuesto.dc.html"
+   ],
+   "notas": "Nombra «Ferretería Simulación» (ficticia)."
+  },
+  {
+   "id": "U-O-05",
+   "modulo": "O",
+   "nombre": "Cambio de fecha de una jornada",
+   "que_hace": "El especialista propone mover una jornada (solo esa o todas las que siguen); aceptás u ofrecés otro día.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "O-Fecha.dc.html",
+     "dice": "la jornada sigue en el vie 20 hasta que se acuerde"
+    }
+   ],
+   "tableros": [
+    "O-Fecha.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-O-06",
+   "modulo": "O",
+   "nombre": "Obra en equipo con chat grupal",
+   "que_hace": "El especialista a cargo propone sumar otro oficio; aprobás quién y el reparto; un chat con todo el equipo sin ver tu celular.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Equipo.dc.html",
+     "dice": "Cada profesional ve tu dirección exacta solo para los días que trabaja. En el grupo nadie ve tu celular."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/diseno-usuario-deluxe.md",
+     "dice": "Decisión abierta 4: ¿cada profesional ve la dirección exacta solo los días que trabaja?"
+    }
+   ],
+   "tableros": [
+    "O-Grupo.dc.html",
+    "FL-Equipo.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-O-07",
+   "modulo": "O",
+   "nombre": "Pagos de la obra y lo gastado",
+   "que_hace": "Pagos por etapa a cada profesional y el total con repuestos, separando informado y verificado.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "O-Pagos.dc.html",
+     "dice": "El reparto lo acordó el equipo. Pagás a cada uno directo … Handyx no toca la plata."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "O-Gastado.dc.html",
+     "dice": "Tarifa de servicio 0 % hasta el 10/12 · $ 0"
+    }
+   ],
+   "tableros": [
+    "O-Pagos.dc.html",
+    "O-Gastado.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-M-01",
+   "modulo": "M",
+   "nombre": "Chats por pedido o trabajo",
+   "que_hace": "Un chat por pedido u obra, con texto y fotos y la propuesta dentro del hilo; nadie te escribe por fuera de eso.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):src/contracts/v1/endpoints.ts",
+     "dice": "Chats por pedido/trabajo · Envía texto o foto"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/handoff.md",
+     "dice": "chat cifrado en los dos sentidos … Las cotizaciones del especialista dejan un mensaje propuesta en el chat"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "M-Mensajes.dc.html",
+     "dice": "Los chats se abren cuando hay un pedido o una obra."
+    }
+   ],
+   "tableros": [
+    "M-Mensajes.dc.html",
+    "M-Chat.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-M-02",
+   "modulo": "M",
+   "nombre": "Tarjetas que se aceptan en el chat",
+   "que_hace": "Presupuestos por ítem, otro horario, repuestos y fechas llegan como tarjetas para aceptar o responder ahí mismo.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "M-Presupuesto.dc.html",
+     "dice": "Total $ 99.000 · Handyx sugiere entre $ 85.000 y $ 110.000 para este trabajo. El precio lo pone Diego."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Mensajes.dc.html",
+     "dice": "Presupuestos, repuestos y fechas llegan como tarjetas"
+    }
+   ],
+   "tableros": [
+    "M-Chat.dc.html",
+    "M-Presupuesto.dc.html"
+   ],
+   "notas": "En código la propuesta aparece como evento del chat; el presupuesto por ítem no existe en el contrato."
+  },
+  {
+   "id": "U-M-03",
+   "modulo": "M",
+   "nombre": "Seleccionar mensajes",
+   "que_hace": "Mantenés apretado y copiás, reenviás, respondés o borrás tus mensajes; las tarjetas no se borran.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "M-Seleccion.dc.html",
+     "dice": "Borrar solo quita tus mensajes. Las tarjetas no se borran."
+    }
+   ],
+   "tableros": [
+    "M-Seleccion.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-M-04",
+   "modulo": "M",
+   "nombre": "Sumar al chat foto, medida, 3D o algo de Mi hogar",
+   "que_hace": "Adjuntás lo que hiciste con las herramientas; se manda sin ubicación ni datos del teléfono.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "M-Adjuntar.dc.html",
+     "dice": "Las fotos se mandan sin ubicación ni datos del teléfono."
+    }
+   ],
+   "tableros": [
+    "M-Adjuntar.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-M-05",
+   "modulo": "M",
+   "nombre": "Soporte de Handyx atendido por personas",
+   "que_hace": "Una conversación con el equipo de Soporte por un pago, un turno, la cuenta u otra cosa.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):src/mapa/pantallas.ts",
+     "dice": "/soporte/"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "M-Soporte.dc.html",
+     "dice": "Te responde una persona del equipo"
+    }
+   ],
+   "tableros": [
+    "M-Soporte.dc.html"
+   ],
+   "notas": "Pantalla en la rama (lote 3.7) sobre mock; el contrato v1 no tiene un endpoint de soporte propio (sin dato de cómo llega a Operations)."
+  },
+  {
+   "id": "U-H-01",
+   "modulo": "H",
+   "nombre": "Mi hogar con cuatro puertas",
+   "que_hace": "Resumen de la casa y accesos a Mi casa, Algo se rompió, Mantenimiento e Historial y garantías.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Hogar.dc.html",
+     "dice": "Ficha de tu casa 80 % · 6 ambientes · 11 equipos"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "UX-Revision.dc.html",
+     "dice": "Mi hogar … no existen en v1: hace falta contrato nuevo."
+    }
+   ],
+   "tableros": [
+    "H-Hogar.dc.html",
+    "RC-Hogar.dc.html",
+    "FL-Hogar.dc.html"
+   ],
+   "notas": "Lote 3A de la Fase 7."
+  },
+  {
+   "id": "U-H-02",
+   "modulo": "H",
+   "nombre": "Ficha de la casa: ambientes y equipos",
+   "que_hace": "Ambientes con fotos, medidas y materiales; equipos con foto de la etiqueta, instalación, mantenimiento y garantía.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Ambiente.dc.html",
+     "dice": "MEDIDAS Y MATERIALES … EQUIPOS · 3"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "H-Equipo.dc.html",
+     "dice": "El recordatorio es solo eso: vos decidís si pedís la revisión y a quién."
+    }
+   ],
+   "tableros": [
+    "H-MiCasa.dc.html",
+    "H-Ambiente.dc.html",
+    "H-Equipo.dc.html",
+    "H-Sumar.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-H-03",
+   "modulo": "H",
+   "nombre": "Algo se rompió: el pedido sale armado",
+   "que_hace": "Elegís dónde y qué falla; el pedido sale con los datos de la casa y, si hay garantía, se lo pedís al mismo especialista.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Rompio.dc.html",
+     "dice": "El pedido sale con las fotos y los datos de tu casa, sin sacar nada de nuevo. … Pedírselo a Julián (garantía)"
+    }
+   ],
+   "tableros": [
+    "H-Rompio.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-H-04",
+   "modulo": "H",
+   "nombre": "Compartir por pedido y dejar de compartir",
+   "que_hace": "Elegís qué parte de la ficha ve el especialista de un pedido; se deja de compartir sola al terminar o cuando la cortás.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Compartir.dc.html",
+     "dice": "Lo ven solo los especialistas de este pedido. Cuando termina, se deja de compartir solo."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "H-Compartido.dc.html",
+     "dice": "Nunca compartimos tu ficha con nadie sin que lo elijas, ni la usamos para publicidad."
+    }
+   ],
+   "tableros": [
+    "H-Compartir.dc.html",
+    "H-Compartido.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-H-05",
+   "modulo": "H",
+   "nombre": "Recordatorios de mantenimiento",
+   "que_hace": "Te avisa cuándo conviene revisar algo; nada se pide solo.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Recordatorios.dc.html",
+     "dice": "Te avisamos cuándo conviene revisar algo. Nada se pide solo."
+    }
+   ],
+   "tableros": [
+    "H-Recordatorios.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-H-06",
+   "modulo": "H",
+   "nombre": "Historial de la casa, informes y garantías",
+   "que_hace": "Todo lo que se hizo, con informes, pagos y hasta cuándo cubre cada garantía; descargable o borrable desde Privacidad.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-Historial.dc.html",
+     "dice": "El historial es tuyo: lo podés descargar o borrar desde Privacidad."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "H-Garantias.dc.html",
+     "dice": "Garantía hasta 17/02/2027"
+    }
+   ],
+   "tableros": [
+    "H-Historial.dc.html",
+    "H-Garantias.dc.html"
+   ],
+   "notas": "El código tiene historial de pedidos y trabajos, no de la casa."
+  },
+  {
+   "id": "U-H-07",
+   "modulo": "H",
+   "nombre": "Modelo 3D y medidas compartidas",
+   "que_hace": "El modelo 3D de un ambiente con medidas que se comparten por pedido.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "RC-Herramientas.dc.html",
+     "dice": "El modelo 3D con las medidas compartidas (para más adelante)."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Hogar.dc.html",
+     "dice": "Planos y 3D · Más adelante"
+    }
+   ],
+   "tableros": [
+    "H-Modelo3D.dc.html"
+   ],
+   "notas": "Rotulado «más adelante» en el propio lienzo, aunque tiene pantalla."
+  },
+  {
+   "id": "U-H-08",
+   "modulo": "H",
+   "nombre": "Ver en AR un equipo propuesto",
+   "que_hace": "Ver en la pared, en tamaño real, un equipo que te proponen antes de aceptarlo.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "H-AR.dc.html",
+     "dice": "Medidas reales del equipo propuesto. Movelo con el dedo para ver cómo queda."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "0.4 3D y AR: ¿en el navegador (WebXR/Quick Look) como experimento con bandera, o se postergan?"
+    }
+   ],
+   "tableros": [
+    "H-AR.dc.html"
+   ],
+   "notas": "Decisión 0.4 abierta."
+  },
+  {
+   "id": "U-T-01",
+   "modulo": "T",
+   "nombre": "Caja de herramientas: medir, nivel, linterna y lupa, foto anotada",
+   "que_hace": "Las mismas herramientas que usa el especialista, en tu teléfono; las medidas son aproximadas.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "T-Herramientas.dc.html",
+     "dice": "Las mismas que usan los especialistas. Lo que hagas termina en el chat o en tu pedido."
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "FL-Herramientas.dc.html",
+     "dice": "El teléfono no detecta gas, tensión ni monóxido: ante olor a gas, salí y llamá a emergencias."
+    }
+   ],
+   "tableros": [
+    "T-Herramientas.dc.html",
+    "T-Medir.dc.html",
+    "T-Nivel.dc.html",
+    "T-Linterna.dc.html"
+   ],
+   "notas": "Lote 3C."
+  },
+  {
+   "id": "U-T-02",
+   "modulo": "T",
+   "nombre": "Escanear un ambiente en 3D",
+   "que_hace": "Caminás por el ambiente y se procesa en el celular; queda en Mi hogar.",
+   "estado": "Diseñado",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "T-Escanear.dc.html",
+     "dice": "Se procesa en tu celular. Queda en Mi hogar y lo compartís si querés."
+    }
+   ],
+   "tableros": [
+    "T-Escanear.dc.html"
+   ],
+   "notas": "Decisión 0.4 abierta; el modelo resultante está rotulado «más adelante» (U-H-07)."
+  },
+  {
+   "id": "U-T-03",
+   "modulo": "T",
+   "nombre": "¿A dónde lo mandás?",
+   "que_hace": "Lo que hiciste va a un chat, a un pedido nuevo o solo a Mi hogar; nada se manda hasta que elegís.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "T-Destino.dc.html",
+     "dice": "Se manda sin ubicación ni datos del teléfono."
+    }
+   ],
+   "tableros": [
+    "T-Destino.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-G-01",
+   "modulo": "G",
+   "nombre": "Camino del hogar",
+   "que_hace": "Cinco hitos que se avanzan cuidando la casa (ficha, informe leído, mantenimiento a tiempo, conformidades), no gastando más.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "G-Camino.dc.html",
+     "dice": "3 de 5 · se avanza cuidando la casa, no gastando más"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "4B Camino del hogar … montos y premios recién con Legal"
+    }
+   ],
+   "tableros": [
+    "G-Camino.dc.html",
+    "RC-Camino.dc.html",
+    "FL-Camino.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-G-02",
+   "modulo": "G",
+   "nombre": "Insignias sin rankings",
+   "que_hace": "Seis insignias por lo que hiciste por tu casa; no se compran, no se sortean y no se comparten.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "G-Insignias.dc.html",
+     "dice": "Sin rankings ni comparaciones con otras personas."
+    }
+   ],
+   "tableros": [
+    "G-Insignias.dc.html",
+    "G-Insignia.dc.html",
+    "G-Hito.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-G-03",
+   "modulo": "G",
+   "nombre": "Beneficios del camino",
+   "que_hace": "Guía de mantenimiento, recordatorios con fecha sugerida y un monto en una revisión anual.",
+   "estado": "Concepto",
+   "horizonte": "sin fecha",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "G-Beneficios.dc.html",
+     "dice": "$ [MONTO] en una revisión anual · Monto y condiciones a definir · Borrador · Legal"
+    }
+   ],
+   "tableros": [
+    "G-Beneficios.dc.html"
+   ],
+   "notas": "Montos, premios y condiciones en borrador hasta que los apruebe Legal."
+  },
+  {
+   "id": "U-X-01",
+   "modulo": "X",
+   "nombre": "Mis pedidos y agenda",
+   "que_hace": "Pedidos activos e historial y una agenda con los trabajos por día.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "pedidos · agenda (días en Buenos Aires aunque el celular esté en otra zona)"
+    }
+   ],
+   "tableros": [],
+   "notas": ""
+  },
+  {
+   "id": "U-X-02",
+   "modulo": "X",
+   "nombre": "Actividad: en curso, agenda e historial",
+   "que_hace": "Una pestaña con lo que está en curso, la agenda y el historial.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "X-Actividad.dc.html",
+     "dice": "En curso · Agenda · Historial"
+    }
+   ],
+   "tableros": [
+    "X-Actividad.dc.html",
+    "RC-Actividad.dc.html"
+   ],
+   "notas": "Reemplaza «Pedidos» y «Agenda» de la navegación actual."
+  },
+  {
+   "id": "U-X-03",
+   "modulo": "X",
+   "nombre": "Cuenta, datos y direcciones",
+   "que_hace": "Tus datos sin DNI ni CUIT, direcciones guardadas, preferencias y tarifa.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "cuenta, cuenta-datos, cuenta-tarifa, cuenta-notificaciones"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "X-Datos.dc.html",
+     "dice": "Sin DNI ni CUIT."
+    }
+   ],
+   "tableros": [
+    "X-Cuenta.dc.html",
+    "X-Datos.dc.html"
+   ],
+   "notas": "Abrir la cuenta desde el avatar es diseño."
+  },
+  {
+   "id": "U-X-04",
+   "modulo": "X",
+   "nombre": "Pagos registrados sin tarjetas guardadas",
+   "que_hace": "Lista de pagos informados y verificados; no se guardan tarjetas.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):src/mapa/pantallas.ts",
+     "dice": "/cuenta/pagos/"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "X-Pagos.dc.html",
+     "dice": "No guardamos tarjetas. Le pagás directo a cada especialista"
+    }
+   ],
+   "tableros": [
+    "X-Pagos.dc.html"
+   ],
+   "notas": "Solo en la rama."
+  },
+  {
+   "id": "U-X-05",
+   "modulo": "X",
+   "nombre": "Privacidad y borrar la cuenta",
+   "que_hace": "Qué se comparte, políticas y baja real de la cuenta (se informa qué queda por ley y hasta cuándo).",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-be@179bd86 (fase-4-backend-conciliado):docs/state-machines.md",
+     "dice": "Baja: recibida → en_proceso → completada | completada_con_retencion (se informa qué queda y hasta cuándo)"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "X-Privacidad.dc.html",
+     "dice": "Se borra todo salvo lo que la ley obliga a guardar."
+    }
+   ],
+   "tableros": [
+    "X-Privacidad.dc.html"
+   ],
+   "notas": "Textos legales provisorios (pendiente Legal)."
+  },
+  {
+   "id": "U-X-06",
+   "modulo": "X",
+   "nombre": "Descargar mis datos",
+   "que_hace": "Un archivo con todo lo tuyo.",
+   "estado": "Diseñado",
+   "horizonte": "sin dato",
+   "publicado": "no",
+   "evidencia": [
+    {
+     "fuente": "lienzo",
+     "ref": "X-Privacidad.dc.html",
+     "dice": "Descargar mis datos · Un archivo con todo lo tuyo"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):docs/plan-olas.md",
+     "dice": "No existe: … descargar datos"
+    }
+   ],
+   "tableros": [
+    "X-Privacidad.dc.html"
+   ],
+   "notas": ""
+  },
+  {
+   "id": "U-X-07",
+   "modulo": "X",
+   "nombre": "Ayuda con temas y preguntas",
+   "que_hace": "Buscador, temas, preguntas frecuentes y «¿Te sirvió?», con paso a Soporte.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "ayuda"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@589487b (handia-premium):src/mapa/pantallas.ts",
+     "dice": "/ayuda/respuesta/"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "X-Respuesta.dc.html",
+     "dice": "¿Quién recibe mi pago? Siempre el especialista, directo."
+    }
+   ],
+   "tableros": [
+    "X-Ayuda.dc.html",
+    "X-Respuesta.dc.html"
+   ],
+   "notas": "La respuesta individual está solo en la rama."
+  },
+  {
+   "id": "U-X-08",
+   "modulo": "X",
+   "nombre": "Errores que no dan nada por hecho",
+   "que_hace": "Algo falló, sin conexión («no se mandó nada») y página no encontrada, con reintentar.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "client-fe@ca04340:src/mapa/pantallas.ts",
+     "dice": "sin-conexion"
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@3fc03b6 (fase-3-diseno):docs/handoff.md",
+     "dice": "Estados del sistema: esqueletos … error con Handy roto … 404 y sin conexión"
+    },
+    {
+     "fuente": "lienzo",
+     "ref": "X-SinConexion.dc.html",
+     "dice": "No se mandó nada."
+    }
+   ],
+   "tableros": [
+    "X-Error.dc.html",
+    "X-SinConexion.dc.html",
+    "X-NoEncontrado.dc.html"
+   ],
+   "notas": "Usan Foco roto y Llave rota (permitidos)."
+  },
+  {
+   "id": "U-L-01",
+   "modulo": "L",
+   "nombre": "Vista de prueba de la PWA en handyx.pro",
+   "que_hace": "La app de la Fase 2 navegable en internet con datos ficticios, banner «Vista de prueba» y panel de prueba.",
+   "estado": "En pruebas",
+   "horizonte": "sin dato",
+   "publicado": "sí: vista de prueba en handyx.pro (main ca04340, modo preview, corrida 42397628127 del 07/11 con prueba pública OK); con datos ficticios, no es la app real",
+   "evidencia": [
+    {
+     "fuente": "doc",
+     "ref": "gh-run-42397628127",
+     "dice": "NEXT_PUBLIC_ENTORNO: preview … La app publicada responde bien: index, script, rutas, 404, cabeceras de seguridad y redirección a HTTPS."
+    },
+    {
+     "fuente": "repo",
+     "ref": "client-fe@3fc03b6 (fase-3-diseno):docs/deploy-hostinger.md",
+     "dice": "Publica la PWA en https://handyx.pro como vista de prueba … Decisiones de Ignacio (07/11/2026)"
+    }
+   ],
+   "tableros": [],
+   "notas": "Publica main: navegación vieja (Inicio, Pedidos, Mensajes, Agenda, Cuenta), registro con invitación, sin HandIA, sin rediseño ni viaje en vivo. No crea cuentas reales."
+  },
+  {
+   "id": "U-L-02",
+   "modulo": "L",
+   "nombre": "Demo interactiva del rol usuario en la landing",
+   "que_hace": "Recorrido guiado de la app con datos ficticios: pedir, HandIA, presupuestos, seguimiento, chat, agenda, pagos.",
+   "estado": "Construido",
+   "horizonte": "sin dato",
+   "publicado": "sin verificar",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-fe@ac3b245:docs/modulos/demo-interactiva.md",
+     "dice": "Todo con datos mock deterministas y ficticios … No hay backend"
+    },
+    {
+     "fuente": "repo",
+     "ref": "landing-fe@ac3b245:src/content/tarifas.json",
+     "dice": "normal: especialista 10, cliente 10"
+    }
+   ],
+   "tableros": [],
+   "notas": "Pieza pública sin backend. Muestra la tarifa 10 % al cliente y «Agregar tarjeta»: no representa las reglas de la PWA. Última corrida de build de main falló en el paso de GitHub Pages (29/10)."
+  },
+  {
+   "id": "U-L-03",
+   "modulo": "L",
+   "nombre": "App de usuario por rol en handyc.com (demo en modo app)",
+   "que_hace": "La misma demo, instalable, con el rol usuario fijo y sin indexar hasta el 10/11.",
+   "estado": "Construido",
+   "horizonte": "lanzamiento 10/11",
+   "publicado": "no: el job «publicar» de la corrida 40933042318 (29/10) se omitió; sin otra corrida",
+   "evidencia": [
+    {
+     "fuente": "repo",
+     "ref": "landing-fe@ac3b245:docs/modulos/apps-por-rol.md",
+     "dice": "Usuario · https://handyc.com · Hoy las apps son la demo (datos de muestra, sin pedidos ni cobros reales)"
+    },
+    {
+     "fuente": "doc",
+     "ref": "gh-run-40933042318",
+     "dice": "build (usuario) OK · publicar omitido"
+    }
+   ],
+   "tableros": [],
+   "notas": "Choca con handyx.pro como dominio de la PWA."
+  }
+ ],
+ "recorridos": [
+  {
+   "id": "U-R-01",
+   "titulo": "Crear la cuenta y entrar",
+   "necesidad": "Empezar a usar Handyx sin trámites ni contraseñas.",
+   "accion": "Toca «Crear cuenta», elige cómo entrar, escribe el código, deja nombre, celular y zona, elige avisos y, si quiere, arma su casa.",
+   "que_hace_handyx": "Pide solo lo justo (sin DNI ni CUIT), guarda la zona aproximada, avisa la tarifa 0 % hasta el 10/12/2026.",
+   "resultado": "Cuenta lista e Inicio con los seis rubros.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Bienvenida.dc.html",
+     "texto": "Bienvenida: «Crear cuenta»"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Entrar.dc.html",
+     "texto": "Email, SMS, Google o Apple"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Codigo.dc.html",
+     "texto": "Código de 6 números"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Datos.dc.html",
+     "texto": "Nombre y celular"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Zona.dc.html",
+     "texto": "Tu zona"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Avisos.dc.html",
+     "texto": "Qué avisos querés"
+    },
+    {
+     "n": 7,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Casa.dc.html",
+     "texto": "Armá tu casa (opcional)"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "A-Listo.dc.html",
+     "texto": "¡Listo! Tarifa 0 %"
+    },
+    {
+     "n": 9,
+     "tablero": "RC-Alta.dc.html",
+     "pantalla": "I-Inicio.dc.html",
+     "texto": "Primer ingreso"
+    }
+   ],
+   "estado": "Diseñado (en código existe otra versión: alta con invitación y contraseña, En pruebas)",
+   "captura_principal": "S/capturas/usuario/A-Bienvenida.png"
+  },
+  {
+   "id": "U-R-02",
+   "titulo": "Pedir un arreglo en 3 toques",
+   "necesidad": "Resolver un problema concreto de la casa (una canilla que gotea).",
+   "accion": "Toca el rubro, elige qué pasa, revisa la tarjeta del pedido y publica.",
+   "que_hace_handyx": "Pone por defecto «lo antes posible» y la dirección guardada, muestra un precio orientativo y avisa a especialistas del rubro cerca de la zona, sin prometer tiempos.",
+   "resultado": "Pedido publicado; las propuestas empiezan a llegar.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Pedir.dc.html",
+     "pantalla": "I-Inicio.dc.html",
+     "texto": "Tocás un rubro"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Pedir.dc.html",
+     "pantalla": "P-Que.dc.html",
+     "texto": "¿Qué pasa?"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Pedir.dc.html",
+     "pantalla": "P-Revisar.dc.html",
+     "texto": "Revisar y publicar, con precio orientativo"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Pedir.dc.html",
+     "pantalla": "P-Publicado.dc.html",
+     "texto": "Publicado"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Pedir.dc.html",
+     "pantalla": "C-Buscando.dc.html",
+     "texto": "Llegan propuestas"
+    }
+   ],
+   "estado": "Diseñado (pedido en pasos En pruebas en main)",
+   "captura_principal": "S/capturas/usuario/P-Revisar.png"
+  },
+  {
+   "id": "U-R-03",
+   "titulo": "Pedir con HandIA, por chat o por voz",
+   "necesidad": "No sabe qué rubro es ni cómo describirlo.",
+   "accion": "Le cuenta a HandIA qué pasa, responde 2 o 3 preguntas rápidas y revisa la ficha.",
+   "que_hace_handyx": "En el celular, sin IA externa: deduce el rubro, avisa primero si hay riesgo, tacha datos personales y arma la ficha del pedido.",
+   "resultado": "Un pedido claro, tal como lo leen los especialistas, listo para publicar.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "I-HandIA.dc.html",
+     "texto": "Chat vacío con sugerencias"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "I-HandIAChat.dc.html",
+     "texto": "Le contás qué pasa"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "I-HandIAPiensa.dc.html",
+     "texto": "Piensa y te avisa el riesgo"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "I-HandIAFicha.dc.html",
+     "texto": "La ficha del pedido"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "P-Revisar.dc.html",
+     "texto": "Revisar y publicar"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-HandIA.dc.html",
+     "pantalla": "I-Voz.dc.html",
+     "texto": "O por voz: te escucha"
+    }
+   ],
+   "estado": "En pruebas (motor y voz local en la rama handia-premium) · Diseñado (visual del lienzo)",
+   "captura_principal": "S/capturas/usuario/I-HandIAFicha.png"
+  },
+  {
+   "id": "U-R-04",
+   "titulo": "Recibir y comparar propuestas por calidad y precio",
+   "necesidad": "Elegir bien entre varios presupuestos, sin saber de precios ni conocer a nadie.",
+   "accion": "Ve las propuestas, las compara lado a lado, abre el detalle y el perfil del que le interesa.",
+   "que_hace_handyx": "Muestra un rango orientativo que no obliga, ordena por llegada, calcula una nota con pesos fijos iguales para todas y solo marca como verificado lo que revisó Operations.",
+   "resultado": "Una decisión informada: precio, condiciones, garantía, verificaciones y reseñas en una pantalla.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Buscando.dc.html",
+     "texto": "Tu pedido con propuestas"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Propuestas.dc.html",
+     "texto": "Las propuestas"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Comparar.dc.html",
+     "texto": "Comparar lado a lado"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Detalle.dc.html",
+     "texto": "Detalle de una"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Certificados.dc.html",
+     "texto": "Perfil del especialista"
+    }
+   ],
+   "estado": "Diseñado (lista y tabla sin ranking En pruebas)",
+   "captura_principal": "S/capturas/usuario/C-Comparar.png"
+  },
+  {
+   "id": "U-R-05",
+   "titulo": "Contratar: aceptar, pedir cambios, rechazar o aceptar una visita",
+   "necesidad": "Cerrar el acuerdo o negociar sin presión.",
+   "accion": "Acepta la propuesta en una hoja de confirmación, o pide otro día o precio, o rechaza, o acepta una visita previa.",
+   "que_hace_handyx": "Acepta exactamente la versión vista, comparte la dirección y el teléfono solo con el elegido, cierra las demás sin dar motivos.",
+   "resultado": "Turno confirmado con qué sigue: coordinar, ver venir al especialista, pagar directo.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Aceptar.dc.html",
+     "texto": "Aceptar"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Aceptada.dc.html",
+     "texto": "Turno confirmado"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Cambios.dc.html",
+     "texto": "Pedir cambios"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Rechazar.dc.html",
+     "texto": "Rechazar"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Visita.dc.html",
+     "texto": "Si es solo una consulta"
+    }
+   ],
+   "estado": "En pruebas (aceptar, rechazar, contrapropuesta) · Diseñado (visita, motivo, pantallas)",
+   "captura_principal": "S/capturas/usuario/C-Aceptar.png"
+  },
+  {
+   "id": "U-R-06",
+   "titulo": "Del turno al pago",
+   "necesidad": "Saber quién viene, que el trabajo quede bien y pagar sin intermediarios.",
+   "accion": "Sigue el viaje, confirma con un código que es él, aprueba un adicional, lee el informe, da la conformidad, paga y deja una reseña.",
+   "que_hace_handyx": "Muestra la llegada que calcula el servidor solo mientras se comparte, no suma nada sin aprobación, guarda el informe con garantía y marca el pago como informado hasta verificarlo; no recibe la plata.",
+   "resultado": "Trabajo terminado, pagado directo al especialista, con garantía registrada.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Agendado.dc.html",
+     "texto": "Tu turno"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-EnCamino.dc.html",
+     "texto": "En camino"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Llego.dc.html",
+     "texto": "Llegó: el código"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Trabajando.dc.html",
+     "texto": "Trabajando"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Adicional.dc.html",
+     "texto": "Un adicional"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-AntesDespues.dc.html",
+     "texto": "Antes y después"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Informe.dc.html",
+     "texto": "Informe con garantía"
+    },
+    {
+     "n": 9,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Conformidad.dc.html",
+     "texto": "Conformidad"
+    },
+    {
+     "n": 10,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Pagar.dc.html",
+     "texto": "Pagar directo"
+    },
+    {
+     "n": 11,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-PagoInformado.dc.html",
+     "texto": "Pago informado"
+    },
+    {
+     "n": 12,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Resena.dc.html",
+     "texto": "Reseña (opcional)"
+    }
+   ],
+   "estado": "En pruebas (estados, viaje, conformidad, efectivo) · Diseñado (código de llegada, antes y después, informe) · Mercado Pago con compuerta cerrada",
+   "captura_principal": "S/capturas/usuario/S-Pagar.png"
+  },
+  {
+   "id": "U-R-07",
+   "titulo": "Una obra de varios días con un equipo",
+   "necesidad": "Hacer un baño completo con varios oficios sin perder el control del gasto.",
+   "accion": "Aprueba la propuesta de obra por etapas, sigue cada jornada, aprueba un repuesto y un cambio de fecha en el chat del equipo y paga cada etapa.",
+   "que_hace_handyx": "Ordena etapas, días y responsables; nada se suma sin OK; muestra lo pagado, lo que falta y separa informado de verificado.",
+   "resultado": "Obra terminada con pagos directos a cada profesional y el resumen en Mi hogar.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "M-Chat.dc.html",
+     "texto": "Llega la propuesta"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Propuesta.dc.html",
+     "texto": "Propuesta de obra"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Obra.dc.html",
+     "texto": "Tu obra"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Dia.dc.html",
+     "texto": "Una jornada"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Repuesto.dc.html",
+     "texto": "Un repuesto"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Fecha.dc.html",
+     "texto": "Mover un día"
+    },
+    {
+     "n": 7,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Grupo.dc.html",
+     "texto": "Chat de la obra"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Pagos.dc.html",
+     "texto": "Pagos por etapa"
+    },
+    {
+     "n": 9,
+     "tablero": "RC-Obra.dc.html",
+     "pantalla": "O-Gastado.dc.html",
+     "texto": "Lo gastado"
+    }
+   ],
+   "estado": "Diseñado (etapas con confirmación y pago por etapa En pruebas)",
+   "captura_principal": "S/capturas/usuario/O-Obra.png"
+  },
+  {
+   "id": "U-R-08",
+   "titulo": "Mensajes, tarjetas y Soporte",
+   "necesidad": "Coordinar con el especialista y resolver una duda sin salir de la app.",
+   "accion": "Abre el chat del pedido, revisa un presupuesto por ítem, suma una medida y, ante un problema, escribe a Soporte.",
+   "que_hace_handyx": "Ata cada chat a un pedido u obra, muestra el rango sugerido junto al precio del especialista, manda las fotos sin ubicación y responde con una persona.",
+   "resultado": "Todo acordado por escrito dentro del pedido.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Mensajes.dc.html",
+     "texto": "Tus mensajes"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Chat.dc.html",
+     "texto": "Chat con tarjetas"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Presupuesto.dc.html",
+     "texto": "Un presupuesto"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Adjuntar.dc.html",
+     "texto": "Sumar algo al chat"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "T-Destino.dc.html",
+     "texto": "¿A dónde va?"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Seleccion.dc.html",
+     "texto": "Seleccionar mensajes"
+    },
+    {
+     "n": 9,
+     "tablero": "RC-Mensajes.dc.html",
+     "pantalla": "M-Soporte.dc.html",
+     "texto": "Soporte de Handyx"
+    }
+   ],
+   "estado": "En pruebas (chat por pedido) · Diseñado (tarjetas, adjuntar, selección)",
+   "captura_principal": "S/capturas/usuario/M-Presupuesto.png"
+  },
+  {
+   "id": "U-R-09",
+   "titulo": "Actividad y avisos",
+   "necesidad": "Saber qué está pendiente sin buscar.",
+   "accion": "Abre Actividad o la campana y toca lo que necesita su atención.",
+   "que_hace_handyx": "Agrupa en curso, agenda e historial; los avisos llevan al detalle y nunca aceptan ni pagan por la persona.",
+   "resultado": "Cada pendiente resuelto desde su pantalla.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "X-Actividad.dc.html",
+     "texto": "Actividad"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "S-Agendado.dc.html",
+     "texto": "Un turno"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "O-Obra.dc.html",
+     "texto": "Una obra"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "M-Presupuesto.dc.html",
+     "texto": "Un presupuesto"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "I-Avisos.dc.html",
+     "texto": "Avisos"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Actividad.dc.html",
+     "pantalla": "H-Historial.dc.html",
+     "texto": "Historial"
+    }
+   ],
+   "estado": "En pruebas (avisos, pedidos y agenda) · Diseñado (Actividad unificada)",
+   "captura_principal": "S/capturas/usuario/I-Avisos.png"
+  },
+  {
+   "id": "U-R-10",
+   "titulo": "Algo se rompió: pedido armado desde Mi hogar",
+   "necesidad": "Pedir otra vez sin volver a sacar fotos ni explicar la casa.",
+   "accion": "Desde Mi hogar elige el ambiente y el equipo que falla, decide qué compartir y publica; si tiene garantía, se lo pide al mismo especialista.",
+   "que_hace_handyx": "Arma el pedido con la ficha de la casa, comparte solo lo elegido y solo para ese pedido, y deja de compartirlo al terminar.",
+   "resultado": "Pedido completo en segundos y control de lo compartido.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Hogar.dc.html",
+     "texto": "Mi hogar"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-MiCasa.dc.html",
+     "texto": "Mi casa"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Ambiente.dc.html",
+     "texto": "Un ambiente"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Rompio.dc.html",
+     "texto": "Algo se rompió"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Compartir.dc.html",
+     "texto": "Qué compartís"
+    },
+    {
+     "n": 9,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Compartido.dc.html",
+     "texto": "Lo que compartiste"
+    },
+    {
+     "n": 12,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Garantias.dc.html",
+     "texto": "Garantías"
+    }
+   ],
+   "estado": "Diseñado",
+   "captura_principal": "S/capturas/usuario/H-Rompio.png"
+  },
+  {
+   "id": "U-R-11",
+   "titulo": "Medir, escanear y ver en AR antes de decidir",
+   "necesidad": "Mostrar el problema con precisión o ver cómo queda un equipo antes de aceptarlo.",
+   "accion": "Usa medir, nivel o escaneo 3D y manda el resultado al chat o al pedido; ve en AR el equipo propuesto.",
+   "que_hace_handyx": "Procesa en el celular, no manda nada hasta que se elige el destino y aclara que las medidas son aproximadas.",
+   "resultado": "Propuestas más justas y menos sorpresas.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "T-Herramientas.dc.html",
+     "texto": "Tus herramientas"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "T-Medir.dc.html",
+     "texto": "Medir"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "T-Nivel.dc.html",
+     "texto": "Nivel"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "T-Escanear.dc.html",
+     "texto": "Escanear en 3D"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "H-Modelo3D.dc.html",
+     "texto": "Modelo 3D (más adelante)"
+    },
+    {
+     "n": 7,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "H-AR.dc.html",
+     "texto": "Ver en AR"
+    },
+    {
+     "n": 8,
+     "tablero": "RC-Herramientas.dc.html",
+     "pantalla": "T-Destino.dc.html",
+     "texto": "¿A dónde va?"
+    }
+   ],
+   "estado": "Diseñado · Concepto (modelo 3D)",
+   "captura_principal": "S/capturas/usuario/H-AR.png"
+  },
+  {
+   "id": "U-R-12",
+   "titulo": "Confianza de punta a punta",
+   "necesidad": "Saber que quien entra a la casa es quien dice ser y que lo acordado se cumple.",
+   "accion": "Mira las verificaciones antes de elegir, pide el código al abrir, guarda el informe con garantía y ve sus pagos informados y verificados.",
+   "que_hace_handyx": "Separa «cargado» de «verificado» (solo Operations verifica), protege la dirección hasta aceptar, guarda garantías y no da por hecho ningún pago.",
+   "resultado": "Un historial confiable de la casa y de cada especialista.",
+   "pasos": [
+    {
+     "n": 1,
+     "tablero": "RC-Propuestas.dc.html",
+     "pantalla": "C-Certificados.dc.html",
+     "texto": "Perfil con verificaciones"
+    },
+    {
+     "n": 2,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Llego.dc.html",
+     "texto": "Código al llegar"
+    },
+    {
+     "n": 3,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Informe.dc.html",
+     "texto": "Informe con garantía"
+    },
+    {
+     "n": 4,
+     "tablero": "RC-Hogar.dc.html",
+     "pantalla": "H-Garantias.dc.html",
+     "texto": "Garantías vigentes"
+    },
+    {
+     "n": 5,
+     "tablero": "RC-Cuenta.dc.html",
+     "pantalla": "X-Pagos.dc.html",
+     "texto": "Pagos registrados"
+    },
+    {
+     "n": 6,
+     "tablero": "RC-Trabajo.dc.html",
+     "pantalla": "S-Resena.dc.html",
+     "texto": "Reseña"
+    }
+   ],
+   "estado": "Diseñado (verificaciones en propuesta y pagos informado ≠ verificado En pruebas)",
+   "captura_principal": "S/capturas/usuario/recortes/C-Certificados-recorte.png"
+  }
+ ],
+ "indice_dossier": [
+  {
+   "seccion": "1. Portada",
+   "cubre": [
+    "U-A-01"
+   ],
+   "capturas": [
+    "S/capturas/usuario/A-Bienvenida.png",
+    "S/capturas/usuario/I-Voz.png"
+   ],
+   "huecos": "Ninguna pantalla es portada; A-Bienvenida dice «especialistas verificados» (reformular o recortar el titular)."
+  },
+  {
+   "seccion": "2. La experiencia del cliente",
+   "cubre": [
+    "U-I-01",
+    "U-I-02"
+   ],
+   "capturas": [
+    "S/capturas/usuario/FL-Mapa.png",
+    "S/capturas/usuario/I-Inicio.png"
+   ],
+   "huecos": "Falta un mapa simple de la experiencia en una página (FL-Mapa es técnico); armarlo con los 12 recorridos."
+  },
+  {
+   "seccion": "3. Problemas actuales al contratar servicios",
+   "cubre": [],
+   "capturas": [],
+   "huecos": "Ninguna fuente de esta superficie describe el problema con datos: lo debe aportar la auditoría de negocio (afirmaciones del pitch). No inventar."
+  },
+  {
+   "seccion": "4. Cómo Handyx simplifica el proceso",
+   "cubre": [
+    "U-A-01",
+    "U-P-02",
+    "U-C-04",
+    "U-S-08"
+   ],
+   "capturas": [
+    "S/capturas/usuario/FL-Propuestas.png",
+    "S/capturas/usuario/FL-Seguimiento.png"
+   ],
+   "huecos": "La promesa de A-Bienvenida («Contás qué pasa, recibís propuestas con precio y elegís vos. Pagás directo al especialista») es la mejor síntesis; falta un diagrama propio."
+  },
+  {
+   "seccion": "5. Registro y onboarding",
+   "cubre": [
+    "U-A-02",
+    "U-A-03",
+    "U-A-04",
+    "U-A-05",
+    "U-A-06",
+    "U-A-07",
+    "U-A-08",
+    "U-A-09"
+   ],
+   "capturas": [
+    "S/capturas/usuario/RC-Alta.png",
+    "S/capturas/usuario/A-Datos.png",
+    "S/capturas/usuario/A-Listo.png",
+    "brands/handyx/assets/capturas/usuario-modal-fee.webp"
+   ],
+   "huecos": "Decidir invitación sí/no y contraseña sí/no antes de imprimir: diseño y código dicen lo contrario."
+  },
+  {
+   "seccion": "6. Exploración y búsqueda de profesionales",
+   "cubre": [
+    "U-I-01",
+    "U-P-07",
+    "U-C-08"
+   ],
+   "capturas": [
+    "S/capturas/usuario/I-Inicio.png",
+    "S/capturas/usuario/recortes/C-Certificados-recorte.png"
+   ],
+   "huecos": "No existe un buscador ni directorio de profesionales: el pedido se muestra a especialistas del rubro y la zona y ellos responden. Especialistas guardados/favoritos no tienen contrato. La sección tiene que explicar ese modelo, no inventar búsqueda."
+  },
+  {
+   "seccion": "7. Solicitud de servicios",
+   "cubre": [
+    "U-P-01",
+    "U-P-02",
+    "U-P-03",
+    "U-P-04",
+    "U-P-06",
+    "U-I-03",
+    "U-I-04"
+   ],
+   "capturas": [
+    "S/capturas/usuario/P-Que.png",
+    "S/capturas/usuario/P-Revisar.png",
+    "S/capturas/usuario/I-HandIAFicha.png",
+    "S/capturas/usuario/P-Publicado.png"
+   ],
+   "huecos": "Aclarar qué es código (pedido en pasos) y qué es diseño (3 toques, anotar, medir)."
+  },
+  {
+   "seccion": "8. Recepción de presupuestos",
+   "cubre": [
+    "U-C-01",
+    "U-C-02",
+    "U-M-02",
+    "U-P-06"
+   ],
+   "capturas": [
+    "S/capturas/usuario/recortes/C-Propuestas-recorte.png",
+    "S/capturas/usuario/M-Presupuesto.png",
+    "brands/handyx/assets/capturas/usuario-propuestas.webp"
+   ],
+   "huecos": "Sin datos reales de cuántas propuestas llegan ni en cuánto tiempo (y no se deben prometer)."
+  },
+  {
+   "seccion": "9. Comparación de alternativas",
+   "cubre": [
+    "U-C-03",
+    "U-C-04"
+   ],
+   "capturas": [
+    "S/capturas/usuario/C-Comparar.png",
+    "S/capturas/usuario/FL-Propuestas.png"
+   ],
+   "huecos": "Lo único en código es la tabla sin ranking. «La mejor en perfil y precio» es diseño y choca con la regla «sin ranking»: rotular «Diseño propuesto» y resolver la contradicción."
+  },
+  {
+   "seccion": "10. Criterios de calidad y precio",
+   "cubre": [
+    "U-P-05",
+    "U-C-04",
+    "U-C-06",
+    "U-C-07",
+    "U-C-08"
+   ],
+   "capturas": [
+    "S/capturas/usuario/C-Comparar.png",
+    "S/capturas/usuario/recortes/C-Detalle-recorte.png",
+    "S/capturas/usuario/P-Revisar.png"
+   ],
+   "huecos": "Faltan los pesos visibles en pantalla y la fuente del precio orientativo; definir si los pesos se publican."
+  },
+  {
+   "seccion": "11. Selección y contratación",
+   "cubre": [
+    "U-C-10",
+    "U-C-11",
+    "U-C-12",
+    "U-C-09"
+   ],
+   "capturas": [
+    "S/capturas/usuario/C-Aceptar.png",
+    "S/capturas/usuario/C-Aceptada.png",
+    "S/capturas/usuario/C-Visita.png"
+   ],
+   "huecos": ""
+  },
+  {
+   "seccion": "12. Seguimiento del trabajo",
+   "cubre": [
+    "U-S-01",
+    "U-S-02",
+    "U-S-04",
+    "U-S-05",
+    "U-S-06",
+    "U-S-07",
+    "U-S-08",
+    "U-S-09",
+    "U-S-12",
+    "U-O-01",
+    "U-O-02",
+    "U-O-03",
+    "U-O-07"
+   ],
+   "capturas": [
+    "S/capturas/usuario/RC-Trabajo.png",
+    "S/capturas/usuario/S-EnCamino.png",
+    "S/capturas/usuario/S-Pagar.png",
+    "S/capturas/usuario/O-Obra.png"
+   ],
+   "huecos": "Mercado Pago no funciona hoy (compuerta cerrada); decir «efectivo hoy, Mercado Pago cuando se valide»."
+  },
+  {
+   "seccion": "13. Comunicación y organización",
+   "cubre": [
+    "U-M-01",
+    "U-M-02",
+    "U-M-03",
+    "U-M-04",
+    "U-M-05",
+    "U-I-07",
+    "U-X-01",
+    "U-X-02",
+    "U-H-05"
+   ],
+   "capturas": [
+    "S/capturas/usuario/M-Chat.png",
+    "S/capturas/usuario/M-Presupuesto.png",
+    "S/capturas/usuario/I-Avisos.png",
+    "S/capturas/usuario/recortes/M-Soporte-recorte.png"
+   ],
+   "huecos": "X-Actividad usa la Canilla: preferir I-Avisos."
+  },
+  {
+   "seccion": "14. Confianza y reputación",
+   "cubre": [
+    "U-C-07",
+    "U-C-08",
+    "U-S-03",
+    "U-S-06",
+    "U-S-08",
+    "U-S-11",
+    "U-S-13",
+    "U-A-05",
+    "U-X-05"
+   ],
+   "capturas": [
+    "S/capturas/usuario/recortes/C-Certificados-recorte.png",
+    "S/capturas/usuario/S-Llego.png",
+    "S/capturas/usuario/S-PagoInformado.png",
+    "S/capturas/usuario/S-Informe.png"
+   ],
+   "huecos": "No hay especialistas verificados reales todavía ni reseñas reales; las del lienzo son de muestra. Reseñas sin contrato. Definir política de moderación y quién da la garantía."
+  },
+  {
+   "seccion": "15. Funcionalidades adicionales",
+   "cubre": [
+    "U-H-01",
+    "U-H-02",
+    "U-H-03",
+    "U-H-04",
+    "U-H-06",
+    "U-H-07",
+    "U-H-08",
+    "U-T-01",
+    "U-T-02",
+    "U-T-03",
+    "U-G-01",
+    "U-G-02",
+    "U-G-03",
+    "U-I-04",
+    "U-I-05"
+   ],
+   "capturas": [
+    "S/capturas/usuario/H-Hogar.png",
+    "S/capturas/usuario/T-Medir.png",
+    "S/capturas/usuario/H-AR.png",
+    "S/capturas/usuario/G-Camino.png",
+    "S/capturas/usuario/I-Voz.png"
+   ],
+   "huecos": "Todo es Diseñado o Concepto: rotular cada imagen. Camino con montos en borrador Legal."
+  },
+  {
+   "seccion": "16. Roadmap de experiencia",
+   "cubre": [
+    "U-I-06",
+    "U-G-03",
+    "U-H-07"
+   ],
+   "capturas": [
+    "S/capturas/usuario/UX-Revision.png"
+   ],
+   "huecos": "El plan por olas (Fase 7: olas 0–4, después Fase 5 deploy) no tiene fechas y espera el OK de Ignacio; HandIA H0–H7 tampoco. Pedir fechas o mostrar solo el orden."
+  },
+  {
+   "seccion": "17. Cierre institucional",
+   "cubre": [],
+   "capturas": [
+    "S/capturas/usuario/A-Listo.png"
+   ],
+   "huecos": "Sin contenido propio de esta superficie; lo define la ola 2 (narrativa común)."
+  }
+ ],
+ "contradicciones": [
+  {
+   "tema": "Tarifa al usuario",
+   "a": {
+    "dice": "Tarifa de servicio 0 % hasta el 10/12/2026 «durante la demo»; después no se anuncia ninguna (código: «sin anunciar tarifas no aprobadas»)",
+    "fuente": "lienzo A-Listo / P-Revisar / S-Pagar; client-fe AGENTS.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "10 % al cliente (tarifas.json) y «primer mes sin tarifa» desde el 10/11; el pitch dice 15 % al usuario desde el lanzamiento (TARIFA-USUARIO, PRUEBA-COM-USUARIO)",
+    "fuente": "Handy-landing-page-fe src/content/tarifas.json y CLAUDE.md; afirmaciones.json",
+    "fecha": "2026-10-27 / 2026-11-05"
+   },
+   "impacto": "El dossier no puede dar una cifra de tarifa al usuario posterior al 10/12 sin elegir una versión.",
+   "pregunta": "¿Cuál es la tarifa al usuario después del 10/12/2026 y se puede publicar?"
+  },
+  {
+   "tema": "Comisión al especialista",
+   "a": {
+    "dice": "Handyx no le cobra comisión al especialista nunca (decisión del 08/11/2026)",
+    "fuente": "client-be@8ce44f4 CLAUDE.md (commit del 07/11 14:06 UTC)",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "10 % al especialista y camada fundadora de 5 % por 12 meses",
+    "fuente": "Handy-landing-page-fe tarifas.json / CLAUDE.md",
+    "fecha": "2026-10-27"
+   },
+   "impacto": "Afecta lo que el dossier diga sobre por qué el precio es justo y quién paga a Handyx. Además el commit del 07/11 cita una decisión fechada el 08/11.",
+   "pregunta": "¿Confirmás 0 % al especialista y la fecha real de esa decisión?"
+  },
+  {
+   "tema": "Registro: invitación y contraseña",
+   "a": {
+    "dice": "Registro directo, sin invitación ni contraseñas (código por email/SMS, Google o Apple)",
+    "fuente": "lienzo FL-Acceso; client-fe@589487b docs/diseno-usuario-deluxe.md (tercera ronda)",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Alta con invitación de la demo cerrada; ingreso con email y contraseña; modal «solo con invitación»",
+    "fuente": "client-be contrato v1 (fase-4-backend-conciliado); client-be CLAUDE.md; client-fe AGENTS.md; captura usuario-modal-fee.webp",
+    "fecha": "2026-11-02 / 2026-10-31"
+   },
+   "impacto": "La sección 5 describe dos onboarding distintos.",
+   "pregunta": "¿El 10/11 se entra con invitación o sin ella? ¿Con contraseña o con código?"
+  },
+  {
+   "tema": "HandIA activada o no, y con qué IA",
+   "a": {
+    "dice": "HandIA desactivada",
+    "fuente": "client-fe@ca04340 AGENTS.md (main, lo publicado en handyx.pro)",
+    "fecha": "2026-10-29"
+   },
+   "b": {
+    "dice": "HandIA incluida, conversa en el celular sin IA externa (lienzo «En tu celular · sin IA externa»); el plan H6–H7 suma OpenAI y ElevenLabs con autorización",
+    "fuente": "client-fe@589487b AGENTS.md y docs/handia-premium-plan.md; lienzo I-HandIA",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Presentar HandIA como «inteligencia artificial» o como lista para usar sería inexacto: hoy es un motor de reglas local en una rama.",
+   "pregunta": "¿HandIA está en la app del 10/11? ¿Cómo se la describe: asistente en el celular o IA?"
+  },
+  {
+   "tema": "HandIA y las fotos",
+   "a": {
+    "dice": "HandIA no ve tus fotos: van al pedido, para los especialistas; no recibe fotos ni audio",
+    "fuente": "lienzo P-Fotos y FL-Pedir; client-fe@589487b AGENTS.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "En la demo de la landing la persona le manda una foto a HandIA en el chat («Así está»)",
+    "fuente": "brands/handyx/assets/demo-landing/usuario-handia.webp (demo de la landing)",
+    "fecha": "2026-10-31"
+   },
+   "impacto": "Usar la captura de la demo contradice la regla de privacidad de la app.",
+   "pregunta": "¿Se descarta la captura usuario-handia.webp para el dossier?"
+  },
+  {
+   "tema": "HandIA por voz: personaje o esfera",
+   "a": {
+    "dice": "Voz sin personaje: esfera de luz",
+    "fuente": "lienzo UX-Revision / I-Voz",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Modo voz como ChatGPT Voice «con los personajes de Handyx»; en código, lamparita que reacciona",
+    "fuente": "client-fe@589487b docs/handia-premium-plan.md y docs/handoff.md",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Menor para el dossier (usar el lienzo), pero define qué imagen representa la voz.",
+   "pregunta": "¿La voz final lleva al Foco o la esfera?"
+  },
+  {
+   "tema": "Ranking de propuestas",
+   "a": {
+    "dice": "«La mejor en perfil y precio» (nota 8,7 de 10) y chip «Mejor promedio», por promedio con pesos fijos",
+    "fuente": "lienzo C-Comparar / C-Propuestas; diseno-usuario-deluxe.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "«Ordenadas por llegada. No es una recomendación ni un ranking»; contrato: «sin rankings, superlativos»",
+    "fuente": "client-fe@ca04340 pedidos/propuestas/page.tsx; client-be contracts/v1/pedidos.ts",
+    "fecha": "2026-10-29 / 2026-11-02"
+   },
+   "impacto": "Es la prioridad del pedido (decidir por calidad y precio): hay que decir que el destacado es diseño y que choca con una regla vigente.",
+   "pregunta": "¿Se aprueba destacar una propuesta? ¿Con qué pesos y se muestran?"
+  },
+  {
+   "tema": "Pesos del promedio a la vista",
+   "a": {
+    "dice": "Pesos fijos (precio 30, reseñas 25, verificaciones 20, garantía 15, fecha 10), «a la vista»; descripción del tablero: «los pesos a la vista»",
+    "fuente": "diseno-usuario-deluxe.md (segunda ronda); design/usuario/gen/textos_pantallas.py",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "La pantalla final muestra solo la nota y una frase («Sale de un promedio con las mismas reglas para todas»), sin pesos",
+    "fuente": "lienzo C-Comparar; diseno-usuario-deluxe.md (cuarta ronda: «nota y una frase»)",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "El dossier no debe decir que los pesos se ven si la pantalla no los muestra.",
+   "pregunta": "¿Los pesos se muestran al usuario?"
+  },
+  {
+   "tema": "Quién verifica un pago",
+   "a": {
+    "dice": "El pago queda verificado cuando el especialista lo confirma (o llega el aviso de Mercado Pago)",
+    "fuente": "lienzo S-PagoInformado / X-Pagos",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "reportado → verificado por el proveedor u Operations",
+    "fuente": "client-be@179bd86 docs/state-machines.md y handoff 4.5",
+    "fecha": "2026-11-02"
+   },
+   "impacto": "Regla de confianza que el dossier explica en la sección 14.",
+   "pregunta": "¿La confirmación del especialista verifica un pago en efectivo?"
+  },
+  {
+   "tema": "Mercado Pago",
+   "a": {
+    "dice": "«Se verifica solo» al pagar con Mercado Pago",
+    "fuente": "lienzo S-Pagar",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Reportar por Mercado Pago y el checkout responden función inactiva hasta validar la integración; la app ofrece efectivo",
+    "fuente": "client-be@179bd86 docs/handoff.md (lote 4.5)",
+    "fecha": "2026-11-01"
+   },
+   "impacto": "Hoy no se puede pagar por Mercado Pago en la app.",
+   "pregunta": "¿Habrá Mercado Pago el 10/11?"
+  },
+  {
+   "tema": "Cómo se marca la llegada",
+   "a": {
+    "dice": "El especialista marca «Llegué»; el lienzo suma un código de 4 números para abrir",
+    "fuente": "client-be state-machines; lienzo S-Llego",
+    "fecha": "2026-11-02 / 2026-11-07"
+   },
+   "b": {
+    "dice": "No hay confirmación manual de llegada: la marca una geocerca (simulada)",
+    "fuente": "Handy-landing-page-fe docs/modulos/demo-interactiva.md",
+    "fecha": "2026-10-29"
+   },
+   "impacto": "Las capturas de la demo y las del lienzo cuentan mecánicas distintas.",
+   "pregunta": "¿Llegada manual, por geocerca o con código?"
+  },
+  {
+   "tema": "Dominio de la app del usuario",
+   "a": {
+    "dice": "https://handyc.com (app del usuario, demo en modo app)",
+    "fuente": "Handy-landing-page-fe docs/modulos/apps-por-rol.md y CLAUDE.md",
+    "fecha": "2026-10-29"
+   },
+   "b": {
+    "dice": "https://handyx.pro (vista de prueba, publicado el 07/11); API prevista en api.handyx.pro",
+    "fuente": "client-fe@ca04340 .github/workflows/hostinger.yml; fase-3-diseno docs/deploy-hostinger.md",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "El QR y los textos del dossier necesitan una sola dirección.",
+   "pregunta": "¿Cuál es el dominio de la app del usuario para imprimir?"
+  },
+  {
+   "tema": "Tiempos de respuesta",
+   "a": {
+    "dice": "«Los especialistas responden cuando pueden: no hay un tiempo fijo»",
+    "fuente": "lienzo P-Publicado",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Ventana de búsqueda urgente 20 min, programado 12 h; propuesta urgente vence a los 5 min",
+    "fuente": "client-be docs/state-machines.md",
+    "fecha": "2026-11-02"
+   },
+   "impacto": "Bajo: no es una promesa al usuario, pero el dossier no debe decir «sin límite».",
+   "pregunta": "¿Se comunica la ventana de 20 min al usuario?"
+  },
+  {
+   "tema": "Antecedentes del especialista",
+   "a": {
+    "dice": "Antecedentes «Revisados en persona»; nunca como archivo",
+    "fuente": "lienzo C-Certificados; handyx-specialist-fe CLAUDE.md",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "Antecedentes por foto o PDF (fase V), cifrados, solo Operations, pendiente de implementar y de revisión legal",
+    "fuente": "client-be@8ce44f4 CLAUDE.md",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Cambia cómo se describe la verificación en la sección 14.",
+   "pregunta": "¿Cómo se verifican los antecedentes al lanzar?"
+  },
+  {
+   "tema": "Tecnología de la app de producción",
+   "a": {
+    "dice": "La app de producción es React Native bare (TECH-01)",
+    "fuente": "Handy-landing-page-fe docs/modulos/demo-interactiva.md",
+    "fecha": "2026-10-29"
+   },
+   "b": {
+    "dice": "PWA en Next.js con export estático",
+    "fuente": "handyx-client-fe AGENTS.md y ADR-0001",
+    "fecha": "2026-10-29"
+   },
+   "impacto": "Bajo para el dossier del cliente; relevante para el de negocio.",
+   "pregunta": "¿Se actualiza TECH-01?"
+  },
+  {
+   "tema": "Tarjetas",
+   "a": {
+    "dice": "«Agregar tarjeta» con datos ficticios",
+    "fuente": "Handy-landing-page-fe demo (u-agregar-tarjeta)",
+    "fecha": "2026-10-29"
+   },
+   "b": {
+    "dice": "Sin «Agregar tarjeta»; no se guardan tarjetas",
+    "fuente": "client-fe AGENTS.md; lienzo X-Pagos",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "No usar capturas de la demo con tarjetas.",
+   "pregunta": ""
+  },
+  {
+   "tema": "Reclamos",
+   "a": {
+    "dice": "Reclamos con estados (abierto, en revisión, resuelto, cerrado) en código y API",
+    "fuente": "client-fe@ca04340 mapa; client-be state-machines",
+    "fecha": "2026-11-02"
+   },
+   "b": {
+    "dice": "El lienzo no tiene pantallas de reclamo: «Hay un problema» en la conformidad y Soporte por chat",
+    "fuente": "lienzo S-Conformidad, M-Soporte",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "El dossier puede omitir una función que existe o mostrar un camino que el diseño reemplazó.",
+   "pregunta": "¿Los reclamos siguen en la app rediseñada?"
+  },
+  {
+   "tema": "Nombre de la marca en la PWA",
+   "a": {
+    "dice": "«Tarifa de Handy», «Comisión de Handy», «Handy no recibe»",
+    "fuente": "capturas-pwa (usuario-cuenta, usuario-propuesta, usuario-pago)",
+    "fecha": "2026-10-31"
+   },
+   "b": {
+    "dice": "Nombre público Handyx",
+    "fuente": "lienzo; consigna",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Las capturas reales de la PWA muestran el nombre viejo.",
+   "pregunta": ""
+  },
+  {
+   "tema": "Cantidad de pantallas del lienzo",
+   "a": {
+    "dice": "101 pantallas",
+    "fuente": "pedido de esta auditoría",
+    "fecha": "2026-11-07"
+   },
+   "b": {
+    "dice": "102 pantallas (UX-Revision y conteo de capturas); 103 en diseno-usuario-deluxe.md",
+    "fuente": "lienzo UX-Revision; capturas/usuario/indice.json; client-fe@589487b docs",
+    "fecha": "2026-11-07"
+   },
+   "impacto": "Usar 102 si se cita.",
+   "pregunta": ""
+  },
+  {
+   "tema": "Qué es el 10/11",
+   "a": {
+    "dice": "Lanzamiento de la PWA el 10/11/2026",
+    "fuente": "afirmaciones.json LANZAMIENTO; CLAUDE.md de la landing",
+    "fecha": "2026-10-26"
+   },
+   "b": {
+    "dice": "«Demo cerrada del 10/11 al 10/12/2026, solo con invitación»; «Durante la demo no hay tarifa»",
+    "fuente": "captura usuario-modal-fee.webp; lienzo A-Listo",
+    "fecha": "2026-10-31 / 2026-11-07"
+   },
+   "impacto": "El dossier tiene que decir si el 10/11 es lanzamiento abierto o demo cerrada.",
+   "pregunta": "¿El 10/11 es lanzamiento público o demo cerrada?"
+  }
+ ],
+ "faltantes": [
+  {
+   "dato": "Qué versión de la app usa la gente el 10/11",
+   "para": "dossier 02 · 16 y portada",
+   "pregunta": "handyx.pro sirve la vista de prueba de la Fase 2 y la API no está desplegada (main del BE sin código, Render sin deploy). ¿Qué se lanza el 10/11 y con qué backend?"
+  },
+  {
+   "dato": "OK de Ignacio al lienzo de la app del usuario",
+   "para": "dossier 02 · 15 y 16",
+   "pregunta": "El plan por olas espera el OK (Ola 0.1). ¿Está aprobado el lienzo?"
+  },
+  {
+   "dato": "Fuente del precio orientativo",
+   "para": "dossier 02 · 10",
+   "pregunta": "«Sale de trabajos parecidos en tu zona»: ¿de qué datos sale el rango si todavía no hay trabajos?"
+  },
+  {
+   "dato": "Pesos y reglas de «La mejor en perfil y precio»",
+   "para": "dossier 02 · 9 y 10",
+   "pregunta": "¿Se aprueban los pesos 30/25/20/15/10 y se publican? ¿Revisión legal (defensa del consumidor) sobre destacar una oferta?"
+  },
+  {
+   "dato": "Tarifa al usuario después del 10/12",
+   "para": "dossier 02 · 11 y 14",
+   "pregunta": "0 %, 10 % o 15 %. ¿Cuál y desde cuándo?"
+  },
+  {
+   "dato": "Problemas actuales al contratar servicios (evidencia)",
+   "para": "dossier 02 · 3",
+   "pregunta": "¿Hay encuesta, entrevistas o datos propios? Si no, la sección queda con [a definir]."
+  },
+  {
+   "dato": "Reseñas: contrato y moderación",
+   "para": "dossier 02 · 14",
+   "pregunta": "¿Las reseñas existen el 10/11? ¿Quién las modera y qué se publica?"
+  },
+  {
+   "dato": "Quién da la garantía y con qué texto",
+   "para": "dossier 02 · 12 y 14",
+   "pregunta": "Los informes muestran «Garantía hasta…»: ¿la da el especialista o Handyx? Texto legal pendiente."
+  },
+  {
+   "dato": "Exploración de profesionales",
+   "para": "dossier 02 · 6",
+   "pregunta": "¿Se quiere un buscador o directorio de especialistas, o se explica que el pedido llega a los especialistas de la zona?"
+  },
+  {
+   "dato": "Fechas del roadmap",
+   "para": "dossier 02 · 16",
+   "pregunta": "Las olas 1–4 de la Fase 7 y HandIA H1–H7 no tienen fechas. ¿Se publican fechas o solo el orden?"
+  },
+  {
+   "dato": "Proveedores de acceso (SMS, Google, Apple) y 3D/AR",
+   "para": "dossier 02 · 5 y 15",
+   "pregunta": "Decisiones 0.3 y 0.4 abiertas."
+  },
+  {
+   "dato": "Montos y premios del Camino del hogar",
+   "para": "dossier 02 · 15",
+   "pregunta": "Borrador para Legal: ¿se muestra el Camino sin montos?"
+  },
+  {
+   "dato": "Métricas reales de uso de la app",
+   "para": "dossier 02 · 2 y 14",
+   "pregunta": "No hay usuarios reales en la PWA. ¿Hay algún dato de la prueba con porteros aplicable al usuario? (TRABAJOS-INFORMADOS: 5, no mostrar hasta conciliar)."
+  },
+  {
+   "dato": "Estado de la demo publicada en landing.handyc.com/demo",
+   "para": "dossier 02 · 2",
+   "pregunta": "La última corrida de build de la landing en main falló (29/10); no se pudo verificar qué versión está en línea."
+  }
+ ],
+ "capturas_recomendadas": [
+  {
+   "png": "S/capturas/usuario/A-Bienvenida.png",
+   "tablero": "A-Bienvenida.dc.html",
+   "uso": "dossier 02 · 1 y 4",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "dice «especialistas verificados» sin especialistas verificados todavía"
+   ],
+   "motivo": "Ilustración propia de Mar del Plata, sin personajes, con la promesa en una línea."
+  },
+  {
+   "png": "S/capturas/usuario/FL-Mapa.png",
+   "tablero": "FL-Mapa.dc.html",
+   "uso": "dossier 02 · 2",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "2692x1452",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Mapa de la app: las cinco pestañas y a dónde lleva cada una."
+  },
+  {
+   "png": "S/capturas/usuario/I-Inicio.png",
+   "tablero": "I-Inicio.dc.html",
+   "uso": "dossier 02 · 2 y 6",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x3600",
+   "personajes": [
+    "foco"
+   ],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (Julián Ortiz, Lucía Ferreyra)"
+   ],
+   "motivo": "El Inicio completo: rubros, turno, HandIA y «Quiero…»."
+  },
+  {
+   "png": "S/capturas/usuario/P-Revisar.png",
+   "tablero": "P-Revisar.dc.html",
+   "uso": "dossier 02 · 7 y 10",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real ($ 38.000 a $ 52.000)",
+    "precio orientativo sin fuente de datos",
+    "tarifa 0 % hasta el 10/12 (versión en disputa)"
+   ],
+   "motivo": "Un pedido entero en una tarjeta y el precio orientativo: «Handyx sugiere, nunca impone»."
+  },
+  {
+   "png": "S/capturas/usuario/P-Publicado.png",
+   "tablero": "P-Publicado.dc.html",
+   "uso": "dossier 02 · 7",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "«especialistas verificados»"
+   ],
+   "motivo": "Escena propia sin personajes; reemplaza a C-Buscando (que muestra la Canilla)."
+  },
+  {
+   "png": "S/capturas/usuario/I-HandIAFicha.png",
+   "tablero": "I-HandIAFicha.dc.html",
+   "uso": "dossier 02 · 7",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [
+    "foco"
+   ],
+   "riesgos": [
+    "«sin IA externa» debe convivir con el plan H6–H7 (OpenAI)"
+   ],
+   "motivo": "La ficha que arma HandIA y la persona revisa."
+  },
+  {
+   "png": "S/capturas/usuario/I-Voz.png",
+   "tablero": "I-Voz.dc.html",
+   "uso": "dossier 02 · 1 y 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "en iPhone hoy no escucha"
+   ],
+   "motivo": "Imagen fuerte sin personaje: la esfera de la voz."
+  },
+  {
+   "png": "S/capturas/usuario/recortes/C-Propuestas-recorte.png",
+   "tablero": "C-Propuestas.dc.html",
+   "uso": "dossier 02 · 8",
+   "rotulo": "Diseño propuesto",
+   "recorte": "0,0,1170,2532",
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (precios, 4,9 · 23 trabajos)",
+    "chip «Mejor promedio» (ranking en disputa)"
+   ],
+   "motivo": "Primer pantallazo de las propuestas: orientativo, precio, duración, garantía, equipo y verificaciones."
+  },
+  {
+   "png": "S/capturas/usuario/C-Comparar.png",
+   "tablero": "C-Comparar.dc.html",
+   "uso": "dossier 02 · 9 y 10",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2700",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "«La mejor en perfil y precio» contradice la regla vigente «sin ranking»",
+    "no muestra los pesos"
+   ],
+   "motivo": "La pantalla que mejor responde a la prioridad del pedido: calidad y precio lado a lado."
+  },
+  {
+   "png": "S/capturas/usuario/FL-Propuestas.png",
+   "tablero": "FL-Propuestas.dc.html",
+   "uso": "dossier 02 · 4 y 9",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "2692x1452",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Diagrama de propuestas sin personajes; reemplaza a RC-Propuestas (Canilla en el paso 1)."
+  },
+  {
+   "png": "S/capturas/usuario/recortes/C-Detalle-recorte.png",
+   "tablero": "C-Detalle.dc.html",
+   "uso": "dossier 02 · 10",
+   "rotulo": "Diseño propuesto",
+   "recorte": "0,0,1170,2532",
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "«Marca FV o similar» nombra una marca real"
+   ],
+   "motivo": "Qué incluye y cómo lo hace: calidad explicada."
+  },
+  {
+   "png": "S/capturas/usuario/recortes/C-Certificados-recorte.png",
+   "tablero": "C-Certificados.dc.html",
+   "uso": "dossier 02 · 14",
+   "rotulo": "Diseño propuesto",
+   "recorte": "0,0,1170,2532",
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (verificación del 02/11/2026, reseñas de Carla I. y Pablo V.)",
+    "reseñas de muestra pueden leerse como testimonios"
+   ],
+   "motivo": "«Cargado» no es «verificado»: la regla de confianza en una pantalla."
+  },
+  {
+   "png": "S/capturas/usuario/C-Aceptar.png",
+   "tablero": "C-Aceptar.dc.html",
+   "uso": "dossier 02 · 11",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Qué pasa al aceptar: dirección, otras propuestas, pago directo."
+  },
+  {
+   "png": "S/capturas/usuario/RC-Trabajo.png",
+   "tablero": "RC-Trabajo.dc.html",
+   "uso": "dossier 02 · 12",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "3540x3220",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "Mercado Pago «se verifica solo» (hoy inactivo)"
+   ],
+   "motivo": "Recorrido completo del turno al pago con lo que pasa entre pantallas; sin personajes."
+  },
+  {
+   "png": "S/capturas/usuario/S-EnCamino.png",
+   "tablero": "S-EnCamino.dc.html",
+   "uso": "dossier 02 · 12",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "hora de llegada 10:24 de muestra"
+   ],
+   "motivo": "Viaje en vivo con la llegada del servidor (existe en una rama)."
+  },
+  {
+   "png": "S/capturas/usuario/S-Llego.png",
+   "tablero": "S-Llego.dc.html",
+   "uso": "dossier 02 · 14",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "función solo dibujada (sin contrato)"
+   ],
+   "motivo": "Seguridad en la puerta, fácil de entender."
+  },
+  {
+   "png": "S/capturas/usuario/S-Pagar.png",
+   "tablero": "S-Pagar.dc.html",
+   "uso": "dossier 02 · 12",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2700",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real ($ 54.500)",
+    "tarifa 0 % hasta el 10/12",
+    "Mercado Pago hoy inactivo"
+   ],
+   "motivo": "Pago directo con «volver a la app no confirma nada»."
+  },
+  {
+   "png": "S/capturas/usuario/S-PagoInformado.png",
+   "tablero": "S-PagoInformado.dc.html",
+   "uso": "dossier 02 · 14",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real",
+    "quién verifica difiere del BE"
+   ],
+   "motivo": "«Informado no es verificado» en tres pasos."
+  },
+  {
+   "png": "S/capturas/usuario/O-Obra.png",
+   "tablero": "O-Obra.dc.html",
+   "uso": "dossier 02 · 12",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real ($ 400.000, $ 450.000)"
+   ],
+   "motivo": "Una obra de varios días con pagado y falta."
+  },
+  {
+   "png": "S/capturas/usuario/M-Presupuesto.png",
+   "tablero": "M-Presupuesto.dc.html",
+   "uso": "dossier 02 · 8 y 13",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real ($ 99.000; sugiere $ 85.000 a $ 110.000)"
+   ],
+   "motivo": "Presupuesto por ítem dentro del chat con el rango sugerido."
+  },
+  {
+   "png": "S/capturas/usuario/recortes/M-Soporte-recorte.png",
+   "tablero": "M-Soporte.dc.html",
+   "uso": "dossier 02 · 13",
+   "rotulo": "Diseño propuesto",
+   "recorte": "0,540,1170,1992",
+   "px": "1170x1992",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Soporte atendido por personas, sin el grupo de Handys (recortado)."
+  },
+  {
+   "png": "S/capturas/usuario/I-Avisos.png",
+   "tablero": "I-Avisos.dc.html",
+   "uso": "dossier 02 · 13",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Avisos que llevan al detalle; reemplaza a X-Actividad (Canilla)."
+  },
+  {
+   "png": "S/capturas/usuario/H-Hogar.png",
+   "tablero": "H-Hogar.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2700",
+   "personajes": [
+    "foco"
+   ],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real (80 %, 6 ambientes, 11 equipos)",
+    "función sin contrato"
+   ],
+   "motivo": "Las cuatro puertas de Mi hogar."
+  },
+  {
+   "png": "S/capturas/usuario/H-Rompio.png",
+   "tablero": "H-Rompio.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2940",
+   "personajes": [],
+   "riesgos": [
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "El pedido que sale armado desde la ficha de la casa."
+  },
+  {
+   "png": "S/capturas/usuario/T-Medir.png",
+   "tablero": "T-Medir.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "medidas aproximadas: aclararlo"
+   ],
+   "motivo": "Herramienta visual y concreta."
+  },
+  {
+   "png": "S/capturas/usuario/H-AR.png",
+   "tablero": "H-AR.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Concepto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [],
+   "riesgos": [
+    "AR sin decisión técnica (0.4)",
+    "cifra/nombre de muestra que puede leerse como real (Pablo Vega)"
+   ],
+   "motivo": "Ver un equipo en tamaño real antes de aceptarlo."
+  },
+  {
+   "png": "S/capturas/usuario/G-Camino.png",
+   "tablero": "G-Camino.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "1170x2532",
+   "personajes": [
+    "foco"
+   ],
+   "riesgos": [
+    "beneficios en borrador Legal"
+   ],
+   "motivo": "Gamificación sin azar ni rankings."
+  },
+  {
+   "png": "S/capturas/usuario/recortes/G-Hito-recorte.png",
+   "tablero": "G-Hito.dc.html",
+   "uso": "dossier 02 · 15",
+   "rotulo": "Diseño propuesto",
+   "recorte": "0,0,1170,1410",
+   "px": "1170x1410",
+   "personajes": [],
+   "riesgos": [],
+   "motivo": "Celebración sin el grupo de Handys (recortado arriba de la tarjeta)."
+  },
+  {
+   "png": "S/capturas/usuario/UX-Revision.png",
+   "tablero": "UX-Revision.dc.html",
+   "uso": "dossier 02 · 16",
+   "rotulo": "Diseño propuesto",
+   "recorte": null,
+   "px": "2692x1600",
+   "personajes": [],
+   "riesgos": [
+    "menciona proveedores y decisiones abiertas: usar como fuente, no como página"
+   ],
+   "motivo": "Resume reglas, contrato faltante, Legal y proveedores."
+  },
+  {
+   "png": "brands/handyx/assets/capturas/usuario-propuestas.webp",
+   "tablero": "PWA /pedidos/propuestas/ (main)",
+   "uso": "dossier 02 · 9",
+   "rotulo": "Pantalla de la PWA · datos de prueba",
+   "recorte": null,
+   "px": "780x1688",
+   "personajes": [],
+   "riesgos": [
+    "banner «Vista de prueba»",
+    "dice «Comisión de Handy» (nombre viejo)",
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Prueba de lo que hay en código: propuestas sin ranking."
+  },
+  {
+   "png": "brands/handyx/assets/capturas/usuario-pago-metodo.webp",
+   "tablero": "PWA /trabajos/pago/ (main)",
+   "uso": "dossier 02 · 12",
+   "rotulo": "Pantalla de la PWA · datos de prueba",
+   "recorte": null,
+   "px": "780x1688",
+   "personajes": [],
+   "riesgos": [
+    "«Handy» en el texto",
+    "cifra/nombre de muestra que puede leerse como real"
+   ],
+   "motivo": "Pago directo real del código: efectivo o Mercado Pago, sin tarjeta."
+  },
+  {
+   "png": "brands/handyx/assets/capturas/usuario-modal-fee.webp",
+   "tablero": "PWA /inicio/ modal (main)",
+   "uso": "dossier 02 · 5",
+   "rotulo": "Pantalla de la PWA · datos de prueba",
+   "recorte": null,
+   "px": "780x1688",
+   "personajes": [],
+   "riesgos": [
+    "«solo con invitación» contradice el lienzo",
+    "«Handy» en el texto"
+   ],
+   "motivo": "El aviso de tarifa tal como está en código."
+  }
+ ],
+ "riesgos_de_publicacion": [
+  {
+   "que": "«Especialistas verificados» en pantallas de diseño",
+   "donde": "A-Bienvenida, P-Publicado, C-Certificados, RC-Alta",
+   "recomendacion": "Hoy hay especialistas registrados, no verificados. Recortar el titular o rotular «Diseño propuesto · datos ficticios» y explicar que «verificado» solo aparece con revisión de Operations."
+  },
+  {
+   "que": "Precios, nombres, reseñas y fechas de muestra",
+   "donde": "Todas las pantallas del lienzo (Julián Ortiz, Lucía Ferreyra, $ 45.000, $ 38.000–$ 52.000, $ 850.000, reseñas de Carla I. y Pablo V.)",
+   "recomendacion": "Rótulo fijo «Muestra · datos ficticios» en cada imagen; nunca citar esas cifras en el texto."
+  },
+  {
+   "que": "Tarifa en pantalla",
+   "donde": "A-Listo, P-Revisar, C-Aceptar, S-Pagar, O-Gastado, X-Cuenta, capturas de la PWA",
+   "recomendacion": "No publicar porcentajes de tarifa hasta resolver las cuatro versiones; si se muestra «0 % hasta el 10/12/2026», aclarar que es la condición de la demo."
+  },
+  {
+   "que": "Funciones dibujadas presentadas como existentes",
+   "donde": "Mi hogar, herramientas, 3D, AR, camino, comparar con «la mejor», visita, código de llegada, informe",
+   "recomendacion": "Rotular cada imagen con su estado (Diseño propuesto / Concepto); una tabla de estados en la sección 16."
+  },
+  {
+   "que": "handyx.pro presentado como la app",
+   "donde": "QR, textos, portada",
+   "recomendacion": "Es una vista de prueba con datos ficticios de la Fase 2; no imprimir ese dominio como «la app» sin decisión."
+  },
+  {
+   "que": "HandIA descrita como inteligencia artificial",
+   "donde": "Sección 7 y 15",
+   "recomendacion": "Decir «asistente que arma el pedido en tu celular, sin IA externa»; el plan con OpenAI/ElevenLabs es Concepto sujeto a autorización y revisión legal."
+  },
+  {
+   "que": "Personajes no permitidos",
+   "donde": "C-Buscando, X-Actividad, M-Soporte, G-Hito y los RC que los incluyen",
+   "recomendacion": "Usar los recortes y alternativas de la lista; no retocar las pantallas."
+  },
+  {
+   "que": "Ranking de propuestas",
+   "donde": "C-Comparar, C-Propuestas («Mejor promedio»)",
+   "recomendacion": "Mostrar como diseño, explicar pesos fijos iguales para todas y que no es recomendación paga; señalar que choca con la regla vigente del contrato."
+  },
+  {
+   "que": "Mercado Pago «se verifica solo»",
+   "donde": "S-Pagar",
+   "recomendacion": "Aclarar que hoy la integración está inactiva y que la app ofrece efectivo."
+  },
+  {
+   "que": "Marcas y lugares reales",
+   "donde": "C-Detalle («Marca FV o similar»), demo de la landing («Catamarca 1650 · La Perla»)",
+   "recomendacion": "Recortar o rotular; la dirección de la demo puede ser real: no usarla."
+  },
+  {
+   "que": "Capturas reales de la PWA con el nombre «Handy»",
+   "donde": "usuario-cuenta, usuario-propuesta, usuario-pago, usuario-modal-fee",
+   "recomendacion": "Usarlas solo como evidencia de código, con rótulo «Pantalla de la PWA · datos de prueba»; no como imagen principal."
+  },
+  {
+   "que": "Demo de la landing con tarifa 10 % y tarjetas",
+   "donde": "Handy-landing-page-fe /demo/, capturas de demo-landing y publicidades",
+   "recomendacion": "No usarla para explicar precios ni pagos en el dossier 02."
+  },
+  {
+   "que": "Captura con personaje no permitido: C-Buscando.png",
+   "donde": "canilla",
+   "recomendacion": "Alternativa: P-Publicado.png o el mapa recortado (y 0–1380) sin la hoja"
+  },
+  {
+   "que": "Captura con personaje no permitido: X-Actividad.png",
+   "donde": "canilla (tarjeta «Canilla del baño»)",
+   "recomendacion": "Alternativa: I-Avisos.png"
+  },
+  {
+   "que": "Captura con personaje no permitido: M-Soporte.png",
+   "donde": "grupo (Canilla, Gota, Engranaje, Foco, Llave)",
+   "recomendacion": "Alternativa: recortes/M-Soporte-recorte.png (0,540,1170,1992)"
+  },
+  {
+   "que": "Captura con personaje no permitido: G-Hito.png",
+   "donde": "grupo en la tarjeta inferior",
+   "recomendacion": "Alternativa: recortes/G-Hito-recorte.png (0,0,1170,1410)"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Pedir.png",
+   "donde": "canilla (miniatura de C-Buscando, paso 5)",
+   "recomendacion": "Alternativa: FL-Pedir.png o componer con P-Que, P-Revisar y P-Publicado"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Propuestas.png",
+   "donde": "canilla (miniatura de C-Buscando, paso 1)",
+   "recomendacion": "Alternativa: FL-Propuestas.png + pantallas sueltas"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Actividad.png",
+   "donde": "canilla (miniatura de X-Actividad)",
+   "recomendacion": "Alternativa: componer con I-Avisos y S-Agendado"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Mensajes.png",
+   "donde": "grupo (miniatura de M-Soporte)",
+   "recomendacion": "Alternativa: FL-Mensajes.png + recorte de M-Soporte"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Camino.png",
+   "donde": "grupo (miniatura de G-Hito)",
+   "recomendacion": "Alternativa: FL-Camino.png + G-Camino y recorte de G-Hito"
+  },
+  {
+   "que": "Captura con personaje no permitido: RC-Cuenta.png",
+   "donde": "grupo (miniatura de M-Soporte)",
+   "recomendacion": "Alternativa: FL-Cuenta.png + pantallas X sueltas"
+  },
+  {
+   "que": "Captura con personaje no permitido: demo-landing/usuario-handia.webp",
+   "donde": "—",
+   "recomendacion": "Alternativa: muestra una foto enviada a HandIA (contradice la regla de privacidad); usar I-HandIAFicha.png"
+  }
+ ]
+}

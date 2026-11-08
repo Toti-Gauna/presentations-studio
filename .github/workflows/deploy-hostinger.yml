@@ -1,0 +1,93 @@
+# Publica la presentación (sitio estático) en Hostinger con el MISMO método que la landing (Handy-landing-page-fe):
+# se sube por SSH a una carpeta temporal, scripts/hostinger-publish.sh hace un respaldo y copia el sitio,
+# scripts/hostinger-smoke.sh prueba el sitio público y el servidor de control (Render) y, si algo falla, se restaura.
+# Solo corre en `main` (o a mano) y solo si la variable HOSTINGER_DEPLOY_ENABLED es "true".
+name: Deploy Hostinger
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      VITE_SERVIDOR: ${{ vars.SERVIDOR_CONTROL }}
+      VITE_DECK: ${{ vars.VITE_DECK || 'handyx-pitch' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: node scripts/validar-decks.ts
+      - run: bash -n scripts/hostinger-publish.sh scripts/hostinger-smoke.sh
+      - run: npx vite build
+      - run: cp deploy/hostinger.htaccess dist/.htaccess
+      - uses: actions/upload-artifact@v4
+        with:
+          name: presentaciones-hostinger
+          path: dist
+          include-hidden-files: true
+          retention-days: 7
+
+  publicar:
+    needs: construir
+    if: (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && vars.HOSTINGER_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: hostinger-presentaciones
+      url: https://${{ vars.DOMINIO }}
+    env:
+      HOSTINGER_HOST: ${{ vars.HOSTINGER_HOST }}
+      HOSTINGER_PORT: ${{ vars.HOSTINGER_PORT }}
+      HOSTINGER_USER: ${{ vars.HOSTINGER_USER }}
+      HOSTINGER_PATH: ${{ vars.HOSTINGER_PATH }}
+      DOMINIO: ${{ vars.DOMINIO }}
+      SERVIDOR_CONTROL: ${{ vars.SERVIDOR_CONTROL }}
+      RELEASE: ${{ github.run_id }}-${{ github.run_attempt }}-${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: presentaciones-hostinger
+          path: site
+      - name: Configurar el acceso SSH verificado
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$HOSTINGER_HOST" && test -n "$HOSTINGER_PORT" && test -n "$HOSTINGER_USER" && test -n "$HOSTINGER_PATH" && test -n "$DOMINIO"
+          test -n "$SSH_KEY" && test -n "$KNOWN_HOSTS"
+          mkdir -m 700 -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/hostinger
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/hostinger ~/.ssh/known_hosts
+          ssh-keygen -F "[$HOSTINGER_HOST]:$HOSTINGER_PORT" -f ~/.ssh/known_hosts >/dev/null
+      - name: Subir, respaldar y publicar
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh_args=(-p "$HOSTINGER_PORT" -i ~/.ssh/hostinger -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
+          destination="$HOSTINGER_USER@$HOSTINGER_HOST"
+          stage="${HOSTINGER_PATH%%/public_html*}/.handyx-deploy/staging/$RELEASE"
+          tar -cf "$RUNNER_TEMP/hostinger.tar" -C site .
+          ssh "${ssh_args[@]}" "$destination" "umask 077; mkdir -p '$stage' && tar -xf - -C '$stage'" < "$RUNNER_TEMP/hostinger.tar"
+          ssh "${ssh_args[@]}" "$destination" "bash -s -- publish '$HOSTINGER_PATH' '$RELEASE' presentaciones" < scripts/hostinger-publish.sh
+          if ! bash scripts/hostinger-smoke.sh "https://$DOMINIO" "$SERVIDOR_CONTROL"; then
+            echo 'Falló la prueba pública: se restauran los archivos anteriores.' >&2
+            ssh "${ssh_args[@]}" "$destination" "bash -s -- rollback '$HOSTINGER_PATH' '$RELEASE' presentaciones" < scripts/hostinger-publish.sh
+            exit 1
+          fi
+      - name: Borrar los archivos SSH del runner
+        if: always()
+        run: rm -f ~/.ssh/hostinger ~/.ssh/known_hosts

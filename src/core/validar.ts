@@ -21,19 +21,28 @@ export interface Resultado {
 function textos(el: Elemento): string[] {
   switch (el.tipo) {
     case 'titulo':
+      return [el.texto, el.kicker ?? ''];
     case 'texto':
     case 'etiqueta':
       return [el.texto];
     case 'cifra':
       return [el.leyenda, el.detalle ?? '', `{{${el.afirmacion}}}`];
+    case 'animacion':
+      return [el.alt, ...el.afirmaciones.map((a) => `{{${a}}}`)];
     case 'lista':
-      return el.items.map((i) => i.texto);
+      return [el.encabezado ?? '', ...el.items.map((i) => i.texto)];
     case 'flujo':
       return el.nodos.flatMap((n) => [n.texto, n.detalle ?? '']);
     case 'grafico':
       return [el.titulo, el.rotulo, ...el.series.flatMap((s) => [s.etiqueta, s.afirmacion ? `{{${s.afirmacion}}}` : ''])];
     case 'tabla':
       return [...el.columnas, ...el.filas.flat()];
+    case 'reparto':
+      return [`{{${el.total}}}`, el.leyendaTotal, ...el.partes.flatMap((p) => [`{{${p.afirmacion}}}`, p.etiqueta])];
+    case 'circulos':
+      return el.capas.map((c) => c.etiqueta);
+    case 'oceano':
+      return [el.marca, ...el.competidores.flatMap((c) => [c.nombre, c.nota, c.mejor])];
     default:
       return [];
   }
@@ -73,6 +82,14 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
     if (escenas.has(e.id)) errores.push(`escena repetida: ${e.id}`);
     escenas.set(e.id, e);
     if (!(e.paleta in tema.paletas)) errores.push(`escena ${e.id}: paleta "${e.paleta}" no existe en el tema`);
+    const areas = new Map<string, string>();
+    for (const el of e.elementos) {
+      if (el.area === 'libre' || el.area === 'fondo' || (e.disposicion === 'grilla' && !['arriba', 'abajo'].includes(el.area))) continue;
+      if (el.sale !== undefined) continue; // comparte área con lo que entra cuando sale
+      const otro = areas.get(el.area);
+      if (otro) errores.push(`escena ${e.id}: ${el.id} y ${otro} ocupan la misma área "${el.area}" (se superponen)`);
+      areas.set(el.area, el.id);
+    }
     for (const el of e.elementos) {
       for (const t of textos(el)) {
         for (const ref of referencias(t)) {
@@ -85,6 +102,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
           if (af.valor === null) errores.push(`escena ${e.id}/${el.id}: ${ref} no tiene valor (null) y aparece en pantalla`);
         }
       }
+      if (el.tipo === 'animacion' && el.tiempos.length !== e.pasos)
+        errores.push(`escena ${e.id}/${el.id}: la animación tiene ${el.tiempos.length} tramos y la escena ${e.pasos} pasos`);
       if (el.tipo === 'qr') {
         const qr = qrs.get(el.qr);
         if (!qr) errores.push(`escena ${e.id}/${el.id}: QR inexistente ${el.qr}`);
@@ -103,6 +122,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
         }
       if ((el.tipo === 'imagen' || el.tipo === 'video') && !deck.recursos.some((r) => r.id === el.recurso))
         errores.push(`escena ${e.id}/${el.id}: recurso inexistente ${el.recurso}`);
+      if (el.tipo === 'video')
+        for (const f of el.fotogramas) if (!deck.recursos.some((r) => r.id === f.recurso)) errores.push(`escena ${e.id}/${el.id}: fotograma inexistente ${f.recurso}`);
     }
     for (const ref of e.referencias) if (!mapa.has(ref) && !/^(https?:|pdf:|doc:|notion:)/.test(ref)) errores.push(`escena ${e.id}: referencia desconocida ${ref}`);
   }
@@ -110,7 +131,8 @@ export function validarPaquete(entrada: { deck: unknown; tema: unknown; afirmaci
   for (const v of deck.versiones) {
     let total = 0;
     for (const id of [...v.escenas, ...v.anexos]) if (!escenas.has(id)) errores.push(`versión ${v.id}: escena inexistente ${id}`);
-    for (const id of v.escenas) total += escenas.get(id)?.duracion ?? 0;
+    for (const id of v.escenas) total += v.duraciones[id] ?? escenas.get(id)?.duracion ?? 0;
+    for (const id of Object.keys(v.duraciones)) if (![...v.escenas, ...v.anexos].includes(id)) errores.push(`versión ${v.id}: duración para escena ajena ${id}`);
     if (total > v.duracionObjetivo + v.tolerancia) errores.push(`versión ${v.id}: dura ${total}s y el objetivo es ${v.duracionObjetivo}s (+${v.tolerancia}s)`);
     if (new Set(v.escenas).size !== v.escenas.length) errores.push(`versión ${v.id}: escena repetida en el recorrido`);
   }
@@ -125,5 +147,8 @@ export function escenasDeVersion(deck: Deck, versionId: string, conAnexos = true
   const v = deck.versiones.find((x) => x.id === versionId) ?? deck.versiones[0];
   if (!v) return [];
   const ids = conAnexos ? [...v.escenas, ...v.anexos] : v.escenas;
-  return ids.map((id) => deck.escenas.find((e) => e.id === id)).filter((e): e is Escena => Boolean(e));
+  return ids
+    .map((id) => deck.escenas.find((e) => e.id === id))
+    .filter((e): e is Escena => Boolean(e))
+    .map((e) => (v.duraciones[e.id] ? { ...e, duracion: v.duraciones[e.id] as number } : e));
 }

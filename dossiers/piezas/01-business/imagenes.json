@@ -1,0 +1,173 @@
+[
+ {
+  "de": "usuario/C-Propuestas.png",
+  "a": "c-propuestas.webp"
+ },
+ {
+  "de": "usuario/M-Chat.png",
+  "a": "m-chat.webp"
+ },
+ {
+  "de": "usuario/O-Pagos.png",
+  "a": "o-pagos.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-propuestas-titanio-der.webp",
+  "a": "m-propuestas-titanio-der.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-inicio-titanio.webp",
+  "a": "m-inicio-titanio.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-esp-pedido-titanio.webp",
+  "a": "m-esp-pedido-titanio.webp"
+ },
+ {
+  "de": "dossiers/estilos2/img/m-portal-titanio.webp",
+  "a": "m-portal-titanio.webp"
+ },
+ {
+  "de": "usuario/P-Revisar.png",
+  "a": "r-pedido.webp",
+  "recorte": [
+   18,
+   188,
+   1152,
+   628
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "especialista/F-Revisar.png",
+  "a": "r-propuesta-esp.webp",
+  "recorte": [
+   18,
+   956,
+   1152,
+   1996
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/M-Chat.png",
+  "a": "r-chat-propuesta.webp",
+  "recorte": [
+   18,
+   948,
+   1004,
+   1442
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/S-Pagar.png",
+  "a": "r-pagar.webp",
+  "recorte": [
+   18,
+   196,
+   1152,
+   1232
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/C-Propuestas.png",
+  "a": "r-orientativo.webp",
+  "recorte": [
+   18,
+   190,
+   1152,
+   500
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/C-Propuestas.png",
+  "a": "r-julian.webp",
+  "recorte": [
+   18,
+   612,
+   1152,
+   1734
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/O-Propuesta.png",
+  "a": "r-propuesta-obra.webp",
+  "recorte": [
+   18,
+   206,
+   1152,
+   1400
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/O-Repuesto.png",
+  "a": "r-repuesto.webp",
+  "recorte": [
+   18,
+   538,
+   1152,
+   1556
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "especialista/F-ObraDia.png",
+  "a": "r-jornada.webp",
+  "recorte": [
+   18,
+   196,
+   1152,
+   652
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/O-Pagos.png",
+  "a": "r-etapa-pagada.webp",
+  "recorte": [
+   18,
+   380,
+   1152,
+   1076
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "usuario/C-Certificados.png",
+  "a": "r-verificado.webp",
+  "recorte": [
+   18,
+   988,
+   1152,
+   2212
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "especialista/G-Inicio.png",
+  "a": "r-anillo.webp",
+  "recorte": [
+   22,
+   64,
+   1148,
+   604
+  ],
+  "calidad": 94
+ },
+ {
+  "de": "especialista/G-Inicio.png",
+  "a": "r-mini-camino.webp",
+  "recorte": [
+   18,
+   1118,
+   1152,
+   1402
+  ],
+  "calidad": 94
+ }
+]

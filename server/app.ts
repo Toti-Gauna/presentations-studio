@@ -16,6 +16,8 @@ export interface Config {
   redirecciones: string[]; // archivos qr.json con destinos estables
   version: string;
   confiarProxy: boolean; // usar X-Forwarded-For (detrás de Render/Caddy)
+  /** Aceptar el mismo origen que sirve el build (un solo servicio en Render sirve web + control). */
+  mismoOrigen?: boolean;
 }
 
 interface Conexion {
@@ -42,14 +44,25 @@ export function crearApp(config: Config, sesiones = new Sesiones()): { servidor:
   const conexiones = new Map<string, Set<Conexion>>();
   const creacionesPorIp = new Map<string, number[]>();
 
+  const permitido = (origen: string | undefined, req: IncomingMessage): boolean => {
+    if (!origen) return false;
+    if (config.origenes.includes(origen)) return true;
+    if (!config.mismoOrigen) return false;
+    const host = (config.confiarProxy ? String(req.headers['x-forwarded-host'] ?? '') : '') || String(req.headers.host ?? '');
+    try {
+      return new URL(origen).host === host;
+    } catch {
+      return false;
+    }
+  };
   const ip = (req: IncomingMessage) =>
     (config.confiarProxy ? String(req.headers['x-forwarded-for'] ?? '').split(',')[0]?.trim() : '') || req.socket.remoteAddress || '?';
 
-  function cabeceras(res: ServerResponse, origen?: string) {
+  function cabeceras(res: ServerResponse, req: IncomingMessage, origen?: string) {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Cache-Control', 'no-store');
-    if (origen && config.origenes.includes(origen)) {
+    if (origen && permitido(origen, req)) {
       res.setHeader('Access-Control-Allow-Origin', origen);
       res.setHeader('Vary', 'Origin');
       res.setHeader('Access-Control-Allow-Headers', 'content-type, authorization');
@@ -112,7 +125,7 @@ export function crearApp(config: Config, sesiones = new Sesiones()): { servidor:
   const servidor = createServer(async (req, res) => {
     const url = new URL(req.url ?? '/', 'http://local');
     const origen = req.headers.origin;
-    cabeceras(res, origen);
+    cabeceras(res, req, origen);
     try {
       if (req.method === 'OPTIONS') return void res.writeHead(204).end();
       if (url.pathname === '/salud') return json(res, 200, { ok: true, version: config.version, sesiones: sesiones.cantidad });
@@ -128,7 +141,7 @@ export function crearApp(config: Config, sesiones = new Sesiones()): { servidor:
 
       if (url.pathname.startsWith('/api/')) {
         // Las mutaciones solo desde orígenes permitidos (o sin Origin: herramientas locales/curl).
-        if (req.method !== 'GET' && origen && !config.origenes.includes(origen)) return json(res, 403, { error: 'origen' });
+        if (req.method !== 'GET' && origen && !permitido(origen, req)) return json(res, 403, { error: 'origen' });
         if (url.pathname === '/api/sesiones' && req.method === 'POST') {
           const quien = ip(req);
           const ahora = Date.now();
@@ -178,7 +191,7 @@ export function crearApp(config: Config, sesiones = new Sesiones()): { servidor:
   servidor.on('upgrade', (req, socket, head) => {
     const url = new URL(req.url ?? '/', 'http://local');
     const origen = req.headers.origin;
-    if (url.pathname !== '/ws' || (origen && !config.origenes.includes(origen))) {
+    if (url.pathname !== '/ws' || (origen && !permitido(origen, req))) {
       socket.write('HTTP/1.1 403 Forbidden\r\n\r\n');
       return void socket.destroy();
     }

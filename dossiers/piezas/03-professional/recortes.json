@@ -1,0 +1,344 @@
+{
+ "alta-cab": {
+  "fuente": "img/d6-alta-detalle.webp",
+  "px_css": [
+   16,
+   84,
+   358,
+   120
+  ]
+ },
+ "alta-filas": {
+  "fuente": "img/d6-alta-detalle.webp",
+  "px_css": [
+   16,
+   214,
+   358,
+   339
+  ]
+ },
+ "rg8-matricula": {
+  "fuente": "img/rg-8.webp",
+  "px_css": [
+   16,
+   205,
+   358,
+   151
+  ]
+ },
+ "precio": {
+  "fuente": "img/f-precio.webp",
+  "px_css": [
+   0,
+   164,
+   390,
+   218
+  ]
+ },
+ "recibis": {
+  "fuente": "img/f-precio.webp",
+  "px_css": [
+   16,
+   595,
+   358,
+   58
+  ]
+ },
+ "pedido-info": {
+  "fuente": "img/f-pedido.webp",
+  "px_css": [
+   16,
+   368,
+   358,
+   214
+  ]
+ },
+ "ahora-no": {
+  "fuente": "img/f-pedido.webp",
+  "px_css": [
+   16,
+   774,
+   358,
+   52
+  ]
+ },
+ "pedido-cab": {
+  "fuente": "img/f-pedido.webp",
+  "px_css": [
+   16,
+   250,
+   358,
+   112
+  ]
+ },
+ "sugiere": {
+  "fuente": "img/f-pedido.webp",
+  "px_css": [
+   16,
+   592,
+   358,
+   50
+  ]
+ },
+ "modo-cab": {
+  "fuente": "img/h0-modo.webp",
+  "px_css": [
+   0,
+   0,
+   390,
+   150
+  ]
+ },
+ "modo-tarea": {
+  "fuente": "img/h0-modo.webp",
+  "px_css": [
+   33,
+   343,
+   324,
+   60
+  ]
+ },
+ "modo-acc": {
+  "fuente": "img/h0-modo.webp",
+  "px_css": [
+   16,
+   502,
+   358,
+   74
+  ]
+ },
+ "modo-herr": {
+  "fuente": "img/h0-modo.webp",
+  "px_css": [
+   16,
+   590,
+   358,
+   68
+  ]
+ },
+ "antes-despues": {
+  "fuente": "img/h0-antesdespues.webp",
+  "px_css": [
+   16,
+   138,
+   358,
+   290
+  ]
+ },
+ "postulante": {
+  "fuente": "img/f-obrapostulantes.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   304
+  ]
+ },
+ "verif-siempre": {
+  "fuente": "img/f-obrabuscar.webp",
+  "px_css": [
+   24,
+   405,
+   342,
+   81
+  ]
+ },
+ "reparto-diego": {
+  "fuente": "img/f-reparto.webp",
+  "px_css": [
+   24,
+   527,
+   342,
+   149
+  ]
+ },
+ "reparto-cab": {
+  "fuente": "img/f-reparto.webp",
+  "px_css": [
+   16,
+   138,
+   358,
+   90
+  ]
+ },
+ "obra-cab": {
+  "fuente": "img/f-obra.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   223
+  ]
+ },
+ "obra-alerta": {
+  "fuente": "img/f-obra.webp",
+  "px_css": [
+   16,
+   309,
+   358,
+   48
+  ]
+ },
+ "obra-j3": {
+  "fuente": "img/f-obra.webp",
+  "px_css": [
+   16,
+   595,
+   358,
+   79
+  ]
+ },
+ "obra-j4": {
+  "fuente": "img/f-obra.webp",
+  "px_css": [
+   16,
+   674,
+   358,
+   90
+  ]
+ },
+ "tarifas": {
+  "fuente": "img/h0-manoobra.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   65
+  ]
+ },
+ "mat-actualiza": {
+  "fuente": "img/h0-presupuesto.webp",
+  "px_css": [
+   24,
+   343,
+   342,
+   99
+  ]
+ },
+ "presu-total": {
+  "fuente": "img/h0-presupuesto.webp",
+  "px_css": [
+   16,
+   613,
+   358,
+   94
+  ]
+ },
+ "foto-lista": {
+  "fuente": "img/h0-precios.webp",
+  "px_css": [
+   16,
+   595,
+   358,
+   79
+  ]
+ },
+ "mo-lineas": {
+  "fuente": "img/h0-presupuesto.webp",
+  "px_css": [
+   24,
+   137,
+   342,
+   144
+  ]
+ },
+ "equipo-tiles": {
+  "fuente": "img/h0-equipo.webp",
+  "px_css": [
+   16,
+   199,
+   358,
+   278
+  ]
+ },
+ "retiro-qr": {
+  "fuente": "img/r-retiro.webp",
+  "px_css": [
+   45,
+   166,
+   300,
+   368
+  ]
+ },
+ "taller-grid": {
+  "fuente": "img/t-taller.webp",
+  "px_css": [
+   16,
+   286,
+   358,
+   244
+  ]
+ },
+ "tablero-3d": {
+  "fuente": "img/t-tablero.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   330
+  ]
+ },
+ "camino-cab": {
+  "fuente": "img/g-inicio.webp",
+  "px_css": [
+   0,
+   0,
+   390,
+   214
+  ]
+ },
+ "camino-trab": {
+  "fuente": "img/g-inicio.webp",
+  "px_css": [
+   16,
+   380,
+   358,
+   78
+  ]
+ },
+ "camino-cobros": {
+  "fuente": "img/g-inicio.webp",
+  "px_css": [
+   16,
+   468,
+   358,
+   116
+  ]
+ },
+ "camino-kit": {
+  "fuente": "img/g-inicio.webp",
+  "px_css": [
+   16,
+   232,
+   358,
+   76
+  ]
+ },
+ "camino-ruta": {
+  "fuente": "img/g-camino.webp",
+  "px_css": [
+   56,
+   152,
+   310,
+   600
+  ]
+ },
+ "cobro-cab": {
+  "fuente": "img/tr-cobro.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   111
+  ]
+ },
+ "informe-cab": {
+  "fuente": "img/h0-informe.webp",
+  "px_css": [
+   16,
+   72,
+   358,
+   108
+  ]
+ }
+}
