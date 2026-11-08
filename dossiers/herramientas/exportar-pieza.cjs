@@ -78,13 +78,14 @@ function correr(cmd, args) {
   await pag.pdf({ ...pdfOpc, path: digitalTmp, width: `${W}mm`, height: `${H}mm` });
   await nav.close();
   const livianoTmp = path.join(tmp, 'digital-liviano.pdf');
-  correr('gs', ['-q', '-dNOPAUSE', '-dBATCH', '-dSAFER', '-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.7', '-dDetectDuplicateImages=true',
-    '-dDownsampleColorImages=true', '-dColorImageDownsampleType=/Bicubic', '-dColorImageResolution=150', '-dColorImageDownsampleThreshold=1.2',
-    '-dDownsampleGrayImages=true', '-dGrayImageResolution=150', '-dAutoFilterColorImages=false', '-dColorImageFilter=/DCTEncode', '-dJPEGQ=88',
+  // PDF 1.3: ghostscript aplana sombras, brillos y transparencias en la imagen de la página (a 170 ppp). Así se ve igual en
+  // cualquier visor (la Vista Previa del iPhone dibujaba rectángulos oscuros con las sombras de Chrome). Los enlaces quedan.
+  correr('gs', ['-q', '-dNOPAUSE', '-dBATCH', '-dSAFER', '-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.3', '-r170',
+    '-dDownsampleColorImages=true', '-dColorImageResolution=170', '-dAutoFilterColorImages=false', '-dColorImageFilter=/DCTEncode', '-dJPEGQ=86',
     `-sOutputFile=${livianoTmp}`, digitalTmp]);
   const digital = path.join(salida, `${nombre}-digital.pdf`);
   // si ghostscript no achica, queda el original
-  const fuente = fs.statSync(livianoTmp).size < fs.statSync(digitalTmp).size ? livianoTmp : digitalTmp;
+  const fuente = livianoTmp;
   correr('python3', ['-I', path.join(aqui, 'cajas-pdf.py'), fuente, digital, '0', info.titulo]);
 
   // 4) una PNG por página (desde el PDF digital sin comprimir, para que se lea nítido)

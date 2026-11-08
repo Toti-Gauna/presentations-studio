@@ -51,7 +51,9 @@ function trabajos() {
       </script></body></html>`);
     const png = t.archivo.replace(/\.webp$/, '.tmp.png');
     await p.screenshot({ path: png });
-    execFileSync('python3', ['-I', '-c', 'import sys;from PIL import Image;Image.open(sys.argv[1]).convert("RGB").save(sys.argv[2],quality=90)', png, t.archivo]);
+    // de fondo detrás de texto: se apaga hacia el color de la página (navy 58 %, azul 30 %); en los afiches la ilustración es protagonista
+    const apagar = t.archivo.includes('05-afiches') ? 0 : noche ? 0.58 : 0.3;
+    execFileSync('python3', ['-I', '-c', 'import sys;from PIL import Image;im=Image.open(sys.argv[1]).convert("RGB");a=float(sys.argv[3]);c=sys.argv[4];im=Image.blend(im,Image.new("RGB",im.size,c),a) if a else im;im.save(sys.argv[2],quality=90)', png, t.archivo, String(apagar), noche ? '#0E1D36' : '#1F57A8']);
     fs.unlinkSync(png); await p.close();
     console.log(path.relative(D, t.archivo), '←', t.escena, `${w}×${h}`);
   }
