@@ -2,94 +2,303 @@
 <html lang="es-AR" data-pieza="usuario" data-formato="297x420" style="--ancho:297mm;--alto:420mm">
 <head>
 <meta charset="utf-8">
-<title>Handyx · Afiches por barrio (A3)</title>
+<title>Handyx · Serie Mar del Plata, barrio por barrio (afiches A3)</title>
 <link rel="stylesheet" href="../../plantilla/base.css">
-<link rel="stylesheet" href="../../plantilla/premium.css">
 <style>
-  /* Un afiche = un barrio. Todo sale de la lista ZONAS de abajo: para sumar un barrio, se agrega una línea y su QR
-     (herramientas/generar-qr-zonas.ts). A3 vertical, 3 mm de sangrado en el PDF de imprenta. */
-  .afiche { --fondo: var(--navy); color: #FFFFFF; }
-  .fondo-foto { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); height: calc(270mm + var(--sangrado)); overflow: hidden; }
-  .fondo-foto img { width: 100%; height: 100%; object-fit: cover; }
-  .fondo-foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 29, 54, 0.55) 0%, rgba(14, 29, 54, 0.05) 35%, rgba(14, 29, 54, 0.2) 62%, #0E1D36 100%); }
-  .fondo-iso { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); height: calc(270mm + var(--sangrado)); overflow: hidden; background: var(--azul); }
-  .fondo-iso.noche { background: radial-gradient(160mm 120mm at 60% 60%, #163463 0%, #0E1D36 75%); }
-  .fondo-iso > div { position: absolute; width: 230mm; right: -24mm; bottom: 34mm; }
-  .fondo-iso::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40mm; background: linear-gradient(180deg, rgba(14, 29, 54, 0), #0E1D36); }
-  .a-caja { position: absolute; left: 20mm; right: 20mm; top: 18mm; bottom: 18mm; display: flex; flex-direction: column; }
-  .a-caja > * { flex-shrink: 0; }
-  .a-cab { display: flex; justify-content: space-between; align-items: center; }
-  .a-cab img { height: 13mm; }
-  .a-pill { font: 800 9pt/1 var(--f-texto); letter-spacing: 0.22em; text-transform: uppercase; padding: 3mm 5mm; border-radius: 99px; background: rgba(14, 29, 54, 0.55); box-shadow: inset 0 0 0 0.35mm rgba(255, 255, 255, 0.35); }
-  .a-zona { margin-top: 20mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 92pt; line-height: 0.86; letter-spacing: -0.03em; color: #FFFFFF; text-wrap: balance; }
-  .a-zona i { font-style: normal; color: var(--amarillo); }
-  .a-gancho { margin-top: 7mm; font: 600 17pt/1.3 var(--f-texto); color: rgba(255, 255, 255, 0.92); max-width: 190mm; text-shadow: 0 0.5mm 3mm rgba(14, 29, 54, 0.5); }
-  .a-lema { margin-top: auto; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 33pt; line-height: 0.98; letter-spacing: -0.015em; max-width: 220mm; text-wrap: balance; }
-  .a-lema span { color: var(--amarillo); }
-  .tarjeta { position: relative; margin-top: 14mm; display: grid; grid-template-columns: 86mm minmax(0, 1fr); gap: 10mm; padding: 10mm; border-radius: 6mm; background: #FFFFFF; color: var(--navy); box-shadow: 0 6mm 20mm rgba(0, 0, 0, 0.35); }
-  .tarjeta .qrz { width: 86mm; }
-  .tarjeta .qrz img { width: 86mm; height: 86mm; display: block; }
-  .tarjeta .url { margin-top: 2.5mm; text-align: center; font: 800 10pt/1 var(--f-texto); letter-spacing: 0.02em; color: var(--azul); }
-  .pasos-a { display: grid; gap: 5.5mm; align-content: start; }
-  .pasos-a .t { font: 800 8pt/1 var(--f-texto); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gris); }
-  .paso-a { display: grid; grid-template-columns: 11mm minmax(0, 1fr); gap: 4mm; align-items: center; }
-  .paso-a .n { width: 11mm; height: 11mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 13pt/1 var(--f-titulos); font-stretch: 112.5%; }
-  .paso-a:last-child .n { background: var(--amarillo); color: var(--navy); }
-  .paso-a b { display: block; font: 800 14pt/1.15 var(--f-texto); color: var(--navy); }
-  .paso-a span { display: block; font: 400 10pt/1.35 var(--f-texto); color: var(--gris); margin-top: 0.6mm; }
-  .rubros { display: flex; flex-wrap: wrap; gap: 2mm; margin-top: 2mm; }
-  .rubros span { font: 700 8pt/1 var(--f-texto); padding: 2mm 3mm; border-radius: 99px; background: var(--cielo); color: var(--azul-profundo); }
-  .tel-a { position: absolute; right: -6mm; bottom: calc(100% - 22mm); width: 76mm; z-index: 3; }
-  .handys { position: absolute; left: 6mm; bottom: calc(100% - 1mm); display: flex; align-items: flex-end; gap: 2mm; z-index: 4; }
-  .handys img { width: 27mm; }
-  .letra { margin-top: 6mm; display: flex; justify-content: space-between; gap: 8mm; font: 500 8.4pt/1.45 var(--f-texto); color: rgba(233, 239, 249, 0.72); }
-  .letra b { color: #FFFFFF; font-weight: 700; }
+  /* Serie de 10 láminas: cada barrio con un estilo de ilustración propio (art déco, Bauhaus, risografía, plano de
+     arquitecto, atardecer, papel recortado, vista aérea, carta náutica, mosaico y cartel suizo). El dibujo es el
+     protagonista; abajo, la misma franja con el QR de Handyx. Todo es vectorial (SVG dibujado en código, en mm).
+     Para cambiar un barrio: editá su entrada en LAMINAS; la franja (franja()) es común. */
+  .lam { --tinta: var(--navy); --fondo-franja: #FFFFFF; --acento: var(--azul); }
+  .arte { position: absolute; left: 0; top: 0; width: 297mm; height: 420mm; overflow: visible; }
+  .sobre { position: absolute; }
+  .serie { font: 800 7.4pt/1.2 var(--f-texto); letter-spacing: .26em; text-transform: uppercase; }
+  .grande { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; line-height: .86; letter-spacing: -.03em; }
+  .chico { font: 700 6.6pt/1.3 var(--f-texto); letter-spacing: .2em; text-transform: uppercase; }
+  /* rótulo de lámina, como en un museo */
+  .rotulo-lam { position: absolute; left: 18mm; right: 18mm; top: 289mm; display: flex; justify-content: space-between; align-items: baseline;
+    font: 600 7pt/1.3 var(--f-texto); letter-spacing: .06em; color: var(--tinta-rot, rgba(255,255,255,.75)); }
+  .rotulo-lam b { font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+  /* franja común con el QR */
+  .franja { position: absolute; left: 0; right: 0; bottom: 0; height: 117mm; color: var(--tinta); }
+  .franja .fondo-f { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: 0; bottom: calc(-1 * var(--sangrado)); background: var(--fondo-franja); }
+  .franja .filete { position: absolute; left: 18mm; right: 18mm; top: 0; height: 1.6mm; background: var(--amarillo); }
+  .franja .in { position: absolute; left: 18mm; right: 18mm; top: 13mm; bottom: 12mm; display: grid; grid-template-columns: 78mm minmax(0, 1fr); column-gap: 12mm; }
+  .qrz { width: 78mm; padding: 5mm; border-radius: 4mm; background: #FFFFFF; box-shadow: 0 0 0 .35mm rgba(14,29,54,.14); align-self: start; }
+  .qrz img { width: 68mm; height: 68mm; display: block; }
+  .qrz p { margin-top: 2.4mm; text-align: center; font: 800 9pt/1 var(--f-texto); color: var(--azul); letter-spacing: .02em; }
+  .txt { display: flex; flex-direction: column; min-width: 0; }
+  .txt .ceja-f { font: 800 7pt/1 var(--f-texto); letter-spacing: .26em; text-transform: uppercase; color: var(--acento); }
+  .txt h2 { margin-top: 4mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 27pt; line-height: .98; letter-spacing: -.02em; color: inherit; text-wrap: balance; }
+  .txt h2 span { color: var(--acento); }
+  .txt .bajo { margin-top: 3.4mm; font: 400 10pt/1.45 var(--f-texto); opacity: .86; max-width: 150mm; }
+  .pasos-f { margin-top: 5mm; display: flex; gap: 3mm; flex-wrap: wrap; }
+  .pasos-f span { display: inline-flex; align-items: center; gap: 2mm; padding: 2.2mm 3.6mm 2.2mm 2.2mm; border-radius: 99px; font: 800 9pt/1 var(--f-texto); background: var(--chip, var(--cielo)); color: var(--navy); }
+  .pasos-f i { font-style: normal; width: 5.4mm; height: 5.4mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.6pt/1 var(--f-titulos); }
+  .pie-f { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 6mm; font: 500 6.6pt/1.4 var(--f-texto); opacity: .78; }
+  .pie-f img { height: 7mm; }
+  .oscura .franja { --tinta: #FFFFFF; }
+  .oscura .pasos-f span { --chip: rgba(255,255,255,.12); color: #FFFFFF; }
+  .oscura .pasos-f i { background: var(--amarillo); color: var(--navy); }
 </style>
 </head>
 <body>
-<div id="afiches"></div>
+<div id="laminas"></div>
 <script>
-  // Un renglón por barrio. fondo: 'foto:<archivo>' (duotono navy en img/) o 'iso:<maqueta|costa|barrio>:<dia|noche>'.
-  const ZONAS = [
-    { slug: 'centro', nombre: 'Centro', gancho: 'Del Casino a la Peatonal: especialistas de tu zona, con propuestas claras para elegir.', fondo: 'foto:casino-plaza', foto: 'center 55%', handys: ['foco', 'llave'] },
-    { slug: 'guemes', nombre: 'Güemes', gancho: 'Se rompió algo en casa, en Güemes. Contalo y elegí entre propuestas con precio.', fondo: 'foto:aerea-centro-playa', foto: 'left 45%', handys: ['brocha', 'foco'] },
-    { slug: 'playa-grande', nombre: 'Playa<br>Grande', gancho: 'De Alem al Torreón: el arreglo que necesitás, con especialistas de la zona.', fondo: 'foto:aerea-cabo-puerto', foto: 'center 60%', handys: ['engranaje', 'llave'] },
-    { slug: 'los-troncos', nombre: 'Los<br>Troncos', gancho: 'Tu chalet merece un especialista verificado. Pedilo y compará antes de elegir.', fondo: 'foto:aerea-cabo-puerto', foto: 'center 85%', handys: ['llave', 'brocha'] },
-    { slug: 'stella-maris', nombre: 'Stella<br>Maris', gancho: 'Frente al mar o a dos cuadras: pedí tu arreglo y elegí por calidad y precio.', fondo: 'foto:aerea-centro-playa', foto: 'center 70%', handys: ['foco', 'engranaje'] },
-    { slug: 'plaza-mitre', nombre: 'Plaza<br>Mitre', gancho: 'Del edificio a la casa: especialistas de tu zona para electricidad, plomería, gas y más.', fondo: 'foto:rambla-fuego', foto: 'center 35%', handys: ['brocha', 'llave'] },
-    { slug: 'la-perla', nombre: 'La Perla', gancho: 'Un pedido, varias propuestas con precio y fecha. Vos elegís.', fondo: 'foto:costa-atardecer', foto: 'center 60%', handys: ['foco', 'brocha'] },
-    { slug: 'varese', nombre: 'Varese', gancho: 'Cerca de la playa y cerca de tu casa: especialistas del barrio, a un pedido de distancia.', fondo: 'foto:aerea-centro-playa', foto: 'right 75%', handys: ['engranaje', 'foco'] },
-    { slug: 'chauvin', nombre: 'Chauvín', gancho: 'Chalets, departamentos y PH: contá qué pasa y recibí propuestas claras.', fondo: 'foto:casino-plaza', foto: 'right 50%', handys: ['llave', 'engranaje'] },
-    { slug: 'punta-mogotes', nombre: 'Punta<br>Mogotes', gancho: 'Del faro a tu casa: pedí tu arreglo y pagale directo al especialista.', fondo: 'foto:aerea-faro-mogotes', foto: 'center 60%', handys: ['foco', 'llave'] },
+  // ---------- utilidades de dibujo (unidades: mm del formato final; el fondo pasa 3 mm por el sangrado) ----------
+  const R = (x, y, w, h, f, e = '') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${e}/>`;
+  const P = (d, f, e = '') => `<path d="${d}" fill="${f}" ${e}/>`;
+  const C = (x, y, r, f, e = '') => `<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${e}/>`;
+  const L = (x1, y1, x2, y2, s, w = .5, e = '') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${s}" stroke-width="${w}" ${e}/>`;
+  const fondo = (f, h = 306) => R(-3, -3, 303, h + 3, f);
+  const az = (s) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
+  const K = { azul: '#1F57A8', prof: '#143E7E', medio: '#2C66B8', navy: '#0E1D36', amar: '#F5F59A', cielo: '#E9EFF9', hueso: '#F7F6F1', arena: '#F3F0E8', borde: '#E2DCCD' };
+  // lobo marino sentado, mirando hacia arriba a la derecha (caja 40 × 50)
+  const lobo = (x, y, s, f, espejo = false) => `<g transform="translate(${x} ${y}) scale(${espejo ? -s : s} ${s})"><path d="M6 70 C0 52 8 36 20 28 C26 24 30 16 32 8 C33 4 36 1 40 0.6 C43 0.3 46 1 48 3 L58 6 C60 7 59.6 10 56 10 L47 12 C44 18 44 26 47 34 C52 44 54 54 50 60 L56 66 C58 68 57 70 54 70 Z" fill="${f}"/></g>`;
+
+  // ---------- 01 · Centro · art déco: la Rambla, el Casino y los lobos marinos bajo un sol de rayos ----------
+  function deco() {
+    let s = fondo(K.navy);
+    for (let i = 0; i < 36; i++) { const a = (i / 36) * Math.PI * 2; s += L(148.5 + 96 * Math.cos(a), 150 + 96 * Math.sin(a), 148.5 + 260 * Math.cos(a), 150 + 260 * Math.sin(a), K.medio, .7, 'opacity=".55"'); }
+    s += `<clipPath id="sol1"><circle cx="148.5" cy="150" r="88"/></clipPath>` + C(148.5, 150, 88, K.amar);
+    s += `<g clip-path="url(#sol1)">${[0, 1, 2, 3, 4, 5, 6].map((k) => R(40, 168 + k * 10, 220, 1.4 + k * .9, K.navy)).join('')}</g>`;
+    // fachada simétrica con techos de mansarda
+    const fach = (x, w, y0, techo) => R(x, y0, w, 252 - y0, K.arena) + P(`M${x - 2} ${y0} L${x + 6} ${y0 - techo} H${x + w - 6} L${x + w + 2} ${y0} Z`, K.prof);
+    s += fach(22, 254, 200, 14) + fach(16, 40, 186, 20) + fach(241, 40, 186, 20) + fach(124, 49, 176, 26);
+    for (const fy of [206, 226]) for (let x = 28; x < 272; x += 8.6) if (!(x > 118 && x < 176)) s += P(`M${x} ${fy + 12} V${fy + 3} A2.2 2.2 0 0 1 ${x + 4.4} ${fy + 3} V${fy + 12} Z`, K.azul);
+    for (let fy = 184; fy < 236; fy += 13) for (let x = 130; x < 168; x += 9) s += P(`M${x} ${fy + 10} V${fy + 3} A2.2 2.2 0 0 1 ${x + 4.4} ${fy + 3} V${fy + 10} Z`, K.azul);
+    for (let x = 22; x < 276; x += 7.5) s += P(`M${x} 252 V245 A3 3 0 0 1 ${x + 6} 245 V252 Z`, K.navy);
+    for (let x = 30; x < 270; x += 12) s += R(x, 197 - 9, 3.4, 4.6, K.amar, 'opacity=".9"');
+    // escalinata y lobos
+    for (let k = 0; k < 6; k++) s += R(10 - k * 3, 252 + k * 4, 277 + k * 6, 4, k % 2 ? K.cielo : K.arena);
+    s += R(48, 236, 26, 22, K.borde) + R(223, 236, 26, 22, K.borde);
+    s += lobo(43, 194, .6, K.navy) + lobo(254, 194, .6, K.navy, true);
+    s += R(-3, 276, 303, 30, K.prof);
+    for (let y = 282; y < 304; y += 5) s += P(`M-3 ${y} ${Array.from({ length: 31 }, (_, i) => `Q ${i * 10 + 2} ${y - 2} ${i * 10 + 7} ${y}`).join(' ')}`, 'none', `stroke="${K.cielo}" stroke-width=".5" opacity=".5"`);
+    return s;
+  }
+
+  // ---------- 02 · Güemes · Bauhaus: formas puras que arman una casa y una vidriera ----------
+  function bauhaus() {
+    let s = fondo(K.hueso);
+    for (let x = 18; x < 290; x += 43.5) s += L(x, 0, x, 280, K.navy, .25, 'opacity=".25"');
+    s += C(96, 104, 66, K.azul) + R(150, 30, 118, 132, K.amar) + P('M178 162 A50 50 0 0 1 278 162 Z', K.navy);
+    s += R(140, 168, 104, 92, K.medio) + P('M128 170 L192 112 L256 170 Z', K.navy);
+    s += R(182, 210, 22, 50, K.amar) + C(158, 194, 9, K.amar) + C(226, 194, 9, K.hueso);
+    for (let i = 0; i < 9; i++) s += R(22 + i * 12.6, 176, 12.6, 22, i % 2 ? K.hueso : K.azul);
+    s += P('M22 198 Q28 206 34.6 198 Q41 206 47.2 198 Q53.5 206 59.8 198 Q66 206 72.4 198 Q78.7 206 85 198 Q91.3 206 97.6 198 Q103.9 206 110.2 198 Q116.5 206 122.8 198 Q129 206 135.4 198', K.azul);
+    s += R(22, 206, 113, 54, K.navy) + R(34, 216, 40, 30, K.amar) + R(84, 216, 40, 44, K.prof);
+    s += R(-3, 260, 303, 46, K.navy);
+    s += C(40, 50, 7, K.navy) + R(256, 236, 3, 24, K.navy) + C(257.5, 230, 12, K.azul);
+    return s;
+  }
+
+  // ---------- 03 · Playa Grande · risografía: el Torreón del Monje en dos tintas, con trama y desregistro ----------
+  function riso() {
+    let s = fondo('#F4F1E6');
+    s += `<pattern id="tr1" width="3.2" height="3.2" patternUnits="userSpaceOnUse"><circle cx="1.6" cy="1.6" r=".55" fill="${K.azul}"/></pattern>
+      <pattern id="tr2" width="3.2" height="3.2" patternUnits="userSpaceOnUse"><circle cx="1.6" cy="1.6" r="1" fill="${K.azul}"/></pattern>
+      <pattern id="tr3" width="3.2" height="3.2" patternUnits="userSpaceOnUse"><circle cx="1.6" cy="1.6" r="1.35" fill="${K.azul}"/></pattern>`;
+    s += R(-3, -3, 303, 60, 'url(#tr3)') + R(-3, 57, 303, 50, 'url(#tr2)') + R(-3, 107, 303, 60, 'url(#tr1)');
+    const torreon = 'M14 214 H70 V206 C70 200 76 196 82 196 C88 196 94 200 94 206 V214 H96 V176 h4 v-5 h5 v5 h5 v-5 h5 v5 h5 v-5 h5 v5 h4 V100 h4 v-7 h6 v7 h6 v-7 h6 v7 h6 v-7 h6 v7 h4 V176 h4 v-5 h5 v5 h5 v-5 h5 v5 h5 v-5 h5 v5 h5 v-5 h5 v5 h4 V214 H286 V232 H14 Z';
+    s += C(212, 92, 46, K.amar, 'style="mix-blend-mode:multiply"');
+    s += `<g style="mix-blend-mode:multiply"><path d="${torreon}" fill="${K.amar}" transform="translate(3.4 -2.6)"/></g>`;
+    s += `<g style="mix-blend-mode:multiply"><path d="${torreon}" fill="${K.azul}"/></g>`;
+    s += P('M128 152 V140 A6 6 0 0 1 140 140 V152 Z', '#F4F1E6') + P('M150 152 V140 A6 6 0 0 1 162 140 V152 Z', '#F4F1E6');
+    for (let x = 104; x < 280; x += 14) if (x < 120 || x > 176) s += P(`M${x} 206 V196 A4 4 0 0 1 ${x + 8} 196 V206 Z`, '#F4F1E6');
+    s += P('M-3 232 L40 222 L84 236 L130 226 L180 238 L232 228 L300 236 V306 H-3 Z', K.azul, 'style="mix-blend-mode:multiply"');
+    s += R(-3, 246, 303, 60, 'url(#tr2)');
+    for (let y = 250; y < 302; y += 7) s += P(`M-3 ${y} ${Array.from({ length: 16 }, (_, i) => `q 9.5 -3.2 19 0`).join(' ')}`, 'none', `stroke="#F4F1E6" stroke-width="1.6"`);
+    s += P('M20 270 h60', 'none', `stroke="${K.amar}" stroke-width="2.4" style="mix-blend-mode:multiply"`);
+    return s;
+  }
+
+  // ---------- 04 · Los Troncos · plano de arquitecto: alzado de un chalet de piedra marplatense ----------
+  function plano() {
+    let s = fondo('#13284A');
+    s += `<pattern id="gr5" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0 H0 V5" fill="none" stroke="${K.cielo}" stroke-width=".12" opacity=".35"/></pattern>
+      <pattern id="gr25" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0 H0 V25" fill="none" stroke="${K.cielo}" stroke-width=".25" opacity=".4"/></pattern>`;
+    s += R(-3, -3, 303, 309, 'url(#gr5)') + R(-3, -3, 303, 309, 'url(#gr25)');
+    const W = `stroke="#FFFFFF" stroke-width=".55" fill="none" stroke-linejoin="round"`;
+    s += `<path d="M58 150 H240 V254 H58 Z" ${W}/><path d="M46 152 L149 76 L252 152" ${W} stroke-width=".9"/>`;
+    for (let k = 1; k < 14; k++) { const t = k / 14; s += L(149 - 103 * t, 76 + 76 * t, 149 + 103 * t, 76 + 76 * t, '#FFFFFF', .22, 'opacity=".55"'); }
+    s += `<path d="M190 104 V78 H208 V118" ${W}/>`;
+    // piedra Mar del Plata: lajas irregulares en el zócalo
+    const r = az(11);
+    for (let y = 204; y < 252; y += 8) { let x = 58 + (y % 16 ? 6 : 0); while (x < 238) { const w = 10 + r() * 14; const x2 = Math.min(x + w, 240); s += `<path d="M${x + 1} ${y + 1} L${x2 - 1} ${y + 1.6} L${x2 - 1.4} ${y + 7} L${x + 1.6} ${y + 7.4} Z" ${W} stroke-width=".35"/>`; x = x2; } }
+    s += `<path d="M58 204 H240" ${W}/>`;
+    // ventanas con postigos, puerta en arco y una ventana encendida
+    const ven = (x, y, luz) => R(x, y, 26, 34, luz ? K.amar : 'none', `stroke="#FFFFFF" stroke-width=".55"`) + L(x + 13, y, x + 13, y + 34, '#FFFFFF', .35) + L(x, y + 17, x + 26, y + 17, '#FFFFFF', .35) + `<path d="M${x - 9} ${y} h8 v34 h-8 Z M${x + 27} ${y} h8 v34 h-8 Z" ${W} stroke-width=".4"/>` + Array.from({ length: 6 }, (_, k) => L(x - 9, y + 5 + k * 5, x - 1, y + 5 + k * 5, '#FFFFFF', .25) + L(x + 27, y + 5 + k * 5, x + 35, y + 5 + k * 5, '#FFFFFF', .25)).join('');
+    s += ven(78, 160, true) + ven(194, 160, false);
+    s += `<path d="M134 254 V196 A15 15 0 0 1 164 196 V254" ${W}/>` + C(159, 226, 1.1, '#FFFFFF');
+    s += C(130, 120, 8, 'none', `stroke="#FFFFFF" stroke-width=".55"`) + L(122, 120, 138, 120, '#FFFFFF', .3) + L(130, 112, 130, 128, '#FFFFFF', .3);
+    // árbol en planta de arquitecto y cotas
+    s += C(272, 218, 20, 'none', `stroke="${K.cielo}" stroke-width=".4" stroke-dasharray="1.6 1.2"`) + L(272, 238, 272, 254, K.cielo, .5);
+    s += L(20, 254, 290, 254, '#FFFFFF', .9);
+    s += L(58, 266, 240, 266, K.amar, .4) + L(58, 262, 58, 270, K.amar, .4) + L(240, 262, 240, 270, K.amar, .4);
+    s += L(30, 76, 30, 254, K.amar, .4) + L(26, 76, 34, 76, K.amar, .4) + L(26, 254, 34, 254, K.amar, .4);
+    s += R(196, 22, 86, 34, 'none', `stroke="#FFFFFF" stroke-width=".45"`) + L(196, 36, 282, 36, '#FFFFFF', .3);
+    return s;
+  }
+
+  // ---------- 05 · Stella Maris · atardecer en franjas, años 70: las torres frente al mar ----------
+  function atardecer() {
+    const cielo = ['#143E7E', '#1F57A8', '#2C66B8', '#5A86C9', '#8EA9DA', '#C9D6EE', '#EFEFD0'];
+    let s = '';
+    cielo.forEach((c, i) => { s += R(-3, -3 + i * 30, 303, 33, c); });
+    s += `<clipPath id="sol5"><circle cx="148.5" cy="196" r="74"/></clipPath>` + C(148.5, 196, 74, K.amar);
+    s += `<g clip-path="url(#sol5)">${[0, 1, 2, 3, 4].map((k) => R(60, 172 + k * 7.5, 180, 1 + k * 1.1, '#EFEFD0')).join('')}</g>`;
+    const r = az(5);
+    let x = -3;
+    while (x < 300) { const w = 13 + r() * 16, h = x > 96 && x < 196 ? 20 + r() * 30 : 60 + r() * 95; s += R(x, 206 - h, w, h, K.navy); for (let y = 206 - h + 5; y < 200; y += 6) s += R(x + 2.5, y, w - 5, 1, r() < .25 ? K.amar : K.prof); x += w + 1.6; }
+    s += R(-3, 206, 303, 100, K.prof);
+    for (let k = 0; k < 9; k++) { const w = 120 - k * 12; s += R(148.5 - w / 2, 212 + k * 9, w, 2 + k * .3, K.amar, `opacity="${.95 - k * .08}"`); }
+    s += P('M200 206 L282 212 L282 215 L200 209 Z', K.navy);
+    return s;
+  }
+
+  // ---------- 06 · Plaza Mitre · papel recortado en capas: árboles, escalinata y faroles ----------
+  function papel() {
+    const sombra = `filter="url(#sm6)"`;
+    let s = `<filter id="sm6" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="-1.4" stdDeviation="1.6" flood-color="#0E1D36" flood-opacity=".38"/></filter>`;
+    s += `<linearGradient id="cl6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE6F6"/><stop offset="1" stop-color="#F7F6F1"/></linearGradient>`;
+    s += R(-3, -3, 303, 309, 'url(#cl6)') + C(214, 64, 18, K.amar);
+    const r = az(6);
+    const silueta = (base, min, max, f, luz, sem) => { const q = az(sem); let d = `M-3 306 V${base}`, x = -3, v = ''; while (x < 300) { const w = 12 + q() * 18, h = min + q() * (max - min); d += ` V${base - h} H${x + w}`; if (luz) for (let yy = base - h + 6; yy < base - 4; yy += 8) for (let xx = x + 3; xx < x + w - 3; xx += 6) if (q() < .22) v += R(xx, yy, 2.4, 3, K.amar); x += w; } return `<g ${sombra}><path d="${d} V306 Z" fill="${f}"/></g>${v}`; };
+    s += silueta(190, 50, 110, '#B3C5E6', false, 3) + silueta(206, 40, 90, '#5A86C9', true, 9);
+    let copas = '';
+    for (let i = 0; i < 16; i++) copas += C(-6 + i * 20 + r() * 6, 206 + r() * 10, 16 + r() * 8, K.medio);
+    s += `<g ${sombra}>${copas}${R(-3, 210, 303, 96, K.medio)}</g>`;
+    let esc = '';
+    for (let k = 0; k < 8; k++) { const w = 120 + k * 22, y = 230 + k * 7; esc += R(148.5 - w / 2, y, w, 7.4, k % 2 ? K.cielo : K.hueso); }
+    s += `<g ${sombra}>${esc}</g>`;
+    for (const x of [58, 100, 197, 239]) s += `<g ${sombra}>${R(x - .8, 196, 1.6, 40, K.navy)}${C(x, 194, 3.6, K.amar)}${R(x - 3, 190, 6, 1.4, K.navy)}</g>`;
+    let mat = '';
+    for (let i = 0; i < 12; i++) mat += C(-8 + i * 28, 300 - r() * 6, 14 + r() * 8, K.navy);
+    s += `<g ${sombra}>${mat}${R(-3, 296, 303, 10, K.navy)}</g>`;
+    return s;
+  }
+
+  // ---------- 07 · La Perla · vista aérea: mar, sombrillas y carpas en patrón ----------
+  function aerea() {
+    let s = fondo(K.arena) + R(-3, -3, 303, 98, K.medio);
+    for (let y = 8; y < 90; y += 11) s += P(`M-3 ${y} ${Array.from({ length: 11 }, () => 'q 7 -4 14 0 t 14 0').join(' ')}`, 'none', `stroke="${K.cielo}" stroke-width=".6" opacity="${.25 + y / 200}"`);
+    s += P('M-3 95 C40 84 80 104 130 92 S220 84 300 96 V112 H-3 Z', '#FFFFFF', 'opacity=".9"') + R(-3, 104, 303, 14, '#E8DFC6');
+    const r = az(7);
+    for (let fila = 0; fila < 6; fila++) for (let col = 0; col < 13; col++) {
+      const x = 16 + col * 21.5 + (fila % 2) * 10, y = 132 + fila * 21;
+      if (fila < 3) { // sombrillas de gajos
+        let g = ''; for (let k = 0; k < 8; k++) { const a1 = (k / 8) * Math.PI * 2, a2 = ((k + 1) / 8) * Math.PI * 2; g += P(`M${x} ${y} L${x + 7.4 * Math.cos(a1)} ${y + 7.4 * Math.sin(a1)} A7.4 7.4 0 0 1 ${x + 7.4 * Math.cos(a2)} ${y + 7.4 * Math.sin(a2)} Z`, k % 2 ? (col % 3 ? K.azul : K.amar) : '#FFFFFF'); }
+        s += C(x + 1.4, y + 1.6, 7.4, '#000', 'opacity=".08"') + g + C(x, y, .9, K.navy);
+      } else { // carpas a rayas
+        s += R(x - 5.6, y - 5.6, 14, 14, '#000', 'opacity=".08" rx="1"') + R(x - 7, y - 7, 14, 14, '#FFFFFF', 'rx="1"') + [0, 1, 2].map((k) => R(x - 6 + k * 4.6, y - 7, 2.3, 14, col % 4 ? K.azul : K.medio)).join('') + R(x - 7, y - 7, 14, 3.4, K.prof, 'rx="1"') + R(x - 7, y - 7, 14, 14, 'none', `rx="1" stroke="${K.prof}" stroke-width=".35"`);
+      }
+      if (r() < .18) s += C(x + 10, y + 8, 1.4, K.navy);
+    }
+    s += R(-3, 256, 303, 50, K.prof);
+    for (let x = 4; x < 296; x += 26) s += R(x, 262, 20, 16, K.azul) + R(x + 2, 264, 16, 2, K.amar) + R(x, 282, 20, 18, K.medio);
+    return s;
+  }
+
+  // ---------- 08 · Varese · carta náutica: la bahía entre dos escolleras, en curvas de nivel ----------
+  function carta() {
+    let s = fondo(K.navy);
+    const costa = 'M210 -3 L204 92 C198 104 166 128 160 168 C156 206 182 232 206 248 L214 306';
+    s += `<clipPath id="tie8"><path d="M-3 -3 H210 L204 92 C198 104 166 128 160 168 C156 206 182 232 206 248 L214 306 H-3 Z"/></clipPath>`;
+    for (let k = 9; k >= 1; k--) s += `<path d="${costa}" fill="none" stroke="${K.cielo}" stroke-width=".45" opacity="${.08 + (10 - k) * .05}" transform="translate(${k * 9} 0)"/>`;
+    s += `<g clip-path="url(#tie8)">${R(-3, -3, 220, 312, K.azul)}`;
+    const r = az(8);
+    for (let y = 6; y < 300; y += 17) for (let x = 6; x < 210; x += 17) { const v = r(), w = r(); if (v > .06 && !(y < 66 && x < 140) && !(y > 276 && x < 120)) s += R(x, y, 13, 13, w < .035 ? K.amar : K.medio, 'rx="1.2"'); }
+    s += `</g><path d="M204 92 C198 104 166 128 160 168 C156 206 182 232 206 248" fill="none" stroke="${K.arena}" stroke-width="5"/>`;
+    s += P('M204 90 L282 76 L284 81 L206 96 Z', K.amar) + P('M206 246 L276 268 L274 273 L204 251 Z', K.amar);
+    s += C(170, 170, 4.4, K.amar) + C(170, 170, 9, 'none', `stroke="${K.amar}" stroke-width=".6"`);
+    // rosa de los vientos y escala
+    s += `<g transform="translate(258 36)">${P('M0 -14 L3 0 L0 14 L-3 0 Z', K.amar)}${P('M-14 0 L0 -3 L14 0 L0 3 Z', K.cielo, 'opacity=".7"')}${C(0, 0, 18, 'none', `stroke="${K.cielo}" stroke-width=".35"`)}</g>`;
+    
+    return s;
+  }
+
+  // ---------- 09 · Chauvín · mosaico: un chalet hecho de baldosas, como los mosaicos de la app ----------
+  function mosaico() {
+    const cols = 30, filas = 31, t = 9.9;
+    const g = Array.from({ length: filas }, (_, r) => Array.from({ length: cols }, () => (r < 3 ? 'k' : '.')));
+    const pon = (r, c, v) => { if (r >= 0 && r < filas && c >= 0 && c < cols) g[r][c] = v; };
+    for (let r = 0; r < filas; r++) for (let c = 0; c < cols; c++) if ((c - 22) ** 2 + ((r - 4) * 1) ** 2 <= 3.4) pon(r, c, 'o');
+    for (const [r, c] of [[5, 3], [5, 4], [5, 5], [4, 4], [4, 5], [6, 8], [6, 9], [6, 10], [5, 9]]) pon(r, c, 'n');
+    for (let r = 6; r <= 13; r++) { const hw = r - 5; for (let c = 15 - hw; c <= 14 + hw; c++) pon(r, c, c === 15 - hw || c === 14 + hw ? 'r' : 'R'); }
+    for (let r = 7; r <= 10; r++) { pon(r, 18, 'C'); pon(r, 19, 'C'); }
+    for (let c = 6; c <= 23; c++) pon(14, c, 'r');
+    for (let r = 15; r <= 19; r++) for (let c = 7; c <= 22; c++) pon(r, c, 'W');
+    for (let r = 16; r <= 18; r++) { for (let c = 8; c <= 10; c++) pon(r, c, 'Y'); for (let c = 19; c <= 21; c++) pon(r, c, 'N'); }
+    for (let r = 16; r <= 17; r++) for (let c = 14; c <= 15; c++) pon(r, c, 'N');
+    for (let r = 20; r <= 23; r++) for (let c = 7; c <= 22; c++) pon(r, c, (r + c) % 3 ? 'S' : 's');
+    for (let r = 20; r <= 23; r++) for (let c = 13; c <= 15; c++) pon(r, c, 'D');
+    for (let r = 12; r <= 20; r++) for (let c = 23; c <= 29; c++) if ((c - 26.5) ** 2 / 9 + (r - 16) ** 2 / 14 <= 1) pon(r, c, (r + c) % 4 ? 'T' : 'U');
+    for (let r = 20; r <= 23; r++) pon(r, 26, 't');
+    for (let r = 16; r <= 20; r++) for (let c = 0; c <= 4; c++) if ((c - 2) ** 2 / 5 + (r - 18) ** 2 / 4 <= 1) pon(r, c, 'T');
+    for (let r = 21; r <= 23; r++) pon(r, 2, 't');
+    for (let c = 0; c < cols; c++) pon(24, c, 'G');
+    for (let r = 25; r < filas; r++) for (let c = 0; c < cols; c++) pon(r, c, r === 27 && c % 4 < 2 ? 'y' : 'K');
+    const col = { '.': '#DCE6F6', k: '#C9D6EE', o: K.amar, n: '#FFFFFF', r: K.azul, R: K.prof, C: K.borde, W: '#FFFFFF', Y: K.amar, N: K.navy, S: K.borde, s: '#D9CBA6', D: K.medio, T: K.medio, U: K.azul, t: K.navy, G: '#DADFE8', K: K.navy, y: K.amar };
+    let s = fondo(K.hueso);
+    g.forEach((fila, r) => fila.forEach((v, c) => { s += R(c * t + .5, r * t + .5, t - 1, t - 1, col[v], 'rx="1.6"'); }));
+    return s;
+  }
+
+  // ---------- 10 · Punta Mogotes · cartel suizo: el faro y su haz ----------
+  function faro() {
+    let s = fondo(K.navy);
+    const r = az(10);
+    for (let i = 0; i < 70; i++) s += C(r() * 297, r() * 200, .25 + r() * .6, '#FFFFFF', `opacity="${.3 + r() * .6}"`);
+    s += P('M196 82 L-3 18 L-3 172 Z', K.amar, 'opacity=".95"') + P('M210 82 L300 50 L300 112 Z', K.medio, 'opacity=".55"');
+    const x = 203, base = 262, alto = 176;
+    for (let k = 0; k < 7; k++) { const y0 = base - (k * alto) / 7, y1 = base - ((k + 1) * alto) / 7, w0 = 15 - k * 1.3, w1 = 15 - (k + 1) * 1.3; s += P(`M${x - w0} ${y0} L${x + w0} ${y0} L${x + w1} ${y1} L${x - w1} ${y1} Z`, k % 2 ? K.azul : '#FFFFFF'); }
+    s += R(x - 9, base - alto - 3, 18, 3, K.navy) + R(x - 10.5, base - alto - 4.4, 21, 1.6, '#FFFFFF') + R(x - 6.5, base - alto - 15, 13, 11, K.amar) + P(`M${x - 8} ${base - alto - 15} L${x} ${base - alto - 24} L${x + 8} ${base - alto - 15} Z`, '#FFFFFF');
+    s += P('M-3 262 C60 248 120 270 190 256 S260 250 300 258 V306 H-3 Z', K.prof) + P('M-3 276 C70 266 150 286 300 270 V306 H-3 Z', K.azul);
+    return s;
+  }
+
+  // ---------- la serie ----------
+  const LAMINAS = [
+    { slug: 'centro', barrio: 'Centro', obra: 'La Rambla', estilo: 'Art déco', arte: deco, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+      sobre: `<div class="sobre" style="left:18mm;right:18mm;top:16mm;text-align:center;color:${K.amar}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:60pt;margin-top:3mm;color:#FFFFFF">La Rambla</p></div>` },
+    { slug: 'guemes', barrio: 'Güemes', obra: 'Casa y vidriera', estilo: 'Bauhaus', arte: bauhaus, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+      sobre: `<div class="sobre" style="left:18mm;top:264mm;color:${K.hueso}"><p class="grande" style="font-size:40pt">güemes<span style="color:${K.amar}">.</span></p></div><div class="sobre" style="right:18mm;top:20mm;color:${K.navy};text-align:right"><p class="serie">Mar del Plata<br>N.º 02</p></div>` },
+    { slug: 'playa-grande', barrio: 'Playa Grande', obra: 'Torreón del Monje', estilo: 'Risografía', arte: riso, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+      sobre: `<div class="sobre" style="left:18mm;top:18mm;color:${K.azul};background:#F4F1E6;padding:5mm 6mm 6mm"><p class="serie">Mar del Plata · Playa Grande</p><p class="grande" style="font-size:46pt;margin-top:3mm">Torreón<br>del Monje</p></div>` },
+    { slug: 'los-troncos', barrio: 'Los Troncos', obra: 'Chalet marplatense', estilo: 'Plano de arquitecto', arte: plano, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
+      sobre: `<div class="sobre" style="left:199mm;top:24mm;width:80mm;color:#FFFFFF"><p class="chico">Chalet marplatense</p><p class="chico" style="margin-top:5mm;opacity:.7">Piedra Mar del Plata · teja · Los Troncos</p></div>
+              <div class="sobre chico" style="left:140mm;top:268mm;color:${K.amar}">Alzado principal</div><div class="sobre chico" style="left:18mm;top:18mm;color:#FFFFFF">Mar del Plata · Lámina N.º 04</div>` },
+    { slug: 'stella-maris', barrio: 'Stella Maris', obra: 'Torres frente al mar', estilo: 'Atardecer', arte: atardecer, oscura: true, franja: K.prof, rot: 'rgba(233,239,249,.75)',
+      sobre: `<div class="sobre" style="left:18mm;right:18mm;top:20mm;text-align:center;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:56pt;margin-top:3mm">Stella Maris</p></div>` },
+    { slug: 'plaza-mitre', barrio: 'Plaza Mitre', obra: 'La escalinata', estilo: 'Papel recortado', arte: papel, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+      sobre: `<div class="sobre" style="left:18mm;top:20mm;color:${K.navy}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:50pt;margin-top:3mm">Plaza<br>Mitre</p></div>` },
+    { slug: 'la-perla', barrio: 'La Perla', obra: 'Temporada', estilo: 'Vista aérea', arte: aerea, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+      sobre: `<div class="sobre" style="left:18mm;top:20mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:58pt;margin-top:3mm">La Perla</p></div>` },
+    { slug: 'varese', barrio: 'Varese', obra: 'La bahía', estilo: 'Carta náutica', arte: carta, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
+      sobre: `<div class="sobre" style="left:18mm;top:18mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:52pt;margin-top:3mm">Varese</p></div>
+              <div class="sobre chico" style="left:218mm;top:166mm;color:${K.cielo}">Playa Varese</div><div class="sobre chico" style="left:236mm;top:62mm;color:${K.amar}">Escollera</div><div class="sobre chico" style="left:226mm;top:262mm;color:${K.amar}">Escollera</div>` },
+    { slug: 'chauvin', barrio: 'Chauvín', obra: 'Casa de baldosas', estilo: 'Mosaico', arte: mosaico, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+      sobre: `<div class="sobre" style="left:16mm;top:44mm;color:${K.navy}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:44pt;margin-top:3mm">Chauvín</p></div>` },
+    { slug: 'punta-mogotes', barrio: 'Punta Mogotes', obra: 'El faro', estilo: 'Cartel suizo', arte: faro, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+      sobre: `<div class="sobre" style="left:18mm;top:200mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:54pt;margin-top:3mm">Punta<br>Mogotes</p></div>` },
   ];
-  const marca = (s) => s.replace('elegís', '<span>elegís</span>');
-  document.getElementById('afiches').outerHTML = ZONAS.map((z, i) => {
-    const [tipo, a, b] = z.fondo.split(':');
-    const fondo = tipo === 'foto'
-      ? `<div class="fondo-foto fondo"><img src="img/${a}-navy.webp" alt="" style="object-position:${z.foto || 'center'}"></div>`
-      : `<div class="fondo-iso fondo ${b}"><div data-iso="${a}" data-paleta="${b}" data-pines="1" data-semilla="${i + 3}"></div></div>`;
-    return `<section class="pagina afiche" data-folio="${i + 1}"><div class="lamina">${fondo}
-      <div class="a-caja">
-        <div class="a-cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span class="a-pill">Mar del Plata · ${z.nombre.replace('<br>', ' ')}</span></div>
-        <h1 class="a-zona">${z.nombre}<i>.</i></h1>
-        <p class="a-gancho">${z.gancho}</p>
-        <p class="a-lema">${marca('Un problema viejo con una nueva solución que elegís.')}</p>
-        <div class="tarjeta"><img class="tel-a permite-salir" src="img/m-inicio-titanio-izq.webp" alt="">
-          <div class="qrz"><img src="qr/${z.slug}.svg" alt="Código QR al registro de Handyx"><p class="url">handyc.com/registro</p></div>
-          <div class="pasos-a">
-            <span class="t">Así de simple</span>
-            <div class="paso-a"><span class="n">1</span><div><b>Escaneá el código</b><span>Con la cámara del celular.</span></div></div>
-            <div class="paso-a"><span class="n">2</span><div><b>Registrate</b><span>Es gratis y tarda un minuto. Primero la cuenta, después el pedido.</span></div></div>
-            <div class="paso-a"><span class="n">3</span><div><b>Pedí tu arreglo</b><span>Recibís propuestas con precio y elegís vos.</span></div></div>
-            <div class="rubros"><span>Electricidad</span><span>Plomería</span><span>Gas</span><span>Cerrajería</span><span>Albañilería</span><span>Aire acondicionado</span></div>
-          </div>
-        </div>
-        <div class="letra"><span><b>Pagás directo al especialista.</b> Tarifa de servicio 0 % hasta el 10/12/2026.</span><span>Demo con invitación · noviembre de 2026 · Pantalla: diseño propuesto</span></div>
-      </div>
-    </div></section>`;
-  }).join('');
+
+  const franja = (l, i) => `<div class="franja"><div class="fondo-f" style="background:${l.franja}"></div><div class="filete"></div><div class="in">
+      <div class="qrz"><img src="qr/${l.slug}.svg" alt="Código QR al registro de Handyx"><p>handyc.com/registro</p></div>
+      <div class="txt"><span class="ceja-f">Handyx · ${l.barrio}</span>
+        <h2>Dibujamos tu barrio. <span>Ahora, tu casa.</span></h2>
+        <p class="bajo">Un problema viejo con una nueva solución que elegís: contás qué pasa, recibís propuestas de especialistas de tu zona y elegís por calidad y precio.</p>
+        <div class="pasos-f"><span><i>1</i>Escaneá</span><span><i>2</i>Registrate</span><span><i>3</i>Pedí tu arreglo</span></div>
+        <div class="pie-f"><img src="../../marca/${l.oscura ? 'logo-handyx-blanco' : 'logo-handyx'}.svg" alt="Handyx"><span>Electricidad · Plomería · Gas · Cerrajería · Albañilería · Aire acondicionado<br>Pagás directo al especialista. Tarifa de servicio 0 % hasta el 10/12/2026. Demo con invitación, noviembre de 2026.</span></div>
+      </div></div></div>`;
+  document.getElementById('laminas').outerHTML = LAMINAS.map((l, i) => `<section class="pagina lam${l.oscura ? ' oscura' : ''}" data-folio="${i + 1}" style="--acento:${l.oscura ? K.amar : K.azul}"><div class="lamina">
+      <svg class="arte permite-salir" viewBox="0 0 297 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${l.obra}, ${l.barrio}, Mar del Plata">${l.arte()}</svg>
+      ${l.sobre}
+      <p class="rotulo-lam" style="--tinta-rot:${l.rot}"><span><b>${l.obra}</b> · ${l.barrio}</span><span>Serie «Mar del Plata, barrio por barrio» · ${l.estilo} · ${String(i + 1).padStart(2, '0')}/10</span></p>
+      ${franja(l, i)}
+    </div></section>`).join('');
 </script>
-<script src="../../plantilla/iso.js"></script>
 <script src="../../plantilla/pieza.js"></script>
 </body>
 </html>
