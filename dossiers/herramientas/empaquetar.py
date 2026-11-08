@@ -20,6 +20,7 @@ PIEZAS = {
     '03-professional': ('Handyx-03-Professional-App', 'Dossier 03 · Professional App', 28),
     '04-operations': ('Handyx-04-Operations-Portal', 'Dossier 04 · Operations Portal', 20),
     '05-afiches': ('Handyx-Afiches-Barrios', 'Afiches por barrio (A3, con QR al registro)', 10),
+    '08-lobos': ('Handyx-Afiches-Lobo', 'Afiches «Lobo» (A3, con QR al registro)', 4),
 }
 # piezas de pantalla (PNG/SVG, sin PDF): se exportan con exportar-redes.cjs
 REDES = {
@@ -42,7 +43,7 @@ IMPRESION_TRIPTICO = """- Formato final: A4 apaisado (297 × 210 mm), doble faz,
 
 IMPRESION_AFICHE = """- Formato final: A3 vertical (297 × 420 mm), una cara, {paginas} afiches (uno por barrio).
 - Archivo de imprenta: {nombre}-imprenta.pdf, 303 × 426 mm por página (3 mm de sangrado), con TrimBox y BleedBox.
-- Cada QR lleva al registro de la app con su barrio (https://handyc.com/registro/?zona=…&origen=afiche): primero la
+- Cada QR lleva al registro de la app (https://handyc.com/registro/, con el origen del afiche): primero la
   cuenta, después el pedido. Probá cada QR con un celular antes de imprimir y antes de pegar: el registro tiene que
   estar publicado.
 - Papel sugerido: ilustración mate 170 g (interior) o sintético para exterior. Color RGB: pedir prueba de color."""
@@ -108,7 +109,7 @@ def empaquetar(pieza: str):
         extra = '\n- guia-de-plegado.pdf: paneles, medidas, pliegues y orden de plegado para la imprenta.'
     ENTREGA.mkdir(parents=True, exist_ok=True)
     zipp = ENTREGA / f'{nombre}.zip'
-    impresion = (IMPRESION_TRIPTICO if pieza == '00-triptico' else IMPRESION_AFICHE if pieza == '05-afiches' else IMPRESION_DOSSIER).format(nombre=nombre, paginas=paginas, anteultima=paginas - 1)
+    impresion = (IMPRESION_TRIPTICO if pieza == '00-triptico' else IMPRESION_AFICHE if pieza in ('05-afiches', '08-lobos') else IMPRESION_DOSSIER).format(nombre=nombre, paginas=paginas, anteultima=paginas - 1)
     leeme = LEEME.format(titulo=titulo, corte=CORTE, nombre=nombre, extra=extra, impresion=impresion, pieza=pieza, contacto=CONTACTO)
     raiz = nombre
     with zipfile.ZipFile(zipp, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as z:
@@ -133,7 +134,7 @@ def empaquetar(pieza: str):
             z.write(D / 'marca' / rel, f'{fe}/marca/{rel}')
         for h in ('exportar-pieza.cjs', 'cajas-pdf.py'):
             z.write(D / 'herramientas' / h, f'{fe}/herramientas/{h}')
-    if pieza not in ('00-triptico', '05-afiches'):
+    if pieza not in ('00-triptico', '05-afiches', '08-lobos'):
         hub = ENTREGA / 'pdf-para-landing'
         hub.mkdir(exist_ok=True)
         shutil.copy(out / f'{nombre}-digital.pdf', hub / f'{nombre}.pdf')

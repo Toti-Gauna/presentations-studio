@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="usuario" data-formato="297x420" style="--ancho:297mm;--alto:420mm">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Serie «Lobo» (afiches A3)</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<style>
+  /* Serie «Se rompió algo en casa»: 10 láminas, una por barrio, cada una con un problema del hogar (un rubro de Handyx)
+     dibujado en un estilo propio. Los dibujos y la lista LAMINAS están en serie.js; la franja con el QR es común. */
+  .titular h1 { color: inherit; text-wrap: balance; }
+  .titular h1 i { font-style: normal; color: var(--acento); }
+  .lam { --tinta: var(--navy); --fondo-franja: #FFFFFF; --acento: var(--azul); }
+  .arte { position: absolute; left: 0; top: 0; width: 297mm; height: 420mm; overflow: visible; }
+  .sobre { position: absolute; }
+  .serie { font: 800 7.4pt/1.2 var(--f-texto); letter-spacing: .26em; text-transform: uppercase; }
+  .grande { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; line-height: .86; letter-spacing: -.03em; }
+  .chico { font: 700 6.6pt/1.3 var(--f-texto); letter-spacing: .2em; text-transform: uppercase; }
+  /* rótulo de lámina, como en un museo */
+  .rotulo-lam { position: absolute; left: 18mm; right: 18mm; top: 309mm; display: flex; justify-content: space-between; align-items: baseline;
+    font: 600 7pt/1.3 var(--f-texto); letter-spacing: .06em; color: var(--tinta-rot, rgba(255,255,255,.75)); }
+  .rotulo-lam b { font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+  /* franja común: un talón con línea de corte; responde la pregunta que deja la lámina */
+  .franja { position: absolute; left: 0; right: 0; bottom: 0; height: 100mm; color: var(--tinta); }
+  .franja .fondo-f { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: 0; bottom: calc(-1 * var(--sangrado)); background: var(--fondo-franja); }
+  .franja .corte { position: absolute; left: 0; right: 0; top: 0; border-top: .45mm dashed currentColor; opacity: .35; }
+  .franja .in { position: absolute; left: 18mm; right: 18mm; top: 12mm; bottom: 11mm; display: grid; grid-template-columns: minmax(0, 1fr) 66mm; column-gap: 14mm; }
+  .qrz { width: 66mm; padding: 4.4mm; border-radius: 3.4mm; background: #FFFFFF; box-shadow: 0 0 0 .35mm rgba(14,29,54,.14); align-self: start; }
+  .qrz img { width: 57.2mm; height: 57.2mm; display: block; }
+  .qrz p { margin-top: 2.2mm; text-align: center; font: 800 8.4pt/1 var(--f-texto); color: var(--azul); letter-spacing: .02em; }
+  .qrz .arriba { margin: 0 0 2.2mm; color: var(--navy); font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; }
+  .txt { display: flex; flex-direction: column; min-width: 0; }
+  .txt .ceja-f { font: 800 7pt/1 var(--f-texto); letter-spacing: .26em; text-transform: uppercase; color: var(--acento); }
+  .txt h2 { margin-top: 3.4mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 30pt; line-height: .96; letter-spacing: -.02em; color: inherit; text-wrap: balance; }
+  .txt h2 span { color: var(--acento); }
+  .txt .bajo { margin-top: 3.6mm; font: 400 10.4pt/1.42 var(--f-texto); opacity: .88; max-width: 150mm; text-wrap: pretty; }
+  .pasos-f { margin-top: 4.4mm; display: flex; gap: 2.6mm; flex-wrap: wrap; }
+  .pasos-f span { display: inline-flex; align-items: center; gap: 2mm; padding: 2mm 3.4mm 2mm 2mm; border-radius: 99px; font: 800 8.6pt/1 var(--f-texto); background: var(--chip, var(--cielo)); color: var(--navy); }
+  .pasos-f i { font-style: normal; width: 5mm; height: 5mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.2pt/1 var(--f-titulos); }
+  .pie-f { margin-top: auto; display: flex; align-items: flex-end; gap: 6mm; font: 500 6.4pt/1.4 var(--f-texto); opacity: .75; }
+  .pie-f img { height: 6.4mm; }
+  .oscura .franja { --tinta: #FFFFFF; }
+  .oscura .pasos-f span { --chip: rgba(255,255,255,.12); color: #FFFFFF; }
+  .oscura .pasos-f i { background: var(--amarillo); color: var(--navy); }
+</style>
+</head>
+<body>
+<div id="laminas"></div>
+<script>
+  // ---------- utilidades de dibujo (unidades: mm del formato final; el fondo pasa 3 mm por el sangrado) ----------
+  const R = (x, y, w, h, f, e = '') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${e}/>`;
+  const P = (d, f, e = '') => `<path d="${d}" fill="${f}" ${e}/>`;
+  const C = (x, y, r, f, e = '') => `<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" ${e}/>`;
+  const L = (x1, y1, x2, y2, s, w = .5, e = '') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${s}" stroke-width="${w}" ${e}/>`;
+  const fondo = (f, h = 306) => R(-3, -3, 303, h + 3, f);
+  const az = (s) => () => ((s = (s * 16807) % 2147483647) / 2147483647);
+  const K = { azul: '#1F57A8', prof: '#143E7E', medio: '#2C66B8', navy: '#0E1D36', amar: '#F5F59A', cielo: '#E9EFF9', hueso: '#F7F6F1', arena: '#F3F0E8', borde: '#E2DCCD' };
+</script>
+<script src="lobos.js"></script>
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>
