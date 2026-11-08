@@ -1,98 +1,127 @@
-"""Remera Handyx v2: archivos de impresión (SVG vectorial) para frente y espalda, sobre tela azul de marca.
-Frente: logo chico en el pecho con el lema. Espalda: solo edificios — la línea de Mar del Plata (torres, Casino con
-techo de mansarda, Torreón del Monje y el faro) sobre la Rambla, el logo y «Hecho en Mar del Plata». Tintas: blanco, amarillo #F5F59A y cielo #E9EFF9 (lo azul es la tela, no se imprime).
-Uso: python3 -I dossiers/herramientas/remera.py  → dossiers/piezas/07-remera/"""
+"""Remera Handyx v5 · archivos de impresión en UNA tinta (serigrafía), sin fondos ni círculos.
+Espalda: la costa de Mar del Plata dibujada con una sola línea fina (Torreón del Monje, la Rambla, el Casino con su
+techo de mansarda, las torres, la Catedral y el faro con su haz), y abajo el texto en versalitas.
+Frente: el logo chico en el pecho. Nuca: «MDP · 2026».
+Cada archivo sale en dos colores de tinta: blanco (para tela azul o navy) y navy (para tela blanca o hueso).
+Uso: python3 -I dossiers/herramientas/remera.py  → dossiers/piezas/07-remera/*.svg"""
 import pathlib, re
+from fontTools.ttLib import TTFont
+from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.pens.transformPen import TransformPen
 
 R = pathlib.Path(__file__).resolve().parents[1]
 OUT = R / 'piezas/07-remera'
 OUT.mkdir(parents=True, exist_ok=True)
-BLANCO, AMA, CIELO, TELA = '#FFFFFF', '#F5F59A', '#E9EFF9', '#1F57A8'
 
 
-def interior(svg_txt):
-    """Devuelve el contenido de un SVG y su viewBox para incrustarlo con <g transform>."""
-    vb = re.search(r'viewBox="([^"]+)"', svg_txt).group(1)
-    cuerpo = re.sub(r'^.*?<svg[^>]*>', '', svg_txt, flags=re.S).rsplit('</svg>', 1)[0]
-    cuerpo = re.sub(r'<title>.*?</title>', '', cuerpo, flags=re.S)
+FUENTES = R / 'plantilla/fuentes'
+_cache = {}
+
+
+def trazos(texto, archivo, tam, x, y, espacio=0.0, ancla='middle', tinta='#FFFFFF'):
+    """Texto convertido a curvas (la imprenta no necesita las fuentes). espacio = interletrado en unidades del dibujo."""
+    if archivo not in _cache:
+        f = TTFont(FUENTES / archivo)
+        _cache[archivo] = (f, f.getGlyphSet(), f.getBestCmap(), f['head'].unitsPerEm)
+    f, gs, cmap, upm = _cache[archivo]
+    esc = tam / upm
+    nombres = [cmap.get(ord(c), cmap.get(ord(' '))) for c in texto]
+    ancho = sum(gs[n].width * esc + espacio for n in nombres) - espacio
+    cx = x - (ancho / 2 if ancla == 'middle' else 0)
+    d = []
+    for n in nombres:
+        pen = SVGPathPen(gs)
+        gs[n].draw(TransformPen(pen, (esc, 0, 0, -esc, cx, y)))
+        d.append(pen.getCommands())
+        cx += gs[n].width * esc + espacio
+    return f'<path d="{" ".join(d)}" fill="{tinta}"/>'
+
+
+def skyline():
+    """Costa de Mar del Plata en trazo único; unidades: 600 × 170 (se imprime a 280 mm de ancho)."""
+    b = 140  # línea de la Rambla
+    d = []
+    # Torreón del Monje sobre las rocas, con su puente
+    d.append(f'M0 {b} H14 L18 {b - 8} H34 V{b - 34} h4 v-4 h4 v4 h4 v-4 h4 v4 h4 v-4 h4 v4 h4 V{b - 72} h3 v-5 h4 v5 h4 v-5 h4 v5 h3 V{b - 34} h4 v-4 h4 v4 h4 v-4 h4 v4 h4 V{b - 8} L90 {b}')
+    d.append(f'M50 {b - 54} v-8 a3 3 0 0 1 6 0 v8 M40 {b - 22} v-6 a3 3 0 0 1 6 0 v6 M70 {b - 22} v-6 a3 3 0 0 1 6 0 v6')
+    d.append(f'M90 {b - 20} H132 M94 {b} V{b - 10} A17 12 0 0 1 128 {b - 10} V{b}')
+    # la Rambla: arcada
+    d.append(f'M132 {b} V{b - 26} H196 V{b}')
+    for x in range(136, 194, 10):
+        d.append(f'M{x} {b} V{b - 12} a4 4 0 0 1 8 0 V{b}')
+    # el Casino: cuerpo largo, techo de mansarda con buhardillas y pabellones en las puntas
+    d.append(f'M196 {b} V{b - 44} H204 V{b - 56} L210 {b - 66} H222 L228 {b - 56} V{b - 44} H300 V{b - 56} L306 {b - 66} H318 L324 {b - 56} V{b - 44} H332 V{b}')
+    d.append(f'M228 {b - 44} L234 {b - 54} H294 L300 {b - 44}')
+    for x in range(240, 292, 10):
+        d.append(f'M{x} {b - 46} v-5 h4 v5')
+    for fila in (b - 34, b - 20):
+        for x in range(202, 330, 8):
+            d.append(f'M{x} {fila + 8} v-7')
+    # torres frente al mar, con sus pisos
+    torres = [(338, 26, 92), (368, 22, 118), (394, 30, 84), (428, 20, 104), (452, 24, 70)]
+    for x, w, h in torres:
+        d.append(f'M{x} {b} V{b - h} H{x + w} V{b}')
+        for y in range(b - h + 8, b - 4, 7):
+            d.append(f'M{x + 4} {y} H{x + w - 4}')
+    # la Catedral: nave y aguja
+    d.append(f'M480 {b} V{b - 34} L494 {b - 46} L508 {b - 34} V{b} M508 {b - 34} V{b - 70} L514 {b - 104} L520 {b - 70} V{b}')
+    d.append(f'M512 {b - 56} v-6 a2 2 0 0 1 4 0 v6')
+    # el faro y su haz
+    d.append(f'M548 {b} L554 {b - 92} H566 L572 {b}')
+    for k in range(1, 5):
+        y = b - k * 18
+        w0 = 12 - k * 1.2
+        d.append(f'M{560 - w0 / 2 - 3} {y} H{560 + w0 / 2 + 3}')
+    d.append(f'M552 {b - 92} H568 M554 {b - 92} V{b - 104} H566 V{b - 92} M552 {b - 104} L560 {b - 112} L568 {b - 104}')
+    d.append(f'M570 {b - 98} L600 {b - 110} M570 {b - 98} L600 {b - 86}')
+    # la línea de la Rambla y el mar
+    d.append(f'M-6 {b} H606')
+    olas = []
+    for fila, y in enumerate((b + 12, b + 22)):
+        x0 = 20 + fila * 26
+        olas.append(f'M{x0} {y} ' + ' '.join(f'q 8 -5 16 0 t 16 0' for _ in range(int((560 - x0) / 32))))
+    return d, olas
+
+
+def svg_espalda(tinta):
+    d, olas = skyline()
+    trazo = f'fill="none" stroke="{tinta}" stroke-linecap="round" stroke-linejoin="round"'
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 640 300" width="300mm" height="140.6mm">
+<title>Remera Handyx · espalda · una tinta</title>
+<path d="{' '.join(d)}" {trazo} stroke-width="1.6"/>
+<path d="{' '.join(olas)}" {trazo} stroke-width="1.1"/>
+{trazos('MAR DEL PLATA', 'archivo-125-900-latin.woff2', 26, 300, 214, 12, tinta=tinta)}
+{trazos("38°00' S · 57°33' O · SOLUCIONES, NO PROBLEMAS.", 'dm-sans-100-700-latin.woff2', 10, 300, 240, 4.2, tinta=tinta)}
+<path d="M240 254 H360" stroke="{tinta}" stroke-width="1"/>
+{trazos('HANDYX · EDICIÓN 01', 'dm-sans-100-800-latin.woff2', 9, 300, 270, 5, tinta=tinta)}
+</svg>'''
+
+
+def logo(tinta):
+    t = (R / 'marca/logo-handyx-blanco.svg').read_text()
+    vb = re.search(r'viewBox="([^"]+)"', t).group(1)
+    cuerpo = re.sub(r'^.*?<svg[^>]*>', '', t, flags=re.S).rsplit('</svg>', 1)[0]
+    cuerpo = re.sub(r'fill="#(?:fff|FFF|ffffff|FFFFFF)"', f'fill="{tinta}"', cuerpo)
     return vb, cuerpo
 
 
-def incrustar(archivo, x, y, w):
-    vb, c = interior((R / archivo).read_text())
-    _, _, vw, vh = map(float, vb.split())
-    s = w / vw
-    return f'<g transform="translate({x} {y}) scale({s:.4f})">{c}</g>', vh * s
+def svg_frente(tinta):
+    vb, c = logo(tinta)
+    _, _, w, h = map(float, vb.split())
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h * 1.55:.1f}" width="80mm" height="{80 * h * 1.55 / w:.1f}mm">
+<title>Remera Handyx · pecho · una tinta</title><g fill="{tinta}">{c}</g>
+{trazos('SOLUCIONES, NO PROBLEMAS.', 'dm-sans-100-700-latin.woff2', h * .2, 30, h * 1.48, h * .045, ancla='start', tinta=tinta)}</svg>'''
 
 
-def skyline(x0, base, ancho):
-    p = []
-    # torres de la costa (izquierda), con ventanas como franjas que dejan ver la tela
-    torres = [(0, 26, 92), (30, 22, 128), (56, 30, 106), (90, 20, 150), (114, 28, 118), (146, 24, 96)]
-    for dx, w, h in torres:
-        x = x0 + dx
-        p.append(f'<rect x="{x}" y="{base - h}" width="{w}" height="{h}" fill="{BLANCO}"/>')
-        for fy in range(int(base - h + 8), int(base - 10), 11):
-            p.append(f'<rect x="{x + 4}" y="{fy}" width="{w - 8}" height="4" fill="{TELA}"/>')
-    # Casino / Hotel Provincial: cuerpo largo, techo de mansarda con buhardillas, pabellones en las puntas
-    cx = x0 + 182
-    p.append(f'<rect x="{cx}" y="{base - 52}" width="150" height="52" fill="{CIELO}"/>')
-    p.append(f'<path d="M{cx - 4} {base - 52} L{cx + 10} {base - 72} H{cx + 140} L{cx + 154} {base - 52} Z" fill="{BLANCO}"/>')
-    for bx in range(cx + 16, cx + 136, 16):
-        p.append(f'<rect x="{bx}" y="{base - 67}" width="6" height="8" rx="1" fill="{TELA}"/>')
-    for fila in (0, 1):
-        for wx in range(cx + 8, cx + 146, 11):
-            y = base - 46 + fila * 22
-            p.append(f'<path d="M{wx} {y + 14} V{y + 4} A3 3 0 0 1 {wx + 6} {y + 4} V{y + 14} Z" fill="{TELA}"/>')
-    for px in (cx - 8, cx + 134):
-        p.append(f'<rect x="{px}" y="{base - 64}" width="24" height="64" fill="{CIELO}"/>')
-        p.append(f'<path d="M{px - 3} {base - 64} L{px + 4} {base - 84} H{px + 20} L{px + 27} {base - 64} Z" fill="{BLANCO}"/>')
-    # Torreón del Monje con almenas y su puente
-    tx = x0 + 352
-    p.append(f'<rect x="{tx}" y="{base - 40}" width="44" height="40" fill="{BLANCO}"/>')
-    p.append(f'<rect x="{tx + 8}" y="{base - 84}" width="20" height="46" fill="{BLANCO}"/>')
-    for k in range(4):
-        p.append(f'<rect x="{tx + 8 + k * 5.5}" y="{base - 90}" width="3.6" height="7" fill="{BLANCO}"/>')
-    for k in range(6):
-        p.append(f'<rect x="{tx + k * 7.8}" y="{base - 46}" width="5" height="7" fill="{BLANCO}"/>')
-    p.append(f'<path d="M{tx + 14} {base - 60} V{base - 68} A4 4 0 0 1 {tx + 22} {base - 68} V{base - 60} Z" fill="{TELA}"/>')
-    p.append(f'<path d="M{tx + 44} {base - 18} Q{tx + 60} {base - 34} {tx + 76} {base - 18}" fill="none" stroke="{BLANCO}" stroke-width="4"/>')
-    # faro
-    fx = x0 + 440
-    for i in range(6):
-        y0, y1 = base - i * 22, base - (i + 1) * 22
-        w0, w1 = 13 - i * 1.2, 13 - (i + 1) * 1.2
-        p.append(f'<path d="M{fx - w0} {y0} L{fx + w0} {y0} L{fx + w1} {y1} L{fx - w1} {y1} Z" fill="{BLANCO if i % 2 == 0 else CIELO}"/>')
-    p.append(f'<rect x="{fx - 8}" y="{base - 150}" width="16" height="16" rx="2" fill="{AMA}"/>')
-    p.append(f'<path d="M{fx - 10} {base - 150} L{fx} {base - 162} L{fx + 10} {base - 150} Z" fill="{BLANCO}"/>')
-    p.append(f'<path d="M{fx + 10} {base - 144} L{fx + 70} {base - 162} L{fx + 70} {base - 128} Z" fill="{AMA}" opacity="0.55"/>')
-    # Rambla y mar
-    p.append(f'<rect x="{x0 - 10}" y="{base}" width="{ancho + 20}" height="5" rx="2.5" fill="{BLANCO}"/>')
-    for k, dy in enumerate((14, 24)):
-        p.append(f'<path d="M{x0 + 10 + k * 20} {base + dy} ' + ''.join(f'q 10 -6 20 0 t 20 0 ' for _ in range(int((ancho - 60) / 40))) + f'" fill="none" stroke="{CIELO}" stroke-width="3" stroke-linecap="round"/>')
-    return ''.join(p)
+def svg_nuca(tinta):
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="60mm" height="12mm"><title>Remera Handyx · nuca</title>
+{trazos('MDP · 2026', 'dm-sans-100-800-latin.woff2', 15, 100, 26, 6, tinta=tinta)}</svg>'''
 
 
-# ---------- espalda: 300 × 380 mm (unidades = mm × 2)
-W, H = 600, 760
-handys = ''
-for i, (n, x) in enumerate((('foco', 150), ('engranaje', 250), ('llave', 350), ('brocha', 450))):
-    g, h = incrustar(f'marca/personajes-v2/{n}.svg', x - 46, 0, 92)
-    handys += g.replace('translate(', f'translate(0 {664 - h}) translate(', 1)
-logo, lh = incrustar('marca/logo-handyx-blanco.svg', 150, 120, 300)
-espalda = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="300mm" height="380mm">
-<title>Remera Handyx · espalda (impresión, tela azul #1F57A8)</title>
-{logo}
-<text x="300" y="{120 + lh + 44}" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="700" font-size="22" letter-spacing="7" fill="{AMA}">SOLUCIONES, NO PROBLEMAS.</text>
-<g transform="translate(-83 -110) scale(1.25)">{skyline(70, 560, 460)}</g>
-<text x="300" y="720" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="800" font-size="17" letter-spacing="8" fill="{CIELO}">HECHO EN MAR DEL PLATA</text>
-</svg>'''
-(OUT / 'remera-espalda.svg').write_text(espalda)
-
-# ---------- frente: pecho izquierdo, 100 × 40 mm
-logo_f, lhf = incrustar('marca/logo-handyx-blanco.svg', 0, 0, 200)
-frente = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 {lhf + 34:.0f}" width="130mm" height="{(lhf + 34) / 2:.0f}mm">
-<title>Remera Handyx · frente (pecho)</title>{logo_f}
-<text x="2" y="{lhf + 26:.0f}" font-family="DM Sans, sans-serif" font-weight="700" font-size="15" letter-spacing="1.5" fill="{AMA}">Soluciones, no problemas.</text></svg>'''
-(OUT / 'remera-frente.svg').write_text(frente)
-print('remera → ', OUT)
+for nombre, tinta in (('blanca', '#FFFFFF'), ('navy', '#0E1D36')):
+    (OUT / f'remera-espalda-tinta-{nombre}.svg').write_text(svg_espalda(tinta))
+    (OUT / f'remera-frente-tinta-{nombre}.svg').write_text(svg_frente(tinta))
+    (OUT / f'remera-nuca-tinta-{nombre}.svg').write_text(svg_nuca(tinta))
+for viejo in ('remera-escena.svg', 'remera-espalda-impresion.png', 'remera-insignia-sola-impresion.png', 'remera-frente.svg'):
+    (OUT / viejo).unlink(missing_ok=True)
+print('remera v5 →', OUT)

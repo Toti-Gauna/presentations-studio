@@ -2,87 +2,85 @@
 <html lang="es-AR">
 <head>
 <meta charset="utf-8">
-<title>Handyx · Remera v4 (insignia de Mar del Plata)</title>
+<title>Handyx · Remera, edición 01</title>
 <link rel="stylesheet" href="../../plantilla/base.css">
 <style>
-  /* Espalda: una insignia circular con la maqueta de Mar del Plata de noche (remera-escena.svg) recortada en el círculo,
-     el texto alrededor y el logo arriba. Frente: logo chico en el pecho y la insignia en miniatura en la manga.
-     Las insignias (#insignia) se dibujan una vez y se reusan con <use>. Impresión a todo color (DTF). */
+  /* Presentación de la remera v5 (una tinta, serigrafía). Los archivos de impresión salen de herramientas/remera.py.
+     Tablero 1: frente y espalda. Tablero 2: detalle del estampado y ficha. Tablero 3: las tres telas. */
   body { background: #555; padding: 40px; display: grid; gap: 40px; }
-  .post { position: relative; width: 2000px; height: 1250px; overflow: hidden; background: radial-gradient(1200px 800px at 50% 45%, #FBFAF6 0%, #ECE8DE 100%); }
-  .post.oscuro { background: radial-gradient(1200px 800px at 50% 45%, #22385E 0%, #0B1528 100%); }
-  .titulo-r { position: absolute; top: 56px; left: 80px; font: 900 40px/1 var(--f-titulos); font-stretch: 125%; color: var(--navy); }
-  .titulo-r small { display: block; margin-top: 14px; font: 500 20px/1.4 var(--f-texto); color: var(--gris); letter-spacing: 0; }
-  .oscuro .titulo-r { color: #FFFFFF; } .oscuro .titulo-r small { color: rgba(233,239,249,.65); }
-  .prenda { position: absolute; top: 190px; width: 820px; }
-  .prenda > svg { width: 100%; display: block; overflow: visible; }
-  .rotulo-r { margin-top: 26px; text-align: center; font: 800 18px/1 var(--f-texto); letter-spacing: .3em; text-transform: uppercase; color: var(--gris); }
-  .oscuro .rotulo-r { color: rgba(233,239,249,.55); }
-  .ficha { position: absolute; right: 80px; top: 60px; display: flex; gap: 14px; align-items: center; font: 700 16px/1 var(--f-texto); letter-spacing: .14em; text-transform: uppercase; color: var(--gris); }
-  .ficha i { width: 26px; height: 26px; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(14,29,54,.15); }
+  .post { position: relative; width: 2000px; height: 1250px; overflow: hidden; background: #EFEBE2; color: var(--navy); }
+  .post::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .14; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .cab { position: absolute; left: 90px; right: 90px; top: 64px; display: flex; justify-content: space-between; align-items: baseline; font: 800 15px/1 var(--f-texto); letter-spacing: .3em; text-transform: uppercase; }
+  .cab b { font: 900 34px/1 var(--f-titulos); font-stretch: 125%; letter-spacing: -.01em; text-transform: none; }
+  .pie { position: absolute; left: 90px; right: 90px; bottom: 56px; display: flex; justify-content: space-between; font: 600 14px/1.4 var(--f-texto); letter-spacing: .14em; text-transform: uppercase; color: #5F6B84; border-top: 1.5px solid rgba(14,29,54,.2); padding-top: 18px; }
+  .prenda { position: absolute; }
+  .prenda svg { width: 100%; display: block; overflow: visible; }
+  .lbl { margin-top: 18px; text-align: center; font: 800 13px/1 var(--f-texto); letter-spacing: .34em; text-transform: uppercase; color: #5F6B84; }
+  .tela-zoom { position: absolute; left: 90px; top: 150px; width: 1180px; height: 960px; overflow: hidden; border-radius: 4px; }
+  .tela-zoom::after { content: ''; position: absolute; inset: 0; opacity: .22; mix-blend-mode: overlay;
+    background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.18) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px); }
+  .ficha { position: absolute; left: 1350px; top: 160px; width: 560px; }
+  .ficha h3 { font: 900 40px/1 var(--f-titulos); font-stretch: 125%; letter-spacing: -.01em; }
+  .ficha dl { margin-top: 36px; display: grid; grid-template-columns: 170px 1fr; row-gap: 22px; font: 500 18px/1.4 var(--f-texto); }
+  .ficha dt { font-weight: 800; font-size: 13px; letter-spacing: .26em; text-transform: uppercase; color: #5F6B84; padding-top: 4px; }
+  .muestras { margin-top: 40px; display: flex; gap: 22px; }
+  .muestras div { width: 150px; }
+  .muestras i { display: block; height: 120px; border-radius: 6px; box-shadow: inset 0 0 0 1.5px rgba(14,29,54,.12); }
+  .muestras span { display: block; margin-top: 10px; font: 700 14px/1.3 var(--f-texto); }
+  .muestras small { display: block; font: 500 13px/1.3 var(--f-texto); color: #5F6B84; }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <!-- insignia: 600 × 600 -->
-    <clipPath id="circ"><circle cx="300" cy="300" r="232"/></clipPath>
-    <radialGradient id="cielo" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#1D447F"/><stop offset=".6" stop-color="#0E1D36"/><stop offset="1" stop-color="#091426"/></radialGradient>
-    <path id="arco-sup" d="M 300 300 m -262 0 a 262 262 0 1 1 524 0"/>
-    <path id="arco-inf" d="M 300 300 m -276 0 a 276 276 0 0 0 552 0"/>
-    <g id="insignia">
-      <circle cx="300" cy="300" r="298" fill="#0E1D36"/>
-      <circle cx="300" cy="300" r="290" fill="none" stroke="#F5F59A" stroke-width="3"/>
-      <circle cx="300" cy="300" r="240" fill="none" stroke="#F5F59A" stroke-width="2"/>
-      <g clip-path="url(#circ)">
-        <rect x="60" y="60" width="480" height="480" fill="url(#cielo)"/>
-        <g fill="#F5F59A" opacity=".9"><circle cx="190" cy="140" r="2"/><circle cx="250" cy="110" r="1.5"/><circle cx="380" cy="130" r="2"/><circle cx="420" cy="175" r="1.4"/><circle cx="150" cy="200" r="1.4"/><circle cx="330" cy="95" r="1.4"/></g>
-        <circle cx="230" cy="150" r="20" fill="#F5F59A"/><circle cx="239" cy="143" r="18" fill="url(#cielo)"/>
-        <image href="remera-escena.svg" x="-6" y="150" width="612" height="470" preserveAspectRatio="xMidYMid meet"/>
-      </g>
-      <text font-family="DM Sans, sans-serif" font-weight="800" font-size="25" letter-spacing="9" fill="#FFFFFF"><textPath href="#arco-sup" startOffset="50%" text-anchor="middle">HECHO EN MAR DEL PLATA</textPath></text>
-      <text font-family="DM Sans, sans-serif" font-weight="700" font-size="19" letter-spacing="7" fill="#F5F59A"><textPath href="#arco-inf" startOffset="50%" text-anchor="middle">SOLUCIONES, NO PROBLEMAS</textPath></text>
-      <circle cx="40" cy="300" r="5" fill="#F5F59A"/><circle cx="560" cy="300" r="5" fill="#F5F59A"/>
-    </g>
-    <!-- remera con volumen: sombra lateral, pliegues suaves y costuras -->
-    <linearGradient id="vol" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".22"/><stop offset=".18" stop-color="#000" stop-opacity="0"/><stop offset=".82" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
-    <linearGradient id="luz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".12"/></linearGradient>
-    <path id="cuerpo" d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22 L360 58 C372 63 381 72 386 84 L414 150 C417 158 413 166 405 169 L352 188 C344 191 336 187 333 179 L322 150 L324 418 C324 428 316 436 306 436 L94 436 C84 436 76 428 76 418 L78 150 L67 179 C64 187 56 191 48 188 L-5 169 C-13 166 -17 158 -14 150 L14 84 C19 72 28 63 40 58 Z"/>
-  </defs>
-</svg>
-<template id="remera"><svg viewBox="-20 0 440 460">
-  <ellipse cx="200" cy="448" rx="170" ry="10" fill="#000" opacity=".16"/>
-  <use href="#cuerpo" fill="TELA"/>
-  <use href="#cuerpo" fill="url(#vol)"/><use href="#cuerpo" fill="url(#luz)"/>
-  <path d="M110 200 C130 260 120 330 135 410 M290 210 C272 270 282 340 268 410 M78 150 C90 140 96 120 92 96 M322 150 C310 140 304 120 308 96" fill="none" stroke="#000" stroke-opacity=".07" stroke-width="5" stroke-linecap="round"/>
-  CUELLO
-  <path d="M-8 158 L44 178 M408 158 L356 178" stroke="#000" stroke-opacity=".18" stroke-width="1.2" stroke-dasharray="3 3"/>
-  <path d="M80 424 H320" stroke="#000" stroke-opacity=".18" stroke-width="1.2" stroke-dasharray="3 3"/>
-  ESTAMPA
-</svg></template>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="vol" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".2"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>
+  <linearGradient id="luz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".09"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".1"/></linearGradient>
+  <path id="cuerpo" d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22 L360 58 C372 63 381 72 386 84 L414 150 C417 158 413 166 405 169 L352 188 C344 191 336 187 333 179 L322 150 L324 418 C324 428 316 436 306 436 L94 436 C84 436 76 428 76 418 L78 150 L67 179 C64 187 56 191 48 188 L-5 169 C-13 166 -17 158 -14 150 L14 84 C19 72 28 63 40 58 Z"/>
+</defs></svg>
 <script>
-  const VARIANTES = [
-    { id: 'remera-azul', tela: '#1F57A8', claro: false, nombre: 'Tela azul de marca' },
-    { id: 'remera-navy', tela: '#13284A', claro: false, nombre: 'Tela navy' },
-    { id: 'remera-blanca', tela: '#F7F6F1', claro: true, nombre: 'Tela blanca' },
-  ];
-  const cuelloFrente = (v) => `<path d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22 C258 52 232 66 200 66 C168 66 142 52 128 22 Z" fill="#000" opacity=".22"/><path d="M128 22 C142 52 168 66 200 66 C232 66 258 52 272 22" fill="none" stroke="${v.claro ? '#0E1D36' : '#FFFFFF'}" stroke-opacity=".25" stroke-width="2"/>`;
-  const cuelloEspalda = () => `<path d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22" fill="none" stroke="#000" stroke-opacity=".25" stroke-width="5"/>`;
-  const logo = (v) => v.claro ? '../../marca/logo-handyx.svg' : '../../marca/logo-handyx-blanco.svg';
-  const t = document.getElementById('remera').innerHTML;
-  const remera = (v, cuello, estampa) => t.replace('TELA', v.tela).replace('CUELLO', cuello).replace('ESTAMPA', estampa);
-  document.write(VARIANTES.map((v) => `<section class="post${v.oscuro ? ' oscuro' : ''}" id="${v.id}">
-    <p class="titulo-r">Remera Handyx<small>${v.nombre} · insignia de Mar del Plata · impresión a todo color</small></p>
-    <div class="ficha">${VARIANTES.map((x) => `<i style="background:${x.tela}"></i>`).join('')}</div>
-    <div class="prenda" style="left:150px">${remera(v, cuelloFrente(v), `
-      <image href="${logo(v)}" x="232" y="112" width="62" height="16" preserveAspectRatio="xMinYMid meet"/>
-      <text x="232" y="140" font-family="DM Sans, sans-serif" font-weight="700" font-size="5.6" letter-spacing="1.1" fill="${v.claro ? '#1F57A8' : '#F5F59A'}">SOLUCIONES, NO PROBLEMAS.</text>
-      <g transform="translate(356 104) rotate(22) scale(.07)"><use href="#insignia"/></g>`)}<p class="rotulo-r">Frente</p></div>
-    <div class="prenda" style="left:1030px">${remera(v, cuelloEspalda(), `
-      <image href="${logo(v)}" x="155" y="70" width="90" height="23" preserveAspectRatio="xMidYMid meet"/>
-      <g transform="translate(95 112) scale(.3417)"><use href="#insignia"/></g>
-      <text x="200" y="338" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="800" font-size="6.4" letter-spacing="2.4" fill="${v.claro ? '#0E1D36' : '#E9EFF9'}" opacity=".85">38°00′ S · 57°33′ O</text>`)}<p class="rotulo-r">Espalda</p></div>
-  </section>`).join(''));
+  const TELAS = {
+    azul: { tela: '#1F57A8', tinta: 'blanca', nombre: 'Azul Handyx', nota: 'Tinta blanca' },
+    navy: { tela: '#13284A', tinta: 'blanca', nombre: 'Navy', nota: 'Tinta blanca' },
+    hueso: { tela: '#F1EEE6', tinta: 'navy', nombre: 'Hueso', nota: 'Tinta navy' },
+  };
+  const remera = (t, lado) => `<svg viewBox="-20 0 440 460">
+      <ellipse cx="200" cy="448" rx="176" ry="9" fill="#000" opacity=".13"/>
+      <use href="#cuerpo" fill="${t.tela}"/><use href="#cuerpo" fill="url(#vol)"/><use href="#cuerpo" fill="url(#luz)"/>
+      <path d="M112 210 C130 270 120 336 136 410 M288 214 C272 276 282 342 266 410" fill="none" stroke="#000" stroke-opacity=".06" stroke-width="6" stroke-linecap="round"/>
+      ${lado === 'frente'
+        ? `<path d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22 C258 52 232 66 200 66 C168 66 142 52 128 22 Z" fill="#000" opacity=".2"/><path d="M128 22 C142 52 168 66 200 66 C232 66 258 52 272 22" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="5"/>
+           <image href="remera-frente-tinta-${t.tinta}.svg" x="236" y="104" width="44" height="14"/>`
+        : `<path d="M128 22 C150 34 175 40 200 40 C225 40 250 34 272 22" fill="none" stroke="#000" stroke-opacity=".2" stroke-width="5"/>
+           <image href="remera-nuca-tinta-${t.tinta}.svg" x="186" y="50" width="28" height="6"/>
+           <image href="remera-espalda-tinta-${t.tinta}.svg" x="132" y="96" width="136" height="64"/>`}
+      <path d="M-8 158 L44 178 M408 158 L356 178 M80 424 H320" stroke="#000" stroke-opacity=".16" stroke-width="1.2" stroke-dasharray="3 3"/>
+    </svg>`;
+  const az = TELAS.azul;
+  document.write(`
+  <section class="post" id="remera-1">
+    <div class="cab"><b>Remera Handyx · Edición 01</b><span>Azul Handyx · tinta blanca</span></div>
+    <div class="prenda" style="left:150px;top:170px;width:790px">${remera(az, 'frente')}<p class="lbl">Frente</p></div>
+    <div class="prenda" style="left:1060px;top:170px;width:790px">${remera(az, 'espalda')}<p class="lbl">Espalda</p></div>
+    <div class="pie"><span>Serigrafía · una tinta</span><span>La costa de Mar del Plata en una sola línea</span><span>Handyx · Hecho en Mar del Plata</span></div>
+  </section>
+  <section class="post" id="remera-2">
+    <div class="cab"><b>Detalle del estampado</b><span>Espalda · escala 1:2</span></div>
+    <div class="tela-zoom" style="background:${az.tela}"><img src="remera-espalda-tinta-blanca.svg" alt="" style="position:absolute;left:70px;top:250px;width:1040px"></div>
+    <div class="ficha"><h3>Una línea,<br>toda la costa.</h3>
+      <dl><dt>Dibujo</dt><dd>Torreón del Monje, la Rambla, el Casino, las torres, la Catedral y el faro, en un trazo continuo.</dd>
+        <dt>Técnica</dt><dd>Serigrafía, una tinta. Sin fondos ni degradés.</dd>
+        <dt>Espalda</dt><dd>280 mm de ancho, a 80 mm del cuello.</dd>
+        <dt>Pecho</dt><dd>Logo de 80 mm, lado izquierdo.</dd>
+        <dt>Nuca</dt><dd>«MDP · 2026», 60 mm.</dd></dl>
+      <div class="muestras">${Object.values(TELAS).map((t) => `<div><i style="background:${t.tela}"></i><span>${t.nombre}</span><small>${t.nota}</small></div>`).join('')}</div>
+    </div>
+    <div class="pie"><span>Archivos vectoriales: tinta blanca y tinta navy</span><span>Pedir prueba de estampado antes de la tirada</span></div>
+  </section>
+  <section class="post" id="remera-3">
+    <div class="cab"><b>Tres telas</b><span>Espalda</span></div>
+    ${Object.values(TELAS).map((t, i) => `<div class="prenda" style="left:${100 + i * 610}px;top:220px;width:580px">${remera(t, 'espalda')}<p class="lbl">${t.nombre} · ${t.nota}</p></div>`).join('')}
+    <div class="pie"><span>Serigrafía · una tinta</span><span>Handyx · Edición 01</span></div>
+  </section>`);
 </script>
 </body>
 </html>
