@@ -39,7 +39,7 @@ function correr(cmd, args) {
       await Promise.all([...document.images].map((im) => (im.complete ? null : new Promise((ok) => { im.onload = im.onerror = ok; }))));
       if (window.__numerar) window.__numerar();
       const apaisado = document.documentElement.classList.contains('apaisado');
-      return { apaisado, titulo: document.title };
+      return { apaisado, formato: document.documentElement.dataset.formato || '', titulo: document.title };
     }, imprenta);
   }
 
@@ -54,7 +54,8 @@ function correr(cmd, args) {
   if (ctl.errores.length) { await nav.close(); fs.rmSync(tmp, { recursive: true, force: true }); process.exit(2); }
   if (ctl.avisos.length && !flags.includes('--permitir-avisos')) console.log('  (los avisos no frenan la exportación)');
 
-  const [W, H] = info.apaisado ? [297, 210] : [210, 297];
+  // data-formato="297x420" en <html> para otros tamaños (afiches A3); si no, A4 vertical o apaisado
+  const [W, H] = info.formato ? info.formato.split('x').map(Number) : info.apaisado ? [297, 210] : [210, 297];
   const pdfOpc = { printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 }, preferCSSPageSize: false, tagged: true, outline: true };
 
   // 2) imprenta: con sangrado; las cajas TrimBox/BleedBox las pone cajas-pdf.py

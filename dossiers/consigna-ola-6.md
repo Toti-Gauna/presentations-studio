@@ -124,3 +124,22 @@ porcentajes, usuarios ni resultados.
 - **No hagas commit ni push** (lo hace el coordinador). No toques otras piezas ni `plantilla/`.
 - Informe final (corto): páginas, qué responde cada pregunta difícil, pantallas usadas, preguntas abiertas y cualquier
   contradicción entre fuentes que encontraste (señalala, no elijas).
+
+## Agregado del 08/11 (Ignacio, después de ver las muestras)
+
+- **Fotos reales de Mar del Plata** en `marca/fotos/` (de Ignacio, usables): `costa-atardecer`, `rambla-fuego` (Rambla y
+  Casino al atardecer), `casino-plaza` (Hotel Provincial y Casino desde la plaza), `aerea-cabo-puerto`, `aerea-centro-playa`,
+  `aerea-faro-mogotes`, `aerea-puerto-sur`, `aerea-quintas`. Cada una en tres versiones: color (`.webp`), duotono navy
+  (`-navy.webp`) y duotono azul claro (`-azul.webp`). Usalas a sangre en tapas, aperturas y fondos (duotono para que
+  respete la paleta; color solo con una capa navy encima). Ojo con la resolución: el control de 150 ppp manda
+  (`costa-atardecer` es chica: solo en recuadros o media página). En `rambla-fuego` hay una persona de espaldas abajo a la
+  izquierda: recortala o usá la mitad superior.
+- **Fondos como la maqueta**: seguí usando `iso.js` en tapas/aperturas; combinalo con fotos (foto duotono arriba, maqueta
+  abajo, por ejemplo).
+- **Lema nuevo propuesto por Ignacio**: «Un problema viejo con una nueva solución que elegís.» Usalo donde sume (tapa o
+  apertura, contratapa).
+- **Personajes con estética nueva**: modernos, minimalistas, menos infantiles, convivendo con los edificios. Están en
+  `marca/personajes-v2/{foco,engranaje,llave,brocha}.svg` (los dibuja el coordinador; si todavía no están, dejá el lugar
+  con `<img src="../../marca/personajes-v2/foco.svg">` igual: van a aparecer). **No uses más** `marca/personajes/*.svg`.
+- Componentes reutilizables: si armás algo que se repite en tu pieza (tarjeta, bloque, página tipo), definilo una vez en
+  tu `<style>` con clases y reutilizalo; CSS común ya está en `premium.css`.

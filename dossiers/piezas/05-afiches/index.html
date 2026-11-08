@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es-AR" data-pieza="usuario" data-formato="297x420" style="--ancho:297mm;--alto:420mm">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Afiches por barrio (A3)</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<link rel="stylesheet" href="../../plantilla/premium.css">
+<style>
+  /* Un afiche = un barrio. Todo sale de la lista ZONAS de abajo: para sumar un barrio, se agrega una línea y su QR
+     (herramientas/generar-qr-zonas.ts). A3 vertical, 3 mm de sangrado en el PDF de imprenta. */
+  .afiche { --fondo: var(--navy); color: #FFFFFF; }
+  .fondo-foto { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); height: calc(270mm + var(--sangrado)); overflow: hidden; }
+  .fondo-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .fondo-foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 29, 54, 0.55) 0%, rgba(14, 29, 54, 0.05) 35%, rgba(14, 29, 54, 0.2) 62%, #0E1D36 100%); }
+  .fondo-iso { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: calc(-1 * var(--sangrado)); height: calc(270mm + var(--sangrado)); overflow: hidden; background: var(--azul); }
+  .fondo-iso.noche { background: radial-gradient(160mm 120mm at 60% 60%, #163463 0%, #0E1D36 75%); }
+  .fondo-iso > div { position: absolute; width: 230mm; right: -24mm; bottom: 34mm; }
+  .fondo-iso::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40mm; background: linear-gradient(180deg, rgba(14, 29, 54, 0), #0E1D36); }
+  .a-caja { position: absolute; left: 20mm; right: 20mm; top: 18mm; bottom: 18mm; display: flex; flex-direction: column; }
+  .a-caja > * { flex-shrink: 0; }
+  .a-cab { display: flex; justify-content: space-between; align-items: center; }
+  .a-cab img { height: 13mm; }
+  .a-pill { font: 800 9pt/1 var(--f-texto); letter-spacing: 0.22em; text-transform: uppercase; padding: 3mm 5mm; border-radius: 99px; background: rgba(14, 29, 54, 0.55); box-shadow: inset 0 0 0 0.35mm rgba(255, 255, 255, 0.35); }
+  .a-zona { margin-top: 20mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 92pt; line-height: 0.86; letter-spacing: -0.03em; color: #FFFFFF; text-wrap: balance; }
+  .a-zona i { font-style: normal; color: var(--amarillo); }
+  .a-gancho { margin-top: 7mm; font: 600 17pt/1.3 var(--f-texto); color: rgba(255, 255, 255, 0.92); max-width: 190mm; text-shadow: 0 0.5mm 3mm rgba(14, 29, 54, 0.5); }
+  .a-lema { margin-top: auto; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 33pt; line-height: 0.98; letter-spacing: -0.015em; max-width: 220mm; text-wrap: balance; }
+  .a-lema span { color: var(--amarillo); }
+  .tarjeta { position: relative; margin-top: 36mm; display: grid; grid-template-columns: 86mm minmax(0, 1fr); gap: 10mm; padding: 10mm; border-radius: 6mm; background: #FFFFFF; color: var(--navy); box-shadow: 0 6mm 20mm rgba(0, 0, 0, 0.35); }
+  .tarjeta .qrz { width: 86mm; }
+  .tarjeta .qrz img { width: 86mm; height: 86mm; display: block; }
+  .tarjeta .url { margin-top: 2.5mm; text-align: center; font: 800 10pt/1 var(--f-texto); letter-spacing: 0.02em; color: var(--azul); }
+  .pasos-a { display: grid; gap: 5.5mm; align-content: start; }
+  .pasos-a .t { font: 800 8pt/1 var(--f-texto); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gris); }
+  .paso-a { display: grid; grid-template-columns: 11mm minmax(0, 1fr); gap: 4mm; align-items: center; }
+  .paso-a .n { width: 11mm; height: 11mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 13pt/1 var(--f-titulos); font-stretch: 112.5%; }
+  .paso-a:last-child .n { background: var(--amarillo); color: var(--navy); }
+  .paso-a b { display: block; font: 800 14pt/1.15 var(--f-texto); color: var(--navy); }
+  .paso-a span { display: block; font: 400 10pt/1.35 var(--f-texto); color: var(--gris); margin-top: 0.6mm; }
+  .rubros { display: flex; flex-wrap: wrap; gap: 2mm; margin-top: 2mm; }
+  .rubros span { font: 700 8pt/1 var(--f-texto); padding: 2mm 3mm; border-radius: 99px; background: var(--cielo); color: var(--azul-profundo); }
+  .tel-a { position: absolute; right: -6mm; bottom: calc(100% - 22mm); width: 76mm; z-index: 3; }
+  .handys { position: absolute; left: 6mm; bottom: calc(100% - 1mm); display: flex; align-items: flex-end; gap: 2mm; z-index: 4; }
+  .handys img { width: 27mm; }
+  .letra { margin-top: 6mm; display: flex; justify-content: space-between; gap: 8mm; font: 500 8.4pt/1.45 var(--f-texto); color: rgba(233, 239, 249, 0.72); }
+  .letra b { color: #FFFFFF; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="afiches"></div>
+<script>
+  // Un renglón por barrio. fondo: 'foto:<archivo>' (duotono navy en img/) o 'iso:<maqueta|costa|barrio>:<dia|noche>'.
+  const ZONAS = [
+    { slug: 'centro', nombre: 'Centro', gancho: 'Del Casino a la Peatonal: especialistas de tu zona, con propuestas claras para elegir.', fondo: 'foto:casino-plaza', foto: 'center 55%', handys: ['foco', 'llave'] },
+    { slug: 'guemes', nombre: 'Güemes', gancho: 'Se rompió algo en casa, en Güemes. Contalo y elegí entre propuestas con precio.', fondo: 'iso:barrio:dia', handys: ['brocha', 'foco'] },
+    { slug: 'playa-grande', nombre: 'Playa<br>Grande', gancho: 'De Alem al Torreón: el arreglo que necesitás, con especialistas de la zona.', fondo: 'foto:aerea-cabo-puerto', foto: 'center 60%', handys: ['engranaje', 'llave'] },
+    { slug: 'los-troncos', nombre: 'Los<br>Troncos', gancho: 'Tu chalet merece un especialista verificado. Pedilo y compará antes de elegir.', fondo: 'iso:barrio:noche', handys: ['llave', 'brocha'] },
+    { slug: 'stella-maris', nombre: 'Stella<br>Maris', gancho: 'Frente al mar o a dos cuadras: pedí tu arreglo y elegí por calidad y precio.', fondo: 'foto:aerea-centro-playa', foto: 'center 70%', handys: ['foco', 'engranaje'] },
+    { slug: 'plaza-mitre', nombre: 'Plaza<br>Mitre', gancho: 'Del edificio a la casa: especialistas de tu zona para electricidad, plomería, gas y más.', fondo: 'foto:rambla-fuego', foto: 'center 35%', handys: ['brocha', 'llave'] },
+    { slug: 'la-perla', nombre: 'La Perla', gancho: 'Un pedido, varias propuestas con precio y fecha. Vos elegís.', fondo: 'iso:costa:dia', handys: ['foco', 'brocha'] },
+    { slug: 'varese', nombre: 'Varese', gancho: 'Cerca de la playa y cerca de tu casa: especialistas del barrio, a un pedido de distancia.', fondo: 'iso:costa:noche', handys: ['engranaje', 'foco'] },
+    { slug: 'chauvin', nombre: 'Chauvín', gancho: 'Chalets, departamentos y PH: contá qué pasa y recibí propuestas claras.', fondo: 'iso:maqueta:dia', handys: ['llave', 'engranaje'] },
+    { slug: 'punta-mogotes', nombre: 'Punta<br>Mogotes', gancho: 'Del faro a tu casa: pedí tu arreglo y pagale directo al especialista.', fondo: 'foto:aerea-faro-mogotes', foto: 'center 60%', handys: ['foco', 'llave'] },
+  ];
+  const marca = (s) => s.replace('elegís', '<span>elegís</span>');
+  document.getElementById('afiches').outerHTML = ZONAS.map((z, i) => {
+    const [tipo, a, b] = z.fondo.split(':');
+    const fondo = tipo === 'foto'
+      ? `<div class="fondo-foto fondo"><img src="img/${a}-navy.webp" alt="" style="object-position:${z.foto || 'center'}"></div>`
+      : `<div class="fondo-iso fondo ${b}"><div data-iso="${a}" data-paleta="${b}" data-pines="1" data-semilla="${i + 3}"></div></div>`;
+    return `<section class="pagina afiche" data-folio="${i + 1}"><div class="lamina">${fondo}
+      <div class="a-caja">
+        <div class="a-cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span class="a-pill">Mar del Plata · ${z.nombre.replace('<br>', ' ')}</span></div>
+        <h1 class="a-zona">${z.nombre}<i>.</i></h1>
+        <p class="a-gancho">${z.gancho}</p>
+        <p class="a-lema">${marca('Un problema viejo con una nueva solución que elegís.')}</p>
+        <div class="tarjeta"><img class="tel-a permite-salir" src="img/m-inicio-titanio-izq.webp" alt=""><div class="handys permite-salir">${z.handys.map((h) => `<img src="../../marca/personajes-v2/${h}.svg" alt="">`).join('')}</div>
+          <div class="qrz"><img src="qr/${z.slug}.svg" alt="Código QR al registro de Handyx"><p class="url">handyc.com/registro</p></div>
+          <div class="pasos-a">
+            <span class="t">Así de simple</span>
+            <div class="paso-a"><span class="n">1</span><div><b>Escaneá el código</b><span>Con la cámara del celular.</span></div></div>
+            <div class="paso-a"><span class="n">2</span><div><b>Registrate</b><span>Es gratis y tarda un minuto. Primero la cuenta, después el pedido.</span></div></div>
+            <div class="paso-a"><span class="n">3</span><div><b>Pedí tu arreglo</b><span>Recibís propuestas con precio y elegís vos.</span></div></div>
+            <div class="rubros"><span>Electricidad</span><span>Plomería</span><span>Gas</span><span>Cerrajería</span><span>Albañilería</span><span>Aire acondicionado</span></div>
+          </div>
+        </div>
+        <div class="letra"><span><b>Pagás directo al especialista.</b> Tarifa de servicio 0 % hasta el 10/12/2026.</span><span>Demo con invitación · noviembre de 2026 · Pantalla: diseño propuesto</span></div>
+      </div>
+    </div></section>`;
+  }).join('');
+</script>
+<script src="../../plantilla/iso.js"></script>
+<script src="../../plantilla/pieza.js"></script>
+</body>
+</html>

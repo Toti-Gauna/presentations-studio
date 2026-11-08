@@ -18,7 +18,13 @@ PIEZAS = {
     '01-business': ('Handyx-01-Business-Investment', 'Dossier 01 · Business & Investment', 20),
     '02-customer': ('Handyx-02-Customer-App', 'Dossier 02 · Customer App', 20),
     '03-professional': ('Handyx-03-Professional-App', 'Dossier 03 · Professional App', 20),
-    '04-operations': ('Handyx-04-Operations-Portal', 'Dossier 04 · Operations Portal', 16),
+    '04-operations': ('Handyx-04-Operations-Portal', 'Dossier 04 · Operations Portal', 20),
+    '05-afiches': ('Handyx-Afiches-Barrios', 'Afiches por barrio (A3, con QR al registro)', 10),
+}
+# piezas de pantalla (PNG/SVG, sin PDF): se exportan con exportar-redes.cjs
+REDES = {
+    '06-instagram': ('Handyx-Instagram', 'Publicaciones para Instagram (posts 1080 × 1350 e historias 1080 × 1920)'),
+    '07-remera': ('Handyx-Remera', 'Remera v2: archivos de impresión SVG (frente y espalda) y maqueta'),
 }
 
 IMPRESION_DOSSIER = """- Formato final: A4 vertical (210 × 297 mm), {paginas} páginas, impresión doble faz.
@@ -27,13 +33,19 @@ IMPRESION_DOSSIER = """- Formato final: A4 vertical (210 × 297 mm), {paginas} p
 - Encuadernación sugerida: grapa a caballete (las {paginas} páginas son múltiplo de 4). Página 1 = tapa, {paginas} = contratapa.
 - Papel sugerido: interior ilustración mate 150 g; tapas 250–300 g (si se imprimen aparte, son las páginas 1, 2,
   {anteultima} y {paginas})."""
-IMPRESION_TRIPTICO = """- Formato final: A4 apaisado (297 × 210 mm), doble faz, plegado envolvente a 100 × 210 mm.
-- Archivo de imprenta: {nombre}-imprenta.pdf, 2 páginas (exterior, interior) de 303 × 216 mm con 3 mm de sangrado,
-  TrimBox y BleedBox. Paneles de 97 / 100 / 100 mm (exterior) y 100 / 100 / 97 mm (interior): el de 97 mm es la solapa
-  que se pliega hacia adentro. Ver guia-de-plegado.pdf.
+IMPRESION_TRIPTICO = """- Formato final: A4 apaisado (297 × 210 mm), doble faz, plegado en acordeón (zigzag) a 74,25 × 210 mm.
+- Archivo de imprenta: {nombre}-imprenta.pdf, 2 páginas (cara 1, cara 2) de 303 × 216 mm con 3 mm de sangrado,
+  TrimBox y BleedBox. Cuatro paneles iguales de 74,25 mm por cara y tres pliegues alternados. Ver guia-de-plegado.pdf.
 - Papel sugerido: ilustración mate 170 g, con hendido en los pliegues; volteo por el lado corto (al girar la hoja de izquierda a derecha, las dos caras
   quedan derechas): pedir una prueba impresa y plegada antes de la tirada. Color RGB: pedir
   prueba de color antes de una tirada grande."""
+
+IMPRESION_AFICHE = """- Formato final: A3 vertical (297 × 420 mm), una cara, {paginas} afiches (uno por barrio).
+- Archivo de imprenta: {nombre}-imprenta.pdf, 303 × 426 mm por página (3 mm de sangrado), con TrimBox y BleedBox.
+- Cada QR lleva al registro de la app con su barrio (https://handyc.com/registro/?zona=…&origen=afiche): primero la
+  cuenta, después el pedido. Probá cada QR con un celular antes de imprimir y antes de pegar: el registro tiene que
+  estar publicado.
+- Papel sugerido: ilustración mate 170 g (interior) o sintético para exterior. Color RGB: pedir prueba de color."""
 
 LEEME = """Handyx · {titulo}
 Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026 · Estado al {corte}
@@ -96,7 +108,7 @@ def empaquetar(pieza: str):
         extra = '\n- guia-de-plegado.pdf: paneles, medidas, pliegues y orden de plegado para la imprenta.'
     ENTREGA.mkdir(parents=True, exist_ok=True)
     zipp = ENTREGA / f'{nombre}.zip'
-    impresion = (IMPRESION_TRIPTICO if pieza == '00-triptico' else IMPRESION_DOSSIER).format(nombre=nombre, paginas=paginas, anteultima=paginas - 1)
+    impresion = (IMPRESION_TRIPTICO if pieza == '00-triptico' else IMPRESION_AFICHE if pieza == '05-afiches' else IMPRESION_DOSSIER).format(nombre=nombre, paginas=paginas, anteultima=paginas - 1)
     leeme = LEEME.format(titulo=titulo, corte=CORTE, nombre=nombre, extra=extra, impresion=impresion, pieza=pieza, contacto=CONTACTO)
     raiz = nombre
     with zipfile.ZipFile(zipp, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as z:
@@ -121,13 +133,33 @@ def empaquetar(pieza: str):
             z.write(D / 'marca' / rel, f'{fe}/marca/{rel}')
         for h in ('exportar-pieza.cjs', 'cajas-pdf.py'):
             z.write(D / 'herramientas' / h, f'{fe}/herramientas/{h}')
-    if pieza != '00-triptico':
+    if pieza not in ('00-triptico', '05-afiches'):
         hub = ENTREGA / 'pdf-para-landing'
         hub.mkdir(exist_ok=True)
         shutil.copy(out / f'{nombre}-digital.pdf', hub / f'{nombre}.pdf')
     print(f'{pieza}: {paginas} páginas → {zipp.relative_to(R)} ({zipp.stat().st_size / 1e6:.1f} MB)')
 
 
+def empaquetar_redes(pieza: str):
+    nombre, titulo = REDES[pieza]
+    carpeta = D / 'piezas' / pieza
+    out = SALIDA / pieza
+    if out.exists():
+        shutil.rmtree(out)
+    correr(['node', 'dossiers/herramientas/exportar-redes.cjs', str(carpeta / 'index.html'), str(out)])
+    ENTREGA.mkdir(parents=True, exist_ok=True)
+    zipp = ENTREGA / f'{nombre}.zip'
+    with zipfile.ZipFile(zipp, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+        z.writestr(f'{nombre}/LEEME.txt', f'Handyx · {titulo}\nEstado al {CORTE}. Pantallas: diseño propuesto, datos ficticios.\n'
+                   'Para regenerar: node dossiers/herramientas/exportar-redes.cjs <index.html> <carpeta>.\n'
+                   f'Contacto: {CONTACTO}\n')
+        for png in sorted(out.glob('*.png')):
+            z.write(png, f'{nombre}/{png.name}', compress_type=zipfile.ZIP_STORED)
+        for svg in sorted(carpeta.glob('*.svg')):
+            z.write(svg, f'{nombre}/impresion/{svg.name}')
+    print(f'{pieza}: {len(list(out.glob("*.png")))} imágenes → {zipp.relative_to(R)} ({zipp.stat().st_size / 1e6:.1f} MB)')
+
+
 if __name__ == '__main__':
-    for p in (sys.argv[1:] or list(PIEZAS)):
-        empaquetar(p)
+    for p in (sys.argv[1:] or list(PIEZAS) + list(REDES)):
+        (empaquetar_redes if p in REDES else empaquetar)(p)

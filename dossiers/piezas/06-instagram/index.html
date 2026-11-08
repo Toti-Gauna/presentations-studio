@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Handyx · Publicaciones para Instagram</title>
+<link rel="stylesheet" href="../../plantilla/base.css">
+<link rel="stylesheet" href="../../plantilla/premium.css">
+<style>
+  /* Posts 1080 × 1350 (4:5) e historias 1080 × 1920. Una plantilla, tres fondos: foto duotono, maqueta y liso.
+     Se exportan a PNG con herramientas/exportar-redes.cjs. */
+  body { background: #555; padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; }
+  .post { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--navy); color: #FFFFFF; font-size: 30px; }
+  .post.historia { height: 1920px; }
+  .post.azul { background: var(--azul); } .post.hueso { background: var(--hueso); color: var(--navy); }
+  .post .foto { position: absolute; inset: 0; } .post .foto img { width: 100%; height: 100%; object-fit: cover; }
+  .post .foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,29,54,.55) 0%, rgba(14,29,54,.1) 38%, rgba(14,29,54,.85) 78%, #0E1D36 100%); }
+  .post .iso { position: absolute; left: 60px; right: -120px; bottom: 120px; }
+  .post .in { position: absolute; inset: 80px; display: flex; flex-direction: column; }
+  .post .cab { display: flex; justify-content: space-between; align-items: center; }
+  .post .cab img { height: 54px; }
+  .post .cab span { font: 800 22px/1 var(--f-texto); letter-spacing: .22em; text-transform: uppercase; opacity: .8; }
+  .post h2 { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 96px; line-height: .95; letter-spacing: -.02em; text-wrap: balance; color: inherit; }
+  .post h2 em { font-style: normal; color: var(--amarillo); }
+  .post.hueso h2 em { color: var(--azul); background: linear-gradient(transparent 60%, var(--amarillo) 60%, var(--amarillo) 92%, transparent 92%); }
+  .post .bajo { font: 500 36px/1.4 var(--f-texto); opacity: .9; margin-top: 28px; max-width: 820px; text-wrap: pretty; }
+  .post .pie { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; font: 600 22px/1.35 var(--f-texto); opacity: .75; }
+  .post .tel { position: absolute; }
+  .post .handys { position: absolute; display: flex; gap: 10px; align-items: flex-end; }
+  .post .handys img { width: 150px; }
+  .pasos-ig { display: grid; gap: 34px; margin-top: 60px; }
+  .pasos-ig div { display: grid; grid-template-columns: 84px 1fr; gap: 28px; align-items: center; font: 700 42px/1.2 var(--f-texto); }
+  .pasos-ig div span:first-child { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: var(--amarillo); color: var(--navy); font: 900 40px/1 var(--f-titulos); }
+  .pasos-ig small { display: block; font: 400 28px/1.35 var(--f-texto); opacity: .75; margin-top: 4px; }
+  .rubros-ig { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 60px; }
+  .rubros-ig div { padding: 34px 26px; border-radius: 28px; background: #FFFFFF; color: var(--navy); font: 800 34px/1.1 var(--f-texto); box-shadow: 0 10px 0 #DADFE8; }
+  .rubros-ig svg { width: 64px; height: 64px; stroke: var(--azul); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; display: block; margin-bottom: 22px; }
+  .qr-ig { background: #FFFFFF; border-radius: 40px; padding: 40px; width: 520px; }
+  .qr-ig img { width: 440px; height: 440px; display: block; }
+  .qr-ig p { text-align: center; color: var(--azul); font: 800 34px/1 var(--f-texto); margin-top: 20px; }
+  .chip-ig { display: inline-flex; align-items: center; gap: 14px; padding: 16px 26px; border-radius: 99px; background: rgba(255,255,255,.12); font: 700 26px/1 var(--f-texto); }
+  .chip-ig::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--amarillo); }
+  .sellos { display: flex; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
+  .sellos span { padding: 18px 28px; border-radius: 99px; background: #E2F0E7; color: #0D5A31; font: 800 30px/1 var(--f-texto); }
+</style>
+</head>
+<body>
+
+<!-- 1 · lanzamiento con la Rambla -->
+<section class="post" id="ig-01">
+  <div class="foto"><img src="img/rambla-fuego-navy.webp" alt="" style="object-position:center 30%"></div>
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Mar del Plata</span></div>
+    <h2 style="margin-top:auto">Un problema viejo con una nueva solución que <em>elegís</em>.</h2>
+    <p class="bajo">Pedí un arreglo, recibí propuestas con precio y elegí vos. Hecho en Mar del Plata.</p>
+    <div class="pie" style="margin-top:50px"><span>handyc.com/registro</span><span>Demo con invitación · nov. 2026</span></div>
+  </div>
+</section>
+
+<!-- 2 · cómo funciona -->
+<section class="post azul" id="ig-02">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Cómo funciona</span></div>
+    <h2 style="margin-top:70px;max-width:620px">Tres pasos y está <em>pedido</em>.</h2>
+    <div class="pasos-ig" style="max-width:560px">
+      <div><span>1</span><span>Registrate<small>Primero la cuenta.</small></span></div>
+      <div><span>2</span><span>Contá qué pasa<small>Rubro, tus palabras y fotos si querés.</small></span></div>
+      <div><span>3</span><span>Elegí una propuesta<small>Precio, fecha y garantía a la vista.</small></span></div>
+    </div>
+    <div class="pie"><span>Pantalla: diseño propuesto · datos ficticios</span></div>
+  </div>
+  <img class="tel" src="img/m-inicio-titanio-izq.webp" alt="" style="right:-120px;top:300px;width:620px">
+</section>
+
+<!-- 3 · seis rubros -->
+<section class="post hueso" id="ig-03">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx.svg" alt="Handyx"><span style="color:var(--gris)">Rubros</span></div>
+    <h2 style="margin-top:60px">Seis rubros del <em>hogar</em>.</h2>
+    <div class="rubros-ig">
+      <div><svg viewBox="0 0 24 24"><path d="M13 2.5 4.5 14h6.8l-1 7.5L18.5 10h-6.8z"/></svg>Electricidad</div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 3s6.2 6.6 6.2 11.2a6.2 6.2 0 0 1-12.4 0C5.8 9.6 12 3 12 3z"/></svg>Plomería</div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 3c2 3 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-6 1.5 1 2.5 2.5 2.5 4 0-3 .5-6 .5-8z"/></svg>Gas</div>
+      <div><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8 20 3M16 7l3 3M18 5l2 2"/></svg>Cerrajería</div>
+      <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 12h18M10 5v7M14 12v7"/></svg>Albañilería</div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg>Aire acond.</div>
+    </div>
+    <div class="handys" style="right:0;bottom:60px;position:absolute"><img src="../../marca/personajes-v2/llave.svg" alt=""><img src="../../marca/personajes-v2/foco.svg" alt=""></div>
+    <div class="pie" style="color:var(--gris)"><span>handyc.com/registro</span></div>
+  </div>
+</section>
+
+<!-- 4 · vos elegís -->
+<section class="post" id="ig-04">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Propuestas</span></div>
+    <h2 style="margin-top:70px;max-width:560px">Compará. <em>Elegí vos.</em></h2>
+    <p class="bajo" style="max-width:500px">Varias propuestas con precio, fecha, garantía y perfil, en el orden en que llegan. Handyx sugiere un precio orientativo; cada especialista pone el suyo.</p>
+    <div class="pie"><span>Pantalla: diseño propuesto · datos ficticios</span></div>
+  </div>
+  <img class="tel" src="img/m-propuestas-titanio-der.webp" alt="" style="right:-90px;top:260px;width:620px">
+</section>
+
+<!-- 5 · la plata -->
+<section class="post azul" id="ig-05">
+  <div class="foto" style="opacity:.35"><img src="img/casino-plaza-navy.webp" alt=""></div>
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Cómo se paga</span></div>
+    <h2 style="margin-top:auto">Le pagás <em>directo</em> al especialista.</h2>
+    <p class="bajo">En efectivo o con Mercado Pago. La plata del trabajo no pasa por Handyx.</p>
+    <div style="margin-top:40px"><span class="chip-ig">Tarifa de servicio 0 % hasta el 10/12/2026</span></div>
+    <div class="pie" style="margin-top:50px"><span>handyc.com/registro</span></div>
+  </div>
+</section>
+
+<!-- 6 · especialistas -->
+<section class="post hueso" id="ig-06">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx.svg" alt="Handyx"><span style="color:var(--gris)">Especialistas</span></div>
+    <h2 style="margin-top:70px;max-width:520px;font-size:80px">¿Sos especialista? <em>Sin comisión.</em></h2>
+    <p class="bajo" style="max-width:520px;color:var(--tinta-2)">Pedidos de tu zona, tu precio y tu agenda. Cobrás el trabajo completo, directo. No estás obligado a aceptar nada.</p>
+    <div class="pie" style="color:var(--gris)"><span>Pantalla: diseño propuesto · datos ficticios</span></div>
+  </div>
+  <img class="tel" src="img/m-esp-pedido-titanio.webp" alt="" style="right:-110px;top:470px;width:540px">
+  <div class="handys" style="left:70px;bottom:150px"><img src="../../marca/personajes-v2/engranaje.svg" alt=""><img src="../../marca/personajes-v2/brocha.svg" alt=""></div>
+</section>
+
+<!-- 7 · hecho en Mar del Plata -->
+<section class="post" id="ig-07">
+  <div class="iso" data-iso="maqueta" data-paleta="noche" data-pines="1" data-rotulos="1" data-tam="20"></div>
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Hecho en Mar del Plata</span></div>
+    <h2 style="margin-top:50px;font-size:84px">Del faro a tu casa, <em>barrio por barrio</em>.</h2>
+    <div class="pie"><span>Empezamos en Mar del Plata</span></div>
+  </div>
+</section>
+
+<!-- 8 · verificación -->
+<section class="post azul" id="ig-08">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Confianza</span></div>
+    <h2 style="margin-top:auto">Sabés quién <em>entra a tu casa</em>.</h2>
+    <p class="bajo">El equipo revisa identidad y antecedentes antes de habilitar a cada especialista. Los sellos los pone Handyx, no el especialista.</p>
+    <div class="sellos"><span>✓ Identidad</span><span>✓ Antecedentes</span></div>
+    <div class="pie" style="margin-top:60px"><span>Proceso de verificación en pruebas</span></div>
+  </div>
+  <div class="handys" style="right:70px;top:200px"><img src="../../marca/personajes-v2/llave.svg" alt="" style="width:220px"></div>
+</section>
+
+<!-- 9 · registrate -->
+<section class="post hueso" id="ig-09">
+  <div class="in" style="align-items:center;text-align:center">
+    <div class="cab" style="width:100%"><img src="../../marca/logo-handyx.svg" alt="Handyx"><span style="color:var(--gris)">Registrate</span></div>
+    <h2 style="margin-top:60px">Registrate y pedí tu <em>primer arreglo</em>.</h2>
+    <div class="qr-ig" style="margin-top:60px"><img src="img/qr.svg" alt="Código QR"><p>handyc.com/registro</p></div>
+    <div class="pie" style="color:var(--gris);width:100%"><span>Primero la cuenta, después el pedido.</span><span>Demo con invitación · nov. 2026</span></div>
+  </div>
+</section>
+
+<!-- historias -->
+<section class="post historia" id="ig-h1">
+  <div class="foto"><img src="img/aerea-centro-playa-navy.webp" alt=""></div>
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Mar del Plata</span></div>
+    <h2 style="margin-top:auto">Un problema viejo con una nueva solución que <em>elegís</em>.</h2>
+    <div class="qr-ig" style="margin:60px auto 0"><img src="img/qr.svg" alt="Código QR"><p>handyc.com/registro</p></div>
+    <div class="pie" style="margin-top:50px"><span>Registrate y pedí tu arreglo</span></div>
+  </div>
+</section>
+
+<section class="post historia azul" id="ig-h2">
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Especialistas</span></div>
+    <h2 style="margin-top:80px">Tu trabajo, tu precio, <em>sin comisión</em>.</h2>
+    <p class="bajo">Pedidos de tu zona, sin obligación de aceptar. Cobrás directo.</p>
+    <div class="pie"><span>Pantalla: diseño propuesto · datos ficticios</span></div>
+  </div>
+  <img class="tel" src="img/m-esp-pedido-titanio.webp" alt="" style="left:200px;top:640px;width:760px">
+</section>
+
+<section class="post historia" id="ig-h3">
+  <div class="iso" data-iso="maqueta" data-paleta="noche" data-pines="1" data-rotulos="1" data-tam="20" style="bottom:380px"></div>
+  <div class="in">
+    <div class="cab"><img src="../../marca/logo-handyx-blanco.svg" alt="Handyx"><span>Barrio por barrio</span></div>
+    <h2 style="margin-top:60px">Centro, Güemes, Playa Grande, Los Troncos… <em>y tu barrio</em>.</h2>
+    <div class="pie"><span>handyc.com/registro</span><span>Hecho en Mar del Plata</span></div>
+  </div>
+</section>
+
+<script src="../../plantilla/iso.js"></script>
+</body>
+</html>
