@@ -1,0 +1,78 @@
+/* Capa premium de la Colección Handyx (dirección v2): tipografía editorial, teléfonos con canto metálico, puntos de
+   interacción como en un prototipo y enlaces entre pantallas. Se suma a base.css; no cambia sus tokens. */
+
+/* ---------- tipografía editorial ---------- */
+.p-ceja { display: flex; align-items: center; gap: 3mm; font: 800 6.3pt/1 var(--f-texto); letter-spacing: 0.24em; text-transform: uppercase; color: var(--azul); }
+.p-ceja::before { content: ''; width: 9mm; border-top: 0.35mm solid currentColor; }
+.p-ceja.sin-raya::before { display: none; }
+.p-display { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 44pt; line-height: 0.93; letter-spacing: -0.022em; color: var(--navy); text-wrap: balance; }
+.p-titulo { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 27pt; line-height: 0.98; letter-spacing: -0.016em; color: var(--navy); text-wrap: balance; }
+.p-lead { font: 400 11.4pt/1.5 var(--f-texto); color: var(--tinta-2); letter-spacing: -0.004em; text-wrap: pretty; }
+.p-texto { font: 400 8.2pt/1.5 var(--f-texto); color: var(--gris); text-wrap: pretty; }
+.p-h { font: 750 10pt/1.25 var(--f-texto); color: var(--navy); letter-spacing: -0.005em; }
+.p-num { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 19pt; line-height: 1; letter-spacing: -0.02em; color: var(--azul); font-variant-numeric: tabular-nums; }
+.p-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 0.25mm solid currentColor; }
+.p-meta > div { padding: 2.6mm 3mm 0 0; font: 500 6.6pt/1.45 var(--f-texto); letter-spacing: 0.02em; }
+.p-meta > div b { display: block; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; font-size: 5.8pt; margin-bottom: 0.8mm; opacity: 0.7; }
+.p-raya { border-top: 0.25mm solid var(--borde-frio); }
+.p-marca { color: inherit; background: linear-gradient(transparent 60%, var(--amarillo) 60%, var(--amarillo) 92%, transparent 92%); padding: 0 0.04em; }
+.p-oscuro .p-marca, .p-azul .p-marca { background: none; color: var(--amarillo); }
+
+/* ---------- fondos ---------- */
+.p-oscuro { --fondo: var(--navy); color: rgba(233, 239, 249, 0.8); }
+.p-oscuro .p-display, .p-oscuro .p-titulo, .p-oscuro .p-h { color: #FFFFFF; }
+.p-oscuro .p-lead { color: rgba(233, 239, 249, 0.82); }
+.p-oscuro .p-texto { color: rgba(233, 239, 249, 0.64); }
+.p-oscuro .p-ceja { color: var(--amarillo); }
+.p-oscuro .p-num { color: var(--amarillo); }
+.p-oscuro .p-raya { border-color: rgba(233, 239, 249, 0.16); }
+.p-azul { --fondo: var(--azul); color: rgba(255, 255, 255, 0.86); }
+.p-azul .p-display, .p-azul .p-titulo, .p-azul .p-h { color: #FFFFFF; }
+.p-azul .p-lead { color: rgba(255, 255, 255, 0.88); }
+.p-azul .p-ceja { color: var(--amarillo); }
+.halo { position: absolute; border-radius: 50%; pointer-events: none; }
+
+/* ---------- teléfono plano con canto metálico (para recorridos; los de perspectiva salen de herramientas/dispositivo.cjs) ---------- */
+.movil { --w: 40mm; --canto: linear-gradient(135deg, #FFFFFF 0%, #C9CFDA 20%, #F4F6FA 42%, #AEB6C5 62%, #E9EDF3 82%, #BCC4D2 100%);
+  position: relative; width: var(--w); aspect-ratio: 426 / 880; border-radius: calc(var(--w) * 0.155); background: var(--canto);
+  box-shadow: inset 0 0 0 0.15mm rgba(255, 255, 255, 0.5), 0 1.2mm 2.4mm rgba(14, 29, 54, 0.14), 0 6mm 14mm rgba(14, 29, 54, 0.18); }
+.movil.titanio { --canto: linear-gradient(135deg, #8C97AD 0%, #2A3650 18%, #5B6A88 38%, #1A2438 58%, #6F7E9C 80%, #26324A 100%); }
+.p-oscuro .movil { box-shadow: inset 0 0 0 0.15mm rgba(255, 255, 255, 0.3), 0 1.5mm 3mm rgba(0, 0, 0, 0.3), 0 8mm 18mm rgba(0, 0, 0, 0.42); }
+.movil::before { content: ''; position: absolute; inset: calc(var(--w) * 0.0106); border-radius: calc(var(--w) * 0.144); background: #04070D; }
+.movil::after { content: ''; position: absolute; left: 50%; top: calc(var(--w) * 0.0145); width: calc(var(--w) * 0.014); height: calc(var(--w) * 0.014); margin-left: calc(var(--w) * -0.007); border-radius: 50%; background: #1B2740; }
+.movil .pant { position: absolute; left: 4.225%; top: 2.045%; width: 91.55%; height: 95.91%; border-radius: calc(var(--w) * 0.115); overflow: hidden; background: #FFFFFF; }
+.movil .pant img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.movil .pant::after { content: ''; position: absolute; inset: 0; background: linear-gradient(118deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 38%); }
+
+/* punto de interacción: dónde se toca, numerado como el paso */
+.toque { position: absolute; z-index: 3; width: 6.4mm; height: 6.4mm; margin: -3.2mm 0 0 -3.2mm; border-radius: 50%; display: grid; place-items: center;
+  background: var(--amarillo); color: var(--navy); font: 900 7.6pt/1 var(--f-titulos); font-stretch: 112.5%;
+  box-shadow: 0 0 0 1.3mm rgba(245, 245, 154, 0.42), 0 0 0 2.6mm rgba(245, 245, 154, 0.18), 0 1mm 2.5mm rgba(14, 29, 54, 0.35); }
+
+/* recorrido en zigzag: pantallas alternadas arriba y abajo, enlaces de prototipo entre ellas */
+.zigzag { position: relative; height: 128mm; }
+.zigzag .movil { position: absolute; }
+.zigzag .enlaces { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 2; pointer-events: none; }
+.zigzag .pie { position: absolute; width: 40mm; }
+.pie .n { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 22pt; line-height: 1; letter-spacing: -0.02em; color: var(--azul); }
+.pie .p-h { margin-top: 1.6mm; }
+.pie .p-texto { margin-top: 1mm; }
+.pie .gesto { display: inline-flex; align-items: center; gap: 1.2mm; margin-top: 2mm; padding: 1mm 2.2mm; border-radius: 99px; background: var(--navy); color: #FFFFFF; font: 700 6.4pt/1 var(--f-texto); letter-spacing: 0.02em; }
+.pie .gesto::before { content: ''; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--amarillo); }
+.p-oscuro .pie .n { color: var(--amarillo); }
+.p-oscuro .pie .gesto { background: #FFFFFF; color: var(--navy); }
+.p-oscuro .pie .gesto::before { background: var(--azul); }
+
+/* tarjeta de superficie (ecosistema) */
+.superficie { position: relative; display: flex; flex-direction: column; }
+.superficie .disp { height: 40mm; display: flex; align-items: flex-end; justify-content: center; }
+.superficie .disp img { max-height: 100%; width: auto; }
+.superficie .p-h { margin-top: 3mm; }
+.superficie .p-texto { margin-top: 1.2mm; }
+.superficie .estado { margin-top: 2.4mm; align-self: flex-start; }
+.superficie .dossier { font: 800 5.8pt/1 var(--f-texto); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris-claro); margin-top: 3.4mm; }
+.p-oscuro .superficie .dossier { color: rgba(233, 239, 249, 0.5); }
+
+/* nota de origen de las imágenes */
+.p-origen { display: flex; align-items: center; gap: 2mm; flex-wrap: wrap; font: 500 6.4pt/1.4 var(--f-texto); color: var(--gris); }
+.p-oscuro .p-origen, .p-azul .p-origen { color: rgba(233, 239, 249, 0.66); }
