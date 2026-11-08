@@ -20,55 +20,90 @@
   /* ---------- apertura de capítulo: banda azul con foto en duotono y la maqueta de día ---------- */
   .banda .foto { position: absolute; right: 0; bottom: 0; height: auto; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 22%, #000 42%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.6) 22%, #000 42%); }
   .banda .velo-arriba { position: absolute; left: 0; right: 0; top: 0; height: 34mm; background: linear-gradient(180deg, rgba(14, 29, 54, 0.45) 0%, rgba(14, 29, 54, 0) 100%); }
-  .banda .velo { position: absolute; inset: 0; background: linear-gradient(90deg, var(--azul) 0%, var(--azul) 30%, rgba(31, 87, 168, 0.55) 46%, rgba(31, 87, 168, 0) 70%); }
   .banda .velo-abajo { position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: linear-gradient(180deg, rgba(31, 87, 168, 0) 0%, var(--azul) 92%); }
   .banda .iso { position: absolute; }
-  .apertura .cap-n { font-size: 96pt; }
+  .banda .esc-banda { position: absolute; z-index: 1; }
   .apertura .frase { font: 500 11pt/1.45 var(--f-texto); color: rgba(255, 255, 255, 0.92); max-width: 64mm; margin-top: 6mm; text-wrap: pretty; }
   .credito-foto { position: absolute; right: 18mm; z-index: 2; padding: 1mm 2mm; border-radius: 99px; background: rgba(14, 29, 54, 0.6); font: 600 5.6pt/1 var(--f-texto); letter-spacing: 0.08em; color: #FFFFFF; }
-  .compacta .cap-n { font-size: 54pt; }
   .cap-n-svg { display: block; overflow: visible; flex: none; }
   .cap-n-svg path { fill: none; stroke: var(--amarillo); stroke-width: 1.7px; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 
-  /* ---------- notebook protagonista y recortes «Detalle» ---------- */
-  .nb { margin-left: auto; margin-right: auto; }
-  .notebook .tapa-nb .toque { z-index: 4; }
-  .det { position: relative; }
-  .det .marco { position: relative; border-radius: 2mm; overflow: hidden; box-shadow: 0 0 0 0.25mm var(--borde-frio), 0 2mm 6mm rgba(14, 29, 54, 0.12); background: #FFFFFF; }
-  .det .marco img { width: 100%; display: block; }
-  .det .toque { z-index: 3; }
-  .det-rot { display: inline-flex; align-items: center; gap: 1.4mm; margin-bottom: 2.2mm; font: 800 5.9pt/1 var(--f-texto); letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); }
-  .det-rot::before { content: ''; width: 2.2mm; height: 2.2mm; border-radius: 50%; box-shadow: inset 0 0 0 0.45mm currentColor; }
-  .notas-fila { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); column-gap: 5mm; }
-  .notas-fila .nota { grid-template-columns: 7mm minmax(0, 1fr); }
-  .notas-fila .nota .p-h { font-size: 8.8pt; }
-  .notas-fila .nota .p-texto { font-size: 7.6pt; }
-  .notas-grilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm 6mm; }
-  .notas-grilla .nota .p-h, .notas-2 .nota .p-h { font-size: 9pt; }
-  .notas-grilla .nota .p-texto { font-size: 7.7pt; }
-  .notas-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.4mm 6mm; }
+  /* ===================== ola 7 · componentes propios del 04 ===================== */
+  /* estado como texto chico junto al título (ícono + texto; el color solo acompaña) */
+  .st { display: inline-flex; align-items: center; gap: 0.9mm; font: 800 5.9pt/1.1 var(--f-texto); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; vertical-align: 0.08em; }
+  .st::before { content: ''; flex: none; width: 2.3mm; height: 2.3mm; background: currentColor; -webkit-mask: var(--icono) center / contain no-repeat; mask: var(--icono) center / contain no-repeat; }
+  .st.cons { color: #0D5A31; --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='black'/%3E%3C/svg%3E"); }
+  .st.prue { color: var(--azul-profundo); --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.6' fill='none' stroke='black' stroke-width='2.8'/%3E%3Cpath d='M12 2.4a9.6 9.6 0 0 1 0 19.2z' fill='black'/%3E%3C/svg%3E"); }
+  .st.dise { color: #6A5700; --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20l1-4.6L15.6 4.8a2 2 0 0 1 2.8 0l.8.8a2 2 0 0 1 0 2.8L8.6 19 4 20z' fill='black'/%3E%3C/svg%3E"); }
+  .st.conc { color: var(--gris); --icono: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke='black' stroke-width='2.6' stroke-dasharray='3.2 3'/%3E%3C/svg%3E"); }
+  .p-azul .st, .despiece.azul .st { color: #FFFFFF; }
+  .sts { display: flex; flex-wrap: wrap; align-items: center; gap: 1.3mm 3mm; margin-top: 1.8mm; }
+  .p-h .st { margin-left: 1.6mm; }
 
-  /* ---------- lista de funciones con estado (sin tabla) ---------- */
+  /* cabecera de módulo: título y «qué hace / para quién» a la izquierda, la escena a la derecha */
+  .cab-mod { display: grid; grid-template-columns: minmax(0, 1fr) var(--esc, 54mm); column-gap: 10mm; align-items: center; margin-top: 3mm; }
+  .cab-mod > .esc { width: var(--esc, 54mm); }
+  .cab-mod .qh { margin-top: 0; }
+  .qh { display: grid; gap: 1.5mm; margin-top: 4.4mm; }
+  .qh p { font: 400 9.5pt/1.42 var(--f-texto); color: var(--tinta-2); text-wrap: pretty; }
+  .qh b { font-weight: 800; color: var(--navy); }
+
+  /* UI despiezada: panel de color con recortes reales flotando (premium .despiece/.flota) */
+  .dp { flex: none; width: 100%; }
+  .dp.grano::after { z-index: 0; }
+  .dp > .flota { z-index: 1; box-shadow: 0 0.5mm 1.2mm rgba(14, 29, 54, 0.10), 0 5mm 14mm rgba(14, 29, 54, 0.20); }
+  .dp > .flota img { width: 100%; height: 100%; }
+  .dp.azul > .flota { box-shadow: 0 0.6mm 1.4mm rgba(6, 14, 28, 0.25), 0 6mm 16mm rgba(6, 14, 28, 0.36); }
+  .dp > .esc-abs { position: absolute; z-index: 1; }
+  .dp > svg.lupa { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 2; overflow: visible; }
+
+  /* guía: punto sobre la parte que se explica, línea y etiqueta (arr/aba/izq/der; ini/fin/cen) */
+  .g { position: absolute; z-index: 4; width: 0; height: 0; --l: 10mm; --c: var(--navy); }
+  .g::before { content: ''; position: absolute; z-index: 1; left: -1.05mm; top: -1.05mm; width: 2.1mm; height: 2.1mm; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 0.5mm #FFFFFF; }
+  .g::after { content: ''; position: absolute; background: var(--c); }
+  .g .t { position: absolute; white-space: nowrap; font: 750 7pt/1.32 var(--f-texto); color: var(--c); }
+  .g .t .st { margin-left: 1.5mm; }
+  .g .t .st.sola { margin-left: 0; }
+  .g.der::after { left: 0; top: -0.14mm; width: var(--l); height: 0.28mm; }
+  .g.der .t { left: calc(var(--l) + 1.3mm); top: 0; transform: translateY(-50%); }
+  .g.izq::after { right: 0; top: -0.14mm; width: var(--l); height: 0.28mm; }
+  .g.izq .t { right: calc(var(--l) + 1.3mm); top: 0; transform: translateY(-50%); text-align: right; }
+  .g.arr::after { left: -0.14mm; bottom: 0; width: 0.28mm; height: var(--l); }
+  .g.arr .t { bottom: calc(var(--l) + 0.9mm); left: -1mm; }
+  .g.aba::after { left: -0.14mm; top: 0; width: 0.28mm; height: var(--l); }
+  .g.aba .t { top: calc(var(--l) + 0.9mm); left: -1mm; }
+  .g.fin .t { left: auto; right: -1mm; text-align: right; }
+  .g.cen .t { left: 0; transform: translateX(-50%); text-align: center; }
+  .despiece.azul .g { --c: #FFFFFF; }
+  .despiece.azul .g::before { background: var(--amarillo); box-shadow: 0 0 0 0.5mm var(--navy); }
+
+  /* filas de notas cortas con estado */
+  .notas-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 7mm; }
+  .notas-3 > div { padding-top: 3mm; border-top: 0.25mm solid var(--borde-frio); }
+  .notas-3 .p-h { font-size: 9pt; }
+  .notas-3 .p-texto { margin-top: 1mm; font-size: 7.7pt; }
+  .notas-2c { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 8mm; }
+  .notas-2c > div { padding-top: 3mm; border-top: 0.25mm solid var(--borde-frio); }
+  .notas-2c .p-h { font-size: 9pt; }
+  .notas-2c .p-texto { margin-top: 1mm; font-size: 7.8pt; }
+
+  /* tres pasos grandes (cómo conectamos) */
+  .pasos-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 7mm; }
+  .pasos-3 > div { padding-top: 3.4mm; border-top: 0.45mm solid var(--navy); }
+  .pasos-3 .p-num { font-size: 16pt; }
+  .pasos-3 .p-h { margin-top: 2.2mm; }
+  .pasos-3 .p-texto { margin-top: 1mm; }
+  .pasos-3 .donde { display: block; margin-top: 1.4mm; font: 800 5.8pt/1.2 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-claro); }
+
+  /* ---------- listas con estado ---------- */
   .funcs { display: grid; }
-  .funcs > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 3mm; align-items: baseline; padding: 1.9mm 0; border-top: 0.2mm solid var(--borde-frio); }
+  .funcs > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 3mm; align-items: baseline; padding: 2mm 0; border-top: 0.2mm solid var(--borde-frio); }
   .funcs > div:first-child { border-top: 0.4mm solid var(--navy); }
-  .funcs b { display: block; font: 750 8.2pt/1.3 var(--f-texto); color: var(--navy); }
-  .funcs small { display: block; margin-top: 0.3mm; font: 400 7.3pt/1.38 var(--f-texto); color: var(--gris); }
-  .funcs .estado, .funcs .tipo-dato { justify-self: end; }
-
-  /* ---------- circuito «qué está conectado» ---------- */
-  .circuito { display: grid; grid-template-columns: 1fr 9mm 1fr 9mm 1fr; align-items: stretch; }
-  .circuito .nodo { display: flex; flex-direction: column; }
-  .circuito .nodo h4 { font-size: 7pt; }
-  .circuito .nodo .estado { margin-top: auto; align-self: flex-start; }
-  .flecha-h { position: relative; }
-  .flecha-h::before { content: ''; position: absolute; left: 1mm; right: 1.6mm; top: 50%; border-top: 0.45mm solid var(--navy); }
-  .flecha-h::after { content: ''; position: absolute; right: 0.4mm; top: calc(50% - 1.2mm); border: 1.2mm solid transparent; border-left: 1.8mm solid var(--navy); border-right: 0; }
-  .flecha-h.doble::before { left: 1.6mm; }
-  .flecha-h.doble span { position: absolute; left: 0.4mm; top: calc(50% - 1.2mm); border: 1.2mm solid transparent; border-right: 1.8mm solid var(--navy); border-left: 0; }
-  .pendiente-v { position: relative; height: 14mm; margin-left: calc(80% - 0mm); }
+  .funcs b { display: block; font: 750 8.4pt/1.3 var(--f-texto); color: var(--navy); }
+  .funcs small { display: block; margin-top: 0.3mm; font: 400 7.4pt/1.38 var(--f-texto); color: var(--gris); }
+  .funcs .st { justify-self: end; }
   .corte { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
-  .corte .lado { padding: 5mm; border-radius: 3mm; }
+  .corte .lado { padding: 5.4mm; border-radius: 3mm; }
   .corte .hoy-si { background: var(--hueso); }
   .corte .hoy-no { border: 0.35mm dashed var(--gris-claro); }
   .barra-estados { display: flex; gap: 0.8mm; height: 9mm; }
@@ -76,8 +111,6 @@
   .barra-estados .b1 { background: var(--verde); color: #FFFFFF; } .barra-estados .b2 { background: var(--azul); color: #FFFFFF; }
   .barra-estados .b3 { background: var(--amarillo); color: #5A4A00; }
   .barra-estados .b4 { background: repeating-linear-gradient(135deg, #FFFFFF 0 1mm, #EEF1F6 1mm 2mm); color: var(--gris); box-shadow: inset 0 0 0 0.3mm var(--gris-claro); }
-  .dinero { padding: 3.4mm 4mm; border-radius: 2.4mm; background: var(--navy); color: rgba(233, 239, 249, 0.86); font: 500 8pt/1.45 var(--f-texto); }
-  .dinero b { color: #FFFFFF; }
 
   /* ---------- índice v2 ---------- */
   .indice-v2 { display: grid; }
@@ -87,11 +120,13 @@
   .indice-v2 .t { font: 750 10pt/1.25 var(--f-texto); color: var(--navy); }
   .indice-v2 .t small { display: block; margin-top: 0.8mm; font: 400 7.4pt/1.4 var(--f-texto); color: var(--gris); }
   .indice-v2 .p { text-align: right; font: 800 8pt/1 var(--f-texto); color: var(--gris); }
-  .leer { padding: 5.4mm; border-radius: 3mm; background: var(--hueso); display: grid; gap: 4mm; }
-  .leer h4 { font: 800 6pt/1 var(--f-texto); letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); margin-bottom: 2mm; }
-  .leer .def { display: grid; grid-template-columns: 26mm 1fr; gap: 1.5mm 3mm; align-items: center; font: 400 7.3pt/1.36 var(--f-texto); color: var(--tinta-2); }
+  .leer { padding: 5.4mm; border-radius: 3mm; background: var(--hueso); display: grid; gap: 4.4mm; }
+  .leer h4 { font: 800 6pt/1 var(--f-texto); letter-spacing: 0.2em; text-transform: uppercase; color: var(--azul); margin-bottom: 2.2mm; }
+  .leer .def { display: grid; grid-template-columns: 27mm 1fr; gap: 1.8mm 3mm; align-items: center; font: 400 7.3pt/1.36 var(--f-texto); color: var(--tinta-2); }
   .leer .def > :nth-child(odd) { justify-self: start; }
-  .leer .def .rotulo, .leer .def .tipo-dato { white-space: normal; line-height: 1.25; max-width: 26mm; }
+  .leer .def .rotulo, .leer .def .tipo-dato { white-space: normal; line-height: 1.25; max-width: 27mm; }
+  .leer .mini-esc { width: 20mm; }
+  .leer .mini-guia { position: relative; width: 22mm; height: 4mm; }
   .no-mostramos { padding: 4mm 4.6mm; border-radius: 3mm; background: var(--navy); color: rgba(233, 239, 249, 0.84); font: 500 7.8pt/1.45 var(--f-texto); }
   .no-mostramos b { color: #FFFFFF; }
 
@@ -99,29 +134,30 @@
   .cifras-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 8mm; }
   .cifras-3 > div { padding-top: 3.4mm; border-top: 0.25mm solid var(--borde-frio); }
   .cifras-3 .p-texto { margin-top: 1.4mm; }
-  .cifras-3 .estado, .cifras-3 .tipo-dato { margin-top: 2mm; }
+  .cifras-3 .st, .cifras-3 .tipo-dato { margin-top: 2mm; }
 
   /* ---------- etapas con más texto ---------- */
   .etapas.anchas .etapa .p-texto { font-size: 7.4pt; }
   .etapa .donde { display: block; margin-top: 1.2mm; font: 800 5.8pt/1.2 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-claro); }
+  .etapa .st { margin-top: 1.6mm; }
 
   /* ---------- validación: quién hace qué ---------- */
   .quien { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm; }
-  .quien > div { padding: 4.4mm; border-radius: 3mm; background: var(--hueso); }
-  .quien > div.fuerte-azul { background: var(--azul); color: rgba(255, 255, 255, 0.86); }
+  .quien > div { padding: 4.4mm; border-radius: 3mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.25mm var(--borde-frio); }
+  .quien > div.fuerte-azul { background: var(--azul); color: rgba(255, 255, 255, 0.86); box-shadow: none; }
   .quien > div.fuerte-azul .p-h { color: #FFFFFF; } .quien > div.fuerte-azul .p-texto { color: rgba(255, 255, 255, 0.84); }
   .quien .p-texto { margin-top: 1.2mm; }
   .aviso-amarillo { padding: 3.6mm 4.4mm; border-radius: 2.6mm; background: #FAF6C9; color: var(--navy); font: 600 8.2pt/1.45 var(--f-texto); }
 
   /* ---------- fuga ---------- */
-  .mecanismos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.6mm 6mm; }
+  .mecanismos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.4mm 7mm; }
   .mec { display: grid; grid-template-columns: 8mm minmax(0, 1fr); column-gap: 2.6mm; padding-top: 3mm; border-top: 0.25mm solid var(--borde-frio); }
   .mec .ic { width: 8mm; height: 8mm; border-radius: 2mm; background: var(--cielo); display: grid; place-items: center; font: 900 9pt/1 var(--f-titulos); color: var(--azul); }
+  .mec .p-h { font-size: 9.2pt; }
   .mec .p-texto { margin-top: 0.6mm; font-size: 7.6pt; }
-  .mec .estado, .mec .tipo-dato { margin-top: 1.4mm; }
   .medir { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
   .medir > div { padding: 4.2mm; border-radius: 3mm; background: #FFFFFF; box-shadow: inset 0 0 0 0.25mm var(--borde-frio); }
-  .medir .sin-dato { font: 900 15pt/1 var(--f-titulos); font-stretch: 125%; color: var(--gris-claro); margin: 2mm 0 1.4mm; }
+  .medir .sin-dato { font: 900 14pt/1 var(--f-titulos); font-stretch: 125%; color: var(--gris-claro); margin: 2mm 0 1.4mm; }
   .medir .p-texto { font-size: 7.6pt; }
 
   /* ---------- reglas de medición (apertura 05) ---------- */
@@ -130,19 +166,17 @@
   .reglas .p-num { font-size: 15pt; }
   .reglas .p-h { margin-top: 2mm; }
   .reglas .p-texto { margin-top: 1mm; }
-  .reglas .estado { margin-top: 2mm; }
 
-  /* ---------- mapa real ---------- */
-  .mapa-real { width: 100%; border-radius: 2mm; background: #F3F0E8; box-shadow: 0 0 0 0.25mm var(--borde-frio); }
-  .zonas { display: flex; gap: 4mm; margin-top: 2mm; font: 650 7.4pt/1.3 var(--f-texto); color: var(--tinta-2); }
-  .zonas b { font: 900 10pt/1 var(--f-titulos); font-stretch: 112.5%; color: var(--navy); margin-right: 0.8mm; }
+  /* ---------- mapa ---------- */
+  .zonas { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2mm 5mm; font: 650 7.6pt/1.3 var(--f-texto); color: var(--tinta-2); }
+  .zonas b { font: 900 13pt/1 var(--f-titulos); font-stretch: 112.5%; color: var(--navy); margin-right: 1mm; }
 
   /* ---------- preguntas difíciles más compactas ---------- */
   .dudas .duda { padding: 4.2mm 5mm 3.8mm; }
   .dudas .duda .q { font-size: 11pt; }
   .dudas .duda .corta { font-size: 8.4pt; margin-top: 2.2mm; padding-right: 9mm; }
   .dudas .duda .larga { font-size: 7.5pt; }
-  .dudas .duda .hoy { margin-top: 2.4mm; padding-top: 2.2mm; font-size: 6.8pt; }
+  .dudas .duda .hoy { margin-top: 2.4mm; padding-top: 2.2mm; font-size: 6.8pt; gap: 1.4mm 3mm; }
 
   /* ---------- tapa y contratapa ---------- */
   .tapa-04 .foto-tapa { position: absolute; left: 0; top: 0; width: 100%; height: 150mm; object-fit: cover; object-position: center 30%; }
@@ -159,7 +193,7 @@
 </head>
 <body>
 
-<!-- =============================== 1 · TAPA =============================== -->
+<!-- =============================== 1 · TAPA (la única notebook del dossier) =============================== -->
 <section class="pagina p-azul tapa-04" id="tapa">
   <div class="lamina">
     <div class="a-sangre" style="background:var(--azul);overflow:hidden">
@@ -190,12 +224,12 @@
     <div class="caja">
       <span class="p-ceja">Contenido</span>
       <h1 class="p-titulo" style="margin-top:5mm">El manual del <span class="p-marca">portal</span></h1>
-      <p class="p-lead" style="margin-top:4mm;max-width:150mm;font-size:10.4pt">Se lee solo: cada capítulo muestra las pantallas en el orden en que el equipo las usa, con lo que se toca marcado y el estado real de cada función.</p>
+      <p class="p-lead" style="margin-top:4mm;max-width:150mm;font-size:10.4pt">Se lee solo. Cada módulo se explica con una ilustración de qué hace y para quién, y sus partes se muestran ampliadas, una por una, con el estado real de cada función.</p>
       <div class="grilla" style="margin-top:8mm;column-gap:8mm">
         <nav class="c-7 indice-v2">
-          <a data-ir="cap-01"><span class="n">01</span><span class="t">El portal en una mirada<small>Qué es, quién lo usa y qué está conectado hoy.</small></span><span class="p"></span></a>
+          <a data-ir="cap-01"><span class="n">01</span><span class="t">El portal en una mirada<small>Cómo conectamos a dos personas y qué está conectado hoy.</small></span><span class="p"></span></a>
           <a data-ir="cap-02"><span class="n">02</span><span class="t">El día del equipo<small>El Inicio: lo urgente primero, cada número con su fuente.</small></span><span class="p"></span></a>
-          <a data-ir="cap-03"><span class="n">03</span><span class="t">De preregistro a alta<small>Contactar, cuidar los datos y validar a un especialista.</small></span><span class="p"></span></a>
+          <a data-ir="cap-03"><span class="n">03</span><span class="t">De preregistro a alta<small>A quién llamar, los datos bajo llave y cómo validamos.</small></span><span class="p"></span></a>
           <a data-ir="cap-04"><span class="n">04</span><span class="t">Reclamos y fuga<small>Plazos por gravedad y cómo hacemos que valga quedarse.</small></span><span class="p"></span></a>
           <a data-ir="cap-05"><span class="n">05</span><span class="t">Medir para crecer<small>Campañas, cohortes y el mapa por barrio.</small></span><span class="p"></span></a>
           <a data-ir="cap-06"><span class="n">06</span><span class="t">El equipo por dentro<small>Tareas, guías y papeles al día.</small></span><span class="p"></span></a>
@@ -205,18 +239,18 @@
           <div>
             <h4>Estado de cada función</h4>
             <div class="def">
-              <span class="estado construido">Construido</span><span>En la rama principal, probado contra el servidor real en local.</span>
-              <span class="estado en-pruebas">En pruebas</span><span>Hay código, pero corre con datos de muestra o en una rama.</span>
-              <span class="estado disenado">Diseñado</span><span>Dibujado en el lienzo de diseño, todavía sin código.</span>
-              <span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
+              <span class="st cons">Construido</span><span>En la rama principal, probado contra el servidor real en local.</span>
+              <span class="st prue">En pruebas</span><span>Hay código, pero corre con datos de muestra o en una rama.</span>
+              <span class="st dise">Diseñado</span><span>Dibujado en el lienzo de diseño, todavía sin código.</span>
+              <span class="st conc">Concepto</span><span>Idea a futuro, sin diseño completo.</span>
             </div>
           </div>
           <div>
-            <h4>Rótulo de cada imagen</h4>
+            <h4>Cómo se lee cada imagen</h4>
             <div class="def">
-              <span class="rotulo diseno">Diseño propuesto · datos ficticios</span><span>Pantalla del lienzo «Portal interno v3». Nombres, casos y cifras inventados.</span>
-              <span class="rotulo">Geografía real</span><span>Límites de OpenStreetMap, sin datos encima.</span>
-              <span class="det-rot" style="margin:0">Detalle</span><span>Recorte ampliado de la misma pantalla para que se lea.</span>
+              <span class="mini-esc" data-escena="equipo" data-fondo="no"></span><span><b style="color:var(--navy)">Ilustración.</b> Explica qué hace un módulo y para quién. No es una pantalla.</span>
+              <span class="rotulo diseno">Diseño propuesto · datos ficticios</span><span>Partes reales del lienzo «Portal interno v3», recortadas y ampliadas. Nombres, casos y cifras inventados.</span>
+              <span class="mini-guia"><span class="g der" style="left:1.2mm;top:2mm;--l:12mm"></span></span><span>La línea guía señala la parte que se explica.</span>
             </div>
           </div>
           <div>
@@ -241,7 +275,7 @@
 <!-- =============================== 3 · APERTURA 01 =============================== -->
 <section class="pagina II apertura" id="cap-01">
   <div class="lamina">
-    <div class="banda azul" style="height:158mm">
+    <div class="banda azul grano" style="height:158mm">
       <img class="foto" src="../../marca/fotos/aerea-centro-playa-azul.webp" alt="" style="width:146mm">
       <div class="velo-arriba"></div><div class="velo-abajo"></div>
       <div data-iso="costa" data-paleta="dia" data-pines="1" data-rotulos="1" data-solo="casino,torreon,puerto" class="iso" style="right:-4mm;bottom:-6mm;width:126mm"></div>
@@ -256,7 +290,7 @@
         <p class="p-lead" style="margin-top:5mm;max-width:156mm;font-size:10.6pt">A quién llamar primero, qué reclamo vence hoy, qué campaña trae gente, qué papeles están al día. El portal interno ordena ese trabajo para que el equipo decida con datos y no de memoria. Solo entra el equipo, cada persona con los permisos de su tarea.</p>
         <div class="cifras-3" style="margin-top:8mm">
           <div><div class="p-num">97</div><p class="p-texto">funciones del portal relevadas, cada una con su estado y su evidencia</p><span class="tipo-dato">Dato verificado · auditoría 07/11</span></div>
-          <div><div class="p-num">41</div><p class="p-texto">construidas y probadas en local contra el backend de captación y CRM</p><span class="estado construido">Construido</span></div>
+          <div><div class="p-num">41</div><p class="p-texto">construidas y probadas en local contra el backend de captación y CRM</p><span class="st cons">Construido</span></div>
           <div><div class="p-num">0</div><p class="p-texto">datos reales hoy: el backend no está desplegado y la captura de la landing sigue cerrada</p><span class="tipo-dato">Dato verificado · auditoría 07/11</span></div>
         </div>
       </div>
@@ -265,7 +299,32 @@
   </div>
 </section>
 
-<!-- =============================== 4 · QUÉ ESTÁ CONECTADO =============================== -->
+<!-- =============================== 4 · CÓMO CONECTAMOS A DOS PERSONAS =============================== -->
+<section class="pagina II">
+  <div class="lamina">
+    <div class="cab-p"><span>01 · Cómo conectamos a dos personas</span><span>Handyx · Operations Portal</span></div>
+    <div class="caja">
+      <span class="p-ceja">El portal en una mirada</span>
+      <h1 class="p-titulo" style="margin-top:5mm">Cómo conectamos a <span class="p-marca">dos personas</span></h1>
+      <p class="p-lead" style="margin-top:4mm;max-width:158mm;font-size:10.2pt">Quien necesita un arreglo y quien sabe hacerlo se encuentran en la app. Antes y después de ese encuentro, el equipo hace el trabajo que no se ve, desde el portal.</p>
+      <div class="despiece hueso grano dp" style="height:126mm;margin-top:8mm">
+        <div class="esc-abs" id="e-con" data-escena="conectar" style="left:9mm;top:20mm;width:156mm"></div>
+        <span class="g arr fin" data-e="e-con" data-sx="148" data-sy="47" style="--l:12mm"><span class="t">Quien necesita un arreglo<br>lo pide en la app <span class="st prue">En pruebas</span></span></span>
+        <span class="g arr" data-e="e-con" data-sx="238" data-sy="47" style="--l:12mm"><span class="t">Especialistas de la zona<br>proponen precio y fecha <span class="st prue">En pruebas</span></span></span>
+        <span class="g aba cen" data-e="e-con" data-sx="195" data-sy="59" style="--l:70mm"><span class="t">Se elige una propuesta y se paga directo al especialista</span></span>
+      </div>
+      <div class="pasos-3" style="margin-top:11mm">
+        <div><div class="p-num">01</div><p class="p-h">Se anotan</p><p class="p-texto">En la landing, con su consentimiento: nombre, WhatsApp, ciudad y, si trabaja, su rubro. La captura sigue cerrada hasta el aviso de privacidad definitivo.</p><span class="donde">Landing pública</span><div class="sts"><span class="st cons">Construido</span></div></div>
+        <div><div class="p-num">02</div><p class="p-h">El equipo los contacta</p><p class="p-texto">Desde el portal: a quién llamar primero, qué le falta a cada especialista para el alta y qué reclamo vence hoy.</p><span class="donde">Portal interno</span><div class="sts"><span class="st cons">Construido · sin desplegar</span></div></div>
+        <div><div class="p-num">03</div><p class="p-h">Se encuentran en la app</p><p class="p-texto">Pedido, propuestas, chat y trabajo pasan en las apps del usuario y del especialista. Todavía no llegan al portal.</p><span class="donde">Apps</span><div class="sts"><span class="st prue">Apps</span><span class="st conc">Lectura desde el portal</span></div></div>
+      </div>
+      <p class="p-origen empuja"><span class="rotulo">Ilustración</span> Explica el circuito; no es una pantalla. Estado al 07/11/2026.</p>
+    </div>
+    <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
+  </div>
+</section>
+
+<!-- =============================== 5 · QUÉ ESTÁ CONECTADO =============================== -->
 <section class="pagina II" style="--fondo:#FFFFFF">
   <div class="lamina">
     <div class="cab-p"><span>01 · Qué está conectado hoy</span><span>Handyx · Operations Portal</span></div>
@@ -273,114 +332,79 @@
       <span class="p-ceja">Hoy y mañana, sin mezclar</span>
       <h1 class="p-titulo" style="margin-top:5mm">Qué está conectado <span class="p-marca">hoy</span>, y qué no</h1>
       <p class="p-lead" style="margin-top:4mm;max-width:156mm;font-size:10.2pt">El portal trabaja con lo que llega de la landing: personas anotadas, campañas y reclamos que se cargan a mano. Pedidos, propuestas y pagos viven en las apps y todavía no llegan al portal.</p>
-      <div class="circuito" style="margin-top:8mm">
-        <div class="nodo"><h4>Landing pública</h4><p>Vecinos y especialistas se anotan con su consentimiento: nombre, WhatsApp, ciudad y rubro.</p><span class="estado construido">Construido</span></div>
-        <div class="flecha-h"></div>
-        <div class="nodo lleno"><h4>Captación y CRM</h4><p>Preregistros cifrados, seguimiento, campañas y gasto, reclamos, guías, métricas agregadas y registro de actividad.</p><span class="estado construido" style="background:#FFFFFF">Construido · sin desplegar</span></div>
-        <div class="flecha-h doble"><span></span></div>
-        <div class="nodo navy"><h4>Portal interno</h4><p>Inicio, preregistros, reclamos, campañas, cohortes, mapa y guías. Tareas, legal y legajos, con datos de muestra.</p><span class="estado construido" style="background:#FFFFFF">Construido</span></div>
-      </div>
-      <div style="position:relative;height:16mm;margin-left:80%;width:20%">
-        <div style="position:absolute;left:50%;top:1mm;bottom:1mm;border-left:0.45mm dashed var(--gris-claro)"></div>
-        <span class="estado concepto" style="position:absolute;right:calc(50% + 2.4mm);top:4.6mm;background:#FFFFFF">Concepto</span>
-      </div>
-      <div class="grilla" style="column-gap:6mm;row-gap:0">
-        <div class="c-8 nodo pendiente"><h4>Apps del usuario y del especialista</h4><p>Pedidos, propuestas, trabajos, chat, alta y documentos, pagos informados y reclamos de la app. Las dos apps comparten un mismo contrato de datos; su lectura desde el portal todavía no existe.</p><span class="estado en-pruebas">Apps en pruebas</span></div>
-        <div class="c-4 dinero"><b>El dinero no pasa por Handyx ni por el portal.</b> El usuario paga directo al especialista: en efectivo; con Mercado Pago cuando se valide la integración.</div>
-      </div>
-      <div class="corte" style="margin-top:8mm">
+      <div class="corte" style="margin-top:9mm">
         <div class="lado hoy-si">
           <p class="p-h">Llega al portal hoy</p>
-          <div class="funcs" style="margin-top:3mm">
-            <div><span><b>Personas anotadas en la landing</b><small>Especialistas y lista de espera, por separado</small></span><span class="estado construido">Construido</span></div>
-            <div><span><b>Reclamos por teléfono o mail</b><small>Se cargan a mano, con su gravedad</small></span><span class="estado construido">Construido</span></div>
-            <div><span><b>Campañas, gasto, enlaces y QR</b><small>Registradas por el equipo</small></span><span class="estado construido">Construido</span></div>
-            <div><span><b>Tareas, legal y legajos</b><small>Pantallas listas, con datos de muestra</small></span><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="funcs" style="margin-top:3.4mm">
+            <div><span><b>Personas anotadas en la landing</b><small>Especialistas y lista de espera, por separado</small></span><span class="st cons">Construido</span></div>
+            <div><span><b>Reclamos por teléfono o mail</b><small>Se cargan a mano, con su gravedad</small></span><span class="st cons">Construido</span></div>
+            <div><span><b>Campañas, gasto, enlaces y QR</b><small>Registradas por el equipo</small></span><span class="st cons">Construido</span></div>
+            <div><span><b>Tareas, legal y legajos</b><small>Pantallas listas, con datos de muestra</small></span><span class="st prue">En pruebas</span></div>
           </div>
         </div>
         <div class="lado hoy-no">
           <p class="p-h">Todavía no llega</p>
-          <div class="funcs" style="margin-top:3mm">
-            <div><span><b>Pedidos, propuestas y su estado</b><small>Y la búsqueda manual si nadie propone</small></span><span class="estado concepto">Concepto</span></div>
-            <div><span><b>Pagos informados</b><small>Solo seguimiento: el portal no toca dinero</small></span><span class="estado concepto">Concepto</span></div>
-            <div><span><b>Reclamos cargados en la app</b><small>Hoy viven en otra base</small></span><span class="estado concepto">Concepto</span></div>
-            <div><span><b>Verificación e invitaciones</b><small>Hoy, fuera del portal</small></span><span class="estado concepto">Concepto</span></div>
+          <div class="funcs" style="margin-top:3.4mm">
+            <div><span><b>Pedidos, propuestas y su estado</b><small>Y la búsqueda manual si nadie propone</small></span><span class="st conc">Concepto</span></div>
+            <div><span><b>Pagos informados</b><small>Solo seguimiento: el portal no toca dinero</small></span><span class="st conc">Concepto</span></div>
+            <div><span><b>Reclamos cargados en la app</b><small>Hoy viven en otra base</small></span><span class="st conc">Concepto</span></div>
+            <div><span><b>Verificación e invitaciones</b><small>Hoy, fuera del portal</small></span><span class="st conc">Concepto</span></div>
           </div>
+        </div>
+      </div>
+      <div class="grilla" style="margin-top:9mm;column-gap:8mm;align-items:center">
+        <div class="c-5" data-escena="pago"></div>
+        <div class="c-7">
+          <p class="p-h" style="font-size:11pt">El dinero no pasa por Handyx ni por el portal</p>
+          <p class="p-texto" style="margin-top:1.6mm;font-size:8.4pt">El usuario paga directo al especialista: en efectivo, o con Mercado Pago cuando se valide la integración. El portal no cobra, no paga ni liquida nada; los pagos informados, cuando lleguen, serán solo seguimiento.</p>
+          <div class="sts"><span class="st conc">Pagos informados en el portal</span></div>
         </div>
       </div>
       <div class="empuja">
         <div class="fila entre" style="align-items:baseline;margin-bottom:2mm"><p class="p-h" style="font-size:8.6pt">Las 97 funciones del portal, por estado</p><span class="tipo-dato">Dato verificado · auditoría 07/11/2026</span></div>
         <div class="barra-estados"><span class="b1" style="flex:41">41 Construido</span><span class="b2" style="flex:15">15 En pruebas</span><span class="b3" style="flex:26">26 Diseñado</span><span class="b4" style="flex:15">15 Concepto</span></div>
-        <p class="p-origen" style="margin-top:3mm">Estado al 07/11/2026. Descripción por capacidades: sin mecanismos, proveedores ni direcciones internas. Línea punteada: lo que todavía no está conectado.</p>
+        <p class="p-origen" style="margin-top:3mm">Estado al 07/11/2026. Descripción por capacidades: sin mecanismos, proveedores ni direcciones internas.</p>
       </div>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 5 · INICIO =============================== -->
+<!-- =============================== 6 · INICIO (apertura compacta 02) =============================== -->
 <section class="pagina II compacta" id="cap-02">
   <div class="lamina">
-    <div class="banda azul" style="height:66mm">
-      <img class="foto" src="../../marca/fotos/aerea-faro-mogotes-azul.webp" alt="" style="width:64mm">
+    <div class="banda azul grano" style="height:66mm">
       <div class="velo-arriba"></div>
+      <div class="esc-banda" data-escena="agenda" data-tono="oscuro" style="right:9mm;top:9mm;width:62mm"></div>
     </div>
     <div class="cab-p sobre-azul"><span>Capítulo 02</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
       <div class="p-azul fila" style="background:none;align-items:flex-end;gap:7mm;height:36mm">
         <svg class="cap-n-svg" role="img" aria-label="02" viewBox="-10 -16 1640 718" style="height:14.6mm;width:33.3mm"><path d="M406 698Q301 698 230.5 671.5Q160 645 118.5 597.0Q77 549 59.0 484.0Q41 419 41 342Q41 265 59.0 200.0Q77 135 118.0 87.0Q159 39 229.5 12.5Q300 -14 405 -14Q510 -14 580.5 12.5Q651 39 692.5 87.0Q734 135 752.0 200.0Q770 265 770 342Q770 419 752.0 484.0Q734 549 693.0 597.0Q652 645 581.5 671.5Q511 698 406 698ZM406 557Q457 557 486.0 536.0Q515 515 527.0 472.0Q539 429 539 364V317Q539 252 527.0 209.5Q515 167 486.0 146.5Q457 126 406 126Q356 126 326.5 146.5Q297 167 284.5 209.5Q272 252 272 317V364Q272 429 284.5 472.0Q297 515 326.5 536.0Q356 557 406 557ZM860 686V637Q860 588 885.5 548.0Q911 508 953.0 474.5Q995 441 1044.0 411.0Q1093 381 1141 351Q1189 321 1231.5 297.0Q1274 273 1300.5 249.5Q1327 226 1327 200Q1327 180 1315.0 164.0Q1303 148 1277.0 139.0Q1251 130 1207 130Q1168 130 1140.5 142.0Q1113 154 1098.5 174.5Q1084 195 1084 221V241H863Q862 235 862.0 229.5Q862 224 862 219Q862 148 903.0 96.0Q944 44 1026.0 15.0Q1108 -14 1231 -14Q1308 -14 1369.0 -1.0Q1430 12 1473.5 38.0Q1517 64 1540.0 103.0Q1563 142 1563 193Q1563 241 1536.0 281.0Q1509 321 1465.0 354.5Q1421 388 1370.0 415.5Q1319 443 1270 466Q1256 472 1239.0 480.0Q1222 488 1206.0 495.5Q1190 503 1179 509H1572V686Z"/></svg>
-        <div style="padding-bottom:1mm"><span class="p-ceja">El día del equipo</span><h1 class="p-titulo" style="margin-top:3mm;font-size:23pt">Lo urgente, <span class="p-marca">primero</span></h1></div>
+        <div style="padding-bottom:1mm"><span class="p-ceja">El día del equipo · Inicio</span><h1 class="p-titulo" style="margin-top:3mm;font-size:22pt">Lo urgente, <span class="p-marca">primero</span></h1></div>
       </div>
-      <p class="p-lead" style="margin-top:13mm;max-width:160mm;font-size:10.2pt">Quien abre el portal ve primero lo que no puede esperar y, más abajo, cómo viene la semana. Cada número lleva a la lista ya filtrada.</p>
-      <div class="notebook nb" style="--w:170mm;margin-top:6mm"><div class="tapa-nb"><div class="pant"><img src="img/inicio-nb.webp" alt="Inicio del portal"></div>
-        <span class="toque" data-x="334" data-y="370">1</span><span class="toque" data-x="998" data-y="266">2</span><span class="toque" data-x="338" data-y="679">3</span><span class="toque" data-x="20" data-y="98">4</span><span class="toque" data-x="1236" data-y="165">5</span></div><div class="base-nb"></div></div>
-      <div class="notas-grilla" style="margin-top:9mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">«Para hoy»</p><p class="p-texto">Reclamos graves, gente sin contactar hace más de 48 h y papeles que vencen. Un toque y la lista llega filtrada.</p><span class="estado disenado">Diseñado</span> <span class="estado construido">Bandeja v2</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Tus tickets</p><p class="p-texto">Lo que te toca del ciclo de trabajo del equipo, con su fecha.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Los reclamos que vencen primero</p><p class="p-texto">Ordenados por gravedad y después por plazo, con responsable.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Buscar o ir a…</p><p class="p-texto">Personas, pantallas y acciones desde cualquier lugar, con el teclado.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">5</span><div><p class="p-h">Ordenar bloques</p><p class="p-texto">Cada persona arma su Inicio. Si un bloque falla, lo dice y el resto sigue.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num" style="background:var(--cielo)">i</span><div><p class="p-h">Siempre rotulado</p><p class="p-texto">La muestra lleva su cartel «Muestra · datos ficticios» arriba de todo.</p></div></div>
+      <div class="qh" style="margin-top:12mm">
+        <p><b>Qué hace.</b> Junta lo que no puede esperar y cómo viene la semana; cada número lleva a la lista ya filtrada.</p>
+        <p><b>Para quién.</b> Cada persona del equipo, al empezar el día.</p>
       </div>
-      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Lienzo «Portal interno v3». Los reclamos de ejemplo se reemplazaron por casos neutros. La bandeja del día existe en el portal v2.</p>
-    </div>
-    <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
-  </div>
-</section>
-
-<!-- =============================== 6 · INICIO EN DETALLE =============================== -->
-<section class="pagina II" style="--fondo:var(--hueso)">
-  <div class="lamina">
-    <div class="cab-p"><span>02 · El día del equipo</span><span>Handyx · Operations Portal</span></div>
-    <div class="caja">
-      <span class="p-ceja">Pantalla por pantalla</span>
-      <h1 class="p-titulo" style="margin-top:5mm">Cada número dice <span class="p-marca">de dónde sale</span></h1>
-      <div class="det" style="margin-top:8mm"><span class="det-rot">Detalle · Para hoy</span>
-        <div class="marco" data-w="1110" data-h="330"><img src="img/inicio-hoy.webp" alt="Bloque Para hoy">
-          <span class="toque" data-x="32" data-y="181">1</span><span class="toque" data-x="224" data-y="181">2</span><span class="toque" data-x="32" data-y="243">3</span></div></div>
-      <div class="notas-fila" style="margin-top:5mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Reclamos graves</p><p class="p-texto">Abre Reclamos con la columna «Para hoy» adelante.</p></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Sin contactar +48 h</p><p class="p-texto">Abre Preregistros filtrado, los que más esperan primero.</p></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Papeles que vencen</p><p class="p-texto">Abre Legal en su resumen, un botón por cosa.</p></div></div>
+      <div class="despiece grano dp" style="height:134mm;margin-top:7mm">
+        <div class="flota" id="f-hoy" data-cw="671" data-ch="318" data-ox="304" data-oy="215" data-r="24" style="left:8mm;top:17mm;width:112mm"><img src="img/c-parahoy.webp" alt="Bloque Para hoy"></div>
+        <div class="flota" id="f-tic" data-cw="415" data-ch="314" data-ox="993" data-oy="215" data-r="24" style="left:114mm;top:42mm;width:54mm"><img src="img/c-tickets.webp" alt="Tus tickets"></div>
+        <div class="flota" id="f-64" data-cw="266" data-ch="161" data-ox="584" data-oy="1032" data-r="20" style="left:10mm;top:82mm;width:54mm"><img src="img/c-kpi-64.webp" alt="Contactamos a tiempo"></div>
+        <div class="flota" id="f-sd" data-cw="266" data-ch="161" data-ox="1143" data-oy="1032" data-r="20" style="left:72mm;top:92mm;width:54mm"><img src="img/c-kpi-sindato.webp" alt="Costo por preregistro sin dato"></div>
+        <div class="flota" id="f-mue" data-cw="172" data-ch="24" data-ox="416" data-oy="24" data-r="12" style="left:126mm;top:6mm;width:38mm"><img src="img/c-muestra.webp" alt="Muestra, datos ficticios"></div>
+        <span class="g arr ini" data-f="f-hoy" data-x="358" data-y="216" style="--l:10mm"><span class="t">Para hoy: un toque y la lista llega filtrada <span class="st dise">Diseñado</span></span></span>
+        <span class="g izq" data-f="f-mue" data-x="416" data-y="36" style="--l:4mm"><span class="t">Siempre rotulado como muestra</span></span>
+        <span class="g arr ini" data-f="f-tic" data-x="1060" data-y="216" style="--l:9mm"><span class="t">Tus tickets del ciclo <span class="st prue">En pruebas</span></span></span>
+        <span class="g aba ini" data-f="f-64" data-x="623" data-y="1172" style="--l:8mm"><span class="t">Cada número con su base <span class="st cons">Construido</span></span></span>
+        <span class="g der" data-f="f-sd" data-x="1283" data-y="1130" style="--l:27mm"><span class="t">«Sin dato» antes que<br>un número inventado <span class="st cons">Construido</span></span></span>
       </div>
-      <div class="det" style="margin-top:9mm"><span class="det-rot">Detalle · ¿Cómo viene la semana?</span>
-        <div class="marco" data-w="1110" data-h="230"><img src="img/inicio-semana.webp" alt="Bloque Cómo viene la semana">
-          <span class="toque" data-x="476" data-y="196">4</span><span class="toque" data-x="1080" data-y="72">5</span></div></div>
-      <div class="notas-fila" style="margin-top:5mm">
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Con su base</p><p class="p-texto">«Contactados en 48 h · n = 38»: sobre cuántas personas se calcula y en qué ventana. Grupos de menos de 5, ocultos.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">5</span><div><p class="p-h">«Sin dato» antes que un número inventado</p><p class="p-texto">El costo por preregistro necesita saber de qué campaña vino cada alta. Hasta entonces, «Fuente pendiente».</p><span class="estado construido">Construido</span></div></div>
+      <div class="notas-3" style="margin-top:8mm">
+        <div><p class="p-h">Lo urgente arriba</p><p class="p-texto">Reclamos graves, gente sin contactar hace más de 48 h y papeles que vencen. La bandeja del día ya existe en el portal v2.</p><div class="sts"><span class="st cons">Bandeja v2</span><span class="st dise">Para hoy v3</span></div></div>
+        <div><p class="p-h">Tus tickets</p><p class="p-texto">Lo que te toca del ciclo de trabajo del equipo, con su fecha.</p><div class="sts"><span class="st prue">En pruebas</span></div></div>
+        <div><p class="p-h">Buscar o ir a… y ordenar</p><p class="p-texto">Personas, pantallas y acciones con el teclado. Si un bloque falla, lo dice y el resto sigue.</p><div class="sts"><span class="st cons">Construido</span></div></div>
       </div>
-      <div class="empuja">
-        <p class="p-h" style="margin-bottom:5mm">El recorrido · empezar el día</p>
-        <div class="etapas anchas">
-          <div class="etapa"><span class="pto">1</span><p class="p-h">Abre el Inicio</p><p class="p-texto">Lee «Para hoy» de arriba hacia abajo.</p></div>
-          <div class="etapa"><span class="pto">2</span><p class="p-h">Lo grave</p><p class="p-texto">Reclamos críticos y altos: se responden en el día.</p></div>
-          <div class="etapa"><span class="pto">3</span><p class="p-h">Los que esperan</p><p class="p-texto">Contactar al siguiente, sin volver atrás.</p></div>
-          <div class="etapa"><span class="pto">4</span><p class="p-h">Los papeles</p><p class="p-texto">Lo que vence esta semana, con su acción.</p></div>
-          <div class="etapa"><span class="pto">5</span><p class="p-h">La semana</p><p class="p-texto">Cuatro preguntas, cada una con su fuente.</p></div>
-        </div>
-        <p class="p-origen" style="margin-top:6mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> «¿Cómo venimos?» con base, fecha y exclusiones <span class="estado construido">Construido</span> Comparación con la semana anterior <span class="estado disenado">Diseñado</span> Costo por preregistro <span class="estado concepto">Concepto</span></p>
-      </div>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Partes del Inicio del lienzo «Portal interno v3», ampliadas. Comparación con la semana anterior <span class="st dise">Diseñado</span></p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -389,7 +413,7 @@
 <!-- =============================== 7 · APERTURA 03 =============================== -->
 <section class="pagina II apertura" id="cap-03">
   <div class="lamina">
-    <div class="banda azul" style="height:150mm">
+    <div class="banda azul grano" style="height:150mm">
       <img class="foto" src="../../marca/fotos/aerea-quintas-azul.webp" alt="" style="width:160mm">
       <div class="velo-arriba"></div><div class="velo-abajo"></div>
       <div data-iso="barrio" data-paleta="dia" data-pines="1" class="iso" style="right:-4mm;bottom:-10mm;width:132mm"></div>
@@ -403,11 +427,11 @@
         <h1 class="p-titulo">Cada persona anotada, atendida a tiempo y <span class="p-marca">cuidada</span></h1>
         <p class="p-lead" style="margin-top:4mm;max-width:156mm;font-size:10.2pt">El preregistro no es una cuenta: es un pedido de contacto. El portal lo recibe cifrado, ordena a quién llamar y deja todo registrado. El alta y la verificación pasan en la app del especialista.</p>
         <div class="etapas anchas" style="margin-top:8mm">
-          <div class="etapa"><span class="pto">1</span><p class="p-h">Se anota</p><p class="p-texto">En la landing, con su consentimiento.</p><span class="donde">Landing</span><span class="estado construido">Construido</span></div>
-          <div class="etapa"><span class="pto">2</span><p class="p-h">Llega cifrado</p><p class="p-texto">Un duplicado nunca pisa lo que ya estaba.</p><span class="donde">Captación</span><span class="estado construido">Construido</span></div>
-          <div class="etapa"><span class="pto">3</span><p class="p-h">Contacto a mano</p><p class="p-texto">WhatsApp se abre sin mensaje escrito.</p><span class="donde">Portal</span><span class="estado construido">Construido</span></div>
-          <div class="etapa"><span class="pto">4</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, documentos, rubros y zonas.</p><span class="donde">App especialista</span><span class="estado en-pruebas">En pruebas</span></div>
-          <div class="etapa"><span class="pto">5</span><p class="p-h">El equipo habilita</p><p class="p-texto">Solo el equipo de verificación.</p><span class="donde">Fuera del portal</span><span class="estado en-pruebas">En pruebas</span></div>
+          <div class="etapa"><span class="pto">1</span><p class="p-h">Se anota</p><p class="p-texto">En la landing, con su consentimiento.</p><span class="donde">Landing</span><span class="st cons">Construido</span></div>
+          <div class="etapa"><span class="pto">2</span><p class="p-h">Llega cifrado</p><p class="p-texto">Un duplicado nunca pisa lo que ya estaba.</p><span class="donde">Captación</span><span class="st cons">Construido</span></div>
+          <div class="etapa"><span class="pto">3</span><p class="p-h">Contacto a mano</p><p class="p-texto">WhatsApp se abre sin mensaje escrito.</p><span class="donde">Portal</span><span class="st cons">Construido</span></div>
+          <div class="etapa"><span class="pto">4</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, documentos, rubros y zonas.</p><span class="donde">App especialista</span><span class="st prue">En pruebas</span></div>
+          <div class="etapa"><span class="pto">5</span><p class="p-h">El equipo habilita</p><p class="p-texto">Solo el equipo de verificación.</p><span class="donde">Fuera del portal</span><span class="st prue">En pruebas</span></div>
         </div>
       </div>
     </div>
@@ -422,16 +446,29 @@
     <div class="caja">
       <span class="p-ceja">Preregistros</span>
       <h1 class="p-titulo" style="margin-top:5mm">¿A quién <span class="p-marca">contactamos</span> hoy?</h1>
-      <p class="p-lead" style="margin-top:4mm;max-width:156mm;font-size:10.2pt">Especialistas y lista de espera en dos listas que no se mezclan. Los que más esperan van primero, y un botón abre la ficha del siguiente.</p>
-      <div class="notebook nb" style="--w:172mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/preregistros-nb.webp" alt="Lista de preregistros"></div>
-        <span class="toque" data-x="310" data-y="235">1</span><span class="toque" data-x="588" data-y="318">2</span><span class="toque" data-x="1014" data-y="415">3</span><span class="toque" data-x="1198" data-y="163">4</span><span class="toque" data-x="1014" data-y="163">5</span></div><div class="base-nb"></div></div>
-      <div class="notas-grilla" style="margin-top:9mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Dos listas</p><p class="p-texto">Especialistas y usuarios en lista de espera, con conteos por estado.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Sin contactar +48 h</p><p class="p-texto">La tarjeta filtra a quienes esperan hace más de dos días.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Filtros</p><p class="p-texto">Por rubro, ciudad y estado, y búsqueda exacta por WhatsApp. El filtro por barrio espera que la landing pida el barrio.</p><span class="estado construido">Rubro y ciudad</span> <span class="estado disenado">Barrio</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Contactar al siguiente</p><p class="p-texto">Abre la ficha de quien más tiempo lleva esperando.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">5</span><div><p class="p-h">Importar planilla</p><p class="p-texto">Validación fila por fila; un duplicado nunca pisa datos ni consentimientos y el lote se puede revertir.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num" style="background:var(--cielo)">i</span><div><p class="p-h">Importado no es anotado</p><p class="p-texto">Lo que entra por planilla no cuenta como anotado ni da permiso de contacto. La exportación sale sin nombre, WhatsApp ni email.</p><span class="estado construido">Construido</span></div></div>
+      <div class="cab-mod">
+        <div>
+          <div class="qh">
+            <p><b>Qué hace.</b> Ordena a quién llamar primero entre las personas que se anotaron y deja registrado cada contacto.</p>
+            <p><b>Para quién.</b> El equipo de Operations, que contacta a mano a especialistas y vecinos.</p>
+          </div>
+        </div>
+        <div class="esc" data-dibujo="llamar"></div>
+      </div>
+      <div class="despiece grano dp" style="height:104mm;margin-top:8mm">
+        <div class="flota" id="f-k7" data-cw="267" data-ch="72" data-ox="583" data-oy="283" data-r="18" style="left:10mm;top:18mm;width:66mm"><img src="img/c-pre-kpi7.webp" alt="Sin contactar hace más de 48 h"></div>
+        <div class="flota" id="f-bot" data-cw="413" data-ch="64" data-ox="1003" data-oy="131" data-r="14" style="left:92mm;top:20mm;width:74mm"><img src="img/c-pre-botones.webp" alt="Importar planilla y Contactar al siguiente"></div>
+        <div class="flota" id="f-fil" data-cw="1102" data-ch="236" data-ox="305" data-oy="495" data-r="10" style="left:8mm;top:50mm;width:158mm"><img src="img/c-pre-filas.webp" alt="Filas de la lista de preregistros"></div>
+        <span class="g arr ini" data-f="f-k7" data-x="640" data-y="283" style="--l:6mm"><span class="t">Quien espera más de 48 h, adelante <span class="st dise">Diseñado</span></span></span>
+        <span class="g arr fin" data-f="f-bot" data-x="1310" data-y="139" style="--l:7mm"><span class="t">Contactar al siguiente <span class="st cons">Construido</span></span></span>
+        <span class="g aba fin" data-f="f-bot" data-x="1098" data-y="187" style="--l:6.5mm"><span class="t">Importar planilla: un duplicado nunca pisa datos <span class="st cons">Construido</span></span></span>
+        <span class="g aba fin" data-f="f-fil" data-x="806" data-y="720" style="--l:8mm"><span class="t">Estado de cada persona <span class="st cons">Construido</span></span></span>
+        <span class="g aba ini" data-f="f-fil" data-x="1060" data-y="716" style="--l:8.6mm"><span class="t">Con su próximo paso <span class="st cons">Construido</span></span></span>
+      </div>
+      <div class="notas-3" style="margin-top:7mm">
+        <div><p class="p-h">Dos listas que no se mezclan</p><p class="p-texto">Especialistas y lista de espera, con conteos por estado.</p><div class="sts"><span class="st cons">Construido</span></div></div>
+        <div><p class="p-h">Filtros</p><p class="p-texto">Por rubro, ciudad y estado, y búsqueda exacta por WhatsApp. El barrio, cuando la landing lo pida.</p><div class="sts"><span class="st cons">Rubro y ciudad</span><span class="st dise">Barrio</span></div></div>
+        <div><p class="p-h">Importado no es anotado</p><p class="p-texto">Lo que entra por planilla no cuenta como anotado ni da permiso de contacto. La exportación sale sin nombre, WhatsApp ni email.</p><div class="sts"><span class="st cons">Construido</span></div></div>
       </div>
       <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Nombres, oficios y cifras inventados. El portal v2 en código tiene la misma lista con otra cara.</p>
     </div>
@@ -446,26 +483,28 @@
     <div class="caja">
       <span class="p-ceja">La ficha</span>
       <h1 class="p-titulo" style="margin-top:5mm">Un próximo paso, y los datos <span class="p-marca">bajo llave</span></h1>
-      <div class="notebook nb" style="--w:160mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/ficha-nb.webp" alt="Ficha de un preregistro"></div>
-        <span class="toque" data-x="330" data-y="233">1</span><span class="toque" data-x="820" data-y="416">2</span><span class="toque" data-x="597" data-y="281">3</span><span class="toque" data-x="1032" data-y="458">4</span></div><div class="base-nb"></div></div>
-      <div class="notas-2" style="margin-top:8mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Abrir WhatsApp</p><p class="p-texto">Abre la conversación sin texto escrito. Nada se manda solo: escribir es siempre una acción de la persona del equipo.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Hecho, registrar</p><p class="p-texto">Lo que pasó queda en el historial con el próximo paso, y la ficha pasa a la siguiente persona.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Etapas</p><p class="p-texto">Dónde está cada persona. El lienzo propone cuatro etapas nuevas; el sistema guarda las suyas.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Responsable según la carga</p><p class="p-texto">Se elige quién se ocupa viendo cuántos casos abiertos tiene cada uno.</p><span class="estado disenado">Diseñado</span></div></div>
-      </div>
-      <div class="grilla empuja" style="column-gap:7mm;align-items:end">
-        <div class="c-5 det"><span class="det-rot">Detalle · Datos de contacto</span>
-          <div class="marco" data-w="405" data-h="260"><img src="img/ficha-contacto.webp" alt="Datos de contacto cifrados">
-            <span class="toque" data-x="312" data-y="30">5</span><span class="toque" data-x="24" data-y="219">6</span></div></div>
-        <div class="c-7">
-          <div class="notas" style="gap:3.6mm">
-            <div class="nota"><span class="num">5</span><div><p class="p-h">Cifrados en la base</p><p class="p-texto">Nombre, WhatsApp y email se guardan cifrados y se ven solo en la ficha.</p><span class="estado construido">Construido</span></div></div>
-            <div class="nota"><span class="num">6</span><div><p class="p-h">Ver completo queda registrado</p><p class="p-texto">Cada apertura y cada cambio quedan en el registro de actividad, con quién y cuándo.</p><span class="estado construido">Construido</span></div></div>
-          </div>
-          <p class="p-origen" style="margin-top:4mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Contacto de ejemplo, enmascarado.</p>
+      <div class="cab-mod">
+        <div>
+          <p class="p-lead" style="margin-top:4mm;font-size:10pt">Cada persona tiene una ficha con lo que pasó, lo que sigue y quién se ocupa. Sus datos de contacto están cifrados, y verlos completos queda registrado.</p>
         </div>
+        <div class="esc" data-dibujo="llave"></div>
       </div>
+      <div class="despiece azul grano dp" style="height:156mm;margin-top:7mm">
+        <div class="flota" id="f-cab" data-cw="1104" data-ch="230" data-ox="304" data-oy="101" data-r="24" style="left:8mm;top:22mm;width:158mm"><img src="img/c-fi-cabecera.webp" alt="Cabecera de la ficha"></div>
+        <div class="flota" id="f-sig" data-cw="683" data-ch="127" data-ox="304" data-oy="353" data-r="22" style="left:8mm;top:70mm;width:102mm"><img src="img/c-fi-siguiente.webp" alt="Siguiente paso"></div>
+        <div class="flota" id="f-his" data-cw="683" data-ch="352" data-ox="304" data-oy="498" data-r="22" style="left:8mm;top:99mm;width:80mm"><img src="img/c-fi-historial.webp" alt="Historial del contacto"></div>
+        <div class="flota" id="f-con" data-cw="401" data-ch="262" data-ox="1007" data-oy="879" data-r="22" style="left:96mm;top:97mm;width:70mm"><img src="img/c-fi-contacto.webp" alt="Datos de contacto cifrados"></div>
+        <span class="g arr ini" data-f="f-cab" data-x="399" data-y="210" style="--l:15.6mm"><span class="t">Abrir WhatsApp sin texto escrito, o registrar el contacto: nada se manda solo <span class="st cons">Construido</span></span></span>
+        <span class="g aba ini" data-f="f-cab" data-x="1250" data-y="282" style="--l:9mm"><span class="t">Etapas <span class="st dise">Diseñado</span></span></span>
+        <span class="g der" data-f="f-sig" data-x="966" data-y="416" style="--l:8mm"><span class="t">Hecho, registrar: queda<br>en el historial <span class="st cons">Construido</span></span></span>
+        <span class="g arr fin" data-f="f-con" data-x="1352" data-y="881" style="--l:6mm"><span class="t">Cifrados en la base <span class="st cons">Construido</span></span></span>
+        <span class="g aba fin" data-f="f-con" data-x="1150" data-y="1118" style="--l:6mm"><span class="t">Ver completo queda registrado <span class="st cons">Construido</span></span></span>
+      </div>
+      <div class="notas-2c" style="margin-top:6mm">
+        <div><p class="p-h">Responsable según la carga <span class="st dise">Diseñado</span></p><p class="p-texto">Se elige quién se ocupa viendo cuántos casos abiertos tiene cada persona del equipo.</p></div>
+        <div><p class="p-h">Quién ve los datos <span class="st cons">Construido</span></p><p class="p-texto">Solo el equipo, según su tarea. Cada apertura y cada cambio quedan en el registro de actividad, con quién y cuándo.</p></div>
+      </div>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Partes de la ficha del lienzo, ampliadas. Contacto de ejemplo, enmascarado.</p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -478,33 +517,37 @@
     <div class="caja">
       <span class="p-ceja">Cómo validamos a un especialista</span>
       <h1 class="p-titulo" style="margin-top:5mm">Cargar un documento no es estar <span class="p-marca">verificado</span></h1>
-      <p class="p-lead" style="margin-top:4mm;max-width:156mm;font-size:10.2pt">Del contacto a la habilitación hay seis pasos. Los primeros pasan en el portal; el alta, en la app del especialista; la decisión, siempre en el equipo.</p>
-      <div class="etapas anchas" style="margin-top:8mm">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">Contacto</p><p class="p-texto">El equipo llama y cuenta los próximos pasos.</p><span class="estado construido">Construido</span></div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, DNI y CUIT/CUIL, rubros, zonas y foto.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">Rubros con matrícula</p><p class="p-texto">Gas y aire acondicionado se habilitan cuando se verifica la matrícula.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">4</span><p class="p-h">Antecedentes en persona</p><p class="p-texto">Con turno, se muestran al equipo. Nunca como archivo.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">5</span><p class="p-h">Revisión</p><p class="p-texto">Se aprueba o se pide corregir, con el motivo.</p><span class="estado en-pruebas">En pruebas</span></div>
-        <div class="etapa"><span class="pto">6</span><p class="p-h">Habilitado</p><p class="p-texto">Recién ahí el sello sale del servidor.</p><span class="estado en-pruebas">En pruebas</span></div>
+      <div class="cab-mod">
+        <div>
+          <div class="qh">
+            <p><b>Qué hace.</b> Revisa identidad, situación fiscal, matrícula donde corresponde y antecedentes en persona, y recién ahí habilita.</p>
+            <p><b>Para quién.</b> El equipo de verificación de Handyx: ningún sistema habilita solo.</p>
+          </div>
+        </div>
+        <div class="esc" data-escena="verificar"></div>
+      </div>
+      <div class="etapas anchas" style="margin-top:9mm">
+        <div class="etapa"><span class="pto">1</span><p class="p-h">Contacto</p><p class="p-texto">El equipo llama y cuenta los próximos pasos.</p><span class="st cons">Construido</span></div>
+        <div class="etapa"><span class="pto">2</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, DNI y CUIT/CUIL, rubros, zonas y foto.</p><span class="st prue">En pruebas</span></div>
+        <div class="etapa"><span class="pto">3</span><p class="p-h">Rubros con matrícula</p><p class="p-texto">Gas y aire acondicionado, cuando se verifica la matrícula.</p><span class="st prue">En pruebas</span></div>
+        <div class="etapa"><span class="pto">4</span><p class="p-h">Antecedentes en persona</p><p class="p-texto">Con turno, se muestran al equipo. Nunca como archivo.</p><span class="st prue">En pruebas</span></div>
+        <div class="etapa"><span class="pto">5</span><p class="p-h">Revisión</p><p class="p-texto">Se aprueba o se pide corregir, con el motivo.</p><span class="st prue">En pruebas</span></div>
+        <div class="etapa"><span class="pto">6</span><p class="p-h">Habilitado</p><p class="p-texto">Recién ahí el sello sale del servidor.</p><span class="st prue">En pruebas</span></div>
       </div>
       <div class="quien" style="margin-top:9mm">
         <div><p class="p-h">Qué se revisa</p><p class="p-texto">Identidad contra el DNI, la situación fiscal, los rubros con matrícula y los antecedentes, en persona. Los certificados que suma el especialista se muestran como cargados, no como verificados.</p></div>
-        <div class="fuerte-azul"><p class="p-h">Quién habilita</p><p class="p-texto">Solo el equipo de verificación de Handyx. El especialista ve qué está listo, qué se evalúa y qué falta corregir; ningún sistema lo habilita solo.</p></div>
-        <div><p class="p-h">Dónde pasa hoy</p><p class="p-texto">En un proceso interno del backend del especialista, en una rama todavía sin publicar. El portal no tiene pantalla de verificación: llevarla al portal es un concepto.</p><span class="estado concepto" style="margin-top:2mm">Verificar desde el portal</span></div>
+        <div class="fuerte-azul"><p class="p-h">Quién habilita</p><p class="p-texto">Solo el equipo de verificación de Handyx. El especialista ve qué está listo, qué se evalúa y qué falta corregir.</p></div>
+        <div><p class="p-h">Dónde pasa hoy</p><p class="p-texto">En un proceso interno del backend del especialista, en una rama todavía sin publicar. El portal no tiene pantalla de verificación.</p><div class="sts"><span class="st conc">Verificar desde el portal</span></div></div>
       </div>
-      <div class="grilla empuja" style="column-gap:7mm;align-items:end">
-        <div class="c-8 det"><span class="det-rot">Detalle · Legal, resumen</span>
-          <div class="marco" data-w="1105" data-h="455"><img src="img/legal-resumen.webp" alt="Resumen de Legal y Compliance">
-            <span class="toque" data-x="22" data-y="113">1</span><span class="toque" data-x="838" data-y="412">2</span></div></div>
-        <div class="c-4">
-          <div class="notas" style="gap:3.4mm">
-            <div class="nota"><span class="num">1</span><div><p class="p-h">Legajos</p><p class="p-texto">Los requisitos de cada especialista, con su vencimiento y su acción.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-            <div class="nota"><span class="num">2</span><div><p class="p-h">Sin requisitos, no trabaja</p><p class="p-texto">El resumen marca quién no puede tomar trabajos.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-          </div>
+      <div class="grilla" style="margin-top:7mm;column-gap:6mm;align-items:center">
+        <div class="c-7 despiece grano dp" style="height:30mm">
+          <div class="flota" id="f-np" data-cw="267" data-ch="79" data-ox="1141" data-oy="692" data-r="20" style="left:7mm;top:7.5mm;width:50mm"><img src="img/c-le-nopueden.webp" alt="No pueden trabajar"></div>
+          <span class="g der" data-f="f-np" data-x="1408" data-y="731" style="--l:4mm"><span class="t">Sin requisitos al día,<br>no toma trabajos<br><span class="st prue sola">En pruebas</span></span></span>
         </div>
+        <div class="c-5"><p class="p-h" style="font-size:9pt">Después del alta, el Camino Handyx <span class="st dise">Diseñado</span></p><p class="p-texto" style="margin-top:1mm;font-size:7.6pt">Estaciones por trabajos y cobros verificados. Nada se resta y no hay rankings.</p></div>
       </div>
-      <div class="aviso-amarillo" style="margin-top:5mm">Hoy nadie figura como verificado. Los 56 especialistas registrados son «dato informado por el fundador · sin auditar»: anotados por el fundador fuera de la landing, en una planilla propia, con su consentimiento. Nunca se presentan como verificados ni activos.</div>
-      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Filas de Legal reemplazadas por ejemplos neutros. Legajos, solo con datos de muestra.</p>
+      <div class="aviso-amarillo empuja">Hoy nadie figura como verificado. Los 56 especialistas registrados son «dato informado por el fundador · sin auditar»: anotados por el fundador fuera de la landing, en una planilla propia, con su consentimiento. Nunca se presentan como verificados ni activos.</div>
+      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Contador de Legal y Compliance (legajos con datos de muestra).</p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -513,7 +556,7 @@
 <!-- =============================== 11 · APERTURA 04 =============================== -->
 <section class="pagina II apertura" id="cap-04">
   <div class="lamina">
-    <div class="banda azul" style="height:150mm">
+    <div class="banda azul grano" style="height:150mm">
       <img class="foto" src="../../marca/fotos/rambla-fuego-azul.webp" alt="" style="width:170mm;top:-10mm;bottom:auto">
       <div class="velo-arriba"></div><div class="velo-abajo"></div>
       <div data-iso="costa" data-paleta="dia" data-rotulos="1" data-solo="casino,torreon" class="iso" style="right:-10mm;bottom:-14mm;width:118mm"></div>
@@ -544,15 +587,23 @@
     <div class="caja">
       <span class="p-ceja">Reclamos</span>
       <h1 class="p-titulo" style="margin-top:5mm">Tres columnas, <span class="p-marca">ningún olvido</span></h1>
-      <div class="notebook nb" style="--w:170mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/reclamos-nb.webp" alt="Reclamos por plazo"></div>
-        <span class="toque" data-x="462" data-y="236">1</span><span class="toque" data-x="1074" data-y="163">2</span><span class="toque" data-x="590" data-y="500">3</span><span class="toque" data-x="345" data-y="527">4</span><span class="toque" data-x="1246" data-y="163">5</span></div><div class="base-nb"></div></div>
-      <div class="notas-grilla" style="margin-top:8mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Plazo por gravedad</p><p class="p-texto">El plazo se calcula solo; lo vencido va primero.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Por plazo o en lista</p><p class="p-texto">Columnas de hoy, dos y tres días, o una lista para buscar uno.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Cuánto queda</p><p class="p-texto">Una barra muestra el tiempo que queda para responder.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Responsable</p><p class="p-texto">Cada caso tiene quién se ocupa y su historial.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">5</span><div><p class="p-h">Cargar reclamo</p><p class="p-texto">Lo que llega por teléfono o mail entra con su gravedad.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num" style="background:var(--cielo)">i</span><div><p class="p-h">Categoría «Pago»</p><p class="p-texto">Si el cobro no coincide con lo acordado, entra como reclamo.</p><span class="estado construido">Construido</span></div></div>
+      <div class="cab-mod">
+        <div>
+          <div class="qh">
+            <p><b>Qué hace.</b> Recibe cada reclamo con su gravedad, le calcula el plazo y le pone un responsable.</p>
+            <p><b>Para quién.</b> El equipo que atiende a vecinos y especialistas; hoy, los reclamos que llegan por teléfono o mail.</p>
+          </div>
+        </div>
+        <div class="esc" data-escena="reclamo"></div>
+      </div>
+      <div class="despiece hueso grano dp" style="height:118mm;margin-top:8mm">
+        <div class="flota" id="f-col" data-cw="357" data-ch="649" data-ox="304" data-oy="287" data-r="22" style="left:10mm;top:10mm;width:53mm"><img src="img/c-re-columna.webp" alt="Columna Para hoy"></div>
+        <div class="flota" id="f-tar" data-cw="329" data-ch="183" data-ox="318" data-oy="354" data-r="16" style="left:78mm;top:24mm;width:88mm"><img src="img/c-re-tarjeta.webp" alt="Tarjeta de un reclamo"></div>
+        <svg class="lupa" data-f="f-col" data-x="318" data-y="354" data-w="329" data-h="183" data-r="16" data-a="f-tar"></svg>
+        <span class="g arr ini" data-f="f-tar" data-x="363" data-y="369" style="--l:12mm"><span class="t">La gravedad define el plazo <span class="st cons">Construido</span></span></span>
+        <span class="g aba fin" data-f="f-tar" data-x="600" data-y="481" style="--l:21mm"><span class="t">Una barra con lo que queda <span class="st dise">Diseñado</span></span></span>
+        <span class="g aba ini" data-f="f-tar" data-x="346" data-y="522" style="--l:19mm"><span class="t">Responsable e historial <span class="st cons">Construido</span></span></span>
+        <span class="g aba ini" data-f="f-col" data-x="420" data-y="936" style="--l:3.5mm"><span class="t">Columnas: hoy, en 2 días y en 3 días <span class="st dise">Diseñado</span></span></span>
       </div>
       <div class="empuja">
         <p class="p-h" style="margin-bottom:5mm">El recorrido de un caso</p>
@@ -560,10 +611,10 @@
           <div class="etapa"><span class="pto">1</span><p class="p-h">Abierto</p><p class="p-texto">Entra con su gravedad y su plazo.</p></div>
           <div class="etapa"><span class="pto">2</span><p class="p-h">En análisis</p><p class="p-texto">El responsable habla con las dos partes.</p></div>
           <div class="etapa"><span class="pto">3</span><p class="p-h">Resuelto</p><p class="p-texto">Hay que escribir la resolución.</p></div>
-          <div class="etapa"><span class="pto">4</span><p class="p-h">Cerrado</p><p class="p-texto">Con toda su historia.</p><span class="estado construido">Construido</span></div>
-          <div class="etapa"><span class="pto">+</span><p class="p-h">Pasa a un ticket</p><p class="p-texto">Si el arreglo es del equipo.</p><span class="estado disenado">Diseñado</span></div>
+          <div class="etapa"><span class="pto">4</span><p class="p-h">Cerrado</p><p class="p-texto">Con toda su historia.</p><span class="st cons">Construido</span></div>
+          <div class="etapa"><span class="pto">+</span><p class="p-h">Pasa a un ticket</p><p class="p-texto">Si el arreglo es del equipo.</p><span class="st dise">Diseñado</span></div>
         </div>
-        <p class="p-origen" style="margin-top:6mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Casos de ejemplo reemplazados por casos neutros. Reclamos cargados en la app y adjuntos <span class="estado concepto">Concepto</span></p>
+        <p class="p-origen" style="margin-top:6mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Casos de ejemplo reemplazados por casos neutros. Categoría «Pago»: si el cobro no coincide con lo acordado, entra como reclamo <span class="st cons">Construido</span> Reclamos cargados en la app <span class="st conc">Concepto</span></p>
       </div>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
@@ -577,23 +628,28 @@
     <div class="caja">
       <span class="p-ceja">Cómo detectamos y reducimos la fuga</span>
       <h1 class="p-titulo" style="margin-top:5mm">Nada lo impide del todo. Que valga <span class="p-marca">quedarse</span></h1>
-      <p class="p-lead" style="margin-top:4mm;max-width:158mm;font-size:10.2pt">Que un cliente y un especialista se arreglen por fuera es un riesgo, y lo decimos así. No lo frenamos con castigos: dejamos el valor adentro y lo medimos como repetición dentro de Handyx.</p>
+      <div class="cab-mod">
+        <div>
+          <p class="p-lead" style="margin-top:4mm;font-size:10pt">Que un cliente y un especialista se arreglen por fuera es un riesgo, y lo decimos así. No lo frenamos con castigos: dejamos el valor adentro y lo medimos como repetición dentro de Handyx.</p>
+        </div>
+        <div class="esc" data-escena="propuestas"></div>
+      </div>
       <p class="p-h" style="margin-top:8mm">Lo que queda adentro, y su estado</p>
       <div class="mecanismos" style="margin-top:3mm">
-        <div class="mec"><span class="ic">1</span><div><p class="p-h">Propuestas comparables</p><p class="p-texto">Precio, fecha y garantía, una al lado de la otra.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="mec"><span class="ic">2</span><div><p class="p-h">Chat sin compartir el teléfono</p><p class="p-texto">Se conversa antes y durante el trabajo sin dar el número.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="mec"><span class="ic">3</span><div><p class="p-h">Dirección exacta solo al aceptar</p><p class="p-texto">Antes, el especialista ve la zona aproximada.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="mec"><span class="ic">4</span><div><p class="p-h">Historial, informe y garantía registrada</p><p class="p-texto">Lo que se hizo queda guardado para el próximo arreglo.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="mec"><span class="ic">5</span><div><p class="p-h">Reseñas</p><p class="p-texto">Opcionales, sin datos personales.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="mec"><span class="ic">6</span><div><p class="p-h">Reclamos con seguimiento</p><p class="p-texto">Con plazo y responsable, como en las páginas anteriores.</p><span class="estado construido">En el portal</span> <span class="estado concepto">Desde la app</span></div></div>
-        <div class="mec"><span class="ic">7</span><div><p class="p-h">Sin comisión al especialista</p><p class="p-texto">Arreglarse por fuera no le ahorra nada.</p><span class="tipo-dato">Decisión del fundador · 07/11/2026</span></div></div>
-        <div class="mec"><span class="ic">8</span><div><p class="p-h">Tarifa al usuario</p><p class="p-texto">0 % hasta el 10/12/2026; después, 15 % en evaluación.</p><span class="tipo-dato">Decisión · 0 %</span> <span class="tipo-dato">En evaluación · 15 %</span></div></div>
+        <div class="mec"><span class="ic">1</span><div><p class="p-h">Propuestas comparables <span class="st prue">En pruebas</span></p><p class="p-texto">Precio, fecha y garantía, una al lado de la otra.</p></div></div>
+        <div class="mec"><span class="ic">2</span><div><p class="p-h">Chat sin compartir el teléfono <span class="st prue">En pruebas</span></p><p class="p-texto">Se conversa antes y durante el trabajo sin dar el número.</p></div></div>
+        <div class="mec"><span class="ic">3</span><div><p class="p-h">Dirección exacta solo al aceptar <span class="st prue">En pruebas</span></p><p class="p-texto">Antes, el especialista ve la zona aproximada.</p></div></div>
+        <div class="mec"><span class="ic">4</span><div><p class="p-h">Historial, informe y garantía <span class="st dise">Diseñado</span></p><p class="p-texto">Lo que se hizo queda guardado para el próximo arreglo.</p></div></div>
+        <div class="mec"><span class="ic">5</span><div><p class="p-h">Reseñas <span class="st prue">En pruebas</span></p><p class="p-texto">Opcionales, sin datos personales.</p></div></div>
+        <div class="mec"><span class="ic">6</span><div><p class="p-h">Reclamos con seguimiento</p><p class="p-texto">Con plazo y responsable, como en la página anterior.</p><div class="sts" style="margin-top:1.2mm"><span class="st cons">En el portal</span><span class="st conc">Desde la app</span></div></div></div>
+        <div class="mec"><span class="ic">7</span><div><p class="p-h">Sin comisión al especialista</p><p class="p-texto">Arreglarse por fuera no le ahorra nada.</p><span class="tipo-dato" style="margin-top:1.2mm">Decisión del fundador · 07/11/2026</span></div></div>
+        <div class="mec"><span class="ic">8</span><div><p class="p-h">Tarifa al usuario</p><p class="p-texto">0 % hasta el 10/12/2026; después, 15 % en evaluación.</p><span class="tipo-dato" style="margin-top:1.2mm">Decisión · 0 %</span> <span class="tipo-dato" style="margin-top:1.2mm">En evaluación · 15 %</span></div></div>
       </div>
       <p class="p-h" style="margin-top:8mm">Cómo lo detectamos, desde los datos</p>
       <div class="medir" style="margin-top:3mm">
-        <div><p class="p-h" style="font-size:9pt">Repetición dentro de Handyx</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">Clientes que vuelven a contratar por la app. Necesita leer los trabajos de las apps desde el portal.</p><span class="estado concepto" style="margin-top:2mm">Concepto</span></div>
-        <div><p class="p-h" style="font-size:9pt">Retención por cohorte de uso</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">La misma tabla de cohortes de hoy, pero con trabajos en vez de contactos.</p><span class="estado concepto" style="margin-top:2mm">Concepto</span></div>
-        <div><p class="p-h" style="font-size:9pt">Qué miramos hoy</p><p class="p-texto" style="margin-top:2mm">Si contactamos a tiempo (cohortes de contacto) y los reclamos por categoría y plazo, incluida «Pago».</p><span class="estado construido" style="margin-top:2mm">Construido</span></div>
+        <div><p class="p-h" style="font-size:9pt">Repetición dentro de Handyx</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">Clientes que vuelven a contratar por la app. Necesita leer los trabajos de las apps desde el portal.</p><div class="sts"><span class="st conc">Concepto</span></div></div>
+        <div><p class="p-h" style="font-size:9pt">Retención por cohorte de uso</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">La misma tabla de cohortes de hoy, pero con trabajos en vez de contactos.</p><div class="sts"><span class="st conc">Concepto</span></div></div>
+        <div><p class="p-h" style="font-size:9pt">Qué miramos hoy</p><p class="p-texto" style="margin-top:2mm">Si contactamos a tiempo (cohortes de contacto) y los reclamos por categoría y plazo, incluida «Pago».</p><div class="sts"><span class="st cons">Construido</span></div></div>
       </div>
       <p class="p-origen empuja">Meta del piloto: 5 clientes que vuelvan a contratar al 31/12/2026 <span class="tipo-dato">Objetivo · no es un resultado</span> Estado de cada mecanismo según la auditoría de las apps y del portal, al 07/11/2026.</p>
     </div>
@@ -604,7 +660,7 @@
 <!-- =============================== 14 · APERTURA 05 =============================== -->
 <section class="pagina II apertura" id="cap-05">
   <div class="lamina">
-    <div class="banda azul" style="height:150mm">
+    <div class="banda azul grano" style="height:150mm">
       <img class="foto" src="../../marca/fotos/casino-plaza-azul.webp" alt="" style="width:170mm">
       <div class="velo-arriba"></div><div class="velo-abajo"></div>
       <div data-iso="maqueta" data-paleta="dia" data-pines="1" data-rotulos="1" data-solo="puerto,faro,catedral" class="iso" style="right:-12mm;bottom:-10mm;width:140mm"></div>
@@ -618,9 +674,9 @@
         <h1 class="p-titulo">Medir con método, sin <span class="p-marca">inventar</span></h1>
         <p class="p-lead" style="margin-top:4mm;max-width:156mm;font-size:10.2pt">Tres reglas valen para todas las pantallas de medición. Son reglas del portal y también de este manual.</p>
         <div class="reglas" style="margin-top:8mm">
-          <div><div class="p-num">01</div><p class="p-h">Pregunta, base y fuente</p><p class="p-texto">Cada número responde una pregunta y dice sobre cuántas personas se calcula, de dónde sale y en qué ventana.</p><span class="estado construido">Construido</span></div>
-          <div><div class="p-num">02</div><p class="p-h">Sin dato, no hay número</p><p class="p-texto">Si la fuente no existe, la pantalla dice «Fuente pendiente» y explica qué falta.</p><span class="estado construido">Construido</span></div>
-          <div><div class="p-num">03</div><p class="p-h">Grupos chicos, ocultos</p><p class="p-texto">Con menos de 5 personas no se muestra el número, para que nadie deduzca quién es quién.</p><span class="estado construido">Construido</span></div>
+          <div><div class="p-num">01</div><p class="p-h">Pregunta, base y fuente</p><p class="p-texto">Cada número responde una pregunta y dice sobre cuántas personas se calcula, de dónde sale y en qué ventana.</p><div class="sts"><span class="st cons">Construido</span></div></div>
+          <div><div class="p-num">02</div><p class="p-h">Sin dato, no hay número</p><p class="p-texto">Si la fuente no existe, la pantalla dice «Fuente pendiente» y explica qué falta.</p><div class="sts"><span class="st cons">Construido</span></div></div>
+          <div><div class="p-num">03</div><p class="p-h">Grupos chicos, ocultos</p><p class="p-texto">Con menos de 5 personas no se muestra el número, para que nadie deduzca quién es quién.</p><div class="sts"><span class="st cons">Construido</span></div></div>
         </div>
       </div>
     </div>
@@ -635,27 +691,29 @@
     <div class="caja">
       <span class="p-ceja">Campañas · cómo medimos la captación</span>
       <h1 class="p-titulo" style="margin-top:5mm">¿La campaña está <span class="p-marca">trayendo gente</span>?</h1>
-      <div class="notebook nb" style="--w:164mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/campana-nb.webp" alt="Panel de una campaña"></div>
-        <span class="toque" data-x="880" data-y="290">1</span><span class="toque" data-x="1205" data-y="272">2</span><span class="toque" data-x="1194" data-y="172">3</span><span class="toque" data-x="664" data-y="460">4</span></div><div class="base-nb"></div></div>
-      <div class="notas-fila" style="margin-top:7mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">El veredicto</p><p class="p-texto">Arriba, la respuesta; abajo, por qué.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Costo por anotado</p><p class="p-texto">«Sin dato» hasta saber de qué campaña vino cada alta.</p><span class="estado concepto">Concepto</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Enlaces y QR</p><p class="p-texto">Uno por pieza y por red, listos para copiar.</p><span class="estado construido">Construido</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Aprendizajes</p><p class="p-texto">Qué funcionó y qué mejorar, firmado.</p><span class="estado construido">Construido</span></div></div>
-      </div>
-      <div class="grilla empuja" style="column-gap:7mm;align-items:end">
-        <div class="c-8 det"><span class="det-rot">Detalle · Embudo</span>
-          <div class="marco" data-w="1105" data-h="430"><img src="img/campana-embudo.webp" alt="Embudo de la campaña">
-            <span class="toque" data-x="240" data-y="191">5</span><span class="toque" data-x="240" data-y="275">6</span></div></div>
-        <div class="c-4">
-          <div class="notas" style="gap:3.4mm">
-            <div class="nota"><span class="num">5</span><div><p class="p-h">Dónde se pierde la gente</p><p class="p-texto">Del anuncio a la landing, al preregistro, al contacto y al alta. El paso más flojo es donde conviene trabajar.</p></div></div>
-            <div class="nota"><span class="num">6</span><div><p class="p-h">Captación = contacto</p><p class="p-texto">No contamos anotados: contamos a quién contactamos a tiempo y quién llega al alta.</p></div></div>
+      <div class="cab-mod">
+        <div>
+          <div class="qh">
+            <p><b>Qué hace.</b> Dice si una campaña trae gente y en qué paso se pierde, con un enlace y un QR por pieza.</p>
+            <p><b>Para quién.</b> Quien arma la captación: piezas en redes y volantes.</p>
           </div>
-          
         </div>
+        <div class="esc" data-dibujo="embudo"></div>
       </div>
-      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Cifras de muestra; se quitaron los montos de ejemplo. Presupuesto y gasto por campaña <span class="estado construido">Construido</span> Impresiones y clics de los anuncios <span class="estado concepto">Concepto</span></p>
+      <div class="despiece grano dp" style="height:120mm;margin-top:8mm">
+        <div class="flota" id="f-ver" data-cw="1104" data-ch="198" data-ox="304" data-oy="218" data-r="24" style="left:8mm;top:17mm;width:158mm"><img src="img/c-ca-veredicto.webp" alt="Veredicto de la campaña"></div>
+        <div class="flota" id="f-emb" data-cw="1104" data-ch="433" data-ox="304" data-oy="508" data-r="24" style="left:8mm;top:52mm;width:150mm"><img src="img/c-ca-embudo.webp" alt="Embudo de la campaña"></div>
+        <span class="g arr ini" data-f="f-ver" data-x="345" data-y="219" style="--l:9mm"><span class="t">El veredicto, arriba <span class="st prue">En pruebas</span></span></span>
+        <span class="g arr fin" data-f="f-ver" data-x="1140" data-y="258" style="--l:14mm"><span class="t">Costo por anotado: sin dato todavía <span class="st conc">Concepto</span></span></span>
+        <span class="g aba ini" data-f="f-emb" data-x="357" data-y="912" style="--l:7mm"><span class="t">La lectura, en palabras</span></span>
+        <span class="g aba fin" data-f="f-emb" data-x="1362" data-y="853" style="--l:15mm"><span class="t">Dónde se pierde la gente: el paso más flojo <span class="st prue">En pruebas</span></span></span>
+      </div>
+      <div class="notas-3" style="margin-top:7mm">
+        <div><p class="p-h">Enlaces y QR por pieza</p><p class="p-texto">Uno por pieza y por red, listos para copiar. La landing todavía no registra el origen.</p><div class="sts"><span class="st cons">Construido</span></div></div>
+        <div><p class="p-h">Presupuesto y gasto</p><p class="p-texto">Cada campaña con su presupuesto y su gasto; una corrección es otro asiento.</p><div class="sts"><span class="st cons">Construido</span></div></div>
+        <div><p class="p-h">Captación es contacto</p><p class="p-texto">No contamos anotados: contamos a quién contactamos a tiempo y quién llega al alta.</p><div class="sts"><span class="st cons">Aprendizajes firmados</span></div></div>
+      </div>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Cifras de muestra; se quitaron los montos de ejemplo. Impresiones y clics de los anuncios <span class="st conc">Concepto</span></p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -668,20 +726,24 @@
     <div class="caja">
       <span class="p-ceja">Cohortes · cómo medimos la repetición</span>
       <h1 class="p-titulo" style="margin-top:5mm">¿Atendemos mejor a los que <span class="p-marca">llegan ahora</span>?</h1>
-      <div class="notebook nb" style="--w:164mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/cohortes-nb.webp" alt="Cohortes"></div>
-        <span class="toque" data-x="308" data-y="264">1</span><span class="toque" data-x="326" data-y="505">2</span><span class="toque" data-x="750" data-y="503">3</span></div><div class="base-nb"></div></div>
-      <div class="notas-fila" style="margin-top:7mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Explicada en tres pasos</p><p class="p-texto">Para quien nunca vio una tabla de cohortes.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Qué medir</p><p class="p-texto">Contactados, hoy; respondieron y listos, con muestra.</p><span class="estado construido">Construido</span> <span class="estado en-pruebas">Resto</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Por semana o por mes</p><p class="p-texto">La semanal ya existe; la mensual, con muestra.</p><span class="estado construido">Semana</span> <span class="estado en-pruebas">Mes</span></div></div>
+      <div class="qh" style="max-width:158mm">
+        <p><b>Qué hace.</b> Junta a la gente por mes de llegada y muestra qué parte ya fue contactada, semana a semana. Si las filas nuevas son más azules que las viejas, estamos mejorando.</p>
+        <p><b>Para quién.</b> Quien coordina el contacto y quiere saber si el equipo llega a tiempo.</p>
       </div>
-      <div class="empuja det"><span class="det-rot">Detalle · Lectura guiada y tiempo hasta el primer contacto</span>
-        <div class="marco"><img src="img/cohortes-lectura.webp" alt="Lectura guiada de la tabla"></div></div>
-      <div class="grilla" style="column-gap:7mm;margin-top:6mm">
-        <div class="c-6"><p class="p-h">Hoy mide el contacto</p><p class="p-texto" style="margin-top:1.2mm">Cada fila es un grupo que llegó junto; cada celda, qué parte ya fue contactada. Lo que no maduró va rayado y no entra en promedios.</p></div>
-        <div class="c-6"><p class="p-h">Mañana, la repetición</p><p class="p-texto" style="margin-top:1.2mm">Con los trabajos de las apps, la misma tabla dirá quién vuelve a contratar. Hasta entonces: sin dato. <span class="estado concepto">Retención de clientes de la app</span></p></div>
+      <div class="despiece blanco grano dp" style="height:134mm;margin-top:8mm;background:#FFFFFF;box-shadow:inset 0 0 0 0.25mm var(--borde-frio)">
+        <div class="flota" id="f-tab" data-cw="1104" data-ch="529" data-ox="304" data-oy="568" data-r="24" style="left:8mm;top:9mm;width:134mm"><img src="img/c-co-tabla.webp" alt="Tabla de cohortes"></div>
+        <div class="flota" id="f-lec" data-cw="542" data-ch="247" data-ox="304" data-oy="1119" data-r="24" style="left:8mm;top:86mm;width:86mm"><img src="img/c-co-lectura.webp" alt="Lectura guiada"></div>
+        <div class="flota" id="f-tie" data-cw="544" data-ch="243" data-ox="864" data-oy="1119" data-r="24" style="left:98mm;top:92mm;width:70mm"><img src="img/c-co-tiempo.webp" alt="Tiempo hasta el primer contacto"></div>
+        <span class="g der" data-f="f-tab" data-x="1383" data-y="841" style="--l:5mm"><span class="t">Más azul,<br>más contactados</span></span>
+        <span class="g der" data-f="f-tab" data-x="1383" data-y="1003" style="--l:5mm"><span class="t">Rayado: todavía<br>no maduró; no<br>entra en promedios</span></span>
+        <span class="g arr ini" data-f="f-lec" data-x="350" data-y="1119" style="--l:4.5mm"><span class="t">Explicada en palabras <span class="st dise">Diseñado</span></span></span>
+        <span class="g arr ini" data-f="f-tie" data-x="900" data-y="1119" style="--l:4.5mm"><span class="t">Tiempo hasta el primer contacto <span class="st prue">En pruebas</span></span></span>
       </div>
-      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Meses y personas reemplazados por «Mes 1 … Mes 6 · muestra»: los porcentajes no son datos.</p>
+      <div class="notas-2c" style="margin-top:7mm">
+        <div><p class="p-h">Hoy mide el contacto</p><p class="p-texto">La tabla semanal ya existe; la mensual y la lectura guiada, con muestra. Lo que no maduró va rayado y no entra en promedios.</p><div class="sts"><span class="st cons">Semanal</span><span class="st prue">Mensual</span></div></div>
+        <div><p class="p-h">Mañana, la repetición</p><p class="p-texto">Con los trabajos de las apps, la misma tabla dirá quién vuelve a contratar. Hasta entonces: sin dato.</p><div class="sts"><span class="st conc">Retención de clientes de la app</span></div></div>
+      </div>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Meses y personas reemplazados por «Mes 1 … Mes 6 · muestra»: los porcentajes no son datos.</p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -694,64 +756,75 @@
     <div class="caja">
       <span class="p-ceja">Mapa por barrio</span>
       <h1 class="p-titulo" style="margin-top:5mm">El territorio, <span class="p-marca">barrio por barrio</span></h1>
-      <div class="notebook nb" style="--w:156mm;margin-top:8mm"><div class="tapa-nb"><div class="pant"><img src="img/mapa-nb.webp" alt="Mapa por barrio"></div>
-        <span class="toque" data-x="304" data-y="36">1</span><span class="toque" data-x="600" data-y="560">2</span><span class="toque" data-x="905" data-y="243">3</span></div><div class="base-nb"></div></div>
-      <div class="notas-fila" style="margin-top:7mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">¿Qué querés ver?</p><p class="p-texto">Cobertura, dónde se pide, huecos, sin contactar o reclamos.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Capas por barrio</p><p class="p-texto">Hoy con muestra: el alta todavía no guarda el barrio.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">El barrio elegido</p><p class="p-texto">Su panel lleva a ver especialistas o a crear una campaña.</p><span class="estado disenado">Diseñado</span></div></div>
-      </div>
-      <div class="grilla empuja" style="column-gap:7mm;align-items:end">
-        <div class="c-4"><span class="det-rot" style="color:var(--navy)">Geografía real</span><img class="mapa-real" src="img/mapa-osm.webp" alt="Barrios del Partido de General Pueyrredon"></div>
-        <div class="c-8">
-          <p class="p-h">130 zonas que cubren todo el Partido</p>
-          <div class="zonas"><span><b>108</b>con límite de OpenStreetMap</span><span><b>21</b>aproximadas</span><span><b>1</b>rural</span></div>
-          <span class="tipo-dato" style="margin-top:2mm">Dato verificado · código del portal</span> <span class="estado construido">Construido</span>
-          <p class="p-texto" style="margin-top:3mm">Hoy el mapa construido compara Mar del Plata con otras ciudades, sin grupos de menos de 5. Pintar barrio por barrio depende de que la landing pida el barrio. Pedidos y reclamos por barrio llegarán con las apps.</p>
-          <span class="estado concepto" style="margin-top:2mm">Pedidos y reclamos en el mapa</span>
-          <div class="det" style="margin-top:5mm"><span class="det-rot">Detalle · Acciones del barrio</span>
-            <div class="marco" data-w="500" data-h="125" style="width:78%"><img src="img/mapa-acciones.webp" alt="Acciones desde un barrio"><span class="toque" data-x="24" data-y="95">4</span></div></div>
+      <div class="cab-mod">
+        <div>
+          <div class="qh">
+            <p><b>Qué hace.</b> Pinta los barrios reales del Partido según la pregunta elegida: cobertura, dónde se pide, huecos, sin contactar o reclamos.</p>
+            <p><b>Para quién.</b> Quien decide dónde buscar especialistas y dónde hacer la próxima campaña.</p>
+          </div>
         </div>
+        <div class="esc" data-escena="barrios"></div>
       </div>
-      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Colores y cifras del mapa: muestra. Límites: © colaboradores de OpenStreetMap (ODbL).</p>
+      <div class="despiece grano dp" style="height:128mm;margin-top:8mm">
+        <div class="flota" id="f-map" data-cw="579" data-ch="976" data-ox="304" data-oy="216" data-r="24" style="left:10mm;top:10mm;width:64mm"><img src="img/c-ma-mapa.webp" alt="Mapa de especialistas por barrio"></div>
+        <div class="flota" id="f-bar" data-cw="507" data-ch="320" data-ox="901" data-oy="216" data-r="24" style="left:82mm;top:20mm;width:84mm"><img src="img/c-ma-barrio.webp" alt="Panel del barrio elegido"></div>
+        <div class="flota" id="f-acc" data-cw="477" data-ch="118" data-ox="916" data-oy="1059" data-r="16" style="left:90mm;top:84mm;width:70mm"><img src="img/c-ma-acciones.webp" alt="Acciones desde el barrio"></div>
+        <span class="g arr ini" data-f="f-bar" data-x="960" data-y="218" style="--l:8mm"><span class="t">El barrio elegido, con su panel <span class="st dise">Diseñado</span></span></span>
+        <span class="g aba fin" data-f="f-bar" data-x="1300" data-y="520" style="--l:4mm"><span class="t">Capas por barrio, con muestra <span class="st prue">En pruebas</span></span></span>
+        <span class="g aba fin" data-f="f-acc" data-x="1300" data-y="1160" style="--l:8mm"><span class="t">Ver especialistas o crear una campaña <span class="st dise">Diseñado</span></span></span>
+        <span class="g aba ini" data-f="f-map" data-x="330" data-y="1150" style="--l:4.5mm"><span class="t">Con menos de 5, no se muestra el número <span class="st cons">Construido</span></span></span>
+      </div>
+      <div class="grilla" style="margin-top:7mm;column-gap:8mm">
+        <div class="c-5"><p class="p-h">130 zonas que cubren todo el Partido</p>
+          <div class="zonas" style="margin-top:2mm"><span><b>108</b>con límite de OpenStreetMap</span><span><b>21</b>aproximadas</span><span><b>1</b>rural</span></div>
+          <div class="sts"><span class="tipo-dato">Dato verificado · código del portal</span><span class="st cons">Construido</span></div></div>
+        <div class="c-7"><p class="p-texto" style="font-size:8pt">Hoy el mapa construido compara Mar del Plata con otras ciudades, sin grupos de menos de 5. Pintar barrio por barrio depende de que la landing pida el barrio. Pedidos y reclamos por barrio llegarán con las apps.</p><div class="sts"><span class="st conc">Pedidos y reclamos en el mapa</span></div></div>
+      </div>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Colores y cifras del mapa: muestra. Límites: © colaboradores de OpenStreetMap (ODbL).</p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
 </section>
 
-<!-- =============================== 18 · EQUIPO POR DENTRO =============================== -->
+<!-- =============================== 18 · EQUIPO POR DENTRO (apertura compacta 06) =============================== -->
 <section class="pagina II compacta" id="cap-06">
   <div class="lamina">
-    <div class="banda azul" style="height:66mm">
-      <img class="foto" src="../../marca/fotos/aerea-puerto-sur-azul.webp" alt="" style="width:64mm">
+    <div class="banda azul grano" style="height:66mm">
       <div class="velo-arriba"></div>
+      <div class="esc-banda" data-escena="equipo" data-tono="oscuro" style="right:8mm;top:7mm;width:64mm"></div>
     </div>
     <div class="cab-p sobre-azul"><span>Capítulo 06</span><span>Handyx · Operations Portal</span></div>
     <div class="caja">
       <div class="p-azul fila" style="background:none;align-items:flex-end;gap:7mm;height:36mm">
         <svg class="cap-n-svg" role="img" aria-label="06" viewBox="-10 -16 1646 718" style="height:14.6mm;width:33.5mm"><path d="M406 698Q301 698 230.5 671.5Q160 645 118.5 597.0Q77 549 59.0 484.0Q41 419 41 342Q41 265 59.0 200.0Q77 135 118.0 87.0Q159 39 229.5 12.5Q300 -14 405 -14Q510 -14 580.5 12.5Q651 39 692.5 87.0Q734 135 752.0 200.0Q770 265 770 342Q770 419 752.0 484.0Q734 549 693.0 597.0Q652 645 581.5 671.5Q511 698 406 698ZM406 557Q457 557 486.0 536.0Q515 515 527.0 472.0Q539 429 539 364V317Q539 252 527.0 209.5Q515 167 486.0 146.5Q457 126 406 126Q356 126 326.5 146.5Q297 167 284.5 209.5Q272 252 272 317V364Q272 429 284.5 472.0Q297 515 326.5 536.0Q356 557 406 557ZM1225 698Q1133 698 1063.5 677.5Q994 657 947.0 615.5Q900 574 876.0 510.0Q852 446 852 359Q852 259 876.0 188.0Q900 117 947.0 72.5Q994 28 1063.5 7.0Q1133 -14 1225 -14Q1327 -14 1404.0 12.5Q1481 39 1524.5 90.5Q1568 142 1568 218H1350Q1350 187 1334.5 166.5Q1319 146 1291.5 136.0Q1264 126 1228 126Q1171 126 1140.5 145.5Q1110 165 1098.5 203.0Q1087 241 1087 299Q1116 279 1150.5 267.5Q1185 256 1220.5 251.5Q1256 247 1285 247Q1370 247 1439.0 271.0Q1508 295 1549.0 342.0Q1590 389 1590 458Q1590 535 1545.0 588.5Q1500 642 1418.0 670.0Q1336 698 1225 698ZM1223 557Q1265 557 1295.5 546.5Q1326 536 1342.5 515.5Q1359 495 1359 465Q1359 434 1342.5 414.0Q1326 394 1295.5 383.5Q1265 373 1223 373Q1182 373 1151.5 383.5Q1121 394 1104.5 414.0Q1088 434 1088 465Q1088 495 1104.5 515.5Q1121 536 1151.5 546.5Q1182 557 1223 557Z"/></svg>
-        <div style="padding-bottom:1mm"><span class="p-ceja">El equipo por dentro</span><h1 class="p-titulo" style="margin-top:3mm;font-size:23pt">Quién hace qué, <span class="p-marca">y cuándo</span></h1></div>
+        <div style="padding-bottom:1mm"><span class="p-ceja">El equipo por dentro</span><h1 class="p-titulo" style="margin-top:3mm;font-size:22pt">Quién hace qué, <span class="p-marca">y cuándo</span></h1></div>
       </div>
-      <div class="notebook nb" style="--w:142mm;margin-top:13mm"><div class="tapa-nb"><div class="pant"><img src="img/tareas-nb.webp" alt="Tablero de tareas del equipo"></div>
-        <span class="toque" data-x="308" data-y="193">1</span><span class="toque" data-x="524" data-y="272">2</span><span class="toque" data-x="322" data-y="451">3</span><span class="toque" data-x="1270" data-y="191">4</span></div><div class="base-nb"></div></div>
-      <div class="notas-fila" style="margin-top:6mm">
-        <div class="nota"><span class="num">1</span><div><p class="p-h">Ciclo de trabajo</p><p class="p-texto">Avance, pendientes y reportes.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="nota"><span class="num">2</span><div><p class="p-h">Mis tareas</p><p class="p-texto">Solo lo propio, y avisos con @.</p><span class="estado disenado">Diseñado</span></div></div>
-        <div class="nota"><span class="num">3</span><div><p class="p-h">Con su origen</p><p class="p-texto">Un ticket se vincula al caso que lo pidió.</p><span class="estado en-pruebas">En pruebas</span></div></div>
-        <div class="nota"><span class="num">4</span><div><p class="p-h">Crear ticket</p><p class="p-texto">Tipo, prioridad, responsable y fecha.</p><span class="estado en-pruebas">En pruebas</span></div></div>
+      <div class="qh" style="margin-top:12mm">
+        <p><b>Qué hace.</b> Ordena el trabajo interno en tickets por ciclo, con su origen, y guarda las guías que explican cómo se hace cada cosa.</p>
+        <p><b>Para quién.</b> Todo el equipo: quien atiende, quien mide y quien mantiene los papeles al día.</p>
       </div>
-      <div class="grilla empuja" style="column-gap:7mm;align-items:end">
-        <div class="c-7 det"><span class="det-rot">Detalle · Una guía del equipo</span>
-          <div class="marco"><img src="img/docs-guia.webp" alt="Guía para contactar a un preregistro"></div></div>
-        <div class="c-5 funcs">
-          <div><span><b>Guías y procesos</b><small>Con versiones; el editor bloquea teléfonos reales y claves antes de guardar</small></span><span class="estado construido">Construido</span></div>
-          <div><span><b>Once guías escritas</b><small>Contacto, reclamos, campañas, analítica, apps y más</small></span><span class="estado construido">Construido</span></div>
-          <div><span><b>Papeles de la empresa</b><small>Vencimientos y versiones, con muestra</small></span><span class="estado en-pruebas">En pruebas</span></div>
-          <div><span><b>Derechos de las personas</b><small>Acceso, corrección y supresión, con un procedimiento privado</small></span><span class="estado construido">Construido</span></div>
-          <div><span><b>Registro de actividad</b><small>Se escribe en cada cambio; consultarlo desde el portal es un concepto</small></span><span class="estado construido">Construido</span></div>
+      <div class="despiece hueso grano dp" style="height:100mm;margin-top:7mm">
+        <div class="flota" id="f-spr" data-cw="640" data-ch="60" data-ox="296" data-oy="163" data-r="12" style="left:8mm;top:9mm;width:96mm"><img src="img/c-ta-sprint.webp" alt="Ciclo de trabajo"></div>
+        <div class="flota" id="f-54" data-cw="242" data-ch="134" data-ox="316" data-oy="379" data-r="16" style="left:8mm;top:27mm;width:60mm"><img src="img/c-ta-54.webp" alt="Ticket HND-54"></div>
+        <div class="flota" id="f-48" data-cw="242" data-ch="134" data-ox="875" data-oy="379" data-r="16" style="left:30mm;top:57mm;width:60mm"><img src="img/c-ta-48.webp" alt="Ticket HND-48"></div>
+        <div class="flota" id="f-doc" data-cw="710" data-ch="300" data-r="6" style="left:98mm;top:28mm;width:70mm"><img src="img/c-doc-pasos.webp" alt="Guía para contactar a un preregistro"></div>
+        <span class="g der" data-f="f-spr" data-x="936" data-y="193" style="--l:5mm"><span class="t">El ciclo y su avance <span class="st prue">En pruebas</span></span></span>
+        <span class="g der" data-f="f-48" data-x="1102" data-y="485" style="--l:10mm"><span class="t">Tipo, prioridad, responsable<br>y fecha <span class="st prue">En pruebas</span></span></span>
+        <span class="g aba fin" data-f="f-doc" data-x="560" data-y="300" style="--l:5mm"><span class="t">Guías con versiones <span class="st cons">Construido</span></span></span>
+      </div>
+      <div class="notas-2c" style="margin-top:6mm">
+        <div class="funcs">
+          <div><span><b>Once guías escritas</b><small>Contacto, reclamos, campañas, analítica, apps y más</small></span><span class="st cons">Construido</span></div>
+          <div><span><b>Editor que cuida los datos</b><small>Bloquea teléfonos reales y claves antes de guardar</small></span><span class="st cons">Construido</span></div>
+          <div><span><b>Mis tareas y avisos con @</b><small>Solo lo propio</small></span><span class="st dise">Diseñado</span></div>
+        </div>
+        <div class="funcs">
+          <div><span><b>Papeles de la empresa</b><small>Vencimientos y versiones, con muestra</small></span><span class="st prue">En pruebas</span></div>
+          <div><span><b>Derechos de las personas</b><small>Acceso, corrección y supresión, con un procedimiento privado</small></span><span class="st cons">Construido</span></div>
+          <div><span><b>Registro de actividad</b><small>Se escribe en cada cambio; consultarlo desde el portal es un concepto</small></span><span class="st cons">Construido</span></div>
         </div>
       </div>
-      <p class="p-origen" style="margin-top:3mm"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Nombres e iniciales inventados. Tareas y Legal corren solo con datos de muestra.</p>
+      <p class="p-origen empuja"><span class="rotulo diseno">Diseño propuesto · datos ficticios</span> Nombres e iniciales inventados. Tareas y Legal corren solo con datos de muestra.</p>
     </div>
     <div class="pie-p"><span>Handyx · Operations Portal</span><b class="folio-n"></b></div>
   </div>
@@ -765,14 +838,14 @@
       <span class="p-ceja">Lo que nos preguntan sin vueltas</span>
       <h1 class="p-titulo" style="margin-top:5mm">Las preguntas <span class="p-marca">incómodas</span></h1>
       <div class="grilla dudas" style="margin-top:6mm;row-gap:3.6mm;column-gap:4mm">
-        <div class="c-6 duda"><p class="q">¿Cómo validan a un especialista?</p><p class="corta">Con documentos, matrícula donde corresponde y antecedentes en persona. Solo el equipo habilita.</p><p class="larga">Cargar un documento no es estar verificado. Los antecedentes se muestran con turno y nunca se guardan como archivo. El sello sale del servidor.</p><p class="hoy"><b>Hoy</b><span class="estado en-pruebas">Alta y revisión</span> Fuera del portal <span class="estado concepto">En el portal</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Qué pasa con un reclamo?</p><p class="corta">Tiene plazo según su gravedad, responsable y una resolución escrita.</p><p class="larga">Crítica y alta, en el día; media, en dos días; baja, en tres. Lo vencido va primero. Lo que es del equipo pasa a un ticket.</p><p class="hoy"><b>Hoy</b><span class="estado construido">Plazos y ficha</span><span class="estado concepto">Reclamos desde la app</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Cómo evitan que se fuguen?</p><p class="corta">Nada lo impide del todo: es un riesgo y lo medimos.</p><p class="larga">El valor queda adentro: propuestas comparables, chat sin teléfono, dirección solo al aceptar, historial, reseñas, reclamos con seguimiento y sin comisión al especialista.</p><p class="hoy"><b>Hoy</b><span class="estado en-pruebas">En las apps</span> Repetición: sin dato todavía</p></div>
-        <div class="c-6 duda"><p class="q">¿Quién ve los datos personales?</p><p class="corta">Solo el equipo, según su tarea, y queda registrado.</p><p class="larga">Están cifrados; se ven en la ficha y cada apertura se registra. La exportación sale sin nombre, WhatsApp ni email. Nada va a terceros ni se manda solo.</p><p class="hoy"><b>Hoy</b><span class="estado construido">Construido</span> Sin datos reales todavía</p></div>
-        <div class="c-6 duda"><p class="q">¿Qué está conectado hoy y qué no?</p><p class="corta">Lo de la landing, sí. Lo de las apps, todavía no.</p><p class="larga">Preregistros, campañas y reclamos cargados a mano llegan al portal. Pedidos, pagos informados, verificación y reclamos de la app necesitan un contrato que falta.</p><p class="hoy"><b>Hoy</b><span class="estado construido">Landing</span><span class="estado concepto">Apps</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Cómo validan a un especialista?</p><p class="corta">Con documentos, matrícula donde corresponde y antecedentes en persona. Solo el equipo habilita.</p><p class="larga">Cargar un documento no es estar verificado. Los antecedentes se muestran con turno y nunca se guardan como archivo. El sello sale del servidor.</p><p class="hoy"><b>Hoy</b><span class="st prue">Alta y revisión, fuera del portal</span><span class="st conc">En el portal</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Qué pasa con un reclamo?</p><p class="corta">Tiene plazo según su gravedad, responsable y una resolución escrita.</p><p class="larga">Crítica y alta, en el día; media, en dos días; baja, en tres. Lo vencido va primero. Lo que es del equipo pasa a un ticket.</p><p class="hoy"><b>Hoy</b><span class="st cons">Plazos y ficha</span><span class="st conc">Reclamos desde la app</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Cómo evitan que se fuguen?</p><p class="corta">Nada lo impide del todo: es un riesgo y lo medimos.</p><p class="larga">El valor queda adentro: propuestas comparables, chat sin teléfono, dirección solo al aceptar, historial, reseñas, reclamos con seguimiento y sin comisión al especialista.</p><p class="hoy"><b>Hoy</b><span class="st prue">En las apps</span> Repetición: sin dato todavía</p></div>
+        <div class="c-6 duda"><p class="q">¿Quién ve los datos personales?</p><p class="corta">Solo el equipo, según su tarea, y queda registrado.</p><p class="larga">Están cifrados; se ven en la ficha y cada apertura se registra. La exportación sale sin nombre, WhatsApp ni email. Nada va a terceros ni se manda solo.</p><p class="hoy"><b>Hoy</b><span class="st cons">Construido</span> Sin datos reales todavía</p></div>
+        <div class="c-6 duda"><p class="q">¿Qué está conectado hoy y qué no?</p><p class="corta">Lo de la landing, sí. Lo de las apps, todavía no.</p><p class="larga">Preregistros, campañas y reclamos cargados a mano llegan al portal. Pedidos, pagos informados, verificación y reclamos de la app necesitan un contrato que falta.</p><p class="hoy"><b>Hoy</b><span class="st cons">Landing</span><span class="st conc">Apps</span></p></div>
         <div class="c-6 duda"><p class="q">¿Los números de las pantallas son reales?</p><p class="corta">No. Son de muestra, y cada imagen lo dice.</p><p class="larga">El backend no está desplegado y la captura de la landing sigue cerrada hasta el aviso de privacidad definitivo. Cuando falta un dato, el portal escribe «Sin dato».</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Dato verificado · auditoría 07/11</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Cómo se cobra la tarifa si el dinero no pasa por Handyx?</p><p class="corta">A definir. El portal no cobra, no paga ni liquida nada.</p><p class="larga">El usuario paga directo al especialista. Al especialista, sin comisión; al usuario, 0 % hasta el 10/12/2026 y después 15 % en evaluación. El mecanismo de cobro no está decidido.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Decisión del fundador · 07/11</span><span class="estado concepto">Pagos informados</span></p></div>
-        <div class="c-6 duda"><p class="q">¿Quién emite las invitaciones de la demo cerrada?</p><p class="corta">Operations, con códigos de uso único. Con qué herramienta: a definir.</p><p class="larga">El portal no tiene esa pantalla. Noviembre de 2026: demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar.</p><p class="hoy"><b>Hoy</b><span class="estado concepto">Invitaciones en el portal</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Cómo se cobra la tarifa si el dinero no pasa por Handyx?</p><p class="corta">A definir. El portal no cobra, no paga ni liquida nada.</p><p class="larga">El usuario paga directo al especialista. Al especialista, sin comisión; al usuario, 0 % hasta el 10/12/2026 y después 15 % en evaluación. El mecanismo de cobro no está decidido.</p><p class="hoy"><b>Hoy</b><span class="tipo-dato">Decisión del fundador · 07/11</span><span class="st conc">Pagos informados</span></p></div>
+        <div class="c-6 duda"><p class="q">¿Quién emite las invitaciones de la demo cerrada?</p><p class="corta">Operations, con códigos de uso único. Con qué herramienta: a definir.</p><p class="larga">El portal no tiene esa pantalla. Noviembre de 2026: demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar.</p><p class="hoy"><b>Hoy</b><span class="st conc">Invitaciones en el portal</span></p></div>
       </div>
       <p class="p-origen empuja">Estado al 07/11/2026. Lo que todavía no tiene respuesta en las fuentes queda «a definir» y anotado como pregunta abierta.</p>
     </div>
@@ -818,18 +891,138 @@
   </div>
 </section>
 
+<script src="../../plantilla/escenas.js"></script>
 <script>
-  // .toque sobre la notebook: coordenadas en px de la pantalla del portal (1440 × 900)
-  document.querySelectorAll('.tapa-nb .toque[data-x]').forEach((t) => {
-    t.style.left = (2 + (96 * t.dataset.x) / 1440) + '%';
-    t.style.top = (3.5 + (93.2 * t.dataset.y) / 900) + '%';
-  });
-  // .toque sobre un Detalle: coordenadas en px CSS del recorte (data-w × data-h en el marco)
-  document.querySelectorAll('.det .marco[data-w] .toque').forEach((t) => {
-    const m = t.closest('.marco');
-    t.style.left = ((100 * t.dataset.x) / m.dataset.w) + '%';
-    t.style.top = ((100 * t.dataset.y) / m.dataset.h) + '%';
-  });
+// Escenas propias del Dossier 04 (mismo lenguaje que plantilla/escenas.js: planos de la marca, trazo navy fino,
+// personas sin cara, un solo acento amarillo). Uso: <div data-dibujo="llamar|llave|embudo" data-tono="claro|oscuro">
+(function () {
+  const T = {
+    claro: { tinta: '#0E1D36', linea: '#0E1D36', suave: '#C9D6EE', papel: '#FFFFFF', piso: 'rgba(14,29,54,0.10)', azul: '#1F57A8', medio: '#2C66B8', prof: '#143E7E', cielo: '#E9EFF9', amar: '#F5F59A', amarFuerte: '#E8D84A', hueso: '#F7F6F1', piedra: '#E2DCCD', piel: ['#E7B48C', '#C98C62', '#8D5B3B'], pelo: '#26324A', pantalon: '#26324A', zapato: '#0E1D36' },
+    oscuro: { tinta: '#FFFFFF', linea: '#E9EFF9', suave: '#2C4A7A', papel: '#13284A', piso: 'rgba(0,0,0,0.28)', azul: '#2C66B8', medio: '#3A76CC', prof: '#1F57A8', cielo: '#1B3560', amar: '#F5F59A', amarFuerte: '#F5F59A', hueso: '#E9EFF9', piedra: '#2C4A7A', piel: ['#D9A27C', '#B47A55', '#7A4E33'], pelo: '#060E1C', pantalon: '#060E1C', zapato: '#060E1C' },
+  };
+  // persona de pie (misma figura que plantilla/escenas.js), origen en los pies
+  function persona(p, x, y, s, o = {}) {
+    const piel = p.piel[o.piel ?? 0], ropa = o.ropa || p.azul, pan = p.pantalon, pose = o.pose || 'quieta';
+    const brazo = (d) => `<path d="${d}" fill="none" stroke="${ropa}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;
+    const mano = (cx, cy) => `<circle cx="${cx}" cy="${cy}" r="3.3" fill="${piel}"/>`;
+    let g = `<ellipse cx="0" cy="0" rx="19" ry="3.2" fill="${p.piso}"/>`;
+    g += `<path d="M-12 -72 L-3 -72 L-5 -4 L-11.5 -4 Z M3 -72 L12 -72 L11.5 -4 L5 -4 Z" fill="${pan}"/>`;
+    g += `<rect x="-14.5" y="-5" width="11" height="5" rx="2.5" fill="${p.zapato}"/><rect x="3.5" y="-5" width="11" height="5" rx="2.5" fill="${p.zapato}"/>`;
+    g += `<path d="M-15 -72 L15 -72 L13.5 -117 C12.5 -123 6.5 -126 0 -126 C-6.5 -126 -12.5 -123 -13.5 -117 Z" fill="${ropa}"/>`;
+    g += `<path d="M-4 -126 L0 -119 L4 -126" fill="none" stroke="${p.papel}" stroke-width="1.2" opacity=".55"/>`;
+    g += `<rect x="-3" y="-132" width="6" height="8" fill="${piel}"/><ellipse cx="0" cy="-141" rx="9" ry="10.5" fill="${piel}"/>`;
+    if (o.pelo === 'largo') g += `<path d="M-10 -140 C-11 -154 -2 -156 3 -154.5 C10 -153 11 -146 10.5 -139 C11 -132 12 -127 14 -123 L6 -124 C7 -132 6 -140 3 -144 C-2 -140 -7 -140 -10 -140 Z" fill="${p.pelo}"/><path d="M-10 -140 C-11 -132 -12 -127 -13 -123 L-7 -124 C-8 -130 -8 -136 -10 -140 Z" fill="${p.pelo}"/>`;
+    else if (o.pelo === 'rodete') g += `<path d="M-9.5 -141 C-10 -153 -2 -155 3 -153.5 C9 -152 10 -146 9.6 -141 C7 -146 -6 -147 -9.5 -141 Z" fill="${p.pelo}"/><circle cx="-3" cy="-153" r="4.4" fill="${p.pelo}"/>`;
+    else g += `<path d="M-9.5 -141 C-10 -153 -2 -155 3 -153.5 C9 -152 10 -146 9.6 -141 C7 -146 -6 -147 -9.5 -141 Z" fill="${p.pelo}"/>`;
+    if (pose === 'celular') g += brazo('M-13 -118 C-17 -104 -14 -98 -5 -101') + mano(-4, -102) + `<rect x="-7" y="-115" width="9" height="15" rx="2" fill="${p.zapato}"/><rect x="-6" y="-113.6" width="7" height="11.5" rx="1" fill="${o.pantalla || p.cielo}"/>`;
+    else g += brazo('M-13 -118 C-17 -104 -18 -94 -17 -84') + mano(-17, -82);
+    g += brazo('M13 -118 C17 -104 18 -94 17 -84') + mano(17, -82);
+    return `<g transform="translate(${x} ${y}) scale(${s})">${g}</g>`;
+  }
+  const barra = (x, y, w, h, f, r = 2) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${f}"/>`;
+  const piso = (p, y, x1 = 10, x2 = 390) => `<path d="M${x1} ${y} H${x2}" stroke="${p.linea}" stroke-width=".8" opacity=".25"/>`;
+
+  const E = {
+    // a quién llamar primero: la lista ordenada por espera y una persona del equipo que contacta a mano
+    llamar(p) {
+      let s = piso(p, 206);
+      s += `<rect x="40" y="38" width="226" height="156" rx="12" fill="${p.papel}" stroke="${p.suave}"/>`;
+      s += barra(58, 54, 92, 8, p.suave, 4) + barra(58, 67, 56, 5, p.cielo, 2.5);
+      for (let k = 0; k < 4; k++) {
+        const y = 84 + k * 26;
+        if (k === 0) s += `<rect x="50" y="${y - 3}" width="206" height="24" rx="7" fill="${p.cielo}"/>`;
+        s += `<circle cx="66" cy="${y + 9}" r="8" fill="${k === 0 ? p.azul : p.cielo}" ${k === 0 ? '' : `stroke="${p.suave}"`}/>`;
+        s += barra(82, y + 3, 70 - k * 6, 6, k === 0 ? p.prof : p.suave, 3) + barra(82, y + 12, 44, 4.5, k === 0 ? p.suave : p.cielo, 2.2);
+        s += barra(172, y + 4, 36, 10, k === 0 ? p.papel : p.hueso, 5);
+        s += `<path d="M236 ${y + 5} L241 ${y + 9} L236 ${y + 13}" fill="none" stroke="${p.linea}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="${k === 0 ? .9 : .35}"/>`;
+      }
+      // reloj: espera más de 48 h (acento)
+      s += `<g transform="translate(246 74)"><circle r="13" fill="${p.amar}"/><circle r="8" fill="none" stroke="#0E1D36" stroke-width="1.6"/><path d="M0 -4.5 V0 L3.4 2.2" fill="none" stroke="#0E1D36" stroke-width="1.6" stroke-linecap="round"/></g>`;
+      // persona del equipo con el teléfono: el contacto lo hace una persona, nunca un envío automático
+      s += persona(p, 330, 206, 1, { pose: 'celular', pelo: 'rodete', ropa: p.medio, piel: 2 });
+      s += `<path d="M322 98 C304 82 286 82 262 90" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      s += `<g transform="translate(362 34)"><path d="M-22 -14 H18 Q24 -14 24 -8 V8 Q24 14 18 14 H-6 L-14 21 L-13 14 H-22 Q-28 14 -28 8 V-8 Q-28 -14 -22 -14 Z" fill="${p.azul}"/>${[-12, -2, 8].map((cx) => `<circle cx="${cx}" cy="0" r="2.4" fill="#FFFFFF"/>`).join('')}</g>`;
+      return s;
+    },
+    // la ficha con los datos enmascarados, el candado del cifrado y el registro de quién miró qué
+    llave(p) {
+      let s = piso(p, 206);
+      s += `<g transform="translate(46 40)"><rect width="184" height="150" rx="12" fill="${p.papel}" stroke="${p.suave}"/>`;
+      s += `<circle cx="30" cy="32" r="16" fill="${p.cielo}"/><circle cx="30" cy="27" r="6" fill="${p.suave}"/><path d="M19 42 C21 33 39 33 41 42 Z" fill="${p.suave}"/>`;
+      s += barra(56, 22, 84, 9, p.prof, 4.5) + barra(56, 37, 52, 6, p.suave, 3);
+      for (let k = 0; k < 3; k++) {
+        const y = 62 + k * 26;
+        s += barra(14, y, 156, 19, p.hueso, 6) + barra(22, y + 7, 30, 5, p.suave, 2.5);
+        s += [0, 1, 2, 3, 4].map((i) => `<circle cx="${104 + i * 9}" cy="${y + 9.5}" r="2.6" fill="${p.tinta}" opacity=".55"/>`).join('');
+      }
+      s += `</g>`;
+      // registro de actividad
+      s += `<g transform="translate(262 104)"><rect width="104" height="90" rx="10" fill="${p.papel}" stroke="${p.suave}"/>`;
+      s += barra(12, 12, 46, 6, p.suave, 3);
+      for (let k = 0; k < 3; k++) { const y = 30 + k * 18; s += `<circle cx="18" cy="${y + 4}" r="5" fill="${k === 0 ? p.azul : p.cielo}"/>` + barra(30, y, 58 - k * 8, 5, p.suave, 2.5) + barra(30, y + 7, 34, 4, p.cielo, 2); }
+      s += `</g>`;
+      s += `<path d="M230 150 C246 150 248 150 262 150" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      // candado (acento)
+      s += `<g transform="translate(246 74)"><path d="M-13 -6 V-16 A13 13 0 0 1 13 -16 V-6" fill="none" stroke="#0E1D36" stroke-width="5" stroke-linecap="round"/><rect x="-21" y="-8" width="42" height="34" rx="7" fill="${p.amar}" stroke="#0E1D36" stroke-width="1.4"/><circle cy="5" r="4.2" fill="#0E1D36"/><rect x="-1.6" y="6" width="3.2" height="9" rx="1.6" fill="#0E1D36"/></g>`;
+      return s;
+    },
+    // de la pieza al alta: alguien escanea el QR de un volante y el embudo muestra dónde se pierde la gente
+    embudo(p) {
+      let s = piso(p, 206);
+      s += `<path d="M72 206 V128" stroke="${p.prof}" stroke-width="4"/><path d="M58 206 H86" stroke="${p.prof}" stroke-width="4" stroke-linecap="round"/>`;
+      s += `<rect x="34" y="40" width="76" height="92" rx="7" fill="${p.azul}"/><rect x="47" y="52" width="50" height="50" rx="3" fill="#FFFFFF"/>`;
+      const qr = ['1110111', '1010101', '1110111', '0001000', '1101011', '0110100', '1011101'];
+      qr.forEach((fila, r) => [...fila].forEach((c, k) => { if (c === '1') s += `<rect x="${51 + k * 6}" y="${56 + r * 6}" width="5.4" height="5.4" fill="#0E1D36"/>`; }));
+      s += barra(47, 110, 50, 6, '#FFFFFF', 3) + barra(55, 120, 34, 4, p.medio, 2);
+      s += persona(p, 148, 206, 1, { pose: 'celular', pelo: 'largo', ropa: p.medio, piel: 0 });
+      s += `<path d="M154 98 C188 94 204 66 224 54" fill="none" stroke="${p.linea}" stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round"/>`;
+      const anchos = [150, 120, 90, 62, 36], tonos = [p.prof, p.azul, p.medio, p.suave, p.amar];
+      anchos.forEach((w, k) => { s += `<rect x="${300 - w / 2}" y="${46 + k * 32}" width="${w}" height="22" rx="7" fill="${tonos[k]}"/>`; if (k < 4) s += `<path d="M${300 - anchos[k + 1] / 2 + 4} ${46 + k * 32 + 24} V${46 + (k + 1) * 32 - 2} M${300 + anchos[k + 1] / 2 - 4} ${46 + k * 32 + 24} V${46 + (k + 1) * 32 - 2}" stroke="${p.linea}" stroke-width=".8" opacity=".3"/>`; });
+      [0, 1, 2, 3, 4, 5].forEach((k) => { s += `<circle cx="${244 + k * 22}" cy="34" r="3" fill="${p.azul}" opacity="${k < 4 ? 1 : .35}"/>`; });
+      return s;
+    },
+  };
+  function dibujar() {
+    document.querySelectorAll('[data-dibujo]').forEach((el) => {
+      const p = T[el.dataset.tono || 'claro'] || T.claro, f = E[el.dataset.dibujo];
+      if (!f) return;
+      const fondo = el.dataset.fondo === 'no' ? '' : `<circle cx="200" cy="124" r="112" fill="${p.cielo}" opacity="${el.dataset.tono === 'oscuro' ? .5 : .7}"/>`;
+      el.innerHTML = `<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración: ${el.dataset.dibujo}" style="display:block;width:100%;height:auto;overflow:visible">${fondo}${f(p)}</svg>`;
+    });
+  }
+  dibujar();
+})();
+</script>
+<script>
+  // UI despiezada: cada recorte toma la proporción de la parte original y su radio a escala; las guías y la lupa
+  // se ubican en coordenadas del tablero (px CSS de la pantalla de 1440) o de la escena (viewBox 400 × 240).
+  (function () {
+    function colocar() {
+      const flotas = [...document.querySelectorAll('.flota[data-cw]')];
+      flotas.forEach((f) => { f.style.aspectRatio = f.dataset.cw + ' / ' + f.dataset.ch; });
+      flotas.forEach((f) => { if (f.dataset.r) f.style.borderRadius = (f.dataset.r * f.getBoundingClientRect().width / f.dataset.cw) + 'px'; });
+      const enTablero = (f, x, y) => {
+        const r = f.getBoundingClientRect();
+        return [r.left + (x - (f.dataset.ox || 0)) / f.dataset.cw * r.width, r.top + (y - (f.dataset.oy || 0)) / f.dataset.ch * r.height, r.width / f.dataset.cw];
+      };
+      document.querySelectorAll('.g[data-f], .g[data-e]').forEach((g) => {
+        const base = g.offsetParent.getBoundingClientRect();
+        let x, y;
+        if (g.dataset.f) [x, y] = enTablero(document.getElementById(g.dataset.f), +g.dataset.x, +g.dataset.y);
+        else { const r = document.getElementById(g.dataset.e).getBoundingClientRect(); x = r.left + g.dataset.sx / 400 * r.width; y = r.top + g.dataset.sy / 240 * r.height; }
+        g.style.left = (x - base.left) + 'px'; g.style.top = (y - base.top) + 'px';
+      });
+      document.querySelectorAll('svg.lupa').forEach((s) => {
+        const base = s.getBoundingClientRect(), d = s.dataset;
+        const [x, y, k] = enTablero(document.getElementById(d.f), +d.x, +d.y);
+        const w = d.w * k, h = d.h * k, X = x - base.left, Y = y - base.top;
+        const t = document.getElementById(d.a).getBoundingClientRect(), tx = t.left - base.left, ty = t.top - base.top;
+        s.setAttribute('viewBox', `0 0 ${base.width} ${base.height}`);
+        s.innerHTML = `<g fill="none" stroke="#0E1D36" stroke-linecap="round"><path d="M${X + w} ${Y + 2} L${tx + 2} ${ty + 6} M${X + w} ${Y + h - 2} L${tx + 2} ${ty + t.height - 6}" stroke-width="0.9" stroke-dasharray="1.5 3.5" opacity=".7"/><rect x="${X - 1.5}" y="${Y - 1.5}" width="${w + 3}" height="${h + 3}" rx="${d.r * k + 1.5}" stroke-width="1.6"/></g>`;
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', colocar); else colocar();
+  })();
 </script>
 <script src="../../plantilla/iso.js"></script>
 <script src="../../plantilla/pieza.js"></script>

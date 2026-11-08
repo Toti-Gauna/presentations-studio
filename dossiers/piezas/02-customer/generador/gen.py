@@ -1,6 +1,11 @@
-# Generador del Dossier 02 · Customer App (ola 6). Escribe dossiers/piezas/02-customer/index.html.
+# Generador del Dossier 02 · Customer App (ola 6 + pasada de dirección de arte de la ola 7).
+# Escribe ../index.html con estilo.css y escenas-02.js de esta carpeta. Uso: python3 -I gen.py
 # Los .toque se calculan desde coordenadas de pantalla (390 × 844): left = (18 + x) / 426, top = (18 + y) / 880.
-OUT = '/home/user/presentations-studio/dossiers/piezas/02-customer/index.html'
+# Ola 7: despieces (.dz: teléfono + recortes img/dz-*.webp que salen de recortes.py), escenas de plantilla/escenas.js
+# y propias (escenas-02.js), estados como texto chico (.et) y un solo bloque de chips por página.
+import os
+AQUI = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(AQUI, '..', 'index.html')
 PIE = 'Handyx · Customer App'
 FOTOS = '../../marca/fotos/'
 PJ = '../../marca/personajes-v2/'
@@ -37,7 +42,7 @@ def zigzag(pasos, alto_pie=92, marca='f', ancho=40, sep=44.67, alto=None):
         x0 = i * sep
         cel.append(movil(img, ancho, tq, alt, estilo=f'position:absolute;left:{x0:.2f}mm;top:0'))
         pies.append(f'<div class="pie p-raya" style="left:{x0:.2f}mm;top:{alto_pie}mm;width:{ancho}mm;padding-top:3.2mm"><div class="n" style="font-size:15pt">{i + 1:02d}</div>'
-                    f'<p class="p-h">{tit}</p><p class="p-texto">{txt}</p>{("<div class=\"chips\">" + est + "</div>") if est else ""}</div>')
+                    f'<p class="p-h">{tit}</p><p class="p-texto">{txt}</p>{("<p class=\"et-l\">" + est + "</p>") if est else ""}</div>')
         if desde is not None and i + 1 < len(pasos):
             tx, ty = next((ancho * (18 + a) / 426, h * (18 + b) / 880) for a, b, n in tq if n == desde)
             x_ini = x0 + tx + 3.4
@@ -71,18 +76,24 @@ CORTE = 'Estado al 07/11/2026.'
 
 
 def nota(n, tit, txt, est=''):
-    return f'<div class="nota"><span class="num">{n}</span><div><p class="p-h">{tit}</p><p class="p-texto">{txt}</p>{("<div class=\"chips\">" + est + "</div>") if est else ""}</div></div>'
+    return f'<div class="nota"><span class="num">{n}</span><div><p class="p-h">{tit}</p><p class="p-texto">{txt}</p>{("<p class=\"et-l\">" + est + "</p>") if est else ""}</div></div>'
 
 
 def ojo(tit, txt):
     return f'<div class="ojo"><b>{tit}</b><p>{txt}</p></div>'
 
 
-def apertura(n, nombre, foto, foto_pos, iso, titulo, lead, abajo, id_, cab, alto=176):
+def apertura(n, nombre, foto, foto_pos, iso, titulo, lead, abajo, id_, cab, alto=176, esc=None):
+    """esc = (escena, propia, pie, top_mm): la escena va en una tarjeta blanca que flota sobre la foto de la banda."""
+    tarjeta = ''
+    if esc:
+        nom, propia, pie, top = esc
+        tarjeta = (f'<div class="esc-tarjeta" style="right:calc(16mm + var(--sangrado));top:calc({top}mm + var(--sangrado));width:94mm">'
+                   f'<span class="dz-pie">{pie}</span>{escena(nom, propia)}</div>')
     banda = f'''<div class="banda azul" style="height:{alto}mm">
       <img class="foto-banda" src="{foto if foto.startswith('f-') and False else ('img/' + foto if foto.startswith('f-') else FOTOS + foto)}" alt="" style="object-position:{foto_pos}">
       <div class="velo-banda"></div>
-      {iso}
+      {iso}{tarjeta}
     </div>'''
     cuerpo = f'''
       <div class="p-azul" style="background:none"><img class="cap-img" src="img/cap-{n}.webp" alt="{n}"><span class="p-ceja" style="margin-top:6mm">{nombre}</span></div>
@@ -92,6 +103,51 @@ def apertura(n, nombre, foto, foto_pos, iso, titulo, lead, abajo, id_, cab, alto
         {abajo}
       </div>'''
     return pagina(cab, cuerpo, extra=banda, id_=id_).replace('<div class="cab-p">', '<div class="cab-p sobre-azul">')
+
+
+ET = {'C': ('c', 'Construido'), 'P': ('p', 'En pruebas'), 'D': ('d', 'Diseñado'), 'K': ('k', 'Concepto'), 'X': ('off', 'Desactivada')}
+
+
+def et(*e, sola=False):
+    """Estado como texto chico (ola 7): mismo código que chips() ('P', 'D:Texto', …)."""
+    out = []
+    for x in e:
+        k, txt = (x.split(':', 1) + [None])[:2]
+        cl, base = ET[k]
+        out.append(f'<span class="et {cl}{" sola" if sola else ""}">{txt or base}</span>')
+    return ''.join(out)
+
+
+def flota(img, x, y, w, alt='', z=''):
+    zz = f';z-index:{z}' if z else ''
+    return f'<div class="flota" style="left:{x}mm;top:{y}mm;width:{w}mm{zz}"><img src="img/{img}.webp" alt="{alt}"></div>'
+
+
+def etiq(x, y, txt, est=''):
+    """Rótulo de componente, como el nombre de un marco en el lienzo de diseño (va encima del recorte)."""
+    e = f'<i>{est}</i>' if est else ''
+    return f'<span class="etiq" style="left:{x}mm;top:{y}mm">{txt}{e}</span>'
+
+
+def guia(x, y, texto, lado='izq', hasta=None, largo=10, ancho=None, clara=False):
+    """Etiqueta con línea guía. (x, y) es el punto, en mm dentro del despiece. lado='izq': punto a la izquierda y texto
+    a la derecha; 'der': texto a la izquierda. hasta = x donde empieza (izq) o termina (der) el texto: fija el largo."""
+    if hasta is not None:
+        largo = (hasta - x - 4.1) if lado == 'izq' else (x - 4.1 - hasta)
+    cl = 'guia' + (' der' if lado == 'der' else '') + (' clara' if clara else '')
+    pos = f'right:calc(100% - {x + 0.9:.1f}mm)' if lado == 'der' else f'left:{x - 0.9:.1f}mm'
+    an = f' style="width:{ancho}mm;white-space:normal"' if ancho else ''
+    return f'<div class="{cl}" style="{pos};top:{y:.1f}mm;--largo:{largo:.1f}mm"><span class="gl"{an}>{texto}</span></div>'
+
+
+def dz(alto, contenido, clase='', estilo=''):
+    return f'<div class="dz {clase}" style="height:{alto}mm;{estilo}"><div class="dz-fondo grano"></div>{contenido}</div>'
+
+
+def escena(nombre, propia=False, estilo='', fondo=True, clase=''):
+    attr = 'data-esc02' if propia else 'data-escena'
+    f = '' if fondo else ' data-fondo="no"'
+    return f'<div class="{clase}" {attr}="{nombre}" data-tono="claro"{f} style="{estilo}"></div>'
 
 
 def en_capitulo(items):
@@ -119,7 +175,7 @@ P.append(f'''<section class="pagina p-azul tapa-02">
         <p class="p-lead" style="margin-top:6mm;max-width:92mm;font-size:10.6pt">El manual de la app para quien necesita un arreglo en casa: cómo pedís, cómo comparás y elegís, qué pasa el día del trabajo y qué está hecho hoy.</p>
       </div>
       <div class="empuja p-meta" style="color:#FFFFFF;border-color:rgba(255,255,255,0.45)">
-        <div><b>Ciudad</b>Mar del Plata</div><div><b>Producto</b>En pruebas · demo cerrada con invitación</div><div><b>Corte</b>Estado al 07/11/2026</div><div><b>Imágenes</b>Pantallas: diseño propuesto, datos ficticios · Foto: Rambla de Mar del Plata</div>
+        <div><b>Ciudad</b>Mar del Plata</div><div><b>Producto</b>En pruebas · demo cerrada con invitación</div><div><b>Corte</b>Estado al 07/11/2026</div><div><b>Imágenes</b>Pantallas: diseño propuesto, datos ficticios · Ilustración: Rambla de Mar del Plata</div>
       </div>
     </div>
   </div>
@@ -147,7 +203,7 @@ P.append(pagina('Contenido', f'''
           <p class="p-h">Cómo leer este dossier</p>
           <p class="p-texto" style="margin-top:1.4mm">Cada función dice en qué estado está al 07/11/2026, cada pantalla de dónde sale y cada cifra qué tipo de dato es.</p>
           <p class="leer-t">Estado de cada función</p>
-          <div class="def"><span class="estado construido">Construido</span><span>En la rama principal y funcionando.</span><span class="estado en-pruebas">En pruebas</span><span>Hay código, con datos de prueba o en una rama.</span><span class="estado disenado">Diseñado</span><span>Dibujado en el lienzo, todavía sin código.</span><span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span></div>
+          <div class="def"><span class="estado construido">Construido</span><span>En la rama principal y funcionando.</span><span class="estado en-pruebas">En pruebas</span><span>Hay código, con datos de prueba o en una rama.</span><span class="estado disenado">Diseñado</span><span>Dibujado en el lienzo, todavía sin código.</span><span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span><span class="et p sola">En pruebas</span><span>El mismo estado, en letra chica, junto a un título.</span></div>
           <p class="leer-t">Rótulo de cada pantalla</p>
           <div class="def"><span class="rotulo diseno">Diseño propuesto</span><span>Lienzo de diseño, datos ficticios.</span><span class="rotulo prueba">PWA · prueba</span><span>La app en código, datos de prueba.</span></div>
           <p class="leer-t">Puntos amarillos</p>
@@ -159,26 +215,29 @@ P.append(pagina('Contenido', f'''
       <div class="linea-navy empuja"><b>Handyx en una línea.</b> Un marketplace de servicios del hogar que nace en Mar del Plata: conecta a quien necesita un arreglo con especialistas de su zona, con propuestas claras para elegir por calidad y por precio. <b>Noviembre de 2026:</b> demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar.</div>''', id_='indice'))
 
 # ---------------------------------------------------------------- 3 · LA APP EN UNA PÁGINA
-mom = [('i-inicio.webp', [(194, 219, 1)], 'Pedís', 'Elegís el rubro y contás qué pasa, o se lo contás a HandIA.', chips('P', 'D')),
-       ('c-propuestas.webp', [(283, 529, 2)], 'Elegís', 'Llegan propuestas con precio; las comparás y aceptás una.', chips('P', 'D')),
-       ('s-encamino.webp', [(192, 556, 3)], 'Seguís', 'Turno, viaje, adicionales y conformidad; pagás directo.', chips('P', 'D')),
-       ('h-hogar.webp', [(285, 434, 4)], 'Cuidás tu casa', 'Historial, informes y garantías para la próxima vez.', chips('D'))]
-cols = ''.join(f'<div class="col">{movil(i, 38, tq)}<div class="p-raya" style="margin-top:4mm;padding-top:2.6mm;width:38mm"><div class="p-num" style="font-size:14pt">{k + 1:02d}</div><p class="p-h" style="margin-top:1.4mm">{h}</p><p class="p-texto" style="margin-top:0.8mm">{x}</p><div class="chips">{e}</div></div></div>' for k, (i, tq, h, x, e) in enumerate(mom))
+# escena «conectar» (plantilla) a 124 mm, con los cuatro momentos como guías
+K3, X3, Y3 = 0.33, 40, 8
+def p3(u, v):
+    return X3 + u * K3, Y3 + v * K3
+g3 = guia(*p3(146, 100), f'<b>01 · Pedís</b><small>Elegís el rubro y contás qué pasa, o se lo contás a HandIA. {et("P")}</small>', 'der', hasta=40, ancho=36)
+g3 += guia(*p3(50, 154), f'<b>04 · Cuidás tu casa</b><small>Historial, informes y garantías para la próxima vez. {et("D")}</small>', 'der', hasta=40, ancho=36)
+g3 += guia(*p3(195, 41), f'<b>02 · Elegís</b><small>Llegan propuestas con precio; las comparás y aceptás una. {et("P")}</small>', 'izq', hasta=133, ancho=37)
+g3 += guia(*p3(242, 100), f'<b>03 · Seguís</b><small>Turno, viaje, adicionales y conformidad; pagás directo. {et("P")}</small>', 'izq', hasta=133, ancho=37)
 P.append(pagina('La app en una página', f'''
       <span class="p-ceja">La Customer App en una página</span>
       <h1 class="p-titulo" style="margin-top:5mm">Del problema al arreglo, en cuatro <span class="p-marca">momentos</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:158mm;font-size:10.4pt">Contás qué pasa, recibís propuestas con precio y elegís vos. Pagás directo al especialista. Así resume la app su promesa; cada capítulo de este manual cuenta un tramo con sus pantallas.</p>
-      <div class="fila-pant" style="margin-top:6mm">{cols}</div>
-      <div class="grilla" style="margin-top:5mm;column-gap:6mm">
-        <div class="c-6 hace"><p class="leer-t" style="margin-top:0">Lo que hace Handyx</p><ul><li>Arma el pedido con lo justo y lo muestra a especialistas del rubro cerca de tu zona.</li><li>Pone las propuestas en el mismo formato, en el orden en que llegan.</li><li>Registra cada paso: turno, cambios, adicionales y pagos.</li></ul></div>
-        <div class="c-6 hace no"><p class="leer-t" style="margin-top:0">Lo que no hace</p><ul><li>No elige por vos ni promete tiempos de respuesta.</li><li>No comparte tu dirección exacta antes de que aceptes.</li><li>No recibe ni reparte la plata del trabajo.</li></ul></div>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.4pt">Contás qué pasa, recibís propuestas con precio y elegís vos. Pagás directo al especialista. Cada capítulo de este manual cuenta un tramo con sus pantallas.</p>
+      <div style="margin-top:8mm">{dz(96, escena('conectar', estilo=f'position:absolute;left:{X3}mm;top:{Y3}mm;width:132mm') + g3, 'hueso')}</div>
+      <div class="grilla" style="margin-top:8mm;column-gap:10mm">
+        <div class="c-6 hace2"><p class="leer-t" style="margin-top:0">Lo que hace Handyx</p><ul><li>Arma el pedido con lo justo y lo muestra a especialistas del rubro cerca de tu zona.</li><li>Pone las propuestas en el mismo formato, en el orden en que llegan.</li><li>Registra cada paso: turno, cambios, adicionales y pagos.</li></ul></div>
+        <div class="c-6 hace2 no"><p class="leer-t" style="margin-top:0">Lo que no hace</p><ul><li>No elige por vos ni promete tiempos de respuesta.</li><li>No comparte tu dirección exacta antes de que aceptes.</li><li>No recibe ni reparte la plata del trabajo.</li></ul></div>
       </div>
-      <div class="grilla" style="margin-top:5mm;column-gap:6mm">
-        <div class="c-4 p-raya" style="padding-top:3mm"><div class="p-cifra" style="font-size:22pt">6</div><p class="p-texto">rubros del hogar, con cobertura en Mar del Plata</p><div class="chips">{chips('P')}</div></div>
+      <div class="grilla" style="margin-top:8mm;column-gap:10mm">
+        <div class="c-4 p-raya" style="padding-top:3mm"><div class="p-cifra" style="font-size:22pt">6</div><p class="p-texto">rubros del hogar, con cobertura en Mar del Plata {et("P")}</p></div>
         <div class="c-4 p-raya" style="padding-top:3mm"><div class="p-cifra" style="font-size:22pt">0 %</div><p class="p-texto">tarifa de servicio al usuario hasta el 10/12/2026; después, 15 % en evaluación</p><div class="chips"><span class="tipo-dato">Decisión del fundador · 07/11</span></div></div>
         <div class="c-4 p-raya" style="padding-top:3mm"><div class="p-cifra" style="font-size:22pt">0 %</div><p class="p-texto">de comisión al especialista: cobra su precio entero, directo</p><div class="chips"><span class="tipo-dato">Decisión del fundador · 07/11</span></div></div>
       </div>
-      {origen(DIS, CORTE, 'Pantallas del lienzo «App del usuario»; estados de la auditoría de la app (85 funciones). Precios y nombres de las pantallas son de muestra.')}''', id_='experiencia'))
+      {origen(CORTE, 'Ilustración: cómo conecta Handyx a quien pide con quien hace el trabajo. Estados de la auditoría de la app (85 funciones); las pantallas, en cada capítulo.')}''', id_='experiencia'))
 
 # ---------------------------------------------------------------- 4 · APERTURA 01
 P.append(apertura('01', 'Empezar y pedir', 'f-centro-playa.webp', 'center',
@@ -188,7 +247,7 @@ P.append(apertura('01', 'Empezar y pedir', 'f-centro-playa.webp', 'center',
                   en_capitulo([('alta', 'Tu cuenta', 'Datos mínimos, zona aproximada y la tarifa antes del primer pedido.'),
                                ('pedir', 'Pedir un arreglo', 'Rubro, qué pasa, fotos si querés y revisar antes de publicar.'),
                                ('handia', 'HandIA', 'Qué es hoy el asistente y qué todavía no.')]),
-                  'cap1', 'Capítulo 01'))
+                  'cap1', 'Capítulo 01', esc=('pedir', True, 'Pedís desde tu casa, con tus palabras', 30)))
 
 # ---------------------------------------------------------------- 5 · ALTA
 P.append(pagina('01 · Tu cuenta', f'''
@@ -196,33 +255,41 @@ P.append(pagina('01 · Tu cuenta', f'''
       <h1 class="p-titulo" style="margin-top:5mm">Tu cuenta, en pocos pasos y con lo <span class="p-marca">justo</span></h1>
       <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Sin DNI ni CUIT. Tu teléfono lo ve solo el especialista que elijas, para ese turno; los demás ven tu barrio, no tu calle.</p>
       <div style="margin-top:9mm">{zigzag([
-          ('a-datos.webp', [(96, 230, 1)], 'Solo lo justo', 'Nombre, apellido y celular.', chips('P'), 'Tus datos', 1),
-          ('a-zona.webp', [(190, 516, 2)], 'Tu zona, no tu calle', 'La dirección exacta se comparte recién al aceptar.', chips('P'), 'Tu zona', 2),
-          ('a-casa.webp', [(191, 726, 3)], 'Tu casa, si querés', 'Ambientes y equipos, para que el próximo pedido salga armado. Se salta.', chips('D'), 'Armá tu casa', 3),
-          ('a-listo.webp', [(150, 448, 4)], 'La tarifa, antes de pedir', '0 % hasta el 10/12/2026, avisado al terminar el alta.', chips('P'), 'Listo', None)], marca='fA')}</div>
+          ('a-datos.webp', [(96, 230, 1)], 'Solo lo justo', 'Nombre, apellido y celular.', et('P'), 'Tus datos', 1),
+          ('a-zona.webp', [(190, 516, 2)], 'Tu zona, no tu calle', 'La dirección exacta se comparte recién al aceptar.', et('P'), 'Tu zona', 2),
+          ('a-casa.webp', [(191, 726, 3)], 'Tu casa, si querés', 'Ambientes y equipos, para que el próximo pedido salga armado. Se salta.', et('D'), 'Armá tu casa', 3),
+          ('a-listo.webp', [(150, 448, 4)], 'La tarifa, antes de pedir', '0 % hasta el 10/12/2026, avisado al terminar el alta.', et('P'), 'Listo', None)], marca='fA')}</div>
       <div class="grilla" style="margin-top:6mm;column-gap:6mm">
         <div class="c-6">{ojo('Dos versiones del alta', 'En código (vista de prueba) la cuenta se crea con invitación y contraseña: es la demo cerrada. El lienzo dibuja un registro directo con un código por email o SMS. Cuál se usa al abrir el lanzamiento: a definir.')}</div>
-        <div class="c-6 p-texto" style="align-self:center">También elegís qué avisos te llegan —propuestas, turno y llegada, recordatorios— y ninguno es publicidad. {chips('P')}</div>
+        <div class="c-6 p-texto" style="align-self:center">También elegís qué avisos te llegan —propuestas, turno y llegada, recordatorios— y ninguno es publicidad. {et('P')}</div>
       </div>
       {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros A. Alta con invitación y avisos: código de la app sobre servidor simulado.')}''', id_='alta'))
 
-# ---------------------------------------------------------------- 6 · PEDIR
+# ---------------------------------------------------------------- 6 · PEDIR (despiece)
+d6 = movil('i-inicio.webp', 54, (), 'Inicio', estilo='left:60mm;top:11mm')
+d6 += flota('dz-rubros', 6, 24, 64, 'Los seis rubros') + etiq(6, 24, '1 · Rubro')
+d6 += flota('dz-fotos', 8, 80, 62, 'Fotos y medidas') + etiq(8, 80, '3 · Fotos y medidas')
+d6 += flota('dz-quepasa', 106, 15, 62, '¿Qué pasa?') + etiq(106, 15, '2 · Qué pasa')
+d6 += flota('dz-pedido', 104, 82, 64, 'Revisar y publicar') + etiq(104, 82, '4 · Revisar y publicar')
 P.append(pagina('01 · Pedir un arreglo', f'''
-      <span class="p-ceja">Recorrido · pedir un arreglo</span>
+      <span class="p-ceja">Pieza por pieza · pedir un arreglo</span>
       <h1 class="p-titulo" style="margin-top:5mm">Pedir un arreglo, sin <span class="p-marca">vueltas</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Elegís el rubro, contás qué pasa y revisás el pedido antes de publicarlo. Fotos, medidas y día son opcionales.</p>
-      <div style="margin-top:9mm">{zigzag([
-          ('i-inicio.webp', [(194, 219, 1)], 'Tocás un rubro', 'Seis rubros del hogar y tu próximo turno, a la vista.', chips('P'), 'Inicio', 1),
-          ('p-que.webp', [(192, 167, 2)], 'Contás qué pasa', 'Una opción o tus palabras.', chips('D'), '¿Qué pasa?', 2),
-          ('p-fotos.webp', [(101, 306, 3)], 'Sumás fotos', 'Marcás dónde está el problema; salen sin ubicación.', chips('D'), 'Fotos y medidas', 3),
-          ('p-revisar.webp', [(191, 793, 4)], 'Revisás y publicás', 'Cuándo, dónde y fotos en una tarjeta.', chips('D'), 'Revisar y publicar', None)], marca='fP')}</div>
-      <div class="etapas" style="margin-top:6mm">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">Publicado</p><p class="p-texto">Lo ven especialistas del rubro cerca de tu zona.</p>{chips('P')}</div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Sin tiempos prometidos</p><p class="p-texto">Te avisamos cuando llega cada propuesta.</p>{chips('P')}</div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">Si nadie responde</p><p class="p-texto">Relanzás el pedido o pedís ayuda al equipo.</p>{chips('P')}</div>
-        <div class="etapa"><span class="pto">4</span><p class="p-h">Precio orientativo</p><p class="p-texto">Un rango de referencia: hoy es solo diseño, sin datos para calcularlo.</p>{chips('D')}</div>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Desde el inicio: tocás un rubro, contás qué pasa, sumás fotos si querés y revisás el pedido antes de publicarlo.</p>
+      <div style="margin-top:8mm">{dz(132, d6)}</div>
+      <div class="notas-dz" style="margin-top:7mm">
+        <div><p class="p-h">1 · Tocás un rubro {et("P")}</p><p class="p-texto">Seis rubros del hogar y tu próximo turno, a la vista.</p></div>
+        <div><p class="p-h">2 · Contás qué pasa {et("D")}</p><p class="p-texto">Una opción o tus palabras.</p></div>
+        <div><p class="p-h">3 · Sumás fotos {et("D")}</p><p class="p-texto">Marcás dónde está el problema; salen sin ubicación.</p></div>
+        <div><p class="p-h">4 · Revisás y publicás {et("D")}</p><p class="p-texto">Cuándo, dónde y fotos en una tarjeta.</p></div>
       </div>
-      {origen(DIS, CORTE, 'El camino en tres toques es diseño. En código existe el pedido en pasos: urgente, programado u obra, fotos privadas, fecha y un precio propuesto opcional.')}''', id_='pedir'))
+      <p class="leer-t" style="margin-top:7mm">Qué pasa después de publicar</p>
+      <div class="etapas">
+        <div class="etapa"><span class="pto">1</span><p class="p-h">Publicado</p><p class="p-texto">Lo ven especialistas del rubro cerca de tu zona.</p></div>
+        <div class="etapa"><span class="pto">2</span><p class="p-h">Sin tiempos prometidos</p><p class="p-texto">Te avisamos cuando llega cada propuesta.</p></div>
+        <div class="etapa"><span class="pto">3</span><p class="p-h">Si nadie responde</p><p class="p-texto">Relanzás el pedido o pedís ayuda al equipo. {et("P")}</p></div>
+        <div class="etapa"><span class="pto">4</span><p class="p-h">Precio orientativo</p><p class="p-texto">Un rango de referencia: hoy es solo diseño, sin datos para calcularlo. {et("D")}</p></div>
+      </div>
+      {origen(DIS, CORTE, 'Teléfono y recortes del lienzo «App del usuario» (I-Inicio, P-Que, P-Fotos, P-Revisar). El camino en tres toques es diseño; en código existe el pedido en pasos: urgente, programado u obra, fotos privadas, fecha y un precio propuesto opcional.')}''', id_='pedir'))
 
 # ---------------------------------------------------------------- 7 · HANDIA
 P.append(pagina('01 · HandIA', f'''
@@ -251,45 +318,56 @@ P.append(apertura('02', 'Elegir', 'casino-plaza-azul.webp', 'center 60%',
                   en_capitulo([('propuestas', 'Las propuestas', 'En el orden en que llegan, con lo que el equipo verificó.'),
                                ('comparar', 'Comparar', 'Precio, fecha, materiales, garantía y perfil, lado a lado.'),
                                ('aceptar', 'Aceptar o negociar', 'Confirmar, pedir otro día o precio, o una visita antes.')]),
-                  'cap2', 'Capítulo 02'))
+                  'cap2', 'Capítulo 02', esc=('propuestas', False, 'Varias propuestas; elegís una', 30)))
 
-# ---------------------------------------------------------------- 9 · PROPUESTAS
+# ---------------------------------------------------------------- 9 · PROPUESTAS (despiece sobre azul)
+d9 = movil('c-propuestas.webp', 60, (), 'Propuestas', estilo='left:8mm;top:10mm')
+d9 += flota('dz-orientativo', 54, 14, 72, 'Precio orientativo') + etiq(54, 14, 'Orientativo')
+d9 += flota('dz-precio', 62, 44, 66, 'Precio de la propuesta') + etiq(62, 44, 'Propuesta')
+d9 += flota('dz-sellos', 72, 75, 48, 'Sellos de identidad y antecedentes') + etiq(72, 75, 'Sellos')
+d9 += flota('dz-botones', 60, 93, 66, 'Rechazar, ver perfil o aceptar') + etiq(60, 93, 'Aceptar')
+d9 += guia(122, 23, f'<b>Handyx sugiere</b><small>Cada especialista pone su precio. {et("D")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(124, 53.5, f'<b>Todas iguales</b><small>Precio, fecha y qué incluye; la tarifa, aparte. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(116, 78.8, f'<b>Solo lo verificado</b><small>Los sellos salen del servidor. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(122, 98.6, f'<b>Aceptar, con resumen</b><small>Aceptar una cierra las demás. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += etiq(60, 121, 'En código · vista de prueba')
+d9 += flota('dz-pwa-orden', 60, 121, 60, 'Ordenadas por llegada') + flota('dz-pwa-sinverif', 66, 135, 54, 'Sin verificaciones registradas')
+d9 += guia(116, 126, '<b>Por orden de llegada</b><small>«No es una recomendación ni un ranking.»</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(116, 140.5, '<b>Sin sellos, lo dice</b><small>Si el equipo no verificó nada.</small>', hasta=134, ancho=37, clara=True)
 P.append(pagina('02 · Las propuestas', f'''
-      <span class="p-ceja">Pantalla por pantalla</span>
+      <span class="p-ceja">Pieza por pieza · las propuestas</span>
       <h1 class="p-titulo" style="margin-top:5mm">Cuatro propuestas, <span class="p-marca">una decisión</span></h1>
-      <div class="heroe" style="margin-top:8mm">
-        {movil('c-propuestas.webp', 56, [(192, 114, 1), (299, 185, 2), (82, 478, 3), (283, 529, 4)], 'Propuestas')}
-        <div class="notas">
-          {nota(1, 'Un precio orientativo de referencia', 'Handyx sugiere; cada especialista pone su precio. Todavía no hay trabajos para calcularlo: es diseño.', chips('D'))}
-          {nota(2, 'En el orden en que llegan', 'Sin ranking: ninguna sube por pagar. El chip «Mejor promedio» del diseño está en discusión (página siguiente).', chips('P'))}
-          {nota(3, 'Identidad y antecedentes, a la vista', 'Los sellos salen del servidor: solo aparece lo que el equipo verificó.', chips('P'))}
-          {nota(4, 'Aceptar pide confirmación', 'Ves el resumen antes; aceptar una cierra las demás.', chips('P'))}
-        </div>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Cada propuesta llega con el mismo formato, en el orden en que llega, con lo que el equipo verificó. Vos comparás y elegís.</p>
+      <div style="margin-top:8mm">{dz(154, d9, 'azul')}</div>
+      <div class="grilla" style="margin-top:7mm;column-gap:10mm">
+        <p class="c-6 p-texto">El chip «Mejor promedio» del diseño está en discusión: el código y el contrato dicen «sin rankings ni superlativos» (página siguiente).</p>
+        <p class="c-6 p-texto">La captura de la vista de prueba es del 31/10/2026 y conserva el nombre anterior de la marca («Handy»).</p>
       </div>
-      <div class="banda-codigo" style="margin-top:6mm">
-        {movil('pwa-propuestas.webp', 38, [(117, 92, 'A'), (171, 568, 'B')], 'Propuestas en la PWA')}
-        <div>
-          <span class="rotulo prueba">Pantalla de la PWA · datos de prueba</span>
-          <p class="p-h" style="margin-top:3mm">Lo que ya corre en código</p>
-          <p class="p-texto" style="margin-top:1.2mm"><b class="pt">A</b> «Ordenadas por llegada. No es una recomendación ni un ranking.» Cada propuesta con el precio, la tarifa aparte, el horario y hasta cuándo vale.</p>
-          <p class="p-texto" style="margin-top:1.2mm"><b class="pt">B</b> Si el equipo no verificó nada, la propuesta lo dice: «Todavía sin verificaciones registradas».</p>
-          <p class="p-texto" style="margin-top:1.2mm">La captura es de la vista de prueba del 31/10/2026 y conserva el nombre anterior de la marca («Handy»).</p>
-        </div>
-      </div>
-      {origen(DIS, CORTE, 'Arriba: lienzo «App del usuario» (C-Propuestas). Abajo: PWA con servidor simulado.')}''', id_='propuestas'))
+      {origen(DIS, PRU, CORTE, 'Teléfono y recortes: lienzo «App del usuario» (C-Propuestas). Abajo: PWA con servidor simulado.')}''', id_='propuestas'))
 
-# ---------------------------------------------------------------- 10 · COMPARAR
+# ---------------------------------------------------------------- 10 · COMPARAR (despiece)
+d10 = flota('dz-tabla', 6, 10, 76, 'Tabla para comparar') + etiq(6, 10, 'Comparar · 3 con precio')
+d10 += movil('c-detalle.webp', 50, (), 'Detalle de la propuesta', estilo='left:118mm;top:8mm') + etiq(118, 8, 'Detalle')
+d10 += guia(80.5, 37.4, '<b>Precio y fecha</b>', hasta=90, ancho=22)
+d10 += guia(80.5, 56.9, '<b>Materiales y garantía</b>', hasta=90, ancho=22)
+d10 += guia(80.5, 73.1, '<b>Verificaciones</b>', hasta=90, ancho=22)
+d10 += guia(126.6, 47.3, '<b>Dentro del orientativo</b>', 'der', hasta=112, ancho=22)
+d10 += guia(124.8, 65.4, '<b>Cómo lo hace</b>', 'der', hasta=112, ancho=22)
+d10 += guia(123, 101.6, '<b>La garantía, antes de aceptar</b>', 'der', hasta=112, ancho=22)
 P.append(pagina('02 · Comparar', f'''
-      <span class="p-ceja">Calidad y precio</span>
+      <span class="p-ceja">Pieza por pieza · calidad y precio</span>
       <h1 class="p-titulo" style="margin-top:5mm">Comparar lo que hace a un buen <span class="p-marca">trabajo</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Un precio solo no alcanza. La app pone en la misma tabla el precio, la fecha, los materiales, la garantía y las verificaciones, y abre el detalle de cómo lo hace cada uno.</p>
-      <div class="dos-hero" style="margin-top:8mm">
-        <div>{movil('c-comparar.webp', 52, [(192, 153, 1), (142, 559, 2), (146, 653, 3)], 'Comparar')}
-          <div class="notas chicas" style="margin-top:5mm">{nota(1, 'Una nota de perfil y precio', 'Mismas reglas para todas; elegís vos.', chips('D'))}{nota(2, 'Verificaciones y reseñas en fila', 'Lo verificado sale del servidor; las reseñas no tienen contrato todavía.', chips('P:Tabla en pruebas'))}{nota(3, '«Ver» abre el detalle', '')}</div></div>
-        <div>{movil('c-detalle.webp', 52, [(113, 320, 4), (192, 490, 5), (115, 755, 6)], 'Detalle de la propuesta')}
-          <div class="notas chicas" style="margin-top:5mm">{nota(4, 'Dentro del orientativo', 'Depende del rango de referencia: diseño.', chips('D'))}{nota(5, 'Cómo lo hace', 'Materiales, equipo, duración y si hace falta visita.', chips('D'))}{nota(6, 'La garantía, antes de aceptar', 'Quién la da y con qué texto: a definir con Legal.', chips('D'))}</div></div>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Un precio solo no alcanza. La app pone en la misma tabla el precio, la fecha, los materiales, la garantía y las verificaciones, y abre el detalle de cómo lo hace cada uno.</p>
+      <div style="margin-top:8mm">{dz(118, d10, 'hueso')}</div>
+      <div class="notas-dz" style="margin-top:7mm">
+        <div><p class="p-h">Todo en una tabla {et("P:Tabla en pruebas")}</p><p class="p-texto">Lo verificado sale del servidor; las reseñas no tienen contrato todavía.</p></div>
+        <div><p class="p-h">El detalle de cada una {et("D")}</p><p class="p-texto">Materiales, equipo, duración y si hace falta visita.</p></div>
+        <div><p class="p-h">La garantía {et("D")}</p><p class="p-texto">Quién la da y con qué texto: a definir con Legal.</p></div>
       </div>
-      <div style="margin-top:6mm">{ojo('Dos reglas que chocan', 'El diseño destaca «La mejor en perfil y precio» con una nota de 0 a 10 (pesos que la pantalla no muestra); el código y el contrato dicen «sin rankings ni superlativos». Si se destaca una propuesta y si se muestran los pesos: a definir.')}</div>
+      <div class="grilla" style="margin-top:8mm;column-gap:8mm;align-items:center">
+        <div class="c-5"><div class="flota" style="position:relative;border-radius:2.4mm"><img src="img/dz-mejor.webp" alt="La mejor en perfil y precio"></div></div>
+        <div class="c-7">{ojo('Dos reglas que chocan', 'El diseño destaca «La mejor en perfil y precio» con una nota de 0 a 10 (pesos que la pantalla no muestra); el código y el contrato dicen «sin rankings ni superlativos». Si se destaca una propuesta y si se muestran los pesos: a definir.')}</div>
+      </div>
       {origen(DIS, CORTE, 'Lienzo «App del usuario» (C-Comparar, C-Detalle). En código hay una tabla que no destaca ninguna (en pruebas).')}''', id_='comparar'))
 
 # ---------------------------------------------------------------- 11 · ACEPTAR
@@ -298,13 +376,13 @@ P.append(pagina('02 · Aceptar o negociar', f'''
       <h1 class="p-titulo" style="margin-top:5mm">Aceptar, negociar o decir que no, sin <span class="p-marca">presión</span></h1>
       <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Antes de aceptar ves qué va a pasar: quién recibe tu dirección, qué se cierra y cómo se paga. Si algo no te cierra, pedís un cambio: vale lo anterior hasta que aceptes lo nuevo.</p>
       <div style="margin-top:9mm">{zigzag([
-          ('c-aceptar.webp', [(135, 474, 1), (190, 656, 2)], 'Aceptás la que viste', 'Si la propuesta cambió, no se acepta sin que la veas.', chips('P'), 'Aceptar', 2),
-          ('c-aceptada.webp', [(195, 726, 3)], 'Turno confirmado', 'Las demás se cierran sin dar motivos.', chips('P:Aceptar en pruebas', 'D:Pantalla'), 'Turno confirmado', None),
-          ('c-cambios.webp', [(192, 288, 4)], 'O pedís un cambio', 'Otro día, otro precio o que incluya materiales.', chips('P'), 'Pedir un cambio', None),
-          ('c-visita.webp', [(192, 260, 5)], 'O una visita antes', 'Si hay que ver el problema: qué cuesta y qué se define.', chips('D'), 'Visita para presupuestar', None)], marca='fC')}</div>
+          ('c-aceptar.webp', [(135, 474, 1), (190, 656, 2)], 'Aceptás la que viste', 'Si la propuesta cambió, no se acepta sin que la veas.', et('P'), 'Aceptar', 2),
+          ('c-aceptada.webp', [(195, 726, 3)], 'Turno confirmado', 'Las demás se cierran sin dar motivos.', et('P:Aceptar en pruebas', 'D:Pantalla'), 'Turno confirmado', None),
+          ('c-cambios.webp', [(192, 288, 4)], 'O pedís un cambio', 'Otro día, otro precio o que incluya materiales.', et('P'), 'Pedir un cambio', None),
+          ('c-visita.webp', [(192, 260, 5)], 'O una visita antes', 'Si hay que ver el problema: qué cuesta y qué se define.', et('D'), 'Visita para presupuestar', None)], marca='fC')}</div>
       <div class="grilla" style="margin-top:6mm;column-gap:6mm">
-        <div class="c-6 p-texto"><b class="pt">1</b> Al aceptar, el especialista elegido ve tu dirección exacta y tu teléfono, solo para ese turno. También podés rechazar: en el diseño, con un motivo opcional que el especialista no ve. {chips('P')}</div>
-        <div class="c-6 p-texto">Las propuestas urgentes vencen a los 5 minutos y el servidor aplica los vencimientos: así nadie acepta un precio viejo. {chips('P')}</div>
+        <div class="c-6 p-texto"><b class="pt">1</b> Al aceptar, el especialista elegido ve tu dirección exacta y tu teléfono, solo para ese turno. También podés rechazar: en el diseño, con un motivo opcional que el especialista no ve. {et('P')}</div>
+        <div class="c-6 p-texto">Las propuestas urgentes vencen a los 5 minutos y el servidor aplica los vencimientos: así nadie acepta un precio viejo. {et('P')}</div>
       </div>
       {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros C. Aceptar, rechazar y pedir cambios: código y contrato en una rama.')}''', id_='aceptar'))
 
@@ -316,37 +394,40 @@ P.append(apertura('03', 'El día del trabajo', 'f-rambla.webp', 'center',
                   en_capitulo([('dia', 'Del turno a la puerta', 'Agendado, en camino, llegó y trabajando.'),
                                ('adicional', 'Adicional y conformidad', 'Lo extra se aprueba; al final das el OK o avisás un problema.'),
                                ('pago', 'Pagar directo', 'Informado no es verificado.')]),
-                  'cap3', 'Capítulo 03'))
+                  'cap3', 'Capítulo 03', esc=('llega', True, 'Llega quien elegiste, en el turno acordado', 30)))
 
-# ---------------------------------------------------------------- 13 · DÍA
+# ---------------------------------------------------------------- 13 · DÍA (despiece sobre navy)
+d13 = movil('s-encamino.webp', 54, (), 'En camino', estilo='left:60mm;top:8mm')
+d13 += flota('dz-turno', 6, 18, 62, 'Tu turno') + etiq(6, 18, 'Tu turno')
+d13 += flota('dz-estados', 8, 70, 56, 'Estados del trabajo') + etiq(8, 70, 'Estados')
+d13 += flota('dz-llegada', 106, 20, 62, 'Llegada estimada') + etiq(106, 20, 'En camino')
+d13 += flota('dz-codigo', 108, 70, 60, 'Código de llegada') + etiq(108, 70, 'Llegó', 'Diseñado')
 P.append(pagina('03 · Del turno a la puerta', f'''
-      <span class="p-ceja">Recorrido · el día del turno</span>
+      <span class="p-ceja">Pieza por pieza · el día del turno</span>
       <h1 class="p-titulo" style="margin-top:5mm">Del turno a la puerta, <span class="p-marca">paso a paso</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Agendado, en camino, llegó, trabajando, terminado: cada cambio de estado queda en el historial del trabajo.</p>
-      <div style="margin-top:9mm">{zigzag([
-          ('s-agendado.webp', [(110, 352, 1)], 'Tu turno', 'Quién viene, cuándo y por cuánto; podés cambiarlo o cancelarlo.', chips('P'), 'Tu turno', 1),
-          ('s-encamino.webp', [(192, 556, 2)], 'En camino', 'Lo ves venir solo mientras comparte el viaje; la llegada la calcula el servidor.', chips('P'), 'En camino', 2),
-          ('s-llego.webp', [(192, 365, 3)], 'Llegó', 'El diseño suma un código para abrir la puerta.', chips('D'), 'Llegó', 3),
-          ('s-trabajando.webp', [(191, 452, 4)], 'Trabajando', 'Avances del especialista y, si hace falta, un adicional.', chips('P'), 'Trabajando', None)], marca='fS')}</div>
-      <p class="leer-t" style="margin-top:4mm">Los estados del trabajo, en el servidor</p>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Agendado, en camino, llegó, trabajando, terminado: cada cambio de estado queda en el historial del trabajo.</p>
+      <div style="margin-top:8mm">{dz(126, d13, 'navy')}</div>
+      <div class="notas-dz" style="margin-top:7mm">
+        <div><p class="p-h">Tu turno {et("P")}</p><p class="p-texto">Quién viene, cuándo y por cuánto; podés cambiarlo o cancelarlo.</p></div>
+        <div><p class="p-h">En camino {et("P")}</p><p class="p-texto">Lo ves solo mientras comparte el viaje; la llegada la calcula el servidor y el mapa se apaga al llegar.</p></div>
+        <div><p class="p-h">Llegó {et("D")}</p><p class="p-texto">Botón «Llegué», código de 4 números o geocerca: hay tres versiones; cuál queda, a definir.</p></div>
+        <div><p class="p-h">Trabajando {et("P")}</p><p class="p-texto">Avances del especialista y, si hace falta, un adicional.</p></div>
+      </div>
+      <p class="leer-t" style="margin-top:7mm">Los estados del trabajo, en el servidor {et("P")}</p>
       <div class="etapas">
         <div class="etapa"><span class="pto">1</span><p class="p-h">Agendado</p><p class="p-texto">Turno aceptado.</p></div>
         <div class="etapa"><span class="pto">2</span><p class="p-h">En camino</p><p class="p-texto">Sale para tu casa.</p></div>
         <div class="etapa"><span class="pto">3</span><p class="p-h">En sitio</p><p class="p-texto">«Llegué», lo marca el especialista.</p></div>
         <div class="etapa"><span class="pto">4</span><p class="p-h">En curso</p><p class="p-texto">Trabajando.</p></div>
         <div class="etapa"><span class="pto">5</span><p class="p-h">Terminado</p><p class="p-texto">Lo marca el especialista.</p></div>
-        <div class="etapa"><span class="pto">6</span><p class="p-h">Finalizado</p><p class="p-texto">Con tu conformidad.</p>{chips('P')}</div>
+        <div class="etapa"><span class="pto">6</span><p class="p-h">Finalizado</p><p class="p-texto">Con tu conformidad.</p></div>
       </div>
-      <div class="grilla" style="margin-top:4mm;column-gap:6mm">
-        <div class="c-6">{ojo('Cómo se marca la llegada', 'Tres versiones: en el servidor la marca el especialista («Llegué»); el lienzo suma un código de 4 números; la demo de la landing usa una geocerca simulada. Cuál queda: a definir.')}</div>
-        <div class="c-6 p-texto" style="align-self:center">El viaje en vivo existe en una rama de desarrollo, con mapa propio y sin terceros; la vista de prueba publicada todavía no lo tiene. El mapa se apaga cuando el especialista llega. {chips('P')}</div>
-      </div>
-      {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros S. Estados del trabajo: máquina de estados del servidor (rama).')}''', id_='dia'))
+      {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros S. El viaje en vivo está en una rama, con mapa propio y sin terceros; la vista de prueba publicada no lo tiene.')}''', id_='dia'))
 
 # ---------------------------------------------------------------- 14 · ADICIONAL / INFORME / CONFORMIDAD
-tri = [('s-adicional.webp', [(191, 596, 1), (191, 790, 2)], 'Adicional', [(1, 'Ves el total si lo aprobás', 'Repuesto o tarea extra con precio y motivo.', chips('P')), (2, 'Aprobar, preguntar o no', 'Vale lo acordado hasta que lo aprobás. Foto y «Preguntar»: diseño.', '')]),
-       ('s-informe.webp', [(207, 113, 3)], 'Informe', [(3, 'Informe con garantía', 'Qué encontró, pruebas, materiales y hasta cuándo cubre. Queda en Mi hogar.', chips('D'))]),
-       ('s-conformidad.webp', [(191, 726, 4), (191, 793, 5)], 'Conformidad', [(4, 'Conformidad en un toque', 'Confirmás que terminó.', chips('P')), (5, 'O avisás un problema', 'El trabajo vuelve a «en curso»; podés abrir un reclamo.', chips('P'))])]
+tri = [('s-adicional.webp', [(191, 596, 1), (191, 790, 2)], 'Adicional', [(1, 'Ves el total si lo aprobás', 'Repuesto o tarea extra con precio y motivo.', et('P')), (2, 'Aprobar, preguntar o no', 'Vale lo acordado hasta que lo aprobás. Foto y «Preguntar»: diseño.', '')]),
+       ('s-informe.webp', [(207, 113, 3)], 'Informe', [(3, 'Informe con garantía', 'Qué encontró, pruebas, materiales y hasta cuándo cubre. Queda en Mi hogar.', et('D'))]),
+       ('s-conformidad.webp', [(191, 726, 4), (191, 793, 5)], 'Conformidad', [(4, 'Conformidad en un toque', 'Confirmás que terminó.', et('P')), (5, 'O avisás un problema', 'El trabajo vuelve a «en curso»; podés abrir un reclamo.', et('P'))])]
 cols = ''.join(f'<div class="col">{movil(i, 52, tq, alt)}<div class="notas chicas" style="margin-top:5mm;width:52mm">{"".join(nota(*n) for n in ns)}</div></div>' for i, tq, alt, ns in tri)
 P.append(pagina('03 · Adicional y conformidad', f'''
       <span class="p-ceja">Antes de pagar</span>
@@ -355,40 +436,48 @@ P.append(pagina('03 · Adicional y conformidad', f'''
       <div class="fila-pant" style="margin-top:8mm">{cols}</div>
       {origen(DIS, CORTE, 'Lienzo «App del usuario» (S-Adicional, S-Informe, S-Conformidad). Quién da la garantía y su texto: a definir con Legal.')}''', id_='adicional'))
 
-# ---------------------------------------------------------------- 15 · PAGO
+# ---------------------------------------------------------------- 15 · PAGO (escena + recortes)
+d15 = flota('dz-pago-metodo', 8, 12, 50, 'Cómo le pagás') + etiq(8, 12, 'Cómo pagás', 'PWA')
+d15 += flota('dz-pago-informado', 64, 20, 58, 'Pago informado') + etiq(64, 20, 'Pago informado')
+d15 += flota('dz-pagos-reg', 120, 12, 48, 'Pagos registrados') + etiq(120, 12, 'Tus pagos')
 P.append(pagina('03 · Pagar directo', f'''
-      <span class="p-ceja">Recorrido · el pago</span>
+      <span class="p-ceja">Cómo se paga</span>
       <h1 class="p-titulo" style="margin-top:5mm">Pagás directo. Informado no es <span class="p-marca">verificado</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">La plata va del vecino al especialista. Handyx no la recibe ni la reparte: registra el pago y no lo da por hecho hasta verificarlo.</p>
-      <div style="margin-top:9mm">{zigzag([
-          ('pwa-pago-metodo.webp', [(192, 412, 1)], 'Elegís cómo pagás', 'Hoy, efectivo; Mercado Pago, cuando se valide la integración.', chips('P'), 'Pago al especialista', 1),
-          ('s-pagoinformado.webp', [(152, 315, 2)], 'Queda informado', 'Avisás que pagaste; todavía no está verificado.', chips('P'), 'Pago informado', 2),
-          ('x-pagos.webp', [(129, 226, 3)], 'Tus pagos', 'Informados y verificados, separados. No se guardan tarjetas.', chips('P'), 'Pagos registrados', 3),
-          ('s-resena.webp', [(191, 440, 4)], 'Una reseña, si querés', 'Estrellas y un comentario sin datos personales.', chips('P:En pruebas · sin backend'), 'Reseña', None)], marca='fG')}</div>
-      <p class="leer-t" style="margin-top:4mm">El camino de un pago</p>
-      <div class="etapas">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">Pagás directo</p><p class="p-texto">En mano o en el cobro del especialista; Handyx no recibe la plata.</p></div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Informado</p><p class="p-texto">Queda registrado, sin darlo por hecho.</p></div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">Verificado</p><p class="p-texto">Recién ahí cuenta como pagado. Quién verifica el efectivo: a definir.</p>{chips('P')}</div>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">La plata va del vecino al especialista. Handyx no la recibe ni la reparte: registra el pago y no lo da por hecho hasta verificarlo.</p>
+      <div class="grilla" style="margin-top:6mm;column-gap:8mm;align-items:center">
+        <div class="c-7">{escena('pago')}</div>
+        <div class="c-5 pasos-v">
+          <div><span class="pto">1</span><div><p class="p-h">Pagás directo</p><p class="p-texto">En mano o en el cobro del especialista; Handyx no recibe la plata.</p></div></div>
+          <div><span class="pto">2</span><div><p class="p-h">Informado</p><p class="p-texto">Avisás que pagaste: queda registrado, sin darlo por hecho.</p></div></div>
+          <div><span class="pto">3</span><div><p class="p-h">Verificado {et("P")}</p><p class="p-texto">Recién ahí cuenta como pagado. Quién verifica el efectivo: a definir.</p></div></div>
+        </div>
       </div>
-      <div class="grilla" style="margin-top:4mm;column-gap:6mm">
+      <div style="margin-top:8mm">{dz(80, d15)}</div>
+      <div class="grilla" style="margin-top:7mm;column-gap:8mm">
         <div class="c-6">{ojo('¿Quién verifica un pago en efectivo?', 'El lienzo dice que queda verificado cuando el especialista lo confirma. El servidor dice que verifica el proveedor de pago u Operations. Y el lienzo muestra Mercado Pago «Se verifica solo», con la integración hoy cerrada. A definir.')}</div>
-        <div class="c-6 p-texto" style="align-self:center">Volver a la app desde el cobro de Mercado Pago no confirma nada: la app consulta el estado real del pago. Tarifa de servicio: 0 % hasta el 10/12/2026. {chips('P')}</div>
+        <div class="c-6 p-texto" style="align-self:center">Hoy, efectivo; Mercado Pago, cuando se valide la integración. Volver a la app desde el cobro no confirma nada: la app consulta el estado real del pago. No se guardan tarjetas. Tarifa de servicio: 0 % hasta el 10/12/2026. {et("P")} Al final, una reseña si querés: estrellas y un comentario sin datos personales. {et("P:En pruebas · sin backend")}</div>
       </div>
-      {origen(PRU, DIS, CORTE, 'Paso 1: PWA con servidor simulado (captura del 31/10/2026, nombre anterior de la marca). Pasos 2 a 4: lienzo.')}''', id_='pago'))
+      {origen(PRU, DIS, CORTE, 'Ilustración: la plata va directo, Handyx queda afuera. «Cómo pagás»: PWA con servidor simulado (captura del 31/10/2026, nombre anterior de la marca). «Pago informado» y «Tus pagos»: lienzo.')}''', id_='pago'))
 
-# ---------------------------------------------------------------- 16 · MENSAJES
-tri = [('m-mensajes.webp', [(191, 273, 1)], 'Mensajes', [(1, 'Un chat por pedido u obra', 'Nadie te puede escribir por fuera de un pedido.', chips('P'))]),
-       ('m-chat.webp', [(243, 447, 2), (243, 695, 3)], 'Chat con tarjetas', [(2, 'La propuesta, dentro del hilo', 'Se acepta ahí mismo y queda en el pedido.', chips('P')), (3, 'Otro horario, como tarjeta', 'Presupuestos por ítem, repuestos y fechas, igual.', chips('D'))]),
-       ('i-avisos.webp', [(191, 129, 4)], 'Avisos', [(4, 'Avisos que llevan al detalle', 'Nunca aceptan ni pagan por vos.', chips('P'))])]
-cols = ''.join(f'<div class="col">{movil(i, 52, tq, alt)}<div class="notas chicas" style="margin-top:5mm;width:52mm">{"".join(nota(*n) for n in ns)}</div></div>' for i, tq, alt, ns in tri)
+# ---------------------------------------------------------------- 16 · MENSAJES (despiece)
+d16 = movil('m-chat.webp', 54, (), 'Chat del pedido', estilo='left:60mm;top:9mm')
+d16 += flota('dz-mensajes', 6, 18, 60, 'Mensajes') + etiq(6, 18, 'Mensajes')
+d16 += flota('dz-avisos', 6, 74, 60, 'Avisos') + etiq(6, 74, 'Avisos')
+d16 += flota('dz-chat-prop', 108, 22, 60, 'Propuesta dentro del chat') + etiq(108, 22, 'Propuesta en el chat')
+d16 += flota('dz-chat-horario', 110, 70, 58, 'Otro horario como tarjeta') + etiq(110, 70, 'Otro horario', 'Diseñado')
 P.append(pagina('03 · Mensajes y avisos', f'''
-      <span class="p-ceja">Comunicación</span>
+      <span class="p-ceja">Pieza por pieza · comunicación</span>
       <h1 class="p-titulo" style="margin-top:5mm">Todo lo acordado, por <span class="p-marca">escrito</span></h1>
-      <p class="p-lead" style="margin-top:4.5mm;max-width:156mm;font-size:10.2pt">Cada pedido tiene su chat y cada pendiente su aviso. Si algo se complica, Soporte de Handyx te responde con una persona del equipo.</p>
-      <div class="fila-pant" style="margin-top:8mm">{cols}</div>
-      <p class="p-texto" style="margin-top:5mm;max-width:170mm">Soporte por chat: pantalla en una rama, sobre servidor simulado; cómo llega cada consulta al equipo, a definir. {chips('P')} Seleccionar mensajes y sumar al chat una foto anotada o una medida (sin ubicación ni datos del teléfono): diseño. {chips('D')}</p>
-      {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros M e I. Chats por pedido y avisos: código de la app sobre servidor simulado.')}''', id_='mensajes'))
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Cada pedido tiene su chat y cada pendiente su aviso. Las propuestas y los cambios llegan como tarjetas que se aceptan ahí mismo y quedan en el pedido.</p>
+      <div style="margin-top:8mm">{dz(126, d16, 'hueso')}</div>
+      <div class="notas-dz" style="margin-top:7mm">
+        <div><p class="p-h">Un chat por pedido {et("P")}</p><p class="p-texto">Nadie te puede escribir por fuera de un pedido u obra.</p></div>
+        <div><p class="p-h">La propuesta, en el hilo {et("P")}</p><p class="p-texto">Se acepta ahí mismo y queda en el pedido.</p></div>
+        <div><p class="p-h">Otro horario {et("D")}</p><p class="p-texto">Presupuestos por ítem, repuestos y fechas, como tarjetas.</p></div>
+        <div><p class="p-h">Avisos {et("P")}</p><p class="p-texto">Llevan al detalle: nunca aceptan ni pagan por vos.</p></div>
+      </div>
+      <p class="p-texto" style="margin-top:6mm;max-width:170mm">Si algo se complica, Soporte de Handyx responde con una persona del equipo: pantalla en una rama, sobre servidor simulado; cómo llega cada consulta al equipo, a definir. {et("P")} Seleccionar mensajes y sumar al chat una foto anotada o una medida (sin ubicación ni datos del teléfono): {et("D", sola=True)}</p>
+      {origen(DIS, CORTE, 'Teléfono y recortes: lienzo «App del usuario», tableros M e I. Chats por pedido y avisos: código de la app sobre servidor simulado.')}''', id_='mensajes'))
 
 # ---------------------------------------------------------------- 17 · MI HOGAR
 tri = [('h-hogar.webp', [(285, 279, 1), (285, 434, 2)], 'Mi hogar', [(1, 'Algo se rompió', 'Elegís dónde y qué falla; el pedido sale con los datos de tu casa.', ''), (2, 'Historial y garantías', 'Todo lo que se hizo, con sus informes.', '')]),
@@ -400,73 +489,77 @@ P.append(pagina('03 · Mi hogar', f'''
       <h1 class="p-titulo" style="margin-top:5mm;max-width:140mm">Lo que se hizo queda para la <span class="p-marca">próxima vez</span></h1>
       <p class="p-lead" style="margin-top:4.5mm;max-width:140mm;font-size:10.2pt">Mi hogar es la ficha privada de tu casa: ambientes, equipos, informes y garantías. Compartís solo lo que elegís, solo para un pedido, y se deja de compartir al terminar.</p>
       <div class="fila-pant" style="margin-top:8mm">{cols}</div>
-      <p class="p-texto" style="margin-top:5mm">Todo Mi hogar es diseño y pide un contrato de datos nuevo. {chips('D')} Hoy, en código, hay historial de pedidos y trabajos, no de la casa. {chips('P')} Modelo 3D del ambiente y beneficios del Camino del hogar: {chips('K')}</p>
+      <p class="p-texto" style="margin-top:5mm">Todo Mi hogar es diseño y pide un contrato de datos nuevo. {et('D')} Hoy, en código, hay historial de pedidos y trabajos, no de la casa. {et('P')} Modelo 3D del ambiente y beneficios del Camino del hogar: {et('K')}</p>
       {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros H.')}''', id_='hogar'))
 
 # ---------------------------------------------------------------- 18 · APERTURA 04 · OBRA
-et = [('1', 'Te proponen la obra', 'Días, etapas y a quién le pagás cada una.', chips('D')), ('2', 'La aprobás', 'O pedís cambios.', chips('D')),
-      ('3', 'Seguís cada jornada', 'Quién viene, avance y materiales.', chips('D')), ('4', 'Aprobás repuestos', 'Con el precio y la foto del ticket.', chips('D')),
-      ('5', 'Confirmás cada etapa', 'Terminada, con sus fotos.', chips('P')), ('6', 'Pagás cada etapa', 'Directo a quien la hizo.', chips('P')), ('7', 'Ves lo gastado', 'Informado y verificado, aparte.', chips('D'))]
-etapas = ''.join(f'<div class="etapa"><span class="pto">{a}</span><p class="p-h">{b}</p><p class="p-texto">{c}</p>{d}</div>' for a, b, c, d in et)
+et18 = [('1', 'Te proponen la obra', 'Días, etapas y a quién le pagás cada una.', et('D')), ('2', 'La aprobás', 'O pedís cambios.', et('D')),
+      ('3', 'Seguís cada jornada', 'Quién viene, avance y materiales.', et('D')), ('4', 'Aprobás repuestos', 'Con el precio y la foto del ticket.', et('D')),
+      ('5', 'Confirmás cada etapa', 'Terminada, con sus fotos.', et('P')), ('6', 'Pagás cada etapa', 'Directo a quien la hizo.', et('P')), ('7', 'Ves lo gastado', 'Informado y verificado, aparte.', et('D'))]
+etapas = ''.join(f'<div class="etapa"><span class="pto">{a}</span><p class="p-h">{b}</p><p class="p-texto">{c}</p>{d}</div>' for a, b, c, d in et18)
 P.append(apertura('04', 'Una obra completa', 'f-faro-mogotes.webp', 'center',
                   '<div data-iso="barrio" data-paleta="dia" data-pines="1" data-semilla="8" style="position:absolute;left:-8mm;bottom:-10mm;width:128mm"></div>',
                   'Un baño completo, etapa por etapa y sin perder el control del <span class="p-marca">gasto</span>',
                   'Una obra de varios días se divide en etapas con días, responsables y montos. Repuestos y cambios de fecha llegan para aprobar, y cada etapa se paga directo a quien la hizo.',
-                  f'<div class="etapas etapas-7" style="margin-top:8mm">{etapas}</div>', 'cap4', 'Capítulo 04', alto=164))
+                  f'<div class="etapas etapas-7" style="margin-top:8mm">{etapas}</div>', 'cap4', 'Capítulo 04', alto=164, esc=('obra', False, 'Una obra por etapas, cada una con su responsable', 28)))
 
-# ---------------------------------------------------------------- 19 · OBRA 1
+# ---------------------------------------------------------------- 19 · OBRA 1 (despiece sobre azul)
+d19 = movil('o-obra.webp', 54, (), 'Tu obra', estilo='left:60mm;top:10mm')
+d19 += flota('dz-obra-etapas', 6, 16, 58, 'Propuesta de obra') + etiq(6, 16, 'Propuesta de obra')
+d19 += flota('dz-obra-gastado', 8, 94, 58, 'Lo gastado') + etiq(8, 94, 'Lo gastado')
+d19 += flota('dz-obra-dia', 108, 14, 60, 'Una jornada') + etiq(108, 14, 'Una jornada')
+d19 += flota('dz-obra-repuesto', 106, 76, 62, 'Repuesto para aprobar') + etiq(106, 76, 'Repuesto')
+d19 += flota('dz-pwa-etapas', 116, 122, 52, 'Etapas de la obra en la PWA') + etiq(116, 122, 'En código', 'vista de prueba')
 P.append(pagina('04 · La obra, de punta a punta', f'''
-      <span class="p-ceja">Recorrido · una obra · 1 de 2</span>
-      <h1 class="p-titulo" style="margin-top:5mm;max-width:145mm">De la propuesta a la <span class="p-marca">jornada</span></h1>
-      <div style="margin-top:7mm">{zigzag([
-          ('o-propuesta.webp', [(195, 309, 1), (195, 726, 2)], 'La propuesta de obra', 'Total, días, etapas y quién hace cada una.', chips('D'), 'Propuesta de obra', 2),
-          ('o-obra.webp', [(192, 177, 3), (192, 566, 4)], 'Tu obra', 'Día a día, lo pagado y lo que falta.', chips('D'), 'Tu obra', 4),
-          ('o-dia.webp', [(192, 502, 5)], 'Una jornada', 'Quién vino, el avance con fotos y los materiales de hoy.', chips('D'), 'Una jornada', 5),
-          ('o-repuesto.webp', [(191, 354, 6), (191, 735, 7)], 'Un repuesto', 'Precio y foto del ticket; nada se suma sin tu OK.', chips('D'), 'Repuesto', None)], marca='fO', alto=121)}</div>
-      <div class="banda-codigo" style="margin-top:3mm;padding:3.5mm 6mm">
-        {movil('pwa-seguimiento.webp', 38, [(106, 733, 'A')], 'Obra por etapas en la PWA')}
-        <div>
-          <span class="rotulo prueba">Pantalla de la PWA · datos de prueba</span>
-          <p class="p-h" style="margin-top:3mm">La obra por etapas ya corre en código</p>
-          <p class="p-texto" style="margin-top:1.2mm">Lo acordado, las etapas con su monto y <b class="pt">A</b> la etapa que falta confirmar. Confirmás cada etapa terminada y la pagás directo. {chips('P')}</p>
-          <p class="p-texto" style="margin-top:1.2mm">La propuesta con equipo, las jornadas, los repuestos y el chat grupal son diseño y piden obras en equipo en el contrato de datos. {chips('D')}</p>
-          </div>
+      <span class="p-ceja">Pieza por pieza · una obra · 1 de 2</span>
+      <h1 class="p-titulo" style="margin-top:5mm;max-width:150mm">Tu obra, en una <span class="p-marca">pantalla</span></h1>
+      <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Las etapas con su monto y su responsable, cada jornada con fotos, los repuestos para aprobar y lo gastado hasta hoy.</p>
+      <div style="margin-top:8mm">{dz(150, d19, 'azul')}</div>
+      <div class="notas-dz" style="margin-top:7mm">
+        <div><p class="p-h">La propuesta {et("D")}</p><p class="p-texto">Total, días, etapas y a quién le pagás cada una.</p></div>
+        <div><p class="p-h">Cada jornada {et("D")}</p><p class="p-texto">Quién vino, el avance con fotos y los materiales de hoy.</p></div>
+        <div><p class="p-h">Repuestos {et("D")}</p><p class="p-texto">Precio y foto del ticket; nada se suma sin tu OK.</p></div>
+        <div><p class="p-h">En código {et("P")}</p><p class="p-texto">Confirmás cada etapa terminada y la pagás directo.</p></div>
       </div>
-      {origen(DIS, CORTE, 'Lienzo «App del usuario», tableros O; montos y nombres de muestra. PWA: captura del 31/10/2026, con el nombre anterior de la marca.')}''', id_='obra1'))
+      <p class="p-texto" style="margin-top:6mm;max-width:170mm">La propuesta con equipo, las jornadas, los repuestos y el chat grupal son diseño y piden obras en equipo en el contrato de datos. Lo que ya corre en código es la obra por etapas: lo acordado, cada etapa con su monto y la que falta confirmar.</p>
+      {origen(DIS, PRU, CORTE, 'Teléfono y recortes: lienzo «App del usuario», tableros O; montos y nombres de muestra. «En código»: PWA, captura del 31/10/2026.')}''', id_='obra1'))
 
 # ---------------------------------------------------------------- 20 · OBRA 2
 P.append(pagina('04 · La obra, de punta a punta', f'''
       <span class="p-ceja">Recorrido · una obra · 2 de 2</span>
       <h1 class="p-titulo" style="margin-top:5mm">Cambios, equipo y pagos de la <span class="p-marca">obra</span></h1>
       <div style="margin-top:9mm">{zigzag([
-          ('o-fecha.webp', [(191, 291, 1), (191, 726, 2)], 'Mover una jornada', 'Solo esa o todas las que siguen; vale la fecha anterior hasta acordar.', chips('D'), 'Cambio de fecha', 2),
-          ('o-grupo.webp', [(289, 431, 3)], 'El chat de la obra', 'Todo el equipo en un grupo; nadie ve tu celular.', chips('D'), 'Chat de la obra', 3),
-          ('o-pagos.webp', [(165, 242, 4), (191, 793, 5)], 'Pagos por etapa', 'A cada uno, directo; el reparto lo acordó el equipo.', chips('P', 'D:Equipo'), 'Pagos de la obra', 5),
-          ('o-gastado.webp', [(192, 190, 6)], 'Lo gastado', 'Etapas y repuestos; el resumen queda en Mi hogar.', chips('D'), 'Lo gastado', None)], marca='fO2')}</div>
-      <div class="flujo-img" style="margin-top:5mm"><img src="img/fl-obra.webp" alt="Flujo de una obra de varios días"></div>
+          ('o-fecha.webp', [(191, 291, 1), (191, 726, 2)], 'Mover una jornada', 'Solo esa o todas las que siguen; vale la fecha anterior hasta acordar.', et('D'), 'Cambio de fecha', 2),
+          ('o-grupo.webp', [(289, 431, 3)], 'El chat de la obra', 'Todo el equipo en un grupo; nadie ve tu celular.', et('D'), 'Chat de la obra', 3),
+          ('o-pagos.webp', [(165, 242, 4), (191, 793, 5)], 'Pagos por etapa', 'A cada uno, directo; el reparto lo acordó el equipo. El resumen queda en Mi hogar.', et('P', 'D:Equipo'), 'Pagos de la obra', None)], marca='fO2', ancho=44, sep=65, alto_pie=95, alto=124)}</div>
+      <div class="flujo-img" style="margin-top:6mm"><img src="img/fl-obra.webp" alt="Flujo de una obra de varios días"></div>
       {origen(DIS, CORTE, 'Lienzo «App del usuario»: tableros O y flujo FL-Obra (recorrido RC-Obra). Cada profesional ve tu dirección exacta solo los días que trabaja.')}''', id_='obra2'))
 
-# ---------------------------------------------------------------- 21 · CONFIANZA · VERIFICADO
+# ---------------------------------------------------------------- 21 · CONFIANZA · VERIFICADO (escena + despiece)
 banda21 = f'''<div class="banda azul" style="height:66mm"><img class="foto-banda" src="img/f-puerto-sur.webp" alt="" style="width:120mm;object-position:center"><div class="velo-banda"></div></div>'''
+d21 = movil('c-certificados.webp', 48, (), 'Perfil del especialista', estilo='left:6mm;top:10mm')
+d21 += flota('dz-verif-lista', 38, 30, 54, 'Verificado por Operations') + etiq(38, 30, 'Verificado por Operations')
 P.append(pagina('Capítulo 05 · Confianza', f'''
       <div class="p-azul" style="background:none;display:flex;align-items:flex-end;gap:6mm;margin-top:-6mm"><img class="cap-img" src="img/cap-05.webp" alt="05" style="height:16mm"><div><span class="p-ceja">Confianza</span><h1 class="p-titulo" style="margin-top:3mm;font-size:22pt;color:#fff">Cómo ves que está verificado</h1></div></div>
-      <div class="heroe" style="margin-top:20mm">
-        {movil('c-certificados.webp', 58, [(197, 231, 1), (306, 408, 2), (306, 491, 3), (309, 582, 4)], 'Perfil del especialista')}
-        <div class="notas">
-          {nota(1, 'El sello lo pone el equipo', 'Solo Operations verifica. El especialista no puede marcarse verificado.', chips('P'))}
-          {nota(2, 'Identidad, con fecha', 'Cada verificación dice cuándo se hizo.', chips('P'))}
-          {nota(3, 'Antecedentes, revisados por el equipo', 'Nunca se muestran como archivo. Cómo se revisan (en persona o por documento): a definir.', chips('P'))}
-          {nota(4, '«Cargado» no es «verificado»', 'Lo que el especialista subió sin revisión queda marcado como cargado.', chips('D'))}
+      <div class="grilla" style="margin-top:33mm;column-gap:8mm">
+        <div class="c-5">
+          {escena('verificar')}
+          <div class="pasos-v" style="margin-top:5mm">
+            <div><span class="pto">1</span><div><p class="p-h">El especialista se anota</p><p class="p-texto">Datos, rubros y zonas.</p></div></div>
+            <div><span class="pto">2</span><div><p class="p-h">Carga documentos</p><p class="p-texto">Cargar no es estar verificado.</p></div></div>
+            <div><span class="pto">3</span><div><p class="p-h">El equipo revisa</p><p class="p-texto">Identidad y antecedentes. Solo Operations verifica.</p></div></div>
+            <div><span class="pto">4</span><div><p class="p-h">Vos ves el sello {et("P")}</p><p class="p-texto">Sale del servidor, con fecha, en la propuesta y en el perfil.</p></div></div>
+          </div>
         </div>
+        <div class="c-7">{dz(118, d21)}</div>
       </div>
-      <div class="etapas" style="margin-top:9mm">
-        <div class="etapa"><span class="pto">1</span><p class="p-h">El especialista se anota</p><p class="p-texto">Datos, rubros y zonas.</p></div>
-        <div class="etapa"><span class="pto">2</span><p class="p-h">Carga documentos</p><p class="p-texto">Cargar no es estar verificado.</p></div>
-        <div class="etapa"><span class="pto">3</span><p class="p-h">El equipo revisa</p><p class="p-texto">Identidad y antecedentes.</p></div>
-        <div class="etapa"><span class="pto">4</span><p class="p-h">Vos ves el sello</p><p class="p-texto">Sale del servidor, en la propuesta y el perfil.</p>{chips('P')}</div>
+      <div class="notas-dz" style="margin-top:8mm">
+        <div><p class="p-h">Con fecha {et("P")}</p><p class="p-texto">Cada verificación dice cuándo se hizo. El especialista no puede marcarse verificado.</p></div>
+        <div><p class="p-h">Antecedentes {et("P")}</p><p class="p-texto">Revisados por el equipo; nunca se muestran como archivo. En persona o por documento: a definir.</p></div>
+        <div><p class="p-h">«Cargado» no es «verificado» {et("D")}</p><p class="p-texto">Lo que el especialista subió sin revisión queda marcado como cargado.</p></div>
       </div>
-      <p class="p-texto" style="margin-top:5mm">Todavía no hay especialistas verificados ni reseñas reales: los 56 especialistas del preregistro están <b>registrados</b>, anotados por el fundador fuera de la landing, en una planilla propia y con su consentimiento <span class="tipo-dato">Dato informado por el fundador · sin auditar</span>. El alta y la verificación del especialista, en el Dossier 03.</p>
-      {origen(DIS, CORTE, 'Lienzo «App del usuario» (C-Certificados). Sellos: contrato de datos en una rama («solo lo que Operations verificó»).')}''', id_='cap5', extra=banda21).replace('<div class="cab-p">', '<div class="cab-p sobre-azul">'))
+      <p class="p-texto" style="margin-top:6mm">Todavía no hay especialistas verificados ni reseñas reales: los 56 especialistas del preregistro están <b>registrados</b>, anotados por el fundador fuera de la landing, en una planilla propia y con su consentimiento <span class="tipo-dato">Dato informado por el fundador · sin auditar</span>. El alta y la verificación del especialista, en el Dossier 03.</p>
+      {origen(DIS, CORTE, 'Ilustración: el equipo revisa y habilita. Teléfono y recorte: lienzo «App del usuario» (C-Certificados). Sellos: contrato de datos en una rama («solo lo que Operations verificó»).')}''', id_='cap5', extra=banda21).replace('<div class="cab-p">', '<div class="cab-p sobre-azul">'))
 
 # ---------------------------------------------------------------- 22 · ANTI-FUGA
 mec = [('Propuestas comparables en un solo lugar', 'Precio, tarifa aparte, fecha y qué incluye, en el mismo formato.', 'P'),
@@ -488,25 +581,26 @@ P.append(pagina('05 · Quedarse adentro', f'''
         <div class="c-5">
           <p class="respuesta">Nada lo impide del todo: arreglarse por fuera es un riesgo y lo medimos.</p>
           <p class="p-texto" style="margin-top:3mm;font-size:8.6pt">La respuesta no es prohibir: es que adentro valga más. Fuera de Handyx, el vecino pierde las propuestas comparables, lo acordado por escrito, el registro del pago, la garantía, el reclamo con seguimiento y el historial de su casa.</p>
-          <div style="margin-top:6mm">{movil('h-compartir.webp', 46, [(344, 396, 1)], 'Qué compartís')}</div>
-          <p class="p-texto" style="margin-top:3mm;max-width:58mm"><b class="pt">1</b> Vos decidís qué datos de tu casa ve cada especialista, y solo para ese pedido. {chips('D')}</p>
+          <div style="margin-top:5mm">{escena('adentro', True, fondo=False)}</div>
+          <div class="flota" style="position:relative;margin-top:5mm;width:56mm"><img src="img/dz-compartir.webp" alt="Qué compartís de tu casa"></div>
+          <p class="p-texto" style="margin-top:3mm;max-width:62mm">Vos decidís qué datos de tu casa ve cada especialista, y solo para ese pedido. {et('D')}</p>
         </div>
         <div class="c-7">
           <table class="tabla-est fuga"><tr><th>Lo que hay adentro</th><th>Para qué te sirve</th><th>Estado</th></tr>{filas}</table>
           <div class="mide"><p class="leer-t" style="margin-top:0">Cómo lo medimos</p><p class="p-texto">Como repetición dentro de Handyx: vecinos que vuelven a pedir por la app. Meta del piloto: <b>5 clientes que vuelven a contratar</b> en diciembre de 2026 <span class="tipo-dato">Objetivo</span>. Todavía no hay datos.</p></div>
         </div>
       </div>
-      {origen(DIS, CORTE, 'Estados: auditoría de la app del usuario. Respuesta: preguntas difíciles del proyecto.')}''', id_='fuga'))
+      {origen(DIS, CORTE, 'Ilustración: lo que hay adentro de Handyx para los dos. Recorte: lienzo «App del usuario» (H-Compartir). Estados: auditoría de la app del usuario. Respuesta: preguntas difíciles del proyecto.')}''', id_='fuga'))
 
 # ---------------------------------------------------------------- 23 · DUDAS
-D = [('¿Y si el trabajo sale mal?', 'Lo avisás desde la app y queda registrado.', 'En la conformidad tocás «Hay un problema» y el trabajo vuelve a «en curso»; podés abrir un reclamo y seguirlo. El especialista responde por su trabajo. Quién da la garantía y con qué texto: a definir con Legal.', chips('P:Conformidad y reclamos', 'D:Garantía')),
-     ('¿Y si no viene?', 'Se paga al terminar: no adelantás nada.', 'Ves el estado del turno y, en la rama de desarrollo, el viaje en vivo. Podés cambiar el turno, cancelarlo, escribir a Soporte o abrir un reclamo. Qué pasa con un especialista que falta: a definir.', chips('P')),
-     ('¿Pago más por usar Handyx?', 'Hasta el 10/12/2026, no: la tarifa es 0 %.', 'Después, 15 %, en evaluación. La tarifa va aparte del precio del especialista y la ves antes de aceptar; la app avisa antes de cualquier cambio. Al especialista no se le cobra comisión.', '<span class="tipo-dato">Decisión del fundador · 07/11/2026</span> ' + chips('P:Aviso en la app')),
-     ('¿Quién ve mi dirección y mis datos?', 'Tu dirección exacta, solo quien aceptás.', 'Antes, los especialistas ven tu zona aproximada. Sin DNI ni CUIT. Tu teléfono, solo el elegido y para ese turno. Desde Privacidad borrás la cuenta y se te informa qué queda por ley.', chips('P')),
-     ('¿Cómo sé que está verificado?', 'El sello sale del servidor, no del especialista.', 'Solo aparece lo que verificó el equipo, con fecha; lo cargado sin revisar se marca así. Hoy no hay especialistas verificados: los anotados están registrados.', chips('P:Sellos', 'D:Perfil')),
-     ('¿Qué pasa con mi plata?', 'Va directo al especialista; Handyx no la toca.', 'Hoy, efectivo, que informás en la app; Mercado Pago, cuando se valide la integración. Un pago informado no se da por verificado y no se guardan tarjetas.', chips('P:Efectivo', 'P:Mercado Pago, cerrado')),
-     ('¿Y si al final me cobra otra cosa?', 'Nada se suma sin tu OK.', 'Un adicional llega con precio y motivo, y ves el total si lo aprobás. Podés aprobar, preguntar o no aceptar; vale lo acordado hasta tu OK.', chips('P')),
-     ('¿HandIA es una inteligencia artificial?', 'Hoy no: es un asistente de reglas en tu celular.', 'Arma el pedido sin IA externa, está en una rama y en la app publicada está desactivada. Sumar IA externa es un plan que pide autorización, consentimiento y revisión legal.', chips('P', 'K:IA externa'))]
+D = [('¿Y si el trabajo sale mal?', 'Lo avisás desde la app y queda registrado.', 'En la conformidad tocás «Hay un problema» y el trabajo vuelve a «en curso»; podés abrir un reclamo y seguirlo. El especialista responde por su trabajo. Quién da la garantía y con qué texto: a definir con Legal.', et('P:Conformidad y reclamos', 'D:Garantía')),
+     ('¿Y si no viene?', 'Se paga al terminar: no adelantás nada.', 'Ves el estado del turno y, en la rama de desarrollo, el viaje en vivo. Podés cambiar el turno, cancelarlo, escribir a Soporte o abrir un reclamo. Qué pasa con un especialista que falta: a definir.', et('P')),
+     ('¿Pago más por usar Handyx?', 'Hasta el 10/12/2026, no: la tarifa es 0 %.', 'Después, 15 %, en evaluación. La tarifa va aparte del precio del especialista y la ves antes de aceptar; la app avisa antes de cualquier cambio. Al especialista no se le cobra comisión.', '<span class="tipo-dato">Decisión del fundador · 07/11/2026</span> ' + et('P:Aviso en la app')),
+     ('¿Quién ve mi dirección y mis datos?', 'Tu dirección exacta, solo quien aceptás.', 'Antes, los especialistas ven tu zona aproximada. Sin DNI ni CUIT. Tu teléfono, solo el elegido y para ese turno. Desde Privacidad borrás la cuenta y se te informa qué queda por ley.', et('P')),
+     ('¿Cómo sé que está verificado?', 'El sello sale del servidor, no del especialista.', 'Solo aparece lo que verificó el equipo, con fecha; lo cargado sin revisar se marca así. Hoy no hay especialistas verificados: los anotados están registrados.', et('P:Sellos', 'D:Perfil')),
+     ('¿Qué pasa con mi plata?', 'Va directo al especialista; Handyx no la toca.', 'Hoy, efectivo, que informás en la app; Mercado Pago, cuando se valide la integración. Un pago informado no se da por verificado y no se guardan tarjetas.', et('P:Efectivo', 'P:Mercado Pago, cerrado')),
+     ('¿Y si al final me cobra otra cosa?', 'Nada se suma sin tu OK.', 'Un adicional llega con precio y motivo, y ves el total si lo aprobás. Podés aprobar, preguntar o no aceptar; vale lo acordado hasta tu OK.', et('P')),
+     ('¿HandIA es una inteligencia artificial?', 'Hoy no: es un asistente de reglas en tu celular.', 'Arma el pedido sin IA externa, está en una rama y en la app publicada está desactivada. Sumar IA externa es un plan que pide autorización, consentimiento y revisión legal.', et('P', 'K:IA externa'))]
 cards = ''.join(f'<div class="c-6 duda"><p class="q">{q}</p><p class="corta">{c}</p><p class="larga">{l}</p><p class="hoy"><b>Hoy</b>{h}</p></div>' for q, c, l, h in D)
 P.append(pagina('05 · Preguntas difíciles', f'''
       <span class="p-ceja">Lo que nos preguntan sin vueltas</span>
@@ -538,14 +632,15 @@ P.append(f'''<section class="pagina p-azul contra-02" id="contratapa">
           <div><span>Web</span><a href="https://landing.handyc.com/">landing.handyc.com</a></div>
         </div>
         <div class="coleccion" style="margin-top:9mm;color:#fff"><span>Tríptico</span><span>01 Business &amp; Investment</span><span class="actual">02 Customer App</span><span>03 Professional App</span><span>04 Operations Portal</span></div>
-        <p class="p-texto" style="margin-top:5mm;color:rgba(255,255,255,0.75);font-size:6.8pt">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Estado al 07/11/2026. Las pantallas usan datos de prueba o de muestra; las cifras llevan su tipo y su fuente. Fotos: Mar del Plata, archivo del fundador.</p>
+        <p class="p-texto" style="margin-top:5mm;color:rgba(255,255,255,0.75);font-size:6.8pt">Colección Handyx · Edición 1 · Mar del Plata, noviembre de 2026. Estado al 07/11/2026. Las pantallas usan datos de prueba o de muestra; las cifras llevan su tipo y su fuente. Ilustraciones de Mar del Plata a partir de fotos del fundador.</p>
       </div>
     </div>
   </div>
 </section>
 ''')
 
-CSS = open('/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ola6/c02/estilo.css').read()
+CSS = open(os.path.join(AQUI, 'estilo.css')).read()
+ESC02 = open(os.path.join(AQUI, 'escenas-02.js')).read()
 html = f'''<!doctype html>
 <html lang="es-AR" data-pieza="usuario">
 <head>
@@ -560,6 +655,10 @@ html = f'''<!doctype html>
 <body>
 {"".join(P)}
 <script src="../../plantilla/iso.js"></script>
+<script src="../../plantilla/escenas.js"></script>
+<script>
+{ESC02}
+</script>
 <script src="../../plantilla/pieza.js"></script>
 </body>
 </html>

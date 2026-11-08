@@ -578,9 +578,9 @@
 "a": "dz-rubros.webp",
 "recorte": [
 10,
-455,
+548,
 1160,
-1145
+1140
 ],
 "uso": "despiece (ola 7)"
 },
@@ -600,9 +600,9 @@
 "a": "dz-fotos.webp",
 "recorte": [
 30,
-385,
+470,
 1150,
-885
+1010
 ],
 "uso": "despiece (ola 7)"
 },
@@ -844,7 +844,51 @@
 25,
 795,
 1165,
-2045
+1975
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Mensajes.png",
+"a": "dz-mensajes.webp",
+"recorte": [
+30,
+700,
+1140,
+1452
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Chat.png",
+"a": "dz-chat-prop.webp",
+"recorte": [
+30,
+962,
+965,
+1420
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/M-Chat.png",
+"a": "dz-chat-horario.webp",
+"recorte": [
+30,
+1712,
+965,
+2170
+],
+"uso": "despiece (ola 7)"
+},
+{
+"de": "usuario/I-Avisos.png",
+"a": "dz-avisos.webp",
+"recorte": [
+25,
+280,
+1150,
+1005
 ],
 "uso": "despiece (ola 7)"
 },
@@ -853,9 +897,9 @@
 "a": "dz-pwa-orden.webp",
 "recorte": [
 0,
-92,
+118,
 690,
-215
+232
 ],
 "uso": "despiece (ola 7)"
 },
@@ -864,9 +908,9 @@
 "a": "dz-pwa-sinverif.webp",
 "recorte": [
 20,
-868,
+1030,
 650,
-992
+1160
 ],
 "uso": "despiece (ola 7)"
 },
@@ -875,9 +919,9 @@
 "a": "dz-pwa-etapas.webp",
 "recorte": [
 20,
-1072,
+1268,
 660,
-1305
+1541
 ],
 "uso": "despiece (ola 7)"
 },
@@ -886,9 +930,9 @@
 "a": "dz-pago-metodo.webp",
 "recorte": [
 15,
-455,
+522,
 780,
-1295
+1370
 ],
 "uso": "despiece (ola 7)"
 }

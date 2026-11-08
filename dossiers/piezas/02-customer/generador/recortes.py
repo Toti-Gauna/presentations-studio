@@ -8,9 +8,9 @@ CAP, PIEZA = sys.argv[1], sys.argv[2]
 PWA = os.path.join(PIEZA, '../../../brands/handyx/assets/capturas')
 R = {
     # 01 · pedir (I-Inicio + P-*)
-    'dz-rubros': ('usuario/I-Inicio.png', (10, 455, 1160, 1145)),
+    'dz-rubros': ('usuario/I-Inicio.png', (10, 548, 1160, 1140)),
     'dz-quepasa': ('usuario/P-Que.png', (30, 170, 1150, 1000)),
-    'dz-fotos': ('usuario/P-Fotos.png', (30, 385, 1150, 885)),
+    'dz-fotos': ('usuario/P-Fotos.png', (30, 470, 1150, 1010)),
     'dz-pedido': ('usuario/P-Revisar.png', (30, 195, 1150, 605)),
     'dz-orientativo2': ('usuario/P-Revisar.png', (30, 1465, 1150, 1930)),
     # 02 · propuestas y comparar
@@ -36,12 +36,17 @@ R = {
     'dz-obra-gastado': ('usuario/O-Gastado.png', (30, 185, 1150, 645)),
     # 05 · confianza
     'dz-verif-lista': ('usuario/C-Certificados.png', (40, 1000, 1130, 2110)),
-    'dz-compartir': ('usuario/H-Compartir.png', (25, 795, 1165, 2045)),
+    'dz-compartir': ('usuario/H-Compartir.png', (25, 795, 1165, 1975)),
+    # 03 · mensajes y avisos
+    'dz-mensajes': ('usuario/M-Mensajes.png', (30, 700, 1140, 1452)),
+    'dz-chat-prop': ('usuario/M-Chat.png', (30, 962, 965, 1420)),
+    'dz-chat-horario': ('usuario/M-Chat.png', (30, 1712, 965, 2170)),
+    'dz-avisos': ('usuario/I-Avisos.png', (25, 280, 1150, 1005)),
     # PWA (captura de la vista de prueba, 780 px)
-    'dz-pwa-orden': ('pwa:usuario-propuestas.webp', (0, 92, 690, 215)),
-    'dz-pwa-sinverif': ('pwa:usuario-propuestas.webp', (20, 868, 650, 992)),
-    'dz-pwa-etapas': ('pwa:usuario-seguimiento.webp', (20, 1072, 660, 1305)),
-    'dz-pago-metodo': ('pwa:usuario-pago-metodo.webp', (15, 455, 780, 1295)),
+    'dz-pwa-orden': ('pwa:usuario-propuestas.webp', (0, 118, 690, 232)),
+    'dz-pwa-sinverif': ('pwa:usuario-propuestas.webp', (20, 1030, 650, 1160)),
+    'dz-pwa-etapas': ('pwa:usuario-seguimiento.webp', (20, 1268, 660, 1541)),
+    'dz-pago-metodo': ('pwa:usuario-pago-metodo.webp', (15, 522, 780, 1370)),
 }
 man_p = os.path.join(PIEZA, 'imagenes.json')
 man = [e for e in json.load(open(man_p)) if not e.get('a', '').startswith('dz-')]

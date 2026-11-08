@@ -98,3 +98,62 @@
   .estado.apagado { background: #ECEEF2; color: var(--tinta-2); } .estado.apagado::before { display: none; }
   .cap-img { height: 23.6mm; width: auto; align-self: flex-start; }
   .foto-banda { opacity: 0.78; }
+
+  /* ===================== ola 7 · dirección de arte ===================== */
+  /* estado como texto chico junto a un título (un solo bloque de chips por página) */
+  .et { display: inline-flex; align-items: center; gap: 1.1mm; margin-left: 1.4mm; font: 800 5.8pt/1 var(--f-texto); letter-spacing: 0.14em; text-transform: uppercase; vertical-align: 0.14em; white-space: nowrap; color: var(--azul-profundo); }
+  .et::before { content: ''; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: currentColor; }
+  .et.c { color: var(--verde); } .et.d { color: #6E5A00; } .et.d::before { background: #E2C44A; } .et.k { color: var(--gris); } .et.k::before { background: none; box-shadow: inset 0 0 0 0.3mm currentColor; }
+  .et.off { color: var(--gris); } .et.off::before { background: #C3C9D4; }
+  .et.sola { margin-left: 0; }
+  .clara .et, .p-azul .et { color: #FFFFFF; } .clara .et.d::before, .p-azul .et.d::before { background: var(--amarillo); }
+
+  /* despiece: un teléfono y recortes reales ampliados, flotando sobre un plano de color */
+  .dz { position: relative; border-radius: 6mm; background: var(--cielo); }
+  .dz.azul { background: var(--azul); } .dz.navy { background: var(--navy); } .dz.hueso { background: var(--hueso); } .dz.blanco { background: #FFFFFF; box-shadow: inset 0 0 0 0.25mm var(--borde-frio); }
+  .dz > .dz-fondo { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; }
+  .dz > .movil, .dz > .escena-abs { position: absolute; }
+  .dz .flota { border-radius: 2.4mm; }
+  .dz.azul .flota, .dz.navy .flota { box-shadow: 0 0.6mm 1.4mm rgba(6, 14, 28, 0.22), 0 7mm 18mm rgba(6, 14, 28, 0.38); }
+  .dz.azul .movil, .dz.navy .movil { box-shadow: inset 0 0 0 0.15mm rgba(255, 255, 255, 0.5), 0 1.5mm 3mm rgba(6, 14, 28, 0.3), 0 9mm 20mm rgba(6, 14, 28, 0.42); }
+  .dz .guia { transform: translateY(-50%); }
+  .dz .guia.der { flex-direction: row-reverse; }
+  .dz-pie { position: absolute; font: 800 5.9pt/1.2 var(--f-texto); letter-spacing: 0.18em; text-transform: uppercase; color: var(--gris); }
+  .dz.azul .dz-pie, .dz.navy .dz-pie { color: rgba(233, 239, 249, 0.7); }
+  .dz .rotulo { position: absolute; }
+
+  /* notas debajo de un despiece: título con estado y una línea */
+  .notas-dz { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); column-gap: 6mm; }
+  .notas-dz > div { border-top: 0.25mm solid var(--borde-frio); padding-top: 2.6mm; }
+  .notas-dz .p-h { font-size: 9pt; }
+  .notas-dz .p-texto { margin-top: 0.9mm; font-size: 7.7pt; }
+
+  /* escena en la banda de apertura: una tarjeta blanca que flota sobre la foto */
+  .esc-tarjeta { position: absolute; z-index: 1; border-radius: 5mm; background: #FFFFFF; padding: 3mm 4mm 1mm; box-shadow: 0 1mm 2.4mm rgba(6, 14, 28, 0.2), 0 9mm 22mm rgba(6, 14, 28, 0.34); }
+  .esc-tarjeta .dz-pie { position: static; display: block; padding: 0 0 2mm; color: var(--gris); }
+
+  /* lista vertical de pasos con punto (al lado de una escena) */
+  .pasos-v { display: grid; gap: 3.4mm; position: relative; }
+  .pasos-v::before { content: ''; position: absolute; left: 3.2mm; top: 3.2mm; bottom: 3.2mm; border-left: 0.45mm solid var(--azul); }
+  .pasos-v > div { display: grid; grid-template-columns: 6.4mm minmax(0, 1fr); column-gap: 3mm; position: relative; }
+  .pasos-v .pto { width: 6.4mm; height: 6.4mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.4pt/1 var(--f-titulos); font-stretch: 112.5%; box-shadow: 0 0 0 1.2mm var(--fondo-local, #FFFFFF); }
+  .pasos-v .p-h { font-size: 9.2pt; margin-top: 0.6mm; }
+  .pasos-v .p-texto { margin-top: 0.6mm; font-size: 7.7pt; }
+
+  /* «hace / no hace» sin cajas: dos listas con raya */
+  .hace2 ul { margin: 0; padding: 0; list-style: none; font: 400 7.9pt/1.45 var(--f-texto); color: var(--tinta-2); }
+  .hace2 li { position: relative; padding-left: 4.6mm; } .hace2 li + li { margin-top: 1.2mm; }
+  .hace2 li::before { content: ''; position: absolute; left: 0; top: 1.6mm; width: 2.2mm; height: 2.2mm; border-radius: 50%; background: var(--azul); }
+  .hace2.no li::before { background: none; box-shadow: inset 0 0 0 0.35mm var(--gris-claro); }
+  /* textos de las guías: una línea, o título + una línea con ancho fijo */
+  .guia .gl { display: block; }
+  .guia .gl small { display: block; margin-top: 0.4mm; font: 400 6.9pt/1.35 var(--f-texto); color: var(--tinta-2); letter-spacing: 0; }
+  .guia.der .gl { text-align: right; }
+  .guia.clara .gl small { color: rgba(233, 239, 249, 0.8); }
+  /* nombre de un recorte, como el rótulo de un marco en el lienzo de diseño */
+  .etiq { position: absolute; z-index: 4; transform: translateY(-100%); margin-top: -1mm; display: inline-flex; align-items: center; gap: 1.4mm; padding: 0.9mm 1.8mm; border-radius: 1mm; background: var(--azul); color: #FFFFFF; font: 750 6.2pt/1.1 var(--f-texto); white-space: nowrap; }
+  .etiq i { font-style: normal; font-weight: 600; opacity: 0.78; }
+  .etiq i::before { content: '· '; }
+  .dz.azul .etiq, .dz.navy .etiq { background: var(--amarillo); color: var(--navy); }
+  .et-l { margin-top: 1.5mm; line-height: 1.6; } .et-l .et { margin-left: 0; margin-right: 2.2mm; }
+  .guia .gl b { font-weight: 800; }
