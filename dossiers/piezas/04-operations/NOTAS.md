@@ -1,96 +1,105 @@
-# Dossier 04 · Operations Portal · notas de producción (ola 3, 07/11/2026)
+# Dossier 04 · Operations Portal · notas de producción (ola 6, 08/11/2026)
 
-16 páginas A4, en el orden de `dossiers/arquitectura.md` (sección «Dossier 04»). Control de `exportar-pieza.cjs`:
-0 errores; 2 avisos de resolución por encima de 200 ppp (p. 5 `preregistros-v2` a 217 y p. 7 `inicio-v2` a ~213).
+Rehecho en la dirección premium v2: «Galería» (páginas blancas y hueso) con aperturas en banda azul, foto real de Mar del
+Plata en duotono y la maqueta de día (`iso.js`). Es el **manual del portal interno del equipo**. 20 páginas A4.
+Exportación: `exportar-pieza.cjs` con **0 errores** (avisos: elementos a sangre de las bandas y fotos aéreas entre
+150 y 220 ppp).
 
 ## Páginas
 
-| p. | Sección del pedido (§8) | Título | Evidencia |
+| p. | Capítulo | Título | Imágenes y componentes |
 |---|---|---|---|
-| 1 | 1 Portada | Operations Portal | Inicio «para hoy» (lienzo v3) + Engranaje (sin cambios: aprobada) |
-| 2 | Índice | En este dossier | Índice con `data-ir`, cómo leer, Handyx en una línea |
-| 3 | 2 La importancia… | Operar con criterio desde el primer día | Bienvenida-módulos, 4 principios con estado, barra de las 97 funciones |
-| 4 | 3 Arquitectura | Tres superficies, un circuito | Diagrama de capacidades (aprobada; pulido mínimo) |
-| 5 | 4 Gestión de clientes | Cada persona anotada, atendida a tiempo | Preregistros v2 + tabla (aprobada) |
-| 6 | 5 Gestión de profesionales | Cada especialista, con su próximo paso | Ficha v3 + tabla + recorrido P-RC-03 |
-| 7 | 6–7 Supervisión · Seguimiento | Lo urgente, primero | Inicio v2 + tabla; Solicitudes v2 («fuente pendiente») + 4 Concepto |
-| 8 | 8–9 Comercial · Transacciones | Medir sin tocar el dinero | Embudo v3 + tabla; flujo del pago directo; tarifa vigente |
-| 9 | 10 Incidencias y soporte | Lo grave se responde hoy | Reclamos v3 (ejemplos neutros) + tabla + recorrido P-RC-04 |
-| 10 | 11 Analítica | Medir con método | Sistema «05 · Estructura», «¿Cómo viene la semana?», tabla de las 4 preguntas |
-| 11 | 12 Cohortes | ¿Atendemos mejor a los que llegan ahora? | Cohortes en tres pasos + esquema propio sin datos + recorrido P-RC-08 |
-| 12 | 13 Mapas | El territorio, barrio por barrio | Geometría OSM del Partido + «¿Qué querés ver?» + tabla |
-| 13 | 14 Herramientas de supervisión | Quién hace qué, y cuándo | Docs + Tareas (v3) + tabla + recorrido P-RC-05 |
-| 14 | 15–16 Escalabilidad · Roadmap | Crecer en orden | Recorrido guiado + tabla; roadmap por condiciones, sin fechas |
-| 15 | 17 Cierre | No mostramos ningún número inventado | Estado «Fuente pendiente» (Engranaje) + mapa de líneas de la colección |
-| 16 | Contratapa | — | Copia de `paginas-comunes.html` en arena (`tapa-clara`), Engranaje, `.actual` en 04 |
-
-Numeración (revisión integral): secciones 01–13 en orden de lectura, una por página, iguales en el índice y en las cejas; la tabla de arriba conserva la referencia al pedido.
+| 1 | Tapa | El manual del equipo que cuida cada arreglo. | Foto `casino-plaza-navy` a sangre + maqueta + notebook plata en perspectiva con el Inicio (`dispositivo.cjs`) |
+| 2 | Índice | El manual del portal | Índice con `data-ir` (7 capítulos), «Cómo leer» v2, «Lo que este manual no muestra», Handyx en una línea |
+| 3 | 01 apertura | Detrás de cada arreglo hay trabajo que no se ve | Banda azul + `aerea-centro-playa-azul` + maqueta costa; lema nuevo; cifras 97 / 41 / 0 (auditoría) |
+| 4 | 01 | Qué está conectado hoy, y qué no | Circuito landing → captación y CRM ↔ portal; apps en línea punteada (Concepto); «llega hoy / todavía no»; barra 41/15/26/15 |
+| 5 | 02 apertura compacta | Lo urgente, primero | Notebook 170 mm con el Inicio, 5 `.toque` + 6 notas |
+| 6 | 02 | Cada número dice de dónde sale | Detalle «Para hoy» y «¿Cómo viene la semana?» con toques; recorrido «empezar el día» en `.etapas` |
+| 7 | 03 apertura | Cada persona anotada, atendida a tiempo y cuidada | Banda + `aerea-quintas-azul` + maqueta barrio; etapas preregistro → alta |
+| 8 | 03 | ¿A quién contactamos hoy? | Notebook 172 mm Preregistros, 5 toques + 6 notas |
+| 9 | 03 | Un próximo paso, y los datos bajo llave | Notebook Ficha (4 toques) + Detalle «Datos de contacto · cifrados» (toques 5–6) |
+| 10 | 03 | Cargar un documento no es estar verificado | Cómo validamos: 6 etapas, qué se revisa / quién habilita / dónde pasa hoy, Detalle de Legal (legajos), aviso de los 56 registrados |
+| 11 | 04 apertura | Lo grave se responde hoy | Banda + `rambla-fuego-azul` (mitad superior, sin la persona) + maqueta; plazos por gravedad |
+| 12 | 04 | Tres columnas, ningún olvido | Notebook Reclamos, 5 toques + 6 notas; recorrido del caso |
+| 13 | 04 | Nada lo impide del todo. Que valga quedarse | Fuga: 8 mecanismos con estado; cómo se detecta (repetición: sin dato todavía) |
+| 14 | 05 apertura | Medir con método, sin inventar | Banda + `casino-plaza-azul` + maqueta; tres reglas de medición |
+| 15 | 05 | ¿La campaña está trayendo gente? | Notebook Campaña (4 toques) + Detalle embudo (5–6) |
+| 16 | 05 | ¿Atendemos mejor a los que llegan ahora? | Notebook Cohortes (3 toques) + Detalle lectura guiada; contacto hoy, repetición mañana |
+| 17 | 05 | El territorio, barrio por barrio | Notebook Mapa (3 toques) + geometría real OSM + Detalle acciones del barrio (4) |
+| 18 | 06 apertura compacta | Quién hace qué, y cuándo | Notebook Tareas (4 toques) + Detalle de una guía (Docs) + funciones de docs, legal y registro |
+| 19 | 07 | Las preguntas incómodas | 8 `.duda` |
+| 20 | Contratapa | Un problema viejo con una nueva solución que elegís. | Foto `rambla-fuego-navy` + maqueta, QR al hub, contacto, colección con 04 marcada |
 
 ## Fuentes
 
-`dossiers/auditoria/portal.json` y `portal.md` (97 funciones con su estado, recorridos P-RC-02 a P-RC-11, arquitectura,
-capturas recomendadas y riesgos, índice); `diagnostico.md`; decisiones de Ignacio en `docs/handyx/plan-dossiers.md`
-(tarifa del 07/11). Capturas: lienzo «Portal interno v3» (`S/capturas/portal/`, recortes y re-renders) y portal v2 en
-código (`S/repos/portal-capturas-v2/docs/capturas-v2/MOCK-*.jpg`). Mapas: `recortes/mapa-partido-geometria-osm.png` y
-`marca/mapa-mdp-blanco.svg` (© colaboradores de OpenStreetMap, ODbL).
+- Estado de cada función: `dossiers/auditoria/portal.md/.json` (97 funciones) y, para los mecanismos de la fuga y el alta
+  del especialista, `auditoria/usuario.md` y `auditoria/especialista.md`.
+- Preguntas difíciles: `docs/handyx/preguntas.md` (n.º 4 fuga, 10 reclamos, 11 cobro) y la consigna de la ola 6.
+- Cifras: auditoría del portal (97 / 41 / 15 / 26 / 15, 130 zonas = 108 + 21 + 1, «dato verificado»); `ESP-REGISTRADOS`
+  (56, «dato informado por el fundador · sin auditar», con la frase de la planilla propia) y `META-REPETIDORES`
+  (5 clientes que vuelvan al 31/12, rotulada «Objetivo · no es un resultado») de `decks/handyx-aticma/afirmaciones.json`.
+- Tarifa: decisión del 07/11 (sin comisión al especialista; 0 % al usuario hasta el 10/12/2026; 15 % en evaluación).
+- Pantallas: lienzo «Portal interno v3» re-renderizado con su propio motor (`S/ops04/tools/rerender.cjs`) a 2x, con los
+  trabajos de `rerender/trabajos-ola6.json`; recortes 16:10 (2880 × 1800) para las notebooks y recortes «Detalle».
+  `docs-guia.webp` sale del re-render de la ola 3 (`S/ops04/rr2/docs-v3.png`, sin menú y con el paso neutro).
+- Fotos: `marca/fotos/` (archivo del fundador), en duotono azul/navy. Mapa: `recortes/mapa-partido-geometria-osm.png`
+  (© colaboradores de OpenStreetMap, ODbL).
 
-## Tratamiento de las capturas (todas rotuladas)
+## Tratamiento de las capturas (re-render, todas rotuladas «Diseño propuesto · datos ficticios»)
 
-- Re-render de tableros del lienzo con el motor del propio lienzo (`S/ops04/tools/rerender.cjs`, 2x) para reemplazar
-  ejemplos de muestra que no se pueden imprimir; el resto del diseño queda igual:
-  - Reclamos: «Pérdida de gas sin resolver después del arreglo» → «El trabajo quedó sin terminar» (categoría Servicio);
-    «El especialista no se presentó» → «Cambió el horario sin avisar»; «Cobro duplicado en el pago» → «Pidió el informe
-    del trabajo»; se quitó «11 de 14 resueltos a tiempo esta semana».
-  - Ficha: «Gasista matriculada» → «Gasista». Campaña: «Matrícula verificada» → «Requisitos al día» y la lectura sin
-    «matrícula». Docs: el paso con monotributo, CUIT y antecedentes → «Contale cuáles son los próximos pasos para el alta»
-    (y sin el menú lateral, que tapaba el modal). Tareas: las iniciales «IG» (el fundador) → «SV» y «Renovar seguro de
-    responsabilidad civil» → «Ordenar la carpeta de documentos». Mapa: «especialistas activos» → «especialistas».
-- Evitadas: Login, RC-Acceso, Guía (glosario), RC-Legal, Main, Bienvenida y MapaInicio completos (personajes), Legal
-  (antecedentes con nombre), Mapa con «Especialistas activos» y cifras, Cohortes con meses y personas, MOCK de
-  configuración, legajos, reclamos, tareas y la parte del Inicio v2 con «Ignacio» y un incidente de conducta.
-- Analítica y cohortes muestran el método: el esquema de la p. 11 es propio y no usa datos («los tonos no son datos»).
+- Inicio: «Pérdida de gas sin resolver» → «El trabajo quedó sin terminar»; «El especialista no se presentó» → «Cambió el
+  horario sin avisar»; «Seguro de responsabilidad civil» → «Ordenar la carpeta de documentos»; «Antecedentes de Marina R.»
+  → «Revisar la guía de reclamos» y «día 6 de 7» → «en 6 días».
+- Reclamos: los mismos reemplazos que la ola 3, «Seguridad» → «Servicio», «Cobro duplicado» → «Pidió el informe del
+  trabajo» y sin «11 de 14 resueltos a tiempo».
+- Preregistros: «Pintor» → «Cerrajero» (los seis rubros). Ficha: «Gasista matriculada» → «Gasista»; «Por reparto
+  automático» → «La asignó el equipo» (el reparto automático es Concepto); WhatsApp de ejemplo más enmascarado; la fila
+  «Se vence · noviembre de 2027» → «Retención · según el aviso» (la purga está apagada: no se promete el borrado).
+- Campaña: sin «100 USD» ni «≈ 0,6 USD» (→ «Presupuesto cargado», «Sin dato · Fuente pendiente»); «Matrícula verificada» →
+  «Requisitos al día». Cohortes: meses → «Mes 1 … Mes 6» y «N personas» → «muestra» (no parece tracción).
+- Mapa: «Especialistas activos por barrio» → «Especialistas por barrio». Tareas: iniciales «IG» → «SV», seguro → carpeta.
+- Legal: sin «Antecedentes penales de Marina Rodríguez» ni nombres (→ constancia de monotributo de un especialista,
+  carpeta de documentos, guía de privacidad del equipo). Docs: sin el paso de antecedentes en 7 días.
+- **Sin personajes** (pedido de Ignacio del 08/11): la Llave del Inicio y de la Ficha se ocultó en el re-render; ningún
+  SVG de personajes en la pieza.
+- Evitadas: Login, RC-Acceso, Guía, Main, Bienvenida, MapaInicio completo, D6-Alta (muestra «Antecedentes · PDF cargado»),
+  MOCK de configuración y cualquier detalle de acceso, permisos o infraestructura.
 
-## Pendientes «[a definir]» y límites declarados
+## Decisiones y componentes propios (en el `<style>` de la pieza)
 
-- Cómo se cobrará la tarifa al usuario (p. 8). Fechas del roadmap operativo (p. 14).
-- Sin datos reales en el portal al 07/11 (captura cerrada, backend sin desplegar): se dice en p. 3, 5, 10 y 15.
-- Verificación de especialistas: «a cargo del equipo», fuera del portal y sin el medio (contradicción de antecedentes).
-- No se imprime la purga a 12 meses ni las etapas del preregistro (contradicciones abiertas de la auditoría).
+- `.toque` sobre la notebook con `data-x/data-y` en px de la pantalla 1440 × 900 (un script los convierte a % del
+  `.tapa-nb`); en los recortes, `data-x/data-y` en px del recorte con `data-w/data-h` en el `.marco`. Los puntos van al
+  borde izquierdo del botón para no tapar su texto.
+- `.det` + `.det-rot` (recorte «Detalle»), `.notas-fila`, `.notas-grilla`, `.notas-2`, `.funcs` (lista con estado),
+  `.circuito` + `.flecha-h`, `.corte`, `.barra-estados`, `.indice-v2`, `.leer`, `.no-mostramos`, `.cifras-3`, `.quien`,
+  `.aviso-amarillo`, `.mecanismos`/`.mec`, `.medir`, `.reglas`, `.zonas`, `.credito-foto`, bandas con `.foto` enmascarada
+  (gradiente a la izquierda) + `.velo-arriba` / `.velo-abajo`, tapa `.tapa-04` y contratapa `.contra-04`.
+- **Número de capítulo**: `.cap-n` con `-webkit-text-stroke` sale como fuente Type 3 y el exportador lo rechaza. Se
+  reemplazó por `svg.cap-n-svg` con los contornos reales de Archivo 125/900 (extraídos con fontTools de
+  `plantilla/fuentes/archivo-125-900-latin.woff2`) y trazo amarillo vectorial. Componente reutilizable para las otras piezas.
+- Las fotos aéreas (1200 px) no alcanzan para el ancho total a 150 ppp: van en la mitad derecha de la banda, con máscara.
 
-## Desvíos de la arquitectura
+## Preguntas abiertas para Ignacio
 
-- p. 1: queda la tapa aprobada (Inicio «para hoy»), no Inicio-sin-sidebar, que muestra el incidente de gas.
-- p. 6: sin captura de Legal (antecedentes con nombre); la verificación va como nota.
-- p. 7: Inicio v2 recortado arriba (evita «Ignacio» y un incidente) + Solicitudes v2 como evidencia de «fuente pendiente».
-- p. 8: se tituló por las dos secciones; el asistente v2 de campañas quedó solo en la tabla (su captura era ilegible chica).
-- p. 10: «Sistema · 05 Estructura» suma a Inicio-semana porque muestra fuente, ventana y base (n).
-- p. 12: sin recorrido P-RC-06 (no entraba con mapa, captura y tabla); el texto de la página cubre su contenido.
-- p. 14: roadmap por condiciones (qué tiene que pasar → qué se habilita), sin RC-Índice (nombra el login en R1).
-- p. 15: página navy con el mapa de líneas de la colección en lugar de `mapa-ciudad-geometria-osm`.
-- p. 2: «Cómo leer» suma el rótulo «Geografía real» y nombra «Portal v2» en lugar de «Datos de prueba».
+1. ¿Dónde y con qué herramienta verifica Operations a los especialistas desde el 10/11? (hoy, proceso privado en una rama).
+2. ¿Quién emite los códigos de invitación de la demo cerrada y con qué herramienta? (impreso «a definir»).
+3. ¿Cómo se cobrará la tarifa al usuario si el dinero va directo al especialista? (impreso «a definir»).
+4. ¿El portal publicado el 07/11 habla con un backend desplegado? ¿Alguien del equipo lo usa con datos reales?
+5. ¿Las cuatro etapas de la ficha v3 son rótulos nuevos o un cambio de contrato?
+6. ¿Se reactiva la purga a 12 meses o se cambia el aviso? (no se imprimió ninguna fecha de vencimiento).
+7. ¿Los 56 registrados se importan al CRM? Quedarían como «importados», sin contar como anotados.
+8. ¿Presupuesto de marketing en pesos o en dólares? (se quitaron los montos de la captura).
 
-## Componentes nuevos (en el `<style>` de la pieza)
+## Contradicciones entre fuentes (señaladas, sin elegir)
 
-`.tramo` (sub-sección numerada cuando una página reúne dos secciones), `.funciones-2` (tabla de dos columnas con
-descripción), `.principios`, `.barra-estados`, `.pago` + `.baja` (flujo del dinero), `.tarifa`, `.cohorte` +
-`.leyenda-cohorte` (esquema sin datos), `.cifra-mapa` + `.desglose`, `.ruta` (roadmap por condiciones), `.cierre`
-(página navy con el mapa de líneas) y `.contra-ops` (contratapa arena con el Engranaje). Rótulo nuevo: «Geografía real ·
-OpenStreetMap» (clase `.rotulo` sin variante).
-
-## Revisión integral (aplicada el 07/11/2026)
-
-- R-012: secciones 01–13 en orden de lectura, sin rangos; las páginas dobles llevan subtítulos sin número.
-- R-030 y R-032: leyenda común sincronizada con `paginas-comunes.html` («Construido» probado en local; «Muestra · datos
-  ficticios»; «Decisión del fundador»). Las capturas del lienzo llevan dos rótulos: «Diseño propuesto» + «Muestra · datos
-  ficticios»; las del portal v2, «Pantalla del portal v2 · datos de prueba». Se mantiene «Geografía real» en la leyenda.
-- R-031: «sprint» y «backlog» → «ciclo de trabajo» y «pendientes» (p. 7 y p. 13).
-- R-033: «Decisión del fundador · 07/11/2026» para «sin comisión» y para el 0 %; «En evaluación» para el 15 %.
-- R-040: p. 4 suma «El camino de un preregistro» (se anota → llega cifrado → ficha → contacto).
-- R-041: «Transacciones y tarifa de servicio» (índice, ceja y subtítulo de la p. 8).
-- R-042: cierre «No mostramos números sin fuente» y bajada ajustada («ningún número de muestra se presenta como real»).
-- R-043: «Guías y procesos · Con versiones y controles para no publicar datos personales».
-- R-044: grafía «preregistro» en el texto propio (también en el menú de la tapa); las capturas conservan «Pre-registros».
-- Decisiones de Ignacio: Mercado Pago «en efectivo; con Mercado Pago cuando se valide la integración» (p. 4 y p. 8);
-  lanzamiento «Noviembre de 2026: demo cerrada con invitación; lanzamiento abierto después, fecha a confirmar» (p. 14).
-- Contratapa con los enlaces de `paginas-comunes.html` (https, mailto, tel). En «Cómo leer», el rótulo largo de muestra
-  ahora puede partirse en dos líneas para no pisar su descripción.
+- Antecedentes: «nunca como archivo» (CLAUDE.md del especialista, consigna) vs. legajos del portal y backend del
+  especialista con antecedentes en 7 días por foto o PDF («decisión del 08/11» citada en un commit del 07/11); el lienzo
+  D6-Alta muestra «PDF cargado». El dossier imprime «en persona, nunca como archivo» y no muestra esas pantallas.
+- Etapas del preregistro: lienzo v3 (Nuevo · Contactado · En seguimiento · Listo para alta) vs. contrato (pendiente de
+  contacto → contactado → comprometido; en espera → avisado).
+- Retención: aviso 04-A (12 meses, purga real) vs. decisión del 02/11 de no purgar.
+- Plazos de reclamos: decisión del 07/11 (hoy / 2 / 3 días) vs. Guía 04 y captura MOCK con «[A CONFIRMAR]».
+- Tarifa: decisión del 07/11 (impresa) vs. landing (10 % + 10 %, camada fundadora) y portal («sin tarifa aprobada»).
+- Moneda del presupuesto de marketing: USD en el lienzo y la Guía 10 vs. pesos en el backend.
+- Dónde se verifica: el plan del especialista nombra al portal como futuro consumidor; hoy el portal no tiene pantalla.
+- Nombre del dominio del portal en la documentación del backend del usuario (no se imprime ningún dominio interno).

@@ -1,17 +1,170 @@
-[{"de": "portal/recortes/Inicio-para-hoy.png", "a": "inicio-para-hoy.webp"},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/repos/portal-capturas-v2/docs/capturas-v2/MOCK-preregistros_especialistas-1280.jpg", "a": "preregistros-v2.webp"},
- {"de": "portal/Bienvenida.png", "a": "bienvenida-modulos.webp", "recorte": [228, 1168, 2424, 812]},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/ficha-v3.png", "a": "ficha-v3.webp"},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/repos/portal-capturas-v2/docs/capturas-v2/MOCK-inicio-1280.jpg", "a": "inicio-v2.webp", "recorte": [88, 80, 788, 390]},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/repos/portal-capturas-v2/docs/capturas-v2/MOCK-solicitudes-1280.jpg", "a": "solicitudes-v2.webp", "recorte": [92, 192, 1168, 276]},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/campana-embudo.png", "a": "campana-embudo.webp"},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/reclamos-v3.png", "a": "reclamos-v3.webp"},
- {"de": "portal/Sistema.png", "a": "sistema-estructura.webp", "recorte": [205, 3945, 1730, 610]},
- {"de": "portal/recortes/Inicio-semana.png", "a": "inicio-semana.webp"},
- {"de": "portal/Cohortes.png", "a": "cohortes-pasos.webp", "recorte": [596, 196, 2232, 900]},
- {"de": "portal/recortes/mapa-partido-geometria-osm.png", "a": "mapa-partido-osm.webp", "recorte": [80, 90, 2240, 2920]},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/mapa-preguntas.png", "a": "mapa-preguntas.webp"},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/tareas-v3.png", "a": "tareas-v3.webp"},
- {"de": "/tmp/claude-0/-home-user/10ab011c-6752-54be-831e-b3c4da2461d0/scratchpad/ops04/rr2/docs-v3.png", "a": "docs-v3.webp"},
- {"de": "portal/Tour.png", "a": "tour-v3.webp", "recorte": [0, 0, 2000, 1300]},
- {"de": "portal/Sistema.png", "a": "fuente-pendiente.webp", "recorte": [1868, 5590, 796, 530]}]
+[
+ {
+  "de": "S/ola6/w04/rr/inicio.png",
+  "a": "inicio-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/inicio.png",
+  "a": "inicio-hoy.webp",
+  "recorte": [
+   600,
+   420,
+   2220,
+   660
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/inicio.png",
+  "a": "inicio-semana.webp",
+  "recorte": [
+   600,
+   1940,
+   2220,
+   460
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/preregistros.png",
+  "a": "preregistros-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/ficha.png",
+  "a": "ficha-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/ficha.png",
+  "a": "ficha-contacto.webp",
+  "recorte": [
+   2010,
+   1760,
+   810,
+   520
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/reclamos.png",
+  "a": "reclamos-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/campana.png",
+  "a": "campana-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/campana.png",
+  "a": "campana-embudo.webp",
+  "recorte": [
+   610,
+   1020,
+   2210,
+   860
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/cohortes.png",
+  "a": "cohortes-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/cohortes.png",
+  "a": "cohortes-lectura.webp",
+  "recorte": [
+   608,
+   2236,
+   2212,
+   504
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/mapa.png",
+  "a": "mapa-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/mapa.png",
+  "a": "mapa-acciones.webp",
+  "recorte": [
+   1790,
+   2080,
+   1000,
+   250
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/tareas.png",
+  "a": "tareas-nb.webp",
+  "recorte": [
+   0,
+   0,
+   2880,
+   1800
+  ]
+ },
+ {
+  "de": "S/ola6/w04/rr/legal.png",
+  "a": "legal-resumen.webp",
+  "recorte": [
+   610,
+   640,
+   2210,
+   910
+  ]
+ },
+ {
+  "de": "S/ops04/rr2/docs-v3.png",
+  "a": "docs-guia.webp",
+  "recorte": [
+   32,
+   30,
+   2160,
+   1362
+  ]
+ },
+ {
+  "de": "portal/recortes/mapa-partido-geometria-osm.png",
+  "a": "mapa-osm.webp"
+ },
+ {
+  "de": "img/inicio-nb.webp (dispositivo.cjs, laptop plata)",
+  "a": "l-inicio-plata.webp"
+ }
+]
