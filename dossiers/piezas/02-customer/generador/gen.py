@@ -186,7 +186,7 @@ P.append(f'''<section class="pagina p-azul tapa-02">
 ind = [('experiencia', 'La app en una página', ''), ('cap1', 'Empezar y pedir', '01'), ('alta', 'Tu cuenta, con lo justo', ''), ('pedir', 'Pedir un arreglo', ''), ('handia', 'HandIA, tal como está hoy', ''),
        ('cap2', 'Elegir', '02'), ('propuestas', 'Las propuestas', ''), ('comparar', 'Comparar por calidad y precio', ''), ('aceptar', 'Aceptar o negociar', ''),
        ('cap3', 'El día del trabajo', '03'), ('dia', 'Del turno a la puerta', ''), ('adicional', 'Adicional, informe y conformidad', ''), ('pago', 'Pagar directo', ''), ('mensajes', 'Mensajes y avisos', ''), ('hogar', 'Mi hogar', ''),
-       ('cap4', 'Una obra completa', '04'), ('obra1', 'La obra, de la propuesta a la jornada', ''), ('obra2', 'Cambios, equipo y pagos de la obra', ''),
+       ('cap4', 'Una obra completa', '04'), ('obra1', 'Tu obra, en una pantalla', ''), ('obra2', 'Cambios, equipo y pagos de la obra', ''),
        ('cap5', 'Confianza', '05'), ('fuga', 'Por qué conviene quedarse adentro', ''), ('dudas', 'Las preguntas difíciles', '')]
 filas = ''
 for a, txt, cap in ind:
@@ -206,8 +206,8 @@ P.append(pagina('Contenido', f'''
           <div class="def"><span class="estado construido">Construido</span><span>En la rama principal y funcionando.</span><span class="estado en-pruebas">En pruebas</span><span>Hay código, con datos de prueba o en una rama.</span><span class="estado disenado">Diseñado</span><span>Dibujado en el lienzo, todavía sin código.</span><span class="estado concepto">Concepto</span><span>Idea a futuro, sin diseño completo.</span><span class="et p sola">En pruebas</span><span>El mismo estado, en letra chica, junto a un título.</span></div>
           <p class="leer-t">Rótulo de cada pantalla</p>
           <div class="def"><span class="rotulo diseno">Diseño propuesto</span><span>Lienzo de diseño, datos ficticios.</span><span class="rotulo prueba">PWA · prueba</span><span>La app en código, datos de prueba.</span></div>
-          <p class="leer-t">Puntos amarillos</p>
-          <div class="def"><span class="toque-ej">1</span><span>Lo que se toca en esa pantalla; el número coincide con el paso o la nota.</span></div>
+          <p class="leer-t">Pantallas y recortes</p>
+          <div class="def"><span class="toque-ej">1</span><span>Lo que se toca en esa pantalla; el número coincide con el paso o la nota.</span><span class="etiq-ej">Propuesta</span><span>Una parte de la pantalla, ampliada, con su nombre.</span></div>
           <p class="leer-t">Tipo de cada cifra</p>
           <div class="def"><span class="tipo-dato">Decisión del fundador</span><span>Una regla decidida, con fecha.</span><span class="tipo-dato">Dato informado</span><span>Lo informa el fundador; sin auditar.</span><span class="tipo-dato">Objetivo</span><span>Una meta, no un resultado.</span></div>
         </div>
@@ -219,10 +219,10 @@ P.append(pagina('Contenido', f'''
 K3, X3, Y3 = 0.33, 40, 8
 def p3(u, v):
     return X3 + u * K3, Y3 + v * K3
-g3 = guia(*p3(146, 100), f'<b>01 · Pedís</b><small>Elegís el rubro y contás qué pasa, o se lo contás a HandIA. {et("P")}</small>', 'der', hasta=40, ancho=36)
+g3 = guia(*p3(141, 103), f'<b>01 · Pedís</b><small>Elegís el rubro y contás qué pasa, o se lo contás a HandIA. {et("P")}</small>', 'der', hasta=40, ancho=36)
 g3 += guia(*p3(50, 154), f'<b>04 · Cuidás tu casa</b><small>Historial, informes y garantías para la próxima vez. {et("D")}</small>', 'der', hasta=40, ancho=36)
-g3 += guia(*p3(195, 41), f'<b>02 · Elegís</b><small>Llegan propuestas con precio; las comparás y aceptás una. {et("P")}</small>', 'izq', hasta=133, ancho=37)
-g3 += guia(*p3(242, 100), f'<b>03 · Seguís</b><small>Turno, viaje, adicionales y conformidad; pagás directo. {et("P")}</small>', 'izq', hasta=133, ancho=37)
+g3 += guia(*p3(212, 41), f'<b>02 · Elegís</b><small>Llegan propuestas con precio; las comparás y aceptás una. {et("P")}</small>', 'izq', hasta=133, ancho=37)
+g3 += guia(*p3(252, 104), f'<b>03 · Seguís</b><small>Turno, viaje, adicionales y conformidad; pagás directo. {et("P")}</small>', 'izq', hasta=133, ancho=37)
 P.append(pagina('La app en una página', f'''
       <span class="p-ceja">La Customer App en una página</span>
       <h1 class="p-titulo" style="margin-top:5mm">Del problema al arreglo, en cuatro <span class="p-marca">momentos</span></h1>
@@ -326,21 +326,21 @@ d9 += flota('dz-orientativo', 54, 14, 72, 'Precio orientativo') + etiq(54, 14, '
 d9 += flota('dz-precio', 62, 44, 66, 'Precio de la propuesta') + etiq(62, 44, 'Propuesta')
 d9 += flota('dz-sellos', 72, 75, 48, 'Sellos de identidad y antecedentes') + etiq(72, 75, 'Sellos')
 d9 += flota('dz-botones', 60, 93, 66, 'Rechazar, ver perfil o aceptar') + etiq(60, 93, 'Aceptar')
-d9 += guia(122, 23, f'<b>Handyx sugiere</b><small>Cada especialista pone su precio. {et("D")}</small>', hasta=134, ancho=37, clara=True)
-d9 += guia(124, 53.5, f'<b>Todas iguales</b><small>Precio, fecha y qué incluye; la tarifa, aparte. {et("P")}</small>', hasta=134, ancho=37, clara=True)
-d9 += guia(116, 78.8, f'<b>Solo lo verificado</b><small>Los sellos salen del servidor. {et("P")}</small>', hasta=134, ancho=37, clara=True)
-d9 += guia(122, 98.6, f'<b>Aceptar, con resumen</b><small>Aceptar una cierra las demás. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(125.6, 23, f'<b>Handyx sugiere</b><small>Cada especialista pone su precio. {et("D")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(127.6, 53.5, f'<b>Todas iguales</b><small>Precio, fecha y qué incluye; la tarifa, aparte. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(119.6, 78.8, f'<b>Solo lo verificado</b><small>Los sellos salen del servidor. {et("P")}</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(125.6, 98.6, f'<b>Aceptar, con resumen</b><small>Aceptar una cierra las demás. {et("P")}</small>', hasta=134, ancho=37, clara=True)
 d9 += etiq(60, 121, 'En código · vista de prueba')
 d9 += flota('dz-pwa-orden', 60, 121, 60, 'Ordenadas por llegada') + flota('dz-pwa-sinverif', 66, 135, 54, 'Sin verificaciones registradas')
-d9 += guia(116, 126, '<b>Por orden de llegada</b><small>«No es una recomendación ni un ranking.»</small>', hasta=134, ancho=37, clara=True)
-d9 += guia(116, 140.5, '<b>Sin sellos, lo dice</b><small>Si el equipo no verificó nada.</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(119.6, 126, '<b>Por orden de llegada</b><small>«No es una recomendación ni un ranking.»</small>', hasta=134, ancho=37, clara=True)
+d9 += guia(119.6, 140.5, '<b>Sin sellos, lo dice</b><small>Si el equipo no verificó nada.</small>', hasta=134, ancho=37, clara=True)
 P.append(pagina('02 · Las propuestas', f'''
       <span class="p-ceja">Pieza por pieza · las propuestas</span>
       <h1 class="p-titulo" style="margin-top:5mm">Cuatro propuestas, <span class="p-marca">una decisión</span></h1>
       <p class="p-lead" style="margin-top:4.5mm;max-width:150mm;font-size:10.2pt">Cada propuesta llega con el mismo formato, en el orden en que llega, con lo que el equipo verificó. Vos comparás y elegís.</p>
       <div style="margin-top:8mm">{dz(154, d9, 'azul')}</div>
       <div class="grilla" style="margin-top:7mm;column-gap:10mm">
-        <p class="c-6 p-texto">El chip «Mejor promedio» del diseño está en discusión: el código y el contrato dicen «sin rankings ni superlativos» (página siguiente).</p>
+        <p class="c-6 p-texto">El precio orientativo es diseño: todavía no hay trabajos para calcularlo. El chip «Mejor promedio» está en discusión: el código y el contrato dicen «sin rankings ni superlativos» (página siguiente).</p>
         <p class="c-6 p-texto">La captura de la vista de prueba es del 31/10/2026 y conserva el nombre anterior de la marca («Handy»).</p>
       </div>
       {origen(DIS, PRU, CORTE, 'Teléfono y recortes: lienzo «App del usuario» (C-Propuestas). Abajo: PWA con servidor simulado.')}''', id_='propuestas'))
@@ -351,7 +351,7 @@ d10 += movil('c-detalle.webp', 50, (), 'Detalle de la propuesta', estilo='left:1
 d10 += guia(80.5, 37.4, '<b>Precio y fecha</b>', hasta=90, ancho=22)
 d10 += guia(80.5, 56.9, '<b>Materiales y garantía</b>', hasta=90, ancho=22)
 d10 += guia(80.5, 73.1, '<b>Verificaciones</b>', hasta=90, ancho=22)
-d10 += guia(126.6, 47.3, '<b>Dentro del orientativo</b>', 'der', hasta=112, ancho=22)
+d10 += guia(121.3, 47.3, '<b>Dentro del orientativo</b>', 'der', hasta=112, ancho=22)
 d10 += guia(124.8, 65.4, '<b>Cómo lo hace</b>', 'der', hasta=112, ancho=22)
 d10 += guia(123, 101.6, '<b>La garantía, antes de aceptar</b>', 'der', hasta=112, ancho=22)
 P.append(pagina('02 · Comparar', f'''

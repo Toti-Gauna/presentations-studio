@@ -55,39 +55,6 @@
 "ancho": 780
 },
 {
-"de": "usuario/P-Que.png",
-"a": "p-que.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/P-Fotos.png",
-"a": "p-fotos.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/P-Revisar.png",
-"a": "p-revisar.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/I-HandIAChat.png",
 "a": "i-handiachat.webp",
 "recorte": [
@@ -112,17 +79,6 @@
 {
 "de": "usuario/I-Voz.png",
 "a": "i-voz.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/C-Comparar.png",
-"a": "c-comparar.webp",
 "recorte": [
 0,
 0,
@@ -176,17 +132,6 @@
 "ancho": 780
 },
 {
-"de": "usuario/M-Mensajes.png",
-"a": "m-mensajes.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/M-Chat.png",
 "a": "m-chat.webp",
 "recorte": [
@@ -198,41 +143,8 @@
 "ancho": 780
 },
 {
-"de": "usuario/S-Agendado.png",
-"a": "s-agendado.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/S-EnCamino.png",
 "a": "s-encamino.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/S-Llego.png",
-"a": "s-llego.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/S-Trabajando.png",
-"a": "s-trabajando.webp",
 "recorte": [
 0,
 0,
@@ -275,74 +187,8 @@
 "ancho": 780
 },
 {
-"de": "usuario/S-PagoInformado.png",
-"a": "s-pagoinformado.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/S-Resena.png",
-"a": "s-resena.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/X-Pagos.png",
-"a": "x-pagos.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/O-Propuesta.png",
-"a": "o-propuesta.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/O-Obra.png",
 "a": "o-obra.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/O-Dia.png",
-"a": "o-dia.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/O-Repuesto.png",
-"a": "o-repuesto.webp",
 "recorte": [
 0,
 0,
@@ -385,30 +231,8 @@
 "ancho": 780
 },
 {
-"de": "usuario/O-Gastado.png",
-"a": "o-gastado.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
 "de": "usuario/H-Hogar.png",
 "a": "h-hogar.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/H-Compartir.png",
-"a": "h-compartir.webp",
 "recorte": [
 0,
 0,
@@ -431,17 +255,6 @@
 {
 "de": "usuario/H-Garantias.png",
 "a": "h-garantias.webp",
-"recorte": [
-0,
-0,
-1170,
-2532
-],
-"ancho": 780
-},
-{
-"de": "usuario/I-Avisos.png",
-"a": "i-avisos.webp",
 "recorte": [
 0,
 0,
@@ -481,24 +294,6 @@
 1170,
 2532
 ],
-"ancho": 780
-},
-{
-"de": "/home/user/presentations-studio/brands/handyx/assets/capturas/usuario-propuestas.webp",
-"a": "pwa-propuestas.webp",
-"recorte": null,
-"ancho": 780
-},
-{
-"de": "/home/user/presentations-studio/brands/handyx/assets/capturas/usuario-pago-metodo.webp",
-"a": "pwa-pago-metodo.webp",
-"recorte": null,
-"ancho": 780
-},
-{
-"de": "/home/user/presentations-studio/brands/handyx/assets/capturas/usuario-seguimiento.webp",
-"a": "pwa-seguimiento.webp",
-"recorte": null,
 "ancho": 780
 },
 {
@@ -618,17 +413,6 @@
 "uso": "despiece (ola 7)"
 },
 {
-"de": "usuario/P-Revisar.png",
-"a": "dz-orientativo2.webp",
-"recorte": [
-30,
-1465,
-1150,
-1930
-],
-"uso": "despiece (ola 7)"
-},
-{
 "de": "usuario/C-Propuestas.png",
 "a": "dz-orientativo.webp",
 "recorte": [
@@ -691,28 +475,6 @@
 745,
 1150,
 2045
-],
-"uso": "despiece (ola 7)"
-},
-{
-"de": "usuario/C-Detalle.png",
-"a": "dz-precio-julian.webp",
-"recorte": [
-40,
-640,
-1130,
-1258
-],
-"uso": "despiece (ola 7)"
-},
-{
-"de": "usuario/C-Detalle.png",
-"a": "dz-comolohace.webp",
-"recorte": [
-40,
-1268,
-1130,
-2440
 ],
 "uso": "despiece (ola 7)"
 },

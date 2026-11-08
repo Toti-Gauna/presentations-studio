@@ -12,7 +12,6 @@ R = {
     'dz-quepasa': ('usuario/P-Que.png', (30, 170, 1150, 1000)),
     'dz-fotos': ('usuario/P-Fotos.png', (30, 470, 1150, 1010)),
     'dz-pedido': ('usuario/P-Revisar.png', (30, 195, 1150, 605)),
-    'dz-orientativo2': ('usuario/P-Revisar.png', (30, 1465, 1150, 1930)),
     # 02 · propuestas y comparar
     'dz-orientativo': ('usuario/C-Propuestas.png', (30, 200, 1140, 478)),
     'dz-precio': ('usuario/C-Propuestas.png', (70, 845, 1100, 1140)),
@@ -20,8 +19,6 @@ R = {
     'dz-botones': ('usuario/C-Propuestas.png', (60, 1478, 1110, 1655)),
     'dz-mejor': ('usuario/C-Comparar.png', (30, 200, 1140, 728)),
     'dz-tabla': ('usuario/C-Comparar.png', (20, 745, 1150, 2045)),
-    'dz-precio-julian': ('usuario/C-Detalle.png', (40, 640, 1130, 1258)),
-    'dz-comolohace': ('usuario/C-Detalle.png', (40, 1268, 1130, 2440)),
     # 03 · el día del trabajo
     'dz-turno': ('usuario/S-Agendado.png', (35, 195, 1135, 805)),
     'dz-llegada': ('usuario/S-EnCamino.png', (40, 1375, 1130, 1800)),

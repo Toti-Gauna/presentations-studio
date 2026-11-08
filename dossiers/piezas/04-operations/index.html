@@ -41,7 +41,7 @@
   .p-h .st { margin-left: 1.6mm; }
 
   /* cabecera de módulo: título y «qué hace / para quién» a la izquierda, la escena a la derecha */
-  .cab-mod { display: grid; grid-template-columns: minmax(0, 1fr) var(--esc, 54mm); column-gap: 10mm; align-items: center; margin-top: 3mm; }
+  .cab-mod { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 10mm; align-items: center; margin-top: 3mm; }
   .cab-mod > .esc { width: var(--esc, 54mm); }
   .cab-mod .qh { margin-top: 0; }
   .qh { display: grid; gap: 1.5mm; margin-top: 4.4mm; }
@@ -76,6 +76,7 @@
   .g.cen .t { left: 0; transform: translateX(-50%); text-align: center; }
   .despiece.azul .g { --c: #FFFFFF; }
   .despiece.azul .g::before { background: var(--amarillo); box-shadow: 0 0 0 0.5mm var(--navy); }
+  .despiece.azul .g::after { box-shadow: 0 0 0 0.16mm var(--navy); }
 
   /* filas de notas cortas con estado */
   .notas-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 7mm; }
@@ -396,8 +397,8 @@
         <span class="g arr ini" data-f="f-hoy" data-x="358" data-y="216" style="--l:10mm"><span class="t">Para hoy: un toque y la lista llega filtrada <span class="st dise">Diseñado</span></span></span>
         <span class="g izq" data-f="f-mue" data-x="416" data-y="36" style="--l:4mm"><span class="t">Siempre rotulado como muestra</span></span>
         <span class="g arr ini" data-f="f-tic" data-x="1060" data-y="216" style="--l:9mm"><span class="t">Tus tickets del ciclo <span class="st prue">En pruebas</span></span></span>
-        <span class="g aba ini" data-f="f-64" data-x="623" data-y="1172" style="--l:8mm"><span class="t">Cada número con su base <span class="st cons">Construido</span></span></span>
-        <span class="g der" data-f="f-sd" data-x="1283" data-y="1130" style="--l:27mm"><span class="t">«Sin dato» antes que<br>un número inventado <span class="st cons">Construido</span></span></span>
+        <span class="g aba ini" data-f="f-64" data-x="618" data-y="1184" style="--l:7mm"><span class="t">Cada número con su base <span class="st cons">Construido</span></span></span>
+        <span class="g der" data-f="f-sd" data-x="1283" data-y="1130" style="--l:22mm"><span class="t">«Sin dato» antes que<br>un número inventado<br><span class="st cons sola">Construido</span></span></span>
       </div>
       <div class="notas-3" style="margin-top:8mm">
         <div><p class="p-h">Lo urgente arriba</p><p class="p-texto">Reclamos graves, gente sin contactar hace más de 48 h y papeles que vencen. La bandeja del día ya existe en el portal v2.</p><div class="sts"><span class="st cons">Bandeja v2</span><span class="st dise">Para hoy v3</span></div></div>
@@ -453,9 +454,9 @@
             <p><b>Para quién.</b> El equipo de Operations, que contacta a mano a especialistas y vecinos.</p>
           </div>
         </div>
-        <div class="esc" data-dibujo="llamar"></div>
+        <div class="esc" data-dibujo="llamar" style="width:60mm"></div>
       </div>
-      <div class="despiece grano dp" style="height:104mm;margin-top:8mm">
+      <div class="despiece grano dp" style="height:108mm;margin-top:10mm">
         <div class="flota" id="f-k7" data-cw="267" data-ch="72" data-ox="583" data-oy="283" data-r="18" style="left:10mm;top:18mm;width:66mm"><img src="img/c-pre-kpi7.webp" alt="Sin contactar hace más de 48 h"></div>
         <div class="flota" id="f-bot" data-cw="413" data-ch="64" data-ox="1003" data-oy="131" data-r="14" style="left:92mm;top:20mm;width:74mm"><img src="img/c-pre-botones.webp" alt="Importar planilla y Contactar al siguiente"></div>
         <div class="flota" id="f-fil" data-cw="1102" data-ch="236" data-ox="305" data-oy="495" data-r="10" style="left:8mm;top:50mm;width:158mm"><img src="img/c-pre-filas.webp" alt="Filas de la lista de preregistros"></div>
@@ -465,7 +466,7 @@
         <span class="g aba fin" data-f="f-fil" data-x="806" data-y="720" style="--l:8mm"><span class="t">Estado de cada persona <span class="st cons">Construido</span></span></span>
         <span class="g aba ini" data-f="f-fil" data-x="1060" data-y="716" style="--l:8.6mm"><span class="t">Con su próximo paso <span class="st cons">Construido</span></span></span>
       </div>
-      <div class="notas-3" style="margin-top:7mm">
+      <div class="notas-3" style="margin-top:10mm">
         <div><p class="p-h">Dos listas que no se mezclan</p><p class="p-texto">Especialistas y lista de espera, con conteos por estado.</p><div class="sts"><span class="st cons">Construido</span></div></div>
         <div><p class="p-h">Filtros</p><p class="p-texto">Por rubro, ciudad y estado, y búsqueda exacta por WhatsApp. El barrio, cuando la landing lo pida.</p><div class="sts"><span class="st cons">Rubro y ciudad</span><span class="st dise">Barrio</span></div></div>
         <div><p class="p-h">Importado no es anotado</p><p class="p-texto">Lo que entra por planilla no cuenta como anotado ni da permiso de contacto. La exportación sale sin nombre, WhatsApp ni email.</p><div class="sts"><span class="st cons">Construido</span></div></div>
@@ -524,9 +525,9 @@
             <p><b>Para quién.</b> El equipo de verificación de Handyx: ningún sistema habilita solo.</p>
           </div>
         </div>
-        <div class="esc" data-escena="verificar"></div>
+        <div class="esc" data-escena="verificar" style="width:62mm"></div>
       </div>
-      <div class="etapas anchas" style="margin-top:9mm">
+      <div class="etapas anchas" style="margin-top:11mm">
         <div class="etapa"><span class="pto">1</span><p class="p-h">Contacto</p><p class="p-texto">El equipo llama y cuenta los próximos pasos.</p><span class="st cons">Construido</span></div>
         <div class="etapa"><span class="pto">2</span><p class="p-h">Alta en la app</p><p class="p-texto">Datos, DNI y CUIT/CUIL, rubros, zonas y foto.</p><span class="st prue">En pruebas</span></div>
         <div class="etapa"><span class="pto">3</span><p class="p-h">Rubros con matrícula</p><p class="p-texto">Gas y aire acondicionado, cuando se verifica la matrícula.</p><span class="st prue">En pruebas</span></div>
@@ -534,12 +535,12 @@
         <div class="etapa"><span class="pto">5</span><p class="p-h">Revisión</p><p class="p-texto">Se aprueba o se pide corregir, con el motivo.</p><span class="st prue">En pruebas</span></div>
         <div class="etapa"><span class="pto">6</span><p class="p-h">Habilitado</p><p class="p-texto">Recién ahí el sello sale del servidor.</p><span class="st prue">En pruebas</span></div>
       </div>
-      <div class="quien" style="margin-top:9mm">
+      <div class="quien" style="margin-top:11mm">
         <div><p class="p-h">Qué se revisa</p><p class="p-texto">Identidad contra el DNI, la situación fiscal, los rubros con matrícula y los antecedentes, en persona. Los certificados que suma el especialista se muestran como cargados, no como verificados.</p></div>
         <div class="fuerte-azul"><p class="p-h">Quién habilita</p><p class="p-texto">Solo el equipo de verificación de Handyx. El especialista ve qué está listo, qué se evalúa y qué falta corregir.</p></div>
         <div><p class="p-h">Dónde pasa hoy</p><p class="p-texto">En un proceso interno del backend del especialista, en una rama todavía sin publicar. El portal no tiene pantalla de verificación.</p><div class="sts"><span class="st conc">Verificar desde el portal</span></div></div>
       </div>
-      <div class="grilla" style="margin-top:7mm;column-gap:6mm;align-items:center">
+      <div class="grilla" style="margin-top:10mm;column-gap:6mm;align-items:center">
         <div class="c-7 despiece grano dp" style="height:30mm">
           <div class="flota" id="f-np" data-cw="267" data-ch="79" data-ox="1141" data-oy="692" data-r="20" style="left:7mm;top:7.5mm;width:50mm"><img src="img/c-le-nopueden.webp" alt="No pueden trabajar"></div>
           <span class="g der" data-f="f-np" data-x="1408" data-y="731" style="--l:4mm"><span class="t">Sin requisitos al día,<br>no toma trabajos<br><span class="st prue sola">En pruebas</span></span></span>
@@ -632,10 +633,10 @@
         <div>
           <p class="p-lead" style="margin-top:4mm;font-size:10pt">Que un cliente y un especialista se arreglen por fuera es un riesgo, y lo decimos así. No lo frenamos con castigos: dejamos el valor adentro y lo medimos como repetición dentro de Handyx.</p>
         </div>
-        <div class="esc" data-escena="propuestas"></div>
+        <div class="esc" data-escena="propuestas" style="width:58mm"></div>
       </div>
-      <p class="p-h" style="margin-top:8mm">Lo que queda adentro, y su estado</p>
-      <div class="mecanismos" style="margin-top:3mm">
+      <p class="p-h" style="margin-top:11mm">Lo que queda adentro, y su estado</p>
+      <div class="mecanismos" style="margin-top:4mm;row-gap:4.6mm">
         <div class="mec"><span class="ic">1</span><div><p class="p-h">Propuestas comparables <span class="st prue">En pruebas</span></p><p class="p-texto">Precio, fecha y garantía, una al lado de la otra.</p></div></div>
         <div class="mec"><span class="ic">2</span><div><p class="p-h">Chat sin compartir el teléfono <span class="st prue">En pruebas</span></p><p class="p-texto">Se conversa antes y durante el trabajo sin dar el número.</p></div></div>
         <div class="mec"><span class="ic">3</span><div><p class="p-h">Dirección exacta solo al aceptar <span class="st prue">En pruebas</span></p><p class="p-texto">Antes, el especialista ve la zona aproximada.</p></div></div>
@@ -645,8 +646,8 @@
         <div class="mec"><span class="ic">7</span><div><p class="p-h">Sin comisión al especialista</p><p class="p-texto">Arreglarse por fuera no le ahorra nada.</p><span class="tipo-dato" style="margin-top:1.2mm">Decisión del fundador · 07/11/2026</span></div></div>
         <div class="mec"><span class="ic">8</span><div><p class="p-h">Tarifa al usuario</p><p class="p-texto">0 % hasta el 10/12/2026; después, 15 % en evaluación.</p><span class="tipo-dato" style="margin-top:1.2mm">Decisión · 0 %</span> <span class="tipo-dato" style="margin-top:1.2mm">En evaluación · 15 %</span></div></div>
       </div>
-      <p class="p-h" style="margin-top:8mm">Cómo lo detectamos, desde los datos</p>
-      <div class="medir" style="margin-top:3mm">
+      <p class="p-h" style="margin-top:12mm">Cómo lo detectamos, desde los datos</p>
+      <div class="medir" style="margin-top:4mm">
         <div><p class="p-h" style="font-size:9pt">Repetición dentro de Handyx</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">Clientes que vuelven a contratar por la app. Necesita leer los trabajos de las apps desde el portal.</p><div class="sts"><span class="st conc">Concepto</span></div></div>
         <div><p class="p-h" style="font-size:9pt">Retención por cohorte de uso</p><p class="sin-dato">Sin dato todavía</p><p class="p-texto">La misma tabla de cohortes de hoy, pero con trabajos en vez de contactos.</p><div class="sts"><span class="st conc">Concepto</span></div></div>
         <div><p class="p-h" style="font-size:9pt">Qué miramos hoy</p><p class="p-texto" style="margin-top:2mm">Si contactamos a tiempo (cohortes de contacto) y los reclamos por categoría y plazo, incluida «Pago».</p><div class="sts"><span class="st cons">Construido</span></div></div>
@@ -700,7 +701,7 @@
         </div>
         <div class="esc" data-dibujo="embudo"></div>
       </div>
-      <div class="despiece grano dp" style="height:120mm;margin-top:8mm">
+      <div class="despiece grano dp" style="height:124mm;margin-top:10mm">
         <div class="flota" id="f-ver" data-cw="1104" data-ch="198" data-ox="304" data-oy="218" data-r="24" style="left:8mm;top:17mm;width:158mm"><img src="img/c-ca-veredicto.webp" alt="Veredicto de la campaña"></div>
         <div class="flota" id="f-emb" data-cw="1104" data-ch="433" data-ox="304" data-oy="508" data-r="24" style="left:8mm;top:52mm;width:150mm"><img src="img/c-ca-embudo.webp" alt="Embudo de la campaña"></div>
         <span class="g arr ini" data-f="f-ver" data-x="345" data-y="219" style="--l:9mm"><span class="t">El veredicto, arriba <span class="st prue">En pruebas</span></span></span>
@@ -708,7 +709,7 @@
         <span class="g aba ini" data-f="f-emb" data-x="357" data-y="912" style="--l:7mm"><span class="t">La lectura, en palabras</span></span>
         <span class="g aba fin" data-f="f-emb" data-x="1362" data-y="853" style="--l:15mm"><span class="t">Dónde se pierde la gente: el paso más flojo <span class="st prue">En pruebas</span></span></span>
       </div>
-      <div class="notas-3" style="margin-top:7mm">
+      <div class="notas-3" style="margin-top:10mm">
         <div><p class="p-h">Enlaces y QR por pieza</p><p class="p-texto">Uno por pieza y por red, listos para copiar. La landing todavía no registra el origen.</p><div class="sts"><span class="st cons">Construido</span></div></div>
         <div><p class="p-h">Presupuesto y gasto</p><p class="p-texto">Cada campaña con su presupuesto y su gasto; una corrección es otro asiento.</p><div class="sts"><span class="st cons">Construido</span></div></div>
         <div><p class="p-h">Captación es contacto</p><p class="p-texto">No contamos anotados: contamos a quién contactamos a tiempo y quién llega al alta.</p><div class="sts"><span class="st cons">Aprendizajes firmados</span></div></div>
@@ -730,16 +731,16 @@
         <p><b>Qué hace.</b> Junta a la gente por mes de llegada y muestra qué parte ya fue contactada, semana a semana. Si las filas nuevas son más azules que las viejas, estamos mejorando.</p>
         <p><b>Para quién.</b> Quien coordina el contacto y quiere saber si el equipo llega a tiempo.</p>
       </div>
-      <div class="despiece blanco grano dp" style="height:134mm;margin-top:8mm;background:#FFFFFF;box-shadow:inset 0 0 0 0.25mm var(--borde-frio)">
-        <div class="flota" id="f-tab" data-cw="1104" data-ch="529" data-ox="304" data-oy="568" data-r="24" style="left:8mm;top:9mm;width:134mm"><img src="img/c-co-tabla.webp" alt="Tabla de cohortes"></div>
-        <div class="flota" id="f-lec" data-cw="542" data-ch="247" data-ox="304" data-oy="1119" data-r="24" style="left:8mm;top:86mm;width:86mm"><img src="img/c-co-lectura.webp" alt="Lectura guiada"></div>
-        <div class="flota" id="f-tie" data-cw="544" data-ch="243" data-ox="864" data-oy="1119" data-r="24" style="left:98mm;top:92mm;width:70mm"><img src="img/c-co-tiempo.webp" alt="Tiempo hasta el primer contacto"></div>
+      <div class="despiece blanco grano dp" style="height:140mm;margin-top:10mm;background:#FFFFFF;box-shadow:inset 0 0 0 0.25mm var(--borde-frio)">
+        <div class="flota" id="f-tab" data-cw="1104" data-ch="529" data-ox="304" data-oy="568" data-r="24" style="left:8mm;top:10mm;width:134mm"><img src="img/c-co-tabla.webp" alt="Tabla de cohortes"></div>
+        <div class="flota" id="f-lec" data-cw="542" data-ch="247" data-ox="304" data-oy="1119" data-r="24" style="left:8mm;top:90mm;width:88mm"><img src="img/c-co-lectura.webp" alt="Lectura guiada"></div>
+        <div class="flota" id="f-tie" data-cw="544" data-ch="243" data-ox="864" data-oy="1119" data-r="24" style="left:100mm;top:96mm;width:68mm"><img src="img/c-co-tiempo.webp" alt="Tiempo hasta el primer contacto"></div>
         <span class="g der" data-f="f-tab" data-x="1383" data-y="841" style="--l:5mm"><span class="t">Más azul,<br>más contactados</span></span>
         <span class="g der" data-f="f-tab" data-x="1383" data-y="1003" style="--l:5mm"><span class="t">Rayado: todavía<br>no maduró; no<br>entra en promedios</span></span>
         <span class="g arr ini" data-f="f-lec" data-x="350" data-y="1119" style="--l:4.5mm"><span class="t">Explicada en palabras <span class="st dise">Diseñado</span></span></span>
         <span class="g arr ini" data-f="f-tie" data-x="900" data-y="1119" style="--l:4.5mm"><span class="t">Tiempo hasta el primer contacto <span class="st prue">En pruebas</span></span></span>
       </div>
-      <div class="notas-2c" style="margin-top:7mm">
+      <div class="notas-2c" style="margin-top:10mm">
         <div><p class="p-h">Hoy mide el contacto</p><p class="p-texto">La tabla semanal ya existe; la mensual y la lectura guiada, con muestra. Lo que no maduró va rayado y no entra en promedios.</p><div class="sts"><span class="st cons">Semanal</span><span class="st prue">Mensual</span></div></div>
         <div><p class="p-h">Mañana, la repetición</p><p class="p-texto">Con los trabajos de las apps, la misma tabla dirá quién vuelve a contratar. Hasta entonces: sin dato.</p><div class="sts"><span class="st conc">Retención de clientes de la app</span></div></div>
       </div>
@@ -765,16 +766,16 @@
         </div>
         <div class="esc" data-escena="barrios"></div>
       </div>
-      <div class="despiece grano dp" style="height:128mm;margin-top:8mm">
-        <div class="flota" id="f-map" data-cw="579" data-ch="976" data-ox="304" data-oy="216" data-r="24" style="left:10mm;top:10mm;width:64mm"><img src="img/c-ma-mapa.webp" alt="Mapa de especialistas por barrio"></div>
-        <div class="flota" id="f-bar" data-cw="507" data-ch="320" data-ox="901" data-oy="216" data-r="24" style="left:82mm;top:20mm;width:84mm"><img src="img/c-ma-barrio.webp" alt="Panel del barrio elegido"></div>
-        <div class="flota" id="f-acc" data-cw="477" data-ch="118" data-ox="916" data-oy="1059" data-r="16" style="left:90mm;top:84mm;width:70mm"><img src="img/c-ma-acciones.webp" alt="Acciones desde el barrio"></div>
+      <div class="despiece grano dp" style="height:138mm;margin-top:10mm">
+        <div class="flota" id="f-map" data-cw="579" data-ch="976" data-ox="304" data-oy="216" data-r="24" style="left:10mm;top:11mm;width:68mm"><img src="img/c-ma-mapa.webp" alt="Mapa de especialistas por barrio"></div>
+        <div class="flota" id="f-bar" data-cw="507" data-ch="320" data-ox="901" data-oy="216" data-r="24" style="left:84mm;top:22mm;width:84mm"><img src="img/c-ma-barrio.webp" alt="Panel del barrio elegido"></div>
+        <div class="flota" id="f-acc" data-cw="477" data-ch="118" data-ox="916" data-oy="1059" data-r="16" style="left:92mm;top:90mm;width:70mm"><img src="img/c-ma-acciones.webp" alt="Acciones desde el barrio"></div>
         <span class="g arr ini" data-f="f-bar" data-x="960" data-y="218" style="--l:8mm"><span class="t">El barrio elegido, con su panel <span class="st dise">Diseñado</span></span></span>
         <span class="g aba fin" data-f="f-bar" data-x="1300" data-y="520" style="--l:4mm"><span class="t">Capas por barrio, con muestra <span class="st prue">En pruebas</span></span></span>
         <span class="g aba fin" data-f="f-acc" data-x="1300" data-y="1160" style="--l:8mm"><span class="t">Ver especialistas o crear una campaña <span class="st dise">Diseñado</span></span></span>
         <span class="g aba ini" data-f="f-map" data-x="330" data-y="1150" style="--l:4.5mm"><span class="t">Con menos de 5, no se muestra el número <span class="st cons">Construido</span></span></span>
       </div>
-      <div class="grilla" style="margin-top:7mm;column-gap:8mm">
+      <div class="grilla" style="margin-top:9mm;column-gap:8mm">
         <div class="c-5"><p class="p-h">130 zonas que cubren todo el Partido</p>
           <div class="zonas" style="margin-top:2mm"><span><b>108</b>con límite de OpenStreetMap</span><span><b>21</b>aproximadas</span><span><b>1</b>rural</span></div>
           <div class="sts"><span class="tipo-dato">Dato verificado · código del portal</span><span class="st cons">Construido</span></div></div>
@@ -803,16 +804,16 @@
         <p><b>Qué hace.</b> Ordena el trabajo interno en tickets por ciclo, con su origen, y guarda las guías que explican cómo se hace cada cosa.</p>
         <p><b>Para quién.</b> Todo el equipo: quien atiende, quien mide y quien mantiene los papeles al día.</p>
       </div>
-      <div class="despiece hueso grano dp" style="height:100mm;margin-top:7mm">
+      <div class="despiece hueso grano dp" style="height:106mm;margin-top:8mm">
         <div class="flota" id="f-spr" data-cw="640" data-ch="60" data-ox="296" data-oy="163" data-r="12" style="left:8mm;top:9mm;width:96mm"><img src="img/c-ta-sprint.webp" alt="Ciclo de trabajo"></div>
         <div class="flota" id="f-54" data-cw="242" data-ch="134" data-ox="316" data-oy="379" data-r="16" style="left:8mm;top:27mm;width:60mm"><img src="img/c-ta-54.webp" alt="Ticket HND-54"></div>
-        <div class="flota" id="f-48" data-cw="242" data-ch="134" data-ox="875" data-oy="379" data-r="16" style="left:30mm;top:57mm;width:60mm"><img src="img/c-ta-48.webp" alt="Ticket HND-48"></div>
-        <div class="flota" id="f-doc" data-cw="710" data-ch="300" data-r="6" style="left:98mm;top:28mm;width:70mm"><img src="img/c-doc-pasos.webp" alt="Guía para contactar a un preregistro"></div>
+        <div class="flota" id="f-48" data-cw="242" data-ch="134" data-ox="875" data-oy="379" data-r="16" style="left:30mm;top:60mm;width:60mm"><img src="img/c-ta-48.webp" alt="Ticket HND-48"></div>
+        <div class="flota" id="f-doc" data-cw="710" data-ch="300" data-r="6" style="left:96mm;top:30mm;width:72mm"><img src="img/c-doc-pasos.webp" alt="Guía para contactar a un preregistro"></div>
         <span class="g der" data-f="f-spr" data-x="936" data-y="193" style="--l:5mm"><span class="t">El ciclo y su avance <span class="st prue">En pruebas</span></span></span>
         <span class="g der" data-f="f-48" data-x="1102" data-y="485" style="--l:10mm"><span class="t">Tipo, prioridad, responsable<br>y fecha <span class="st prue">En pruebas</span></span></span>
         <span class="g aba fin" data-f="f-doc" data-x="560" data-y="300" style="--l:5mm"><span class="t">Guías con versiones <span class="st cons">Construido</span></span></span>
       </div>
-      <div class="notas-2c" style="margin-top:6mm">
+      <div class="notas-2c" style="margin-top:9mm">
         <div class="funcs">
           <div><span><b>Once guías escritas</b><small>Contacto, reclamos, campañas, analítica, apps y más</small></span><span class="st cons">Construido</span></div>
           <div><span><b>Editor que cuida los datos</b><small>Bloquea teléfonos reales y claves antes de guardar</small></span><span class="st cons">Construido</span></div>

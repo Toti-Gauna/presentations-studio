@@ -1,46 +1,66 @@
-# Dossier 03 · Professional App · notas de producción (ola 6, 08/11/2026)
+# Dossier 03 · Professional App · notas de producción (ola 7, 08/11/2026)
 
-28 páginas A4 en la dirección premium v2 «Galería» con aperturas «Maqueta» (banda azul a sangre + foto real de Mar del
-Plata en duotono + maqueta `iso.js` de día). Es el **manual del especialista**: voz en voseo, dirigida al especialista,
-en todos los títulos (resuelve R-038). Control del exportador: **0 errores** (126 avisos: maquetas que salen a sangre a
-propósito y fotos entre 152 y 183 ppp).
-`node dossiers/herramientas/exportar-pieza.cjs dossiers/piezas/03-professional/index.html S/ola6/03-professional Handyx-03-Professional-App`
+28 páginas A4. Ola 7 = pasada de dirección de arte premium sobre la ola 6 (`consigna-ola-7.md`): mismos textos, estados,
+rótulos y reglas de la ola 6; cambia la forma. Objetivo: «wow, mirá las herramientas que tiene el especialista».
+Control del exportador: **0 errores** (30 avisos: bandas y zócalos que salen a sangre a propósito).
+`node dossiers/herramientas/exportar-pieza.cjs dossiers/piezas/03-professional/index.html S/ola7/03-professional Handyx-03-Professional-App`
 
-El HTML se generó con un script de la sesión (`S/ola6/p03tools/gen.py` + `estilo.css`); el `index.html` es autocontenido
-y se puede editar a mano.
+El HTML se generó con un script de la sesión (`S/ola7/w03/gen.py`, toma tapa, índice, preguntas y contratapa de la ola 6);
+el `index.html` es autocontenido y se puede editar a mano. Los recortes ampliados (`img/x-*.webp`, lossless, ×3) salen
+de las pantallas de `img/` con la tabla `recortes.json` (px CSS de la pantalla de 390; cajas medidas en el DOM del lienzo).
+
+## Qué cambió en la ola 7
+
+- **Despieces** (teléfono grande + recortes reales ampliados flotando + `.guia`): p. 9 pedido y precio (azul), p. 12 Modo
+  trabajo (navy), p. 17 la obra entera (cielo), p. 20 presupuestador (hueso), p. 23 el Camino (azul); despieces chicos en
+  p. 5 (documentos: matrícula «Cargado · en revisión» + estado del alta) y p. 16 (equipo: postulante, «Verificado por
+  Handyx · siempre», reparto). Página de herramientas sin teléfonos (p. 21): cuatro recortes grandes en tarjetas de color.
+- **Escenas**: aperturas con la escena en una tarjeta blanca que monta sobre la banda azul (p. 3 `verificar`, p. 7
+  `conectar`, p. 11 `ruta`*, p. 14 `obra`, p. 19 `taller`*, p. 22 `camino`, p. 25 `valor`*) y en conceptos: p. 8
+  `agenda` (disponibilidad), p. 10 `propuestas` (qué pasa con tu propuesta), p. 13 `pago` con guías (cobro directo).
+  *Escenas propias de esta pieza, dibujadas en el `<script>` del `index.html` con el lenguaje de `escenas.js`
+  (`data-escena-p="ruta|taller|valor"`): un día ordenado en un plano con la camioneta; el teléfono como herramienta (nivel,
+  cinta, presupuesto, QR); historial que sube con garantía y reseñas. `escenas.js` no se tocó.
+- **Menos miniaturas**: de 11 filas de 4 teléfonos de 40 mm quedan 6 vitrinas de 3 teléfonos (42–48 mm) sobre un panel de
+  color con grano (p. 4, 10, 13, 15, 18, 24). Pantallas que salen: F-Inicio, F-Enviada, F-InicioRuta, TR-EnCamino,
+  H0-InformeEnviado, F-ObraEquipo, F-ObraDiaAvance, G-Bienvenida, G-Manual, G-Areas, D6-Avisos y RG-2/5/6/7 (su contenido
+  queda en el texto).
+- **Estados**: un solo bloque de chips por página (la línea de origen o un bloque de cifras); en el cuerpo, estado en
+  texto chico con el mismo ícono (`.et`). Las dudas (p. 26–27) también.
+- **Color**: misma paleta; fondos llenos con `.grano` en una capa aparte (no tapa las capturas). Tapa: se suma el recorte
+  «Recibís el 100 % · $ 47.000». «Cómo leer» al día (los puntos ya no son amarillos; etiquetas con línea).
 
 ## Páginas
 
-| p. | Capítulo | Título | Pantallas (toques) |
+| p. | Capítulo | Título | Imagen principal |
 |---|---|---|---|
-| 1 | Tapa | Tu trabajo, tus precios. | Foto casino-plaza + maqueta; F-Pedido y F-InicioDia en perspectiva plata |
-| 2 | Contenido | El manual del especialista | Índice por capítulos (sin números del pedido interno, R-012), cómo leer, «Dónde está la app hoy» (2/40/49/11) |
-| 3 | 01 apertura | Cargar un documento no es estar verificado | Foto aerea-centro-playa + barrio; 10 pasos · 2 de 6 rubros con matrícula · 1 equipo habilita; 56 registrados rotulados |
-| 4 | 01 | Quién sos, qué hacés y dónde trabajás | RG-1 → RG-4 · 3 claves · los seis rubros (Gas y Aire «Pide matrícula») |
-| 5 | 01 | Tu cara, tus documentos y tus matrículas | RG-5 → RG-8 · paso 9 antecedentes en persona (texto, sin RG-9) · paso 10 · Detalle D6-Alta (recorte arriba de la fila de antecedentes) |
-| 6 | 01 | Solo el equipo de verificación te habilita | Protagonista OB-Aprobado (60 mm, 4 notas) + etapas del alta |
-| 7 | 02 apertura | Te llegan pedidos de tu zona. Vos decidís | Foto aerea-cabo-puerto + costa; 0 % · 6 rubros · «Ahora no» |
-| 8 | 02 | Urgentes, solo si vos querés | Protagonista CU-Disponibilidad (56 mm) + D6-Avisos (40 mm) |
-| 9 | 02 | Del aviso a tu precio | F-Inicio → F-Pedido → F-Precio (50 mm) |
-| 10 | 02 | Tu propuesta, y la dirección cuando te eligen | F-Fecha → F-Revisar → F-Enviada → F-Trabajo + 4 salidas de una propuesta |
-| 11 | 03 apertura | Del primer paso al informe | Foto rambla-fuego (mitad superior) + maqueta |
-| 12 | 03 | Llegar y trabajar cómodo | F-InicioRuta → TR-EnCamino → H0-Modo → H0-AntesDespues |
-| 13 | 03 | Cobrar directo y dejar todo registrado | TR-Cobro → H0-Informe → H0-InformeEnviado → F-Ingresos |
-| 14 | 04 apertura | Una obra de varios días, en equipo | Foto aerea-quintas + barrio; 6 etapas según FL-Obra / RC-Obra |
-| 15 | 04 | Proponer la obra, por etapas | F-ObraNueva → F-PropuestaObra → F-Obras (50 mm) |
-| 16 | 04 | Sumar a otro especialista verificado | F-ObraEquipo → F-ObraBuscar → F-ObraPostulantes → F-Reparto |
-| 17 | 04 | La obra entera, en una pantalla | Protagonista F-Obra (66 mm, 4 notas) |
-| 18 | 04 | Cada jornada, cada repuesto, cada fecha | F-ObraDia → F-ObraDiaAvance → F-ObraRepuestos → F-ObraFecha |
-| 19 | 05 apertura | Tu taller, en el bolsillo | Foto aerea-puerto-sur + costa; 9 herramientas con su estado |
-| 20 | 05 | Presupuestar rápido sin perder plata | H0-Presupuesto → H0-Precios → H0-PreciosFoto → H0-ManoObra |
-| 21 | 05 | Lo que llevás, lo que comprás y lo que medís | H0-Equipo · R-Retiro · T-Taller · T-Tablero (sin flechas: no es un flujo) + avisos de seguridad |
-| 22 | 06 apertura | Crecer en Handyx: el Camino | Foto aerea-faro-mogotes + costa; escalera de 5 estaciones (borrador de G-Camino) |
-| 23 | 06 | Solo cuenta lo verificado | G-Bienvenida → G-Manual → G-Inicio → G-Camino + 4 reglas |
-| 24 | 06 | Premios que se ven antes de ganarlos | G-MiniCamino · G-Insignias · G-Canje · G-Areas (Concepto) |
-| 25 | 07 apertura | Recibís el 100 %. Y lo que construís, queda | Foto casino-plaza; 8 mecanismos con estado |
-| 26 | 08 Preguntas difíciles 1/2 | Las preguntas incómodas | 4 `.duda` + zócalo de foto |
-| 27 | 08 Preguntas difíciles 2/2 | La plata, la presión y los datos | 4 `.duda` + zócalo de foto |
-| 28 | Contratapa | Un problema viejo con una nueva solución que elegís. | Foto rambla-fuego + maqueta costa, QR, contacto, colección con 03 marcado |
+| 1 | Tapa | Tu trabajo, tus precios. | Maqueta + F-Pedido y F-InicioDia en perspectiva + recorte «Recibís el 100 %» |
+| 2 | Contenido | El manual del especialista | Índice, cómo leer, «Dónde está la app hoy» |
+| 3 | 01 apertura | Cargar un documento no es estar verificado | Escena `verificar` |
+| 4 | 01 | Quién sos, qué hacés y dónde trabajás | Vitrina RG-1 · RG-3 · RG-4 + seis rubros |
+| 5 | 01 | Tu cara, tus documentos y tus matrículas | Despiece RG-8 + estado del alta; pasos 5–10 en texto |
+| 6 | 01 | Solo el equipo de verificación te habilita | Protagonista OB-Aprobado + estados del alta |
+| 7 | 02 apertura | Te llegan pedidos de tu zona. Vos decidís | Escena `conectar` |
+| 8 | 02 | Urgentes, solo si vos querés | Protagonista CU-Disponibilidad + escena `agenda` |
+| 9 | 02 | Del aviso a tu precio | **Despiece** F-Pedido + F-Precio |
+| 10 | 02 | Tu propuesta, y la dirección cuando te eligen | Vitrina F-Fecha · F-Revisar · F-Trabajo + escena `propuestas` |
+| 11 | 03 apertura | Del primer paso al informe | Escena `ruta` (propia) |
+| 12 | 03 | Llegar y trabajar cómodo | **Despiece** H0-Modo + antes/después |
+| 13 | 03 | Cobrar directo y dejar todo registrado | Escena `pago` con guías + vitrina TR-Cobro · H0-Informe · F-Ingresos |
+| 14 | 04 apertura | Una obra de varios días, en equipo | Escena `obra` + 6 etapas |
+| 15 | 04 | Proponer la obra, por etapas | Vitrina F-ObraNueva · F-PropuestaObra · F-Obras |
+| 16 | 04 | Sumar a otro especialista verificado | Despiece F-ObraBuscar + postulante + reparto |
+| 17 | 04 | La obra entera, en una pantalla | **Despiece** F-Obra |
+| 18 | 04 | Cada jornada, cada repuesto, cada fecha | Vitrina F-ObraDia · F-ObraRepuestos · F-ObraFecha |
+| 19 | 05 apertura | Tu taller, en el bolsillo | Escena `taller` (propia) + 9 herramientas |
+| 20 | 05 | Presupuestar rápido sin perder plata | **Despiece** H0-Presupuesto + tarifas + foto del corralón |
+| 21 | 05 | Lo que llevás, lo que comprás y lo que medís | 4 recortes en tarjeta (equipamiento, QR, Taller, tablero 3D) + avisos |
+| 22 | 06 apertura | Crecer en Handyx: el Camino | Escena `camino` + escalera |
+| 23 | 06 | Solo cuenta lo verificado | **Despiece** G-Inicio + camino de G-Camino |
+| 24 | 06 | Premios que se ven antes de ganarlos | Vitrina G-MiniCamino · G-Insignias · G-Canje |
+| 25 | 07 apertura | Recibís el 100 %. Y lo que construís, queda | Escena `valor` (propia) + 8 mecanismos |
+| 26–27 | 08 | Preguntas difíciles | 8 `.duda` + zócalo ilustrado |
+| 28 | Contratapa | Un problema viejo con una nueva solución que elegís. | Maqueta, QR, contacto |
 
 ## Fuentes
 
@@ -79,10 +99,13 @@ y se puede editar a mano.
 
 ## Componentes propios (en el `<style>` de la pieza)
 
-`.rec` (fila de N teléfonos con flecha de prototipo y pie numerado; `.sin-flechas` para tableros sueltos), `.foto-banda`
-+ `.velo` (foto en duotono fundida en la banda), `.zocalo-foto` (foto a sangre abajo, con los pies en blanco),
-`.cap-n-svg`, `.clave`, `.paso-txt`, `.banda-dato`, `.salidas`, `.aviso-seg`, `.reglas4`, `.herr-i`, `.mec-i`,
-`.rubros6`, `.marco` con «Detalle», `.indice-v2`, `.leer`, `.hoy-barra` + `.barra-est`, `.lema-v2`, `.qr-v2`, `.contacto-v2`.
+Ola 6: `.rec`, `.foto-banda` + `.velo`, `.zocalo-foto`, `.cap-n-svg`, `.clave`, `.paso-txt`, `.banda-dato`, `.salidas`,
+`.aviso-seg`, `.reglas4`, `.herr-i`, `.mec-i`, `.rubros6`, `.marco`, `.indice-v2`, `.leer`, `.hoy-barra`, `.lema-v2`,
+`.qr-v2`, `.contacto-v2`. Ola 7: `.capa` (+ `.grano`), `.et` (estado en texto chico con ícono), `.e-l`, `.vit`/`.vpaso`
+(vitrina con flechas), `.esc-card` (escena en tarjeta sobre la banda), `.panel-esc`, `.tres-txt`/`.dos-txt`/`.pasos4`,
+`.destacado`, `.h-cards`/`.h-card` (recorte en tarjeta de color), `.guia.v`/`.guia.vd` (guía vertical: punto arriba, texto
+abajo) y `.marca-r` (sin usar). **Aviso para las otras piezas**: `.paso` ya existe en `base.css` (flex): no reutilizar el
+nombre para otra cosa.
 
 ## Pendientes impresos como «a definir»
 
