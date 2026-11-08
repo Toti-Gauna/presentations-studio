@@ -16,27 +16,28 @@
   .grande { font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; line-height: .86; letter-spacing: -.03em; }
   .chico { font: 700 6.6pt/1.3 var(--f-texto); letter-spacing: .2em; text-transform: uppercase; }
   /* rótulo de lámina, como en un museo */
-  .rotulo-lam { position: absolute; left: 18mm; right: 18mm; top: 289mm; display: flex; justify-content: space-between; align-items: baseline;
+  .rotulo-lam { position: absolute; left: 18mm; right: 18mm; top: 309mm; display: flex; justify-content: space-between; align-items: baseline;
     font: 600 7pt/1.3 var(--f-texto); letter-spacing: .06em; color: var(--tinta-rot, rgba(255,255,255,.75)); }
   .rotulo-lam b { font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
-  /* franja común con el QR */
-  .franja { position: absolute; left: 0; right: 0; bottom: 0; height: 117mm; color: var(--tinta); }
+  /* franja común: un talón con línea de corte; responde la pregunta que deja la lámina */
+  .franja { position: absolute; left: 0; right: 0; bottom: 0; height: 100mm; color: var(--tinta); }
   .franja .fondo-f { position: absolute; left: calc(-1 * var(--sangrado)); right: calc(-1 * var(--sangrado)); top: 0; bottom: calc(-1 * var(--sangrado)); background: var(--fondo-franja); }
-  .franja .filete { position: absolute; left: 18mm; right: 18mm; top: 0; height: 1.6mm; background: var(--amarillo); }
-  .franja .in { position: absolute; left: 18mm; right: 18mm; top: 13mm; bottom: 12mm; display: grid; grid-template-columns: 78mm minmax(0, 1fr); column-gap: 12mm; }
-  .qrz { width: 78mm; padding: 5mm; border-radius: 4mm; background: #FFFFFF; box-shadow: 0 0 0 .35mm rgba(14,29,54,.14); align-self: start; }
-  .qrz img { width: 68mm; height: 68mm; display: block; }
-  .qrz p { margin-top: 2.4mm; text-align: center; font: 800 9pt/1 var(--f-texto); color: var(--azul); letter-spacing: .02em; }
+  .franja .corte { position: absolute; left: 0; right: 0; top: 0; border-top: .45mm dashed currentColor; opacity: .35; }
+  .franja .in { position: absolute; left: 18mm; right: 18mm; top: 12mm; bottom: 11mm; display: grid; grid-template-columns: minmax(0, 1fr) 66mm; column-gap: 14mm; }
+  .qrz { width: 66mm; padding: 4.4mm; border-radius: 3.4mm; background: #FFFFFF; box-shadow: 0 0 0 .35mm rgba(14,29,54,.14); align-self: start; }
+  .qrz img { width: 57.2mm; height: 57.2mm; display: block; }
+  .qrz p { margin-top: 2.2mm; text-align: center; font: 800 8.4pt/1 var(--f-texto); color: var(--azul); letter-spacing: .02em; }
+  .qrz .arriba { margin: 0 0 2.2mm; color: var(--navy); font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; }
   .txt { display: flex; flex-direction: column; min-width: 0; }
   .txt .ceja-f { font: 800 7pt/1 var(--f-texto); letter-spacing: .26em; text-transform: uppercase; color: var(--acento); }
-  .txt h2 { margin-top: 4mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 27pt; line-height: .98; letter-spacing: -.02em; color: inherit; text-wrap: balance; }
+  .txt h2 { margin-top: 3.4mm; font-family: var(--f-titulos); font-weight: 900; font-stretch: 125%; font-size: 30pt; line-height: .96; letter-spacing: -.02em; color: inherit; text-wrap: balance; }
   .txt h2 span { color: var(--acento); }
-  .txt .bajo { margin-top: 3.4mm; font: 400 10pt/1.45 var(--f-texto); opacity: .86; max-width: 150mm; }
-  .pasos-f { margin-top: 5mm; display: flex; gap: 3mm; flex-wrap: wrap; }
-  .pasos-f span { display: inline-flex; align-items: center; gap: 2mm; padding: 2.2mm 3.6mm 2.2mm 2.2mm; border-radius: 99px; font: 800 9pt/1 var(--f-texto); background: var(--chip, var(--cielo)); color: var(--navy); }
-  .pasos-f i { font-style: normal; width: 5.4mm; height: 5.4mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.6pt/1 var(--f-titulos); }
-  .pie-f { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 6mm; font: 500 6.6pt/1.4 var(--f-texto); opacity: .78; }
-  .pie-f img { height: 7mm; }
+  .txt .bajo { margin-top: 3.6mm; font: 400 10.4pt/1.42 var(--f-texto); opacity: .88; max-width: 150mm; text-wrap: pretty; }
+  .pasos-f { margin-top: 4.4mm; display: flex; gap: 2.6mm; flex-wrap: wrap; }
+  .pasos-f span { display: inline-flex; align-items: center; gap: 2mm; padding: 2mm 3.4mm 2mm 2mm; border-radius: 99px; font: 800 8.6pt/1 var(--f-texto); background: var(--chip, var(--cielo)); color: var(--navy); }
+  .pasos-f i { font-style: normal; width: 5mm; height: 5mm; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #FFFFFF; font: 900 7.2pt/1 var(--f-titulos); }
+  .pie-f { margin-top: auto; display: flex; align-items: flex-end; gap: 6mm; font: 500 6.4pt/1.4 var(--f-texto); opacity: .75; }
+  .pie-f img { height: 6.4mm; }
   .oscura .franja { --tinta: #FFFFFF; }
   .oscura .pasos-f span { --chip: rgba(255,255,255,.12); color: #FFFFFF; }
   .oscura .pasos-f i { background: var(--amarillo); color: var(--navy); }
@@ -82,7 +83,7 @@
   function bauhaus() {
     let s = fondo(K.hueso);
     for (let x = 18; x < 290; x += 43.5) s += L(x, 0, x, 280, K.navy, .25, 'opacity=".25"');
-    s += C(96, 104, 66, K.azul) + R(150, 30, 118, 132, K.amar) + P('M178 162 A50 50 0 0 1 278 162 Z', K.navy);
+    s += C(96, 104, 66, K.azul) + R(150, 30, 118, 132, K.amar) + C(238, 66, 14, K.navy) + L(18, 168, 279, 168, K.navy, .5);
     s += R(140, 168, 104, 92, K.medio) + P('M128 170 L192 112 L256 170 Z', K.navy);
     s += R(182, 210, 22, 50, K.amar) + C(158, 194, 9, K.amar) + C(226, 194, 9, K.hueso);
     for (let i = 0; i < 9; i++) s += R(22 + i * 12.6, 176, 12.6, 22, i % 2 ? K.hueso : K.azul);
@@ -260,40 +261,41 @@
 
   // ---------- la serie ----------
   const LAMINAS = [
-    { slug: 'centro', barrio: 'Centro', obra: 'La Rambla', estilo: 'Art déco', arte: deco, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+    { slug: 'centro', suelo: K.prof, barrio: 'Centro', obra: 'La Rambla', estilo: 'Art déco', arte: deco, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
       sobre: `<div class="sobre" style="left:18mm;right:18mm;top:16mm;text-align:center;color:${K.amar}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:60pt;margin-top:3mm;color:#FFFFFF">La Rambla</p></div>` },
-    { slug: 'guemes', barrio: 'Güemes', obra: 'Casa y vidriera', estilo: 'Bauhaus', arte: bauhaus, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+    { slug: 'guemes', suelo: K.navy, barrio: 'Güemes', obra: 'Casa y vidriera', estilo: 'Bauhaus', arte: bauhaus, franja: '#FFFFFF', rot: 'rgba(233,239,249,.78)',
       sobre: `<div class="sobre" style="left:18mm;top:264mm;color:${K.hueso}"><p class="grande" style="font-size:40pt">güemes<span style="color:${K.amar}">.</span></p></div><div class="sobre" style="right:18mm;top:20mm;color:${K.navy};text-align:right"><p class="serie">Mar del Plata<br>N.º 02</p></div>` },
-    { slug: 'playa-grande', barrio: 'Playa Grande', obra: 'Torreón del Monje', estilo: 'Risografía', arte: riso, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+    { slug: 'playa-grande', suelo: '#2C5AA0', barrio: 'Playa Grande', obra: 'Torreón del Monje', estilo: 'Risografía', arte: riso, franja: '#FFFFFF', rot: 'rgba(233,239,249,.78)',
       sobre: `<div class="sobre" style="left:18mm;top:18mm;color:${K.azul};background:#F4F1E6;padding:5mm 6mm 6mm"><p class="serie">Mar del Plata · Playa Grande</p><p class="grande" style="font-size:46pt;margin-top:3mm">Torreón<br>del Monje</p></div>` },
-    { slug: 'los-troncos', barrio: 'Los Troncos', obra: 'Chalet marplatense', estilo: 'Plano de arquitecto', arte: plano, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
+    { slug: 'los-troncos', suelo: '#13284A', barrio: 'Los Troncos', obra: 'Chalet marplatense', estilo: 'Plano de arquitecto', arte: plano, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
       sobre: `<div class="sobre" style="left:199mm;top:24mm;width:80mm;color:#FFFFFF"><p class="chico">Chalet marplatense</p><p class="chico" style="margin-top:5mm;opacity:.7">Piedra Mar del Plata · teja · Los Troncos</p></div>
               <div class="sobre chico" style="left:140mm;top:268mm;color:${K.amar}">Alzado principal</div><div class="sobre chico" style="left:18mm;top:18mm;color:#FFFFFF">Mar del Plata · Lámina N.º 04</div>` },
-    { slug: 'stella-maris', barrio: 'Stella Maris', obra: 'Torres frente al mar', estilo: 'Atardecer', arte: atardecer, oscura: true, franja: K.prof, rot: 'rgba(233,239,249,.75)',
+    { slug: 'stella-maris', suelo: K.prof, barrio: 'Stella Maris', obra: 'Torres frente al mar', estilo: 'Atardecer', arte: atardecer, oscura: true, franja: K.prof, rot: 'rgba(233,239,249,.75)',
       sobre: `<div class="sobre" style="left:18mm;right:18mm;top:20mm;text-align:center;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:56pt;margin-top:3mm">Stella Maris</p></div>` },
-    { slug: 'plaza-mitre', barrio: 'Plaza Mitre', obra: 'La escalinata', estilo: 'Papel recortado', arte: papel, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+    { slug: 'plaza-mitre', suelo: K.navy, barrio: 'Plaza Mitre', obra: 'La escalinata', estilo: 'Papel recortado', arte: papel, franja: '#FFFFFF', rot: 'rgba(233,239,249,.78)',
       sobre: `<div class="sobre" style="left:18mm;top:20mm;color:${K.navy}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:50pt;margin-top:3mm">Plaza<br>Mitre</p></div>` },
-    { slug: 'la-perla', barrio: 'La Perla', obra: 'Temporada', estilo: 'Vista aérea', arte: aerea, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+    { slug: 'la-perla', suelo: K.prof, barrio: 'La Perla', obra: 'Temporada', estilo: 'Vista aérea', arte: aerea, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
       sobre: `<div class="sobre" style="left:18mm;top:20mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:58pt;margin-top:3mm">La Perla</p></div>` },
-    { slug: 'varese', barrio: 'Varese', obra: 'La bahía', estilo: 'Carta náutica', arte: carta, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
+    { slug: 'varese', suelo: K.navy, barrio: 'Varese', obra: 'La bahía', estilo: 'Carta náutica', arte: carta, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.7)',
       sobre: `<div class="sobre" style="left:18mm;top:18mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:52pt;margin-top:3mm">Varese</p></div>
               <div class="sobre chico" style="left:218mm;top:166mm;color:${K.cielo}">Playa Varese</div><div class="sobre chico" style="left:236mm;top:62mm;color:${K.amar}">Escollera</div><div class="sobre chico" style="left:226mm;top:262mm;color:${K.amar}">Escollera</div>` },
-    { slug: 'chauvin', barrio: 'Chauvín', obra: 'Casa de baldosas', estilo: 'Mosaico', arte: mosaico, franja: '#FFFFFF', rot: 'rgba(14,29,54,.7)',
+    { slug: 'chauvin', suelo: K.navy, barrio: 'Chauvín', obra: 'Casa de baldosas', estilo: 'Mosaico', arte: mosaico, franja: '#FFFFFF', rot: 'rgba(233,239,249,.78)',
       sobre: `<div class="sobre" style="left:16mm;top:44mm;color:${K.navy}"><p class="serie">Mar del Plata</p><p class="grande" style="font-size:44pt;margin-top:3mm">Chauvín</p></div>` },
-    { slug: 'punta-mogotes', barrio: 'Punta Mogotes', obra: 'El faro', estilo: 'Cartel suizo', arte: faro, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
+    { slug: 'punta-mogotes', suelo: K.azul, barrio: 'Punta Mogotes', obra: 'El faro', estilo: 'Cartel suizo', arte: faro, oscura: true, franja: K.navy, rot: 'rgba(233,239,249,.75)',
       sobre: `<div class="sobre" style="left:18mm;top:200mm;color:#FFFFFF"><p class="serie" style="color:${K.amar}">Mar del Plata</p><p class="grande" style="font-size:54pt;margin-top:3mm">Punta<br>Mogotes</p></div>` },
   ];
 
-  const franja = (l, i) => `<div class="franja"><div class="fondo-f" style="background:${l.franja}"></div><div class="filete"></div><div class="in">
-      <div class="qrz"><img src="qr/${l.slug}.svg" alt="Código QR al registro de Handyx"><p>handyc.com/registro</p></div>
-      <div class="txt"><span class="ceja-f">Handyx · ${l.barrio}</span>
-        <h2>Dibujamos tu barrio. <span>Ahora, tu casa.</span></h2>
-        <p class="bajo">Un problema viejo con una nueva solución que elegís: contás qué pasa, recibís propuestas de especialistas de tu zona y elegís por calidad y precio.</p>
+  const franja = (l, i) => `<div class="franja"><div class="fondo-f" style="background:${l.franja}"></div><div class="corte"></div><div class="in">
+      <div class="txt"><span class="ceja-f">Lámina ${String(i + 1).padStart(2, '0')}/10 · ${l.barrio}</span>
+        <h2>¿Te gustó esta lámina? <span>Es de Handyx.</span></h2>
+        <p class="bajo">Dibujamos tu barrio; ahora arreglemos tu casa. Contás qué pasa, recibís propuestas de especialistas de la zona y elegís vos, por calidad y por precio.</p>
         <div class="pasos-f"><span><i>1</i>Escaneá</span><span><i>2</i>Registrate</span><span><i>3</i>Pedí tu arreglo</span></div>
         <div class="pie-f"><img src="../../marca/${l.oscura ? 'logo-handyx-blanco' : 'logo-handyx'}.svg" alt="Handyx"><span>Electricidad · Plomería · Gas · Cerrajería · Albañilería · Aire acondicionado<br>Pagás directo al especialista. Tarifa de servicio 0 % hasta el 10/12/2026. Demo con invitación, noviembre de 2026.</span></div>
-      </div></div></div>`;
+      </div>
+      <div class="qrz"><p class="arriba">Escaneá y registrate</p><img src="qr/${l.slug}.svg" alt="Código QR al registro de Handyx"><p>handyc.com/registro</p></div>
+    </div></div>`;
   document.getElementById('laminas').outerHTML = LAMINAS.map((l, i) => `<section class="pagina lam${l.oscura ? ' oscura' : ''}" data-folio="${i + 1}" style="--acento:${l.oscura ? K.amar : K.azul}"><div class="lamina">
-      <svg class="arte permite-salir" viewBox="0 0 297 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${l.obra}, ${l.barrio}, Mar del Plata">${l.arte()}</svg>
+      <svg class="arte permite-salir" viewBox="0 0 297 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${l.obra}, ${l.barrio}, Mar del Plata">${R(-3, 296, 303, 40, l.suelo)}${l.arte()}<pattern id="gr-${i}" width="60" height="60" patternUnits="userSpaceOnUse"><image href="img/grano.png" width="60" height="60"/></pattern><rect x="-3" y="-3" width="303" height="326" fill="url(#gr-${i})" style="mix-blend-mode:multiply" opacity="${l.oscura ? .22 : .16}"/></svg>
       ${l.sobre}
       <p class="rotulo-lam" style="--tinta-rot:${l.rot}"><span><b>${l.obra}</b> · ${l.barrio}</span><span>Serie «Mar del Plata, barrio por barrio» · ${l.estilo} · ${String(i + 1).padStart(2, '0')}/10</span></p>
       ${franja(l, i)}
