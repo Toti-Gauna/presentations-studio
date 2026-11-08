@@ -76,7 +76,7 @@
       s += poly([[x, y, z + h], [x + w, y, z + h], [x + w, y + d, z + h], [x, y + d, z + h]], cara[0]);
       if (ventanas) {
         for (let f = z + 0.45; f + 0.42 < z + h - 0.15; f += 0.78) {
-          const lit = () => (r() < p.prob ? p.luz : null);
+          const lit = () => (r() < (opc.prob ?? p.prob) ? p.luz : null);
           s += poly([[x + 0.14, y + d, f], [x + w - 0.14, y + d, f], [x + w - 0.14, y + d, f + 0.4], [x + 0.14, y + d, f + 0.4]], lit() || vidrio[0]);
           s += poly([[x + w, y + 0.14, f], [x + w, y + d - 0.14, f], [x + w, y + d - 0.14, f + 0.4], [x + w, y + 0.14, f + 0.4]], lit() || vidrio[1]);
         }
@@ -280,7 +280,7 @@
       suelo.push(poly([[bx + 4, by, 0], [bx + 4, by + 4, 0], [bx + 4, by + 4, 0.1], [bx + 4, by, 0.1]], p.cordonD));
     });
     const costa = manzanas.filter(([bx]) => conMar && bx + 4 >= MAR - 3);
-    const mitad = costa.slice().sort((m, n) => Math.abs(m[1] + 2 - D / 2) - Math.abs(n[1] + 2 - D / 2) || n[1] - m[1])[0];
+    const mitad = opc.casino === false ? null : costa.slice().sort((m, n) => Math.abs(m[1] + 2 - D / 2) - Math.abs(n[1] + 2 - D / 2) || n[1] - m[1])[0];
     const catedralEn = mitad ? manzanas.find(([bx, by]) => by === mitad[1] && bx === mitad[0] - 5) : null;
     let casaPedido = null;
     manzanas.forEach(([bx, by]) => {
@@ -294,7 +294,7 @@
         arbol(bx + 0.8, by + 3.3, 0.7); arbol(bx + 2.2, by + 3.4, 0.7);
         return;
       }
-      if (costa.some(([cx, cy]) => cx === bx && cy === by)) {
+      if (opc.torres || costa.some(([cx, cy]) => cx === bx && cy === by)) {
         caja(bx + 0.3, by + 0.3, 0.1, 1.6, 1.5, 4 + r() * 3.2, r() < 0.35 ? p.edifAzul : p.edif, true, p.vidrio);
         caja(bx + 2.2, by + 0.3, 0.1, 1.5, 1.6, 2.6 + r() * 4.4, p.edif, true, p.vidrio);
         caja(bx + 0.3, by + 2.2, 0.1, 1.5, 1.5, 2.2 + r() * 2.6, p.edif, true, p.vidrio);
@@ -380,6 +380,14 @@
       if (el.dataset.solo) opc.solo = el.dataset.solo.split(',');
       if (v === 'barrio') Object.assign(opc, { ancho: 11, fondo: 11, mar: 99, vanX: 5.2, vanY: 5.25 });
       if (v === 'costa') Object.assign(opc, { ancho: 19.5, fondo: 11, mar: 12 });
+      // escenas tomadas de fotos reales de Mar del Plata (ver herramientas/ilustrar-fotos.cjs)
+      if (v === 'rambla') Object.assign(opc, { ancho: 17, fondo: 11, mar: 11.4 });
+      if (v === 'centro') Object.assign(opc, { ancho: 22, fondo: 16, mar: 16.5, torres: true });
+      if (v === 'costa-torres') Object.assign(opc, { ancho: 24, fondo: 11, mar: 17, torres: true });
+      if (v === 'faro') Object.assign(opc, { ancho: 16, fondo: 11, mar: 6.6, casino: false });
+      if (v === 'puerto') Object.assign(opc, { ancho: 19, fondo: 11, mar: 6.6, casino: false });
+      if (v === 'centro-noche') Object.assign(opc, { ancho: 16, fondo: 16, mar: 99, torres: true, prob: 0.42 });
+      if (el.dataset.prob) opc.prob = +el.dataset.prob;
       el.innerHTML = escena(opc);
       el.querySelector('svg').style.cssText = 'display:block;width:100%;height:auto;overflow:visible';
     });
