@@ -1,0 +1,262 @@
+[
+ {
+  "tablero": "inicio",
+  "nombre": "c-parahoy.webp",
+  "recorte_css": [
+   304,
+   215,
+   671,
+   318
+  ]
+ },
+ {
+  "tablero": "inicio",
+  "nombre": "c-tickets.webp",
+  "recorte_css": [
+   993,
+   215,
+   415,
+   314
+  ]
+ },
+ {
+  "tablero": "inicio",
+  "nombre": "c-kpi-64.webp",
+  "recorte_css": [
+   584,
+   1032,
+   266,
+   161
+  ]
+ },
+ {
+  "tablero": "inicio",
+  "nombre": "c-kpi-sindato.webp",
+  "recorte_css": [
+   1143,
+   1032,
+   266,
+   161
+  ]
+ },
+ {
+  "tablero": "inicio",
+  "nombre": "c-muestra.webp",
+  "recorte_css": [
+   416,
+   24,
+   172,
+   24
+  ]
+ },
+ {
+  "tablero": "preregistros",
+  "nombre": "c-pre-botones.webp",
+  "recorte_css": [
+   1003,
+   131,
+   413,
+   64
+  ]
+ },
+ {
+  "tablero": "preregistros",
+  "nombre": "c-pre-filas.webp",
+  "recorte_css": [
+   305,
+   495,
+   1102,
+   236
+  ]
+ },
+ {
+  "tablero": "ficha",
+  "nombre": "c-fi-cabecera.webp",
+  "recorte_css": [
+   304,
+   101,
+   1104,
+   230
+  ]
+ },
+ {
+  "tablero": "ficha",
+  "nombre": "c-fi-siguiente.webp",
+  "recorte_css": [
+   304,
+   353,
+   683,
+   127
+  ]
+ },
+ {
+  "tablero": "ficha",
+  "nombre": "c-fi-historial.webp",
+  "recorte_css": [
+   304,
+   498,
+   683,
+   352
+  ]
+ },
+ {
+  "tablero": "ficha",
+  "nombre": "c-fi-contacto.webp",
+  "recorte_css": [
+   1007,
+   879,
+   401,
+   262
+  ]
+ },
+ {
+  "tablero": "reclamos",
+  "nombre": "c-re-tarjeta.webp",
+  "recorte_css": [
+   318,
+   354,
+   329,
+   183
+  ]
+ },
+ {
+  "tablero": "reclamos",
+  "nombre": "c-re-columna.webp",
+  "recorte_css": [
+   304,
+   287,
+   357,
+   649
+  ]
+ },
+ {
+  "tablero": "campana",
+  "nombre": "c-ca-veredicto.webp",
+  "recorte_css": [
+   304,
+   218,
+   1104,
+   198
+  ]
+ },
+ {
+  "tablero": "campana",
+  "nombre": "c-ca-embudo.webp",
+  "recorte_css": [
+   304,
+   508,
+   1104,
+   433
+  ]
+ },
+ {
+  "tablero": "cohortes",
+  "nombre": "c-co-tabla.webp",
+  "recorte_css": [
+   304,
+   568,
+   1104,
+   529
+  ]
+ },
+ {
+  "tablero": "cohortes",
+  "nombre": "c-co-lectura.webp",
+  "recorte_css": [
+   304,
+   1119,
+   542,
+   247
+  ]
+ },
+ {
+  "tablero": "cohortes",
+  "nombre": "c-co-tiempo.webp",
+  "recorte_css": [
+   864,
+   1119,
+   544,
+   243
+  ]
+ },
+ {
+  "tablero": "mapa",
+  "nombre": "c-ma-mapa.webp",
+  "recorte_css": [
+   304,
+   216,
+   579,
+   976
+  ]
+ },
+ {
+  "tablero": "mapa",
+  "nombre": "c-ma-barrio.webp",
+  "recorte_css": [
+   901,
+   216,
+   507,
+   320
+  ]
+ },
+ {
+  "tablero": "mapa",
+  "nombre": "c-ma-acciones.webp",
+  "recorte_css": [
+   916,
+   1059,
+   477,
+   118
+  ]
+ },
+ {
+  "tablero": "tareas",
+  "nombre": "c-ta-sprint.webp",
+  "recorte_css": [
+   296,
+   163,
+   640,
+   60
+  ]
+ },
+ {
+  "tablero": "tareas",
+  "nombre": "c-ta-54.webp",
+  "recorte_css": [
+   316,
+   379,
+   242,
+   134
+  ]
+ },
+ {
+  "tablero": "tareas",
+  "nombre": "c-ta-48.webp",
+  "recorte_css": [
+   875,
+   379,
+   242,
+   134
+  ]
+ },
+ {
+  "tablero": "legal",
+  "nombre": "c-le-nopueden.webp",
+  "recorte_css": [
+   1141,
+   692,
+   267,
+   79
+  ]
+ },
+ {
+  "tablero": "preregistros",
+  "nombre": "c-pre-kpi7.webp",
+  "recorte_css": [
+   583,
+   283,
+   267,
+   72
+  ]
+ }
+]

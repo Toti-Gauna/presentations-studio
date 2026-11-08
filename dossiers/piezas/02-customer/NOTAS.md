@@ -73,6 +73,11 @@ FEE-ESPECIALISTA 0 %, ESP-REGISTRADOS 56, META-REPETIDORES 5 · objetivo). Texto
 - No se usan: A-Bienvenida (titular «especialistas verificados»), P-Publicado (ídem), C-Buscando y X-Actividad
   (Canilla), M-Soporte (grupo de Handys e incidente), S-Pagar (Mercado Pago «Se verifica solo», hoy inactivo),
   X-Cuenta (seguridad), A-Entrar/A-Codigo/A-Segunda (acceso).
+- Ola 7: los recortes evitan el banner de HandIA (tiene al Foco), la fila de HandIA de Mensajes, la fila de Soporte y
+  las reseñas de muestra del perfil (no hay reseñas reales). El chip «Mejor promedio» queda visible en el teléfono de la
+  p. 9 y se aclara abajo que está en discusión; «La mejor en perfil y precio» se muestra junto al recuadro del choque.
+- Ola 7: los recortes de la PWA (p. 9, 15, 19) conservan el nombre anterior («Handy») en el texto de la pantalla; se
+  avisa en el pie o en el origen.
 - El paso «pagar» usa la pantalla real de la PWA (efectivo / Mercado Pago, «reportado hasta que se verifique»).
 - Los números de capítulo calados (`.cap-n`) se insertan como imagen (`img/cap-NN.webp`, renderizados con el estilo
   de `premium.css`): el texto con `-webkit-text-stroke` sale en el PDF como fuente Type 3 y el exportador lo rechaza.

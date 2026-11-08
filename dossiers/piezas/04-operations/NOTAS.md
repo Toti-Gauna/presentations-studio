@@ -1,83 +1,90 @@
-# Dossier 04 · Operations Portal · notas de producción (ola 6, 08/11/2026)
+# Dossier 04 · Operations Portal · notas de producción (ola 7, 08/11/2026)
 
-Rehecho en la dirección premium v2: «Galería» (páginas blancas y hueso) con aperturas en banda azul, foto real de Mar del
-Plata en duotono y la maqueta de día (`iso.js`). Es el **manual del portal interno del equipo**. 20 páginas A4.
-Exportación: `exportar-pieza.cjs` con **0 errores** (avisos: elementos a sangre de las bandas y fotos aéreas entre
-150 y 220 ppp).
+Pasada de dirección de arte premium sobre la versión de la ola 6 (`consigna-ola-7.md`; reglas de contenido de
+`consigna-ola-6.md`). Mismos textos revisados, estados, rótulos y capítulos; cambia la forma. 20 páginas A4.
+Pedido de Ignacio para esta pieza: **no mostrar el panel «así como está»**. Queda **una sola notebook**, la de la tapa;
+cada módulo se explica con una ilustración (qué hace y para quién, en dos líneas) y sus partes reales, recortadas y
+ampliadas, flotando sobre un panel de color con líneas guía. Exportación con **0 errores**.
 
 ## Páginas
 
-| p. | Capítulo | Título | Imágenes y componentes |
-|---|---|---|---|
-| 1 | Tapa | El manual del equipo que cuida cada arreglo. | Foto `casino-plaza-navy` a sangre + maqueta + notebook plata en perspectiva con el Inicio (`dispositivo.cjs`) |
-| 2 | Índice | El manual del portal | Índice con `data-ir` (7 capítulos), «Cómo leer» v2, «Lo que este manual no muestra», Handyx en una línea |
-| 3 | 01 apertura | Detrás de cada arreglo hay trabajo que no se ve | Banda azul + `aerea-centro-playa-azul` + maqueta costa; lema nuevo; cifras 97 / 41 / 0 (auditoría) |
-| 4 | 01 | Qué está conectado hoy, y qué no | Circuito landing → captación y CRM ↔ portal; apps en línea punteada (Concepto); «llega hoy / todavía no»; barra 41/15/26/15 |
-| 5 | 02 apertura compacta | Lo urgente, primero | Notebook 170 mm con el Inicio, 5 `.toque` + 6 notas |
-| 6 | 02 | Cada número dice de dónde sale | Detalle «Para hoy» y «¿Cómo viene la semana?» con toques; recorrido «empezar el día» en `.etapas` |
-| 7 | 03 apertura | Cada persona anotada, atendida a tiempo y cuidada | Banda + `aerea-quintas-azul` + maqueta barrio; etapas preregistro → alta |
-| 8 | 03 | ¿A quién contactamos hoy? | Notebook 172 mm Preregistros, 5 toques + 6 notas |
-| 9 | 03 | Un próximo paso, y los datos bajo llave | Notebook Ficha (4 toques) + Detalle «Datos de contacto · cifrados» (toques 5–6) |
-| 10 | 03 | Cargar un documento no es estar verificado | Cómo validamos: 6 etapas, qué se revisa / quién habilita / dónde pasa hoy, Detalle de Legal (legajos), aviso de los 56 registrados |
-| 11 | 04 apertura | Lo grave se responde hoy | Banda + `rambla-fuego-azul` (mitad superior, sin la persona) + maqueta; plazos por gravedad |
-| 12 | 04 | Tres columnas, ningún olvido | Notebook Reclamos, 5 toques + 6 notas; recorrido del caso |
-| 13 | 04 | Nada lo impide del todo. Que valga quedarse | Fuga: 8 mecanismos con estado; cómo se detecta (repetición: sin dato todavía) |
-| 14 | 05 apertura | Medir con método, sin inventar | Banda + `casino-plaza-azul` + maqueta; tres reglas de medición |
-| 15 | 05 | ¿La campaña está trayendo gente? | Notebook Campaña (4 toques) + Detalle embudo (5–6) |
-| 16 | 05 | ¿Atendemos mejor a los que llegan ahora? | Notebook Cohortes (3 toques) + Detalle lectura guiada; contacto hoy, repetición mañana |
-| 17 | 05 | El territorio, barrio por barrio | Notebook Mapa (3 toques) + geometría real OSM + Detalle acciones del barrio (4) |
-| 18 | 06 apertura compacta | Quién hace qué, y cuándo | Notebook Tareas (4 toques) + Detalle de una guía (Docs) + funciones de docs, legal y registro |
-| 19 | 07 | Las preguntas incómodas | 8 `.duda` |
-| 20 | Contratapa | Un problema viejo con una nueva solución que elegís. | Foto `rambla-fuego-navy` + maqueta, QR al hub, contacto, colección con 04 marcada |
+| p. | Capítulo | Título | Imagen | Tipo |
+|---|---|---|---|---|
+| 1 | Tapa | El manual del equipo que cuida cada arreglo. | Foto `casino-plaza-navy` + maqueta + **la única notebook** (Inicio en perspectiva) | imagen |
+| 2 | Índice | El manual del portal | Índice, estados como texto con ícono, cómo se lee cada imagen (ilustración / recorte / guía) | lectura |
+| 3 | 01 apertura | Detrás de cada arreglo hay trabajo que no se ve | Banda azul + maqueta costa; cifras 97 / 41 / 0 | imagen |
+| 4 | 01 | Cómo conectamos a dos personas | Escena `conectar` a página completa con 3 guías + tres pasos (landing → portal → apps) | imagen |
+| 5 | 01 | Qué está conectado hoy, y qué no | Llega hoy / todavía no; escena `pago` («el dinero no pasa por el portal»); barra 41/15/26/15 | lectura |
+| 6 | 02 apertura compacta | Lo urgente, primero | Banda con escena `agenda` (oscuro) + despiece del Inicio: «Para hoy», tickets, 64 % con base, «Sin dato», rótulo de muestra | imagen |
+| 7 | 03 apertura | Cada persona anotada, atendida a tiempo y cuidada | Banda + maqueta barrio; etapas preregistro → alta | imagen |
+| 8 | 03 | ¿A quién contactamos hoy? | Escena propia `llamar` + despiece: «7 sin contactar +48 h», botones, tres filas | imagen |
+| 9 | 03 | Un próximo paso, y los datos bajo llave | Escena propia `llave` + despiece en azul: cabecera de la ficha, siguiente paso, historial, datos de contacto cifrados | imagen |
+| 10 | 03 | Cargar un documento no es estar verificado | Escena `verificar`; 6 etapas; quién habilita; recorte «No pueden trabajar»; mención del Camino Handyx; aviso de los 56 | lectura |
+| 11 | 04 apertura | Lo grave se responde hoy | Banda + maqueta; plazos por gravedad | imagen |
+| 12 | 04 | Tres columnas, ningún olvido | Escena `reclamo` + despiece con lupa: columna «Para hoy» → tarjeta de un reclamo ampliada (gravedad, barra, responsable) | imagen |
+| 13 | 04 | Nada lo impide del todo. Que valga quedarse | Escena `propuestas`; 8 mecanismos con estado; cómo se detecta | lectura |
+| 14 | 05 apertura | Medir con método, sin inventar | Banda + maqueta; tres reglas | imagen |
+| 15 | 05 | ¿La campaña está trayendo gente? | Escena propia `embudo` + despiece: veredicto y embudo | imagen |
+| 16 | 05 | ¿Atendemos mejor a los que llegan ahora? | Despiece: tabla de cohortes, lectura guiada, tiempo hasta el primer contacto | lectura |
+| 17 | 05 | El territorio, barrio por barrio | Escena `barrios` + despiece: mapa, barrio elegido, acciones; 130 zonas | imagen |
+| 18 | 06 apertura compacta | Quién hace qué, y cuándo | Banda con escena `equipo` (oscuro) + despiece: ciclo, dos tickets, pasos de una guía; funciones con estado | lectura |
+| 19 | 07 | Las preguntas incómodas | 8 `.duda`, estados como texto | lectura |
+| 20 | Contratapa | Un problema viejo con una nueva solución que elegís. | Foto `rambla-fuego-navy` + maqueta, QR, contacto | imagen |
+
+## Qué cambió respecto de la ola 6
+
+- **Notebooks**: de 9 a 1 (tapa). Las 8 pantallas completas (Inicio, Preregistros, Ficha, Reclamos, Campaña, Cohortes,
+  Mapa, Tareas) se reemplazaron por escenas + despieces de componentes.
+- **Escenas** (`plantilla/escenas.js`): `conectar` (p. 4), `pago` (p. 5), `agenda` (p. 6, banda), `verificar` (p. 10),
+  `reclamo` (p. 12), `propuestas` (p. 13), `barrios` (p. 17), `equipo` (p. 18, banda; y miniatura en el índice).
+- **Escenas propias de la pieza** (en el `<script>` del `index.html`, mismo lenguaje: planos de la marca, trazo navy,
+  personas sin cara, un solo acento amarillo; no se tocó `escenas.js`): `llamar` (lista ordenada + reloj de +48 h + persona
+  del equipo con el teléfono), `llave` (ficha con datos enmascarados + candado + registro de actividad) y `embudo` (volante
+  con QR + persona que lo escanea + embudo con el último paso en amarillo). Se usan con `data-dibujo="…"`.
+- **Despieces**: recortes reales del lienzo re-renderizado a **escala 4** (`S/ola7/w04/rr4/`, mismos reemplazos de la
+  ola 6) y guardados a escala 3 en WebP q94 (`img/c-*.webp`; receta en `rerender/recortes-ola7.json`). Cajas de cada
+  componente medidas en el DOM del tablero (`S/ola7/w04/sondear.cjs`), así los recortes caen justo sobre la tarjeta.
+- **Estados**: los chips pasaron a texto chico con ícono junto al título (`.st`); ningún bloque de chips por página.
+- **Ritmo**: páginas de imagen (escena o despiece grande) alternadas con páginas de lectura; capítulo 01 ganó una página
+  («Cómo conectamos a dos personas») y el 02 quedó en una (se quitó el recorrido «empezar el día»: su contenido está en las
+  notas del Inicio).
+- **Color**: misma paleta; `.grano` en paneles y bandas. Sin degradés fuera de la paleta.
+
+## Componentes propios (en el `<style>` de la pieza; reutilizables)
+
+- `.st.cons|prue|dise|conc` — estado como texto con ícono (5,9 pt). `.sts` fila de estados.
+- `.cab-mod` + `.qh` — «Qué hace. / Para quién.» a la izquierda y la escena a la derecha.
+- `.despiece.dp` + `.flota[data-cw,data-ch,data-ox,data-oy,data-r]` — cada recorte toma la proporción y el radio de la
+  tarjeta original a escala (un script lo calcula).
+- `.g.arr|aba|izq|der` (+ `.ini|.fin|.cen`, `--l`) — guía con punto, línea y etiqueta. Se ubica con `data-f` (id del
+  recorte) + `data-x/data-y` en px CSS del tablero de 1440, o con `data-e` (id de una escena) + `data-sx/data-sy` en el
+  viewBox 400 × 240. En el panel azul la línea lleva un filete navy para verse también sobre las tarjetas blancas.
+- `svg.lupa` — marco sobre la parte original y líneas punteadas hasta su ampliación (p. 12).
+- `.pasos-3`, `.notas-3`, `.notas-2c` — filas de pasos y notas cortas.
+- Se mantienen de la ola 6: `svg.cap-n-svg` (números de capítulo vectoriales), bandas, `.funcs`, `.corte`,
+  `.barra-estados`, `.indice-v2`, `.leer`, `.quien`, `.mecanismos`, `.medir`, `.reglas`, `.dudas`, tapa y contratapa.
+- No se usa la clase `.paso` (existe en `base.css` con `display:flex`).
 
 ## Fuentes
 
-- Estado de cada función: `dossiers/auditoria/portal.md/.json` (97 funciones) y, para los mecanismos de la fuga y el alta
-  del especialista, `auditoria/usuario.md` y `auditoria/especialista.md`.
+- Estado de cada función: `dossiers/auditoria/portal.md/.json` (97 funciones) y, para la fuga y el alta,
+  `auditoria/usuario.md` y `auditoria/especialista.md` (Camino Handyx: Diseñado).
+- Ajustes de estado por la auditoría en esta ola: «barrio elegido» del mapa → En pruebas (P-M-03, capas por barrio con
+  panel); acciones desde el barrio → Diseñado (P-M-05); tiempo hasta el primer contacto → En pruebas (P-H-02); cohortes
+  explicadas → Diseñado (P-H-03); «Para hoy» v3 → Diseñado (P-I-02) con la bandeja v2 Construida (P-I-01).
 - Preguntas difíciles: `docs/handyx/preguntas.md` (n.º 4 fuga, 10 reclamos, 11 cobro) y la consigna de la ola 6.
 - Cifras: auditoría del portal (97 / 41 / 15 / 26 / 15, 130 zonas = 108 + 21 + 1, «dato verificado»); `ESP-REGISTRADOS`
-  (56, «dato informado por el fundador · sin auditar», con la frase de la planilla propia) y `META-REPETIDORES`
-  (5 clientes que vuelvan al 31/12, rotulada «Objetivo · no es un resultado») de `decks/handyx-aticma/afirmaciones.json`.
-- Tarifa: decisión del 07/11 (sin comisión al especialista; 0 % al usuario hasta el 10/12/2026; 15 % en evaluación).
-- Pantallas: lienzo «Portal interno v3» re-renderizado con su propio motor (`S/ops04/tools/rerender.cjs`) a 2x, con los
-  trabajos de `rerender/trabajos-ola6.json`; recortes 16:10 (2880 × 1800) para las notebooks y recortes «Detalle».
-  `docs-guia.webp` sale del re-render de la ola 3 (`S/ops04/rr2/docs-v3.png`, sin menú y con el paso neutro).
-- Fotos: `marca/fotos/` (archivo del fundador), en duotono azul/navy. Mapa: `recortes/mapa-partido-geometria-osm.png`
-  (© colaboradores de OpenStreetMap, ODbL).
+  (56, «dato informado por el fundador · sin auditar») y `META-REPETIDORES` (5 clientes al 31/12, «Objetivo · no es un
+  resultado») de `decks/handyx-aticma/afirmaciones.json`. Tarifa: decisión del 07/11.
+- Fotos: `marca/fotos/` en duotono. Geometría del mapa (dentro del recorte del portal): © colaboradores de OpenStreetMap (ODbL).
 
-## Tratamiento de las capturas (re-render, todas rotuladas «Diseño propuesto · datos ficticios»)
+## Tratamiento de las capturas (todas rotuladas «Diseño propuesto · datos ficticios»)
 
-- Inicio: «Pérdida de gas sin resolver» → «El trabajo quedó sin terminar»; «El especialista no se presentó» → «Cambió el
-  horario sin avisar»; «Seguro de responsabilidad civil» → «Ordenar la carpeta de documentos»; «Antecedentes de Marina R.»
-  → «Revisar la guía de reclamos» y «día 6 de 7» → «en 6 días».
-- Reclamos: los mismos reemplazos que la ola 3, «Seguridad» → «Servicio», «Cobro duplicado» → «Pidió el informe del
-  trabajo» y sin «11 de 14 resueltos a tiempo».
-- Preregistros: «Pintor» → «Cerrajero» (los seis rubros). Ficha: «Gasista matriculada» → «Gasista»; «Por reparto
-  automático» → «La asignó el equipo» (el reparto automático es Concepto); WhatsApp de ejemplo más enmascarado; la fila
-  «Se vence · noviembre de 2027» → «Retención · según el aviso» (la purga está apagada: no se promete el borrado).
-- Campaña: sin «100 USD» ni «≈ 0,6 USD» (→ «Presupuesto cargado», «Sin dato · Fuente pendiente»); «Matrícula verificada» →
-  «Requisitos al día». Cohortes: meses → «Mes 1 … Mes 6» y «N personas» → «muestra» (no parece tracción).
-- Mapa: «Especialistas activos por barrio» → «Especialistas por barrio». Tareas: iniciales «IG» → «SV», seguro → carpeta.
-- Legal: sin «Antecedentes penales de Marina Rodríguez» ni nombres (→ constancia de monotributo de un especialista,
-  carpeta de documentos, guía de privacidad del equipo). Docs: sin el paso de antecedentes en 7 días.
-- **Sin personajes** (pedido de Ignacio del 08/11): la Llave del Inicio y de la Ficha se ocultó en el re-render; ningún
-  SVG de personajes en la pieza.
-- Evitadas: Login, RC-Acceso, Guía, Main, Bienvenida, MapaInicio completo, D6-Alta (muestra «Antecedentes · PDF cargado»),
-  MOCK de configuración y cualquier detalle de acceso, permisos o infraestructura.
-
-## Decisiones y componentes propios (en el `<style>` de la pieza)
-
-- `.toque` sobre la notebook con `data-x/data-y` en px de la pantalla 1440 × 900 (un script los convierte a % del
-  `.tapa-nb`); en los recortes, `data-x/data-y` en px del recorte con `data-w/data-h` en el `.marco`. Los puntos van al
-  borde izquierdo del botón para no tapar su texto.
-- `.det` + `.det-rot` (recorte «Detalle»), `.notas-fila`, `.notas-grilla`, `.notas-2`, `.funcs` (lista con estado),
-  `.circuito` + `.flecha-h`, `.corte`, `.barra-estados`, `.indice-v2`, `.leer`, `.no-mostramos`, `.cifras-3`, `.quien`,
-  `.aviso-amarillo`, `.mecanismos`/`.mec`, `.medir`, `.reglas`, `.zonas`, `.credito-foto`, bandas con `.foto` enmascarada
-  (gradiente a la izquierda) + `.velo-arriba` / `.velo-abajo`, tapa `.tapa-04` y contratapa `.contra-04`.
-- **Número de capítulo**: `.cap-n` con `-webkit-text-stroke` sale como fuente Type 3 y el exportador lo rechaza. Se
-  reemplazó por `svg.cap-n-svg` con los contornos reales de Archivo 125/900 (extraídos con fontTools de
-  `plantilla/fuentes/archivo-125-900-latin.woff2`) y trazo amarillo vectorial. Componente reutilizable para las otras piezas.
-- Las fotos aéreas (1200 px) no alcanzan para el ancho total a 150 ppp: van en la mitad derecha de la banda, con máscara.
+Se mantienen los reemplazos de la ola 6 (casos neutros en Inicio y Reclamos, «Pintor» → «Cerrajero», «Gasista matriculada»
+→ «Gasista», «La asignó el equipo», WhatsApp enmascarado, «Retención · según el aviso», sin montos en USD en Campaña,
+«Mes 1 … Mes 6 · muestra» en Cohortes, iniciales «SV», Legal sin antecedentes ni nombres). La Llave (personaje) sigue
+oculta en Inicio y Ficha. La guía de Docs sale del re-render de la ola 3, sin el paso de antecedentes en 7 días (el
+tablero actual de Docs lo tiene: no se usó). Ningún personaje en la pieza.
 
 ## Preguntas abiertas para Ignacio
 
@@ -93,8 +100,8 @@ Exportación: `exportar-pieza.cjs` con **0 errores** (avisos: elementos a sangre
 ## Contradicciones entre fuentes (señaladas, sin elegir)
 
 - Antecedentes: «nunca como archivo» (CLAUDE.md del especialista, consigna) vs. legajos del portal y backend del
-  especialista con antecedentes en 7 días por foto o PDF («decisión del 08/11» citada en un commit del 07/11); el lienzo
-  D6-Alta muestra «PDF cargado». El dossier imprime «en persona, nunca como archivo» y no muestra esas pantallas.
+  especialista con antecedentes por foto o PDF; el tablero Docs actual dice «antecedentes penales en 7 días». El dossier
+  imprime «en persona, nunca como archivo» y no muestra esas pantallas.
 - Etapas del preregistro: lienzo v3 (Nuevo · Contactado · En seguimiento · Listo para alta) vs. contrato (pendiente de
   contacto → contactado → comprometido; en espera → avisado).
 - Retención: aviso 04-A (12 meses, purga real) vs. decisión del 02/11 de no purgar.
@@ -102,4 +109,5 @@ Exportación: `exportar-pieza.cjs` con **0 errores** (avisos: elementos a sangre
 - Tarifa: decisión del 07/11 (impresa) vs. landing (10 % + 10 %, camada fundadora) y portal («sin tarifa aprobada»).
 - Moneda del presupuesto de marketing: USD en el lienzo y la Guía 10 vs. pesos en el backend.
 - Dónde se verifica: el plan del especialista nombra al portal como futuro consumidor; hoy el portal no tiene pantalla.
-- Nombre del dominio del portal en la documentación del backend del usuario (no se imprime ningún dominio interno).
+- Panel del barrio: la auditoría lo pone dentro de «capas por barrio» (En pruebas, P-M-03) y las acciones del barrio en
+  Diseñado (P-M-05); la ola 6 lo había rotulado Diseñado. Se imprimió En pruebas para el panel y Diseñado para las acciones.
